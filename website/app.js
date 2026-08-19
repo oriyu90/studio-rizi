@@ -1,6 +1,12 @@
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const darkMode = matchMedia('(prefers-color-scheme: dark)');
 
+function updateProjectCount() {
+  const count = window.SITE_CONTENT?.projects?.length ?? 0;
+  document.querySelectorAll('[data-project-count]').forEach(node => { node.textContent = String(count); });
+}
+updateProjectCount();
+
 function initIntro() {
   const intro = document.querySelector('.intro');
   if (!intro) return;
