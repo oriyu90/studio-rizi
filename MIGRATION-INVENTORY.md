@@ -16,13 +16,13 @@ GitHubの各`main`ブランチと、必要な場合は実際のWebビルドを�
 | 8 | `volume-routine` | `volume-routine.pages.dev` | `website/` | 7 | 低 | 301稼働済み |
 | 9 | `wakaru` | `wakaru.pages.dev` | `website/` | 6 | 低 | 301稼働済み |
 | 10 | `pine-chat` | `pinechat.pages.dev` | `website/` | 11 | 中・4言語別HTML | 301稼働済み |
-| 11 | `vocello-jp` | `vocello-jp.pages.dev` | `website/`をViteビルド | 28 | 高・React/SSR/音声 | 301稼働済み |
+| 11 | `vocello-jp` | `vocello-jp.pages.dev` | ローカライズ専用静的ビルド | 9 | 中・4言語HTML | 301稼働済み |
 | 除外 | `kizi` | `kizi.pages.dev` | 独立サイト | — | 対象外 | 維持 |
 
 ## 現在の規模
 
-- 統合後の公開対象: 114ファイル、約50MB
-- 安全上限16,000ファイルに対する使用率: 約0.7%
+- 統合後の公開対象: 95ファイル
+- 安全上限16,000ファイルに対する使用率: 約0.6%
 - 内容ハッシュが完全一致する重複公開ファイル: 0
 
 同一内容のファイルをSHA-256で比較したところ、調査対象の紹介サイト間に完全一致する重複ファイルはなかった。今後の追加で重複を発生させないため、ビルド時のハッシュ検査を導入する。
