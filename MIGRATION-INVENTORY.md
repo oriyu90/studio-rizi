@@ -12,7 +12,7 @@ GitHubの各`main`ブランチと、必要な場合は実際のWebビルドを�
 | 4 | `easyroo` | `easyroo.pages.dev` | `website/` | 7 | 低 | 301稼働済み |
 | 5 | `md-viewer-pro` | `md-viewer-pro.pages.dev` | `website/` | 7 | 低 | 301稼働済み |
 | 6 | `media-master` | `media-master-9o5.pages.dev` | `website/` | 7 | 低 | 301稼働済み |
-| 7 | `tango-pro` | `tango-pro.pages.dev` | `website/` | 8 | 低 | 301承認待ち |
+| 7 | `tango-pro` | `tango-pro.pages.dev` | `website/` | 8 | 低 | 301稼働済み |
 | 8 | `volume-routine` | `volume-routine.pages.dev` | `website/` | 7 | 低 | 301稼働済み |
 | 9 | `wakaru` | `wakaru.pages.dev` | `website/` | 6 | 低 | 301稼働済み |
 | 10 | `pine-chat` | `pinechat.pages.dev` | `website/` | 11 | 中・4言語別HTML | 301稼働済み |
