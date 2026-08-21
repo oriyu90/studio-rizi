@@ -1,0 +1,12 @@
+{
+  "name": "studio-rizi-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run validate && npm run count-files",
+    "validate": "node scripts/validate-site.mjs",
+    "count-files": "node scripts/count-files.mjs",
+    "test": "npm run build"
+  }
+}

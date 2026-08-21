@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "host": "https://studio-rizi.pages.dev",
+  "projects": [
+    { "slug": "awasero-music", "name": "Awasero Music", "repository": "https://github.com/oriyu90/awasero-music", "url": "https://studio-rizi.pages.dev/projects/awasero-music/", "hosted": true },
+    { "slug": "easyroo", "name": "EasyRoo", "repository": "https://github.com/oriyu90/EasyRoo", "url": "https://studio-rizi.pages.dev/projects/easyroo/", "hosted": true },
+    { "slug": "kizi", "name": "Kizi", "repository": "https://github.com/oriyu90/kizi", "url": "https://kizi.pages.dev/", "hosted": false },
+    { "slug": "mcs-manager", "name": "MCS Manager", "repository": "https://github.com/oriyu90/MCS-Manager", "url": "https://studio-rizi.pages.dev/projects/mcs-manager/", "hosted": true },
+    { "slug": "md-viewer-pro", "name": "MD Viewer Pro", "repository": "https://github.com/oriyu90/MD-Viewer-Pro", "url": "https://studio-rizi.pages.dev/projects/md-viewer-pro/", "hosted": true },
+    { "slug": "media-master", "name": "Media Master", "repository": "https://github.com/oriyu90/media-master", "url": "https://studio-rizi.pages.dev/projects/media-master/", "hosted": true },
+    { "slug": "mlx-bar", "name": "MLXBar", "repository": "https://github.com/oriyu90/mlx-bar", "url": "https://studio-rizi.pages.dev/projects/mlx-bar/", "hosted": true },
+    { "slug": "pine-chat", "name": "Pine Chat", "repository": "https://github.com/oriyu90/PineChat", "url": "https://studio-rizi.pages.dev/projects/pine-chat/", "hosted": true },
+    { "slug": "tango-pro", "name": "Tango pro", "repository": "https://github.com/oriyu90/Tango-pro", "url": "https://studio-rizi.pages.dev/projects/tango-pro/", "hosted": true },
+    { "slug": "vocello-jp", "name": "Vocello JP", "repository": "https://github.com/oriyu90/vocello-jp", "url": "https://studio-rizi.pages.dev/projects/vocello-jp/", "hosted": true },
+    { "slug": "volume-routine", "name": "Volume Routine", "repository": "https://github.com/oriyu90/volume-routine", "url": "https://studio-rizi.pages.dev/projects/volume-routine/", "hosted": true },
+    { "slug": "wakaru", "name": "WAKARU", "repository": "https://github.com/oriyu90/WAKARU", "url": "https://studio-rizi.pages.dev/projects/wakaru/", "hosted": true }
+  ]
+}

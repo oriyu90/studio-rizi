@@ -14,7 +14,7 @@
 ```js
 {
   name: 'サービス名',
-  url: 'https://example.pages.dev/',
+  url: 'https://studio-rizi.pages.dev/projects/example/',
   repository: 'https://github.com/oriyu90/example',
   announceRelease: true,
   releaseDate: '2026.08.19',
@@ -44,7 +44,7 @@ releaseSource: ''
 ## 各項目
 
 - `name`: 画面に表示する正式名称
-- `url`: 公式サイトの完全なURL
+- `url`: 公式サイトの完全なURL。Kiziを除き `https://studio-rizi.pages.dev/projects/<slug>/` を使う
 - `repository`: Release情報の根拠となるGitHubリポジトリURL
 - `announceRelease`: PROJECT追加と同時にRELEASEのお知らせを自動追加する場合は `true`。未公開・開発中など、お知らせに出さない場合は `false`
 - `releaseDate`: 初回GitHub Releaseの公開日。`YYYY.MM.DD`形式で記入する
@@ -81,7 +81,7 @@ releaseSource: ''
     zh: '简要说明此次主要更新。',
     pt: 'Um breve resumo das principais mudanças.'
   },
-  url: 'https://example.pages.dev/'
+  url: 'https://studio-rizi.pages.dev/projects/example/'
 }
 ```
 
@@ -98,6 +98,8 @@ releaseSource: ''
 - UpdateのたびにPROJECTカードを増やさない。既存カードの `releaseDate` と `releaseVersion` は初回Release情報のまま変更しない
 - PROJECTカードと同じ内容をOTHERやUPDATEとして重複登録しない
 - 日付はすべて `YYYY.MM.DD`、新しいものほど上に記入する
+- Kizi以外のPROJECTを個別の `*.pages.dev` へ新設しない
+- PROJECT固有の公開ファイルは `website/projects/<slug>/` に置き、共通ファイルを複製しない
 
 ## PROJECTの並び順
 
