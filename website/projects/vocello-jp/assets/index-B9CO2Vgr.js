@@ -1,0 +1,1 @@
+/* Removed upstream preview bundle. Vocello JP production is static HTML. */
