@@ -52,6 +52,17 @@ slugは小文字英数字とハイフンのみを使用し、公開後は変更�
 
 manifestと`content.js`のURLは `npm run validate` で一致を検証する。
 
+## 案件内の静的Webアプリ
+
+`website/projects/<slug>/`には紹介ページだけでなく、案件固有のversioned静的app bundleをサブdirectoryへ置ける。Tango pro Webは`website/projects/tango-pro/web/`を公開rootとし、生成元repositoryのstage scriptでのみ同期する。
+
+- source map、build cache、`node_modules`は公開しない
+- app bundleは`build-info.json`にsource commit、content build ID、base path、precache asset一覧を持つ
+- Service Workerはcontent build IDごとにcacheを更新し、案件の永続data storageを削除しない
+- COOP / COEP等の特殊headerは`website/_headers`でappのsubpathだけへ限定する
+- `index.html`、`sw.js`、`build-info.json`は`no-cache`、content-hash付きWasmはimmutableとする
+- bundle更新後も紹介ページ、Studio Rizi本体、他案件のURLとheaderを回帰確認する
+
 ## 重複を増やさないルール
 
 - 依存関係とロックファイルはルートに一組だけ置く。

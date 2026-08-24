@@ -18,6 +18,7 @@
 - `projects/manifest.json` を案件URLと配置の一次情報とする。
 - Cloudflare Pagesが公開する `website/` だけに公開ファイルを置く。
 - 各案件の公開ファイルは `website/projects/<slug>/` に置く。
+- Tango pro Webの生成bundleはTango-pro repositoryの`stage_web_for_pages.sh`から`website/projects/tango-pro/web/`へ同期し、生成物を手編集しない。
 - 案件固有の `robots.txt` とサイトマップを複製せず、`website/robots.txt` と `website/sitemap.xml` へ集約する。
 - 旧サイトは新URLの公開確認後に301リダイレクトへ切り替える。
 - 一度に全案件を移さず、`MIGRATION-INVENTORY.md` の順序で段階移行する。
