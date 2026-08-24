@@ -2,9 +2,9 @@
   "format": "tango-pro-web-build",
   "version": 1,
   "appVersion": "2.1.0-web",
-  "sourceCommit": "6b6a11e0bd04addacc0099e62bb0e0b0796b7825",
+  "sourceCommit": "314f1cc13f2bcd2818975797ba7565cfd2291e74",
   "buildId": "17326f3b6ad5c2f6",
-  "builtAt": "2026-08-24T16:31:54Z",
+  "builtAt": "2026-08-24T16:52:15Z",
   "basePath": "/projects/tango-pro/web/",
   "assets": [
     "35412635cde6e4e3a3bf.js",
