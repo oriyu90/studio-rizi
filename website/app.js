@@ -19,7 +19,7 @@ function initIntro() {
   if (reduceMotion) { finish(); return; }
   document.body.classList.add('intro-lock');
   const logo = intro.querySelector('[data-intro-dark-logo]');
-  if (logo) logo.src = ['ja','zh'].includes(window.SITE_LANG) ? 'logo-JP.jpg' : 'logo-EN.jpg';
+  if (logo) logo.src = ['ja','zh'].includes(window.SITE_LANG) ? '/logo-JP.jpg' : '/logo-EN.jpg';
   const ready = logo ? Promise.race([logo.decode().catch(()=>{}), new Promise(r=>setTimeout(r,600))]) : Promise.resolve();
   ready.then(() => requestAnimationFrame(() => requestAnimationFrame(() => intro.classList.add('is-running'))));
   intro.addEventListener('animationend', event => { if (event.target === intro && event.animationName === 'introDismiss') finish(); });
@@ -117,11 +117,13 @@ function renderProjects() {
   }
   filtered.forEach(({project,index}) => {
     const description = window.siteText(project.description);
-    const card = document.createElement('button');
-    card.type = 'button';
+    const card = document.createElement('a');
+    card.href = project.url;
     card.className = `project-card project-${project.color}`;
     card.innerHTML = `<span class="project-count">${String(index+1).padStart(2,'0')}</span><span class="project-icon">${project.code}</span><span class="project-name">${project.name}</span><span class="project-desc">${description}</span><span class="platforms">${project.platforms.map(p=>`<i>${p}</i>`).join('')}</span><span class="project-open">${label('open')}</span>`;
-    card.addEventListener('click',()=>{
+    card.addEventListener('click',event=>{
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+      event.preventDefault();
       document.querySelector('#dialog-content').innerHTML = `<span class="dialog-icon project-${project.color}">${project.code}</span><p>${label('project')} / ${String(index+1).padStart(2,'0')}</p><h2>${project.name}</h2><p class="dialog-desc">${description}</p><div class="platforms">${project.platforms.map(p=>`<i>${p}</i>`).join('')}</div><a class="button button-lime" href="${project.url}" target="_blank" rel="noreferrer">${label('visit')} <span>↗</span></a>`;
       dialog.showModal();
     });

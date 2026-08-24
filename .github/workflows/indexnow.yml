@@ -1,0 +1,28 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'website/**'
+      - 'projects/manifest.json'
+      - 'scripts/submit-indexnow.mjs'
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Allow the Cloudflare Pages deployment to become available
+        run: sleep 45
+      - name: Submit changed URLs
+        run: node scripts/submit-indexnow.mjs "${{ github.event.before }}" "${{ github.sha }}"

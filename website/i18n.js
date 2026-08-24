@@ -2,10 +2,12 @@
   const supported = ['ja', 'en', 'zh', 'pt'];
   const params = new URLSearchParams(location.search);
   const requested = params.get('lang')?.toLowerCase().split('-')[0];
+  const pathLocale = location.pathname.match(/^\/(en|zh|pt)(?:\/|$)/)?.[1];
+  const declaredLocale = document.documentElement.dataset.siteLanguage;
   if(params.get('theme')==='light') document.documentElement.dataset.theme='light';
-  const detected = (supported.includes(requested) ? requested : (navigator.languages || [navigator.language || 'en'])
+  const detected = (pathLocale || (supported.includes(requested) ? requested : declaredLocale || (navigator.languages || [navigator.language || 'en'])
     .map(value => value.toLowerCase().split('-')[0])
-    .find(value => supported.includes(value))) || 'en';
+    .find(value => supported.includes(value)))) || 'ja';
   window.SITE_LANG = detected;
   window.siteText = value => typeof value === 'string' ? value : (value?.[window.SITE_LANG] || value?.en || value?.ja || '');
 
@@ -47,12 +49,6 @@
   pages.home.pt.closing='<span class="closing-line">Continuar criando o próximo</span><em>prático e interessante.</em>';
   const html=(s,v)=>{const n=document.querySelector(s);if(n&&v)n.innerHTML=v};
   const text=(s,v)=>{const n=document.querySelector(s);if(n&&v)n.textContent=v};
-  const metadata={
-    home:{ja:['YO — YUKI ORITA','アプリ、記事、プロフィールをまとめた折田侑のホームページ。'],en:['YO — YUKI ORITA','Yuki Orita’s home for apps, articles, news, and profile.'],zh:['YO — YUKI ORITA','折田侑的应用、文章、动态与个人简介。'],pt:['YO — YUKI ORITA','Aplicativos, artigos, notícias e perfil de Yuki Orita.']},
-    profile:{ja:['Profile — YUKI ORITA','折田侑のプロフィールと、ものづくりへの考え方。'],en:['Profile — YUKI ORITA','Yuki Orita’s profile and approach to making useful products.'],zh:['个人简介 — YUKI ORITA','折田侑的个人简介与产品创作理念。'],pt:['Perfil — YUKI ORITA','Perfil de Yuki Orita e sua abordagem à criação de produtos.']},
-    news:{ja:['News — YUKI ORITA','アプリの公開、アップデート、サイトからのお知らせ。'],en:['News — YUKI ORITA','Product releases, updates, and announcements.'],zh:['动态 — YUKI ORITA','应用发布、产品更新与网站公告。'],pt:['Notícias — YUKI ORITA','Lançamentos, atualizações de produtos e anúncios.']}
-  };
-
   function applyLanguage(lang=detected){
     window.SITE_LANG=supported.includes(lang)?lang:detected;
     document.documentElement.lang=window.SITE_LANG==='zh'?'zh-CN':window.SITE_LANG;
@@ -60,10 +56,14 @@
     document.querySelectorAll('.site-header nav a').forEach((n,i)=>n.textContent=c[i]);
     if(document.body.classList.contains('profile-page')||document.body.classList.contains('news-page')) text('.header-cta',c[3]);
     text('[data-locale-indicator]',window.SITE_LANG.toUpperCase());
+    document.querySelectorAll('[data-language-link]').forEach(link => {
+      const current = link.dataset.languageLink === window.SITE_LANG;
+      link.toggleAttribute('aria-current', current);
+      link.classList.toggle('is-current', current);
+    });
     const page=document.body.classList.contains('profile-page')?'profile':document.body.classList.contains('news-page')?'news':'home';
     const t=pages[page][window.SITE_LANG];
     if(document.documentElement.dataset.theme==='light') document.querySelectorAll('source[media*="prefers-color-scheme: dark"]').forEach(source=>source.media='not all');
-    const meta=metadata[page][window.SITE_LANG];document.title=meta[0];document.querySelector('meta[name="description"]')?.setAttribute('content',meta[1]);
     if(page==='home'){
       html('.hero h1',t.hero);html('.hero-lead',t.lead);html('.hero-actions .button',t.projects);html('.hero-actions .text-link',t.profile);
       document.querySelectorAll('.jump-card h2').forEach((n,i)=>n.innerHTML=t.j[i]);html('.projects-head h2',t.ptitle);text('.projects-head>p',t.plead);text('.section-title h2',t.news);html('.news-more',t.all);html('.closing h2',t.closing);

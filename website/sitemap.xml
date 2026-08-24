@@ -1,39 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://studio-rizi.pages.dev/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/zh/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/en/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/zh/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/zh/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/zh/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/pt/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/zh/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/"/>
   </url>
   <url>
     <loc>https://studio-rizi.pages.dev/news</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/zh/news"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/pt/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/news"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/en/news</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/zh/news"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/pt/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/news"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/zh/news</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/zh/news"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/pt/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/news"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/pt/news</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/zh/news"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/pt/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/news"/>
   </url>
   <url>
     <loc>https://studio-rizi.pages.dev/profile</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/profile"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/en/profile"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/zh/profile"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/pt/profile"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/profile"/>
   </url>
-  <url><loc>https://studio-rizi.pages.dev/projects/awasero-music/</loc><lastmod>2026-08-21</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/easyroo/</loc><lastmod>2026-08-21</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/mcs-manager/</loc><lastmod>2026-08-21</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/md-viewer-pro/</loc><lastmod>2026-08-21</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/media-master/</loc><lastmod>2026-08-21</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/mlx-bar/</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/pine-chat/</loc><lastmod>2026-08-21</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/pine-chat/en/</loc><lastmod>2026-08-21</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/pine-chat/zh/</loc><lastmod>2026-08-21</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/pine-chat/pt/</loc><lastmod>2026-08-21</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/tango-pro/</loc><lastmod>2026-08-22</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/vocello-jp/</loc><lastmod>2026-08-22</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/vocello-jp/en/</loc><lastmod>2026-08-22</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/vocello-jp/zh/</loc><lastmod>2026-08-22</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/vocello-jp/pt/</loc><lastmod>2026-08-22</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/vocello-jp/privacy/</loc><lastmod>2026-08-22</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/volume-routine/</loc><lastmod>2026-08-21</lastmod></url>
-  <url><loc>https://studio-rizi.pages.dev/projects/wakaru/</loc><lastmod>2026-08-21</lastmod></url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/en/profile</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/profile"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/en/profile"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/zh/profile"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/pt/profile"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/profile"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/zh/profile</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/profile"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/en/profile"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/zh/profile"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/pt/profile"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/profile"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/pt/profile</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/profile"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/en/profile"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/zh/profile"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/pt/profile"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/profile"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/awasero-music/</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/easyroo/</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/mcs-manager/</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/md-viewer-pro/</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/media-master/</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/mlx-bar/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/pine-chat/en/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/pine-chat/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/pine-chat/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/pine-chat/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/pine-chat/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/pine-chat/"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/pine-chat/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/pine-chat/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/pine-chat/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/pine-chat/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/pine-chat/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/pine-chat/"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/pine-chat/pt/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/pine-chat/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/pine-chat/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/pine-chat/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/pine-chat/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/pine-chat/"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/pine-chat/zh/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/pine-chat/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/pine-chat/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/pine-chat/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/pine-chat/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/pine-chat/"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/tango-pro/</loc>
+    <lastmod>2026-08-22</lastmod>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/vocello-jp/en/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/vocello-jp/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/vocello-jp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/vocello-jp/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/vocello-jp/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/vocello-jp/"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/vocello-jp/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/vocello-jp/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/vocello-jp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/vocello-jp/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/vocello-jp/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/vocello-jp/"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/vocello-jp/privacy/</loc>
+    <lastmod>2026-08-22</lastmod>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/vocello-jp/pt/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/vocello-jp/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/vocello-jp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/vocello-jp/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/vocello-jp/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/vocello-jp/"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/vocello-jp/zh/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/vocello-jp/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/vocello-jp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/vocello-jp/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/vocello-jp/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/vocello-jp/"/>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/volume-routine/</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+  <url>
+    <loc>https://studio-rizi.pages.dev/projects/wakaru/</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
 </urlset>

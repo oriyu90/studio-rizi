@@ -4,9 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run validate && npm run count-files",
+    "generate:seo": "node scripts/generate-seo-pages.mjs",
+    "build": "npm run generate:seo && npm run validate && npm run count-files",
     "validate": "node scripts/validate-site.mjs",
     "count-files": "node scripts/count-files.mjs",
-    "test": "npm run build"
+    "test": "npm run build",
+    "indexnow": "node scripts/submit-indexnow.mjs --all"
   }
 }

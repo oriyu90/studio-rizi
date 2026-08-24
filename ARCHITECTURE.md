@@ -18,6 +18,10 @@ studio-rizi/
 │   └── count-files.mjs
 └── website/
     ├── index.html
+    ├── 404.html
+    ├── en/
+    ├── zh/
+    ├── pt/
     ├── robots.txt
     ├── sitemap.xml
     ├── assets/
@@ -30,6 +34,12 @@ studio-rizi/
 - Studio Rizi本体: `https://studio-rizi.pages.dev/`
 - 案件: `https://studio-rizi.pages.dev/projects/<slug>/`
 - Kizi: `https://kizi.pages.dev/` のまま
+
+Studio Rizi本体の言語URLは、日本語をルート、英語を`/en/`、簡体中文を`/zh/`、ポルトガル語を`/pt/`とする。各言語のNEWSとPROFILEも同じ接頭辞を使用する。同一URLをJavaScriptだけで別言語に差し替える方式は、検索エンジンが言語別ページとして保持できないため使用しない。
+
+`scripts/generate-seo-pages.mjs` は日本語HTML、`content.js`、ローカライズ文言から言語別の静的HTMLとサイトマップを生成する。生成先の`website/en/`、`website/zh/`、`website/pt/`を直接編集せず、`npm run build`で同期する。
+
+トップのPROJECTカードはJavaScript実行前から実リンクとしてHTMLへ出力し、通常クリックでは従来どおり詳細ダイアログ、修飾キーやJavaScript無効時は公式URLへ遷移する。これにより検索エンジンが全案件を初回HTMLから発見できる。
 
 slugは小文字英数字とハイフンのみを使用し、公開後は変更しない。
 
@@ -51,6 +61,14 @@ manifestと`content.js`のURLは `npm run validate` で一致を検証する。
 - 未参照ファイルを `dist/` へコピーしない。
 - 画像の派生形式・サイズは実際に参照されるものだけ生成する。
 - `npm run count-files` で同一ハッシュの公開ファイルを検出し、重複があれば解消する。
+
+## クロールとインデックス通知
+
+- ルート、NEWS、PROFILEの4言語版は、自己canonicalと完全な相互`hreflang`、`x-default`を持つ。
+- `website/sitemap.xml`にも同じ言語対応を記載し、正確な`lastmod`を出力する。
+- ルートの`404.html`を維持し、存在しないパスをトップページのHTTP 200として返すソフト404を防ぐ。
+- `main`更新時は`.github/workflows/indexnow.yml`が変更URLだけをIndexNowへ送信する。
+- Googleへのサイトマップ登録・再クロール依頼はSearch Consoleで行う。サイトマップやIndexNowはインデックス登録や順位を保証するものではない。
 
 ## 移行工程
 
