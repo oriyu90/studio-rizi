@@ -1,6 +1,6 @@
 // The staging script replaces this token with a content-derived build ID so a
 // new worker is installed whenever any published app asset changes.
-const CACHE = "tango-pro-web-17326f3b6ad5c2f6";
+const CACHE = "tango-pro-web-c27bf2065dccc11c";
 const BASE = "/projects/tango-pro/web/";
 const APP_SHELL = [BASE, `${BASE}index.html`, `${BASE}manifest.webmanifest`, `${BASE}browser-bridge.js`];
 
