@@ -20,6 +20,10 @@
   .project-icon{width:clamp(24px,17cqi,64px);height:clamp(24px,17cqi,64px);font-size:clamp(12px,5cqi,22px)}
   .project-name{font-size:clamp(14px,8cqi,32px)}
   .project-desc{font-size:clamp(12px,4cqi,16px)}
+  /* Large squares need an upper-middle copy position; exact centering looks too sparse. */
+  @container(min-width:200px){
+    .project-grid-shell:not(.is-list) .project-copy{align-self:start;margin-top:clamp(20px,14cqi,64px)}
+  }
   @container(max-width:150px){
     .project-icon{width:24px;height:24px;font-size:11px}
     .project-name{font-size:14px;line-height:1.2}

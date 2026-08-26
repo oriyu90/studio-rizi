@@ -19,10 +19,11 @@ test('card hover keeps the square footprint instead of extending it',()=>{
   assert.match(responsive,/\.project-grid-shell:not\(\.is-list\) \.project-card:hover\{transform:none;box-shadow:inset/);
 });
 
-test('card copy is grouped and vertically centered without changing list layout',()=>{
+test('card copy is grouped and moves to the upper-middle on larger squares without changing list layout',()=>{
   assert.match(app,/class="project-copy"><span class="project-name">/);
   assert.match(generator,/class="project-copy"><span class="project-name">/);
   assert.match(responsive,/\.project-grid-shell:not\(\.is-list\) \.project-copy\{[^}]*grid-row:2;align-self:center/);
+  assert.match(responsive,/@container\(min-width:200px\)\{\s*\.project-grid-shell:not\(\.is-list\) \.project-copy\{align-self:start;margin-top:clamp\(20px,14cqi,64px\)\}/);
   assert.match(responsive,/\.is-list \.project-copy\{display:contents\}/);
 });
 
