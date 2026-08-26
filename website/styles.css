@@ -332,3 +332,76 @@ html[lang="en"] .hero,html[lang="pt"] .hero{--hero-title-size:clamp(1.8rem,4.5vw
   html:not([data-theme="light"]) .project-search input::placeholder{color:#9ea797}
   html:not([data-theme="light"]) .project-grid-shell.is-collapsed .project-fold-shade{background:linear-gradient(180deg,rgba(8,10,8,0),rgba(8,10,8,.82) 48%,#080a08 86%)}
 }
+
+/* Aspect-aware density. JS interpolates the scale; media queries cover no-JS. */
+:root{--card-scale:1;--project-card-height:330px}
+@media(max-aspect-ratio:1/1){:root{--card-scale:.85}}
+@media(max-aspect-ratio:2/3){:root{--card-scale:.72}}
+@media(min-width:1000px){:root{--project-card-height:clamp(330px,21vw,440px)}}
+@media(max-width:600px){:root{--project-card-height:290px}}
+.project-card{min-height:calc(var(--project-card-height) * var(--card-scale));padding:calc(clamp(28px,2vw,44px) * var(--card-scale));min-width:0;transition:transform .25s,box-shadow .25s,background-color .25s}
+.project-icon{width:calc(clamp(66px,4.5vw,90px) * var(--card-scale));height:calc(clamp(66px,4.5vw,90px) * var(--card-scale));margin:calc(30px * var(--card-scale) * var(--card-scale)) 0;font-size:max(15px,calc(clamp(18px,1.25vw,26px) * var(--card-scale)))}
+.project-name{font-size:max(20px,calc(clamp(25px,2vw,43px) * var(--card-scale)));overflow-wrap:anywhere}
+.project-desc{font-size:max(12px,calc(clamp(12px,.8vw,17px) * var(--card-scale)));margin:calc(12px * var(--card-scale)) 0 calc(24px * var(--card-scale))}
+.project-open{top:calc(27px * var(--card-scale));right:calc(26px * var(--card-scale))}
+.project-card:focus-visible{outline:3px solid currentColor;outline-offset:-4px;z-index:2}
+
+/* Three editorial cards remain side by side on portrait tablets. */
+.jump-grid{grid-template-columns:repeat(3,minmax(0,1fr));padding-top:calc(72px * var(--card-scale));padding-bottom:calc(82px * var(--card-scale))}
+.jump-article{grid-column:auto}
+.jump-card{--jump-inset:clamp(12px,2vw,28px);min-width:0;min-height:0;height:max(240px,calc(clamp(340px,38vw,530px) * var(--card-scale)))}
+.jump-card>div{inset:auto var(--jump-inset) var(--jump-inset)}
+.jump-card h2{font-size:clamp(20px,calc(2.5vw * var(--card-scale)),54px);line-height:1.3;overflow-wrap:anywhere}
+.jump-card p{font-size:clamp(9px,.7vw,13px);line-height:1.5}
+.jump-no{top:var(--jump-inset);left:var(--jump-inset);width:clamp(28px,3vw,42px);height:clamp(28px,3vw,42px)}
+.jump-card .round-arrow{position:static;width:clamp(30px,3vw,48px);height:clamp(30px,3vw,48px);margin-top:14px}
+@media(min-width:1100px) and (min-aspect-ratio:4/3){.jump-grid{grid-template-columns:2fr 1fr 1fr}}
+@media(max-width:559px){
+  .jump-grid{grid-template-columns:minmax(0,1fr);gap:8px}
+  .jump-card{--jump-inset:20px;height:max(240px,calc(320px * var(--card-scale)))}
+  .jump-card h2{font-size:clamp(22px,5vw,28px)}
+}
+
+/* View switch at the right edge of the search toolbar. */
+.project-search label{max-width:none;min-width:0}
+.project-search input{padding-right:8px}
+.project-search-tools{display:flex;flex-direction:column;align-items:flex-end;gap:10px;min-width:0}
+.project-search-tools output{padding-bottom:0}
+.project-view-switch{display:flex;border:1px solid currentColor;padding:3px;gap:3px}
+.project-view-switch[hidden]{display:none}
+.project-view-switch button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;border:0;background:transparent;color:inherit;padding:8px 12px;font-size:12px;cursor:pointer;white-space:nowrap}
+.project-view-switch svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}
+.project-view-switch button[aria-pressed="true"]{background:var(--yellow);color:var(--ink)}
+.project-view-switch button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+@media(max-width:700px){
+  .project-search{grid-template-columns:minmax(0,1fr);gap:14px}
+  .project-search-tools{flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap}
+  .project-view-switch{margin-left:auto}
+  .project-view-switch button{padding-inline:9px}
+}
+
+/* List mode reuses the same project links, descriptions, and detail dialog. */
+.project-grid-shell.is-list .project-grid{grid-template-columns:minmax(0,1fr);gap:0;background:#fff;color:var(--ink);transition:none;overflow:visible}
+.is-list .project-card{display:grid;grid-template-columns:56px minmax(0,1fr) auto 28px;grid-template-rows:auto auto;align-items:center;gap:5px 20px;min-height:0;padding:22px 4px;background:transparent!important;color:inherit!important;border-bottom:1px solid var(--line)}
+.is-list .project-card:first-of-type{border-top:2px solid currentColor}
+.is-list .project-count{display:none}
+.is-list .project-icon{grid-column:1;grid-row:1 / 3;width:48px;height:32px;border:0;border-radius:0;margin:0;background:var(--ink);color:var(--yellow);font-size:14px}
+.is-list .project-name{grid-column:2;grid-row:1;font-size:clamp(18px,1.4vw,26px);line-height:1.35}
+.is-list .project-desc{grid-column:2;grid-row:2;font-size:clamp(12px,.85vw,16px);line-height:1.6;margin:0;opacity:.8}
+.is-list .platforms{grid-column:3;grid-row:1 / 3;justify-self:end;max-width:220px}
+.is-list .platforms i{font-size:10px}
+.is-list .project-open{grid-column:4;grid-row:1 / 3;position:static;border:0;padding:0;font-size:0;justify-self:center}
+.is-list .project-open::after{content:'↗';font-size:24px}
+.is-list .project-card:hover{transform:none;box-shadow:none;background:#f0f4e9!important}
+@media(max-width:700px){
+  .is-list .project-card{grid-template-columns:44px minmax(0,1fr) 24px;gap:6px 12px;padding-block:18px}
+  .is-list .project-icon{grid-row:1 / 4;width:42px;height:30px;font-size:13px}
+  .is-list .platforms{grid-column:2;grid-row:3;justify-self:start}
+  .is-list .project-open{grid-column:3;grid-row:1 / 4}
+}
+@media(prefers-color-scheme:dark){
+  html:not([data-theme="light"]) .is-list .project-grid{background:#080a08;color:#eef3e8}
+  html:not([data-theme="light"]) .is-list .project-card{border-bottom-color:rgba(238,243,232,.2)}
+  html:not([data-theme="light"]) .is-list .project-icon{background:var(--yellow);color:var(--ink)}
+  html:not([data-theme="light"]) .is-list .project-card:hover{background:#1b2417!important}
+}

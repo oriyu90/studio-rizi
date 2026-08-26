@@ -105,7 +105,7 @@ const translations = {
       ['誰もがその便利さ、面白さにふれる機会があるように。<br>そんな世界を目指して、開発をしています。', 'I build so that everyone has a chance to experience<br>what technology can make easier and more fun.'],
       ['プロジェクトを見る', 'View projects'], ['プロフィール', 'Profile'], ['知恵を得る', 'Gain insight'], ['作っている人を、<br>もっと知る。', 'Meet the person<br>behind the work.'], ['新しい動きは<br>ここから', 'What is new<br>starts here'],
       ['つくったもの、<br><em>育てているもの。</em>', 'Things I made.<br><em>Things I keep growing.</em>'],
-      ['音楽、学習、AI、ファイル管理。日常の小さな不便を見つけ、使える形までつくります。カードを選ぶと詳細が開きます。', 'Music, learning, AI, and file management. I find small everyday frictions and turn them into products you can actually use.'],
+      ['音楽、学習、AI、ファイル管理。日常の小さな不便を見つけ、使える形までつくります。プロジェクトを選ぶと詳細が開きます。', 'Music, learning, AI, and file management. I find small everyday frictions and turn them into products you can actually use.'],
       ['プロジェクトを検索', 'Search projects'], ['お知らせ', 'News'], ['すべてのお知らせを見る', 'View all news'],
       ['次の「便利」と「面白い」を、', 'Keep building the next'], ['つくり続ける。', 'useful and interesting thing.']
     ],
@@ -114,7 +114,7 @@ const translations = {
       ['誰もがその便利さ、面白さにふれる機会があるように。<br>そんな世界を目指して、開発をしています。', '让每个人都有机会感受到科技带来的便利与乐趣。<br>我正朝着这样的世界持续开发。'],
       ['プロジェクトを見る', '查看项目'], ['プロフィール', '个人简介'], ['知恵を得る', '获取智慧'], ['作っている人を、<br>もっと知る。', '认识作品<br>背后的开发者。'], ['新しい動きは<br>ここから', '新的动向<br>从这里开始'],
       ['つくったもの、<br><em>育てているもの。</em>', '已经完成的，<br><em>持续成长的。</em>'],
-      ['音楽、学習、AI、ファイル管理。日常の小さな不便を見つけ、使える形までつくります。カードを選ぶと詳細が開きます。', '音乐、学习、AI 与文件管理。我从日常的小麻烦出发，把想法做成真正可用的产品。'],
+      ['音楽、学習、AI、ファイル管理。日常の小さな不便を見つけ、使える形までつくります。プロジェクトを選ぶと詳細が開きます。', '音乐、学习、AI 与文件管理。我从日常的小麻烦出发，把想法做成真正可用的产品。'],
       ['プロジェクトを検索', '搜索项目'], ['お知らせ', '最新动态'], ['すべてのお知らせを見る', '查看全部动态'],
       ['次の「便利」と「面白い」を、', '继续创造下一个'], ['つくり続ける。', '便利与有趣。']
     ],
@@ -123,7 +123,7 @@ const translations = {
       ['誰もがその便利さ、面白さにふれる機会があるように。<br>そんな世界を目指して、開発をしています。', 'Desenvolvo para que todos possam experimentar<br>mais praticidade e diversão através da tecnologia.'],
       ['プロジェクトを見る', 'Ver projetos'], ['プロフィール', 'Perfil'], ['知恵を得る', 'Ganhar conhecimento'], ['作っている人を、<br>もっと知る。', 'Conheça quem está<br>por trás dos projetos.'], ['新しい動きは<br>ここから', 'As novidades<br>começam aqui'],
       ['つくったもの、<br><em>育てているもの。</em>', 'O que criei.<br><em>O que continuo melhorando.</em>'],
-      ['音楽、学習、AI、ファイル管理。日常の小さな不便を見つけ、使える形までつくります。カードを選ぶと詳細が開きます。', 'Música, aprendizado, IA e arquivos. Encontro pequenos atritos do cotidiano e os transformo em produtos úteis.'],
+      ['音楽、学習、AI、ファイル管理。日常の小さな不便を見つけ、使える形までつくります。プロジェクトを選ぶと詳細が開きます。', 'Música, aprendizado, IA e arquivos. Encontro pequenos atritos do cotidiano e os transformo em produtos úteis.'],
       ['プロジェクトを検索', 'Buscar projetos'], ['お知らせ', 'Notícias'], ['すべてのお知らせを見る', 'Ver todas as notícias'],
       ['次の「便利」と「面白い」を、', 'Continuar criando o próximo'], ['つくり続ける。', 'prático e interessante.']
     ]
@@ -178,7 +178,7 @@ function projectDirectory(locale) {
   return siteContent.projects.map((project, index) => {
     const description = project.description[locale] || project.description.en;
     const platforms = project.platforms.map(platform => `<i>${escapeHtml(platform)}</i>`).join('');
-    return `<a href="${escapeHtml(project.url)}" class="project-card project-${project.color}"><span class="project-count">${String(index + 1).padStart(2, '0')}</span><span class="project-icon">${escapeHtml(project.code)}</span><span class="project-name">${escapeHtml(project.name)}</span><span class="project-desc">${escapeHtml(description)}</span><span class="platforms">${platforms}</span><span class="project-open">OPEN ↗</span></a>`;
+    return `<a href="${escapeHtml(project.url)}" class="project-card project-${project.color}"><span class="project-count">${String(index + 1).padStart(2, '0')}</span><span class="project-icon">${escapeHtml(project.code)}</span><span class="project-name">${escapeHtml(project.name)}</span><span class="project-desc">${escapeHtml(description)}</span><span class="platforms">${platforms}</span><span class="project-open" aria-hidden="true">OPEN ↗</span></a>`;
   }).join('');
 }
 
@@ -245,6 +245,15 @@ function localizePage(source, page, locale) {
   html = html.replace(/<base href="[^"]+">/, '<base href="/">');
   html = replaceGeneratedRegion(html, 'language-switcher', languageSwitcher(page, locale));
   if (page === 'home') {
+    const viewCopy = {
+      ja:['プロジェクトの表示方法','カード','リスト'],
+      en:['Project view','Cards','List'],
+      zh:['项目显示方式','卡片','列表'],
+      pt:['Visualização dos projetos','Cartões','Lista']
+    }[locale];
+    html = html.replace('aria-label="プロジェクトの表示方法"',`aria-label="${viewCopy[0]}"`)
+      .replace('<span>カード</span>',`<span>${viewCopy[1]}</span>`)
+      .replace('<span>リスト</span>',`<span>${viewCopy[2]}</span>`);
     html = replaceGeneratedRegion(html, 'project-directory', projectDirectory(locale));
     html = replaceGeneratedRegion(html, 'news-directory', newsDirectory(locale, 3));
     html = html.replace(/(<script type="application\/ld\+json" id="project-directory-schema">)[\s\S]*?(<\/script>)/, `$1\n${projectListSchema(locale)}\n  $2`);

@@ -8,7 +8,7 @@
     "build": "npm run generate:seo && npm run validate && npm run count-files",
     "validate": "node scripts/validate-site.mjs",
     "count-files": "node scripts/count-files.mjs",
-    "test": "npm run build",
+    "test": "npm run build && node --test scripts/project-ui.test.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs --all"
   }
 }

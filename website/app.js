@@ -1,6 +1,13 @@
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const darkMode = matchMedia('(prefers-color-scheme: dark)');
 
+function updateCardScale() {
+  const ratio = window.innerWidth / Math.max(1,window.innerHeight);
+  const scale = .68 + .32 * Math.max(0,Math.min(1,(ratio - .5) / .9));
+  document.documentElement.style.setProperty('--card-scale',scale.toFixed(4));
+}
+updateCardScale();
+
 function updateProjectCount() {
   const count = window.SITE_CONTENT?.projects?.length ?? 0;
   document.querySelectorAll('[data-project-count]').forEach(node => { node.textContent = String(count); });
@@ -41,14 +48,23 @@ const labels = {
   pt:{open:'ABRIR ↗',project:'PROJETO',visit:'Visitar site',related:'Abrir página relacionada',search:'Buscar projetos',showAll:'Ver todos os projetos ↓',collapse:'Recolher para uma linha ↑',empty:'Nenhum projeto encontrado',count:'{count} PROJETOS',countOne:'1 PROJETO'}
 };
 const label = key => labels[window.SITE_LANG || 'en'][key];
+const viewLabels = {
+  ja:{group:'プロジェクトの表示方法',cards:'カード',list:'リスト'},
+  en:{group:'Project view',cards:'Cards',list:'List'},
+  zh:{group:'项目显示方式',cards:'卡片',list:'列表'},
+  pt:{group:'Visualização dos projetos',cards:'Cartões',list:'Lista'}
+};
 const grid = document.querySelector('#project-grid');
 const gridShell = document.querySelector('#project-grid-shell');
 const projectSearch = document.querySelector('#project-search-input');
 const projectSearchCount = document.querySelector('#project-search-count');
 const projectFoldToggle = document.querySelector('#project-fold-toggle');
+const projectViewSwitch = document.querySelector('.project-view-switch');
+const projectViewButtons = [...document.querySelectorAll('[data-project-view]')];
 const dialog = document.querySelector('#project-dialog');
 let projectQuery = '';
 let projectsExpanded = false;
+let projectView = 'cards';
 let projectResizeFrame = 0;
 let projectCollapseFrame = 0;
 
@@ -77,10 +93,15 @@ function keepProjectToggleInPlace(viewportTop) {
 function updateProjectFold() {
   if (!grid || !gridShell || !projectFoldToggle) return;
   const cards = [...grid.querySelectorAll('.project-card')];
-  if (!cards.length) {
+  if (!cards.length || projectView === 'list') {
     grid.style.maxHeight = 'none';
     gridShell.classList.remove('has-overflow','is-collapsed');
     projectFoldToggle.hidden = true;
+    projectFoldToggle.setAttribute('aria-expanded','false');
+    cards.forEach(card => {
+      card.tabIndex = 0;
+      card.setAttribute('aria-hidden','false');
+    });
     return;
   }
   const firstTop = cards[0].offsetTop;
@@ -100,8 +121,23 @@ function updateProjectFold() {
   });
 }
 
+function updateProjectView() {
+  if (!grid || !gridShell) return;
+  const copy = viewLabels[window.SITE_LANG || 'en'];
+  gridShell.classList.toggle('is-list',projectView === 'list');
+  if (projectViewSwitch) {
+    projectViewSwitch.hidden = false;
+    projectViewSwitch.setAttribute('aria-label',copy.group);
+  }
+  projectViewButtons.forEach(button => {
+    button.setAttribute('aria-pressed',String(button.dataset.projectView === projectView));
+    button.querySelector('span').textContent = copy[button.dataset.projectView];
+  });
+}
+
 function renderProjects() {
   if (!grid || !window.SITE_CONTENT) return;
+  updateProjectView();
   grid.innerHTML = '';
   const query = projectQuery.toLocaleLowerCase();
   const filtered = SITE_CONTENT.projects.map((project,index)=>({project,index})).filter(({project}) => {
@@ -120,7 +156,7 @@ function renderProjects() {
     const card = document.createElement('a');
     card.href = project.url;
     card.className = `project-card project-${project.color}`;
-    card.innerHTML = `<span class="project-count">${String(index+1).padStart(2,'0')}</span><span class="project-icon">${project.code}</span><span class="project-name">${project.name}</span><span class="project-desc">${description}</span><span class="platforms">${project.platforms.map(p=>`<i>${p}</i>`).join('')}</span><span class="project-open">${label('open')}</span>`;
+    card.innerHTML = `<span class="project-count">${String(index+1).padStart(2,'0')}</span><span class="project-icon">${project.code}</span><span class="project-name">${project.name}</span><span class="project-desc">${description}</span><span class="platforms">${project.platforms.map(p=>`<i>${p}</i>`).join('')}</span><span class="project-open" aria-hidden="true">${label('open')}</span>`;
     card.addEventListener('click',event=>{
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
       event.preventDefault();
@@ -132,6 +168,14 @@ function renderProjects() {
   requestAnimationFrame(()=>requestAnimationFrame(updateProjectFold));
 }
 renderProjects();
+projectViewButtons.forEach(button => button.addEventListener('click',()=>{
+  if (projectView === button.dataset.projectView) return;
+  cancelAnimationFrame(projectCollapseFrame);
+  projectView = button.dataset.projectView;
+  updateProjectView();
+  // Keep the query and card expansion state; list mode always shows every match.
+  updateProjectFold();
+}));
 if (projectSearch) projectSearch.addEventListener('input',event=>{
   projectQuery = event.target.value.trim();
   projectsExpanded = false;
@@ -147,7 +191,10 @@ if (projectFoldToggle) projectFoldToggle.addEventListener('click',()=>{
 });
 window.addEventListener('resize',()=>{
   cancelAnimationFrame(projectResizeFrame);
-  projectResizeFrame = requestAnimationFrame(updateProjectFold);
+  projectResizeFrame = requestAnimationFrame(()=>{
+    updateCardScale();
+    updateProjectFold();
+  });
 },{passive:true});
 if (dialog) {
   document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
