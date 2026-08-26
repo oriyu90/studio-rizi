@@ -184,7 +184,7 @@ function projectDirectory(locale) {
   return siteContent.projects.map((project, index) => {
     const description = project.description[locale] || project.description.en;
     const platforms = project.platforms.map(platform => `<i>${escapeHtml(platform)}</i>`).join('');
-    return `<a href="${escapeHtml(project.url)}" class="project-card project-${project.color}"><span class="project-count">${String(index + 1).padStart(2, '0')}</span><span class="project-icon">${escapeHtml(project.code)}</span><span class="project-name">${escapeHtml(project.name)}</span><span class="project-desc">${escapeHtml(description)}</span><span class="platforms">${platforms}</span><span class="project-open" aria-hidden="true">OPEN ↗</span></a>`;
+    return `<a href="${escapeHtml(project.url)}" class="project-card project-${project.color}"><span class="project-count">${String(index + 1).padStart(2, '0')}</span><span class="project-icon">${escapeHtml(project.code)}</span><span class="project-copy"><span class="project-name">${escapeHtml(project.name)}</span><span class="project-desc">${escapeHtml(description)}</span></span><span class="platforms">${platforms}</span><span class="project-open" aria-hidden="true">OPEN ↗</span></a>`;
   }).join('');
 }
 

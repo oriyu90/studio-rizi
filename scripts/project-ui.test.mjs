@@ -6,6 +6,7 @@ import vm from 'node:vm';
 const app = await readFile(new URL('../website/app.js',import.meta.url),'utf8');
 const content = await readFile(new URL('../website/content.js',import.meta.url),'utf8');
 const responsive = await readFile(new URL('../website/responsive.css',import.meta.url),'utf8');
+const generator = await readFile(new URL('./generate-seo-pages.mjs',import.meta.url),'utf8');
 
 test('compact-card styles retain descriptions and decorative labels',()=>{
   assert.doesNotMatch(responsive,/\.project-(?:desc|count|open)\s*\{[^}]*display\s*:\s*none/);
@@ -16,6 +17,13 @@ test('compact-card styles retain descriptions and decorative labels',()=>{
 
 test('card hover keeps the square footprint instead of extending it',()=>{
   assert.match(responsive,/\.project-grid-shell:not\(\.is-list\) \.project-card:hover\{transform:none;box-shadow:inset/);
+});
+
+test('card copy is grouped and vertically centered without changing list layout',()=>{
+  assert.match(app,/class="project-copy"><span class="project-name">/);
+  assert.match(generator,/class="project-copy"><span class="project-name">/);
+  assert.match(responsive,/\.project-grid-shell:not\(\.is-list\) \.project-copy\{[^}]*grid-row:2;align-self:center/);
+  assert.match(responsive,/\.is-list \.project-copy\{display:contents\}/);
 });
 
 // A small DOM fixture tests application state; actual CSS geometry is checked in a browser.

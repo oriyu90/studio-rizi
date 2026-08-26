@@ -164,7 +164,7 @@ function renderProjects() {
     const card = document.createElement('a');
     card.href = project.url;
     card.className = `project-card project-${project.color}`;
-    card.innerHTML = `<span class="project-count">${String(index+1).padStart(2,'0')}</span><span class="project-icon">${project.code}</span><span class="project-name">${project.name}</span><span class="project-desc">${description}</span><span class="platforms">${project.platforms.map(p=>`<i>${p}</i>`).join('')}</span><span class="project-open" aria-hidden="true">${label('open')}</span>`;
+    card.innerHTML = `<span class="project-count">${String(index+1).padStart(2,'0')}</span><span class="project-icon">${project.code}</span><span class="project-copy"><span class="project-name">${project.name}</span><span class="project-desc">${description}</span></span><span class="platforms">${project.platforms.map(p=>`<i>${p}</i>`).join('')}</span><span class="project-open" aria-hidden="true">${label('open')}</span>`;
     card.addEventListener('click',event=>{
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
       event.preventDefault();
