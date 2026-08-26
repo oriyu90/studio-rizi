@@ -90,9 +90,12 @@ function keepProjectToggleInPlace(viewportTop) {
 
 function updateProjectFold() {
   if (!grid || !gridShell || !projectFoldToggle) return;
+  // Measure the grid at its natural height. Constraining the grid itself makes
+  // CSS Grid shrink its row tracks while square cards overflow and overlap.
+  grid.style.maxHeight = 'none';
   const cards = [...grid.querySelectorAll('.project-card')];
   if (!cards.length || projectView === 'list') {
-    grid.style.maxHeight = 'none';
+    gridShell.style.maxHeight = 'none';
     gridShell.classList.remove('has-overflow','is-collapsed');
     projectFoldToggle.hidden = true;
     projectFoldToggle.setAttribute('aria-expanded','false');
@@ -114,7 +117,9 @@ function updateProjectFold() {
   projectFoldToggle.hidden = !hasOverflow;
   projectFoldToggle.setAttribute('aria-expanded',String(hasOverflow && projectsExpanded));
   projectFoldToggle.textContent = projectsExpanded ? viewLabels[window.SITE_LANG || 'en'].collapse : label('showAll');
-  grid.style.maxHeight = hasOverflow ? `${projectsExpanded ? grid.scrollHeight : visibleBottom + 120}px` : 'none';
+  // Clip the outer shell instead of the grid so row sizing stays independent.
+  const expandedHeight = grid.scrollHeight + (Number(projectFoldToggle.offsetHeight) || 52) + 120;
+  gridShell.style.maxHeight = hasOverflow ? `${projectsExpanded ? expandedHeight : visibleBottom + 120}px` : 'none';
   cards.forEach(card => {
     const folded = hasOverflow && !projectsExpanded && card.offsetTop > lastVisibleTop + 2;
     card.tabIndex = folded ? -1 : 0;

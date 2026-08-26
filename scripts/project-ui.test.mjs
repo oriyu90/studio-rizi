@@ -105,9 +105,12 @@ test('portrait density decreases smoothly, with readable lower and landscape upp
 test('list shows all matches and restores the collapsed card view',()=>{
   const f=fixture(), fold=f.elements['#project-fold-toggle'];
   assert.equal(f.grid.children.filter(c=>c.tabIndex===0).length,3);
+  assert.equal(f.grid.style.maxHeight,'none');
+  assert.notEqual(f.shell.style.maxHeight,'none');
   f.switchTo('list');
   assert.ok(fold.hidden);
   assert.equal(f.grid.style.maxHeight,'none');
+  assert.equal(f.shell.style.maxHeight,'none');
   assert.ok(f.grid.children.every(c=>c.tabIndex===0 && c.attributes['aria-hidden']==='false'));
   assert.equal(f.toggle.dataset.nextView,'cards');
   assert.equal(f.toggle.attributes['aria-label'],'カード表示に切り替える');
@@ -117,6 +120,16 @@ test('list shows all matches and restores the collapsed card view',()=>{
   assert.ok(!fold.hidden);
   assert.ok(f.shell.classList.contains('is-collapsed'));
   assert.equal(f.grid.children.filter(c=>c.tabIndex===0).length,3);
+});
+
+test('folding clips the outer shell without constraining square grid rows',()=>{
+  const f=fixture();
+  const collapsedHeight=Number.parseFloat(f.shell.style.maxHeight);
+  assert.equal(f.grid.style.maxHeight,'none');
+  assert.ok(collapsedHeight>0);
+  f.elements['#project-fold-toggle'].fire('click');f.flush();
+  assert.equal(f.grid.style.maxHeight,'none');
+  assert.ok(Number.parseFloat(f.shell.style.maxHeight)>collapsedHeight);
 });
 
 test('expanded cards stay expanded after a round trip through list mode',()=>{
