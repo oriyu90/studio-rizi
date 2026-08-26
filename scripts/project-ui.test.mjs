@@ -5,6 +5,14 @@ import vm from 'node:vm';
 
 const app = await readFile(new URL('../website/app.js',import.meta.url),'utf8');
 const content = await readFile(new URL('../website/content.js',import.meta.url),'utf8');
+const responsive = await readFile(new URL('../website/responsive.css',import.meta.url),'utf8');
+
+test('compact-card styles retain descriptions and decorative labels',()=>{
+  assert.doesNotMatch(responsive,/\.project-(?:desc|count|open)\s*\{[^}]*display\s*:\s*none/);
+  assert.match(responsive,/\.project-desc\{display:-webkit-box/);
+  for(const part of ['count','open']) assert.match(responsive,new RegExp(`\\.project-${part}\\{display:block`));
+  assert.match(responsive,/-webkit-line-clamp:3/);
+});
 
 // A small DOM fixture tests application state; actual CSS geometry is checked in a browser.
 function fixture() {

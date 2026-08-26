@@ -1,30 +1,40 @@
 /* A square's side, not a fixed card height, determines archive density. */
 .project-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,calc(clamp(260px,24vw,400px) * var(--card-scale))),1fr))}
-.project-card{aspect-ratio:1;min-height:0;padding:clamp(12px,1.7vw,28px);container-type:inline-size;justify-content:flex-start}
-.project-count{display:none}
-.project-icon{flex-shrink:0;width:28px;height:28px;margin:0 0 8px;font-size:13px}
+.project-card{aspect-ratio:1;min-height:0;padding:clamp(8px,1.3vw,24px);container-type:inline-size}
+/* Every card retains its description and decorations, including small squares. */
+.project-grid-shell:not(.is-list) .project-card{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto auto minmax(0,1fr) auto;gap:clamp(4px,.65vw,12px);align-items:start}
+.project-grid-shell:not(.is-list) .project-count{display:block;grid-column:2;grid-row:1;align-self:center;font-size:11px;letter-spacing:.08em}
+.project-grid-shell:not(.is-list) .project-icon{grid-column:1;grid-row:1}
+.project-grid-shell:not(.is-list) .project-name{grid-column:1/-1;grid-row:2}
+.project-grid-shell:not(.is-list) .project-desc{grid-column:1/-1;grid-row:3;min-height:0}
+.project-grid-shell:not(.is-list) .platforms{grid-column:1/-1;grid-row:4;margin:0;padding:0}
+.project-grid-shell:not(.is-list) .project-open{display:block;grid-column:3;grid-row:1;position:static;align-self:center;justify-self:end;white-space:nowrap;font-size:11px;padding-bottom:2px}
+.project-icon{width:24px;height:24px;margin:0;font-size:12px}
 .project-name{font-size:14px;line-height:1.25;letter-spacing:-.03em;max-width:100%}
-.project-desc{display:none}
+.project-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin:0;max-height:4.05em;font-size:12px;line-height:1.35}
 .project-card .platforms{margin-top:auto;padding-top:8px;gap:4px}
-.project-card .platforms i{font-size:11px;line-height:1.3;letter-spacing:0;padding:2px 4px}
+.project-card .platforms i{font-size:11px;line-height:1.2;letter-spacing:0;padding:1px 2px}
 .project-open{top:16px;right:16px;font-size:11px}
 @supports(container-type:inline-size){
-  .project-icon{width:clamp(28px,17cqi,64px);height:clamp(28px,17cqi,64px);font-size:clamp(13px,5cqi,22px);margin-bottom:clamp(8px,3cqi,16px)}
+  .project-icon{width:clamp(24px,17cqi,64px);height:clamp(24px,17cqi,64px);font-size:clamp(12px,5cqi,22px)}
   .project-name{font-size:clamp(14px,8cqi,32px)}
-  @container(max-width:220px){.project-open{display:none}}
+  .project-desc{font-size:clamp(12px,4cqi,16px)}
+  @container(max-width:150px){
+    .project-icon{width:24px;height:24px;font-size:11px}
+    .project-name{font-size:14px;line-height:1.2}
+    .project-desc{line-height:1.2;max-height:3.6em}
+  }
   @container(min-width:300px){
-    .project-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin:12px 0 0;font-size:clamp(14px,4cqi,16px);line-height:1.5}
     .project-card .platforms i{font-size:12px;padding:4px 6px}
   }
 }
 @media(max-width:599px){
   .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .project-card{padding:clamp(10px,3vw,16px)}
-  .project-open{display:none}
+  .project-card{padding:clamp(8px,2vw,12px)}
 }
 /* List layout is content-driven and never inherits the square aspect ratio. */
 .is-list .project-card{aspect-ratio:auto;container-type:normal;min-height:0}
-.is-list .project-desc{display:block;overflow:visible;font-size:clamp(14px,.9vw,17px);line-height:1.6}
+.is-list .project-desc{display:block;max-height:none;overflow:visible;font-size:clamp(14px,.9vw,17px);line-height:1.6}
 .is-list .project-icon{margin:0;width:48px;height:32px;font-size:14px}
 .is-list .project-name{font-size:clamp(18px,1.4vw,26px)}
 .is-list .project-card .platforms{margin:0;padding:0}
@@ -82,4 +92,10 @@
   .header-tools{gap:8px}
   .header-cta{padding:12px}
 }
-@media(max-width:360px){.project-icon{margin-bottom:6px}.project-name{font-size:14px}.project-card .platforms{padding-top:6px;gap:3px}.project-card .platforms i{padding:2px 3px}}
+@media(max-width:360px){
+  .project-grid-shell:not(.is-list) .project-card{padding:6px;gap:3px}
+  .project-icon{width:24px;height:24px;font-size:11px}
+  .project-name{font-size:14px;line-height:1.2}
+  .project-desc{line-height:1.2;max-height:3.6em}
+  .project-card .platforms{gap:3px}
+}
