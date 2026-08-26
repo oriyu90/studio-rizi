@@ -14,6 +14,10 @@ test('compact-card styles retain descriptions and decorative labels',()=>{
   assert.match(responsive,/-webkit-line-clamp:3/);
 });
 
+test('card hover keeps the square footprint instead of extending it',()=>{
+  assert.match(responsive,/\.project-grid-shell:not\(\.is-list\) \.project-card:hover\{transform:none;box-shadow:inset/);
+});
+
 // A small DOM fixture tests application state; actual CSS geometry is checked in a browser.
 function fixture() {
   class Element {

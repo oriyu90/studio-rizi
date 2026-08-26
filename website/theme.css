@@ -51,7 +51,7 @@ body,.news,.profile-statement,.news-hero,.news-archive{background:var(--surface)
 .projects-art::after{background:var(--art-overlay)}
 .projects-head>p{color:var(--text);text-shadow:none}
 .project-grid,.facts-grid{background:var(--edge)}
-.project-paper{background:var(--surface-card)!important;color:var(--text)!important;--card-extension:var(--surface-card)}
+.project-paper{background:var(--surface-card)!important;color:var(--text)!important}
 .project-green,.project-yellow{color:var(--ink)!important}
 .project-search input{color:var(--text);border-color:var(--text)}
 .project-search input::placeholder{color:var(--muted)}

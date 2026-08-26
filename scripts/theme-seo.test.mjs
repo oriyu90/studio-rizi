@@ -68,7 +68,7 @@ for (const locale of ['','en/','zh/','pt/']) {
       assert.equal(metas.get('twitter:card'),'summary_large_image');
       assert.equal(metas.get('twitter:site'),'@InovateofRIZI');
       assert.equal(metas.get('og:url'),html.match(/<link rel="canonical" href="([^"]+)"/)[1]);
-      assert.ok(html.includes('src="theme.js?v=20260827d"'));
+      assert.ok(html.includes('src="theme.js?v=20260827e"'));
       if(page==='index') alts.add(metas.get('og:image:alt'));
       if(page==='news'){
         const dates=[...html.matchAll(/<time datetime="[^"]+">([^<]+)<\/time>/g)].map(([,date])=>date).sort();
