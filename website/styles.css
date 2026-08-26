@@ -255,6 +255,49 @@ html[lang="ja"] .hero-impact{font-size:1.3em;letter-spacing:-.035em}
 .ticker div{display:flex;width:max-content}
 .ticker span{display:block;padding-right:4em}
 
+/* Keep the hero balanced within its own column, including stacked layouts. */
+.hero{--hero-title-size:clamp(2rem,5.5vw,6.25rem)}
+html[lang="en"] .hero,html[lang="pt"] .hero{--hero-title-size:clamp(1.8rem,4.5vw,5.5rem)}
+.hero-copy{align-items:center;text-align:center}
+.hero-copy>*{max-width:100%}
+.hero-copy .eyebrow{justify-content:center;line-height:1.6}
+.hero-copy .eyebrow span{flex-shrink:0;width:clamp(20px,3vw,38px)}
+.hero-byline{line-height:1.8}
+.hero h1,html[lang="en"] .hero h1,html[lang="pt"] .hero h1{font-size:var(--hero-title-size);width:100%;overflow-wrap:anywhere}
+.hero-prefix,.hero-impact{line-height:calc(1.15em + clamp(4px,.42vw,8px))}
+.hero-lead{max-width:40rem;line-height:1.9}
+.hero-actions{justify-content:center;align-items:center;flex-wrap:wrap;gap:clamp(18px,2.5vw,28px)}
+.hero-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(16px,3vw,42px);margin:0 auto}
+.hero-meta div{text-align:left}
+@media(max-width:900px){
+  .hero{--hero-title-size:clamp(2rem,10vw,6.25rem)}
+  html[lang="en"] .hero,html[lang="pt"] .hero{--hero-title-size:clamp(1.8rem,8vw,5.5rem)}
+}
+/* Viewport-based sizing above remains the fallback for older browsers. */
+@supports(container-type:inline-size){
+  .hero-copy{container-type:inline-size}
+  .hero{--hero-title-size:clamp(2rem,13cqi,6.25rem)}
+  html[lang="en"] .hero,html[lang="pt"] .hero{--hero-title-size:clamp(1.8rem,11cqi,5.5rem)}
+}
+
+/* Badges size to their text; narrow screens put the story on a separate row. */
+.news-list article{grid-template-columns:max-content max-content minmax(0,1fr) 30px;column-gap:clamp(12px,1.5vw,24px)}
+.news-list time{white-space:nowrap}
+.news-list>article>span{display:inline-flex;align-items:center;justify-content:center;justify-self:start;width:max-content;max-width:100%;padding:.5em .9em;line-height:1.3;white-space:nowrap}
+.news-list article>div{min-width:0;overflow-wrap:anywhere}
+.news-filters{flex-wrap:wrap}
+.site-footer{flex-wrap:wrap;padding-top:32px;padding-bottom:32px}
+.site-footer>div{flex-wrap:wrap;align-items:center;gap:12px clamp(16px,2vw,24px);max-width:100%}
+.site-footer>div>a{white-space:nowrap;padding-block:8px}
+@media(max-width:600px){
+  .news-list article{grid-template-columns:max-content minmax(0,1fr) 30px;gap:14px 12px;padding-inline:0}
+  .news-list article>time{grid-column:1;grid-row:1}
+  .news-list article>span{grid-column:2;grid-row:1}
+  .news-list article>div{grid-column:1 / 3;grid-row:2}
+  .news-list article>a,.news-list article>i{grid-column:3;grid-row:1 / 3;align-self:center}
+  .site-footer{padding-top:44px;padding-bottom:44px}
+}
+
 /* Searchable PROJECT archive with a responsive one-row fold */
 .project-search{position:relative;z-index:2;background:#fff;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(20px,4vw,64px);align-items:end;padding-top:clamp(26px,3vw,46px);padding-bottom:clamp(24px,3vw,42px);border-top:1px solid var(--line)}
 .project-search label{display:grid;gap:10px;max-width:760px}

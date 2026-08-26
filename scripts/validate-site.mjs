@@ -130,6 +130,17 @@ for (const page of pageDefinitions) {
     }
     if (!html.includes('rel="alternate" hreflang="x-default"')) failures.push(`${page.name}/${locale.locale}: x-default is missing`);
     if (page.name === 'home') {
+      const footer = html.match(/<footer\b[^>]*>[\s\S]*?<\/footer>/)?.[0] || '';
+      const socialLinks = [...footer.matchAll(/<a\b[^>]*href="(https:[^"]+)"[^>]*>([^<]+)<\/a>/g)]
+        .map(([, url, label]) => ({ url, label }));
+      const expectedSocialLinks = [
+        { url: 'https://x.com/InovateofRIZI', label: 'X' },
+        { url: 'https://kizi.pages.dev/', label: 'KIZI' },
+        { url: 'https://github.com/oriyu90', label: 'GitHub' }
+      ];
+      if (JSON.stringify(socialLinks) !== JSON.stringify(expectedSocialLinks)) {
+        failures.push(`${page.name}/${locale.locale}: footer links must be X / KIZI / GitHub in that order`);
+      }
       for (const project of manifest.projects) {
         if (!html.includes(`href="${project.url}"`)) failures.push(`${page.name}/${locale.locale}: crawlable project link is missing: ${project.name}`);
       }
