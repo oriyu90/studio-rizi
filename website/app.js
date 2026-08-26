@@ -1,5 +1,4 @@
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const darkMode = matchMedia('(prefers-color-scheme: dark)');
 
 function updateCardScale() {
   const ratio = window.innerWidth / Math.max(1,window.innerHeight);
@@ -42,25 +41,24 @@ document.querySelectorAll('.reveal').forEach(el => {
 });
 
 const labels = {
-  ja:{open:'OPEN ↗',project:'PROJECT',visit:'公式サイトへ',related:'関連ページを開く',search:'プロジェクトを検索',showAll:'すべてのプロジェクトを見る ↓',collapse:'1行に折りたたむ ↑',empty:'該当するプロジェクトはありません',count:'{count} PROJECTS',countOne:'1 PROJECT'},
-  en:{open:'OPEN ↗',project:'PROJECT',visit:'Visit website',related:'Open related page',search:'Search projects',showAll:'View all projects ↓',collapse:'Collapse to one row ↑',empty:'No projects found',count:'{count} PROJECTS',countOne:'1 PROJECT'},
-  zh:{open:'打开 ↗',project:'项目',visit:'访问官方网站',related:'打开相关页面',search:'搜索项目',showAll:'查看全部项目 ↓',collapse:'收起为一行 ↑',empty:'没有符合条件的项目',count:'{count} 个项目'},
-  pt:{open:'ABRIR ↗',project:'PROJETO',visit:'Visitar site',related:'Abrir página relacionada',search:'Buscar projetos',showAll:'Ver todos os projetos ↓',collapse:'Recolher para uma linha ↑',empty:'Nenhum projeto encontrado',count:'{count} PROJETOS',countOne:'1 PROJETO'}
+  ja:{open:'OPEN ↗',project:'PROJECT',visit:'公式サイトへ',related:'関連ページを開く',search:'プロジェクトを検索',showAll:'すべてのプロジェクトを見る ↓',empty:'該当するプロジェクトはありません',count:'{count} PROJECTS',countOne:'1 PROJECT'},
+  en:{open:'OPEN ↗',project:'PROJECT',visit:'Visit website',related:'Open related page',search:'Search projects',showAll:'View all projects ↓',empty:'No projects found',count:'{count} PROJECTS',countOne:'1 PROJECT'},
+  zh:{open:'打开 ↗',project:'项目',visit:'访问官方网站',related:'打开相关页面',search:'搜索项目',showAll:'查看全部项目 ↓',empty:'没有符合条件的项目',count:'{count} 个项目'},
+  pt:{open:'ABRIR ↗',project:'PROJETO',visit:'Visitar site',related:'Abrir página relacionada',search:'Buscar projetos',showAll:'Ver todos os projetos ↓',empty:'Nenhum projeto encontrado',count:'{count} PROJETOS',countOne:'1 PROJETO'}
 };
 const label = key => labels[window.SITE_LANG || 'en'][key];
 const viewLabels = {
-  ja:{group:'プロジェクトの表示方法',cards:'カード',list:'リスト'},
-  en:{group:'Project view',cards:'Cards',list:'List'},
-  zh:{group:'项目显示方式',cards:'卡片',list:'列表'},
-  pt:{group:'Visualização dos projetos',cards:'Cartões',list:'Lista'}
+  ja:{cards:'カード表示に切り替える',list:'リスト表示に切り替える',collapse:'折りたたむ ↑'},
+  en:{cards:'Switch to card view',list:'Switch to list view',collapse:'Show fewer projects ↑'},
+  zh:{cards:'切换为卡片视图',list:'切换为列表视图',collapse:'收起项目 ↑'},
+  pt:{cards:'Mudar para cartões',list:'Mudar para lista',collapse:'Mostrar menos projetos ↑'}
 };
 const grid = document.querySelector('#project-grid');
 const gridShell = document.querySelector('#project-grid-shell');
 const projectSearch = document.querySelector('#project-search-input');
 const projectSearchCount = document.querySelector('#project-search-count');
 const projectFoldToggle = document.querySelector('#project-fold-toggle');
-const projectViewSwitch = document.querySelector('.project-view-switch');
-const projectViewButtons = [...document.querySelectorAll('[data-project-view]')];
+const projectViewToggle = document.querySelector('#project-view-toggle');
 const dialog = document.querySelector('#project-dialog');
 let projectQuery = '';
 let projectsExpanded = false;
@@ -104,18 +102,21 @@ function updateProjectFold() {
     });
     return;
   }
-  const firstTop = cards[0].offsetTop;
-  const firstRow = cards.filter(card => Math.abs(card.offsetTop - firstTop) < 2);
-  const firstRowBottom = Math.max(...firstRow.map(card => card.offsetTop + card.offsetHeight));
-  const hasOverflow = cards.some(card => card.offsetTop > firstTop + 2);
+  const ratio = window.innerWidth / Math.max(1,window.innerHeight);
+  const visibleRowCount = ratio <= .75 ? 3 : ratio <= 1.15 ? 2 : 1;
+  const rowTops = [...new Set(cards.map(card => card.offsetTop))].sort((a,b)=>a-b);
+  const lastVisibleTop = rowTops[Math.min(visibleRowCount,rowTops.length)-1];
+  const visibleCards = cards.filter(card => card.offsetTop <= lastVisibleTop + 2);
+  const visibleBottom = Math.max(...visibleCards.map(card => card.offsetTop + card.offsetHeight));
+  const hasOverflow = cards.some(card => card.offsetTop > lastVisibleTop + 2);
   gridShell.classList.toggle('has-overflow',hasOverflow);
   gridShell.classList.toggle('is-collapsed',hasOverflow && !projectsExpanded);
   projectFoldToggle.hidden = !hasOverflow;
   projectFoldToggle.setAttribute('aria-expanded',String(hasOverflow && projectsExpanded));
-  projectFoldToggle.textContent = projectsExpanded ? label('collapse') : label('showAll');
-  grid.style.maxHeight = hasOverflow ? `${projectsExpanded ? grid.scrollHeight : firstRowBottom + 120}px` : 'none';
+  projectFoldToggle.textContent = projectsExpanded ? viewLabels[window.SITE_LANG || 'en'].collapse : label('showAll');
+  grid.style.maxHeight = hasOverflow ? `${projectsExpanded ? grid.scrollHeight : visibleBottom + 120}px` : 'none';
   cards.forEach(card => {
-    const folded = hasOverflow && !projectsExpanded && card.offsetTop > firstTop + 2;
+    const folded = hasOverflow && !projectsExpanded && card.offsetTop > lastVisibleTop + 2;
     card.tabIndex = folded ? -1 : 0;
     card.setAttribute('aria-hidden',String(folded));
   });
@@ -125,14 +126,16 @@ function updateProjectView() {
   if (!grid || !gridShell) return;
   const copy = viewLabels[window.SITE_LANG || 'en'];
   gridShell.classList.toggle('is-list',projectView === 'list');
-  if (projectViewSwitch) {
-    projectViewSwitch.hidden = false;
-    projectViewSwitch.setAttribute('aria-label',copy.group);
+  if (projectViewToggle) {
+    const nextView = projectView === 'cards' ? 'list' : 'cards';
+    projectViewToggle.hidden = false;
+    projectViewToggle.dataset.nextView = nextView;
+    projectViewToggle.setAttribute('aria-label',copy[nextView]);
+    projectViewToggle.setAttribute('title',copy[nextView]);
+    projectViewToggle.querySelectorAll('[data-view-icon]').forEach(icon => {
+      icon.toggleAttribute('hidden',icon.dataset.viewIcon !== nextView);
+    });
   }
-  projectViewButtons.forEach(button => {
-    button.setAttribute('aria-pressed',String(button.dataset.projectView === projectView));
-    button.querySelector('span').textContent = copy[button.dataset.projectView];
-  });
 }
 
 function renderProjects() {
@@ -168,14 +171,13 @@ function renderProjects() {
   requestAnimationFrame(()=>requestAnimationFrame(updateProjectFold));
 }
 renderProjects();
-projectViewButtons.forEach(button => button.addEventListener('click',()=>{
-  if (projectView === button.dataset.projectView) return;
+projectViewToggle?.addEventListener('click',()=>{
   cancelAnimationFrame(projectCollapseFrame);
-  projectView = button.dataset.projectView;
+  projectView = projectView === 'cards' ? 'list' : 'cards';
   updateProjectView();
   // Keep the query and card expansion state; list mode always shows every match.
   updateProjectFold();
-}));
+});
 if (projectSearch) projectSearch.addEventListener('input',event=>{
   projectQuery = event.target.value.trim();
   projectsExpanded = false;
@@ -212,7 +214,7 @@ function renderNews(filter=activeNewsFilter) {
   items.forEach(item=>{
     const title=window.siteText(item.title), summary=window.siteText(item.summary);
     const article=document.createElement('article');
-    article.innerHTML=`<time>${item.date}</time><span>${item.tag}</span><div><h3>${title}</h3>${summary?`<p>${summary}</p>`:''}</div>${item.url?`<a href="${item.url}" target="_blank" rel="noreferrer" aria-label="${title}: ${label('related')}">↗</a>`:'<i>—</i>'}`;
+    article.innerHTML=`<time datetime="${item.date.replaceAll('.','-')}">${item.date}</time><span>${item.tag}</span><div><h3>${title}</h3>${summary?`<p>${summary}</p>`:''}</div>${item.url?`<a href="${item.url}" target="_blank" rel="noreferrer" aria-label="${title}: ${label('related')}">↗</a>`:'<i>—</i>'}`;
     newsList.append(article);
   });
   document.querySelector('.news-empty')?.toggleAttribute('hidden',items.length>0);

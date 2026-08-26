@@ -130,11 +130,11 @@ for (const page of pageDefinitions) {
     }
     if (!html.includes('rel="alternate" hreflang="x-default"')) failures.push(`${page.name}/${locale.locale}: x-default is missing`);
     if (page.name === 'home') {
-      for (const view of ['cards','list']) {
-        if (!html.includes(`data-project-view="${view}" aria-controls="project-grid" aria-pressed="${view === 'cards'}"`)) {
-          failures.push(`${page.name}/${locale.locale}: accessible ${view} view switch is missing`);
-        }
+      const toggles = html.match(/<button\b[^>]*id="project-view-toggle"[^>]*>/g) || [];
+      if (toggles.length !== 1 || !toggles[0].includes('data-next-view="list"') || !toggles[0].includes('aria-controls="project-grid"') || !toggles[0].includes('aria-label="')) {
+        failures.push(`${page.name}/${locale.locale}: single accessible next-view toggle is missing`);
       }
+      for (const view of ['cards','list']) if (!html.includes(`data-view-icon="${view}"`)) failures.push(`${page.name}/${locale.locale}: ${view} icon is missing`);
       const footer = html.match(/<footer\b[^>]*>[\s\S]*?<\/footer>/)?.[0] || '';
       const socialLinks = [...footer.matchAll(/<a\b[^>]*href="(https:[^"]+)"[^>]*>([^<]+)<\/a>/g)]
         .map(([, url, label]) => ({ url, label }));

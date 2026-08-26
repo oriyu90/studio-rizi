@@ -4,7 +4,6 @@
   const requested = params.get('lang')?.toLowerCase().split('-')[0];
   const pathLocale = location.pathname.match(/^\/(en|zh|pt)(?:\/|$)/)?.[1];
   const declaredLocale = document.documentElement.dataset.siteLanguage;
-  if(params.get('theme')==='light') document.documentElement.dataset.theme='light';
   const detected = (pathLocale || (supported.includes(requested) ? requested : declaredLocale || (navigator.languages || [navigator.language || 'en'])
     .map(value => value.toLowerCase().split('-')[0])
     .find(value => supported.includes(value)))) || 'ja';
@@ -63,7 +62,6 @@
     });
     const page=document.body.classList.contains('profile-page')?'profile':document.body.classList.contains('news-page')?'news':'home';
     const t=pages[page][window.SITE_LANG];
-    if(document.documentElement.dataset.theme==='light') document.querySelectorAll('source[media*="prefers-color-scheme: dark"]').forEach(source=>source.media='not all');
     if(page==='home'){
       html('.hero h1',t.hero);html('.hero-lead',t.lead);html('.hero-actions .button',t.projects);html('.hero-actions .text-link',t.profile);
       document.querySelectorAll('.jump-card h2').forEach((n,i)=>n.innerHTML=t.j[i]);html('.projects-head h2',t.ptitle);text('.projects-head>p',t.plead);text('.section-title h2',t.news);html('.news-more',t.all);html('.closing h2',t.closing);

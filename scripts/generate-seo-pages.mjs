@@ -11,6 +11,12 @@ const locales = ['ja', 'en', 'zh', 'pt'];
 const languageTags = { ja: 'ja', en: 'en', zh: 'zh-Hans', pt: 'pt' };
 const htmlLanguages = { ja: 'ja', en: 'en', zh: 'zh-CN', pt: 'pt' };
 const ogLocales = { ja: 'ja_JP', en: 'en_US', zh: 'zh_CN', pt: 'pt_BR' };
+const socialImageAlt = {
+  ja:'黄緑と黒の立体図形。「世界をもっと、便利に面白く」とYUKI ORITAの文字。',
+  en:'Lime and black geometric forms with YUKI ORITA and a Japanese slogan meaning “Make the world more useful and interesting.”',
+  zh:'黄绿色与黑色的立体图形，配有 YUKI ORITA 和意为“让世界更加便利、更加有趣”的日文标语。',
+  pt:'Formas geométricas em verde-lima e preto, YUKI ORITA e um lema em japonês: “Um mundo mais prático e interessante.”'
+};
 
 const contentSource = await readFile(path.join(publicRoot, 'content.js'), 'utf8');
 const context = { window: {} };
@@ -231,6 +237,10 @@ function localizePage(source, page, locale) {
   html = html.replace(/(?:\s*<meta property="og:locale:alternate" content="[^"]+">)+/, locales.filter(target => target !== locale).map(target => `\n  <meta property="og:locale:alternate" content="${ogLocales[target]}">`).join(''));
   html = replaceMeta(html, 'twitter:title', seo.ogTitle);
   html = replaceMeta(html, 'twitter:description', seo.ogDescription);
+  html = replaceMeta(html, 'og:image:alt', socialImageAlt[locale]);
+  html = replaceMeta(html, 'twitter:image:alt', socialImageAlt[locale]);
+  if (!html.includes('property="og:image:type"')) html = html.replace('</head>','  <meta property="og:image:type" content="image/png">\n</head>');
+  if (!html.includes('name="twitter:site"')) html = html.replace('</head>','  <meta name="twitter:site" content="@InovateofRIZI">\n</head>');
   html = html.replace(/<link rel="canonical" href="[^"]+">/, `<link rel="canonical" href="${origin}${pagePath(page, locale)}">`);
   html = replaceGeneratedRegion(html, 'seo-alternates', alternates(page));
   html = replaceGeneratedRegion(html, 'language-switcher', languageSwitcher(page, locale));
@@ -245,21 +255,18 @@ function localizePage(source, page, locale) {
   html = html.replace(/<base href="[^"]+">/, '<base href="/">');
   html = replaceGeneratedRegion(html, 'language-switcher', languageSwitcher(page, locale));
   if (page === 'home') {
-    const viewCopy = {
-      ja:['プロジェクトの表示方法','カード','リスト'],
-      en:['Project view','Cards','List'],
-      zh:['项目显示方式','卡片','列表'],
-      pt:['Visualização dos projetos','Cartões','Lista']
-    }[locale];
-    html = html.replace('aria-label="プロジェクトの表示方法"',`aria-label="${viewCopy[0]}"`)
-      .replace('<span>カード</span>',`<span>${viewCopy[1]}</span>`)
-      .replace('<span>リスト</span>',`<span>${viewCopy[2]}</span>`);
+    const viewCopy = {ja:'リスト表示に切り替える',en:'Switch to list view',zh:'切换为列表视图',pt:'Mudar para lista'}[locale];
+    html = html.replaceAll('リスト表示に切り替える',viewCopy);
     html = replaceGeneratedRegion(html, 'project-directory', projectDirectory(locale));
     html = replaceGeneratedRegion(html, 'news-directory', newsDirectory(locale, 3));
     html = html.replace(/(<script type="application\/ld\+json" id="project-directory-schema">)[\s\S]*?(<\/script>)/, `$1\n${projectListSchema(locale)}\n  $2`);
     html = html.replace('"inLanguage": "ja"', `"inLanguage": "${languageTags[locale]}"`);
   }
-  if (page === 'news') html = replaceGeneratedRegion(html, 'news-directory', newsDirectory(locale));
+  if (page === 'news') {
+    html = replaceGeneratedRegion(html, 'news-directory', newsDirectory(locale));
+    const latest = siteContent.news.map(item=>item.date).sort().at(-1);
+    html = html.replace(/(<span>LATEST<\/span><b>)[^<]*(<\/b>)/,`$1${latest}$2`);
+  }
   if (page === 'profile') {
     html = html.replaceAll(`${origin}/profile#profile-page`, `${origin}${pagePath(page, locale)}#profile-page`);
     html = html.replace(`"url": "${origin}/profile"`, `"url": "${origin}${pagePath(page, locale)}"`);

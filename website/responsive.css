@@ -1,0 +1,85 @@
+/* A square's side, not a fixed card height, determines archive density. */
+.project-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,calc(clamp(260px,24vw,400px) * var(--card-scale))),1fr))}
+.project-card{aspect-ratio:1;min-height:0;padding:clamp(12px,1.7vw,28px);container-type:inline-size;justify-content:flex-start}
+.project-count{display:none}
+.project-icon{flex-shrink:0;width:28px;height:28px;margin:0 0 8px;font-size:13px}
+.project-name{font-size:14px;line-height:1.25;letter-spacing:-.03em;max-width:100%}
+.project-desc{display:none}
+.project-card .platforms{margin-top:auto;padding-top:8px;gap:4px}
+.project-card .platforms i{font-size:11px;line-height:1.3;letter-spacing:0;padding:2px 4px}
+.project-open{top:16px;right:16px;font-size:11px}
+@supports(container-type:inline-size){
+  .project-icon{width:clamp(28px,17cqi,64px);height:clamp(28px,17cqi,64px);font-size:clamp(13px,5cqi,22px);margin-bottom:clamp(8px,3cqi,16px)}
+  .project-name{font-size:clamp(14px,8cqi,32px)}
+  @container(max-width:220px){.project-open{display:none}}
+  @container(min-width:300px){
+    .project-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin:12px 0 0;font-size:clamp(14px,4cqi,16px);line-height:1.5}
+    .project-card .platforms i{font-size:12px;padding:4px 6px}
+  }
+}
+@media(max-width:599px){
+  .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .project-card{padding:clamp(10px,3vw,16px)}
+  .project-open{display:none}
+}
+/* List layout is content-driven and never inherits the square aspect ratio. */
+.is-list .project-card{aspect-ratio:auto;container-type:normal;min-height:0}
+.is-list .project-desc{display:block;overflow:visible;font-size:clamp(14px,.9vw,17px);line-height:1.6}
+.is-list .project-icon{margin:0;width:48px;height:32px;font-size:14px}
+.is-list .project-name{font-size:clamp(18px,1.4vw,26px)}
+.is-list .project-card .platforms{margin:0;padding:0}
+.is-list .project-open{display:block;font-size:0}
+.is-list .project-card .platforms i{font-size:12px}
+.project-view-toggle{display:inline-grid;place-items:center;width:46px;height:46px;padding:10px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.project-view-toggle:hover{background:var(--yellow);color:var(--ink)}
+.project-view-toggle:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.project-view-toggle svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6}
+.project-view-toggle[hidden],.project-view-toggle svg[hidden]{display:none}
+.project-search{column-gap:24px}
+.project-search-tools{flex-direction:row;align-items:center;gap:18px}
+.project-search output{font-size:12px;letter-spacing:.06em}
+@media(max-width:700px){.project-view-toggle{margin-left:auto}}
+
+/* Readable minimums and reflow; utility labels do not shrink below 11px. */
+.hero-byline,.eyebrow,.locale-indicator,.hero-meta dt,.jump-card p,.jump-no,
+.project-search label>span,.profile-index,.profile-statement>p,.fact span,.social-strip span,
+.method-title>p,.archive-head>div>p,.method-list li>span,.news-hero-art span,
+.closing>p,.news-contact p,.ticker,.float-two span{font-size:clamp(11px,.75vw,14px)}
+.hero-meta dd,.site-footer a,.site-footer p,.portrait figcaption,.fact small{font-size:clamp(12px,.85vw,16px)}
+.news-list time,.news-list>article>span,.news-filters button{font-size:clamp(12px,.85vw,15px)}
+.hero-lead,.profile-title>p:last-child,.news-hero-copy>p:last-child,.projects-head>p,
+.method-list p,.profile-statement>div p,.news-list article p{font-size:clamp(14px,1vw,19px)}
+.pill,.text-link,.button,.news-more,.language-switcher>div a{font-size:clamp(14px,.9vw,17px)}
+.site-header nav{font-size:clamp(13px,.9vw,16px);gap:clamp(18px,3vw,48px)}
+.locale-indicator{display:grid;min-width:44px;height:44px}
+.language-switcher>div a{min-height:44px}
+.site-footer>div>a{min-height:44px;display:inline-flex;align-items:center}
+.news-filters button{min-height:44px}
+.news-list article{grid-template-columns:max-content max-content minmax(0,1fr) 44px}
+.news-list article>a{width:44px;height:44px}
+.profile-title h1{font-size:clamp(32px,6vw,100px);overflow-wrap:anywhere}
+.projects h2,.section-title h2,.news-hero h1,.archive-head h2,.method-title h2,.closing h2,.news-contact h2{overflow-wrap:anywhere}
+.hero-actions .button,.news-contact .button{max-width:100%;gap:16px}
+.profile-statement>div{min-width:0}
+.project-dialog{max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain}
+#dialog-content{padding:clamp(24px,5vw,56px)}
+.dialog-close{position:sticky;display:block;margin:0 0 -44px auto;right:0;top:0;z-index:1;min-width:44px;min-height:44px;border-radius:0}
+.project-dialog h2{font-size:clamp(28px,6vw,60px);overflow-wrap:anywhere}
+.project-dialog p{font-size:12px}
+.project-dialog .button{margin-top:24px;gap:16px;max-width:100%}
+.project-dialog .platforms i{font-size:12px}
+.jump-card{display:flex;flex-direction:column;justify-content:flex-end;height:auto;min-height:max(240px,calc(clamp(340px,38vw,530px) * var(--card-scale)));padding:calc(42px + var(--jump-inset) * 2) var(--jump-inset) var(--jump-inset)}
+.jump-card>.theme-art,.jump-card>img{position:absolute;inset:0}
+.jump-card>div{position:relative;inset:auto}
+.news-hero{min-height:0;padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px)}
+@media(max-width:900px){.hero-visual{min-height:0;height:clamp(260px,60vw,540px)}}
+@media(max-width:600px){
+  .news-list article{grid-template-columns:max-content minmax(0,1fr) 44px}
+  .news-list article p{display:block}
+  .hero-copy{padding-top:48px;padding-bottom:40px;min-height:0}
+  .hero-actions{margin:22px 0 36px}
+  .site-header{gap:8px}
+  .header-tools{gap:8px}
+  .header-cta{padding:12px}
+}
+@media(max-width:360px){.project-icon{margin-bottom:6px}.project-name{font-size:14px}.project-card .platforms{padding-top:6px;gap:3px}.project-card .platforms i{padding:2px 3px}}

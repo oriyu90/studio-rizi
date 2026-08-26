@@ -20,12 +20,12 @@
   <meta property="og:image" content="https://studio-rizi.pages.dev/assets/og-v2.png">
   <meta property="og:image:width" content="1730">
   <meta property="og:image:height" content="909">
-  <meta property="og:image:alt" content="YUKI ORITA — 让世界更加便利、更加有趣">
+  <meta property="og:image:alt" content="黄绿色与黑色的立体图形，配有 YUKI ORITA 和意为“让世界更加便利、更加有趣”的日文标语。">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Studio RIZI — 折田悠希的官方作品集">
   <meta name="twitter:description" content="让世界更加便利、更加有趣。查看折田悠希开发的应用、文章与开源项目。">
   <meta name="twitter:image" content="https://studio-rizi.pages.dev/assets/og-v2.png">
-  <meta name="twitter:image:alt" content="YUKI ORITA — 让世界更加便利、更加有趣">
+  <meta name="twitter:image:alt" content="黄绿色与黑色的立体图形，配有 YUKI ORITA 和意为“让世界更加便利、更加有趣”的日文标语。">
   <link rel="canonical" href="https://studio-rizi.pages.dev/zh/">
   <!-- seo-alternates:start -->
   <link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/">
@@ -39,10 +39,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <title>Studio RIZI — 折田悠希（Yuki Orita）的官方作品集</title>
-  <link rel="stylesheet" href="styles.css?v=20260827b">
-  <script src="i18n.js?v=20260827b" defer></script>
-  <script src="content.js?v=20260827b" defer></script>
-  <script src="app.js?v=20260827b" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260827c">
+  <link rel="stylesheet" href="responsive.css?v=20260827c">
+  <link rel="stylesheet" href="theme.css?v=20260827c">
+  <script src="i18n.js?v=20260827c" defer></script>
+  <script src="content.js?v=20260827c" defer></script>
+  <script src="app.js?v=20260827c" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -166,6 +168,9 @@
   ]
 }
   </script>
+<script src="theme.js?v=20260827c"></script>
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:site" content="@InovateofRIZI">
 </head>
 <body>
   <div class="intro" aria-hidden="true">
@@ -226,10 +231,10 @@
         <label for="project-search-input"><span>SEARCH PROJECTS</span><input id="project-search-input" type="search" autocomplete="off" placeholder="搜索项目"></label>
         <div class="project-search-tools">
           <output id="project-search-count" for="project-search-input" aria-live="polite"></output>
-          <div class="project-view-switch" role="group" aria-label="项目显示方式" hidden>
-            <button type="button" data-project-view="cards" aria-controls="project-grid" aria-pressed="true"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 2h6v6H2zM12 2h6v6h-6zM2 12h6v6H2zM12 12h6v6h-6z"/></svg><span>卡片</span></button>
-            <button type="button" data-project-view="list" aria-controls="project-grid" aria-pressed="false"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 4h2M8 4h10M2 10h2M8 10h10M2 16h2M8 16h10"/></svg><span>列表</span></button>
-          </div>
+          <button class="project-view-toggle" id="project-view-toggle" type="button" data-next-view="list" aria-controls="project-grid" aria-label="切换为列表视图" title="切换为列表视图" hidden>
+            <svg data-view-icon="list" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 4h2M8 4h10M2 10h2M8 10h10M2 16h2M8 16h10"/></svg>
+            <svg data-view-icon="cards" viewBox="0 0 20 20" aria-hidden="true" focusable="false" hidden><path d="M2 2h6v6H2zM12 2h6v6h-6zM2 12h6v6H2zM12 12h6v6h-6z"/></svg>
+          </button>
         </div>
       </div>
       <div class="project-grid-shell" id="project-grid-shell">

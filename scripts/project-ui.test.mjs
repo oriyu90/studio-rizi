@@ -25,6 +25,7 @@ function fixture() {
     set innerHTML(value) { this.html=value; this.children=[]; }
     get innerHTML() { return this.html || ''; }
     setAttribute(key,value) { this.attributes[key]=value; }
+    toggleAttribute(key,on) { if(on)this.attributes[key]='';else delete this.attributes[key]; }
     addEventListener(key,handler) { this.events[key]=handler; }
     fire(key,event={}) { this.events[key]?.({target:this,...event}); }
     querySelector() { return this.label; }
@@ -36,24 +37,24 @@ function fixture() {
     showModal() { this.open=true; }
     close() { this.open=false; }
   }
-  const selectors = ['#project-grid','#project-grid-shell','#project-search-input','#project-search-count','#project-fold-toggle','.project-view-switch','#project-dialog','#dialog-content','.dialog-close'];
+  const selectors = ['#project-grid','#project-grid-shell','#project-search-input','#project-search-count','#project-fold-toggle','#project-view-toggle','#project-dialog','#dialog-content','.dialog-close'];
   const elements = Object.fromEntries(selectors.map(key=>[key,new Element()]));
   const grid=elements['#project-grid'], shell=elements['#project-grid-shell'];
-  const buttons=['cards','list'].map(view=>{
-    const button=new Element();
-    button.dataset.projectView=view;
-    button.label=new Element();
-    return button;
+  const toggle=elements['#project-view-toggle'];
+  toggle.children=['cards','list'].map(view=>{
+    const icon=new Element();
+    icon.dataset.viewIcon=view;
+    return icon;
   });
   const root=new Element(), frames=[], events={};
   const win={innerWidth:1200,innerHeight:800,SITE_LANG:'ja',addEventListener:(key,handler)=>{events[key]=handler;},scrollBy(){}};
   win.siteText=value=>typeof value==='string' ? value : value[win.SITE_LANG];
-  const columns=()=>shell.classList.contains('is-list') || win.innerWidth<=600 ? 1 : win.innerWidth<=900 ? 2 : 3;
+  const columns=()=>shell.classList.contains('is-list') ? 1 : win.innerWidth<600 ? 2 : 3;
   Object.defineProperty(grid,'scrollHeight',{get:()=>Math.ceil(grid.children.length/columns())*120});
   const document={
     documentElement:root,
     querySelector:key=>elements[key] || null,
-    querySelectorAll:key=>key==='[data-project-view]' ? buttons : [],
+    querySelectorAll:()=>[],
     createElement:()=>{
       const card=new Element();
       Object.defineProperties(card,{
@@ -72,8 +73,8 @@ function fixture() {
   vm.runInContext(app,context);
   const flush=()=>{let budget=30;while(frames.length && budget--)frames.shift()(clock+=1000);assert.ok(budget>0,'animation queue settles');};
   flush();
-  return {elements,grid,shell,buttons,win,root,events,flush,
-    switchTo:view=>{buttons.find(b=>b.dataset.projectView===view).fire('click');flush();},
+  return {elements,grid,shell,toggle,win,root,events,flush,
+    switchTo:view=>{if(toggle.dataset.nextView===view)toggle.fire('click');flush();},
     search:query=>{elements['#project-search-input'].value=query;elements['#project-search-input'].fire('input');flush();}};
 }
 
@@ -96,7 +97,10 @@ test('list shows all matches and restores the collapsed card view',()=>{
   assert.ok(fold.hidden);
   assert.equal(f.grid.style.maxHeight,'none');
   assert.ok(f.grid.children.every(c=>c.tabIndex===0 && c.attributes['aria-hidden']==='false'));
-  assert.equal(f.buttons[1].attributes['aria-pressed'],'true');
+  assert.equal(f.toggle.dataset.nextView,'cards');
+  assert.equal(f.toggle.attributes['aria-label'],'カード表示に切り替える');
+  assert.ok('hidden' in f.toggle.children.find(i=>i.dataset.viewIcon==='list').attributes);
+  assert.ok(!('hidden' in f.toggle.children.find(i=>i.dataset.viewIcon==='cards').attributes));
   f.switchTo('cards');
   assert.ok(!fold.hidden);
   assert.ok(f.shell.classList.contains('is-collapsed'));
@@ -109,6 +113,14 @@ test('expanded cards stay expanded after a round trip through list mode',()=>{
   f.switchTo('list');f.switchTo('cards');
   assert.equal(f.elements['#project-fold-toggle'].attributes['aria-expanded'],'true');
   assert.ok(f.grid.children.every(c=>c.tabIndex===0));
+});
+
+test('portrait cards expose three rows, square windows two, and landscape one',()=>{
+  const f=fixture();
+  for(const [height,visible] of [[1600,9],[1200,6],[800,3]]){
+    f.win.innerHeight=height;f.events.resize();f.flush();
+    assert.equal(f.grid.children.filter(card=>card.tabIndex===0).length,visible);
+  }
 });
 
 test('search, no-results, and resizing work in either view without losing the query',()=>{
@@ -127,15 +139,15 @@ test('search, no-results, and resizing work in either view without losing the qu
   assert.ok(f.elements['#project-fold-toggle'].hidden);
   f.search('');
   assert.equal(f.grid.children.length,f.win.SITE_CONTENT.projects.length);
-  assert.equal(f.grid.children.filter(c=>c.tabIndex===0).length,1);
+  assert.equal(f.grid.children.filter(c=>c.tabIndex===0).length,6);
 });
 
 test('language changes retain list mode and localize the switch',()=>{
   const f=fixture();
   f.switchTo('list');f.search('Tango');
   f.win.SITE_LANG='pt';f.events['site-language-change']();f.flush();
-  assert.equal(f.buttons[0].label.textContent,'Cartões');
-  assert.equal(f.buttons[1].label.textContent,'Lista');
+  assert.equal(f.toggle.attributes['aria-label'],'Mudar para cartões');
+  assert.equal(f.toggle.attributes.title,'Mudar para cartões');
   assert.ok(f.shell.classList.contains('is-list'));
   assert.equal(f.grid.children.length,1);
 });
