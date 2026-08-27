@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humi — 平铺式 macOS 终端工作区</title>
+<meta name="description" content="Humi 是一款 macOS 应用，把多个终端会话作为图块并排放在同一个窗口里。按下 + 选择文件夹，会话就在该文件夹中启动，以图块显示。内置模拟器（SwiftTerm）。开发者：折田悠希（Yuki Orita / Yuki_Orita / oriyu90）。MIT 许可的免费开源软件，已在 GitHub 公开。">
+<meta name="keywords" content="Humi,折田悠希,Yuki Orita,Yuki_Orita,oriyu90,github,macOS,终端,平铺终端,SwiftTerm,终端复用,开发者工具">
+<meta name="author" content="折田悠希 (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/humi/zh/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/humi/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/humi/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/humi/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/humi/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/humi/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Humi">
+<meta property="og:title" content="Humi — 平铺式 macOS 终端工作区">
+<meta property="og:description" content="一款把终端会话作为图块并排放在同一窗口里的 macOS 应用。按 + 选择文件夹，会话即在该处启动。会话数量不限。">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/humi/assets/og-image.png">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/humi/zh/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Humi — 平铺式 macOS 终端工作区">
+<meta name="twitter:description" content="按 + 选择文件夹，即可在窗口的图块中打开终端会话。内置模拟器，会话数量不限。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/humi/assets/og-image.png">
+<link rel="icon" href="/projects/humi/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/projects/humi/assets/icon-192.png">
+<link rel="stylesheet" href="/projects/humi/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Humi",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "macOS 14.0 or later",
+      "softwareVersion": "1.0.0",
+      "url": "https://studio-rizi.pages.dev/projects/humi/zh/",
+      "downloadUrl": "https://github.com/oriyu90/humi/releases",
+      "codeRepository": "https://github.com/oriyu90/humi",
+      "license": "https://github.com/oriyu90/humi/blob/main/LICENSE",
+      "description": "一款把多个终端会话作为图块并排放在同一个窗口里的 macOS 应用。按 + 选择文件夹，内置终端会话即在该处启动，并以图块显示。",
+      "inLanguage": ["ja", "en", "zh", "pt"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "折田悠希",
+      "alternateName": ["おりたゆうき", "Yuki_Orita"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": ["https://github.com/oriyu90", "https://x.com/InovateofRIZI"]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/humi/zh/"><img src="/projects/humi/assets/icon-192.png" alt="Humi"><span>Humi</span></a>
+    <div class="navlinks">
+      <a href="#flow">用法</a>
+      <a href="#features">功能</a>
+      <a href="#requirements">系统要求</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a href="/projects/humi/">JA</a><a href="/projects/humi/en/">EN</a><a class="on" href="/projects/humi/zh/">中文</a><a href="/projects/humi/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/humi/releases/latest">下载</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v1.0.0 · MIT · macOS 14+</span>
+      <h1>把终端，<span class="u">平铺</span>排开。</h1>
+      <p class="lead">Humi 是一款 macOS 应用，把多个终端会话作为图块并排放在同一个窗口里。按下 <code>+</code> 选择文件夹，会话就在该文件夹中启动，以图块显示。会话数量不限。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/humi/releases/latest">下载最新版本</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/humi">在 GitHub 查看源码</a>
+      </div>
+      <p class="hero-meta">免费开源（MIT） · 开发者：折田悠希（Yuki_Orita）</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="dot"></div>
+      <div class="tile a"><div class="p">~ %&nbsp;<span style="color:#4fb7e8">echo humi</span></div><div class="bar"></div></div>
+      <div class="tile b"><div class="p">project %&nbsp;<span style="color:#cbae2e">npm test</span></div><div class="bar"></div></div>
+    </div>
+  </div>
+</header>
+
+<section id="flow">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">用法</p>
+      <h2>从 + 开始的三步</h2>
+      <p>无论窗口是空的还是已经打开了多个会话，窗口上的 <code>+</code> 始终可见。</p>
+    </div>
+    <ol class="flow">
+      <li>
+        <h3>按下 +</h3>
+        <p>工具栏的 <code>+</code>（或 <kbd style="font-family:'JetBrains Mono',monospace">⌘N</kbd>）会打开 Finder 文件夹选择器。</p>
+      </li>
+      <li>
+        <h3>选择文件夹</h3>
+        <p>选择会话的工作目录。取消则在主目录中打开。</p>
+      </li>
+      <li>
+        <h3>以图块打开</h3>
+        <p>选择“在此文件夹中打开”，在该处启动的终端便会作为图块显示在窗口中。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">功能</p>
+      <h2>一个窗口，够用就好</h2>
+      <p>终端是通过 <a href="https://github.com/migueldeicaza/SwiftTerm">SwiftTerm</a> 的内置模拟器（真实 PTY、真实 shell）。</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>图块布局</dt><dd>按可容纳的列数自动重排。每个图块可最大化、还原，彼此独立运行。</dd></div>
+      <div class="row"><dt>会话不限</dt><dd><code>+</code> 在任何状态下都显示；图块按添加顺序增加。</dd></div>
+      <div class="row"><dt>在文件夹中打开</dt><dd>以所选文件夹作为工作目录启动，也可“按原样打开”进入主目录。</dd></div>
+      <div class="row"><dt>清空缓冲</dt><dd><kbd>⌘K</kbd> 清除当前会话的屏幕与回滚缓冲，保留提示符和正在输入的命令。</dd></div>
+      <div class="row"><dt>重启</dt><dd>shell 已退出的图块可一键在原文件夹中重启。</dd></div>
+      <div class="row"><dt>备忘栏</dt><dd>右侧的 Markdown 速记栏。重启应用后内容仍在。</dd></div>
+      <div class="row"><dt>Shell 设置</dt><dd>登录 shell / zsh / bash / fish / 自定义（路径 + 参数），可选 <code>-l</code>。</dd></div>
+      <div class="row"><dt>干净退出</dt><dd>退出时同步停止所有子 shell（SIGTERM → SIGKILL → 回收），不留孤儿进程。</dd></div>
+      <div class="row"><dt>恢复</dt><dd>会话列表与备忘在启动时恢复；文件夹已删除的会话会改在主目录中打开。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">系统要求与构建</p>
+      <h2>macOS 14 及以上</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>系统要求</h3>
+        <ul>
+          <li><span class="d">◆</span> macOS 14.0 及以上（Apple Silicon / Intel）</li>
+          <li><span class="d">◆</span> ad-hoc 签名——首次启动请在“系统设置 › 隐私与安全性”中允许</li>
+          <li><span class="d">◆</span> v1.0 仅提供内置模拟器</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>从源码构建（无需 Xcode）</h3>
+        <pre>git clone https://github.com/oriyu90/humi
+cd humi
+bash Scripts/build-app.sh release
+open dist/Humi.app</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><img src="/projects/humi/assets/icon-192.png" alt=""><span>Humi © 2026 Yuki_Orita · MIT</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/humi">GitHub</a>
+      <a href="https://github.com/oriyu90/humi/blob/main/LICENSE">License (MIT)</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+      <a href="https://studio-rizi.pages.dev/">开发者官网</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

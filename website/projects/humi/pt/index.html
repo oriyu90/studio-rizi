@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humi — Um espaço de terminais em blocos para macOS</title>
+<meta name="description" content="Humi é um app para macOS que organiza várias sessões de terminal como blocos em uma única janela. Pressione + para escolher uma pasta e a sessão abre nela, exibida como um bloco. Emulador embutido (SwiftTerm). Desenvolvido por Yuki Orita (Yuki_Orita / oriyu90). Software livre e de código aberto sob a licença MIT, no GitHub.">
+<meta name="keywords" content="Humi,Yuki Orita,Yuki_Orita,oriyu90,github,macOS,terminal,terminal em blocos,SwiftTerm,multiplexador de terminal,ferramentas de desenvolvimento">
+<meta name="author" content="Yuki Orita (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/humi/pt/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/humi/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/humi/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/humi/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/humi/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/humi/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Humi">
+<meta property="og:title" content="Humi — Um espaço de terminais em blocos para macOS">
+<meta property="og:description" content="Um app para macOS que organiza sessões de terminal como blocos em uma janela. Pressione + para escolher uma pasta; a sessão abre nela. Sessões ilimitadas.">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/humi/assets/og-image.png">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/humi/pt/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Humi — Um espaço de terminais em blocos para macOS">
+<meta name="twitter:description" content="Pressione + para escolher uma pasta e abrir uma sessão de terminal como bloco na janela. Emulador embutido, sessões ilimitadas.">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/humi/assets/og-image.png">
+<link rel="icon" href="/projects/humi/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/projects/humi/assets/icon-192.png">
+<link rel="stylesheet" href="/projects/humi/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Humi",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "macOS 14.0 or later",
+      "softwareVersion": "1.0.0",
+      "url": "https://studio-rizi.pages.dev/projects/humi/pt/",
+      "downloadUrl": "https://github.com/oriyu90/humi/releases",
+      "codeRepository": "https://github.com/oriyu90/humi",
+      "license": "https://github.com/oriyu90/humi/blob/main/LICENSE",
+      "description": "Um app para macOS que organiza várias sessões de terminal como blocos em uma única janela. Pressione + para escolher uma pasta e uma sessão de terminal embutida abre nela, exibida como um bloco.",
+      "inLanguage": ["ja", "en", "zh", "pt"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "折田悠希",
+      "alternateName": ["おりたゆうき", "Yuki_Orita"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": ["https://github.com/oriyu90", "https://x.com/InovateofRIZI"]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/humi/pt/"><img src="/projects/humi/assets/icon-192.png" alt="Humi"><span>Humi</span></a>
+    <div class="navlinks">
+      <a href="#flow">Como funciona</a>
+      <a href="#features">Recursos</a>
+      <a href="#requirements">Requisitos</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a href="/projects/humi/">JA</a><a href="/projects/humi/en/">EN</a><a href="/projects/humi/zh/">中文</a><a class="on" href="/projects/humi/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/humi/releases/latest">Baixar</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v1.0.0 · MIT · macOS 14+</span>
+      <h1>Disponha seus terminais em <span class="u">blocos</span>.</h1>
+      <p class="lead">Humi é um app para macOS que organiza várias sessões de terminal como blocos em uma única janela. Pressione <code>+</code>, escolha uma pasta e a sessão abre nela, exibida como um bloco. Adicione quantas sessões quiser.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/humi/releases/latest">Baixar a versão mais recente</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/humi">Ver o código no GitHub</a>
+      </div>
+      <p class="hero-meta">Livre e de código aberto (MIT) · Desenvolvido por Yuki Orita (Yuki_Orita)</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="dot"></div>
+      <div class="tile a"><div class="p">~ %&nbsp;<span style="color:#4fb7e8">echo humi</span></div><div class="bar"></div></div>
+      <div class="tile b"><div class="p">project %&nbsp;<span style="color:#cbae2e">npm test</span></div><div class="bar"></div></div>
+    </div>
+  </div>
+</header>
+
+<section id="flow">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Como funciona</p>
+      <h2>Três passos a partir do +</h2>
+      <p>O <code>+</code> da janela está sempre lá — com a janela vazia ou cheia de sessões.</p>
+    </div>
+    <ol class="flow">
+      <li>
+        <h3>Pressione +</h3>
+        <p>O <code>+</code> da barra de ferramentas (ou <kbd style="font-family:'JetBrains Mono',monospace">⌘N</kbd>) abre o seletor de pastas do Finder.</p>
+      </li>
+      <li>
+        <h3>Escolha uma pasta</h3>
+        <p>Escolha o diretório de trabalho da sessão. Se cancelar, ela abre na sua pasta pessoal.</p>
+      </li>
+      <li>
+        <h3>Abra como bloco</h3>
+        <p>Escolha "abrir nesta pasta" e um terminal iniciado ali aparece como um bloco na janela.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Recursos</p>
+      <h2>Uma janela, quantas você precisar</h2>
+      <p>O terminal é um emulador embutido via <a href="https://github.com/migueldeicaza/SwiftTerm">SwiftTerm</a> — PTY real, shell real.</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>Layout em blocos</dt><dd>Reorganiza-se em quantas colunas couberem. Cada bloco pode ser maximizado e restaurado, e roda de forma independente.</dd></div>
+      <div class="row"><dt>Sessões ilimitadas</dt><dd>O <code>+</code> aparece em todos os estados; os blocos crescem na ordem em que você os adiciona.</dd></div>
+      <div class="row"><dt>Abrir em uma pasta</dt><dd>Inicia com a pasta escolhida como diretório de trabalho — ou "abrir como está" para a pasta pessoal.</dd></div>
+      <div class="row"><dt>Limpar o buffer</dt><dd><kbd>⌘K</kbd> limpa a tela e o histórico de rolagem da sessão em foco, mantendo o prompt e qualquer comando digitado pela metade.</dd></div>
+      <div class="row"><dt>Reiniciar</dt><dd>Um bloco cujo shell encerrou reinicia na pasta original com um clique.</dd></div>
+      <div class="row"><dt>Barra de notas</dt><dd>Um bloco de rascunho em Markdown à direita. O conteúdo sobrevive a um reinício do app.</dd></div>
+      <div class="row"><dt>Configuração do shell</dt><dd>Shell de login / zsh / bash / fish / personalizado (caminho + argumentos), com <code>-l</code> opcional.</dd></div>
+      <div class="row"><dt>Encerramento limpo</dt><dd>Ao sair, todo shell filho é encerrado de forma síncrona (SIGTERM → SIGKILL → coleta). Nada fica órfão.</dd></div>
+      <div class="row"><dt>Restauração</dt><dd>A lista de sessões e as notas são restauradas ao iniciar; uma sessão cuja pasta sumiu reabre na pasta pessoal.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Requisitos e build</p>
+      <h2>macOS 14 ou posterior</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>Requisitos</h3>
+        <ul>
+          <li><span class="d">◆</span> macOS 14.0 ou posterior (Apple Silicon / Intel)</li>
+          <li><span class="d">◆</span> Assinado em ad-hoc — no primeiro uso, permita em Ajustes do Sistema › Privacidade e Segurança</li>
+          <li><span class="d">◆</span> v1.0 é somente com emulador embutido</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Compilar do código (sem Xcode)</h3>
+        <pre>git clone https://github.com/oriyu90/humi
+cd humi
+bash Scripts/build-app.sh release
+open dist/Humi.app</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><img src="/projects/humi/assets/icon-192.png" alt=""><span>Humi © 2026 Yuki_Orita · MIT</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/humi">GitHub</a>
+      <a href="https://github.com/oriyu90/humi/blob/main/LICENSE">License (MIT)</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+      <a href="https://studio-rizi.pages.dev/">Site do desenvolvedor</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

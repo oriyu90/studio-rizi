@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humi（フミ） — タイル型の macOS ターミナルワークスペース</title>
+<meta name="description" content="Humi（フミ）は、複数のターミナルセッションを1枚のウィンドウにタイルとして並べる macOS アプリです。＋ を押してフォルダを選ぶと、そのフォルダで開いたセッションがタイルとして表示されます。内蔵エミュレータ（SwiftTerm）。開発者: 折田悠希（おりたゆうき / Yuki_Orita）。MIT ライセンスの無料オープンソース、GitHub で公開中。">
+<meta name="keywords" content="Humi,フミ,折田悠希,おりたゆうき,Yuki_Orita,oriyu90,github,macOS,ターミナル,terminal,タイル型,SwiftTerm,ターミナルマルチプレクサ,開発者ツール">
+<meta name="author" content="折田悠希 (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/humi/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/humi/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/humi/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/humi/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/humi/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/humi/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Humi">
+<meta property="og:title" content="Humi（フミ） — タイル型の macOS ターミナルワークスペース">
+<meta property="og:description" content="＋ を押してフォルダを選ぶと、そのフォルダで開いたターミナルセッションがウィンドウ内のタイルに並ぶ macOS アプリ。セッションはいくつでも。">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/humi/assets/og-image.png">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/humi/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Humi — タイル型の macOS ターミナルワークスペース">
+<meta name="twitter:description" content="＋ でフォルダを選び、ターミナルセッションをウィンドウ内のタイルで開く。内蔵エミュレータ、セッション無制限。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/humi/assets/og-image.png">
+<link rel="icon" href="/projects/humi/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/projects/humi/assets/icon-192.png">
+<link rel="stylesheet" href="/projects/humi/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Humi",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "macOS 14.0 or later",
+      "softwareVersion": "1.0.0",
+      "url": "https://studio-rizi.pages.dev/projects/humi/",
+      "downloadUrl": "https://github.com/oriyu90/humi/releases",
+      "codeRepository": "https://github.com/oriyu90/humi",
+      "license": "https://github.com/oriyu90/humi/blob/main/LICENSE",
+      "description": "複数のターミナルセッションを1枚のウィンドウにタイルとして並べる macOS アプリ。＋ でフォルダを選ぶと、そのフォルダで開いた内蔵ターミナルセッションがタイルとして表示される。",
+      "inLanguage": ["ja", "en", "zh", "pt"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "折田悠希",
+      "alternateName": ["おりたゆうき", "Yuki_Orita"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": ["https://github.com/oriyu90", "https://x.com/InovateofRIZI"]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/humi/"><img src="/projects/humi/assets/icon-192.png" alt="Humi"><span>Humi</span></a>
+    <div class="navlinks">
+      <a href="#flow">使い方</a>
+      <a href="#features">機能</a>
+      <a href="#requirements">動作環境</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a class="on" href="/projects/humi/">JA</a><a href="/projects/humi/en/">EN</a><a href="/projects/humi/zh/">中文</a><a href="/projects/humi/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/humi/releases/latest">ダウンロード</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v1.0.0 · MIT · macOS 14+</span>
+      <h1>ターミナルを、<span class="u">タイル</span>で並べる。</h1>
+      <p class="lead">Humi は、複数のターミナルセッションを1枚のウィンドウにタイルとして並べる macOS アプリです。<code>＋</code> を押してフォルダを選ぶと、そのフォルダで開いたセッションがタイルとして表示されます。セッションはいくつでも追加できます。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/humi/releases/latest">最新版をダウンロード</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/humi">GitHub でソースを見る</a>
+      </div>
+      <p class="hero-meta">無料・オープンソース（MIT） · 開発者: 折田悠希（おりたゆうき / Yuki_Orita）</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="dot"></div>
+      <div class="tile a"><div class="p">~ %&nbsp;<span style="color:#4fb7e8">echo humi</span></div><div class="bar"></div></div>
+      <div class="tile b"><div class="p">project %&nbsp;<span style="color:#cbae2e">npm test</span></div><div class="bar"></div></div>
+    </div>
+  </div>
+</header>
+
+<section id="flow">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">使い方</p>
+      <h2>＋ から3ステップ</h2>
+      <p>ウィンドウの <code>＋</code> は空の状態でも、セッションがいくつ開いていても常に表示されます。</p>
+    </div>
+    <ol class="flow">
+      <li>
+        <h3>＋ を押す</h3>
+        <p>ツールバーの <code>＋</code>（または <kbd style="font-family:'JetBrains Mono',monospace">⌘N</kbd>）。Finder のフォルダ選択が開きます。</p>
+      </li>
+      <li>
+        <h3>フォルダを選ぶ</h3>
+        <p>作業ディレクトリにしたいフォルダを選択。キャンセルすればホームで開きます。</p>
+      </li>
+      <li>
+        <h3>タイルで開く</h3>
+        <p>「このフォルダで開く」を選ぶと、そのフォルダで起動したターミナルがウィンドウ内のタイルに表示されます。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">機能</p>
+      <h2>1枚のウィンドウに、必要なだけ</h2>
+      <p>ターミナルは <a href="https://github.com/migueldeicaza/SwiftTerm">SwiftTerm</a> による内蔵エミュレータ（実 PTY・実シェル）です。</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>タイルの並び</dt><dd>入る数だけ列にリフロー。各タイルは最大化・復帰ができ、独立して動きます。</dd></div>
+      <div class="row"><dt>セッション無制限</dt><dd><code>＋</code> はどの状態でも表示。追加順にタイルが増えていきます。</dd></div>
+      <div class="row"><dt>フォルダで開く</dt><dd>選んだフォルダを作業ディレクトリにして起動。「そのまま開く」でホームでも。</dd></div>
+      <div class="row"><dt>バッファクリア</dt><dd><kbd>⌘K</kbd> でフォーカス中のセッションの画面とスクロールバックを消去。プロンプトと入力中のコマンドは残ります。</dd></div>
+      <div class="row"><dt>再起動</dt><dd>シェルが終了したタイルは、同じフォルダでワンクリック再起動。</dd></div>
+      <div class="row"><dt>メモ欄</dt><dd>Markdown 対応のスクラッチメモを右側に。アプリを再起動しても内容は残ります。</dd></div>
+      <div class="row"><dt>シェル設定</dt><dd>ログインシェル / zsh / bash / fish / カスタム（実行パス＋引数）。<code>-l</code> の有無も選べます。</dd></div>
+      <div class="row"><dt>確実な終了</dt><dd>アプリ終了時、すべての子シェルを同期的に停止（SIGTERM→SIGKILL→回収）。孤児プロセスを残しません。</dd></div>
+      <div class="row"><dt>復元</dt><dd>セッションの一覧とメモは次回起動時に復元。フォルダが消えていればホームで開き直します。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">動作環境とビルド</p>
+      <h2>macOS 14 以降</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>動作環境</h3>
+        <ul>
+          <li><span class="d">◆</span> macOS 14.0 以降（Apple Silicon / Intel）</li>
+          <li><span class="d">◆</span> ad-hoc 署名。初回起動は「システム設定 › プライバシーとセキュリティ」から許可</li>
+          <li><span class="d">◆</span> v1.0 は内蔵ターミナルエミュレータのみ</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>ソースからビルド（Xcode 不要）</h3>
+        <pre>git clone https://github.com/oriyu90/humi
+cd humi
+bash Scripts/build-app.sh release
+open dist/Humi.app</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><img src="/projects/humi/assets/icon-192.png" alt=""><span>Humi © 2026 Yuki_Orita · MIT</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/humi">GitHub</a>
+      <a href="https://github.com/oriyu90/humi/blob/main/LICENSE">License (MIT)</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+      <a href="https://studio-rizi.pages.dev/">開発者公式サイト</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

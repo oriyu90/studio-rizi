@@ -4,6 +4,7 @@
   "projects": [
     { "slug": "awasero-music", "name": "Awasero Music", "repository": "https://github.com/oriyu90/awasero-music", "url": "https://studio-rizi.pages.dev/projects/awasero-music/", "hosted": true },
     { "slug": "easyroo", "name": "EasyRoo", "repository": "https://github.com/oriyu90/EasyRoo", "url": "https://studio-rizi.pages.dev/projects/easyroo/", "hosted": true },
+    { "slug": "humi", "name": "Humi", "repository": "https://github.com/oriyu90/humi", "url": "https://studio-rizi.pages.dev/projects/humi/", "hosted": true },
     { "slug": "kizi", "name": "Kizi", "repository": "https://github.com/oriyu90/kizi", "url": "https://kizi.pages.dev/", "hosted": false },
     { "slug": "mcs-manager", "name": "MCS Manager", "repository": "https://github.com/oriyu90/MCS-Manager", "url": "https://studio-rizi.pages.dev/projects/mcs-manager/", "hosted": true },
     { "slug": "md-viewer-pro", "name": "MD Viewer Pro", "repository": "https://github.com/oriyu90/MD-Viewer-Pro", "url": "https://studio-rizi.pages.dev/projects/md-viewer-pro/", "hosted": true },

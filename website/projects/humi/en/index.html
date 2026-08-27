@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humi — A Tiled Terminal Workspace for macOS</title>
+<meta name="description" content="Humi is a macOS app that arranges multiple terminal sessions as tiles in one window. Press + to pick a folder and a session starts there, shown as a tile. Embedded emulator (SwiftTerm). Built by Yuki Orita (Yuki_Orita / oriyu90). Free and open source under the MIT license, on GitHub.">
+<meta name="keywords" content="Humi,Yuki Orita,Yuki_Orita,oriyu90,github,macOS,terminal,tiled terminal,SwiftTerm,terminal multiplexer,developer tools">
+<meta name="author" content="Yuki Orita (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/humi/en/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/humi/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/humi/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/humi/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/humi/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/humi/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Humi">
+<meta property="og:title" content="Humi — A Tiled Terminal Workspace for macOS">
+<meta property="og:description" content="A macOS app that arranges terminal sessions as tiles in one window. Press + to pick a folder; the session starts there. Unlimited sessions.">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/humi/assets/og-image.png">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/humi/en/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Humi — A Tiled Terminal Workspace for macOS">
+<meta name="twitter:description" content="Press + to pick a folder and open a terminal session as a tile in the window. Embedded emulator, unlimited sessions.">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/humi/assets/og-image.png">
+<link rel="icon" href="/projects/humi/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/projects/humi/assets/icon-192.png">
+<link rel="stylesheet" href="/projects/humi/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Humi",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "macOS 14.0 or later",
+      "softwareVersion": "1.0.0",
+      "url": "https://studio-rizi.pages.dev/projects/humi/en/",
+      "downloadUrl": "https://github.com/oriyu90/humi/releases",
+      "codeRepository": "https://github.com/oriyu90/humi",
+      "license": "https://github.com/oriyu90/humi/blob/main/LICENSE",
+      "description": "A macOS app that arranges multiple terminal sessions as tiles in one window. Press + to pick a folder and an embedded terminal session starts there, shown as a tile.",
+      "inLanguage": ["ja", "en", "zh", "pt"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "折田悠希",
+      "alternateName": ["おりたゆうき", "Yuki_Orita"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": ["https://github.com/oriyu90", "https://x.com/InovateofRIZI"]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/humi/en/"><img src="/projects/humi/assets/icon-192.png" alt="Humi"><span>Humi</span></a>
+    <div class="navlinks">
+      <a href="#flow">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#requirements">Requirements</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a href="/projects/humi/">JA</a><a class="on" href="/projects/humi/en/">EN</a><a href="/projects/humi/zh/">中文</a><a href="/projects/humi/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/humi/releases/latest">Download</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v1.0.0 · MIT · macOS 14+</span>
+      <h1>Lay your terminals out as <span class="u">tiles</span>.</h1>
+      <p class="lead">Humi is a macOS app that arranges multiple terminal sessions as tiles in one window. Press <code>+</code>, pick a folder, and a session starts there, shown as a tile. Add as many sessions as you want.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/humi/releases/latest">Download the latest release</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/humi">View source on GitHub</a>
+      </div>
+      <p class="hero-meta">Free and open source (MIT) · Built by Yuki Orita (Yuki_Orita)</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="dot"></div>
+      <div class="tile a"><div class="p">~ %&nbsp;<span style="color:#4fb7e8">echo humi</span></div><div class="bar"></div></div>
+      <div class="tile b"><div class="p">project %&nbsp;<span style="color:#cbae2e">npm test</span></div><div class="bar"></div></div>
+    </div>
+  </div>
+</header>
+
+<section id="flow">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">How it works</p>
+      <h2>Three steps from +</h2>
+      <p>The window's <code>+</code> is always there — whether the window is empty or full of sessions.</p>
+    </div>
+    <ol class="flow">
+      <li>
+        <h3>Press +</h3>
+        <p>The toolbar <code>+</code> (or <kbd style="font-family:'JetBrains Mono',monospace">⌘N</kbd>) opens a Finder folder picker.</p>
+      </li>
+      <li>
+        <h3>Pick a folder</h3>
+        <p>Choose the working directory for the session. Cancel and it opens in your home folder instead.</p>
+      </li>
+      <li>
+        <h3>Open as a tile</h3>
+        <p>Choose "open in this folder" and a terminal started there appears as a tile in the window.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Features</p>
+      <h2>One window, as many as you need</h2>
+      <p>The terminal is an embedded emulator via <a href="https://github.com/migueldeicaza/SwiftTerm">SwiftTerm</a> — real PTY, real shell.</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>Tiled layout</dt><dd>Reflows into as many columns as fit. Each tile can be maximized and restored, and runs independently.</dd></div>
+      <div class="row"><dt>Unlimited sessions</dt><dd><code>+</code> shows in every state; tiles grow in the order you add them.</dd></div>
+      <div class="row"><dt>Open in a folder</dt><dd>Starts with the chosen folder as the working directory — or "open as-is" for home.</dd></div>
+      <div class="row"><dt>Clear the buffer</dt><dd><kbd>⌘K</kbd> clears the focused session's screen and scrollback, keeping the prompt and any half-typed command.</dd></div>
+      <div class="row"><dt>Restart</dt><dd>A tile whose shell exited restarts in its original folder with one click.</dd></div>
+      <div class="row"><dt>Notes sidebar</dt><dd>A Markdown scratchpad on the right. Its contents survive an app restart.</dd></div>
+      <div class="row"><dt>Shell settings</dt><dd>Login shell / zsh / bash / fish / custom (path + args), with an optional <code>-l</code>.</dd></div>
+      <div class="row"><dt>Clean shutdown</dt><dd>On quit, every child shell is stopped synchronously (SIGTERM → SIGKILL → reap). Nothing is left orphaned.</dd></div>
+      <div class="row"><dt>Restore</dt><dd>The session list and notes are restored on launch; a session whose folder is gone reopens in home.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Requirements &amp; build</p>
+      <h2>macOS 14 or later</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>Requirements</h3>
+        <ul>
+          <li><span class="d">◆</span> macOS 14.0 or later (Apple Silicon / Intel)</li>
+          <li><span class="d">◆</span> Ad-hoc signed — on first launch, allow it from System Settings › Privacy &amp; Security</li>
+          <li><span class="d">◆</span> v1.0 is embedded-emulator only</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Build from source (no Xcode)</h3>
+        <pre>git clone https://github.com/oriyu90/humi
+cd humi
+bash Scripts/build-app.sh release
+open dist/Humi.app</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><img src="/projects/humi/assets/icon-192.png" alt=""><span>Humi © 2026 Yuki_Orita · MIT</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/humi">GitHub</a>
+      <a href="https://github.com/oriyu90/humi/blob/main/LICENSE">License (MIT)</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+      <a href="https://studio-rizi.pages.dev/">Developer site</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
