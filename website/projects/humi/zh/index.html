@@ -43,7 +43,7 @@
       "name": "Humi",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "macOS 14.0 or later",
-      "softwareVersion": "1.2.0",
+      "softwareVersion": "1.3.0",
       "url": "https://studio-rizi.pages.dev/projects/humi/zh/",
       "downloadUrl": "https://github.com/oriyu90/humi/releases",
       "codeRepository": "https://github.com/oriyu90/humi",
@@ -85,7 +85,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">v1.2.0 · MIT · macOS 14+</span>
+      <span class="eyebrow">v1.3.0 · MIT · macOS 14+</span>
       <h1>把终端，<span class="u">平铺</span>排开。</h1>
       <p class="lead">Humi 是一款 macOS 应用，把多个终端会话作为图块并排放在同一个窗口里。按下 <code>+</code> 选择文件夹，会话就在该文件夹中启动，以图块显示。会话数量不限。</p>
       <div class="hero-actions">
@@ -134,6 +134,7 @@
       <p>终端是通过 <a href="https://github.com/migueldeicaza/SwiftTerm">SwiftTerm</a> 的内置模拟器（真实 PTY、真实 shell）。</p>
     </div>
     <dl class="spec">
+      <div class="row"><dt>v1.3：稳定性与打磨</dt><dd>修复关闭图块后立即退出时残留的 Shell 进程、输出触发器造成的卡顿，以及编辑文本时被吞掉的快捷键。为自定义控件加入悬停 / 高对比键盘焦点环，并支持"提高对比度"。<kbd>⌃⌘]</kbd> / <kbd>⌃⌘[</kbd> 用键盘调整窗格大小。</dd></div>
       <div class="row"><dt>v1.2：分割窗格与窗口布局</dt><dd>横向或纵向分割窗格（<kbd>⌘D</kbd> / <kbd>⌘⇧D</kbd>），用 <kbd>⌘⌃</kbd>+方向键移动焦点，拖动分隔线调整比例。保存并恢复整个窗格树、会话与窗口位置。全局切换热键；长命令完成、响铃与输出匹配的通知；正则触发器；fish 的 OSC 7。</dd></div>
       <div class="row"><dt>v1.1：多语言、主题、配置文件</dt><dd>日语 / English / 中文 / Português / Español（跟随系统）。6 款主题 + 自定义主题 + 浅色/深色/跟随系统，⌘F 搜索，URL 与路径打开，配置文件（Shell + 环境变量 + 启动命令）与启动器，快捷键自定义，带 Git 分支的状态栏。</dd></div>
       <div class="row"><dt>图块布局</dt><dd>按可容纳的列数自动重排。每个图块可最大化、还原，彼此独立运行。</dd></div>
