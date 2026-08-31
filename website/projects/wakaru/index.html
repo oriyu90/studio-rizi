@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>WAKARU — ローカルファーストのAI資料アシスタント / わかる</title>
-<meta name="description" content="WAKARUは、手元の資料を取り込み、閲覧・検索し、根拠（引用）を確認しながらAIで解説や作業成果を作る、ローカルファーストのデスクトップアプリです。開発者: Yuki Orita（折田悠希 / おりたゆうき）。MITライセンス、オープンソース。" />
-<meta name="keywords" content="WAKARU, わかる, ワカル, 折田悠希, おりたゆうき, Yuki Orita, github, ローカルAI, RAG, デスクトップアプリ, オープンソース" />
+<meta name="description" content="WAKARUは、手元の資料を取り込み、閲覧・検索し、根拠（引用）を確認しながらAIで解説や作業成果を作る、ローカルファーストのデスクトップアプリです。OpenAI互換・Anthropic互換APIに対応しています。" />
+<meta name="keywords" content="WAKARU, わかる, ワカル, 折田悠希, おりたゆうき, Yuki Orita, ローカルAI, RAG, OpenAI互換, Anthropic互換, デスクトップアプリ" />
 <link rel="canonical" href="https://studio-rizi.pages.dev/projects/wakaru/" />
 <meta name="robots" content="index, follow" />
 
@@ -30,7 +30,8 @@
   "@type": "SoftwareApplication",
   "name": "WAKARU",
   "alternateName": "わかる",
-  "operatingSystem": "macOS 11+",
+  "operatingSystem": "macOS 12+ on Apple Silicon",
+  "softwareVersion": "0.0.0",
   "applicationCategory": "ProductivityApplication",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Person", "name": "Yuki Orita", "alternateName": "折田悠希", "url": "https://studio-rizi.pages.dev/" },
@@ -189,9 +190,9 @@ footer a{color:var(--color-muted);text-decoration:underline}
         <p class="lede" data-i18n="hero.lede">WAKARUは、手元のPDF・音声・動画・スプレッドシートなどを取り込み、閲覧・検索し、引用つきでAIに解説させるローカルファーストのデスクトップアプリです。資料はあなたの端末に留まります。</p>
         <div class="ctas">
           <a class="btn btn-primary" href="https://github.com/oriyu90/WAKARU/releases/latest" data-i18n="hero.ctaDownload">macOS版をダウンロード</a>
-          <a class="btn btn-quiet" href="https://github.com/oriyu90/WAKARU" data-i18n="hero.ctaGithub">ソースを見る（GitHub）</a>
+          <a class="btn btn-quiet" href="https://github.com/oriyu90/WAKARU" data-i18n="hero.ctaGithub">配布ページを見る（GitHub）</a>
         </div>
-        <p class="fineprint" data-i18n="hero.fineprint">無料・オープンソース（MIT）。現在は Apple Silicon Mac / macOS 11以降のDMGを配布しています。</p>
+        <p class="fineprint" data-i18n="hero.fineprint">無料・MITライセンス。Apple Silicon Mac / macOS 12以降向け v0.0.0 pre-release を配布しています。</p>
       </div>
       <div class="mock" aria-hidden="true">
         <div class="chrome"><span></span><span></span><span></span></div>
@@ -223,9 +224,9 @@ footer a{color:var(--color-muted);text-decoration:underline}
       <div class="features">
         <div class="feature"><span class="glyph">01</span><h3 data-i18n="features.f1.title">幅広い形式の取り込み</h3><p data-i18n="features.f1.body">PDF・DOCX・PPTX・XLSX/XLS・CSV/TSV・TXT・Markdown・JSON・画像・Webページ・音声・動画に対応。</p></div>
         <div class="feature"><span class="glyph">02</span><h3 data-i18n="features.f2.title">アプリ自身が描くPDF</h3><p data-i18n="features.f2.body">macOSではPDFKitで直接ページを描画。OS標準ビューアのコントロールドックが資料の上に出ません。</p></div>
-        <div class="feature"><span class="glyph">03</span><h3 data-i18n="features.f3.title">根拠つきのLive Illustrator</h3><p data-i18n="features.f3.body">読んでいるページを逐次解説。すべての回答に引用が付き、根拠が無ければ「根拠なし」と明示します。</p></div>
-        <div class="feature"><span class="glyph">04</span><h3 data-i18n="features.f4.title">Studio（作業領域つきAIチャット）</h3><p data-i18n="features.f4.body">プロジェクトのワークスペースにファイルを生成し、承認制でコマンドを隔離実行。拒否も許可も明確に。</p></div>
-        <div class="feature"><span class="glyph">05</span><h3 data-i18n="features.f5.title">キーワード＋意味検索</h3><p data-i18n="features.f5.body">日本語対応のハイブリッド検索（BM25＋ベクトル）。ローカル埋め込みモデルまたはOpenAI互換APIを選択できます。</p></div>
+        <div class="feature"><span class="glyph">03</span><h3 data-i18n="features.f3.title">平易で根拠つきのLive Illustrator</h3><p data-i18n="features.f3.body">核心からやさしく解説し、具体例と短い理解確認を必要に応じて提示。引用から原資料へ戻れます。</p></div>
+        <div class="feature"><span class="glyph">04</span><h3 data-i18n="features.f4.title">自然な文章を作るStudio</h3><p data-i18n="features.f4.body">定型的な前置きや反復を避け、目的に合う成果物を作成。ワークスペース内の操作は安全に隔離します。</p></div>
+        <div class="feature"><span class="glyph">05</span><h3 data-i18n="features.f5.title">2種類のAI API形式</h3><p data-i18n="features.f5.body">OpenAI互換とAnthropic互換を接続先ごとに選択。ローカルサーバーやクラウドAPIを同じ画面で管理できます。</p></div>
         <div class="feature"><span class="glyph">06</span><h3 data-i18n="features.f6.title">多言語・アクセシビリティ</h3><p data-i18n="features.f6.body">日本語・English・简体中文、ライト／ダーク／モノトーム、表示倍率80〜150%、コマンドパレット対応。</p></div>
       </div>
     </div>
@@ -256,7 +257,7 @@ footer a{color:var(--color-muted);text-decoration:underline}
           <p data-i18n="download.body">GitHub Releaseからダウンロードしてください。ソースコードは公開せず、アプリ本体（DMG）とチェックサムのみを配布します。</p>
           <div class="reqs">
             <span data-i18n="download.req1">Apple Silicon Mac</span>
-            <span data-i18n="download.req2">macOS 11以降</span>
+            <span data-i18n="download.req2">macOS 12以降</span>
             <span data-i18n="download.req3">未署名（初回起動に確認あり）</span>
             <span data-i18n="download.req4">MITライセンス</span>
           </div>
@@ -294,15 +295,15 @@ var translations = {
     "hero.kicker":"ローカルファースト・AI資料アシスタント",
     "hero.title":"資料を、根拠つきで「わかる」に変える。",
     "hero.lede":"WAKARUは、手元のPDF・音声・動画・スプレッドシートなどを取り込み、閲覧・検索し、引用つきでAIに解説させるローカルファーストのデスクトップアプリです。資料はあなたの端末に留まります。",
-    "hero.ctaDownload":"macOS版をダウンロード","hero.ctaGithub":"ソースを見る（GitHub）",
-    "hero.fineprint":"無料・オープンソース（MIT）。現在は Apple Silicon Mac / macOS 11以降のDMGを配布しています。",
+    "hero.ctaDownload":"macOS版をダウンロード","hero.ctaGithub":"配布ページを見る（GitHub）",
+    "hero.fineprint":"無料・MITライセンス。Apple Silicon Mac / macOS 12以降向け v0.0.0 pre-release を配布しています。",
     "hero.mockChip":"引用 [1]",
     "features.kicker":"機能","features.title":"資料を読む・探す・使うための一式","features.lede":"形式を選ばず取り込み、出典を明示したまま、閲覧からAI活用までを一本化します。",
     "features.f1.title":"幅広い形式の取り込み","features.f1.body":"PDF・DOCX・PPTX・XLSX/XLS・CSV/TSV・TXT・Markdown・JSON・画像・Webページ・音声・動画に対応。",
     "features.f2.title":"アプリ自身が描くPDF","features.f2.body":"macOSではPDFKitで直接ページを描画。OS標準ビューアのコントロールドックが資料の上に出ません。",
-    "features.f3.title":"根拠つきのLive Illustrator","features.f3.body":"読んでいるページを逐次解説。すべての回答に引用が付き、根拠が無ければ「根拠なし」と明示します。",
-    "features.f4.title":"Studio（作業領域つきAIチャット）","features.f4.body":"プロジェクトのワークスペースにファイルを生成し、承認制でコマンドを隔離実行。拒否も許可も明確に。",
-    "features.f5.title":"キーワード＋意味検索","features.f5.body":"日本語対応のハイブリッド検索（BM25＋ベクトル）。ローカル埋め込みモデルまたはOpenAI互換APIを選択できます。",
+    "features.f3.title":"平易で根拠つきのLive Illustrator","features.f3.body":"核心からやさしく解説し、具体例と短い理解確認を必要に応じて提示。引用から原資料へ戻れます。",
+    "features.f4.title":"自然な文章を作るStudio","features.f4.body":"定型的な前置きや反復を避け、目的に合う成果物を作成。ワークスペース内の操作は安全に隔離します。",
+    "features.f5.title":"2種類のAI API形式","features.f5.body":"OpenAI互換とAnthropic互換を接続先ごとに選択。ローカルサーバーやクラウドAPIを同じ画面で管理できます。",
     "features.f6.title":"多言語・アクセシビリティ","features.f6.body":"日本語・English・简体中文、ライト／ダーク／モノトーム、表示倍率80〜150%、コマンドパレット対応。",
     "privacy.kicker":"プライバシーと通信","privacy.title":"資料はあなたの端末から出ません。","privacy.lede":"テレメトリや自動的な資料送信は一切ありません。通信が発生するのは、あなたが実行した操作だけです。",
     "privacy.p1":"APIキーはOSの資格情報ストアに保存され、アプリのDB/設定ファイルには残りません",
@@ -311,7 +312,7 @@ var translations = {
     "privacy.p4":"資料本文・プロンプト・APIキーはアプリのログへ記録されません",
     "privacy.p5":"プロジェクトの原本ファイルはアプリが書き換え・削除しません",
     "download.title":"今すぐ試す","download.body":"GitHub Releaseからダウンロードしてください。ソースコードは公開せず、アプリ本体（DMG）とチェックサムのみを配布します。",
-    "download.req1":"Apple Silicon Mac","download.req2":"macOS 11以降","download.req3":"未署名（初回起動に確認あり）","download.req4":"MITライセンス","download.cta":"最新版を見る",
+    "download.req1":"Apple Silicon Mac","download.req2":"macOS 12以降","download.req3":"未署名（初回起動に確認あり）","download.req4":"MITライセンス","download.cta":"最新版を見る",
     "community.kicker":"コミュニティ","community.title":"不具合報告・お知らせ","community.lede":"バグ報告や更新のお知らせはDiscordとXで行っています。",
     "community.discord":"Discordに参加","community.x":"Xでフォロー","community.dev":"開発者サイト",
     "footer.license":"MIT License — © 2026 Yuki Orita（折田悠希）","footer.thirdparty":"サードパーティライセンス","footer.source":"GitHub"
@@ -321,15 +322,15 @@ var translations = {
     "hero.kicker":"A local-first AI document assistant",
     "hero.title":"Turn your documents into answers you can trust.",
     "hero.lede":"WAKARU ingests your PDFs, audio, video, and spreadsheets, then lets you read, search, and ask AI about them with citations attached to every answer. Your files never leave your machine.",
-    "hero.ctaDownload":"Download for macOS","hero.ctaGithub":"View source on GitHub",
-    "hero.fineprint":"Free and open source (MIT). Currently distributing a DMG for Apple Silicon Mac / macOS 11+.",
+    "hero.ctaDownload":"Download for macOS","hero.ctaGithub":"View releases on GitHub",
+    "hero.fineprint":"Free under the MIT License. v0.0.0 pre-release for Apple Silicon Mac / macOS 12+.",
     "hero.mockChip":"Citation [1]",
     "features.kicker":"Features","features.title":"Everything to read, search, and work with your documents","features.lede":"Ingest any format, keep the source visible, and go from reading to AI assistance in one app.",
     "features.f1.title":"Broad format support","features.f1.body":"PDF, DOCX, PPTX, XLSX/XLS, CSV/TSV, TXT, Markdown, JSON, images, web pages, audio, and video.",
     "features.f2.title":"PDF rendered by the app itself","features.f2.body":"On macOS, pages are drawn directly with PDFKit — no OS control dock floating over your document.",
-    "features.f3.title":"Live Illustrator, grounded in citations","features.f3.body":"Explains the page you're reading as you go. Every answer carries a citation, or says plainly there is none.",
-    "features.f4.title":"Studio: an AI chat with a workspace","features.f4.body":"Generates files inside your project workspace and runs commands in an approval-gated sandbox — allow or deny, always explicit.",
-    "features.f5.title":"Keyword + semantic search","features.f5.body":"Hybrid search (BM25 + vectors) with Japanese support. Choose a local embedding model or an OpenAI-compatible API.",
+    "features.f3.title":"Clear, cited Live Illustrator","features.f3.body":"Starts with the core idea, adds concrete examples and an optional short check, and links citations back to the source.",
+    "features.f4.title":"Studio that writes naturally","features.f4.body":"Avoids canned openings and repetition, creates work for your purpose, and keeps workspace operations isolated.",
+    "features.f5.title":"Two AI API formats","features.f5.body":"Choose OpenAI-compatible or Anthropic-compatible per connection and manage local servers or cloud APIs in one place.",
     "features.f6.title":"Multilingual and accessible","features.f6.body":"Japanese, English, Simplified Chinese; light/dark/monochrome; 80–150% display scale; full command palette.",
     "privacy.kicker":"Privacy & network use","privacy.title":"Your documents never leave your machine.","privacy.lede":"No telemetry and no automatic uploads. The app only talks to the network when you tell it to.",
     "privacy.p1":"API keys live in the OS credential store — never in the app's database or settings files",
@@ -338,7 +339,7 @@ var translations = {
     "privacy.p4":"Document text, prompts, and API keys are never written to the app log",
     "privacy.p5":"The app never rewrites or deletes your original source files",
     "download.title":"Try it now","download.body":"Download from GitHub Releases. We publish the app bundle (DMG) and checksums only — the source code stays private.",
-    "download.req1":"Apple Silicon Mac","download.req2":"macOS 11+","download.req3":"Unsigned (a confirmation appears on first launch)","download.req4":"MIT license","download.cta":"See the latest release",
+    "download.req1":"Apple Silicon Mac","download.req2":"macOS 12+","download.req3":"Unsigned (a confirmation appears on first launch)","download.req4":"MIT license","download.cta":"See the latest release",
     "community.kicker":"Community","community.title":"Bug reports & announcements","community.lede":"Bug reports and release announcements happen on Discord and X.",
     "community.discord":"Join the Discord","community.x":"Follow on X","community.dev":"Developer site",
     "footer.license":"MIT License — © 2026 Yuki Orita","footer.thirdparty":"Third-party licenses","footer.source":"GitHub"
@@ -348,15 +349,15 @@ var translations = {
     "hero.kicker":"本地优先的AI资料助手",
     "hero.title":"让资料带着依据，变得「一看就懂」。",
     "hero.lede":"WAKARU 可导入本地的 PDF、音频、视频、表格等资料，进行阅读与搜索，并让AI在附带引用的前提下为你解读。资料始终保留在你的设备上。",
-    "hero.ctaDownload":"下载 macOS 版","hero.ctaGithub":"在 GitHub 查看源码",
-    "hero.fineprint":"免费、开源（MIT）。目前提供 Apple Silicon Mac / macOS 11 及以上的 DMG。",
+    "hero.ctaDownload":"下载 macOS 版","hero.ctaGithub":"在 GitHub 查看发布",
+    "hero.fineprint":"免费并采用 MIT 许可证。提供适用于 Apple Silicon Mac / macOS 12 及以上的 v0.0.0 预发布版。",
     "hero.mockChip":"引用 [1]",
     "features.kicker":"功能","features.title":"阅读、搜索与使用资料的完整工具","features.lede":"无需在意格式即可导入，来源始终可见，从阅读到AI辅助一气呵成。",
     "features.f1.title":"广泛的格式支持","features.f1.body":"支持 PDF、DOCX、PPTX、XLSX/XLS、CSV/TSV、TXT、Markdown、JSON、图片、网页、音频与视频。",
     "features.f2.title":"应用自行渲染 PDF","features.f2.body":"在 macOS 上通过 PDFKit 直接绘制页面，不会有系统自带的控制条浮在资料上方。",
-    "features.f3.title":"有据可查的 Live Illustrator","features.f3.body":"随阅读进度逐段讲解，每个回答都附带引用；若无依据，会明确告知「无依据」。",
-    "features.f4.title":"Studio：带工作区的AI对话","features.f4.body":"在项目工作区中生成文件，命令在沙盒中执行并需要你的批准，允许与拒绝都清晰明了。",
-    "features.f5.title":"关键词 + 语义搜索","features.f5.body":"支持日语的混合搜索（BM25 + 向量）。可选择本地嵌入模型或兼容 OpenAI 的 API。",
+    "features.f3.title":"浅显且有引用的 Live Illustrator","features.f3.body":"先讲核心，再给出具体例子，并按需附上简短理解确认；可沿引用返回原资料。",
+    "features.f4.title":"自然写作的 Studio","features.f4.body":"避免模板化开场与重复，按目标制作成果，并将工作区操作安全隔离。",
+    "features.f5.title":"两种 AI API 格式","features.f5.body":"每个连接可选择兼容 OpenAI 或 Anthropic 的格式，在同一界面管理本地服务器与云端 API。",
     "features.f6.title":"多语言与无障碍","features.f6.body":"支持日语、英语、简体中文；浅色/深色/单色主题；80%–150%显示缩放；完整命令面板。",
     "privacy.kicker":"隐私与网络通信","privacy.title":"资料不会离开你的设备。","privacy.lede":"没有遥测，也不会自动上传任何资料。只有在你主动操作时才会发生网络通信。",
     "privacy.p1":"API 密钥保存在系统凭据库中，不会写入应用的数据库或设置文件",
@@ -365,7 +366,7 @@ var translations = {
     "privacy.p4":"资料正文、提示词与 API 密钥不会写入应用日志",
     "privacy.p5":"应用不会改写或删除你的原始资料文件",
     "download.title":"立即试用","download.body":"请从 GitHub Releases 下载。我们只发布应用本体（DMG）与校验和，不公开源代码。",
-    "download.req1":"Apple Silicon Mac","download.req2":"macOS 11 及以上","download.req3":"未签名（首次启动会有系统提示）","download.req4":"MIT 许可证","download.cta":"查看最新版本",
+    "download.req1":"Apple Silicon Mac","download.req2":"macOS 12 及以上","download.req3":"未签名（首次启动会有系统提示）","download.req4":"MIT 许可证","download.cta":"查看最新版本",
     "community.kicker":"社区","community.title":"问题反馈与公告","community.lede":"问题反馈与更新公告发布在 Discord 与 X。",
     "community.discord":"加入 Discord","community.x":"关注 X","community.dev":"开发者主页",
     "footer.license":"MIT License — © 2026 Yuki Orita（折田悠希）","footer.thirdparty":"第三方许可声明","footer.source":"GitHub"
@@ -375,15 +376,15 @@ var translations = {
     "hero.kicker":"Um assistente de documentos com IA, local-first",
     "hero.title":"Transforme seus documentos em respostas com fontes.",
     "hero.lede":"O WAKARU importa seus PDFs, áudios, vídeos e planilhas, permitindo ler, pesquisar e perguntar à IA com citações em cada resposta. Seus arquivos nunca saem do seu computador.",
-    "hero.ctaDownload":"Baixar para macOS","hero.ctaGithub":"Ver código no GitHub",
-    "hero.fineprint":"Gratuito e open source (MIT). Atualmente distribuímos um DMG para Apple Silicon Mac / macOS 11+.",
+    "hero.ctaDownload":"Baixar para macOS","hero.ctaGithub":"Ver versões no GitHub",
+    "hero.fineprint":"Gratuito sob a licença MIT. Pré-lançamento v0.0.0 para Apple Silicon Mac / macOS 12+.",
     "hero.mockChip":"Citação [1]",
     "features.kicker":"Recursos","features.title":"Tudo para ler, buscar e trabalhar com seus documentos","features.lede":"Importe qualquer formato, mantenha a fonte visível e vá da leitura à assistência de IA em um só app.",
     "features.f1.title":"Amplo suporte de formatos","features.f1.body":"PDF, DOCX, PPTX, XLSX/XLS, CSV/TSV, TXT, Markdown, JSON, imagens, páginas web, áudio e vídeo.",
     "features.f2.title":"PDF renderizado pelo próprio app","features.f2.body":"No macOS, as páginas são desenhadas diretamente com PDFKit — sem a barra de controle do sistema sobre o documento.",
-    "features.f3.title":"Live Illustrator, sempre com fontes","features.f3.body":"Explica a página que você está lendo em tempo real. Toda resposta traz uma citação, ou diz claramente que não há uma.",
-    "features.f4.title":"Studio: um chat de IA com workspace","features.f4.body":"Gera arquivos dentro do workspace do projeto e executa comandos em um sandbox com aprovação — permitir ou negar, sempre explícito.",
-    "features.f5.title":"Busca por palavra-chave + semântica","features.f5.body":"Busca híbrida (BM25 + vetores) com suporte a japonês. Escolha um modelo de embedding local ou uma API compatível com OpenAI.",
+    "features.f3.title":"Live Illustrator claro e com fontes","features.f3.body":"Começa pela ideia central, acrescenta exemplos e uma verificação curta quando útil, com citações de volta à fonte.",
+    "features.f4.title":"Studio com escrita natural","features.f4.body":"Evita introduções prontas e repetição, produz para o seu objetivo e mantém as operações do workspace isoladas.",
+    "features.f5.title":"Dois formatos de API de IA","features.f5.body":"Escolha OpenAI ou Anthropic compatível por conexão e gerencie servidores locais ou APIs em nuvem no mesmo lugar.",
     "features.f6.title":"Multilíngue e acessível","features.f6.body":"Japonês, inglês, chinês simplificado; temas claro/escuro/monocromático; escala de 80–150%; paleta de comandos completa.",
     "privacy.kicker":"Privacidade e rede","privacy.title":"Seus documentos nunca saem do seu computador.","privacy.lede":"Sem telemetria e sem upload automático. O app só se conecta à rede quando você manda.",
     "privacy.p1":"As chaves de API ficam no cofre de credenciais do sistema — nunca no banco de dados ou nos arquivos de configuração do app",
@@ -392,7 +393,7 @@ var translations = {
     "privacy.p4":"O texto dos documentos, os prompts e as chaves de API nunca são gravados no log do app",
     "privacy.p5":"O app nunca reescreve ou apaga seus arquivos-fonte originais",
     "download.title":"Experimente agora","download.body":"Baixe pelo GitHub Releases. Publicamos apenas o app empacotado (DMG) e os checksums — o código-fonte permanece privado.",
-    "download.req1":"Apple Silicon Mac","download.req2":"macOS 11+","download.req3":"Não assinado (uma confirmação aparece na primeira execução)","download.req4":"Licença MIT","download.cta":"Ver a última versão",
+    "download.req1":"Apple Silicon Mac","download.req2":"macOS 12+","download.req3":"Não assinado (uma confirmação aparece na primeira execução)","download.req4":"Licença MIT","download.cta":"Ver a última versão",
     "community.kicker":"Comunidade","community.title":"Relatos de bugs e novidades","community.lede":"Relatos de bugs e anúncios de versões acontecem no Discord e no X.",
     "community.discord":"Entrar no Discord","community.x":"Seguir no X","community.dev":"Site do desenvolvedor",
     "footer.license":"MIT License — © 2026 Yuki Orita","footer.thirdparty":"Licenças de terceiros","footer.source":"GitHub"
