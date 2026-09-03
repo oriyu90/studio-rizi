@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fcam pro — マニュアル操作と多レンズ対応のAndroid向け本格カメラアプリ</title>
+<meta name="description" content="Fcam pro（エフカムプロ）は、ISO・シャッター速度・フォーカス・ホワイトバランスのマニュアル制御、物理レンズの実切り替え、撮影プロファイル、バックグラウンド録画、日本語／英語の完全対応UIを備えたAndroid向けオープンソースのカメラアプリです。開発者は折田悠希（おりたゆうき / Yuki_Orita）。無料・MIT、GitHubで公開中。">
+<meta name="keywords" content="Fcam pro, エフカムプロ, 折田悠希, おりたゆうき, Yuki_Orita, github, Android, カメラアプリ, マニュアルカメラ, マニュアル露出, 多レンズ, 超広角, 望遠, マクロ, バックグラウンド録画, タイムラプス, OSS, Jetpack Compose, CameraX">
+<meta name="author" content="折田悠希 (Yuki_Orita)">
+<meta name="theme-color" content="#0d0d0d">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/fcam-pro/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/fcam-pro/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/fcam-pro/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="stylesheet" href="assets/site.css">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230d0d0d'/%3E%3Ccircle cx='16' cy='16' r='6.5' fill='none' stroke='%23ffc845' stroke-width='2.5'/%3E%3Ccircle cx='23' cy='9' r='1.8' fill='%23ffc845'/%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fcam pro">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="Fcam pro — マニュアル操作と多レンズ対応のAndroid向け本格カメラアプリ">
+<meta property="og:description" content="ISO・シャッター速度・フォーカス・WBのマニュアル制御、物理レンズの実切り替え、撮影プロファイル、バックグラウンド録画、日本語／英語対応。オープンソースのAndroidカメラアプリです。">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/fcam-pro/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Fcam pro — Android向けマニュアルカメラアプリ">
+<meta name="twitter:description" content="マニュアル露出・多レンズ・撮影プロファイル・バックグラウンド録画・日英対応のオープンソースAndroidカメラアプリ。">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Fcam pro",
+      "alternateName": ["エフカムプロ"],
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Android 7.0 (API 24) or later",
+      "softwareVersion": "1.0.0",
+      "datePublished": "2026-09-04",
+      "description": "ISO・シャッター速度・フォーカス・ホワイトバランスのマニュアル制御、物理レンズの実切り替え、撮影プロファイル、バックグラウンド録画、日本語／英語の完全対応UIを備えたAndroid向けオープンソースのカメラアプリ。",
+      "url": "https://studio-rizi.pages.dev/projects/fcam-pro/",
+      "downloadUrl": "https://github.com/oriyu90/fcam-pro/releases",
+      "codeRepository": "https://github.com/oriyu90/fcam-pro",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki_Orita",
+      "alternateName": ["折田悠希", "おりたゆうき"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": ["https://x.com/InovateofRIZI", "https://github.com/oriyu90"]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Fcam pro トップへ">
+        <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" fill="#1f1f1f"></rect>
+          <circle cx="16" cy="16" r="6.5" fill="none" stroke="#ffc845" stroke-width="2.5"></circle>
+          <circle cx="23" cy="9" r="1.8" fill="#ffc845"></circle>
+        </svg>
+        <span>Fcam pro</span>
+      </a>
+      <nav class="main-nav" aria-label="メインナビゲーション">
+        <a href="#features">できること</a>
+        <a href="#manual">マニュアル制御</a>
+        <a href="#languages">対応言語</a>
+        <a class="nav-download" href="#get-started">入手する</a>
+      </nav>
+      <span class="header-release">v1.0.0</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="page-width hero-grid">
+        <div class="hero-copy">
+          <p class="release-line">Android · Kotlin / Jetpack Compose · CameraX · Open source</p>
+          <h1 id="hero-title">撮る手を、<br>プロの手に。</h1>
+          <p class="hero-lead">Fcam pro（エフカムプロ）は、マニュアル露出、物理レンズの実切り替え、撮影プロファイル、バックグラウンド録画を備えたAndroid向けのオープンソースなカメラアプリです。登録もアカウントも不要で、OSの標準カメラアプリにも設定できます。</p>
+          <div class="hero-actions" role="group" aria-label="入手方法">
+            <a class="button" href="https://github.com/oriyu90/fcam-pro/releases">署名済みAPKを入手</a>
+            <a class="button button-secondary" href="https://github.com/oriyu90/fcam-pro">GitHubでソースを見る</a>
+          </div>
+        </div>
+        <aside class="hero-aside" aria-label="Fcam pro v1.0.0">
+          <div class="hero-icon" aria-hidden="true">
+            <svg viewBox="0 0 120 120" width="140" height="140">
+              <rect width="120" height="120" rx="28" fill="#1f1f1f"></rect>
+              <circle cx="60" cy="62" r="26" fill="none" stroke="#ffc845" stroke-width="6"></circle>
+              <circle cx="60" cy="62" r="12" fill="#ffc845"></circle>
+              <circle cx="88" cy="34" r="6" fill="#ffc845"></circle>
+            </svg>
+          </div>
+          <p class="aside-note">ISO・シャッター速度・フォーカス・ホワイトバランスの各スライダーは、選択中の物理カメラが対応する範囲に自動でクランプされます。</p>
+          <ul class="aside-facts" aria-label="概要">
+            <li><span>対応OS</span>Android 7.0 以降</li>
+            <li><span>UI言語</span>日本語 / English</li>
+            <li><span>ライセンス</span>MIT / 無料</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <nav class="page-index" aria-label="ページ内目次">
+      <div class="page-width page-index-inner">
+        <span class="page-index-label">このページの案内</span>
+        <ol>
+          <li><a href="#features">できること</a></li>
+          <li><a href="#manual">マニュアル制御</a></li>
+          <li><a href="#languages">対応言語</a></li>
+          <li><a href="#get-started">入手する</a></li>
+          <li><a href="#community">問い合わせ</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="features-title">必要な操作を、ファインダーの上で。</h2>
+          <p>写真と動画、それぞれのモードで責務を分け、プロ向けの操作をプレビューを覆わずに配置しています。</p>
+        </div>
+        <dl class="feature-ledger">
+          <div class="feature-row"><span class="feature-number">LENSES</span><dt>物理レンズを実切り替え</dt><dd>超広角・広角・望遠・マクロ・前面。レンズ向きのフラグではなく実際の cameraId をバインドします。対応しない端末では当該向きの既定カメラへ安全にフォールバックします。</dd></div>
+          <div class="feature-row"><span class="feature-number">FOCUS</span><dt>タップAFとピンチズーム</dt><dd>プレビュー上のタップで測光・フォーカス、ピンチでズーム。AE/AFロック中は自動で無効になります。</dd></div>
+          <div class="feature-row"><span class="feature-number">PROFILES</span><dt>撮影プロファイル</dt><dd>マニュアル設定を保存・改名・削除して呼び出し。Roomデータベースに保存し、アップデート時もクラッシュしない破壊的マイグレーションで管理します。</dd></div>
+          <div class="feature-row"><span class="feature-number">TIME-LAPSE</span><dt>タイムラプス</dt><dd>間隔は1〜10秒で設定可能。連続してエラーが起きた場合は自動停止し、画面を離れると確実に止まります。</dd></div>
+          <div class="feature-row"><span class="feature-number">BACKGROUND</span><dt>バックグラウンド録画</dt><dd>フォアグラウンドサービスで画面オフ中も録画を継続。通知の停止ボタンで終了でき、アプリ側のカメラとは排他制御します。</dd></div>
+          <div class="feature-row"><span class="feature-number">QR</span><dt>QRコード検出</dt><dd>写真モードで自動検出。URLはそのまま開き、それ以外はクリップボードにコピーします。</dd></div>
+          <div class="feature-row"><span class="feature-number">SYSTEM</span><dt>OSの標準カメラに設定可能</dt><dd>IMAGE_CAPTURE / VIDEO_CAPTURE / STILL_IMAGE_CAMERA を処理し、呼び出し元へ結果を返します。</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="manual" aria-labelledby="manual-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="manual-title">端末が対応する範囲だけを、確実に。</h2>
+          <p>マニュアルモードでは、選択中のカメラの CameraCharacteristics から ISO 感度・露光時間・最短フォーカス距離・利用可能なAWBモードを読み取り、スライダーの範囲と設定値をその端末の実力に合わせて制限します。MANUAL_SENSOR 非対応のカメラでは、マニュアルボタン自体を無効化して黒画面や例外を防ぎます。</p>
+        </div>
+        <ul class="lang-chips" aria-label="マニュアル制御項目">
+          <li>ISO 感度</li>
+          <li>シャッター速度</li>
+          <li>フォーカス距離</li>
+          <li>ホワイトバランス</li>
+          <li>AE / AF ロック</li>
+          <li>マイク Mono / Stereo</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="languages" aria-labelledby="languages-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="languages-title">日本語と英語、どちらも完全対応。</h2>
+          <p>UIの全文言・読み上げ用ラベル・通知文言を日本語と英語で用意しています。アプリ内の設定から「システム / 日本語 / English」を切り替えでき、初期値は端末の言語（未対応の言語は英語）に従います。</p>
+        </div>
+        <ul class="lang-chips" aria-label="対応言語一覧">
+          <li>日本語</li>
+          <li>English</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="get-started" aria-labelledby="get-started-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="get-started-title">署名済みAPKをすぐ試せます。</h2>
+          <p>Fcam pro v1.0.0 は GitHub Releases から署名済みAPKを入手できます。対応OSは Android 7.0（API 24）以降です。</p>
+        </div>
+        <article class="install-platform">
+          <h3>入手・ビルド</h3>
+          <ol class="step-list">
+            <li><span class="step-number">1</span><span><a href="https://github.com/oriyu90/fcam-pro/releases/tag/v1.0.0">GitHub Releases</a> から <code>Fcam-pro-v1.0.0.apk</code> をダウンロードし、<code>SHA256SUMS.txt</code> と照合してインストールします。</span></li>
+            <li><span class="step-number">2</span><span>ソースから試す場合は <a href="https://github.com/oriyu90/fcam-pro">GitHubリポジトリ</a> をクローンします。</span></li>
+            <li><span class="step-number">3</span><span>JDK 21 と Android SDK 36 / Build-Tools 36.0.0 を用意します。</span></li>
+            <li><span class="step-number">4</span><span>ターミナルで <code>./gradlew assembleDebug</code> を実行します。</span></li>
+          </ol>
+          <p class="hash">署名証明書 SHA-256: 99:0C:CC:90:2C:33:11:8E:C1:02:9B:4F:58:2B:39:E3:ED:A9:32:72:E4:6F:E2:76:A0:91:92:62:BE:CD:C5:B2</p>
+          <p class="install-reference"><a href="https://github.com/oriyu90/fcam-pro#readme">READMEでビルドの詳細を見る</a></p>
+        </article>
+        <p class="release-warning">カメラ権限は必須です。マイクと通知の権限は、動画録画やバックグラウンド録画を使うときにのみ要求します。スローモーションとパノラマは v1.0.0 ではUIのみで未実装です。</p>
+      </div>
+    </section>
+
+    <section class="section" id="community" aria-labelledby="community-title">
+      <div class="page-width project-note">
+        <div>
+          <h2 id="community-title">つくった人と、つながる場所。</h2>
+          <p>開発者は折田悠希（おりたゆうき / Yuki_Orita）。バグ報告や更新のお知らせは Discord へ。開発の記録やほかの制作物は X と公式サイトで案内しています。</p>
+        </div>
+        <nav class="link-columns" aria-label="開発者とコミュニティ">
+          <a href="https://discord.gg/x7KXhNTD8M" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="https://x.com/InovateofRIZI" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://studio-rizi.pages.dev/" target="_blank" rel="noopener noreferrer">公式サイト</a>
+          <a href="https://github.com/oriyu90/fcam-pro" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <p>© 2026 Yuki Orita · MIT License</p>
+      <a href="https://github.com/oriyu90/fcam-pro/blob/main/LICENSE">ライセンスを見る</a>
+    </div>
+  </footer>
+</body>
+</html>
