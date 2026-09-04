@@ -43,13 +43,13 @@
       "name": "Humi",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "macOS 14.0 or later",
-      "softwareVersion": "1.4.4",
+      "softwareVersion": "1.5.0",
       "url": "https://studio-rizi.pages.dev/projects/humi/pt/",
-      "downloadUrl": "https://github.com/oriyu90/humi/releases",
+      "downloadUrl": "https://github.com/oriyu90/humi/releases/latest",
       "codeRepository": "https://github.com/oriyu90/humi",
       "license": "https://github.com/oriyu90/humi/blob/main/LICENSE",
       "description": "Um app para macOS que organiza várias sessões de terminal como blocos em uma única janela. Pressione + para escolher uma pasta e uma sessão de terminal embutida abre nela, exibida como um bloco.",
-      "inLanguage": ["ja", "en", "zh", "pt"],
+      "inLanguage": ["ja", "en", "zh", "pt", "es", "de"],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
       "author": { "@id": "https://studio-rizi.pages.dev/#person" }
     },
@@ -85,7 +85,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">v1.4.4 · MIT · macOS 14+</span>
+      <span class="eyebrow">v1.5.0 · MIT · macOS 14+ · Universal</span>
       <h1>Disponha seus terminais em <span class="u">blocos</span>.</h1>
       <p class="lead">Humi é um app para macOS que organiza várias sessões de terminal como blocos em uma única janela. Pressione <code>+</code>, escolha uma pasta e a sessão abre nela, exibida como um bloco. Adicione quantas sessões quiser.</p>
       <div class="hero-actions">
@@ -134,9 +134,10 @@
       <p>O terminal é um emulador embutido via <a href="https://github.com/migueldeicaza/SwiftTerm">SwiftTerm</a> — PTY real, shell real.</p>
     </div>
     <dl class="spec">
+      <div class="row"><dt>v1.5: copiar seleção, seis idiomas e estabilidade</dt><dd>Selecione a saída do terminal com o mouse e copie com <kbd>⌘C</kbd> ou pelo menu de contexto. Agora o Humi oferece Japonês / English / 中文 / Português / Español / Deutsch. Também corrigimos travamentos e erros do ZIP de notas, o buffer de saídas grandes, o relógio compartilhado e o redimensionamento. O download é Universal para Apple Silicon e Intel.</dd></div>
       <div class="row"><dt>v1.3: estabilidade e acabamento</dt><dd>Correções para um shell órfão ao fechar e sair em seguida, uma enxurrada de gatilhos de saída e atalhos engolidos ao editar texto. Anéis de foco por teclado de alto contraste e hover nos controles personalizados, além de suporte a "Aumentar contraste". <kbd>⌃⌘]</kbd> / <kbd>⌃⌘[</kbd> redimensionam um painel pelo teclado.</dd></div>
       <div class="row"><dt>v1.2: painéis divididos e disposições</dt><dd>Divida painéis na horizontal ou vertical (<kbd>⌘D</kbd> / <kbd>⌘⇧D</kbd>), mova o foco com <kbd>⌘⌃</kbd>+setas, arraste o divisor para redimensionar. Salve e restaure toda a árvore de painéis, sessões e a janela. Atalho global de alternância; notificações para comandos longos, o alerta sonoro e correspondências na saída; gatilhos regex; OSC 7 no fish.</dd></div>
-      <div class="row"><dt>v1.1: idiomas, temas, perfis</dt><dd>Japonês / English / 中文 / Português / Español (automático pelo SO). 6 temas + temas personalizados + Claro/Escuro/Sistema, busca ⌘F, abrir URL e caminhos, perfis (shell + ambiente + comando inicial) com launcher, atalhos reconfiguráveis e uma barra de status com o branch do Git.</dd></div>
+      <div class="row"><dt>v1.1: idiomas, temas, perfis</dt><dd>Japonês / English / 中文 / Português / Español / Deutsch (automático pelo SO). 6 temas + temas personalizados + Claro/Escuro/Sistema, busca ⌘F, abrir URL e caminhos, perfis (shell + ambiente + comando inicial) com launcher, atalhos reconfiguráveis e uma barra de status com o branch do Git.</dd></div>
       <div class="row"><dt>Layout em blocos</dt><dd>Reorganiza-se em quantas colunas couberem. Cada bloco pode ser maximizado e restaurado, e roda de forma independente.</dd></div>
       <div class="row"><dt>Sessões ilimitadas</dt><dd>O <code>+</code> aparece em todos os estados; os blocos crescem na ordem em que você os adiciona.</dd></div>
       <div class="row"><dt>Abrir em uma pasta</dt><dd>Inicia com a pasta escolhida como diretório de trabalho — ou "abrir como está" para a pasta pessoal.</dd></div>

@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Humi（フミ） — タイル型の macOS ターミナルワークスペース</title>
-<meta name="description" content="Humi（フミ）は、複数のターミナルセッションを1枚のウィンドウにタイルとして並べる macOS アプリです。＋ を押してフォルダを選ぶと、そのフォルダで開いたセッションがタイルとして表示されます。内蔵エミュレータ（SwiftTerm）。開発者: 折田悠希（おりたゆうき / Yuki_Orita）。MIT ライセンスの無料オープンソース、GitHub で公開中。">
-<meta name="keywords" content="Humi,フミ,折田悠希,おりたゆうき,Yuki_Orita,oriyu90,github,macOS,ターミナル,terminal,タイル型,SwiftTerm,ターミナルマルチプレクサ,開発者ツール">
+<title>Humi — タイル型の macOS ターミナルワークスペース</title>
+<meta name="description" content="Humi は、複数のターミナルセッションを1枚のウィンドウにタイルとして並べる macOS アプリです。＋ を押してフォルダを選ぶと、そのフォルダで開いたセッションがタイルとして表示されます。内蔵エミュレータ（SwiftTerm）。開発者: 折田悠希（おりたゆうき / Yuki_Orita）。MIT ライセンスの無料オープンソース、GitHub で公開中。">
+<meta name="keywords" content="Humi,折田悠希,おりたゆうき,Yuki_Orita,oriyu90,github,macOS,ターミナル,terminal,タイル型,SwiftTerm,ターミナルマルチプレクサ,開発者ツール">
 <meta name="author" content="折田悠希 (Yuki_Orita)">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://studio-rizi.pages.dev/projects/humi/">
@@ -17,7 +17,7 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Humi">
-<meta property="og:title" content="Humi（フミ） — タイル型の macOS ターミナルワークスペース">
+<meta property="og:title" content="Humi — タイル型の macOS ターミナルワークスペース">
 <meta property="og:description" content="＋ を押してフォルダを選ぶと、そのフォルダで開いたターミナルセッションがウィンドウ内のタイルに並ぶ macOS アプリ。セッションはいくつでも。">
 <meta property="og:image" content="https://studio-rizi.pages.dev/projects/humi/assets/og-image.png">
 <meta property="og:url" content="https://studio-rizi.pages.dev/projects/humi/">
@@ -43,13 +43,13 @@
       "name": "Humi",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "macOS 14.0 or later",
-      "softwareVersion": "1.4.4",
+      "softwareVersion": "1.5.0",
       "url": "https://studio-rizi.pages.dev/projects/humi/",
-      "downloadUrl": "https://github.com/oriyu90/humi/releases",
+      "downloadUrl": "https://github.com/oriyu90/humi/releases/latest",
       "codeRepository": "https://github.com/oriyu90/humi",
       "license": "https://github.com/oriyu90/humi/blob/main/LICENSE",
       "description": "複数のターミナルセッションを1枚のウィンドウにタイルとして並べる macOS アプリ。＋ でフォルダを選ぶと、そのフォルダで開いた内蔵ターミナルセッションがタイルとして表示される。",
-      "inLanguage": ["ja", "en", "zh", "pt"],
+      "inLanguage": ["ja", "en", "zh", "pt", "es", "de"],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
       "author": { "@id": "https://studio-rizi.pages.dev/#person" }
     },
@@ -85,7 +85,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">v1.4.4 · MIT · macOS 14+</span>
+      <span class="eyebrow">v1.5.0 · MIT · macOS 14+ · Universal</span>
       <h1>ターミナルを、<span class="u">タイル</span>で並べる。</h1>
       <p class="lead">Humi は、複数のターミナルセッションを1枚のウィンドウにタイルとして並べる macOS アプリです。<code>＋</code> を押してフォルダを選ぶと、そのフォルダで開いたセッションがタイルとして表示されます。セッションはいくつでも追加できます。</p>
       <div class="hero-actions">
@@ -134,9 +134,10 @@
       <p>ターミナルは <a href="https://github.com/migueldeicaza/SwiftTerm">SwiftTerm</a> による内蔵エミュレータ（実 PTY・実シェル）です。</p>
     </div>
     <dl class="spec">
+      <div class="row"><dt>v1.5: 選択コピー・6言語・安定性</dt><dd>ターミナル出力をマウスで選択し、<kbd>⌘C</kbd> または右クリックでコピー。日本語 / English / 中文 / Português / Español / Deutsch に対応しました。メモ ZIP の停止防止とエラー表示、大量出力バッファ、共有時計、リサイズ処理も精査し、配布アプリは Apple Silicon / Intel 両対応の Universal 版です。</dd></div>
       <div class="row"><dt>v1.3: 安定性と操作性</dt><dd>タイル閉じ→即終了の孤児シェル、出力トリガー時のフラッド、テキスト編集中のショートカット横取りなどを修正。カスタムコントロールにホバー／キーボードフォーカスリング（高コントラスト）を整備、「コントラストを上げる」対応。<kbd>⌃⌘]</kbd> / <kbd>⌃⌘[</kbd> でペインをキーボードリサイズ。</dd></div>
       <div class="row"><dt>v1.2: 分割ペインとウィンドウ配置</dt><dd>ペインを H/V に自由分割（<kbd>⌘D</kbd> / <kbd>⌘⇧D</kbd>）、<kbd>⌘⌃</kbd>＋矢印でフォーカス移動、分割線ドラッグで比率変更。ペインツリー・セッション・ウィンドウ位置をまとめて保存／復元。グローバル切替ホットキー、長時間コマンド完了・ベル・出力一致の通知、正規表現トリガー、fish の OSC 7。</dd></div>
-      <div class="row"><dt>v1.1: 多言語・テーマ・プロファイル</dt><dd>日本語 / English / 中文 / Português / Español（OS 言語で自動）。6 テーマ + 自作テーマ + Light/Dark/System、⌘F 検索、URL・パス連携、シェル/環境変数/起動コマンドをまとめたプロファイルとランチャー、ショートカット変更、Git 表示付きステータスバー。</dd></div>
+      <div class="row"><dt>v1.1: 多言語・テーマ・プロファイル</dt><dd>日本語 / English / 中文 / Português / Español / Deutsch（OS 言語で自動）。6 テーマ + 自作テーマ + Light/Dark/System、⌘F 検索、URL・パス連携、シェル/環境変数/起動コマンドをまとめたプロファイルとランチャー、ショートカット変更、Git 表示付きステータスバー。</dd></div>
       <div class="row"><dt>タイルの並び</dt><dd>入る数だけ列にリフロー。各タイルは最大化・復帰ができ、独立して動きます。</dd></div>
       <div class="row"><dt>セッション無制限</dt><dd><code>＋</code> はどの状態でも表示。追加順にタイルが増えていきます。</dd></div>
       <div class="row"><dt>フォルダで開く</dt><dd>選んだフォルダを作業ディレクトリにして起動。「そのまま開く」でホームでも。</dd></div>

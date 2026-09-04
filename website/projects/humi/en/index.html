@@ -43,13 +43,13 @@
       "name": "Humi",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "macOS 14.0 or later",
-      "softwareVersion": "1.4.4",
+      "softwareVersion": "1.5.0",
       "url": "https://studio-rizi.pages.dev/projects/humi/en/",
-      "downloadUrl": "https://github.com/oriyu90/humi/releases",
+      "downloadUrl": "https://github.com/oriyu90/humi/releases/latest",
       "codeRepository": "https://github.com/oriyu90/humi",
       "license": "https://github.com/oriyu90/humi/blob/main/LICENSE",
       "description": "A macOS app that arranges multiple terminal sessions as tiles in one window. Press + to pick a folder and an embedded terminal session starts there, shown as a tile.",
-      "inLanguage": ["ja", "en", "zh", "pt"],
+      "inLanguage": ["ja", "en", "zh", "pt", "es", "de"],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "author": { "@id": "https://studio-rizi.pages.dev/#person" }
     },
@@ -85,7 +85,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">v1.4.4 · MIT · macOS 14+</span>
+      <span class="eyebrow">v1.5.0 · MIT · macOS 14+ · Universal</span>
       <h1>Lay your terminals out as <span class="u">tiles</span>.</h1>
       <p class="lead">Humi is a macOS app that arranges multiple terminal sessions as tiles in one window. Press <code>+</code>, pick a folder, and a session starts there, shown as a tile. Add as many sessions as you want.</p>
       <div class="hero-actions">
@@ -134,9 +134,10 @@
       <p>The terminal is an embedded emulator via <a href="https://github.com/migueldeicaza/SwiftTerm">SwiftTerm</a> — real PTY, real shell.</p>
     </div>
     <dl class="spec">
+      <div class="row"><dt>v1.5: selection copy, six languages, stability</dt><dd>Select terminal output with the mouse, then copy with <kbd>⌘C</kbd> or the context menu. Humi now supports Japanese / English / 中文 / Português / Español / Deutsch. Notes ZIP hangs and error reporting, large-output buffering, the shared clock, and resize work were audited and hardened. The download is universal for Apple Silicon and Intel.</dd></div>
       <div class="row"><dt>v1.3: stability &amp; polish</dt><dd>Fixes for an orphaned shell on close-then-quit, an output-trigger flood, and shortcuts swallowed while editing text. Hover / high-contrast keyboard-focus rings on the custom controls, plus Increase-Contrast support. <kbd>⌃⌘]</kbd> / <kbd>⌃⌘[</kbd> resize a pane from the keyboard.</dd></div>
       <div class="row"><dt>v1.2: split panes &amp; arrangements</dt><dd>Split panes horizontally or vertically (<kbd>⌘D</kbd> / <kbd>⌘⇧D</kbd>), move focus with <kbd>⌘⌃</kbd>+arrows, drag a divider to resize. Save and restore the whole pane tree, sessions, and window frame. A global toggle hotkey; notifications for long commands, the bell, and output matches; regex triggers; fish OSC 7.</dd></div>
-      <div class="row"><dt>v1.1: languages, themes, profiles</dt><dd>Japanese / English / 中文 / Português / Español (auto from the OS). 6 themes + custom themes + Light/Dark/System, ⌘F search, URL &amp; path actions, profiles (shell + env + startup command) with a launcher, rebindable shortcuts, and a status bar with git branch.</dd></div>
+      <div class="row"><dt>v1.1: languages, themes, profiles</dt><dd>Japanese / English / 中文 / Português / Español / Deutsch (auto from the OS). 6 themes + custom themes + Light/Dark/System, ⌘F search, URL &amp; path actions, profiles (shell + env + startup command) with a launcher, rebindable shortcuts, and a status bar with git branch.</dd></div>
       <div class="row"><dt>Tiled layout</dt><dd>Reflows into as many columns as fit. Each tile can be maximized and restored, and runs independently.</dd></div>
       <div class="row"><dt>Unlimited sessions</dt><dd><code>+</code> shows in every state; tiles grow in the order you add them.</dd></div>
       <div class="row"><dt>Open in a folder</dt><dd>Starts with the chosen folder as the working directory — or "open as-is" for home.</dd></div>

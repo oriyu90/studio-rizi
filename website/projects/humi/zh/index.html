@@ -43,13 +43,13 @@
       "name": "Humi",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "macOS 14.0 or later",
-      "softwareVersion": "1.4.4",
+      "softwareVersion": "1.5.0",
       "url": "https://studio-rizi.pages.dev/projects/humi/zh/",
-      "downloadUrl": "https://github.com/oriyu90/humi/releases",
+      "downloadUrl": "https://github.com/oriyu90/humi/releases/latest",
       "codeRepository": "https://github.com/oriyu90/humi",
       "license": "https://github.com/oriyu90/humi/blob/main/LICENSE",
       "description": "一款把多个终端会话作为图块并排放在同一个窗口里的 macOS 应用。按 + 选择文件夹，内置终端会话即在该处启动，并以图块显示。",
-      "inLanguage": ["ja", "en", "zh", "pt"],
+      "inLanguage": ["ja", "en", "zh", "pt", "es", "de"],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
       "author": { "@id": "https://studio-rizi.pages.dev/#person" }
     },
@@ -85,7 +85,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">v1.4.4 · MIT · macOS 14+</span>
+      <span class="eyebrow">v1.5.0 · MIT · macOS 14+ · Universal</span>
       <h1>把终端，<span class="u">平铺</span>排开。</h1>
       <p class="lead">Humi 是一款 macOS 应用，把多个终端会话作为图块并排放在同一个窗口里。按下 <code>+</code> 选择文件夹，会话就在该文件夹中启动，以图块显示。会话数量不限。</p>
       <div class="hero-actions">
@@ -134,9 +134,10 @@
       <p>终端是通过 <a href="https://github.com/migueldeicaza/SwiftTerm">SwiftTerm</a> 的内置模拟器（真实 PTY、真实 shell）。</p>
     </div>
     <dl class="spec">
+      <div class="row"><dt>v1.5：选区复制、六种语言与稳定性</dt><dd>用鼠标选择终端输出后，可通过 <kbd>⌘C</kbd> 或右键菜单复制。现支持日语 / English / 中文 / Português / Español / Deutsch。我们还修复了备忘 ZIP 卡死与错误提示、大量输出缓冲、共享时钟及窗口缩放问题。下载版为同时支持 Apple Silicon 和 Intel 的 Universal 应用。</dd></div>
       <div class="row"><dt>v1.3：稳定性与打磨</dt><dd>修复关闭图块后立即退出时残留的 Shell 进程、输出触发器造成的卡顿，以及编辑文本时被吞掉的快捷键。为自定义控件加入悬停 / 高对比键盘焦点环，并支持"提高对比度"。<kbd>⌃⌘]</kbd> / <kbd>⌃⌘[</kbd> 用键盘调整窗格大小。</dd></div>
       <div class="row"><dt>v1.2：分割窗格与窗口布局</dt><dd>横向或纵向分割窗格（<kbd>⌘D</kbd> / <kbd>⌘⇧D</kbd>），用 <kbd>⌘⌃</kbd>+方向键移动焦点，拖动分隔线调整比例。保存并恢复整个窗格树、会话与窗口位置。全局切换热键；长命令完成、响铃与输出匹配的通知；正则触发器；fish 的 OSC 7。</dd></div>
-      <div class="row"><dt>v1.1：多语言、主题、配置文件</dt><dd>日语 / English / 中文 / Português / Español（跟随系统）。6 款主题 + 自定义主题 + 浅色/深色/跟随系统，⌘F 搜索，URL 与路径打开，配置文件（Shell + 环境变量 + 启动命令）与启动器，快捷键自定义，带 Git 分支的状态栏。</dd></div>
+      <div class="row"><dt>v1.1：多语言、主题、配置文件</dt><dd>日语 / English / 中文 / Português / Español / Deutsch（跟随系统）。6 款主题 + 自定义主题 + 浅色/深色/跟随系统，⌘F 搜索，URL 与路径打开，配置文件（Shell + 环境变量 + 启动命令）与启动器，快捷键自定义，带 Git 分支的状态栏。</dd></div>
       <div class="row"><dt>图块布局</dt><dd>按可容纳的列数自动重排。每个图块可最大化、还原，彼此独立运行。</dd></div>
       <div class="row"><dt>会话不限</dt><dd><code>+</code> 在任何状态下都显示；图块按添加顺序增加。</dd></div>
       <div class="row"><dt>在文件夹中打开</dt><dd>以所选文件夹作为工作目录启动，也可“按原样打开”进入主目录。</dd></div>
