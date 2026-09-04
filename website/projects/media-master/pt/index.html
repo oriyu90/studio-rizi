@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Media Master — um app Android para fotos, música, documentos, armazenamento e arquivos de rede</title>
+<meta name="description" content="O Media Master é um app Android de código aberto que reúne navegação de fotos/vídeos, reprodução de áudio, digitalização de documentos, ferramentas de armazenamento, gestão de apps/APKs e armazenamento de rede SMB/WebDAV num só lugar. Outros apps podem abrir qualquer recurso diretamente pelo esquema mediamaster://. Suporta modo DeX / desktop. Criado por Yuki Orita (Yuki_Orita / oriyu90). Gratuito e de código aberto no GitHub.">
+<meta name="keywords" content="Media Master, メディアマスター, 折田悠希, おりたゆうき, Yuki_Orita, github, Android, gerenciador de arquivos, gestor de mídia, DeX, modo desktop, código aberto, Jetpack Compose, SMB, WebDAV, deep link">
+<meta name="author" content="Yuki_Orita">
+<meta name="theme-color" content="#0f1b1a">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/media-master/pt/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/media-master/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/media-master/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/media-master/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/media-master/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/media-master/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="stylesheet" href="../assets/site.css">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230f2320'/%3E%3Cpath d='M8 12.5c0-.83.67-1.5 1.5-1.5h4l1.6 1.8H23c.83 0 1.5.67 1.5 1.5v7.7c0 .83-.67 1.5-1.5 1.5H9.5C8.67 23.5 8 22.83 8 22v-9.5z' fill='%2334c9b5'/%3E%3Cpath d='M14.5 15.2v5.2l4.4-2.6-4.4-2.6z' fill='%230f2320'/%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Media Master">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:title" content="Media Master — um app Android para fotos, música, documentos, armazenamento e arquivos de rede">
+<meta property="og:description" content="Gerencie fotos, vídeos, música, documentos, armazenamento, apps e SMB/WebDAV num só app. Outros apps abrem qualquer recurso pelo esquema mediamaster://. Modo DeX / desktop, cinco idiomas, código aberto.">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/media-master/pt/">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/media-master/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="O logo do Media Master com ícones de fotos, música, documentos e armazenamento">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Media Master — gerenciador de mídia e arquivos para Android">
+<meta name="twitter:description" content="Um app Android de código aberto para gerenciar fotos, vídeos, música, documentos, armazenamento, apps e arquivos de rede num só lugar.">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/media-master/assets/og.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Media Master",
+      "alternateName": ["メディアマスター"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Android 7.0 (API 24) or later",
+      "softwareVersion": "0.3.0",
+      "inLanguage": "pt",
+      "description": "Um gerenciador de mídia e arquivos Android de código aberto que combina navegação de fotos/vídeos, reprodução de áudio, digitalização de documentos, ferramentas de armazenamento, gestão de apps/APKs e armazenamento de rede SMB/WebDAV. Outros apps podem abrir qualquer recurso pelo esquema mediamaster://.",
+      "url": "https://studio-rizi.pages.dev/projects/media-master/pt/",
+      "downloadUrl": "https://github.com/oriyu90/media-master",
+      "codeRepository": "https://github.com/oriyu90/media-master",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki_Orita",
+      "alternateName": ["折田悠希", "おりたゆうき"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://x.com/InovateofRIZI",
+        "https://github.com/oriyu90"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Media Master, voltar ao topo">
+        <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" fill="var(--color-ink)"></rect>
+          <path d="M8 12.5c0-.83.67-1.5 1.5-1.5h4l1.6 1.8H23c.83 0 1.5.67 1.5 1.5v7.7c0 .83-.67 1.5-1.5 1.5H9.5C8.67 23.5 8 22.83 8 22v-9.5z" fill="var(--color-accent)"></path>
+          <path d="M14.5 15.2v5.2l4.4-2.6-4.4-2.6z" fill="var(--color-ink)"></path>
+        </svg>
+        <span>Media Master</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#features">Recursos</a>
+        <a href="#external">Integrações</a>
+        <a href="#network">Rede</a>
+        <a href="#languages">Idiomas</a>
+        <a class="nav-download" href="#get-started">Obter</a>
+      </nav>
+      <span class="header-release">v0.3.0</span>
+    </div>
+    <nav class="language-switcher-bar" aria-label="Idioma">
+      <a hreflang="ja" lang="ja" href="/projects/media-master/">日本語</a>
+      <a hreflang="en" lang="en" href="/projects/media-master/en/">English</a>
+      <a hreflang="zh-Hans" lang="zh-Hans" href="/projects/media-master/zh/">简体中文</a>
+      <a hreflang="pt" lang="pt" href="/projects/media-master/pt/" aria-current="page">Português</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div>
+            <p class="release-line">Android · Kotlin / Jetpack Compose · Código aberto · v0.3.0</p>
+            <h1 id="hero-title">Fotos, música, documentos —<br>num só lugar</h1>
+            <p class="hero-lead">O Media Master é um gerenciador de mídia e arquivos Android de código aberto que mantém fotos, vídeos, música, documentos, armazenamento, apps e arquivos em pastas de rede num único app. Sem conta, sem cadastro — funciona na hora.</p>
+          </div>
+          <div class="hero-actions" role="group" aria-label="Como obter">
+            <a class="button" href="https://github.com/oriyu90/media-master">Ver o código no GitHub</a>
+            <a class="button button-secondary" href="#get-started">Ver instruções de build</a>
+          </div>
+        </div>
+        <aside class="hero-aside" aria-label="Media Master v0.3.0">
+          <div class="hero-icon" aria-hidden="true">
+            <svg viewBox="0 0 108 108" width="152" height="152">
+              <rect width="108" height="108" rx="26" fill="var(--color-ink)"></rect>
+              <path d="M27 41c0-2.76 2.24-5 5-5h13l5.4 6h30.1c2.76 0 5 2.24 5 5v25.6c0 2.76-2.24 5-5 5H32c-2.76 0-5-2.24-5-5V41z" fill="var(--color-accent)"></path>
+              <path d="M46 49v18l15-9-15-9z" fill="var(--color-ink)"></path>
+            </svg>
+          </div>
+          <p class="aside-note">A v0.3.0 reconstrói a interface sobre o Material 3 com contraste verificado em WCAG AA, adiciona o esquema mediamaster:// para outros apps abrirem qualquer recurso e adiciona armazenamento de rede SMB / WebDAV.</p>
+          <ul class="aside-facts" aria-label="Resumo">
+            <li><span>SO</span>Android 7.0 ou posterior</li>
+            <li><span>Idiomas</span>Cinco</li>
+            <li><span>Licença</span>MIT / grátis</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <nav class="page-index" aria-label="Nesta página">
+      <div class="page-width page-index-inner">
+        <span class="page-index-label">Nesta página</span>
+        <ol>
+          <li><a href="#features">Recursos</a></li>
+          <li><a href="#external">Integrações</a></li>
+          <li><a href="#network">Armazenamento de rede</a></li>
+          <li><a href="#desktop">DeX / desktop</a></li>
+          <li><a href="#languages">Idiomas</a></li>
+          <li><a href="#get-started">Obter</a></li>
+          <li><a href="#community">Contato</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="features-title">Organize o conteúdo do aparelho sem caçar menus.</h2>
+          <p>De navegar por fotos e vídeos a tocar música, digitalizar documentos, limpar o armazenamento e gerenciar apps. Na v0.3.0, cada recurso está a um toque da tela inicial.</p>
+        </div>
+        <dl class="feature-ledger">
+          <div class="feature-row">
+            <span class="feature-number">LIBRARY</span>
+            <dt>Fotos e vídeos, por álbum</dt>
+            <dd>Todas as imagens e vídeos do aparelho em grade, mais uma visão de álbuns agrupada por pasta. Toque para ver em tela cheia ou abra o editor ali mesmo.</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">AUDIO</span>
+            <dt>Música, em faixas e listas</dt>
+            <dd>Reprodução em segundo plano com o Media3 (ExoPlayer). A posição do mini player agora vem de callbacks do player, não de um laço de polling.</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">SCAN &amp; DOCS</span>
+            <dt>Digitalize documentos em PDF</dt>
+            <dd>Integra o GMS Document Scanner para transformar papel em PDF ou JPEG na hora.</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">MANAGE</span>
+            <dt>Organize armazenamento e apps</dt>
+            <dd>Navegue direto pelo armazenamento interno e externo, filtre por categoria, detecte arquivos duplicados por hash e gerencie apps instalados e APKs.</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">EDIT</span>
+            <dt>Edite imagens e vídeos</dt>
+            <dd>Cortar, girar e ajustar cor de imagens; cortar e silenciar vídeos. Abra o editor pelo visualizador ou pelo "Editar com" de outro app.</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">BACKUP</span>
+            <dt>Backups agendados</dt>
+            <dd>Um motor de backup baseado em WorkManager que arquiva pastas-alvo em ZIP conforme suas condições (carregando, Wi-Fi). A restauração tem proteção contra path traversal.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="external" aria-labelledby="external-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="external-title">Outros apps podem abrir um recurso pelo nome.</h2>
+          <p>O Media Master expõe um ponto de entrada para cada recurso por meio de um esquema <code>mediamaster://</code> dedicado. Ele <strong>não</strong> é marcado como <code>BROWSABLE</code>, então uma página web não consegue acioná-lo — só um app do aparelho que monta a intent explicitamente. Ele também se registra nos seletores "Abrir com" e "Editar com" do sistema.</p>
+        </div>
+        <ul class="desktop-points">
+          <li><code>mediamaster://library</code> / <code>audio</code> / <code>documents</code> / <code>manage</code> / <code>apps</code> / <code>clean</code> / <code>settings</code></li>
+          <li><code>mediamaster://browse?path=/storage/emulated/0/Download</code> — navegador de arquivos num caminho absoluto</li>
+          <li><code>mediamaster://edit/image?uri=…</code> / <code>edit/video?uri=…</code> — editores de imagem e vídeo</li>
+          <li><code>ACTION_EDIT</code> (imagem, vídeo) e <code>ACTION_VIEW</code> (mídia, pastas) também são suportados</li>
+        </ul>
+        <p class="aside-note">Pedidos desconhecidos ou malformados apenas abrem o app normalmente. Ações destrutivas — apagar, desinstalar, restaurar backup — nunca são executadas a partir de uma intent externa.</p>
+      </div>
+    </section>
+
+    <section class="section" id="network" aria-labelledby="network-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="network-title">Arquivos SMB / WebDAV, na mesma tela.</h2>
+          <p>Adicione compartilhamentos SMB e servidores WebDAV em Configurações → Conexão de servidor, então navegue pelas pastas remotas e entregue arquivos ao seletor "Abrir com" do sistema. As senhas são guardadas com <code>EncryptedSharedPreferences</code> (AES-256, chave no Android Keystore) — nunca em texto puro.</p>
+        </div>
+        <p class="aside-note">Toda chamada de rede roda fora da thread principal com timeouts de conexão e leitura; host inacessível, senha errada ou timeout mostram um erro em vez de travar.</p>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="desktop" aria-labelledby="desktop-title">
+      <div class="page-width mode-spread">
+        <div class="mode-copy">
+          <h2 id="desktop-title">Em telas grandes, uma interface desktop estilo Finder.</h2>
+          <p>Ela troca automaticamente apenas quando o Android informa modo DeX / desktop — não em tablets grandes comuns nem no modo paisagem. Uma barra lateral à esquerda percorre Início, Biblioteca, Áudio, Documentos, Gerenciar, Apps, Configurações e Armazenamento de rede, e pastas podem ser fixadas na barra por arrastar e soltar.</p>
+          <ul class="desktop-points">
+            <li>Uma lista de dispositivos com armazenamento interno, externo e de rede</li>
+            <li>Pictures / Download / apk fixados por padrão</li>
+            <li>Pressione e segure, clique com o botão direito ou use o botão de overflow da linha para "Abrir em nova aba", "Fixar" e "Desafixar"</li>
+          </ul>
+        </div>
+        <div class="desktop-mock" role="group" aria-label="Maquete da interface desktop">
+          <div class="desktop-mock-sidebar">
+            <span class="desktop-mock-item is-active">Início</span>
+            <span class="desktop-mock-item">Biblioteca</span>
+            <span class="desktop-mock-item">Áudio</span>
+            <span class="desktop-mock-item">Documentos</span>
+            <span class="desktop-mock-item">Gerenciar</span>
+            <span class="desktop-mock-divider"></span>
+            <span class="desktop-mock-pin">📌 Pictures</span>
+            <span class="desktop-mock-pin">📌 Download</span>
+            <span class="desktop-mock-pin">📌 apk</span>
+          </div>
+          <div class="desktop-mock-grid" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="languages" aria-labelledby="languages-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="languages-title">Cinco idiomas, string a string.</h2>
+          <p>Inglês, japonês, chinês simplificado, árabe (RTL) e holandês carregam o mesmo número de chaves de string. Quantidades usam <code>&lt;plurals&gt;</code>, com as seis categorias do árabe. Troque pela configuração no app ou pela configuração de idioma por app do Android 13+.</p>
+        </div>
+        <ul class="lang-chips" aria-label="Idiomas suportados">
+          <li>English</li>
+          <li>日本語</li>
+          <li>简体中文</li>
+          <li dir="rtl">العربية</li>
+          <li>Nederlands</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-dark install-section" id="get-started" aria-labelledby="get-started-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="get-started-title">Teste o APK assinado agora mesmo.</h2>
+          <p>O Media Master v0.3.0 está disponível como APK assinado no GitHub Releases. Esta versão adiciona a API de acesso externo, o armazenamento de rede SMB/WebDAV e a interface Material 3.</p>
+        </div>
+        <article class="install-platform">
+          <h3>Obter ou compilar</h3>
+          <ol class="step-list">
+            <li><span class="step-number">1</span><span>Baixe e instale o APK assinado do <a href="https://github.com/oriyu90/media-master/releases/tag/v0.3.0">GitHub Releases</a>.</span></li>
+            <li><span class="step-number">2</span><span>Para compilar do código, clone o <a href="https://github.com/oriyu90/media-master">repositório no GitHub</a> e abra no Android Studio.</span></li>
+            <li><span class="step-number">3</span><span>Tenha o Android SDK 36 e o JDK 21 (o nível de compatibilidade de origem é Java 17).</span></li>
+            <li><span class="step-number">4</span><span>Rode <code>./gradlew :app:assembleDebug</code> num terminal, ou execute pelo Android Studio.</span></li>
+          </ol>
+          <p class="install-reference"><a href="https://github.com/oriyu90/media-master#readme">Detalhes de build e assinatura no README</a></p>
+        </article>
+        <p class="release-warning">Requer Android 7.0 (API 24) ou posterior. O acesso à mídia usa o MediaStore / Storage Access Framework padrão do Android.</p>
+      </div>
+    </section>
+
+    <section class="section" id="community" aria-labelledby="community-title">
+      <div class="page-width project-note">
+        <div>
+          <h2 id="community-title">Onde falar com o criador.</h2>
+          <p>Criado por Yuki Orita (Yuki_Orita). Notas de desenvolvimento e outros projetos estão no X e no site oficial.</p>
+        </div>
+        <nav class="link-columns" aria-label="Desenvolvedor e comunidade">
+          <a href="https://x.com/InovateofRIZI" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://kizi.pages.dev/" target="_blank" rel="noopener noreferrer">KIZI</a>
+          <a href="https://github.com/oriyu90/media-master" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <p>© 2026 Yuki Orita · MIT License</p>
+      <a href="https://github.com/oriyu90/media-master/blob/main/LICENSE">Ver a licença</a>
+    </div>
+  </footer>
+</body>
+</html>

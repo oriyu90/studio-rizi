@@ -22,7 +22,7 @@
 
   <g transform="translate(90,440)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26" fill="#7fd6c6">
     <rect width="150" height="46" rx="23" fill="none" stroke="#2f5a54"/>
-    <text x="30" y="30">v0.1.0</text>
+    <text x="30" y="30">v0.3.0</text>
     <rect x="170" width="230" height="46" rx="23" fill="none" stroke="#2f5a54"/>
     <text x="200" y="30">Android · Open Source</text>
   </g>

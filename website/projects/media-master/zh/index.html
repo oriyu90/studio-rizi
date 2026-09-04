@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Media Master — 把照片、音乐、文档、存储与网络文件合为一体的 Android 应用</title>
+<meta name="description" content="Media Master 是一款开源 Android 应用，将照片/视频浏览、音频播放、文档扫描、存储工具、应用/APK 管理以及 SMB/WebDAV 网络存储集于一处。其他应用可通过 mediamaster:// 方案直接打开任一功能。支持 DeX / 桌面模式。开发者：折田悠希（Yuki_Orita / oriyu90）。免费开源，托管于 GitHub。">
+<meta name="keywords" content="Media Master, メディアマスター, 折田悠希, おりたゆうき, Yuki_Orita, github, Android, 文件管理器, 媒体管理, DeX, 桌面模式, 开源, Jetpack Compose, SMB, WebDAV, 深层链接">
+<meta name="author" content="Yuki_Orita">
+<meta name="theme-color" content="#0f1b1a">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/media-master/zh/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/media-master/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/media-master/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/media-master/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/media-master/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/media-master/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="stylesheet" href="../assets/site.css">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230f2320'/%3E%3Cpath d='M8 12.5c0-.83.67-1.5 1.5-1.5h4l1.6 1.8H23c.83 0 1.5.67 1.5 1.5v7.7c0 .83-.67 1.5-1.5 1.5H9.5C8.67 23.5 8 22.83 8 22v-9.5z' fill='%2334c9b5'/%3E%3Cpath d='M14.5 15.2v5.2l4.4-2.6-4.4-2.6z' fill='%230f2320'/%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Media Master">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:title" content="Media Master — 把照片、音乐、文档、存储与网络文件合为一体的 Android 应用">
+<meta property="og:description" content="在一个应用里管理照片、视频、音乐、文档、存储、应用与 SMB/WebDAV。其他应用可通过 mediamaster:// 方案直接打开任一功能。支持 DeX / 桌面模式，五种语言，开源。">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/media-master/zh/">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/media-master/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Media Master 徽标，以及代表照片、音乐、文档与存储的图标">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Media Master — Android 媒体与文件管理应用">
+<meta name="twitter:description" content="一款开源 Android 应用，在一处管理照片、视频、音乐、文档、存储、应用与网络文件。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/media-master/assets/og.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Media Master",
+      "alternateName": ["メディアマスター"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Android 7.0 (API 24) or later",
+      "softwareVersion": "0.3.0",
+      "inLanguage": "zh-Hans",
+      "description": "一款开源 Android 媒体与文件管理应用，集照片/视频浏览、音频播放、文档扫描、存储工具、应用/APK 管理以及 SMB/WebDAV 网络存储于一体。其他应用可通过 mediamaster:// 方案直接打开任一功能。",
+      "url": "https://studio-rizi.pages.dev/projects/media-master/zh/",
+      "downloadUrl": "https://github.com/oriyu90/media-master",
+      "codeRepository": "https://github.com/oriyu90/media-master",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki_Orita",
+      "alternateName": ["折田悠希", "おりたゆうき"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://x.com/InovateofRIZI",
+        "https://github.com/oriyu90"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Media Master，返回顶部">
+        <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" fill="var(--color-ink)"></rect>
+          <path d="M8 12.5c0-.83.67-1.5 1.5-1.5h4l1.6 1.8H23c.83 0 1.5.67 1.5 1.5v7.7c0 .83-.67 1.5-1.5 1.5H9.5C8.67 23.5 8 22.83 8 22v-9.5z" fill="var(--color-accent)"></path>
+          <path d="M14.5 15.2v5.2l4.4-2.6-4.4-2.6z" fill="var(--color-ink)"></path>
+        </svg>
+        <span>Media Master</span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="#features">功能</a>
+        <a href="#external">应用互通</a>
+        <a href="#network">网络</a>
+        <a href="#languages">语言</a>
+        <a class="nav-download" href="#get-started">获取</a>
+      </nav>
+      <span class="header-release">v0.3.0</span>
+    </div>
+    <nav class="language-switcher-bar" aria-label="语言">
+      <a hreflang="ja" lang="ja" href="/projects/media-master/">日本語</a>
+      <a hreflang="en" lang="en" href="/projects/media-master/en/">English</a>
+      <a hreflang="zh-Hans" lang="zh-Hans" href="/projects/media-master/zh/" aria-current="page">简体中文</a>
+      <a hreflang="pt" lang="pt" href="/projects/media-master/pt/">Português</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div>
+            <p class="release-line">Android · Kotlin / Jetpack Compose · 开源 · v0.3.0</p>
+            <h1 id="hero-title">照片、音乐、文档，<br>都在一处</h1>
+            <p class="hero-lead">Media Master 是一款开源的 Android 媒体与文件管理应用，把照片、视频、音乐、文档、存储、应用以及网络共享上的文件放进同一个应用。无需账号、无需注册，打开即用。</p>
+          </div>
+          <div class="hero-actions" role="group" aria-label="获取方式">
+            <a class="button" href="https://github.com/oriyu90/media-master">在 GitHub 查看源码</a>
+            <a class="button button-secondary" href="#get-started">查看构建方法</a>
+          </div>
+        </div>
+        <aside class="hero-aside" aria-label="Media Master v0.3.0">
+          <div class="hero-icon" aria-hidden="true">
+            <svg viewBox="0 0 108 108" width="152" height="152">
+              <rect width="108" height="108" rx="26" fill="var(--color-ink)"></rect>
+              <path d="M27 41c0-2.76 2.24-5 5-5h13l5.4 6h30.1c2.76 0 5 2.24 5 5v25.6c0 2.76-2.24 5-5 5H32c-2.76 0-5-2.24-5-5V41z" fill="var(--color-accent)"></path>
+              <path d="M46 49v18l15-9-15-9z" fill="var(--color-ink)"></path>
+            </svg>
+          </div>
+          <p class="aside-note">v0.3.0 将界面全面重构到 Material 3，并按 WCAG AA 校验对比度；新增 mediamaster:// 方案，让其他应用直接打开任一功能，并新增 SMB / WebDAV 网络存储。</p>
+          <ul class="aside-facts" aria-label="概览">
+            <li><span>系统</span>Android 7.0 及以上</li>
+            <li><span>语言</span>五种</li>
+            <li><span>许可</span>MIT / 免费</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <nav class="page-index" aria-label="本页导航">
+      <div class="page-width page-index-inner">
+        <span class="page-index-label">本页导航</span>
+        <ol>
+          <li><a href="#features">功能</a></li>
+          <li><a href="#external">应用互通</a></li>
+          <li><a href="#network">网络存储</a></li>
+          <li><a href="#desktop">DeX / 桌面</a></li>
+          <li><a href="#languages">语言</a></li>
+          <li><a href="#get-started">获取</a></li>
+          <li><a href="#community">联系</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="features-title">整理设备内容，不必层层翻找。</h2>
+          <p>从浏览照片和视频，到播放音乐、扫描文档、清理存储和管理应用。v0.3.0 中，每项功能都能从主屏幕一键直达。</p>
+        </div>
+        <dl class="feature-ledger">
+          <div class="feature-row">
+            <span class="feature-number">LIBRARY</span>
+            <dt>照片与视频，按相册</dt>
+            <dd>以网格展示设备上的全部图片与视频，并提供按文件夹分组的相册视图。点按即可全屏查看，或就地打开编辑器。</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">AUDIO</span>
+            <dt>音乐，按曲目与播放列表</dt>
+            <dd>基于 Media3（ExoPlayer）的后台播放。迷你播放器的进度改由播放器回调更新，不再依赖轮询。</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">SCAN &amp; DOCS</span>
+            <dt>扫描文档为 PDF</dt>
+            <dd>集成 GMS 文档扫描器，随手把纸质文档数字化为 PDF 或 JPEG。</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">MANAGE</span>
+            <dt>整理存储与应用</dt>
+            <dd>直接浏览内部与外部存储，按类别筛选，用哈希检测重复文件，并管理已安装应用与 APK。</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">EDIT</span>
+            <dt>编辑图片与视频</dt>
+            <dd>图片裁剪、旋转、调色；视频裁剪与静音。可从查看器的“编辑”，或从其他应用的“用其他应用编辑”打开。</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">BACKUP</span>
+            <dt>计划备份</dt>
+            <dd>基于 WorkManager 的备份引擎，按条件（充电、Wi-Fi）将目标文件夹归档为 ZIP。恢复过程已做路径穿越防护。</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="external" aria-labelledby="external-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="external-title">其他应用可按名称打开某项功能。</h2>
+          <p>Media Master 通过专用的 <code>mediamaster://</code> 方案公开各功能入口。它<strong>未</strong>标记 <code>BROWSABLE</code>，因此网页无法触发，只有设备上明确构造该意图的应用才能调用。它同时注册到系统的“用其他应用打开 / 编辑”选择器。</p>
+        </div>
+        <ul class="desktop-points">
+          <li><code>mediamaster://library</code> / <code>audio</code> / <code>documents</code> / <code>manage</code> / <code>apps</code> / <code>clean</code> / <code>settings</code></li>
+          <li><code>mediamaster://browse?path=/storage/emulated/0/Download</code> — 按绝对路径打开文件浏览器</li>
+          <li><code>mediamaster://edit/image?uri=…</code> / <code>edit/video?uri=…</code> — 图片与视频编辑器</li>
+          <li>同时支持 <code>ACTION_EDIT</code>（图片、视频）与 <code>ACTION_VIEW</code>（媒体、文件夹）</li>
+        </ul>
+        <p class="aside-note">未知或格式不正确的请求只会正常打开应用。删除、卸载、从备份恢复等破坏性操作绝不会由外部意图触发。</p>
+      </div>
+    </section>
+
+    <section class="section" id="network" aria-labelledby="network-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="network-title">SMB / WebDAV 的文件，也在同一界面。</h2>
+          <p>在“设置 → 服务器连接”中添加 SMB 共享和 WebDAV 服务器，即可浏览远程文件夹，并把文件交给系统的“用其他应用打开”。密码使用 <code>EncryptedSharedPreferences</code>（AES-256，密钥存于 Android Keystore）加密保存，绝不以明文存储。</p>
+        </div>
+        <p class="aside-note">所有网络请求均在主线程之外执行，带有连接与读取超时；主机不可达、密码错误或超时都会显示错误而非崩溃。</p>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="desktop" aria-labelledby="desktop-title">
+      <div class="page-width mode-spread">
+        <div class="mode-copy">
+          <h2 id="desktop-title">在大屏上，切换为 Finder 风格的桌面界面。</h2>
+          <p>仅当 Android 报告 DeX / 桌面模式时才会自动切换，普通大屏平板或横屏不会触发。左侧边栏可在主页、库、音频、文档、管理、应用、设置与网络存储间切换，文件夹可通过拖放固定到侧边栏。</p>
+          <ul class="desktop-points">
+            <li>包含内部、外部与网络存储的设备栏</li>
+            <li>默认固定 Pictures / Download / apk</li>
+            <li>长按、右键或行尾按钮可“在新标签页打开”“固定”“取消固定”</li>
+          </ul>
+        </div>
+        <div class="desktop-mock" role="group" aria-label="桌面界面示意">
+          <div class="desktop-mock-sidebar">
+            <span class="desktop-mock-item is-active">主页</span>
+            <span class="desktop-mock-item">库</span>
+            <span class="desktop-mock-item">音频</span>
+            <span class="desktop-mock-item">文档</span>
+            <span class="desktop-mock-item">管理</span>
+            <span class="desktop-mock-divider"></span>
+            <span class="desktop-mock-pin">📌 Pictures</span>
+            <span class="desktop-mock-pin">📌 Download</span>
+            <span class="desktop-mock-pin">📌 apk</span>
+          </div>
+          <div class="desktop-mock-grid" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="languages" aria-labelledby="languages-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="languages-title">五种语言，逐条字符串对齐。</h2>
+          <p>英语、日语、简体中文、阿拉伯语（RTL）与荷兰语的字符串键数量完全一致。数量表达使用 <code>&lt;plurals&gt;</code>，阿拉伯语覆盖全部六个分类。可在应用内设置切换，也可在 Android 13+ 的按应用语言设置中切换。</p>
+        </div>
+        <ul class="lang-chips" aria-label="支持的语言">
+          <li>English</li>
+          <li>日本語</li>
+          <li>简体中文</li>
+          <li dir="rtl">العربية</li>
+          <li>Nederlands</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-dark install-section" id="get-started" aria-labelledby="get-started-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="get-started-title">立即试用已签名的 APK。</h2>
+          <p>Media Master v0.3.0 以已签名 APK 的形式发布于 GitHub Releases。本次更新加入了应用互通 API、SMB/WebDAV 网络存储与 Material 3 新界面。</p>
+        </div>
+        <article class="install-platform">
+          <h3>获取或自行构建</h3>
+          <ol class="step-list">
+            <li><span class="step-number">1</span><span>从 <a href="https://github.com/oriyu90/media-master/releases/tag/v0.3.0">GitHub Releases</a> 下载并安装已签名的 APK。</span></li>
+            <li><span class="step-number">2</span><span>如需从源码构建，克隆 <a href="https://github.com/oriyu90/media-master">GitHub 仓库</a>并用 Android Studio 打开。</span></li>
+            <li><span class="step-number">3</span><span>准备 Android SDK 36 与 JDK 21（源码兼容级别为 Java 17）。</span></li>
+            <li><span class="step-number">4</span><span>在终端运行 <code>./gradlew :app:assembleDebug</code>，或从 Android Studio 运行。</span></li>
+          </ol>
+          <p class="install-reference"><a href="https://github.com/oriyu90/media-master#readme">在 README 查看构建与签名细节</a></p>
+        </article>
+        <p class="release-warning">需要 Android 7.0（API 24）及以上。媒体访问使用 Android 标准的 MediaStore / 存储访问框架。</p>
+      </div>
+    </section>
+
+    <section class="section" id="community" aria-labelledby="community-title">
+      <div class="page-width project-note">
+        <div>
+          <h2 id="community-title">与开发者联系。</h2>
+          <p>开发者：折田悠希（Yuki_Orita）。开发记录与其他作品见 X 和官方网站。</p>
+        </div>
+        <nav class="link-columns" aria-label="开发者与社区">
+          <a href="https://x.com/InovateofRIZI" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://kizi.pages.dev/" target="_blank" rel="noopener noreferrer">KIZI</a>
+          <a href="https://github.com/oriyu90/media-master" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <p>© 2026 Yuki Orita · MIT License</p>
+      <a href="https://github.com/oriyu90/media-master/blob/main/LICENSE">查看许可</a>
+    </div>
+  </footer>
+</body>
+</html>
