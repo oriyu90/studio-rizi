@@ -15,6 +15,7 @@
     { "slug": "tango-pro", "name": "Tango pro", "repository": "https://github.com/oriyu90/Tango-pro", "url": "https://studio-rizi.pages.dev/projects/tango-pro/", "hosted": true },
     { "slug": "vocello-jp", "name": "Vocello JP", "repository": "https://github.com/oriyu90/vocello-jp", "url": "https://studio-rizi.pages.dev/projects/vocello-jp/", "hosted": true },
     { "slug": "volume-routine", "name": "Volume Routine", "repository": "https://github.com/oriyu90/volume-routine", "url": "https://studio-rizi.pages.dev/projects/volume-routine/", "hosted": true },
-    { "slug": "wakaru", "name": "WAKARU", "repository": "https://github.com/oriyu90/WAKARU", "url": "https://studio-rizi.pages.dev/projects/wakaru/", "hosted": true }
+    { "slug": "wakaru", "name": "WAKARU", "repository": "https://github.com/oriyu90/WAKARU", "url": "https://studio-rizi.pages.dev/projects/wakaru/", "hosted": true },
+    { "slug": "ymm4m", "name": "YMM4M", "repository": "https://github.com/oriyu90/YMM4M", "url": "https://studio-rizi.pages.dev/projects/ymm4m/", "hosted": true }
   ]
 }

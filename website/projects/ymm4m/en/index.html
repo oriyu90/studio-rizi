@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YMM4M — Run YukkuriMovieMaker4 on a Mac | Yuki Orita</title>
+<meta name="description" content="YMM4M is an unofficial compatibility environment for running the official YukkuriMovieMaker4 on Apple Silicon Macs (macOS 26+). Wine/DXMT are fetched from fixed URLs and built on your Mac. YMM4 itself is never bundled. Built by Yuki Orita (Oriyu90 / Yuki_Orita). Open source on GitHub under MIT.">
+<meta name="keywords" content="YMM4M,YukkuriMovieMaker4,Mac,macOS,Wine,DXMT,Yuki Orita,Oriyu90,Yuki_Orita,github,compatibility">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/ymm4m/en/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/ymm4m/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/ymm4m/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/ymm4m/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/ymm4m/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/ymm4m/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YMM4M — YukkuriMovieMaker4 on a Mac">
+<meta property="og:description" content="An unofficial YMM4 compatibility environment for Apple Silicon. Ad-hoc signed, EXTERNAL_ONLY.">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/ymm4m/en/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@InovateofRIZI">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="../"><span class="mark">Y</span><span>YMM4M</span></a>
+  <div class="navlinks">
+    <a href="#features" class="hide-sm">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#req" class="hide-sm">Requirements</a>
+    <div class="langsw"><a class="" href="../">JA</a><a class="on" href="./">EN</a><a class="" href="../zh/">中文</a><a class="" href="../pt/">PT</a></div>
+    <a class="cta" href="https://github.com/oriyu90/YMM4M/releases/latest">Download (v1.0.0)</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">v1.0.0 · MIT · macOS 26+ · Apple Silicon</p>
+  <h1>A compatibility environment for opening <em>YukkuriMovieMaker4</em> on a Mac.</h1>
+  <p class="lead">YMM4M runs the official YukkuriMovieMaker4 (YMM4) on Apple Silicon Macs. YMM4 itself is never bundled: YMM4M verifies the official ZIP you supply and extracts it inside your environment. Wine/DXMT are fetched from fixed URLs, with your consent, and built on your Mac.</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="https://github.com/oriyu90/YMM4M/releases/latest">Download v1.0.0</a>
+    <a class="btn btn-ghost" href="https://github.com/oriyu90/YMM4M">View source on GitHub</a>
+  </div>
+  <p class="meta">Open source (MIT) · Built by Yuki Orita (Yuki_Orita) · Unofficial, not affiliated with the YMM4 developer</p>
+</div></header>
+
+<section id="features"><div class="wrap">
+  <div class="section-head"><p class="kicker">Features</p><h2>Nothing third-party in the download — it is assembled on your Mac.</h2><p>The download is only YMM4M's own code and scripts. YMM4, Wine, DXMT, fonts, and CrossOver are never bundled.</p></div>
+  <div class="grid"><div class="card"><div class="ico">⧉</div><h3>EXTERNAL_ONLY distribution</h3><p>The DMG holds only YMM4M's code, its bootstrap/patch/fixture files, and the compatibility catalogue. Zero third-party binaries.</p></div><div class="card"><div class="ico">⭳</div><h3>Fixed URLs + hash checks</h3><p>Wine/DXMT/fonts/LLVM are fetched from fixed URLs (with mirrors) and SHA-256 verified. A mismatch stops before anything is placed.</p></div><div class="card"><div class="ico">▦</div><h3>Behaviour-verified gate</h3><p>A built runtime is only trusted after a recorded pass of eight compatibility fixtures plus a 100-iteration compute run against those exact binaries.</p></div><div class="card"><div class="ico">あ</div><h3>No bundled Japanese font</h3><p>Noto Sans CJK JP lives only inside the Wine prefix. The setup UI is fully bilingual (Japanese / English).</p></div><div class="card"><div class="ico">⤿</div><h3>Versioned, reversible</h3><p>Runtime, prefix and YMM4 keep older versions and switch `current` atomically only after verification. One click rolls back.</p></div><div class="card"><div class="ico">◎</div><h3>Honest about the GPU</h3><p>The UI is drawn in software; only the preview and parts of encoding use Metal, through a development DXMT build.</p></div></div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="section-head"><p class="kicker">How it works</p><h2>Consent, then pick a ZIP and a folder.</h2></div>
+  <ol class="steps"><li><h3>Save the official YMM4 ZIP</h3><p>Save the Standard or Lite ZIP somewhere that is not auto-deleted, such as your Downloads folder.</p></li><li><h3>Install the compatibility environment</h3><p>Review the consent item and press “Install the compatibility environment”. Fetching, verifying and building Wine/DXMT is automatic.</p></li><li><h3>Pick the ZIP and a media folder</h3><p>Choose the YMM4 ZIP you saved and a folder for assets and .ymmp files. Everything after that is prepared and verified automatically.</p></li><li><h3>Open YMM4 on the Mac</h3><p>Confirm “Settings OK” in “Check settings”, then press “Open YMM4 on the Mac”.</p></li></ol>
+</div></section>
+
+<section id="req"><div class="wrap">
+  <div class="req"><h3>Requirements</h3><ul><li>Apple Silicon Mac / macOS 26 or later</li><li>Rosetta 2, Xcode command line tools</li><li>Homebrew: <code>brew bundle --file=Brewfile</code> (meson / ninja / cmake / mingw-w64 / bison / harfbuzz)</li><li>About 10 GB of free space (including the extracted LLVM toolchain)</li><li>The official YukkuriMovieMaker4 ZIP (you supply it)</li></ul></div>
+  <p class="note" style="margin-top:18px">This build has no Apple Developer ID, so it is ad-hoc signed and not notarized. Use macOS “Open Anyway” on first launch (no need to disable Gatekeeper). Windows-reference comparison and the full Tier A editing/playback matrix are not complete. Work on an isolated copy of any project you care about.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <span>YMM4M © 2026 Yuki_Orita · <a href="https://studio-rizi.pages.dev/projects/ymm4m/en/">https://studio-rizi.pages.dev/projects/ymm4m/en/</a></span>
+  <span class="foot-links">
+    <a href="https://github.com/oriyu90/YMM4M">GitHub</a>
+    <a href="https://github.com/oriyu90/YMM4M/blob/main/LICENSE">License (MIT)</a>
+    <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+    <a href="https://x.com/InovateofRIZI">X</a>
+    <a href="https://studio-rizi.pages.dev/">Developer site</a>
+  </span>
+</div></footer>
+</body>
+</html>

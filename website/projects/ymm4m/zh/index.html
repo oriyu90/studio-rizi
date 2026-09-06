@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YMM4M — 在 Mac 上运行 YukkuriMovieMaker4 的非官方兼容环境 | 折田悠希</title>
+<meta name="description" content="YMM4M 是在 Apple Silicon Mac（macOS 26 及以上）上运行官方 YukkuriMovieMaker4 的非官方兼容环境。Wine/DXMT 由你的 Mac 从固定 URL 获取并本地构建，绝不打包 YMM4 本体。开发者：折田悠希（Yuki_Orita）。GitHub 上以 MIT 许可开源。">
+<meta name="keywords" content="YMM4M,YukkuriMovieMaker4,Mac,macOS,Wine,DXMT,折田悠希,おりたゆうき,Yuki_Orita,github,兼容环境">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/ymm4m/zh/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/ymm4m/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/ymm4m/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/ymm4m/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/ymm4m/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/ymm4m/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YMM4M — 在 Mac 上运行 YukkuriMovieMaker4">
+<meta property="og:description" content="面向 Apple Silicon 的非官方 YMM4 兼容环境。ad-hoc 签名，EXTERNAL_ONLY 分发。">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/ymm4m/zh/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@InovateofRIZI">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="../"><span class="mark">Y</span><span>YMM4M</span></a>
+  <div class="navlinks">
+    <a href="#features" class="hide-sm">特性</a>
+    <a href="#how">使用方法</a>
+    <a href="#req" class="hide-sm">运行环境</a>
+    <div class="langsw"><a class="" href="../">JA</a><a class="" href="../en/">EN</a><a class="on" href="./">中文</a><a class="" href="../pt/">PT</a></div>
+    <a class="cta" href="https://github.com/oriyu90/YMM4M/releases/latest">下载（v1.0.0）</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">v1.0.0 · MIT · macOS 26+ · Apple Silicon</p>
+  <h1>在 <em>Mac</em> 上打开 YukkuriMovieMaker4 的兼容环境。</h1>
+  <p class="lead">YMM4M 让官方 YukkuriMovieMaker4（YMM4）运行在 Apple Silicon Mac 上。绝不打包 YMM4 本体：YMM4M 会校验你提供的官方 ZIP 并在你的环境内解压。Wine/DXMT 在你同意后从固定 URL 获取，并在你的 Mac 上构建。</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="https://github.com/oriyu90/YMM4M/releases/latest">下载 v1.0.0</a>
+    <a class="btn btn-ghost" href="https://github.com/oriyu90/YMM4M">在 GitHub 查看源码</a>
+  </div>
+  <p class="meta">开源（MIT） · 开发者：折田悠希（Yuki_Orita） · 非官方，与 YMM4 开发方无关</p>
+</div></header>
+
+<section id="features"><div class="wrap">
+  <div class="section-head"><p class="kicker">特性</p><h2>下载包不含任何第三方内容，全部在你的 Mac 上组装。</h2><p>下载包只有 YMM4M 自己的代码与脚本。YMM4、Wine、DXMT、字体、CrossOver 一律不打包。</p></div>
+  <div class="grid"><div class="card"><div class="ico">⧉</div><h3>EXTERNAL_ONLY 分发</h3><p>DMG 仅含 YMM4M 的代码、bootstrap/patch/fixture 与兼容目录。零第三方二进制。</p></div><div class="card"><div class="ico">⭳</div><h3>固定 URL + 哈希校验</h3><p>Wine/DXMT/字体/LLVM 从固定 URL（含镜像）获取并做 SHA-256 校验。不匹配则在放置前停止。</p></div><div class="card"><div class="ico">▦</div><h3>行为验证门槛</h3><p>构建出的运行时，必须先记录 8 个兼容 fixture 加 100 次 compute 针对这些二进制的通过结果，才会用于启动。</p></div><div class="card"><div class="ico">あ</div><h3>不打包日文字体</h3><p>Noto Sans CJK JP 只放在 Wine prefix 内。设置界面完整支持日文／英文。</p></div><div class="card"><div class="ico">⤿</div><h3>版本化、可回退</h3><p>runtime、prefix、YMM4 保留旧版本，验证后才原子切换 current。一键回到上一版本。</p></div><div class="card"><div class="ico">◎</div><h3>如实说明 GPU</h3><p>界面为软件渲染；只有预览与部分编码通过开发版 DXMT 使用 Metal。</p></div></div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="section-head"><p class="kicker">使用方法</p><h2>同意后，选一个 ZIP 和一个文件夹。</h2></div>
+  <ol class="steps"><li><h3>保存官方 YMM4 ZIP</h3><p>把通常版或 Lite 的 ZIP 保存到不会被自动删除的位置（如下载文件夹）。</p></li><li><h3>一键安装兼容环境</h3><p>确认同意项，点击“一键安装兼容环境”。获取、校验、构建 Wine/DXMT 全自动。</p></li><li><h3>选择 ZIP 与媒体文件夹</h3><p>依次选择保存的 YMM4 ZIP，以及存放素材与 .ymmp 的文件夹。之后的准备与校验全自动。</p></li><li><h3>在 Mac 上打开 YMM4</h3><p>在“检查设置”中确认“设置 OK”，然后点击“在 Mac 上打开 YMM4”。</p></li></ol>
+</div></section>
+
+<section id="req"><div class="wrap">
+  <div class="req"><h3>运行环境</h3><ul><li>Apple Silicon Mac / macOS 26 及以上</li><li>Rosetta 2、Xcode command line tools</li><li>Homebrew：<code>brew bundle --file=Brewfile</code>（meson / ninja / cmake / mingw-w64 / bison / harfbuzz）</li><li>约 10 GB 以上可用空间（含解压后的 LLVM 工具链）</li><li>官方 YukkuriMovieMaker4 的 ZIP（由你提供）</li></ul></div>
+  <p class="note" style="margin-top:18px">此版本没有 Apple Developer ID，因此为 ad-hoc 签名且未公证。首次启动请使用 macOS 的“仍要打开”（无需关闭 Gatekeeper）。Windows 参考对比与完整的 Tier A 编辑／播放矩阵尚未完成。重要项目请用独立副本测试。</p>
+</div></section>
+
+<footer><div class="wrap">
+  <span>YMM4M © 2026 Yuki_Orita · <a href="https://studio-rizi.pages.dev/projects/ymm4m/zh/">https://studio-rizi.pages.dev/projects/ymm4m/zh/</a></span>
+  <span class="foot-links">
+    <a href="https://github.com/oriyu90/YMM4M">GitHub</a>
+    <a href="https://github.com/oriyu90/YMM4M/blob/main/LICENSE">许可证（MIT）</a>
+    <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+    <a href="https://x.com/InovateofRIZI">X</a>
+    <a href="https://studio-rizi.pages.dev/">开发者网站</a>
+  </span>
+</div></footer>
+</body>
+</html>
