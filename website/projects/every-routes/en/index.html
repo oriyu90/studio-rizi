@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#b8ff2c">
-<title>Every routes | Manage each day as a reusable routine profile</title>
-<meta name="description" content="Every routes is an Android app and shared server by Yuki Orita (Yuki_Orita / oriyu90). Weekday and holiday routines apply automatically by day-of-week and holiday rules, while Google Tasks and AI-agent tasks merge into one timeline. Open source on GitHub.">
-<meta name="keywords" content="Every routes,routine manager,Android,Yuki Orita,Yuki_Orita,oriyu90,github">
+<meta name="theme-color" content="#000000">
+<title>Every routes | Turn how you spend the day into a profile</title>
+<meta name="description" content="Every routes is an Android app and shared server by Yuki Orita (Yuki_Orita / oriyu90). Weekday and holiday routines apply automatically by weekday and holiday rules, and tasks from Google Tasks and AI agents gather on one timeline. Open source on GitHub.">
+<meta name="keywords" content="Every routes,routine,Android,Yuki Orita,Yuki_Orita,oriyu90,github">
 <meta name="author" content="Yuki_Orita">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="author" href="https://studio-rizi.pages.dev/">
@@ -20,8 +20,8 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Every routes">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Every routes | Turn how you spend the day into a profile.">
-<meta property="og:description" content="Weekday and holiday routines apply automatically. Tasks merge into one timeline. Android app plus shared server.">
+<meta property="og:title" content="Every routes | Turn your day into a profile.">
+<meta property="og:description" content="Routines applied by weekday and holiday rules. Tasks on one timeline. Android app plus shared server.">
 <meta property="og:url" content="https://studio-rizi.pages.dev/projects/every-routes/en/">
 <meta property="og:image" content="https://studio-rizi.pages.dev/projects/every-routes/og.png">
 <meta property="og:image:width" content="1200">
@@ -29,8 +29,8 @@
 <meta property="og:image:alt" content="Every routes — an app and shared server for managing each day as a routine profile">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@InovateofRIZI">
-<meta name="twitter:title" content="Every routes | Turn how you spend the day into a profile.">
-<meta name="twitter:description" content="Routines and tasks in one timeline. Android app plus shared server.">
+<meta name="twitter:title" content="Every routes | Turn your day into a profile.">
+<meta name="twitter:description" content="Routines and tasks on one timeline. Android app plus shared server.">
 <meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/every-routes/og.png">
 <link rel="icon" type="image/svg+xml" href="/projects/every-routes/favicon.svg">
 <link rel="apple-touch-icon" href="/projects/every-routes/favicon.svg">
@@ -38,90 +38,85 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Every routes","applicationCategory":"UtilitiesApplication","operatingSystem":"Android 8.0 or later","softwareVersion":"android-v1.0.0","url":"https://studio-rizi.pages.dev/projects/every-routes/en/","downloadUrl":"https://github.com/oriyu90/every-routes/releases","codeRepository":"https://github.com/oriyu90/every-routes","license":"https://github.com/oriyu90/every-routes/blob/main/LICENSE","description":"An Android app that registers daily life as reusable routine profiles applied by weekday and holiday rules, plus a server that shares the data across devices and AI agents.","inLanguage":["ja","en","zh","pt"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@id":"https://studio-rizi.pages.dev/#person"}},{"@type":"Person","@id":"https://studio-rizi.pages.dev/#person","name":"Yuki Orita","alternateName":["Yuki_Orita","oriyu90"],"url":"https://studio-rizi.pages.dev/","sameAs":["https://github.com/oriyu90","https://x.com/InovateofRIZI"]}]}</script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><div class="shell">
-<a class="brand" href="/projects/every-routes/en/" aria-label="Every routes home"><span class="brand-mark" aria-hidden="true">ER</span><span>EVERY ROUTES</span></a>
-<nav class="nav-links" aria-label="Main navigation"><a href="#features">Features</a><a href="#server">Server</a><a href="#start">Setup</a>
-<details class="language-switcher"><summary aria-label="Choose a language">EN</summary><div class="language-menu"><a href="/projects/every-routes/" hreflang="ja" lang="ja">日本語</a><a href="/projects/every-routes/en/" hreflang="en" lang="en" aria-current="page">English</a><a href="/projects/every-routes/zh/" hreflang="zh-Hans" lang="zh-CN">中文</a><a href="/projects/every-routes/pt/" hreflang="pt" lang="pt">Português</a></div></details>
-<a class="header-cta" href="https://github.com/oriyu90/every-routes" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap top-in">
+<a class="logo" href="/projects/every-routes/en/" aria-label="Every routes home"><span class="mark" aria-hidden="true">ER</span><span class="word">EVERY ROUTES</span></a>
+<nav class="menu" aria-label="Main navigation"><a href="#features">Features</a><a href="#server">Server</a><a href="#start">Setup</a></nav>
+<details class="lang"><summary aria-label="Choose a language">EN</summary><div class="lang-menu"><a href="/projects/every-routes/" hreflang="ja" lang="ja">日本語</a><a href="/projects/every-routes/en/" hreflang="en" lang="en" aria-current="page">English</a><a href="/projects/every-routes/zh/" hreflang="zh-Hans" lang="zh-CN">中文</a><a href="/projects/every-routes/pt/" hreflang="pt" lang="pt">Português</a></div></details>
+<a class="go" href="https://github.com/oriyu90/every-routes" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
 </div></header>
 <main id="main">
-<section class="hero shell">
-<p class="eyebrow">ANDROID + PYTHON SERVER · MIT OPEN SOURCE</p>
-<h1>Turn how you spend the day <em>into a profile.</em></h1>
-<p class="hero-lead">Register “weekday” and “holiday” routines once, and they apply every day by weekday and holiday rules. Tasks from Google Tasks and AI agents appear on the same timeline. Move to a new phone or a second device through the shared server.</p>
-<div class="hero-actions">
-<a class="button button-primary" href="https://github.com/oriyu90/every-routes/releases/tag/android-v1.0.0" target="_blank" rel="noreferrer">Download the APK <span aria-hidden="true">→</span></a>
-<a class="text-link" href="#start">Setup guide <span aria-hidden="true">↓</span></a>
+<section class="hero"><div class="wrap">
+<p class="kick">ANDROID + PYTHON SERVER · MIT OPEN SOURCE</p>
+<h1>Turn how you spend the day <strong>into a profile.</strong></h1>
+<p class="lede">Register “weekday” and “holiday” routines once, and they apply every day by weekday and holiday rules. Tasks from Google Tasks and AI agents appear on the same timeline. Move to a new phone or a second device through the shared server.</p>
+<div class="cta-row">
+<a class="btn solid" href="https://github.com/oriyu90/every-routes/releases/tag/android-v1.0.0" target="_blank" rel="noreferrer">Download the APK</a>
+<a class="btn line" href="#start">Setup guide</a>
 </div>
-<dl class="quick-facts">
+<dl class="spec">
 <div><dt>Platform</dt><dd>Android 8.0+</dd></div>
 <div><dt>Server</dt><dd>Python / macOS &amp; Linux</dd></div>
 <div><dt>License</dt><dd>MIT</dd></div>
 <div><dt>Developer</dt><dd>Yuki_Orita</dd></div>
 </dl>
-</section>
-<div class="marquee" aria-label="Highlights"><div><span>ROUTINE PROFILES</span><i>●</i><span>TODAY TIMELINE</span><i>●</i><span>SHARED SERVER</span><i>●</i><span>AGENT TASKS</span><i>●</i><span>OFFLINE FIRST</span></div></div>
-<section class="section shell" id="features">
-<div class="section-intro">
-<p class="section-label">WHAT IT DOES</p>
-<h2>Register how you live, <span>not just appointments.</span></h2>
-<p>Calendars store per-date events. Every routes reuses the shape of the day itself.</p>
+</div></section>
+<p class="strip" aria-label="Highlights"><span>ROUTINE PROFILES&nbsp;&nbsp;●&nbsp;&nbsp;TODAY TIMELINE&nbsp;&nbsp;●&nbsp;&nbsp;SHARED SERVER&nbsp;&nbsp;●&nbsp;&nbsp;AGENT TASKS&nbsp;&nbsp;●&nbsp;&nbsp;OFFLINE FIRST</span></p>
+<section class="block" id="features"><div class="wrap">
+<p class="kick">WHAT IT DOES</p>
+<h2>Register how you live, not just appointments.</h2>
+<p class="sub">Calendars store per-date events. Every routes reuses the shape of the day itself.</p>
+<div class="rows">
+<article class="row"><div class="art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="txt"><p class="no">01</p><h3>Routine profiles</h3><p>Save the flow of a day — “weekday”, “holiday” — as a set of time blocks, with weekday chips and a holiday policy (exclude, include, holidays only).</p></div></article>
+<article class="row rev"><div class="art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="txt"><p class="no">02</p><h3>Today view</h3><p>Matching blocks and the day’s tasks merge into one timeline, highlighting what is happening now and next. Flip dates to preview the days ahead.</p></div></article>
+<article class="row"><div class="art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="txt"><p class="no">03</p><h3>Unified tasks</h3><p>Google Tasks imports, manual entries, and agent-created tasks appear with source icons. Completing a task syncs back to the shared server.</p></div></article>
+<article class="row rev"><div class="art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="txt"><p class="no">04</p><h3>Offline first</h3><p>Creating, editing, and viewing all work on-device. The app stands alone without a server and syncs only when connected.</p></div></article>
+<article class="row"><div class="art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="txt"><p class="no">05</p><h3>In-app WireGuard VPN</h3><p>The app opens its own WireGuard tunnel when reaching the server (off by default). Import a .conf, enter it manually, or delete it; only this app goes through the VPN while everything else stays on the regular connection.</p></div></article>
 </div>
-<div class="feature-grid">
-<article class="feature-card"><span class="num">01</span><h3>Routine profiles</h3><p>Save the flow of a day — “weekday”, “holiday” — as a set of time blocks, with weekday chips and a holiday policy (exclude, include, holidays only).</p></article>
-<article class="feature-card"><span class="num">02</span><h3>Today view</h3><p>Matching blocks and the day’s tasks merge into one timeline, highlighting what is happening now and next. Flip dates to preview the days ahead.</p></article>
-<article class="feature-card"><span class="num">03</span><h3>Unified tasks</h3><p>Google Tasks imports, manual entries, and agent-created tasks appear with source icons. Completing a task syncs back to the shared server.</p></article>
-<article class="feature-card"><span class="num">04</span><h3>Offline first</h3><p>Creating, editing, and viewing all work on-device. The app stands alone without a server and syncs only when connected.</p></article>
-<article class="feature-card"><span class="num">05</span><h3>In-app WireGuard VPN</h3><p>The app opens its own WireGuard tunnel when reaching the server (off by default). Import a .conf, enter it manually, or delete it; only this app goes through the VPN while everything else stays on the regular connection.</p></article>
-</div>
-<div class="timeline-demo">
-<h3>Today view example — Friday, Sep 11 (weekday)</h3>
+<div class="live">
+<div class="live-head"><span class="dot" aria-hidden="true"></span><h3>Today view example — Friday, Sep 11 (weekday)</h3></div>
 <ol>
-<li><time>07:00</time><span>Wake up &amp; get ready</span><span class="tag">Weekday</span></li>
-<li><time>09:00</time><span>Commute</span><span class="tag">Weekday</span></li>
-<li><time>10:00</time><span>Go to the bank</span><span class="tag">Agent</span></li>
-<li><time>12:00</time><span>Lunch</span><span class="tag">Weekday</span></li>
-<li><time>15:00</time><span>Dentist</span><span class="tag">Google Tasks</span></li>
+<li><time>07:00</time><b>Wake up &amp; get ready</b><span class="tag">Weekday</span></li>
+<li><time>09:00</time><b>Commute</b><span class="tag">Weekday</span></li>
+<li><time>10:00</time><b>Go to the bank</b><span class="tag">Agent</span></li>
+<li><time>12:00</time><b>Lunch</b><span class="tag">Weekday</span></li>
+<li><time>15:00</time><b>Dentist</b><span class="tag">Google Tasks</span></li>
 </ol>
+<div class="now" aria-hidden="true"><i></i></div>
 </div>
-</section>
-<section class="section shell" id="server">
-<div class="section-intro">
-<p class="section-label">SHARED HUB</p>
-<h2>The server is a handoff point <span>for many apps.</span></h2>
-<p>A lightweight server (FastAPI plus a single SQLite file) for home LAN or VPN use. It is not Android-only: external apps and AI agents read and write through the same API with the same bearer token. Sync matches by routine address and keeps the newer last-modified timestamp.</p>
-</div>
-<div class="server-grid">
-<div class="server-card"><h3>One command to run</h3><p>Write a config file and start it.</p><pre class="code">pip install every-routes-server
+</div></section>
+<section class="block" id="server"><div class="wrap">
+<p class="kick">SHARED HUB</p>
+<h2>The server is a handoff point for many apps.</h2>
+<p class="sub">A lightweight server (FastAPI plus a single SQLite file) for home LAN or VPN use. It is not Android-only: external apps and AI agents read and write through the same API with the same bearer token. Sync matches by routine address and keeps the newer last-modified timestamp.</p>
+<div class="duo">
+<div class="term"><h3>One command to run</h3><p>Write a config file and start it.</p><pre>pip install every-routes-server
 every-routes-server --config ./every-routes.yaml</pre></div>
-<div class="server-card"><h3>Agent friendly</h3><p>An agent’s “do this tomorrow” reaches the phone at the next morning sync.</p><pre class="code">POST /api/v1/tasks
+<div class="term"><h3>Agent friendly</h3><p>An agent’s “do this tomorrow” reaches the phone at the next morning sync.</p><pre>POST /api/v1/tasks
 {"source":"agent","title":"Go to the bank",
  "at":"2026-09-11T10:00:00+09:00"}</pre></div>
 </div>
-</section>
-<section class="section shell" id="start">
-<div class="section-intro">
-<p class="section-label">GET STARTED</p>
+</div></section>
+<section class="block" id="start"><div class="wrap">
+<p class="kick">GET STARTED</p>
 <h2>Start in three steps.</h2>
-</div>
-<ol class="steps">
-<li><div><h3>Install the app</h3><p>Get the signed APK (android-v1.0.0) from <a href="https://github.com/oriyu90/every-routes/releases/tag/android-v1.0.0" target="_blank" rel="noreferrer">GitHub Releases</a>.</p></div></li>
-<li><div><h3>Create a weekday profile</h3><p>Pick Monday to Friday, exclude holidays, add time blocks — they show up in the Today view from that day.</p></div></li>
-<li><div><h3>Connect a server (optional)</h3><p>Enter the base URL and token in Settings. “Upload to server” shares a profile; “Import” carries it to another device.</p></div></li>
+<ol class="how">
+<li><span class="n" aria-hidden="true">1</span><div><h3>Install the app</h3><p>Get the signed APK (android-v1.0.0) from <a href="https://github.com/oriyu90/every-routes/releases/tag/android-v1.0.0" target="_blank" rel="noreferrer">GitHub Releases</a>.</p></div></li>
+<li><span class="n" aria-hidden="true">2</span><div><h3>Create a weekday profile</h3><p>Pick Monday to Friday, exclude holidays, add time blocks — they show up in the Today view from that day.</p></div></li>
+<li><span class="n" aria-hidden="true">3</span><div><h3>Connect a server (optional)</h3><p>Enter the base URL and token in Settings. “Upload to server” shares a profile; “Import” carries it to another device.</p></div></li>
 </ol>
-<div class="notice"><strong>Developer &amp; source code</strong><p>Every routes is developed by Yuki Orita (Yuki_Orita) and released under the MIT license. Bug reports and announcements go through Discord.</p><p><a href="https://github.com/oriyu90/every-routes" target="_blank" rel="noreferrer">github.com/oriyu90/every-routes ↗</a></p></div>
-</section>
-<section class="cta-section shell">
-<p class="section-label">MAKE EVERY DAY A ROUTE</p>
-<h2>Give the flow of each day <br><em>a name.</em></h2>
-<a class="button button-dark" href="https://github.com/oriyu90/every-routes" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
-</section>
+<div class="note"><strong>Developer &amp; source code</strong><p>Every routes is developed by Yuki Orita (Yuki_Orita) and released under the MIT license. Bug reports and announcements go through Discord.</p><p><a href="https://github.com/oriyu90/every-routes" target="_blank" rel="noreferrer">github.com/oriyu90/every-routes ↗</a></p></div>
+</div></section>
+<section class="final"><div class="wrap">
+<p class="kick">MAKE EVERY DAY A ROUTE</p>
+<h2>Give the flow of each day a name.</h2>
+<a class="btn solid" href="https://github.com/oriyu90/every-routes" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+</div></section>
 </main>
-<footer class="shell">
-<a class="brand footer-brand" href="#main"><span class="brand-mark" aria-hidden="true">ER</span><span>EVERY ROUTES</span></a>
+<footer><div class="wrap foot-in">
+<a class="logo" href="#main"><span class="mark" aria-hidden="true">ER</span><span class="word">EVERY ROUTES</span></a>
 <p>© 2026 Yuki_Orita · MIT License</p>
 <nav aria-label="Related links"><a href="https://studio-rizi.pages.dev/" target="_blank" rel="noreferrer">Official</a><a href="https://x.com/InovateofRIZI" target="_blank" rel="noreferrer">X</a><a href="https://discord.gg/x7KXhNTD8M" target="_blank" rel="noreferrer">Discord</a><a href="https://github.com/oriyu90/every-routes" target="_blank" rel="noreferrer">GitHub</a></nav>
-</footer>
+</div></footer>
 </body>
 </html>
