@@ -189,6 +189,8 @@ body {
   letter-spacing: 0.01em;
   font-weight: 800;
   text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .hero h1 strong { color: var(--accent); }
@@ -248,6 +250,7 @@ body {
 
 .strip {
   margin: 0;
+  overflow: hidden;
   padding: 14px 16px;
   text-align: center;
   font-size: 12px;
@@ -271,6 +274,8 @@ body {
   font-weight: 800;
   letter-spacing: 0.01em;
   text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .sub { margin: 0 0 8px; max-width: 600px; color: var(--ink-soft); }
@@ -416,7 +421,10 @@ body {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 26px;
+  min-width: 0;
 }
+
+.row > *, .spec > div, .live, .how li > div { min-width: 0; }
 
 .term-hi { border-color: var(--accent); }
 
@@ -487,6 +495,8 @@ body {
   line-height: 1.25;
   font-weight: 800;
   text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* footer */
@@ -534,6 +544,13 @@ footer nav a:hover { color: var(--accent); }
 @media (max-width: 552px) {
   .live .tag { display: none; }
   .btn { width: 100%; text-align: center; }
+}
+
+@media (max-width: 400px) {
+  .top-in { gap: 10px; }
+  .logo .word { font-size: 12px; letter-spacing: 0.04em; }
+  .go { padding: 8px 14px; font-size: 13px; }
+  .lang summary { padding: 6px 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
