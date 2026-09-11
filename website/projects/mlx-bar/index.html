@@ -325,6 +325,7 @@ footer .legal { margin: 0; line-height: 1.8; }
         <div class="actions">
           <a class="btn solid" href="https://github.com/oriyu90/mlx-bar/releases" data-i18n="hero.download">ダウンロード</a>
           <a class="btn line" href="https://github.com/oriyu90/mlx-bar" data-i18n="hero.viewGithub">GitHubで見る</a>
+          <a class="btn line" href="/projects/ocode-mlx-bar/" data-ocode-link data-i18n="hero.useWithOCode">OCode mlx-barで使う</a>
         </div>
         <p class="fineprint" data-i18n="hero.fineprint">
           無料・オープンソース（MIT） / アカウント登録不要 / アプリの表示言語は日本語・Englishに対応
@@ -514,6 +515,7 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       "hero.p": "MLXBar（エムエルエックスバー）は、Apple Silicon Mac上のMLX LM・MLX VLM・LM Studioモデルを ひとつのメニューから扱うためのアプリです。モデルの読み込みも、チャットも、 OpenAI互換APIの提供も、すべてこのMacの中だけで完結します。",
       "hero.download": "ダウンロード",
       "hero.viewGithub": "GitHubで見る",
+      "hero.useWithOCode": "OCode mlx-barで使う",
       "hero.fineprint": "無料・オープンソース（MIT） / アカウント登録不要 / アプリの表示言語は日本語・Englishに対応",
       "hero.mockWaiting": "待機中",
       "hero.mockSelectModel": "モデルを選択…",
@@ -596,6 +598,7 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       "hero.p": "MLXBar is an app for handling MLX LM, MLX VLM, and LM Studio models on your Apple Silicon Mac from a single menu. Loading models, chatting, and serving an OpenAI-compatible API all happen entirely on this Mac.",
       "hero.download": "Download",
       "hero.viewGithub": "View on GitHub",
+      "hero.useWithOCode": "Use with OCode mlx-bar",
       "hero.fineprint": "Free and open source (MIT) / No account required / App interface available in English and Japanese",
       "hero.mockWaiting": "Ready",
       "hero.mockSelectModel": "Select Model…",
@@ -673,6 +676,7 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       "hero.p": "MLXBar 是一款应用，可在一个菜单中统一处理 Apple Silicon Mac 上的 MLX LM、MLX VLM 与 LM Studio 模型。加载模型、对话、提供 OpenAI 兼容 API，全部只在这台 Mac 上完成。",
       "hero.download": "下载",
       "hero.viewGithub": "在 GitHub 查看",
+      "hero.useWithOCode": "通过 OCode mlx-bar 使用",
       "hero.fineprint": "免费、开源（MIT）／无需注册账号／应用界面支持日语与英语",
       "hero.mockWaiting": "待机中",
       "hero.mockSelectModel": "选择模型…",
@@ -750,6 +754,7 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       "hero.p": "MLXBar é um app para lidar com modelos MLX LM, MLX VLM e LM Studio no seu Mac com Apple Silicon a partir de um único menu. Carregar modelos, conversar e disponibilizar uma API compatível com OpenAI — tudo acontece inteiramente neste Mac.",
       "hero.download": "Baixar",
       "hero.viewGithub": "Ver no GitHub",
+      "hero.useWithOCode": "Usar com OCode mlx-bar",
       "hero.fineprint": "Gratuito e open source (MIT) / Sem necessidade de conta / Interface do app disponível em inglês e japonês",
       "hero.mockWaiting": "Pronto",
       "hero.mockSelectModel": "Selecionar modelo…",
@@ -849,6 +854,11 @@ curl http://127.0.0.1:11435/v1/chat/completions \
     var buttons = document.querySelectorAll("[data-lang-button]");
     for (var j = 0; j < buttons.length; j++) {
       buttons[j].setAttribute("aria-current", buttons[j].getAttribute("data-lang-button") === lang ? "true" : "false");
+    }
+    var ocodeLink = document.querySelector("[data-ocode-link]");
+    if (ocodeLink) {
+      var localizedPath = lang === "ja" ? "" : lang + "/";
+      ocodeLink.setAttribute("href", "/projects/ocode-mlx-bar/" + localizedPath);
     }
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* ignore */ }
   }
