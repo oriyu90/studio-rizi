@@ -12,6 +12,7 @@
     { "slug": "md-viewer-pro", "name": "MD Viewer Pro", "repository": "https://github.com/oriyu90/MD-Viewer-Pro", "url": "https://studio-rizi.pages.dev/projects/md-viewer-pro/", "hosted": true },
     { "slug": "media-master", "name": "Media Master", "repository": "https://github.com/oriyu90/media-master", "url": "https://studio-rizi.pages.dev/projects/media-master/", "hosted": true },
     { "slug": "mlx-bar", "name": "MLXBar", "repository": "https://github.com/oriyu90/mlx-bar", "url": "https://studio-rizi.pages.dev/projects/mlx-bar/", "hosted": true },
+    { "slug": "ocode-mlx-bar", "name": "OCode mlx-bar", "repository": "https://github.com/oriyu90/OCode-mlx-bar", "url": "https://studio-rizi.pages.dev/projects/ocode-mlx-bar/", "hosted": true },
     { "slug": "pine-chat", "name": "Pine Chat", "repository": "https://github.com/oriyu90/PineChat", "url": "https://studio-rizi.pages.dev/projects/pine-chat/", "hosted": true },
     { "slug": "tango-pro", "name": "Tango pro", "repository": "https://github.com/oriyu90/Tango-pro", "url": "https://studio-rizi.pages.dev/projects/tango-pro/", "hosted": true },
     { "slug": "vocello-jp", "name": "Vocello JP", "repository": "https://github.com/oriyu90/vocello-jp", "url": "https://studio-rizi.pages.dev/projects/vocello-jp/", "hosted": true },

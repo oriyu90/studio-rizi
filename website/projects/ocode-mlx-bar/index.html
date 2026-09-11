@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OCode mlx-bar（オーコード MLXバー）— OpenCodeでMacのローカルAIを使う</title>
+  <meta name="description" content="OCode mlx-barは、OpenCode v1.18.30にMLXBar Providerを標準搭載した非公式forkです。Apple Silicon Macのローカルモデルを、OpenCodeの既存UI・Agent・Tool・MCP・Sessionから利用できます。開発者は折田悠希（おりたゆうき / Yuki_Orita）。GitHubで無料公開中。">
+  <meta name="keywords" content="OCode mlx-bar,OCode MLXバー,オーコード MLXバー,折田悠希,おりたゆうき,Yuki_Orita,github,OpenCode,MLXBar,MLX,Apple Silicon,ローカルAI,コーディングエージェント">
+  <meta name="author" content="折田悠希 (Yuki_Orita)">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://studio-rizi.pages.dev/projects/ocode-mlx-bar/">
+  <link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/ocode-mlx-bar/">
+  <link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/ocode-mlx-bar/en/">
+  <link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/ocode-mlx-bar/zh/">
+  <link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/ocode-mlx-bar/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/ocode-mlx-bar/">
+  <link rel="stylesheet" href="/projects/ocode-mlx-bar/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OCode mlx-bar">
+  <meta property="og:title" content="OCode mlx-bar — OpenCodeでMacのローカルAIを使う">
+  <meta property="og:description" content="OpenCodeの使い心地を保ったまま、MLXBarを標準Providerとして追加。">
+  <meta property="og:url" content="https://studio-rizi.pages.dev/projects/ocode-mlx-bar/">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@InovateofRIZI">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"OCode mlx-bar","alternateName":["OCode MLXバー","オーコード MLXバー"],"applicationCategory":"DeveloperApplication","operatingSystem":"macOS, Apple Silicon","softwareVersion":"1.18.30-mlxbar.1","url":"https://studio-rizi.pages.dev/projects/ocode-mlx-bar/","downloadUrl":"https://github.com/oriyu90/OCode-mlx-bar/releases/latest","codeRepository":"https://github.com/oriyu90/OCode-mlx-bar","license":"https://github.com/oriyu90/OCode-mlx-bar/blob/main/LICENSE","inLanguage":["ja","en","zh","pt"],"offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"author":{"@type":"Person","name":"折田悠希","alternateName":["おりたゆうき","Yuki_Orita"],"url":"https://studio-rizi.pages.dev/"}}
+  </script>
+</head>
+<body>
+  <header class="topbar"><div class="wrap">
+    <a class="brand" href="/projects/ocode-mlx-bar/"><span class="brand-mark">OC</span>OCode mlx-bar</a>
+    <nav class="nav" aria-label="主要ナビゲーション"><a href="#design">設計</a><a href="#start">使い方</a><a href="#safety">安全性</a>
+      <div class="langs" aria-label="言語"><a aria-current="page" href="/projects/ocode-mlx-bar/">JA</a><a href="/projects/ocode-mlx-bar/en/">EN</a><a href="/projects/ocode-mlx-bar/zh/">中文</a><a href="/projects/ocode-mlx-bar/pt/">PT</a></div>
+    </nav>
+  </div></header>
+  <main>
+    <div class="hero"><div class="wrap hero-grid">
+      <div><p class="eyebrow">OpenCode v1.18.30 × MLXBar</p><h1>OpenCodeに、MacのローカルAIを。</h1>
+        <p class="lead">OCode mlx-barは、OpenCodeのUI・Agent・Tool・MCP・Sessionを変えず、MLXBarだけを第一級Providerとして加えた最小forkです。</p>
+        <div class="actions"><a class="button primary" href="https://github.com/oriyu90/OCode-mlx-bar/releases/latest">Apple Silicon版をダウンロード</a><a class="button secondary" href="https://github.com/oriyu90/OCode-mlx-bar">GitHubでソースを見る</a></div>
+        <p class="fine">無料・MIT License · ad-hoc署名 · Apple未公証</p>
+      </div>
+      <div class="bridge" aria-label="OCodeからMLXBarへの接続図"><div class="bridge-head"><i></i><i></i><i></i></div><div class="bridge-flow">
+        <div class="node"><b>OpenCode</b><small>UI · Agent · Tools</small></div><div class="arrow">↓</div><div class="node hot"><b>provider / mlxbar</b><small>minimal adapter</small></div><div class="arrow">↓</div><div class="node"><b>MLXBar :11435</b><small>OpenAI compatible</small></div><div class="arrow">↓</div><div class="node"><b>Apple Silicon</b><small>local inference</small></div>
+      </div><div class="terminal"><strong>● connected</strong> · models discovered · stream ready</div></div>
+    </div></div>
+
+    <section id="design"><div class="wrap"><p class="section-label">Design contract</p><h2>足したのは、Providerだけ。</h2><p class="section-intro">改造範囲を小さく保つことを品質基準にしています。MLXBarを選ばない限り、OpenCode v1.18.30と同じ挙動を目指します。</p>
+      <div class="cards"><article class="card"><span class="num">01 / UPSTREAM</span><h3>既存機能を維持</h3><p>UI、キーバインド、Agent、Prompt、Tool、MCP、Permission、Session、Retryを変更していません。</p></article><article class="card"><span class="num">02 / LIMITS</span><h3>標準Auto Compact</h3><p>MLXBarの実効contextと安全入力上限を既存model metadataへ渡し、OpenCode標準の圧縮判定へ任せます。</p></article><article class="card"><span class="num">03 / FAILURE</span><h3>停止中でも起動</h3><p>モデル検出は短時間・容量制限付き。MLXBarが停止中でもOCode全体や他Providerを巻き込みません。</p></article></div>
+    </div></section>
+
+    <section><div class="wrap"><p class="section-label">Provider</p><h2>OpenCodeの選択画面に、そのまま現れる。</h2><p class="section-intro">専用wizardや独自画面はありません。MLXBarを起動すると、既存のProvider・モデル選択から利用できます。</p>
+      <div class="feature-grid"><div class="feature"><h3>動的モデル検出</h3><p><code>GET /v1/models</code> から現在のmodel inventoryを起動時に取得します。</p></div><div class="feature"><h3>Streaming Chat Completions</h3><p>既存のOpenAI-compatible SDK経路で、stream応答とtool callingを扱います。</p></div><div class="feature"><h3>Local / LAN</h3><p>既定のlocalhostに加え、既存Provider設定でLANのbase URLとtokenを指定できます。</p></div><div class="feature"><h3>能力を推測しない</h3><p>画像・reasoning・token limitは明示metadataだけを使用。モデル名から推測しません。</p></div></div>
+    </div></section>
+
+    <section id="start"><div class="wrap steps"><div><p class="section-label">Get started</p><h2>MLXBarを起動したら、選ぶだけ。</h2><p class="section-intro">既定構成なら追加設定は不要です。token認証やLAN利用時だけ、OpenCodeの通常Provider設定を使います。</p></div><div><ol class="step-list"><li><div><strong>MLXBarを起動</strong><span>モデルを読み込み、OpenAI互換APIを有効にします。</span></div></li><li><div><strong>OCode mlx-barを開く</strong><span>起動時に <code>/v1/models</code> を短時間probeします。</span></div></li><li><div><strong>MLXBarモデルを選択</strong><span>既存のモデル選択画面から <code>mlxbar/&lt;model&gt;</code> を選びます。</span></div></li></ol><pre>{
+  "provider": {
+    "mlxbar": {
+      "options": {
+        "baseURL": "http://127.0.0.1:11435/v1",
+        "apiKey": "YOUR_MLXBAR_TOKEN"
+      }
+    }
+  }
+}</pre></div></div></section>
+
+    <section id="safety" class="safety"><div class="wrap"><p class="section-label">Safety by scope</p><h2>推測せず、壊さず、閉じ込める。</h2><p class="section-intro">local providerだからこそ、host memoryとcontext overflowを混同しません。</p><div class="safety-list"><div class="safety-item"><b>曖昧なMEMORY_PRESSUREを保持</b><p>context回復可能と明示された場合だけ、標準context overflowへ変換します。</p></div><div class="safety-item"><b>上限を捏造しない</b><p>安全入力上限がない場合、70%などの独自heuristicは作りません。</p></div><div class="safety-item"><b>メモリ境界</b><p>discovery応答は4 MiB、最大10,000モデルに制限します。</p></div><div class="safety-item"><b>秘密を記録しない</b><p>API key、Authorization header、prompt、tool resultをMLXBar adapterからlogしません。</p></div></div></div></section>
+
+    <section><div class="wrap"><p class="section-label">Release facts</p><h2>初回リリース情報</h2><p class="section-intro">OCode mlx-barは無料のオープンソースです。OpenCodeの元のMIT Licenseとcopyright noticeを保持しています。</p><dl class="meta-grid"><div><dt>バージョン</dt><dd>v1.18.30-mlxbar.1</dd></div><div><dt>基準upstream</dt><dd>OpenCode v1.18.30 · 3104c14</dd></div><div><dt>対応release</dt><dd>macOS · Apple Silicon</dd></div><div><dt>既定endpoint</dt><dd><code>127.0.0.1:11435/v1</code></dd></div><div><dt>License</dt><dd>MIT</dd></div><div><dt>開発者</dt><dd>折田悠希 / Yuki_Orita</dd></div></dl><p class="notice">macOS版はad-hoc署名で、Appleの公証を受けていません。初回起動時に「システム設定」›「プライバシーとセキュリティ」から手動で許可する必要があります。</p></div></section>
+  </main>
+  <footer><div class="wrap footer-grid"><p>OCode mlx-barはOpenCodeの非公式forkです。OpenCode公式チームによる開発・承認ではなく、公式チームとは提携していません。</p><div class="footer-links"><a href="https://github.com/oriyu90/OCode-mlx-bar">GitHub</a><a href="https://github.com/oriyu90/OCode-mlx-bar/blob/main/LICENSE">MIT License</a><a href="https://discord.gg/x7KXhNTD8M">Discord</a><a href="https://x.com/InovateofRIZI">X</a><a href="https://studio-rizi.pages.dev/">Studio Rizi</a></div></div></footer>
+</body>
+</html>
