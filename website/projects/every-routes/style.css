@@ -30,7 +30,7 @@ body {
   color: var(--ink);
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Noto Sans SC", Meiryo, sans-serif;
   font-size: 15px;
-  line-height: 1.9;
+  line-height: 1.78;
 }
 
 ::selection { background: var(--accent); color: #fff; }
@@ -184,7 +184,7 @@ body {
 .hero h1 {
   margin: 0 auto 18px;
   max-width: 18em;
-  font-size: clamp(32px, 6vw, 56px);
+  font-size: clamp(30px, 5.2vw, 50px);
   line-height: 1.25;
   letter-spacing: 0.01em;
   font-weight: 800;
@@ -214,9 +214,9 @@ body {
   display: inline-block;
   text-decoration: none;
   font-weight: 800;
-  font-size: 16px;
+  font-size: 15px;
   border-radius: 999px;
-  padding: 13px 40px;
+  padding: 12px 34px;
   transition: transform 0.2s var(--ease), background 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 
@@ -244,7 +244,7 @@ body {
 .spec > div { background: var(--card); padding: 16px 22px; }
 
 .spec dt { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
-.spec dd { margin: 0; font-weight: 800; font-size: 17px; }
+.spec dd { margin: 0; font-weight: 800; font-size: 15px; }
 
 /* ---------- strip ---------- */
 
@@ -269,7 +269,7 @@ body {
 
 .block h2 {
   margin: 0 0 14px;
-  font-size: clamp(26px, 4.4vw, 40px);
+  font-size: clamp(24px, 3.8vw, 35px);
   line-height: 1.3;
   font-weight: 800;
   letter-spacing: 0.01em;
@@ -295,9 +295,6 @@ body {
 .row:last-child { border-bottom: 1px solid var(--line); }
 
 .art {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
   height: 152px;
   background: var(--card);
   border: 1px solid var(--line);
@@ -305,6 +302,7 @@ body {
   padding: 22px 26px;
   overflow: hidden;
   position: relative;
+  isolation: isolate;
 }
 
 .art::after {
@@ -315,21 +313,80 @@ body {
   pointer-events: none;
 }
 
-.art i {
-  flex: 1;
-  border-radius: 4px;
-  background: linear-gradient(180deg, var(--accent), rgba(255, 82, 70, 0.25));
+.art > * { position: relative; z-index: 1; }
+
+/* Feature 01: a weekday rule and its reusable time blocks. */
+.art-routine { display: grid; align-content: center; gap: 18px; }
+.week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 7px; max-width: 380px; margin: 0 auto; width: 100%; }
+.week span {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  max-height: 30px;
+  border: 1px solid #484848;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
 }
+.week span:nth-child(-n + 5) { color: #fff; border-color: rgba(255, 82, 70, 0.62); background: rgba(255, 82, 70, 0.16); }
+.routine-plan { display: grid; gap: 7px; max-width: 380px; margin: 0 auto; width: 100%; }
+.routine-plan span { display: grid; grid-template-columns: 42px 1fr; align-items: center; gap: 10px; }
+.routine-plan b { color: var(--muted); font-size: 9px; font-variant-numeric: tabular-nums; }
+.routine-plan i { display: block; height: 8px; border-radius: 999px; background: #555; }
+.routine-plan span:nth-child(1) i { width: 54%; background: var(--accent); }
+.routine-plan span:nth-child(2) i { width: 82%; }
+.routine-plan span:nth-child(3) i { width: 66%; }
 
-.art i:nth-child(1) { height: 34%; }
-.art i:nth-child(2) { height: 62%; }
-.art i:nth-child(3) { height: 44%; }
-.art i:nth-child(4) { height: 84%; }
-.art i:nth-child(5) { height: 55%; }
-.art i:nth-child(6) { height: 72%; }
-.art i:nth-child(7) { height: 40%; }
+/* Feature 02: one chronological rail with the current item highlighted. */
+.art-today { display: flex; align-items: center; justify-content: center; }
+.today-line { display: grid; gap: 9px; width: min(360px, 92%); position: relative; }
+.today-line::before { content: ""; position: absolute; left: 50px; top: 9px; bottom: 9px; width: 1px; background: #555; }
+.today-line span { display: grid; grid-template-columns: 40px 12px 1fr; align-items: center; gap: 6px; min-height: 20px; }
+.today-line time { color: var(--muted); font-size: 9px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.today-line i { width: 8px; height: 8px; border: 2px solid var(--card); border-radius: 50%; background: #777; z-index: 1; }
+.today-line b { display: block; width: 64%; height: 8px; border-radius: 999px; background: #555; }
+.today-line span:nth-child(3) b { width: 82%; }
+.today-line span:nth-child(4) b { width: 48%; }
+.today-line .active i, .today-line .active b { background: var(--accent); }
+.now-pill { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0.12em; }
 
-.row:nth-child(even) .art i { background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.25)); }
+/* Feature 03: tasks from three sources converge on the same list. */
+.art-tasks { display: flex; align-items: center; justify-content: center; }
+.task-list { display: grid; gap: 9px; width: min(330px, 88%); }
+.task-list span { display: grid; grid-template-columns: 28px 1fr 18px; align-items: center; gap: 12px; padding: 8px 10px; border: 1px solid #444; border-radius: 10px; background: rgba(0, 0, 0, 0.14); }
+.task-list i { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 7px; background: #383838; color: #fff; font-size: 9px; font-style: normal; font-weight: 800; }
+.task-list span:nth-child(3) i { background: var(--accent); }
+.task-list b { display: block; height: 7px; width: 78%; border-radius: 999px; background: #606060; }
+.task-list span:nth-child(2) b { width: 56%; }
+.task-list em { display: grid; place-items: center; width: 17px; height: 17px; border: 1px solid #666; border-radius: 50%; color: var(--accent); font-size: 10px; font-style: normal; }
+.sync-mark { position: absolute; right: 17px; bottom: 11px; color: var(--accent); font-size: 15px; font-weight: 800; }
+
+/* Feature 04: the phone writes to its own local data store. */
+.art-offline { display: flex; align-items: center; justify-content: center; gap: 34px; }
+.device { width: 72px; height: 106px; border: 2px solid #777; border-radius: 15px; padding: 18px 10px 10px; display: grid; align-content: center; gap: 8px; position: relative; }
+.device span { position: absolute; width: 18px; height: 3px; border-radius: 999px; background: #666; top: 8px; left: 50%; transform: translateX(-50%); }
+.device i { display: block; height: 7px; border-radius: 999px; background: #555; }
+.device i:nth-of-type(1) { width: 82%; background: var(--accent); }
+.device i:nth-of-type(2) { width: 58%; }
+.local-store { display: grid; align-content: center; width: 86px; }
+.local-store i { display: block; height: 22px; border: 2px solid #666; border-radius: 50%; margin-top: -8px; background: var(--card); }
+.local-store i:first-child { border-color: var(--accent); background: rgba(255, 82, 70, 0.12); }
+.offline-badge { position: absolute; right: 16px; top: 12px; display: flex; align-items: center; gap: 6px; color: var(--ink-soft); font-size: 9px; font-weight: 800; letter-spacing: 0.12em; }
+.offline-badge span { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+
+/* Feature 05: only the app is connected to the private server tunnel. */
+.art-vpn { display: flex; align-items: center; justify-content: center; gap: 24px; }
+.vpn-node { width: 76px; height: 88px; border: 1px solid #555; border-radius: 14px; background: rgba(0, 0, 0, 0.18); display: grid; place-content: center; justify-items: center; gap: 7px; }
+.app-node span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--accent); color: #fff; font-size: 10px; font-weight: 900; }
+.vpn-node i { display: block; width: 36px; height: 5px; border-radius: 999px; background: #5b5b5b; }
+.server-node i { width: 38px; height: 12px; border: 1px solid #666; border-radius: 4px; background: transparent; }
+.tunnel { width: 74px; height: 32px; border: 1px solid rgba(255, 82, 70, 0.65); border-radius: 999px; display: grid; place-items: center; position: relative; }
+.tunnel::before, .tunnel::after { content: ""; position: absolute; top: 50%; width: 24px; height: 1px; background: var(--accent); }
+.tunnel::before { right: 100%; }
+.tunnel::after { left: 100%; }
+.tunnel span { color: var(--accent); font-size: 12px; }
+.vpn-label { position: absolute; bottom: 12px; color: var(--muted); font-size: 9px; font-weight: 800; letter-spacing: 0.14em; }
 
 .txt .no {
   margin: 0 0 6px;
@@ -340,7 +397,7 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-.txt h3 { margin: 0 0 8px; font-size: 22px; line-height: 1.4; }
+.txt h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.4; }
 .txt p { margin: 0; color: var(--ink-soft); max-width: 34em; }
 
 /* live panel */
@@ -368,7 +425,7 @@ body {
   50% { opacity: 0.35; }
 }
 
-.live-head h3 { margin: 0; font-size: 17px; }
+.live-head h3 { margin: 0; font-size: 16px; }
 
 .live ol { list-style: none; margin: 8px 0 0; padding: 0; }
 
@@ -428,7 +485,7 @@ body {
 
 .term-hi { border-color: var(--accent); }
 
-.term h3 { margin: 0 0 8px; font-size: 20px; }
+.term h3 { margin: 0 0 8px; font-size: 18px; }
 .term p { margin: 0 0 14px; color: var(--ink-soft); }
 
 .term pre {
@@ -459,7 +516,7 @@ body {
 
 .how .n {
   flex: none;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 800;
   color: var(--accent);
   font-variant-numeric: tabular-nums;
@@ -467,7 +524,7 @@ body {
   min-width: 40px;
 }
 
-.how h3 { margin: 0 0 6px; font-size: 19px; }
+.how h3 { margin: 0 0 6px; font-size: 17px; }
 .how p { margin: 0; color: var(--ink-soft); }
 .how a { color: var(--accent); font-weight: 700; }
 
@@ -491,7 +548,7 @@ body {
 .final h2 {
   margin: 0 auto 30px;
   max-width: 16em;
-  font-size: clamp(30px, 5.4vw, 52px);
+  font-size: clamp(28px, 4.8vw, 46px);
   line-height: 1.25;
   font-weight: 800;
   text-wrap: balance;
