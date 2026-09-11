@@ -41,7 +41,7 @@
       "alternateName": ["エフカムプロ"],
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Android 7.0 (API 24) or later",
-      "softwareVersion": "1.0.0",
+      "softwareVersion": "2.1.0",
       "datePublished": "2026-09-04",
       "description": "ISO・シャッター速度・フォーカス・ホワイトバランスのマニュアル制御、物理レンズの実切り替え、撮影プロファイル、バックグラウンド録画、日本語／英語の完全対応UIを備えたAndroid向けオープンソースのカメラアプリ。",
       "url": "https://studio-rizi.pages.dev/projects/fcam-pro/",
@@ -78,7 +78,7 @@
         <a href="#languages">対応言語</a>
         <a class="nav-download" href="#get-started">入手する</a>
       </nav>
-      <span class="header-release">v1.0.0</span>
+      <span class="header-release">v2.1.0</span>
     </div>
   </header>
 
@@ -94,7 +94,7 @@
             <a class="button button-secondary" href="https://github.com/oriyu90/fcam-pro">GitHubでソースを見る</a>
           </div>
         </div>
-        <aside class="hero-aside" aria-label="Fcam pro v1.0.0">
+        <aside class="hero-aside" aria-label="Fcam pro v2.1.0">
           <div class="hero-icon">
             <img src="assets/icon.png" width="140" height="140" alt="Fcam pro アイコン" style="border-radius:30px">
           </div>
@@ -129,10 +129,10 @@
         </div>
         <dl class="feature-ledger">
           <div class="feature-row"><span class="feature-number">LENSES</span><dt>物理レンズを実切り替え</dt><dd>超広角・広角・望遠・マクロ・前面。レンズ向きのフラグではなく実際の cameraId をバインドします。対応しない端末では当該向きの既定カメラへ安全にフォールバックします。</dd></div>
-          <div class="feature-row"><span class="feature-number">FOCUS</span><dt>タップAFとピンチズーム</dt><dd>プレビュー上のタップで測光・フォーカス、ピンチでズーム。AE/AFロック中は自動で無効になります。</dd></div>
+          <div class="feature-row"><span class="feature-number">FOCUS</span><dt>タップAFとピンチズーム</dt><dd>プレビュー上のタップで測光・フォーカス、ピンチでズーム。現在の倍率はパネル上部のピルに表示され、タップで1倍に戻せます。起動時はUIもカメラも必ず1倍から始まります。AE/AFロック中は自動で無効になります。</dd></div>
           <div class="feature-row"><span class="feature-number">PROFILES</span><dt>撮影プロファイル</dt><dd>マニュアル設定を保存・改名・削除して呼び出し。Roomデータベースに保存し、アップデート時もクラッシュしない破壊的マイグレーションで管理します。</dd></div>
           <div class="feature-row"><span class="feature-number">TIME-LAPSE</span><dt>タイムラプス</dt><dd>間隔は1〜10秒で設定可能。連続してエラーが起きた場合は自動停止し、画面を離れると確実に止まります。</dd></div>
-          <div class="feature-row"><span class="feature-number">BACKGROUND</span><dt>バックグラウンド録画</dt><dd>フォアグラウンドサービスで画面オフ中も録画を継続。通知の停止ボタンで終了でき、アプリ側のカメラとは排他制御します。</dd></div>
+          <div class="feature-row"><span class="feature-number">BACKGROUND</span><dt>バックグラウンド録画</dt><dd>フォアグラウンドサービスで画面オフ中も録画を継続。使用中のレンズと向きを引き継ぎ、録画中はシャッターとレンズ切替を無効化して誤操作を防ぎます。通知の停止ボタンで終了でき、アプリ側のカメラとは排他制御します。</dd></div>
           <div class="feature-row"><span class="feature-number">QR</span><dt>QRコード検出</dt><dd>写真モードで自動検出。URLはそのまま開き、それ以外はクリップボードにコピーします。</dd></div>
           <div class="feature-row"><span class="feature-number">SYSTEM</span><dt>OSの標準カメラに設定可能</dt><dd>IMAGE_CAPTURE / VIDEO_CAPTURE / STILL_IMAGE_CAMERA を処理し、呼び出し元へ結果を返します。</dd></div>
         </dl>
@@ -173,12 +173,12 @@
       <div class="page-width">
         <div class="section-heading">
           <h2 id="get-started-title">署名済みAPKをすぐ試せます。</h2>
-          <p>Fcam pro v1.0.0 は GitHub Releases から署名済みAPKを入手できます。対応OSは Android 7.0（API 24）以降です。</p>
+          <p>Fcam pro v2.1.0 は GitHub Releases から署名済みAPKを入手できます。対応OSは Android 7.0（API 24）以降です。</p>
         </div>
         <article class="install-platform">
           <h3>入手・ビルド</h3>
           <ol class="step-list">
-            <li><span class="step-number">1</span><span><a href="https://github.com/oriyu90/fcam-pro/releases/tag/v1.0.0">GitHub Releases</a> から <code>Fcam-pro-v1.0.0.apk</code> をダウンロードし、<code>SHA256SUMS.txt</code> と照合してインストールします。</span></li>
+            <li><span class="step-number">1</span><span><a href="https://github.com/oriyu90/fcam-pro/releases/tag/v2.1.0">GitHub Releases</a> から <code>Fcam-pro-v2.1.0.apk</code> をダウンロードし、<code>SHA256SUMS.txt</code> と照合してインストールします。</span></li>
             <li><span class="step-number">2</span><span>ソースから試す場合は <a href="https://github.com/oriyu90/fcam-pro">GitHubリポジトリ</a> をクローンします。</span></li>
             <li><span class="step-number">3</span><span>JDK 21 と Android SDK 36 / Build-Tools 36.0.0 を用意します。</span></li>
             <li><span class="step-number">4</span><span>ターミナルで <code>./gradlew assembleDebug</code> を実行します。</span></li>
@@ -186,7 +186,7 @@
           <p class="hash">署名証明書 SHA-256: 99:0C:CC:90:2C:33:11:8E:C1:02:9B:4F:58:2B:39:E3:ED:A9:32:72:E4:6F:E2:76:A0:91:92:62:BE:CD:C5:B2</p>
           <p class="install-reference"><a href="https://github.com/oriyu90/fcam-pro#readme">READMEでビルドの詳細を見る</a></p>
         </article>
-        <p class="release-warning">カメラ権限は必須です。マイクと通知の権限は、動画録画やバックグラウンド録画を使うときにのみ要求します。スローモーションとパノラマは v1.0.0 ではUIのみで未実装です。</p>
+        <p class="release-warning">カメラ権限は必須です。マイクと通知の権限は、動画録画やバックグラウンド録画を使うときにのみ要求します。スローモーションとパノラマは v2.1.0 ではUIのみで未実装です。</p>
       </div>
     </section>
 
