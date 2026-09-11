@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Media Master — um app Android para fotos, música, documentos, armazenamento e arquivos de rede</title>
-<meta name="description" content="O Media Master é um app Android de código aberto que reúne navegação de fotos/vídeos, reprodução de áudio, digitalização de documentos, ferramentas de armazenamento, gestão de apps/APKs e armazenamento de rede SMB/WebDAV num só lugar. Outros apps podem abrir qualquer recurso diretamente pelo esquema mediamaster://. Suporta modo DeX / desktop. Criado por Yuki Orita (Yuki_Orita / oriyu90). Gratuito e de código aberto no GitHub.">
-<meta name="keywords" content="Media Master, メディアマスター, 折田悠希, おりたゆうき, Yuki_Orita, github, Android, gerenciador de arquivos, gestor de mídia, DeX, modo desktop, código aberto, Jetpack Compose, SMB, WebDAV, deep link">
+<meta name="description" content="O Media Master é um app Android de código aberto que reúne navegação de fotos/vídeos, reprodução de áudio, digitalização de documentos, ferramentas de armazenamento, gestão de apps/APKs e armazenamento de rede SMB/WebDAV num só lugar. Um visualizador universal de documentos embutido abre arquivos de texto, CSV, JSON, Markdown, PDF e Word/PowerPoint sem sair do app, podendo ser definido como app padrão para esses formatos. Outros apps podem abrir qualquer recurso diretamente pelo esquema mediamaster://. Suporta modo DeX / desktop. Criado por Yuki Orita (Yuki_Orita / oriyu90). Gratuito e de código aberto no GitHub.">
+<meta name="keywords" content="Media Master, メディアマスター, 折田悠希, おりたゆうき, Yuki_Orita, github, Android, gerenciador de arquivos, gestor de mídia, visualizador de documentos, visualizador de PDF, visualizador de CSV, DeX, modo desktop, código aberto, Jetpack Compose, SMB, WebDAV, deep link, app padrão">
 <meta name="author" content="Yuki_Orita">
 <meta name="theme-color" content="#0f1b1a">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -50,9 +50,9 @@
       "alternateName": ["メディアマスター"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android 7.0 (API 24) or later",
-      "softwareVersion": "1.1.0",
+      "softwareVersion": "1.2.0",
       "inLanguage": "pt",
-      "description": "Um gerenciador de mídia e arquivos Android de código aberto que combina navegação de fotos/vídeos, reprodução de áudio, digitalização de documentos, ferramentas de armazenamento, gestão de apps/APKs e armazenamento de rede SMB/WebDAV. Outros apps podem abrir qualquer recurso pelo esquema mediamaster://.",
+      "description": "Um gerenciador de mídia e arquivos Android de código aberto que combina navegação de fotos/vídeos, reprodução de áudio, digitalização de documentos, ferramentas de armazenamento, gestão de apps/APKs e armazenamento de rede SMB/WebDAV. Um visualizador universal de documentos embutido abre arquivos de texto, CSV, JSON, Markdown, PDF e Word/PowerPoint, e outros apps podem abrir qualquer recurso pelo esquema mediamaster://.",
       "url": "https://studio-rizi.pages.dev/projects/media-master/pt/",
       "downloadUrl": "https://github.com/oriyu90/media-master",
       "codeRepository": "https://github.com/oriyu90/media-master",
@@ -95,7 +95,7 @@
         <a href="#languages">Idiomas</a>
         <a class="nav-download" href="#get-started">Obter</a>
       </nav>
-      <span class="header-release">v1.1.0</span>
+      <span class="header-release">v1.2.0</span>
     </div>
     <nav class="language-switcher-bar" aria-label="Idioma">
       <a hreflang="ja" lang="ja" href="/projects/media-master/">日本語</a>
@@ -110,7 +110,7 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <div>
-            <p class="release-line">Android · Kotlin / Jetpack Compose · Código aberto · v1.1.0</p>
+            <p class="release-line">Android · Kotlin / Jetpack Compose · Código aberto · v1.2.0</p>
             <h1 id="hero-title">Fotos, música, documentos —<br>num só lugar</h1>
             <p class="hero-lead">O Media Master é um gerenciador de mídia e arquivos Android de código aberto que mantém fotos, vídeos, música, documentos, armazenamento, apps e arquivos em pastas de rede num único app. Sem conta, sem cadastro — funciona na hora.</p>
           </div>
@@ -119,7 +119,7 @@
             <a class="button button-secondary" href="#get-started">Ver instruções de build</a>
           </div>
         </div>
-        <aside class="hero-aside" aria-label="Media Master v1.1.0">
+        <aside class="hero-aside" aria-label="Media Master v1.2.0">
           <div class="hero-icon" aria-hidden="true">
             <svg viewBox="0 0 108 108" width="152" height="152">
               <rect width="108" height="108" rx="26" fill="var(--color-ink)"></rect>
@@ -127,7 +127,7 @@
               <path d="M46 49v18l15-9-15-9z" fill="var(--color-ink)"></path>
             </svg>
           </div>
-          <p class="aside-note">A v0.3.0 reconstrói a interface sobre o Material 3 com contraste verificado em WCAG AA, adiciona o esquema mediamaster:// para outros apps abrirem qualquer recurso e adiciona armazenamento de rede SMB / WebDAV.</p>
+          <p class="aside-note">A v1.2.0 adiciona um visualizador universal de documentos para arquivos de texto, CSV, JSON, Markdown, PDF e Word/PowerPoint, direto no app. O Media Master pode ser definido como app padrão para esses formatos.</p>
           <ul class="aside-facts" aria-label="Resumo">
             <li><span>SO</span>Android 7.0 ou posterior</li>
             <li><span>Idiomas</span>Cinco</li>
@@ -156,7 +156,7 @@
       <div class="page-width">
         <div class="section-heading">
           <h2 id="features-title">Organize o conteúdo do aparelho sem caçar menus.</h2>
-          <p>De navegar por fotos e vídeos a tocar música, digitalizar documentos, limpar o armazenamento e gerenciar apps. Na v0.3.0, cada recurso está a um toque da tela inicial.</p>
+          <p>De navegar por fotos e vídeos a tocar música, visualizar e digitalizar documentos, limpar o armazenamento e gerenciar apps. Cada recurso está a um toque da tela inicial.</p>
         </div>
         <dl class="feature-ledger">
           <div class="feature-row">
@@ -173,6 +173,11 @@
             <span class="feature-number">SCAN &amp; DOCS</span>
             <dt>Digitalize documentos em PDF</dt>
             <dd>Integra o GMS Document Scanner para transformar papel em PDF ou JPEG na hora.</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">VIEW</span>
+            <dt>Abra quase qualquer documento, na hora</dt>
+            <dd>Arquivos de texto, CSV, JSON, Markdown, PDF, Word (.docx) e PowerPoint (.pptx) abrem direto no app, com detecção automática de codificação de caracteres para nunca exibir texto corrompido. O Media Master pode ser definido como app padrão para os formatos suportados.</dd>
           </div>
           <div class="feature-row">
             <span class="feature-number">MANAGE</span>
@@ -269,12 +274,12 @@
       <div class="page-width">
         <div class="section-heading">
           <h2 id="get-started-title">Teste o APK assinado agora mesmo.</h2>
-          <p>O Media Master v0.3.0 está disponível como APK assinado no GitHub Releases. Esta versão adiciona a API de acesso externo, o armazenamento de rede SMB/WebDAV e a interface Material 3.</p>
+          <p>O Media Master v1.2.0 está disponível como APK assinado no GitHub Releases. Esta versão adiciona o visualizador universal de documentos para arquivos de texto, CSV, JSON, Markdown, PDF e Word/PowerPoint.</p>
         </div>
         <article class="install-platform">
           <h3>Obter ou compilar</h3>
           <ol class="step-list">
-            <li><span class="step-number">1</span><span>Baixe e instale o APK assinado do <a href="https://github.com/oriyu90/media-master/releases/tag/v1.1.0">GitHub Releases</a>.</span></li>
+            <li><span class="step-number">1</span><span>Baixe e instale o APK assinado do <a href="https://github.com/oriyu90/media-master/releases/tag/v1.2.0">GitHub Releases</a>.</span></li>
             <li><span class="step-number">2</span><span>Para compilar do código, clone o <a href="https://github.com/oriyu90/media-master">repositório no GitHub</a> e abra no Android Studio.</span></li>
             <li><span class="step-number">3</span><span>Tenha o Android SDK 36 e o JDK 21 (o nível de compatibilidade de origem é Java 17).</span></li>
             <li><span class="step-number">4</span><span>Rode <code>./gradlew :app:assembleDebug</code> num terminal, ou execute pelo Android Studio.</span></li>
