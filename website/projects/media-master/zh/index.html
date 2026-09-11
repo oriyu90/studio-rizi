@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Media Master — 把照片、音乐、文档、存储与网络文件合为一体的 Android 应用</title>
-<meta name="description" content="Media Master 是一款开源 Android 应用，将照片/视频浏览、音频播放、文档扫描、存储工具、应用/APK 管理以及 SMB/WebDAV 网络存储集于一处。内置通用文档查看器可直接打开文本、CSV、JSON、Markdown、PDF 及 Word/PowerPoint 文件，并可设为这些格式的默认应用。其他应用可通过 mediamaster:// 方案直接打开任一功能。支持 DeX / 桌面模式。开发者：折田悠希（Yuki_Orita / oriyu90）。免费开源，托管于 GitHub。">
+<meta name="description" content="Media Master 是一款开源 Android 应用，将照片/视频浏览、音频播放、文档扫描、存储工具、应用/APK 管理以及 SMB/WebDAV 网络存储集于一处。内置通用文档查看器可直接打开文本、CSV、JSON、Markdown、PDF、Word/PowerPoint 及 LaTeX(.tex) 文件，公式通过 KaTeX 离线排版，并可设为这些格式的默认应用。其他应用可通过 mediamaster:// 方案直接打开任一功能。支持 DeX / 桌面模式。开发者：折田悠希（Yuki_Orita / oriyu90）。免费开源，托管于 GitHub。">
 <meta name="keywords" content="Media Master, メディアマスター, 折田悠希, おりたゆうき, Yuki_Orita, github, Android, 文件管理器, 媒体管理, 文档查看器, PDF查看器, CSV查看器, DeX, 桌面模式, 开源, Jetpack Compose, SMB, WebDAV, 深层链接, 默认应用">
 <meta name="author" content="Yuki_Orita">
 <meta name="theme-color" content="#0f1b1a">
@@ -50,9 +50,9 @@
       "alternateName": ["メディアマスター"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android 7.0 (API 24) or later",
-      "softwareVersion": "1.2.0",
+      "softwareVersion": "1.3.0",
       "inLanguage": "zh-Hans",
-      "description": "一款开源 Android 媒体与文件管理应用，集照片/视频浏览、音频播放、文档扫描、存储工具、应用/APK 管理以及 SMB/WebDAV 网络存储于一体。内置通用文档查看器可直接打开文本、CSV、JSON、Markdown、PDF 及 Word/PowerPoint 文件，其他应用可通过 mediamaster:// 方案直接打开任一功能。",
+      "description": "一款开源 Android 媒体与文件管理应用，集照片/视频浏览、音频播放、文档扫描、存储工具、应用/APK 管理以及 SMB/WebDAV 网络存储于一体。内置通用文档查看器可直接打开文本、CSV、JSON、Markdown、PDF、Word/PowerPoint 及 LaTeX 文件（KaTeX 离线公式渲染），其他应用可通过 mediamaster:// 方案直接打开任一功能。",
       "url": "https://studio-rizi.pages.dev/projects/media-master/zh/",
       "downloadUrl": "https://github.com/oriyu90/media-master",
       "codeRepository": "https://github.com/oriyu90/media-master",
@@ -95,7 +95,7 @@
         <a href="#languages">语言</a>
         <a class="nav-download" href="#get-started">获取</a>
       </nav>
-      <span class="header-release">v1.2.0</span>
+      <span class="header-release">v1.3.0</span>
     </div>
     <nav class="language-switcher-bar" aria-label="语言">
       <a hreflang="ja" lang="ja" href="/projects/media-master/">日本語</a>
@@ -110,7 +110,7 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <div>
-            <p class="release-line">Android · Kotlin / Jetpack Compose · 开源 · v1.2.0</p>
+            <p class="release-line">Android · Kotlin / Jetpack Compose · 开源 · v1.3.0</p>
             <h1 id="hero-title">照片、音乐、文档，<br>都在一处</h1>
             <p class="hero-lead">Media Master 是一款开源的 Android 媒体与文件管理应用，把照片、视频、音乐、文档、存储、应用以及网络共享上的文件放进同一个应用。无需账号、无需注册，打开即用。</p>
           </div>
@@ -119,7 +119,7 @@
             <a class="button button-secondary" href="#get-started">查看构建方法</a>
           </div>
         </div>
-        <aside class="hero-aside" aria-label="Media Master v1.2.0">
+        <aside class="hero-aside" aria-label="Media Master v1.3.0">
           <div class="hero-icon" aria-hidden="true">
             <svg viewBox="0 0 108 108" width="152" height="152">
               <rect width="108" height="108" rx="26" fill="var(--color-ink)"></rect>
@@ -127,7 +127,7 @@
               <path d="M46 49v18l15-9-15-9z" fill="var(--color-ink)"></path>
             </svg>
           </div>
-          <p class="aside-note">v1.2.0 新增应用内通用文档查看器，可直接打开文本、CSV、JSON、Markdown、PDF 及 Word/PowerPoint 文件。对于支持的格式，可将 Media Master 设为默认应用。</p>
+          <p class="aside-note">v1.3.0 新增 Markdown 与 LaTeX(.tex) 公式渲染（KaTeX 离线排版），并支持在查看器中直接分享或删除文件。</p>
           <ul class="aside-facts" aria-label="概览">
             <li><span>系统</span>Android 7.0 及以上</li>
             <li><span>语言</span>五种</li>
@@ -177,7 +177,7 @@
           <div class="feature-row">
             <span class="feature-number">VIEW</span>
             <dt>几乎任何文档，随手打开</dt>
-            <dd>文本、CSV、JSON、Markdown、PDF、Word(.docx)、PowerPoint(.pptx) 均可在应用内直接查看，并自动识别文字编码，不会出现乱码。支持的格式还可将 Media Master 设为默认应用。</dd>
+            <dd>文本、CSV、JSON、Markdown、PDF、Word(.docx)、PowerPoint(.pptx)、LaTeX(.tex) 均可在应用内直接查看，并自动识别文字编码，不会出现乱码。Markdown 与 LaTeX 中的公式（如 $x^2$）通过 KaTeX 离线排版显示。支持的格式还可将 Media Master 设为默认应用。</dd>
           </div>
           <div class="feature-row">
             <span class="feature-number">MANAGE</span>
@@ -274,12 +274,12 @@
       <div class="page-width">
         <div class="section-heading">
           <h2 id="get-started-title">立即试用已签名的 APK。</h2>
-          <p>Media Master v1.2.0 以已签名 APK 的形式发布于 GitHub Releases。本次更新加入了可直接打开文本、CSV、JSON、Markdown、PDF 及 Word/PowerPoint 文件的通用文档查看器。</p>
+          <p>Media Master v1.3.0 以已签名 APK 的形式发布于 GitHub Releases。本次更新加入了 LaTeX 公式渲染，并可在查看器中直接分享或删除文件。</p>
         </div>
         <article class="install-platform">
           <h3>获取或自行构建</h3>
           <ol class="step-list">
-            <li><span class="step-number">1</span><span>从 <a href="https://github.com/oriyu90/media-master/releases/tag/v1.2.0">GitHub Releases</a> 下载并安装已签名的 APK。</span></li>
+            <li><span class="step-number">1</span><span>从 <a href="https://github.com/oriyu90/media-master/releases/tag/v1.3.0">GitHub Releases</a> 下载并安装已签名的 APK。</span></li>
             <li><span class="step-number">2</span><span>如需从源码构建，克隆 <a href="https://github.com/oriyu90/media-master">GitHub 仓库</a>并用 Android Studio 打开。</span></li>
             <li><span class="step-number">3</span><span>准备 Android SDK 36 与 JDK 21（源码兼容级别为 Java 17）。</span></li>
             <li><span class="step-number">4</span><span>在终端运行 <code>./gradlew :app:assembleDebug</code>，或从 Android Studio 运行。</span></li>

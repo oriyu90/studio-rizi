@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Media Master — one Android app for photos, music, documents, storage and network files</title>
-<meta name="description" content="Media Master is an open-source Android app that brings photo/video browsing, audio playback, document scanning, storage tools, app/APK management and SMB/WebDAV network storage into one place. A built-in universal document viewer opens text, CSV, JSON, Markdown, PDF and Word/PowerPoint files without leaving the app, and it can be set as the default app for these formats. Other apps can open any feature directly through the mediamaster:// scheme. DeX / desktop mode supported. Built by Yuki Orita (Yuki_Orita / oriyu90). Free and open source on GitHub.">
+<meta name="description" content="Media Master is an open-source Android app that brings photo/video browsing, audio playback, document scanning, storage tools, app/APK management and SMB/WebDAV network storage into one place. A built-in universal document viewer opens text, CSV, JSON, Markdown, PDF, Word/PowerPoint, and LaTeX (.tex) files without leaving the app, with math typeset offline via KaTeX, and it can be set as the default app for these formats. Other apps can open any feature directly through the mediamaster:// scheme. DeX / desktop mode supported. Built by Yuki Orita (Yuki_Orita / oriyu90). Free and open source on GitHub.">
 <meta name="keywords" content="Media Master, メディアマスター, 折田悠希, おりたゆうき, Yuki_Orita, github, Android, file manager, media manager, document viewer, PDF viewer, CSV viewer, DeX, desktop mode, open source, Jetpack Compose, SMB, WebDAV, deep link, default app">
 <meta name="author" content="Yuki_Orita">
 <meta name="theme-color" content="#0f1b1a">
@@ -50,9 +50,9 @@
       "alternateName": ["メディアマスター"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android 7.0 (API 24) or later",
-      "softwareVersion": "1.2.0",
+      "softwareVersion": "1.3.0",
       "inLanguage": "en",
-      "description": "An open-source Android media and file manager that combines photo/video browsing, audio playback, document scanning, storage tools, app/APK management and SMB/WebDAV network storage. A built-in universal document viewer opens text, CSV, JSON, Markdown, PDF and Word/PowerPoint files, and other apps can open any feature directly through the mediamaster:// scheme.",
+      "description": "An open-source Android media and file manager that combines photo/video browsing, audio playback, document scanning, storage tools, app/APK management and SMB/WebDAV network storage. A built-in universal document viewer opens text, CSV, JSON, Markdown, PDF, Word/PowerPoint, and LaTeX files with offline KaTeX math rendering, and other apps can open any feature directly through the mediamaster:// scheme.",
       "url": "https://studio-rizi.pages.dev/projects/media-master/en/",
       "downloadUrl": "https://github.com/oriyu90/media-master",
       "codeRepository": "https://github.com/oriyu90/media-master",
@@ -95,7 +95,7 @@
         <a href="#languages">Languages</a>
         <a class="nav-download" href="#get-started">Get it</a>
       </nav>
-      <span class="header-release">v1.2.0</span>
+      <span class="header-release">v1.3.0</span>
     </div>
     <nav class="language-switcher-bar" aria-label="Language">
       <a hreflang="ja" lang="ja" href="/projects/media-master/">日本語</a>
@@ -110,7 +110,7 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <div>
-            <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.2.0</p>
+            <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.3.0</p>
             <h1 id="hero-title">Photos, music, documents —<br>in one place</h1>
             <p class="hero-lead">Media Master is an open-source Android media and file manager that keeps photos, video, music, documents, storage, apps and files on network shares in a single app. No account, no sign-up — it works straight away.</p>
           </div>
@@ -119,7 +119,7 @@
             <a class="button button-secondary" href="#get-started">See build instructions</a>
           </div>
         </div>
-        <aside class="hero-aside" aria-label="Media Master v1.2.0">
+        <aside class="hero-aside" aria-label="Media Master v1.3.0">
           <div class="hero-icon" aria-hidden="true">
             <svg viewBox="0 0 108 108" width="152" height="152">
               <rect width="108" height="108" rx="26" fill="var(--color-ink)"></rect>
@@ -127,7 +127,7 @@
               <path d="M46 49v18l15-9-15-9z" fill="var(--color-ink)"></path>
             </svg>
           </div>
-          <p class="aside-note">v1.2.0 adds a universal document viewer for text, CSV, JSON, Markdown, PDF, and Word/PowerPoint files, right inside the app. Media Master can be set as the default app for these formats.</p>
+          <p class="aside-note">v1.3.0 adds LaTeX math rendering for Markdown and .tex files (typeset offline with KaTeX), plus share and delete right from the document viewer.</p>
           <ul class="aside-facts" aria-label="At a glance">
             <li><span>OS</span>Android 7.0 or later</li>
             <li><span>Languages</span>Five</li>
@@ -177,7 +177,7 @@
           <div class="feature-row">
             <span class="feature-number">VIEW</span>
             <dt>Open almost any document, right here</dt>
-            <dd>Text, CSV, JSON, Markdown, PDF, Word (.docx) and PowerPoint (.pptx) files open directly inside the app, with automatic character-encoding detection so text never comes out garbled. Media Master can be set as the default app for supported formats.</dd>
+            <dd>Text, CSV, JSON, Markdown, PDF, Word (.docx), PowerPoint (.pptx), and LaTeX (.tex) files open directly inside the app, with automatic character-encoding detection so text never comes out garbled. Math in Markdown and LaTeX (like $x^2$) is typeset offline with KaTeX. Media Master can be set as the default app for supported formats.</dd>
           </div>
           <div class="feature-row">
             <span class="feature-number">MANAGE</span>
@@ -274,12 +274,12 @@
       <div class="page-width">
         <div class="section-heading">
           <h2 id="get-started-title">Try the signed APK right away.</h2>
-          <p>Media Master v1.2.0 is available as a signed APK on GitHub Releases. This release adds the universal document viewer for text, CSV, JSON, Markdown, PDF and Word/PowerPoint files.</p>
+          <p>Media Master v1.3.0 is available as a signed APK on GitHub Releases. This release adds LaTeX math rendering and lets you share or delete a file right from the document viewer.</p>
         </div>
         <article class="install-platform">
           <h3>Get it or build it</h3>
           <ol class="step-list">
-            <li><span class="step-number">1</span><span>Download and install the signed APK from <a href="https://github.com/oriyu90/media-master/releases/tag/v1.2.0">GitHub Releases</a>.</span></li>
+            <li><span class="step-number">1</span><span>Download and install the signed APK from <a href="https://github.com/oriyu90/media-master/releases/tag/v1.3.0">GitHub Releases</a>.</span></li>
             <li><span class="step-number">2</span><span>To build from source, clone the <a href="https://github.com/oriyu90/media-master">GitHub repository</a> and open it in Android Studio.</span></li>
             <li><span class="step-number">3</span><span>Provide Android SDK 36 and JDK 21 (the source compatibility target is Java 17).</span></li>
             <li><span class="step-number">4</span><span>Run <code>./gradlew :app:assembleDebug</code> from a terminal, or run from Android Studio.</span></li>
