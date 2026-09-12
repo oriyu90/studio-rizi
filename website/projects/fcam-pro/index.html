@@ -41,8 +41,9 @@
       "alternateName": ["エフカムプロ"],
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Android 7.0 (API 24) or later",
-      "softwareVersion": "2.4.0",
+      "softwareVersion": "2.5.0",
       "datePublished": "2026-09-04",
+      "dateModified": "2026-09-13",
       "description": "ISO・シャッター速度・フォーカス・ホワイトバランスのマニュアル制御、物理レンズの実切り替え、撮影プロファイル、バックグラウンド録画、日本語／英語の完全対応UIを備えたAndroid向けオープンソースのカメラアプリ。",
       "url": "https://studio-rizi.pages.dev/projects/fcam-pro/",
       "downloadUrl": "https://github.com/oriyu90/fcam-pro/releases",
@@ -78,7 +79,7 @@
         <a href="#languages">対応言語</a>
         <a class="nav-download" href="#get-started">入手する</a>
       </nav>
-      <span class="header-release">v2.4.0</span>
+      <span class="header-release">v2.5.0</span>
     </div>
   </header>
 
@@ -94,11 +95,11 @@
             <a class="button button-secondary" href="https://github.com/oriyu90/fcam-pro">GitHubでソースを見る</a>
           </div>
         </div>
-        <aside class="hero-aside" aria-label="Fcam pro v2.4.0">
+        <aside class="hero-aside" aria-label="Fcam pro v2.5.0">
           <div class="hero-icon">
             <img src="assets/icon.png" width="140" height="140" alt="Fcam pro アイコン" style="border-radius:30px">
           </div>
-          <p class="aside-note">Photography Proを参考にしたプロモードで、ISO・シャッター速度・フォーカス・ホワイトバランス・露出補正を、選択中の物理カメラが対応する範囲だけから素早く選べます。</p>
+          <p class="aside-note">Photography Proを縦画面へ展開したプロモード。4:3／16:9のプレビュー形状を縦横で保ち、色付き撮影プロファイルと編集できるモードバーを備えています。</p>
           <ul class="aside-facts" aria-label="概要">
             <li><span>対応OS</span>Android 7.0 以降</li>
             <li><span>UI言語</span>日本語 / English</li>
@@ -133,7 +134,8 @@
           <div class="feature-row"><span class="feature-number">SLO-MO</span><dt>スローモーション</dt><dd>高速撮影に対応したレンズで高フレーム録画し、停止後に無音のスロー動画として保存します。非対応の端末ではシャッター時に案内を表示します。</dd></div>
           <div class="feature-row"><span class="feature-number">PANO</span><dt>パノラマ</dt><dd>シャッター後にゆっくり横へパンすると最大8枚を自動撮影して1枚に合成します。ガイド枠と進捗表示、終了・キャンセル操作を備えています。</dd></div>
           <div class="feature-row"><span class="feature-number">RAW</span><dt>センサーRAW保存</dt><dd>RAW出力対応レンズでは保存形式をJPEG／JPEG+RAW／RAW（DNG）から選べます。対応ビット深度（RAW10/12/14）をバッジ表示し、非対応レンズではJPEG固定になります。</dd></div>
-          <div class="feature-row"><span class="feature-number">PROFILES</span><dt>自分でつくる撮影プロファイル</dt><dd>現在のマニュアル設定を好きな名前で保存し、適用・改名・削除できます。空の名前は保存せず、削除前に確認。既存データはアップデート後も維持します。</dd></div>
+          <div class="feature-row"><span class="feature-number">MODES</span><dt>自分で整えるモードバー</dt><dd>初期表示は写真・動画・その他。スローとパノラマは「その他」からドラッグしてバーへ追加でき、並び替えや格納も可能です。配置は再起動後も維持します。</dd></div>
+          <div class="feature-row"><span class="feature-number">PROFILES</span><dt>色で選べる撮影プロファイル</dt><dd>フロッピーアイコンから新規保存または上書き。6色のボタンで見分け、タップで適用、長押しドラッグで並び替え、さらに保持すると削除確認を表示します。既存データはアップデート後も維持します。</dd></div>
           <div class="feature-row"><span class="feature-number">TIME-LAPSE</span><dt>タイムラプス</dt><dd>間隔は1〜10秒で設定可能。連続してエラーが起きた場合は自動停止し、画面を離れると確実に止まります。</dd></div>
           <div class="feature-row"><span class="feature-number">BACKGROUND</span><dt>バックグラウンド録画</dt><dd>フォアグラウンドサービスで画面オフ中も録画を継続。使用中のレンズと向きを引き継ぎ、録画中はシャッターとレンズ切替を無効化して誤操作を防ぎます。通知の停止ボタンで終了でき、アプリ側のカメラとは排他制御します。</dd></div>
           <div class="feature-row"><span class="feature-number">QR</span><dt>QRコード検出</dt><dd>写真モードで自動検出。URLはそのまま開き、それ以外はクリップボードにコピーします。</dd></div>
@@ -146,7 +148,7 @@
       <div class="page-width">
         <div class="section-heading">
           <h2 id="manual-title">撮影情報と設定を、ひと続きに。</h2>
-          <p>プロモードは Photography Pro の操作思想を縦画面へ再構成。プレビュー、SS・F値・EV・ISOのサマリー、現在値付きの設定デッキ、選択肢、シャッターの順に並びます。横画面は2列のサイドデッキにして、細長い画面でも全項目へ到達できます。設定値は選択中のカメラの CameraCharacteristics に合わせて制限し、MANUAL_SENSOR 非対応レンズでは安全に無効化します。</p>
+          <p>プロモードは Photography Pro の操作思想を縦画面へ再構成。プレビュー、SS・F値・EV・ISOのサマリー、現在値付きの設定デッキ、選択肢、プロファイル、シャッターの順に並びます。横画面は2列のサイドデッキにし、4:3／16:9のプレビュー形状は縦横で変えません。設定値は選択中のカメラの CameraCharacteristics に合わせて制限し、MANUAL_SENSOR 非対応レンズでは安全に無効化します。</p>
         </div>
         <ul class="lang-chips" aria-label="マニュアル制御項目">
           <li>ISO 感度</li>
@@ -179,12 +181,12 @@
       <div class="page-width">
         <div class="section-heading">
           <h2 id="get-started-title">署名済みAPKをすぐ試せます。</h2>
-          <p>Fcam pro v2.4.0 は GitHub Releases から署名済みAPKを入手できます。対応OSは Android 7.0（API 24）以降です。</p>
+          <p>Fcam pro v2.5.0 は GitHub Releases から署名済みAPKを入手できます。対応OSは Android 7.0（API 24）以降です。</p>
         </div>
         <article class="install-platform">
           <h3>入手・ビルド</h3>
           <ol class="step-list">
-            <li><span class="step-number">1</span><span><a href="https://github.com/oriyu90/fcam-pro/releases/tag/v2.4.0">GitHub Releases</a> から <code>Fcam-pro-v2.4.0.apk</code> をダウンロードし、<code>SHA256SUMS.txt</code> と照合してインストールします。</span></li>
+            <li><span class="step-number">1</span><span><a href="https://github.com/oriyu90/fcam-pro/releases/tag/v2.5.0">GitHub Releases</a> から <code>Fcam-pro-v2.5.0.apk</code> をダウンロードし、<code>SHA256SUMS.txt</code> と照合してインストールします。</span></li>
             <li><span class="step-number">2</span><span>ソースから試す場合は <a href="https://github.com/oriyu90/fcam-pro">GitHubリポジトリ</a> をクローンします。</span></li>
             <li><span class="step-number">3</span><span>JDK 21 と Android SDK 36 / Build-Tools 36.0.0 を用意します。</span></li>
             <li><span class="step-number">4</span><span>ターミナルで <code>./gradlew assembleDebug</code> を実行します。</span></li>
