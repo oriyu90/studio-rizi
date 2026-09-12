@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f3f1ec">
 <title data-i18n="meta.title">MLXBar（エムエルエックスバー）— Apple Silicon MacのローカルAIをメニューバーから</title>
 <meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="MLXBarは、Apple Silicon Mac上のMLX LM・MLX VLM・LM Studioモデルをメニューバーから管理するmacOSアプリです。OpenAI互換APIを備え、プロンプトもモデルもこのMacの中だけで動きます。開発者は折田悠希（おりたゆうき / Yuki_Orita）。無料・オープンソース、GitHubで公開中。">
 <meta name="keywords" content="MLXBar, エムエルエックスバー, MLXバー, 折田悠希, おりたゆうき, Yuki_Orita, github, MLX, Apple Silicon, ローカルLLM, macOS, メニューバー, OpenAI互換API, local LLM, menu bar app, 本地大语言模型, IA local">
@@ -25,11 +26,16 @@
 <meta property="og:title" data-i18n="meta.ogTitle" data-i18n-attr="content" content="MLXBar（エムエルエックスバー）— Apple Silicon MacのローカルAIをメニューバーから">
 <meta property="og:description" data-i18n="meta.ogDescription" data-i18n-attr="content" content="MLX LM・MLX VLM・LM Studioモデルをメニューバーから管理。OpenAI互換APIを備え、プロンプトもモデルもこのMacの中だけで動きます。開発者は折田悠希（Yuki_Orita）。">
 <meta property="og:url" content="https://studio-rizi.pages.dev/projects/mlx-bar/">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/mlx-bar/assets/local-ai-hero.jpg">
+<meta property="og:image:width" content="1800">
+<meta property="og:image:height" content="1126">
+<meta property="og:image:alt" content="MLXBar — Apple Silicon Macで複数のローカルAIモデルをつなぐ抽象ビジュアル">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@InovateofRIZI">
 <meta name="twitter:creator" content="@InovateofRIZI">
 <meta name="twitter:title" data-i18n="meta.twitterTitle" data-i18n-attr="content" content="MLXBar — Apple Silicon MacのローカルAIをメニューバーから">
 <meta name="twitter:description" data-i18n="meta.twitterDescription" data-i18n-attr="content" content="MLX LM・MLX VLM・LM Studioモデルをメニューバーから管理。推論はすべてこのMacの中で完結します。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/mlx-bar/assets/local-ai-hero.jpg">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b3d91'/%3E%3Ctext x='16' y='23' font-size='18' font-family='system-ui,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 
@@ -68,225 +74,7 @@
 }
 </script>
 
-<style>
-:root {
-  color-scheme: light dark;
-  --bg: #fbfbfa;
-  --panel: #ffffff;
-  --ink: #14181d;
-  --ink-2: #4d5866;
-  --ink-3: #808c9b;
-  --rule: #e4e6e3;
-  --accent: #0b3d91;
-  --accent-ink: #ffffff;
-  --tint: #eef2f9;
-  --warn-rule: #c08a2e;
-  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #101215;
-    --panel: #171a1f;
-    --ink: #e9ecef;
-    --ink-2: #a3adb9;
-    --ink-3: #78838f;
-    --rule: #262a30;
-    --accent: #7fb0ff;
-    --accent-ink: #0d1116;
-    --tint: #182130;
-    --warn-rule: #d5a353;
-  }
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0; background: var(--bg); color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP",
-               "Noto Sans SC", "Yu Gothic UI", "Segoe UI", Roboto, sans-serif;
-  font-size: 16px; line-height: 1.9; -webkit-font-smoothing: antialiased;
-  font-feature-settings: "palt" 1;
-}
-img { max-width: 100%; height: auto; display: block; }
-a { color: var(--accent); text-underline-offset: 3px; }
-code { font-family: var(--mono); font-size: .9em; }
-.wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-
-/* ---- masthead ---- */
-.masthead { border-bottom: 1px solid var(--rule); background: var(--bg); }
-.masthead .wrap { display: flex; align-items: center; min-height: 60px; gap: 18px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
-.wordmark {
-  display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink);
-  font-weight: 700; font-size: 17px; letter-spacing: -.01em;
-}
-.wordmark span.sq {
-  width: 24px; height: 24px; border-radius: 6px; background: var(--accent);
-  color: var(--accent-ink); display: grid; place-items: center;
-  font-size: 13px; font-weight: 800;
-}
-.masthead nav { margin-left: auto; display: flex; gap: 22px; align-items: center; }
-.masthead nav a { color: var(--ink-2); text-decoration: none; font-size: 14px; }
-.masthead nav a:hover { color: var(--ink); text-decoration: underline; }
-@media (max-width: 700px) { .masthead nav a.opt { display: none; } }
-
-.lang-switch { display: flex; gap: 4px; padding: 3px; border: 1px solid var(--rule); border-radius: 8px; }
-.lang-switch button {
-  appearance: none; border: 0; background: transparent; color: var(--ink-3);
-  font-size: 12.5px; font-weight: 600; padding: 5px 9px; border-radius: 6px;
-  cursor: pointer; font-family: inherit;
-}
-.lang-switch button:hover { color: var(--ink); }
-.lang-switch button[aria-current="true"] { background: var(--accent); color: var(--accent-ink); }
-
-/* ---- hero ---- */
-.hero { padding: 66px 0 60px; border-bottom: 1px solid var(--rule); }
-.hero .wrap {
-  display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center;
-}
-@media (max-width: 860px) {
-  .hero { padding: 46px 0 44px; }
-  .hero .wrap { grid-template-columns: 1fr; gap: 38px; }
-}
-.hero h1 {
-  font-size: clamp(28px, 4.6vw, 42px); line-height: 1.4; font-weight: 800;
-  margin: 0 0 18px; letter-spacing: -.015em;
-}
-.hero .kicker {
-  font-size: 12px; letter-spacing: .12em; font-weight: 700; color: var(--ink-3);
-  text-transform: uppercase; margin: 0 0 14px;
-}
-.hero p { color: var(--ink-2); margin: 0 0 26px; font-size: 16px; }
-.actions { display: flex; gap: 11px; flex-wrap: wrap; align-items: center; }
-.btn {
-  display: inline-flex; align-items: center; padding: 11px 22px; border-radius: 8px;
-  font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--rule);
-}
-.btn.solid { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-.btn.solid:hover { opacity: .9; }
-.btn.line { background: var(--panel); color: var(--ink); }
-.btn.line:hover { border-color: var(--accent); color: var(--accent); }
-.fineprint { margin: 18px 0 0; font-size: 13px; color: var(--ink-3); line-height: 1.7; }
-
-/* ---- menu bar mock ---- */
-.mock {
-  background: var(--panel); border: 1px solid var(--rule); border-radius: 12px;
-  box-shadow: 0 14px 34px -22px rgba(0,0,0,.45); overflow: hidden;
-  font-size: 13px;
-}
-.mock .bar {
-  display: flex; align-items: center; gap: 14px; padding: 6px 13px;
-  border-bottom: 1px solid var(--rule); background: var(--tint);
-  color: var(--ink-2); font-size: 11.5px;
-}
-.mock .bar .spacer { margin-left: auto; }
-.mock .bar .active { color: var(--accent); font-weight: 700; }
-.mock .body { padding: 15px 16px 17px; }
-.mock .row { display: flex; align-items: baseline; gap: 9px; }
-.mock .title { font-weight: 700; color: var(--ink); font-size: 13.5px; }
-.mock .sub { color: var(--ink-3); font-size: 11.5px; }
-.mock .status {
-  margin: 9px 0 0; color: #2e7d43; font-size: 11.5px; font-weight: 600;
-}
-@media (prefers-color-scheme: dark) { .mock .status { color: #6cc287; } }
-.mock hr { border: 0; border-top: 1px solid var(--rule); margin: 13px 0; }
-.mock .item {
-  display: flex; justify-content: space-between; padding: 4px 0; color: var(--ink-2);
-}
-.mock .item.on { color: var(--ink); font-weight: 600; }
-.mock .item .key { color: var(--ink-3); font-size: 11px; font-family: var(--mono); }
-.mock .url { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
-
-/* ---- sections ---- */
-section { padding: 58px 0; border-bottom: 1px solid var(--rule); }
-h2 {
-  font-size: clamp(20px, 3vw, 26px); font-weight: 700; margin: 0 0 10px;
-  letter-spacing: -.01em;
-}
-.lede { color: var(--ink-2); margin: 0 0 32px; max-width: 62ch; }
-
-/* points */
-.points { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.points h3 {
-  font-size: 15.5px; margin: 0 0 7px; font-weight: 700;
-  padding-top: 13px; border-top: 2px solid var(--accent);
-}
-.points p { margin: 0; color: var(--ink-2); font-size: 14.5px; line-height: 1.85; }
-
-/* feature list */
-.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 42px; }
-.features dl { margin: 0; }
-.features dt {
-  font-weight: 700; font-size: 15px; padding: 16px 0 5px;
-  border-top: 1px solid var(--rule);
-}
-.features dl:first-child dt:first-of-type,
-.features dl:last-child dt:first-of-type { border-top: 0; padding-top: 0; }
-.features dd { margin: 0 0 16px; color: var(--ink-2); font-size: 14.5px; }
-
-/* steps */
-ol.steps { list-style: none; counter-reset: n; margin: 0; padding: 0; }
-ol.steps li {
-  counter-increment: n; display: grid; grid-template-columns: 34px 1fr; gap: 14px;
-  padding: 15px 0; border-top: 1px solid var(--rule); color: var(--ink-2); font-size: 14.5px;
-}
-ol.steps li:first-child { border-top: 0; padding-top: 0; }
-ol.steps li::before {
-  content: counter(n, decimal-leading-zero);
-  font-family: var(--mono); font-size: 13px; color: var(--accent); font-weight: 700;
-  padding-top: 2px;
-}
-ol.steps b { color: var(--ink); font-weight: 700; }
-
-/* code */
-pre.code {
-  margin: 0; background: var(--panel); border: 1px solid var(--rule); border-radius: 10px;
-  padding: 18px 20px; overflow-x: auto; font-family: var(--mono);
-  font-size: 12.5px; line-height: 1.8; color: var(--ink);
-  white-space: pre-wrap; word-break: break-word;
-}
-pre.code .c { color: var(--ink-3); }
-
-/* spec */
-table.spec { width: 100%; border-collapse: collapse; font-size: 14.5px; }
-table.spec th, table.spec td {
-  text-align: left; padding: 11px 0; border-top: 1px solid var(--rule); vertical-align: top;
-}
-table.spec tr:first-child th, table.spec tr:first-child td { border-top: 0; }
-table.spec th { font-weight: 600; color: var(--ink-3); width: 34%; font-size: 13.5px; }
-@media (max-width: 520px) {
-  table.spec th { width: 42%; }
-}
-
-.note {
-  border-left: 3px solid var(--warn-rule); padding: 4px 0 4px 16px;
-  color: var(--ink-2); font-size: 14px; margin: 28px 0 0;
-}
-
-/* creator */
-.creator { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: start; }
-@media (max-width: 560px) { .creator { grid-template-columns: 1fr; } }
-.creator .badge {
-  width: 58px; height: 58px; border-radius: 10px; background: var(--accent);
-  color: var(--accent-ink); display: grid; place-items: center;
-  font-size: 21px; font-weight: 800;
-}
-.creator h3 { margin: 0 0 2px; font-size: 18px; }
-.creator .romaji { margin: 0 0 14px; color: var(--ink-3); font-size: 13.5px; }
-.creator p { color: var(--ink-2); font-size: 14.5px; margin: 0 0 18px; max-width: 58ch; }
-.chips { display: flex; gap: 9px; flex-wrap: wrap; }
-.chips a {
-  padding: 7px 14px; border: 1px solid var(--rule); border-radius: 7px;
-  font-size: 14px; text-decoration: none; color: var(--ink); background: var(--panel);
-}
-.chips a:hover { border-color: var(--accent); color: var(--accent); }
-
-/* footer */
-footer { padding: 30px 0 44px; color: var(--ink-3); font-size: 13.5px; }
-footer .links { display: flex; gap: 17px; flex-wrap: wrap; margin-bottom: 14px; }
-footer a { color: var(--ink-2); text-decoration: none; }
-footer a:hover { color: var(--accent); text-decoration: underline; }
-footer .legal { margin: 0; line-height: 1.8; }
-</style>
+<link rel="stylesheet" href="/projects/mlx-bar/style.css?v=20260912-2">
 </head>
 <body>
 
@@ -316,7 +104,7 @@ footer .legal { margin: 0; line-height: 1.8; }
     <div class="wrap">
       <div>
         <p class="kicker">macOS 14+ / Apple Silicon / v2.2.0</p>
-        <h1 data-i18n="hero.h1">MacのローカルAIを、メニューバーから。</h1>
+        <h1 data-i18n="hero.h1" data-i18n-html="true"><span>MacのローカルAIを、</span><span>メニューバーから。</span></h1>
         <p data-i18n="hero.p">
           MLXBar（エムエルエックスバー）は、Apple Silicon Mac上のMLX LM・MLX VLM・LM Studioモデルを
           ひとつのメニューから扱うためのアプリです。モデルの読み込みも、チャットも、
@@ -332,30 +120,22 @@ footer .legal { margin: 0; line-height: 1.8; }
         </p>
       </div>
 
-      <div class="mock" role="img"
-           aria-label="MLXBarのメニューバー表示。モデルを読み込み済みで、API接続先とメニュー項目が並んでいる様子。">
-        <div class="bar">
-          <span>Finder</span><span>File</span><span>Edit</span>
-          <span class="spacer"></span>
-          <span class="active">◧ MLXBar</span><span>100%</span><span>14:32</span>
-        </div>
-        <div class="body">
-          <div class="row">
-            <span class="title">Loaded · mlx-vlm</span>
-          </div>
-          <div class="sub">Laguna-S-2.1 · Max token 8,192</div>
-          <div class="url">http://127.0.0.1:11435</div>
-          <p class="status">✓ <span data-i18n="hero.mockWaiting">待機中</span></p>
-          <hr>
-          <div class="item on"><span data-i18n="hero.mockSelectModel">モデルを選択…</span><span class="key">⌘M</span></div>
-          <div class="item on"><span data-i18n="hero.mockQuickChat">クイックチャット…</span><span class="key">⌘N</span></div>
-          <div class="item"><span data-i18n="hero.mockUnload">アンロード</span><span></span></div>
-          <hr>
-          <div class="item"><span data-i18n="hero.mockRescan">今すぐ再スキャン</span><span></span></div>
-          <div class="item"><span data-i18n="hero.mockSettings">設定…</span><span class="key">⌘,</span></div>
+      <div class="hero-visual">
+        <img class="hero-art" src="/projects/mlx-bar/assets/local-ai-hero.jpg" width="1800" height="1126" alt="複数のローカルAIモデルがひとつのApple Silicon環境へつながるイメージ" fetchpriority="high">
+        <figure class="app-shot">
+          <img src="/projects/mlx-bar/assets/mlxbar-menu.jpg" width="971" height="1200" alt="MLXBar v2.2.0でモデルが待機中の実際のメニューバー画面">
+          <figcaption><span>ACTUAL APP</span> MLXBar v2.2.0</figcaption>
+        </figure>
+        <div class="signal-card" aria-hidden="true">
+          <small>LOCAL ENDPOINT</small>
+          <div class="signal-row"><span class="signal-dot"></span><strong>Ready</strong><code>:11435</code></div>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="marquee" aria-label="MLXBarの対応機能">
+    <div><span>MLX LM</span><i>●</i><span>MLX VLM</span><i>●</i><span>OPENAI API</span><i>●</i><span>ANTHROPIC API</span><i>●</i><span>LOCAL RAG</span><i>●</i><span>MULTI-MODEL</span></div>
   </div>
 
   <section id="why">
@@ -511,7 +291,7 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       "nav.features": "機能",
       "nav.start": "使い方",
       "nav.creator": "開発者",
-      "hero.h1": "MacのローカルAIを、メニューバーから。",
+      "hero.h1": "<span>MacのローカルAIを、</span><span>メニューバーから。</span>",
       "hero.p": "MLXBar（エムエルエックスバー）は、Apple Silicon Mac上のMLX LM・MLX VLM・LM Studioモデルを ひとつのメニューから扱うためのアプリです。モデルの読み込みも、チャットも、 OpenAI互換APIの提供も、すべてこのMacの中だけで完結します。",
       "hero.download": "ダウンロード",
       "hero.viewGithub": "GitHubで見る",
@@ -594,7 +374,7 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       "nav.features": "Features",
       "nav.start": "Get Started",
       "nav.creator": "Developer",
-      "hero.h1": "Local AI on your Mac, from the menu bar.",
+      "hero.h1": "<span>Local AI on </span><span>your Mac, </span><span>from the menu bar.</span>",
       "hero.p": "MLXBar is an app for handling MLX LM, MLX VLM, and LM Studio models on your Apple Silicon Mac from a single menu. Loading models, chatting, and serving an OpenAI-compatible API all happen entirely on this Mac.",
       "hero.download": "Download",
       "hero.viewGithub": "View on GitHub",
@@ -672,7 +452,7 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       "nav.features": "功能",
       "nav.start": "使用方法",
       "nav.creator": "开发者",
-      "hero.h1": "Mac 上的本地 AI，尽在菜单栏。",
+      "hero.h1": "<span>Mac 上的本地 AI，</span><span>尽在菜单栏。</span>",
       "hero.p": "MLXBar 是一款应用，可在一个菜单中统一处理 Apple Silicon Mac 上的 MLX LM、MLX VLM 与 LM Studio 模型。加载模型、对话、提供 OpenAI 兼容 API，全部只在这台 Mac 上完成。",
       "hero.download": "下载",
       "hero.viewGithub": "在 GitHub 查看",
@@ -750,7 +530,7 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       "nav.features": "Recursos",
       "nav.start": "Como usar",
       "nav.creator": "Desenvolvedor",
-      "hero.h1": "IA local no seu Mac, direto da barra de menus.",
+      "hero.h1": "<span>IA local no </span><span>seu Mac, direto </span><span>da barra de menus.</span>",
       "hero.p": "MLXBar é um app para lidar com modelos MLX LM, MLX VLM e LM Studio no seu Mac com Apple Silicon a partir de um único menu. Carregar modelos, conversar e disponibilizar uma API compatível com OpenAI — tudo acontece inteiramente neste Mac.",
       "hero.download": "Baixar",
       "hero.viewGithub": "Ver no GitHub",

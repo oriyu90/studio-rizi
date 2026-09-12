@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "host": "https://studio-rizi.pages.dev",
   "projects": [
-    { "slug": "awasero-music", "name": "Awasero Music", "repository": "https://github.com/oriyu90/awasero-music", "url": "https://studio-rizi.pages.dev/projects/awasero-music/", "hosted": true },
+    { "slug": "awasero-music", "name": "Awasero-music", "repository": "https://github.com/oriyu90/awasero-music", "url": "https://studio-rizi.pages.dev/projects/awasero-music/", "hosted": true },
     { "slug": "easyroo", "name": "EasyRoo", "repository": "https://github.com/oriyu90/EasyRoo", "url": "https://studio-rizi.pages.dev/projects/easyroo/", "hosted": true },
     { "slug": "every-routes", "name": "Every routes", "repository": "https://github.com/oriyu90/every-routes", "url": "https://studio-rizi.pages.dev/projects/every-routes/", "hosted": true },
     { "slug": "fcam-pro", "name": "Fcam pro", "repository": "https://github.com/oriyu90/fcam-pro", "url": "https://studio-rizi.pages.dev/projects/fcam-pro/", "hosted": true },
