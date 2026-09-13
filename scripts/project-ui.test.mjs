@@ -194,6 +194,6 @@ test('list entries keep the detail dialog and modified-click link behavior',()=>
   assert.ok(!prevented && !dialog.open);
   card.fire('click',{button:0,preventDefault:()=>{prevented=true;}});
   assert.ok(prevented && dialog.open);
-  assert.match(f.elements['#dialog-content'].innerHTML,/Awasero Music/);
+  assert.match(f.elements['#dialog-content'].innerHTML,/Awasero-music/);
   f.elements['.dialog-close'].fire('click');assert.equal(dialog.open,false);
 });
