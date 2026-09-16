@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>α6k Transfer — Transfira fotos da sua câmera Sony α via Wi-Fi (app Android)</title>
+<meta name="description" content="α6k Transfer é um app Android de código aberto que se conecta ao ponto de acesso Wi-Fi das câmeras Sony α6000 e transfere fotos para o celular via DLNA/UPnP. Interface Material 3 Expressive, alternância japonês/inglês, temas claro/escuro e perfis de câmera (α6000 verificada, α6100 e posteriores como implementação preditiva). Por Yuki Orita. Grátis e aberto no GitHub.">
+<meta name="author" content="Yuki Orita">
+<meta name="theme-color" content="#0c0e1a">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/a6k-transfer/pt/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/a6k-transfer/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/a6k-transfer/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/a6k-transfer/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/a6k-transfer/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/a6k-transfer/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="icon" href="../assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="α6k Transfer">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:title" content="α6k Transfer — Transfira fotos da sua câmera Sony α via Wi-Fi">
+<meta property="og:description" content="Conecte-se ao Wi-Fi da sua câmera Sony α6000 e transfira fotos via DLNA/UPnP. App Android aberto, com japonês/inglês e troca de tema.">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/a6k-transfer/pt/">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/a6k-transfer/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ícone e descrição do app α6k Transfer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="α6k Transfer — Transfira fotos da sua câmera Sony α via Wi-Fi">
+<meta name="twitter:description" content="App Android aberto que transfere fotos das câmeras Sony α6000 via Wi-Fi por DLNA/UPnP.">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/a6k-transfer/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "α6k Transfer",
+      "alternateName": ["α6k転送"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Android 10 (API 29) or later",
+      "softwareVersion": "1.0.0",
+      "inLanguage": "pt",
+      "description": "App Android aberto que se conecta ao ponto de acesso Wi-Fi das câmeras Sony α6000 e transfere fotos para o celular via DLNA/UPnP. Alternância japonês/inglês, temas claro/escuro e perfis de câmera.",
+      "url": "https://studio-rizi.pages.dev/projects/a6k-transfer/pt/",
+      "downloadUrl": "https://github.com/oriyu90/a6k-transfer/releases/latest",
+      "codeRepository": "https://github.com/oriyu90/a6k-transfer",
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki_Orita",
+      "alternateName": ["折田悠希", "おりたゆうき"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": ["https://x.com/InovateofRIZI", "https://github.com/oriyu90"]
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#0c0e1a;--card:#171b2e;--ink:#f2f4ff;--muted:#a7aec7;--accent:#86efac;--line:#2a3050}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;line-height:1.8}
+.skip-link{position:absolute;left:-9999px}.skip-link:focus{left:8px;top:8px;background:#fff;color:#000;padding:8px}
+.site-header{border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.brand{display:flex;gap:10px;align-items:center;color:var(--ink);text-decoration:none;font-weight:700}
+.brand img{width:30px;height:30px;border-radius:8px}
+.main-nav{display:flex;gap:14px;margin-left:auto;flex-wrap:wrap}
+.main-nav a{color:var(--muted);text-decoration:none;font-size:14px}
+.header-release{border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:13px;color:var(--accent)}
+.language-switcher-bar{display:flex;gap:14px;padding:8px 20px;border-top:1px solid var(--line);font-size:14px;width:100%}
+.language-switcher-bar a{color:var(--muted)}
+.language-switcher-bar a[aria-current]{color:var(--accent);font-weight:700}
+main{max-width:880px;margin:0 auto;padding:32px 20px 64px}
+.hero{display:grid;gap:24px;grid-template-columns:1fr}@media(min-width:720px){.hero{grid-template-columns:1.2fr .8fr;align-items:center}}
+.release-line{color:var(--accent);font-size:13px;margin:0 0 8px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.3;margin:0 0 12px}
+.hero-lead{color:var(--muted);margin:0 0 20px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.button{display:inline-block;background:var(--accent);color:#06210f;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:999px}
+.button-secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.hero-aside{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
+.hero-aside img{width:120px;height:120px;border-radius:28px}
+section{margin-top:48px}h2{font-size:24px;margin:0 0 16px}
+.cards{display:grid;gap:12px;grid-template-columns:1fr}@media(min-width:720px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+.card h3{margin:0 0 8px;font-size:17px;color:var(--accent)}
+.card p{margin:0;color:var(--muted);font-size:14px}
+ol.steps{margin:0;padding-left:22px;color:var(--muted)}
+ol.steps li{margin-bottom:8px}
+table.specs{width:100%;border-collapse:collapse;font-size:14px}
+table.specs th,table.specs td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.specs th{white-space:nowrap;color:var(--accent);width:7em}
+footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;color:var(--muted);font-size:13px}
+footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="Voltar ao topo do α6k Transfer"><img src="../assets/icon.png" alt="" width="30" height="30"><span>α6k Transfer</span></a>
+  <nav class="main-nav" aria-label="Navegação principal">
+    <a href="#features">Recursos</a>
+    <a href="#steps">Como usar</a>
+    <a href="#specs">Especificações</a>
+    <a href="#get-started">Baixar</a>
+  </nav>
+  <span class="header-release">v1.0.0</span>
+  <nav class="language-switcher-bar" aria-label="Idioma">
+    <a data-language-link hreflang="ja" lang="ja" href="/projects/a6k-transfer/">日本語</a>
+    <a data-language-link hreflang="en" lang="en" href="/projects/a6k-transfer/en/">English</a>
+    <a data-language-link hreflang="zh-Hans" lang="zh-Hans" href="/projects/a6k-transfer/zh/">简体中文</a>
+    <a data-language-link hreflang="pt" lang="pt" href="/projects/a6k-transfer/pt/" aria-current="page">Português</a>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div>
+      <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.0.0</p>
+      <h1 id="hero-title">Da sua câmera<br>ao celular, via Wi-Fi</h1>
+      <p class="hero-lead">O α6k Transfer conecta-se diretamente ao Wi-Fi das câmeras Sony α6000 e transfere suas fotos para o celular. Sem cabos, sem nuvem. Ajuste a câmera para “Selecionar no smartphone” → “Exibindo”, escolha as fotos na lista e salve-as na galeria.</p>
+      <div class="hero-actions" id="get-started" role="group" aria-label="Baixar o app">
+        <a class="button" href="https://github.com/oriyu90/a6k-transfer">Ver o código no GitHub</a>
+        <a class="button button-secondary" href="https://github.com/oriyu90/a6k-transfer/releases/latest">Instalar o APK</a>
+      </div>
+    </div>
+    <aside class="hero-aside" aria-label="α6k Transfer v1.0.0">
+      <img src="../assets/icon.png" alt="Ícone do app α6k Transfer" width="120" height="120">
+      <p class="hero-lead" style="margin:12px 0 0">Primeira versão v1.0.0, com interface Material 3 Expressive, alternância japonês/inglês e temas claro/escuro.</p>
+    </aside>
+  </section>
+  <section id="features" aria-labelledby="features-title">
+    <h2 id="features-title">Recursos</h2>
+    <div class="cards">
+      <div class="card"><h3>Transferência direta via Wi-Fi</h3><p>Entre no ponto de acesso da câmera (DIRECT-…) pelo próprio app, navegue pela lista de fotos via DLNA/UPnP e salve só as escolhidas em tamanho original.</p></div>
+      <div class="card"><h3>Indicador de salvas</h3><p>Fotos que já estão na galeria aparecem como “Salva”, então você nunca transfere o mesmo arquivo duas vezes. Também dá para filtrar por data.</p></div>
+      <div class="card"><h3>Idioma e tema</h3><p>Alterne o idioma entre japonês, inglês e sistema, e o tema entre claro, escuro e sistema — na hora, nos ajustes do app.</p></div>
+      <div class="card"><h3>Perfis de câmera</h3><p>A α6000 foi verificada no aparelho. A α6100 e posteriores entram como implementação preditiva e não verificada, pronta para futuros modelos.</p></div>
+    </div>
+  </section>
+  <section id="steps" aria-labelledby="steps-title">
+    <h2 id="steps-title">Como usar</h2>
+    <ol class="steps">
+      <li>Na câmera: MENU → Enviar p/ smartphone → Selec. no smartphone → “Exibindo”</li>
+      <li>Na aba Conexão do app: “Conectar + vincular” (na primeira vez aparece um diálogo de aprovação do sistema)</li>
+      <li>“Descobrir câmera” para confirmar o LOCATION e, na aba Transferência, carregue a lista, selecione e transfira</li>
+    </ol>
+  </section>
+  <section id="specs" aria-labelledby="specs-title">
+    <h2 id="specs-title">Especificações</h2>
+    <table class="specs">
+      <tr><th>Versão</th><td>v1.0.0 (versionCode 1)</td></tr>
+      <tr><th>Requisitos</th><td>Android 10 (API 29) ou posterior</td></tr>
+      <tr><th>Idiomas</th><td>Japonês, inglês (troca no app)</td></tr>
+      <tr><th>Câmeras</th><td>α6000 (verificada no aparelho), α6100 e posteriores (preditiva, não verificada)</td></tr>
+      <tr><th>Código</th><td><a href="https://github.com/oriyu90/a6k-transfer">oriyu90/a6k-transfer</a> (aberto)</td></tr>
+      <tr><th>Desenvolvedor</th><td>Yuki Orita</td></tr>
+    </table>
+  </section>
+</main>
+<footer>
+  <p><a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · <a href="https://github.com/oriyu90/a6k-transfer">GitHub</a> · <a href="https://x.com/InovateofRIZI">X</a></p>
+</footer>
+</body>
+</html>

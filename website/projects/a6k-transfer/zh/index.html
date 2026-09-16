@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>α6k Transfer — 通过 Wi-Fi 从 Sony α 相机传输照片的 Android 应用</title>
+<meta name="description" content="α6k Transfer 是一款开源 Android 应用，可直连 Sony α6000 系列相机的 Wi-Fi 接入点，通过 DLNA/UPnP 把照片传输到手机。Material 3 Expressive 界面，支持日语／英语切换、浅色／深色主题与机型配置文件（α6000 已真机验证，α6100 及后续机型为预测性适配）。开发者：折田悠希（Yuki Orita）。免费并在 GitHub 开源。">
+<meta name="author" content="Yuki Orita">
+<meta name="theme-color" content="#0c0e1a">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/a6k-transfer/zh/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/a6k-transfer/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/a6k-transfer/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/a6k-transfer/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/a6k-transfer/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/a6k-transfer/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="icon" href="../assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="α6k Transfer">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:title" content="α6k Transfer — 通过 Wi-Fi 从 Sony α 相机传输照片">
+<meta property="og:description" content="直连 Sony α6000 系列相机 Wi-Fi，通过 DLNA/UPnP 传输照片的开源 Android 应用。支持日英切换与主题切换。">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/a6k-transfer/zh/">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/a6k-transfer/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="α6k Transfer 应用图标与介绍">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="α6k Transfer — 通过 Wi-Fi 从 Sony α 相机传输照片">
+<meta name="twitter:description" content="通过 DLNA/UPnP 从 Sony α6000 系列相机传输照片的开源 Android 应用。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/a6k-transfer/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "α6k Transfer",
+      "alternateName": ["α6k転送"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Android 10 (API 29) or later",
+      "softwareVersion": "1.0.0",
+      "inLanguage": "zh",
+      "description": "直连 Sony α6000 系列相机 Wi-Fi 接入点、通过 DLNA/UPnP 把照片传输到手机的开源 Android 应用。支持日语／英语切换、浅色／深色主题与机型配置文件。",
+      "url": "https://studio-rizi.pages.dev/projects/a6k-transfer/zh/",
+      "downloadUrl": "https://github.com/oriyu90/a6k-transfer/releases/latest",
+      "codeRepository": "https://github.com/oriyu90/a6k-transfer",
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki_Orita",
+      "alternateName": ["折田悠希", "おりたゆうき"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": ["https://x.com/InovateofRIZI", "https://github.com/oriyu90"]
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#0c0e1a;--card:#171b2e;--ink:#f2f4ff;--muted:#a7aec7;--accent:#86efac;--line:#2a3050}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;line-height:1.8}
+.skip-link{position:absolute;left:-9999px}.skip-link:focus{left:8px;top:8px;background:#fff;color:#000;padding:8px}
+.site-header{border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.brand{display:flex;gap:10px;align-items:center;color:var(--ink);text-decoration:none;font-weight:700}
+.brand img{width:30px;height:30px;border-radius:8px}
+.main-nav{display:flex;gap:14px;margin-left:auto;flex-wrap:wrap}
+.main-nav a{color:var(--muted);text-decoration:none;font-size:14px}
+.header-release{border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:13px;color:var(--accent)}
+.language-switcher-bar{display:flex;gap:14px;padding:8px 20px;border-top:1px solid var(--line);font-size:14px;width:100%}
+.language-switcher-bar a{color:var(--muted)}
+.language-switcher-bar a[aria-current]{color:var(--accent);font-weight:700}
+main{max-width:880px;margin:0 auto;padding:32px 20px 64px}
+.hero{display:grid;gap:24px;grid-template-columns:1fr}@media(min-width:720px){.hero{grid-template-columns:1.2fr .8fr;align-items:center}}
+.release-line{color:var(--accent);font-size:13px;margin:0 0 8px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.4;margin:0 0 12px}
+.hero-lead{color:var(--muted);margin:0 0 20px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.button{display:inline-block;background:var(--accent);color:#06210f;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:999px}
+.button-secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.hero-aside{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
+.hero-aside img{width:120px;height:120px;border-radius:28px}
+section{margin-top:48px}h2{font-size:24px;margin:0 0 16px}
+.cards{display:grid;gap:12px;grid-template-columns:1fr}@media(min-width:720px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+.card h3{margin:0 0 8px;font-size:17px;color:var(--accent)}
+.card p{margin:0;color:var(--muted);font-size:14px}
+ol.steps{margin:0;padding-left:22px;color:var(--muted)}
+ol.steps li{margin-bottom:8px}
+table.specs{width:100%;border-collapse:collapse;font-size:14px}
+table.specs th,table.specs td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.specs th{white-space:nowrap;color:var(--accent);width:7em}
+footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;color:var(--muted);font-size:13px}
+footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="回到 α6k Transfer 顶部"><img src="../assets/icon.png" alt="" width="30" height="30"><span>α6k Transfer</span></a>
+  <nav class="main-nav" aria-label="主导航">
+    <a href="#features">功能</a>
+    <a href="#steps">使用方法</a>
+    <a href="#specs">规格</a>
+    <a href="#get-started">获取应用</a>
+  </nav>
+  <span class="header-release">v1.0.0</span>
+  <nav class="language-switcher-bar" aria-label="语言">
+    <a data-language-link hreflang="ja" lang="ja" href="/projects/a6k-transfer/">日本語</a>
+    <a data-language-link hreflang="en" lang="en" href="/projects/a6k-transfer/en/">English</a>
+    <a data-language-link hreflang="zh-Hans" lang="zh-Hans" href="/projects/a6k-transfer/zh/" aria-current="page">简体中文</a>
+    <a data-language-link hreflang="pt" lang="pt" href="/projects/a6k-transfer/pt/">Português</a>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div>
+      <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.0.0</p>
+      <h1 id="hero-title">通过 Wi-Fi，把相机里的照片直接传到手机</h1>
+      <p class="hero-lead">α6k Transfer 可直连 Sony α6000 系列相机的 Wi-Fi，把拍摄的照片传输到手机。无需数据线，也无需云端。只需在相机上设为“从智能手机选择”→“显示中”，即可在列表中选择照片并保存到相册。</p>
+      <div class="hero-actions" id="get-started" role="group" aria-label="获取应用">
+        <a class="button" href="https://github.com/oriyu90/a6k-transfer">在 GitHub 查看源码</a>
+        <a class="button button-secondary" href="https://github.com/oriyu90/a6k-transfer/releases/latest">安装 APK</a>
+      </div>
+    </div>
+    <aside class="hero-aside" aria-label="α6k Transfer v1.0.0">
+      <img src="../assets/icon.png" alt="α6k Transfer 应用图标" width="120" height="120">
+      <p class="hero-lead" style="margin:12px 0 0">v1.0.0 首次发布。Material 3 Expressive 界面，支持日语／英语切换与浅色／深色主题。</p>
+    </aside>
+  </section>
+  <section id="features" aria-labelledby="features-title">
+    <h2 id="features-title">功能</h2>
+    <div class="cards">
+      <div class="card"><h3>Wi-Fi 直传</h3><p>在应用内加入相机接入点（DIRECT-…），通过 DLNA/UPnP 获取照片列表，只保存选中的照片原图。</p></div>
+      <div class="card"><h3>已保存标记</h3><p>相册中已有的照片会显示“已保存”，避免重复传输。还可按拍摄日期筛选。</p></div>
+      <div class="card"><h3>语言与主题切换</h3><p>显示语言可在日语／英语／跟随系统之间切换，主题可在浅色／深色／跟随系统之间切换，即时生效。</p></div>
+      <div class="card"><h3>机型配置</h3><p>α6000 已真机验证。α6100 及后续机型为预测性适配（未经验证），自动搜索会一并尝试，面向未来机型设计。</p></div>
+    </div>
+  </section>
+  <section id="steps" aria-labelledby="steps-title">
+    <h2 id="steps-title">使用方法</h2>
+    <ol class="steps">
+      <li>在相机上：MENU → 发送到智能手机 → 从智能手机选择 →“显示中”</li>
+      <li>在应用的“连接”标签页点“连接＋绑定”（首次使用会出现系统确认对话框）</li>
+      <li>点“搜索相机”确认 LOCATION 后，到“传输”标签页读取列表、选择并传输</li>
+    </ol>
+  </section>
+  <section id="specs" aria-labelledby="specs-title">
+    <h2 id="specs-title">规格</h2>
+    <table class="specs">
+      <tr><th>版本</th><td>v1.0.0（versionCode 1）</td></tr>
+      <tr><th>系统要求</th><td>Android 10（API 29）或更高</td></tr>
+      <tr><th>语言</th><td>日语、英语（应用内切换）</td></tr>
+      <tr><th>支持机型</th><td>α6000（已真机验证）、α6100 及后续机型（预测性适配、未经验证）</td></tr>
+      <tr><th>源码</th><td><a href="https://github.com/oriyu90/a6k-transfer">oriyu90/a6k-transfer</a>（开源）</td></tr>
+      <tr><th>开发者</th><td>折田悠希（Yuki Orita）</td></tr>
+    </table>
+  </section>
+</main>
+<footer>
+  <p><a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · <a href="https://github.com/oriyu90/a6k-transfer">GitHub</a> · <a href="https://x.com/InovateofRIZI">X</a></p>
+</footer>
+</body>
+</html>
