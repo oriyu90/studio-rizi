@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit Pro | Plataforma multimídia para música, vídeo, imagem e animação</title>
+<meta name="description" content="Edit Pro é uma plataforma multimídia para criação de música, vídeo, imagem e animação, desenvolvida por Yuki Orita (Yuki_Orita / oriyu90). Traz 24 plug-ins com execução em sandbox e integração com IA via MCP. Desenvolvimento no GitHub.">
+<meta name="keywords" content="Edit Pro, EditPro, multimídia, DAW, edição de vídeo, animação, pixel art, MCP, Yuki Orita, Yuki_Orita, oriyu90, github">
+<meta name="author" content="Yuki_Orita">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="author" href="https://studio-rizi.pages.dev/">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/editpro/pt/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/editpro/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/editpro/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/editpro/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/editpro/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/editpro/">
+<meta property="og:title" content="Edit Pro | Crie música, vídeo, imagem e animação">
+<meta property="og:description" content="Plataforma de criação multimídia com 24 plug-ins, execução isolada em sandbox, integração com IA (MCP) e interface em japonês/inglês.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/editpro/pt/">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#1c1230">
+<style>
+  :root {
+    --bg: #f7f5fb;
+    --bg-alt: #ffffff;
+    --text: #1c1230;
+    --text-secondary: #5b5470;
+    --accent: #7c5cff;
+    --accent-strong: #5b3df0;
+    --border: #e4e0f2;
+    --card-shadow: 0 12px 30px rgba(28, 18, 48, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #100b1c;
+      --bg-alt: #1a1330;
+      --text: #f1eefb;
+      --text-secondary: #b3aad0;
+      --accent: #9c85ff;
+      --accent-strong: #b9a4ff;
+      --border: #2c2348;
+      --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  a { color: var(--accent-strong); }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 6vw;
+    position: sticky;
+    top: 0;
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 10;
+  }
+  .brand { font-weight: 700; font-size: 1.1rem; }
+  nav.langs { display: flex; gap: 6px; }
+  nav.langs a {
+    text-decoration: none;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+  nav.langs a.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+  main { max-width: 920px; margin: 0 auto; padding: 0 6vw 80px; }
+  .hero { text-align: center; padding: 72px 0 40px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 12px; }
+  .hero p.tagline { font-size: 1.15rem; color: var(--text-secondary); max-width: 640px; margin: 0 auto; }
+  .cta-row { display: flex; gap: 12px; justify-content: center; margin-top: 32px; flex-wrap: wrap; }
+  p.req { margin-top: 16px; font-size: 0.85rem; color: var(--text-secondary); max-width: 640px; margin-left: auto; margin-right: auto; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+  .button.primary { background: var(--accent); color: white; }
+  .button.secondary { background: var(--bg-alt); color: var(--text); border-color: var(--border); }
+  section { margin-top: 64px; }
+  section h2 { font-size: 1.6rem; margin-bottom: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+  }
+  .card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+  .card p { margin: 0; color: var(--text-secondary); font-size: 0.95rem; }
+  .flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; color: var(--text-secondary); }
+  .flow span.step {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 6vw;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  footer .links { display: flex; gap: 18px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Edit Pro","alternateName":"EditPro","applicationCategory":"MultimediaApplication","operatingSystem":"macOS 14 or later (Apple Silicon), Windows, Linux","softwareVersion":"v1.1.1","url":"https://studio-rizi.pages.dev/projects/editpro/pt/","downloadUrl":"https://github.com/oriyu90/Editpro/releases","codeRepository":"https://github.com/oriyu90/Editpro","description":"Plataforma multimídia para música, vídeo, imagem e animação. Executa 24 plug-ins em sandbox, com IA via MCP e interface em japonês/inglês.","inLanguage":["ja","en","zh","pt"],"offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"author":{"@id":"https://studio-rizi.pages.dev/#person"}},{"@type":"Person","@id":"https://studio-rizi.pages.dev/#person","name":"Yuki Orita","alternateName":["Yuki_Orita", "oriyu90"],"url":"https://studio-rizi.pages.dev/","sameAs":["https://github.com/oriyu90","https://x.com/InovateofRIZI"]}]}</script>
+</head>
+<body>
+<header>
+  <div class="brand">Edit Pro</div>
+  <nav class="langs">
+    <a href="https://studio-rizi.pages.dev/projects/editpro/">日本語</a>
+    <a href="https://studio-rizi.pages.dev/projects/editpro/en/">English</a>
+    <a href="https://studio-rizi.pages.dev/projects/editpro/zh/">中文</a>
+    <a href="https://studio-rizi.pages.dev/projects/editpro/pt/" class="active">Português</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Edit Pro</h1>
+    <p class="tagline">Uma plataforma multimídia para música, vídeo, imagem e animação, com 24 plug-ins em um sandbox seguro.</p>
+
+    <div class="cta-row">
+      <a class="button primary" href="https://github.com/oriyu90/Editpro/releases" target="_blank" rel="noopener">Ver a versão mais recente</a>
+      <a class="button secondary" href="https://github.com/oriyu90/Editpro" target="_blank" rel="noopener">GitHub</a>
+      <a class="button secondary" href="https://discord.gg/x7KXhNTD8M" target="_blank" rel="noopener">Comunidade no Discord</a>
+    </div>
+    <p class="req">O DMG para macOS tem assinatura ad-hoc e não é autenticado (notarized); na primeira execução, quase sempre é preciso aprovar em Ajustes do Sistema → Privacidade e Segurança. Versões para Windows / Linux estão previstas via CI.</p>
+  </section>
+
+  <section>
+    <h2>Recursos</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Mecanismo multimídia</h3><p>Um núcleo com 5 canais de IPC, memória compartilhada e relógio sincronizado move áudio, imagem e vídeo.</p>
+      </div>
+      <div class="card">
+        <h3>24 plug-ins</h3><p>Sintetizadores, mixers e piano roll, além de pincéis, camadas, linhas do tempo de vídeo, codecs e hosts de compatibilidade.</p>
+      </div>
+      <div class="card">
+        <h3>Sandbox e watchdog</h3><p>Os plug-ins rodam isolados, e um watchdog detecta falhas e reinicia automaticamente.</p>
+      </div>
+      <div class="card">
+        <h3>IA via MCP</h3><p>Um servidor MCP stdio (13 ferramentas, 3 recursos) permite operar o Edit Pro a partir de apps como o Claude Desktop.</p>
+      </div>
+      <div class="card">
+        <h3>Interface JA/EN completa</h3><p>A interface alterna totalmente entre japonês e inglês, com fontes do SO para evitar tofu.</p>
+      </div>
+      <div class="card">
+        <h3>Tela de edição em canvas</h3><p>Os desenhos dos plug-ins aparecem em um canvas, com entrada de mouse, teclado e caneta.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Fluxo de trabalho</h2>
+
+    <div class="flow">
+      <span class="step">Escolher perfil</span>→<span class="step">Iniciar</span>→<span class="step">Editar e desenhar</span>→<span class="step">Pré-visualizar</span>→<span class="step">Exportar</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sobre o projeto</h2><p>Desenvolvido por Yuki Orita (Yuki_Orita / oriyu90). O app hospedeiro usa EULA proprietária; o SDK de plug-ins é MIT / Apache-2.0. Relate bugs ou sugestões na comunidade do Discord.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="links">
+    <a href="https://github.com/oriyu90/Editpro" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://discord.gg/x7KXhNTD8M" target="_blank" rel="noopener">Discord</a>
+    <a href="https://x.com/InovateofRIZI" target="_blank" rel="noopener">X (Twitter)</a>
+    <a href="https://studio-rizi.pages.dev/" target="_blank" rel="noopener">Yuki_Orita Official</a>
+  </div>
+  <div>&copy; 2026 Yuki_Orita (Yuki Orita) — Edit Pro</div>
+</footer>
+</body>
+</html>
