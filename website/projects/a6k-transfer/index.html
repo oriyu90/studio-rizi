@@ -6,7 +6,7 @@
 <title>α6k転送 — Sony αカメラの写真をWi-Fiで取り込むAndroidアプリ</title>
 <meta name="description" content="α6k転送（α6k Transfer）は、Sony α6000系カメラのWi-Fiアクセスポイントに接続し、DLNA/UPnP経由で写真をスマートフォンへ転送するAndroid向けオープンソースアプリです。Material 3 ExpressiveのUI、日英切替、ライト/ダークテーマ、α6000検証済み・α6100以降予測の機種プロファイルに対応。開発者は折田悠希（おりたゆうき / Yuki_Orita）。無料・GitHubで公開中。">
 <meta name="author" content="折田悠希 (Yuki_Orita)">
-<meta name="theme-color" content="#0c0e1a">
+<meta name="theme-color" content="#f1e7d3">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://studio-rizi.pages.dev/projects/a6k-transfer/">
 <link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/a6k-transfer/">
@@ -16,6 +16,9 @@
 <link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/a6k-transfer/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@8..60,400;8..60,700&family=Noto+Serif+JP:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="α6k転送">
 <meta property="og:locale" content="ja_JP">
@@ -66,96 +69,252 @@
 }
 </script>
 <style>
-:root{--bg:#0c0e1a;--card:#171b2e;--ink:#f2f4ff;--muted:#a7aec7;--accent:#86efac;--line:#2a3050}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.8}
-.skip-link{position:absolute;left:-9999px}.skip-link:focus{left:8px;top:8px;background:#fff;color:#000;padding:8px}
-.site-header{border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-.brand{display:flex;gap:10px;align-items:center;color:var(--ink);text-decoration:none;font-weight:700}
-.brand img{width:30px;height:30px;border-radius:8px}
-.main-nav{display:flex;gap:14px;margin-left:auto;flex-wrap:wrap}
-.main-nav a{color:var(--muted);text-decoration:none;font-size:14px}
-.header-release{border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:13px;color:var(--accent)}
-.language-switcher-bar{display:flex;gap:14px;padding:8px 20px;border-top:1px solid var(--line);font-size:14px;width:100%}
-.language-switcher-bar a{color:var(--muted)}
-.language-switcher-bar a[aria-current]{color:var(--accent);font-weight:700}
-main{max-width:880px;margin:0 auto;padding:32px 20px 64px}
-.hero{display:grid;gap:24px;grid-template-columns:1fr}@media(min-width:720px){.hero{grid-template-columns:1.2fr .8fr;align-items:center}}
-.release-line{color:var(--accent);font-size:13px;margin:0 0 8px}
-h1{font-size:clamp(28px,5vw,44px);line-height:1.3;margin:0 0 12px}
-.hero-lead{color:var(--muted);margin:0 0 20px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.button{display:inline-block;background:var(--accent);color:#06210f;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:999px}
-.button-secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.hero-aside{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-align:center}
-.hero-aside img{width:120px;height:120px;border-radius:28px}
-section{margin-top:48px}h2{font-size:24px;margin:0 0 16px}
-.cards{display:grid;gap:12px;grid-template-columns:1fr}@media(min-width:720px){.cards{grid-template-columns:1fr 1fr}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
-.card h3{margin:0 0 8px;font-size:17px;color:var(--accent)}
-.card p{margin:0;color:var(--muted);font-size:14px}
-ol.steps{margin:0;padding-left:22px;color:var(--muted)}
-ol.steps li{margin-bottom:8px}
-table.specs{width:100%;border-collapse:collapse;font-size:14px}
-table.specs th,table.specs td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-table.specs th{white-space:nowrap;color:var(--accent);width:7em}
-footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;color:var(--muted);font-size:13px}
-footer a{color:var(--accent)}
+/* Hallmark · genre: editorial · macrostructure: Bento Grid · theme: Newsprint · enrichment: Tier-A CSS art · nav: N6 · footer: Ft4
+ * F1 Bento knobs: tiles=7, spans=mosaic, border=hairline all · audience = Sony α owners · use = APK install + GitHub · tone = editorial
+ * Hallmark · pre-emit critique: P5 H4 E5 S4 R5 V4 */
+:root{
+  --color-paper: oklch(92% 0.045 50);
+  --color-paper-2: oklch(89% 0.05 50);
+  --color-paper-3: oklch(84% 0.054 45);
+  --color-rule: oklch(68% 0.03 40);
+  --color-rule-2: oklch(35% 0.02 35);
+  --color-muted: oklch(46% 0.022 35);
+  --color-neutral: oklch(30% 0.025 30);
+  --color-ink-2: oklch(20% 0.03 28);
+  --color-ink: oklch(15% 0.03 25);
+  --color-accent: oklch(32% 0.1 28);
+  --color-accent-ink: oklch(45% 0.13 30);
+  --color-focus: oklch(48% 0.18 30);
+  --font-display: "Newsreader", "Noto Serif JP", "Hiragino Mincho ProN", "YuMincho", Georgia, serif;
+  --font-body: "Newsreader", "Noto Serif JP", "Hiragino Mincho ProN", "YuMincho", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --text-xs: 0.64rem;
+  --text-sm: 0.8rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.9531rem;
+  --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-display-s: clamp(2rem, 3vw + 1rem, 2.875rem);
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-short: 220ms;
+  --rule-hair: 1px;
+  --page-gutter: clamp(1rem, 4vw, 1.5rem);
+}
+html{overflow-x:clip}
+body{overflow-x:clip}
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-paper);color:var(--color-ink);font-family:var(--font-body);font-size:var(--text-base);line-height:1.65}
+.skip-link{position:absolute;left:-9999px}
+.skip-link:focus{left:8px;top:8px;background:var(--color-ink);color:var(--color-paper);padding:8px}
+:focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
+main{display:block;max-width:70rem;margin:0 auto;padding:0 var(--page-gutter) var(--space-3xl)}
+.nav-mast{display:grid;gap:var(--space-2xs);padding:var(--space-md) var(--page-gutter) 0;text-align:center;max-width:70rem;margin:0 auto}
+.mast-line{font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--color-muted);margin:0}
+.mast-name{font-family:var(--font-display);font-weight:700;font-size:clamp(2.25rem, 5vw, 3.75rem);letter-spacing:-0.01em;line-height:0.95;margin:0;overflow-wrap:anywhere;min-width:0}
+.mast-name a{color:inherit;text-decoration:none}
+.mast-nav ul{display:inline-flex;gap:var(--space-md);list-style:none;padding:0;margin:var(--space-2xs) 0 0;flex-wrap:wrap;justify-content:center}
+.mast-nav a{color:var(--color-ink-2);text-decoration:none;font-size:var(--text-sm);white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.mast-nav a:hover{color:var(--color-accent-ink);text-decoration:underline;text-underline-offset:4px}
+.mast-lang{display:flex;gap:var(--space-md);justify-content:center;list-style:none;padding:0;margin:var(--space-2xs) 0 0;flex-wrap:wrap;font-size:var(--text-xs)}
+.mast-lang a{color:var(--color-muted);text-decoration:none;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.mast-lang a[aria-current]{color:var(--color-accent);font-weight:500}
+.mast-rule{border:0;border-top:var(--rule-hair) solid var(--color-rule);border-bottom:var(--rule-hair) solid var(--color-rule);height:4px;margin:var(--space-sm) 0 0}
+.mast-menu{display:none}
+.hero-fixed{text-align:left;padding:var(--space-xl) 0 var(--space-2xl);max-width:70rem;margin:0 auto}
+.hero-fixed h1{font-family:var(--font-display);font-weight:700;font-size:var(--text-display-s);line-height:1.15;letter-spacing:-0.022em;margin:0 0 var(--space-md);max-width:22ch;overflow-wrap:anywhere;min-width:0}
+.hero-lede{color:var(--color-ink-2);margin:0 0 var(--space-lg);max-width:58ch;font-size:var(--text-md);line-height:1.8}
+.hero-cta{display:flex;gap:var(--space-md);justify-content:flex-start;flex-wrap:wrap;align-items:center}
+.cta-outline{display:inline-flex;align-items:center;gap:0.5em;padding:0.75rem 1.25rem;border:1px solid var(--color-ink);color:var(--color-ink);text-decoration:none;min-height:44px;font-weight:600;white-space:nowrap;transition:background-color var(--dur-short) var(--ease-out),color var(--dur-short) var(--ease-out)}
+.cta-outline:hover{background:var(--color-ink);color:var(--color-paper)}
+.cta-outline:active{transform:translateY(1px)}
+.link-more{color:var(--color-accent-ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.link-more:hover{text-decoration-thickness:2px}
+.stat-strip{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:var(--space-md);border-top:var(--rule-hair) solid var(--color-rule);border-bottom:var(--rule-hair) solid var(--color-rule);padding:var(--space-lg) 0;margin:0 0 var(--space-3xl)}
+.stat-strip>div{display:grid;gap:var(--space-2xs)}
+.stat-strip b{font-family:var(--font-display);font-weight:700;font-size:var(--text-xl);font-variant-numeric:tabular-nums;line-height:1.1}
+.stat-strip span{font-size:var(--text-sm);color:var(--color-muted)}
+section.block{margin:0 0 var(--space-3xl)}
+.head-hanging{margin:0 0 var(--space-lg);max-width:40rem}
+.head-hanging h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-xl);line-height:1.2;letter-spacing:-0.02em;margin:0 0 var(--space-xs);overflow-wrap:anywhere;min-width:0}
+.head-hanging p{margin:0;color:var(--color-muted);font-size:var(--text-base)}
+.bento{display:grid;grid-template-columns:minmax(0, 1fr);gap:var(--space-md)}
+.cell{border:var(--rule-hair) solid var(--color-rule);background:var(--color-paper-2);padding:var(--space-lg);display:grid;gap:var(--space-sm);align-content:start;min-width:0}
+.cell h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-md);line-height:1.3;margin:0;overflow-wrap:anywhere;min-width:0}
+.cell p{margin:0;color:var(--color-ink-2);font-size:var(--text-sm);line-height:1.7}
+.cell .tag{font-family:var(--font-body);font-size:var(--text-xs);letter-spacing:0.06em;color:var(--color-accent);text-transform:uppercase}
+.cell-lead{background:var(--color-ink);color:var(--color-paper-2);border-color:var(--color-ink);position:relative;overflow:hidden}
+.cell-lead h3{color:var(--color-paper)}
+.cell-lead p{color:var(--color-paper-3)}
+.cell-lead .tag{color:var(--color-paper-3)}
+.wifi-art{position:relative;height:7rem;margin:0 0 var(--space-xs)}
+.wifi-art i{position:absolute;left:0;bottom:0;border:0 solid var(--color-paper-3);border-radius:50%}
+.wifi-art i:nth-child(1){width:2.5rem;height:2.5rem;border-top-width:2px;border-right-width:2px}
+.wifi-art i:nth-child(2){width:4.5rem;height:4.5rem;border-top-width:2px;border-right-width:2px;opacity:0.75}
+.wifi-art i:nth-child(3){width:6.5rem;height:6.5rem;border-top-width:2px;border-right-width:2px;opacity:0.5}
+.wifi-art b{position:absolute;left:0;bottom:0;width:0.5rem;height:0.5rem;border-radius:50%;background:var(--color-paper)}
+.cell-figure{display:flex;gap:var(--space-md);align-items:center}
+.cell-figure figure{margin:0;padding:0;border:0}
+.cell-figure img{display:block;width:4.5rem;height:4.5rem;border-radius:1rem}
+.cell-figure figcaption{font-size:var(--text-xs);color:var(--color-muted)}
+ol.stages{list-style:none;margin:0;padding:0;display:grid;gap:0}
+ol.stages li{display:grid;grid-template-columns:4.5rem minmax(0, 1fr);gap:var(--space-md);padding:var(--space-lg) 0;border-top:var(--rule-hair) solid var(--color-rule)}
+ol.stages li:last-child{border-bottom:var(--rule-hair) solid var(--color-rule)}
+.stage{font-family:var(--font-display);font-size:var(--text-sm);color:var(--color-accent);font-variant-numeric:tabular-nums;padding-top:0.3rem}
+ol.stages h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-md);margin:0 0 var(--space-2xs)}
+ol.stages p{margin:0;color:var(--color-ink-2);font-size:var(--text-sm);max-width:58ch}
+table.spec-sheet{width:100%;border-collapse:collapse;font-size:var(--text-sm)}
+table.spec-sheet th,table.spec-sheet td{text-align:left;padding:var(--space-sm) var(--space-md);border-bottom:var(--rule-hair) solid var(--color-rule);vertical-align:top}
+table.spec-sheet th{white-space:nowrap;color:var(--color-accent);width:8em;font-weight:600}
+table.spec-sheet td{font-variant-numeric:tabular-nums}
+table.spec-sheet a{color:var(--color-accent-ink)}
+.foot-dense{border-top:3px double var(--color-rule-2);margin-top:var(--space-3xl);padding:var(--space-lg) var(--page-gutter) var(--space-xl);max-width:70rem;margin-left:auto;margin-right:auto}
+.foot-dense p+p{margin-top:var(--space-2xs)}
+.foot-dense p{font-family:var(--font-mono);font-size:var(--text-xs);line-height:1.9;color:var(--color-muted);margin:0;max-width:75ch}
+.foot-dense a{color:var(--color-accent-ink)}
+@media (min-width: 40rem){
+  .hero-fixed h1{font-size:var(--text-display)}
+  .stat-strip{grid-template-columns:repeat(4, minmax(0, 1fr))}
+  .bento{grid-template-columns:repeat(2, minmax(0, 1fr))}
+  .span-2{grid-column:span 2}
+}
+@media (min-width: 60rem){
+  main{padding-bottom:var(--space-3xl)}
+  .bento{grid-template-columns:repeat(4, minmax(0, 1fr));grid-auto-rows:minmax(12rem, auto)}
+  .span-2x2{grid-column:span 2;grid-row:span 2}
+  .span-2x1{grid-column:span 2}
+  .span-1x2{grid-row:span 2}
+  section.block{margin-bottom:var(--space-3xl)}
+}
+@media (max-width: 40rem){
+  .mast-nav{display:none}
+  .mast-menu{display:block;margin:var(--space-2xs) 0 0}
+  .mast-menu summary{cursor:pointer;list-style:none;font-size:var(--text-sm);color:var(--color-ink-2);min-height:44px;display:inline-flex;align-items:center;white-space:nowrap}
+  .mast-menu summary::-webkit-details-marker{display:none}
+  .mast-menu ul{list-style:none;padding:var(--space-sm) 0 0;margin:0;display:grid;gap:var(--space-2xs)}
+  .mast-menu a{color:var(--color-ink-2);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:150ms !important;animation-iteration-count:1 !important;transition-duration:150ms !important}
+}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">本文へ移動</a>
-<header class="site-header">
-  <a class="brand" href="#top" aria-label="α6k転送 トップへ"><img src="assets/icon.png" alt="" width="30" height="30"><span>α6k転送</span></a>
-  <nav class="main-nav" aria-label="メインナビゲーション">
-    <a href="#features">できること</a>
-    <a href="#steps">使い方</a>
-    <a href="#specs">仕様</a>
-    <a href="#get-started">入手する</a>
+<header class="nav-mast">
+  <p class="mast-line">No. 1 · v1.1.1 · Android</p>
+  <p class="mast-name"><a href="#top" aria-label="α6k転送 トップへ">α6k転送</a></p>
+  <nav class="mast-nav" aria-label="メインナビゲーション">
+    <ul>
+      <li><a href="#features">できること</a></li>
+      <li><a href="#steps">使い方</a></li>
+      <li><a href="#specs">仕様</a></li>
+      <li><a href="#get-started">入手する</a></li>
+    </ul>
   </nav>
-  <span class="header-release">v1.1.1</span>
-  <nav class="language-switcher-bar" aria-label="言語切り替え">
-    <a data-language-link hreflang="ja" lang="ja" href="/projects/a6k-transfer/" aria-current="page">日本語</a>
-    <a data-language-link hreflang="en" lang="en" href="/projects/a6k-transfer/en/">English</a>
-    <a data-language-link hreflang="zh-Hans" lang="zh-Hans" href="/projects/a6k-transfer/zh/">简体中文</a>
-    <a data-language-link hreflang="pt" lang="pt" href="/projects/a6k-transfer/pt/">Português</a>
-  </nav>
+  <details class="mast-menu">
+    <summary aria-label="メニューを開く">目次 ＋</summary>
+    <ul>
+      <li><a href="#features">できること</a></li>
+      <li><a href="#steps">使い方</a></li>
+      <li><a href="#specs">仕様</a></li>
+      <li><a href="#get-started">入手する</a></li>
+    </ul>
+  </details>
+  <ul class="mast-lang" aria-label="言語切り替え">
+    <li><a hreflang="ja" lang="ja" href="/projects/a6k-transfer/" aria-current="page" aria-label="日本語">日本語</a></li>
+    <li><a hreflang="en" lang="en" href="/projects/a6k-transfer/en/" aria-label="English">EN</a></li>
+    <li><a hreflang="zh-Hans" lang="zh-Hans" href="/projects/a6k-transfer/zh/" aria-label="简体中文">中文</a></li>
+    <li><a hreflang="pt" lang="pt" href="/projects/a6k-transfer/pt/" aria-label="Português">PT</a></li>
+  </ul>
+  <hr class="mast-rule" aria-hidden="true">
 </header>
 <main id="main">
-  <section class="hero" id="top" aria-labelledby="hero-title">
-    <div>
-      <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.1.1</p>
-      <h1 id="hero-title">カメラの写真を、<br>Wi-Fiでまっすぐ取り込む</h1>
-      <p class="hero-lead">α6k転送は、Sony α6000系カメラのWi-Fiに直接つないで、撮った写真・動画をスマートフォンへ転送するオープンソースアプリです。ケーブルもクラウドも不要。カメラ側の「スマートフォンから選ぶ」→「表示中」にするだけで、一覧から選んでギャラリーへ保存できます。転送はバックグラウンドでも継続します。</p>
-      <div class="hero-actions" id="get-started" role="group" aria-label="入手方法">
-        <a class="button" href="https://github.com/oriyu90/a6k-transfer">GitHubでソースを見る</a>
-        <a class="button button-secondary" href="https://github.com/oriyu90/a6k-transfer/releases/latest">APKをインストール</a>
-      </div>
-    </div>
-    <aside class="hero-aside" aria-label="α6k転送 v1.0.0">
-      <img src="assets/icon.png" alt="α6k転送のアプリアイコン" width="120" height="120">
-      <p class="hero-lead" style="margin:12px 0 0">v1.1.1で中止応答・保存判定・再起動後の進捗表示・重複バインド待機を修正。v1.1.0で動画（MP4）転送・バックグラウンド転送・保存フォルダ指定に対応しました。</p>
-    </aside>
-  </section>
-  <section id="features" aria-labelledby="features-title">
-    <h2 id="features-title">できること</h2>
-    <div class="cards">
-      <div class="card"><h3>Wi-Fi直接転送</h3><p>カメラのアクセスポイント（DIRECT-〜）へアプリ内から接続し、DLNA/UPnPで写真・動画の一覧を取得。選んだものだけをフルサイズで保存します。バックグラウンドでも転送は継続します。</p></div>
-      <div class="card"><h3>保存済み表示</h3><p>転送したファイルは端末上の履歴で「保存済み」と表示され、二重転送を防げます。日付・種別（写真/動画）の絞り込みや保存フォルダの指定にも対応しています。</p></div>
-      <div class="card"><h3>日英・テーマ切替</h3><p>表示言語は日本語/English/システム追従、テーマはライト/ダーク/システム追従をアプリ内設定で即時切替できます。</p></div>
-      <div class="card"><h3>機種プロファイル</h3><p>α6000は実機検証済み。α6100以降は予測実装（未検証）として自動探索の対象に含め、将来の機種にも対応できる設計です。</p></div>
+  <section class="hero-fixed" id="top" aria-labelledby="hero-title">
+    <h1 id="hero-title">カメラの写真を、Wi-Fiでまっすぐ取り込む</h1>
+    <p class="hero-lede">α6k転送は、Sony α6000系カメラのWi-Fiに直接つないで、撮った写真・動画をスマートフォンへ転送するオープンソースアプリです。ケーブルもクラウドも不要。カメラ側の「スマートフォンから選ぶ」→「表示中」にするだけで、一覧から選んでギャラリーへ保存できます。転送はバックグラウンドでも継続します。</p>
+    <div class="hero-cta" id="get-started" role="group" aria-label="入手方法">
+      <a class="cta-outline" href="https://github.com/oriyu90/a6k-transfer/releases/latest">APKを入手 →</a>
+      <a class="link-more" href="https://github.com/oriyu90/a6k-transfer">GitHubでソースを読む →</a>
     </div>
   </section>
-  <section id="steps" aria-labelledby="steps-title">
-    <h2 id="steps-title">使い方</h2>
-    <ol class="steps">
-      <li>カメラで MENU → スマートフォン転送 → スマートフォンから選ぶ →「表示中」にする</li>
-      <li>アプリの「接続」タブで「接続＋バインド」（初回のみシステムの承認ダイアログが出ます）</li>
-      <li>「カメラ探索」でLOCATION確定後、「転送」タブで一覧読込→選択→転送</li>
+  <section class="stat-strip" aria-label="要点">
+    <div><b>v1.1.1</b><span>最新版</span></div>
+    <div><b>29</b><span>最低API</span></div>
+    <div><b>2</b><span>記録形式（写真・動画）</span></div>
+    <div><b>4</b><span>紹介言語</span></div>
+  </section>
+  <section class="block" id="features" aria-labelledby="features-title">
+    <div class="head-hanging">
+      <h2 id="features-title">できること</h2>
+      <p>一覧、転送、保存。カメラとの往復は三手に畳んである。</p>
+    </div>
+    <div class="bento">
+      <article class="cell cell-lead span-2x2">
+        <div class="wifi-art" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+        <p class="tag">Direct Wi-Fi</p>
+        <h3>ケーブルもクラウドもいらない</h3>
+        <p>カメラのアクセスポイント（DIRECT-〜）へアプリ内から接続し、DLNA/UPnPで写真・動画の一覧を取得。選んだものだけをフルサイズで保存します。バックグラウンドでも転送は継続します。</p>
+        <div class="cell-figure">
+          <figure>
+            <img src="assets/icon.png" alt="α6k転送のアプリアイコン" width="72" height="72">
+            <figcaption>α6k転送</figcaption>
+          </figure>
+          <p class="tag">DIRECT-cNE0:a6000 · 10.0.0.1</p>
+        </div>
+      </article>
+      <article class="cell">
+        <p class="tag">History</p>
+        <h3>保存済み表示</h3>
+        <p>転送したファイルは端末上の履歴で「保存済み」と表示され、二重転送を防げます。日付・種別の絞り込みや保存フォルダの指定にも対応しています。</p>
+      </article>
+      <article class="cell">
+        <p class="tag">Background</p>
+        <h3>裏で回り続ける転送</h3>
+        <p>フォアグラウンドサービスが通知とともに進捗を運び、画面を消しても、アプリを離れても転送は止まりません。中止はいつでもできます。</p>
+      </article>
+      <article class="cell span-2x1">
+        <p class="tag">Media</p>
+        <h3>写真と動画、まとめて</h3>
+        <p>JPEG写真とMP4動画を一覧から選び分けられます。RAW（.ARW等）はα6000がDLNAで公開しないため対象外です。</p>
+      </article>
+      <article class="cell">
+        <p class="tag">Language</p>
+        <h3>日英・テーマ切替</h3>
+        <p>表示言語は日本語/English/システム追従、テーマはライト/ダーク/システム追従をアプリ内設定で即時切替できます。</p>
+      </article>
+      <article class="cell">
+        <p class="tag">Profile</p>
+        <h3>機種プロファイル</h3>
+        <p>α6000は実機検証済み。α6100以降は予測実装（未検証）として自動探索の対象に含めています。</p>
+      </article>
+    </div>
+  </section>
+  <section class="block" id="steps" aria-labelledby="steps-title">
+    <div class="head-hanging">
+      <h2 id="steps-title">使い方</h2>
+      <p>カメラ側の一手と、アプリ側の二手。</p>
+    </div>
+    <ol class="stages">
+      <li><span class="stage">01</span><div><h3>カメラを「表示中」にする</h3><p>MENU → スマートフォン転送 → スマートフォンから選ぶ →「表示中」。カメラがアクセスポイントを開きます。</p></div></li>
+      <li><span class="stage">02</span><div><h3>接続＋バインド</h3><p>アプリの「接続」タブで「接続＋バインド」。初回のみシステムの承認ダイアログが出ます。</p></div></li>
+      <li><span class="stage">03</span><div><h3>探索して転送</h3><p>「カメラ探索」でLOCATION確定後、「転送」タブで一覧読込→選択→転送。ギャラリーへ保存されます。</p></div></li>
     </ol>
   </section>
-  <section id="specs" aria-labelledby="specs-title">
-    <h2 id="specs-title">仕様</h2>
-    <table class="specs">
+  <section class="block" id="specs" aria-labelledby="specs-title">
+    <div class="head-hanging">
+      <h2 id="specs-title">仕様</h2>
+      <p>版と台帳。数字は実測か公開値のみ。</p>
+    </div>
+    <table class="spec-sheet">
       <tr><th>バージョン</th><td>v1.1.1（versionCode 5）</td></tr>
       <tr><th>対応OS</th><td>Android 10（API 29）以降</td></tr>
       <tr><th>対応言語</th><td>日本語・English（アプリ内切替）</td></tr>
@@ -166,8 +325,9 @@ footer a{color:var(--accent)}
     </table>
   </section>
 </main>
-<footer>
-  <p><a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · <a href="https://github.com/oriyu90/a6k-transfer">GitHub</a> · <a href="https://x.com/InovateofRIZI">X</a></p>
+<footer class="foot-dense">
+  <p>α6k転送 v1.1.1 · Android 10+ · Newsreader, Noto Serif JP, IBM Plex Mono · MIT · 折田悠希（おりたゆうき / Yuki_Orita）</p>
+  <p><a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · <a href="https://github.com/oriyu90/a6k-transfer">GitHub</a> · <a href="https://discord.gg/x7KXhNTD8M">Discord</a> · <a href="https://x.com/InovateofRIZI">X</a> · © 2026 Yuki_Orita</p>
 </footer>
 </body>
 </html>

@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-09-18",
+    "macrostructure": "Bento Grid",
+    "theme": "Newsprint",
+    "enrichment": "Tier-A CSS art",
+    "brief": "a6k-transfer multilingual page remake",
+    "scope": "website/projects/a6k-transfer",
+    "knobs": "tiles=7, spans=mosaic, border=hairline all",
+    "nav": "N6",
+    "footer": "Ft4"
+  },
+  {
     "date": "2026-08-31",
     "macrostructure": "Narrative Workflow",
     "theme": "Cobalt",
