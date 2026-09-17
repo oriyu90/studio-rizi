@@ -45,7 +45,7 @@
       "alternateName": ["α6k Transfer"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android 10 (API 29) or later",
-      "softwareVersion": "1.0.2",
+      "softwareVersion": "1.1.0",
       "inLanguage": "ja",
       "description": "Sony α6000系カメラのWi-Fiアクセスポイントに接続し、DLNA/UPnP経由で写真をスマートフォンへ転送するAndroid向けオープンソースアプリ。日英切替、ライト/ダークテーマ、機種プロファイル対応。",
       "url": "https://studio-rizi.pages.dev/projects/a6k-transfer/",
@@ -112,7 +112,7 @@ footer a{color:var(--accent)}
     <a href="#specs">仕様</a>
     <a href="#get-started">入手する</a>
   </nav>
-  <span class="header-release">v1.0.2</span>
+  <span class="header-release">v1.1.0</span>
   <nav class="language-switcher-bar" aria-label="言語切り替え">
     <a data-language-link hreflang="ja" lang="ja" href="/projects/a6k-transfer/" aria-current="page">日本語</a>
     <a data-language-link hreflang="en" lang="en" href="/projects/a6k-transfer/en/">English</a>
@@ -123,9 +123,9 @@ footer a{color:var(--accent)}
 <main id="main">
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div>
-      <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.0.2</p>
+      <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.1.0</p>
       <h1 id="hero-title">カメラの写真を、<br>Wi-Fiでまっすぐ取り込む</h1>
-      <p class="hero-lead">α6k転送は、Sony α6000系カメラのWi-Fiに直接つないで、撮った写真をスマートフォンへ転送するオープンソースアプリです。ケーブルもクラウドも不要。カメラ側の「スマートフォンから選ぶ」→「表示中」にするだけで、一覧から選んでギャラリーへ保存できます。</p>
+      <p class="hero-lead">α6k転送は、Sony α6000系カメラのWi-Fiに直接つないで、撮った写真・動画をスマートフォンへ転送するオープンソースアプリです。ケーブルもクラウドも不要。カメラ側の「スマートフォンから選ぶ」→「表示中」にするだけで、一覧から選んでギャラリーへ保存できます。転送はバックグラウンドでも継続します。</p>
       <div class="hero-actions" id="get-started" role="group" aria-label="入手方法">
         <a class="button" href="https://github.com/oriyu90/a6k-transfer">GitHubでソースを見る</a>
         <a class="button button-secondary" href="https://github.com/oriyu90/a6k-transfer/releases/latest">APKをインストール</a>
@@ -133,14 +133,14 @@ footer a{color:var(--accent)}
     </div>
     <aside class="hero-aside" aria-label="α6k転送 v1.0.0">
       <img src="assets/icon.png" alt="α6k転送のアプリアイコン" width="120" height="120">
-      <p class="hero-lead" style="margin:12px 0 0">v1.0.0で初回リリース。Material 3 ExpressiveのUIで、日英切替とライト/ダークテーマに対応しました。</p>
+      <p class="hero-lead" style="margin:12px 0 0">v1.1.0で動画（MP4）転送・バックグラウンド転送・保存フォルダ指定に対応。Material 3 ExpressiveのUIで、日英切替とライト/ダークテーマに対応しました。</p>
     </aside>
   </section>
   <section id="features" aria-labelledby="features-title">
     <h2 id="features-title">できること</h2>
     <div class="cards">
-      <div class="card"><h3>Wi-Fi直接転送</h3><p>カメラのアクセスポイント（DIRECT-〜）へアプリ内から接続し、DLNA/UPnPで写真一覧を取得。選んだ写真だけをフルサイズで保存します。</p></div>
-      <div class="card"><h3>保存済み表示</h3><p>ギャラリーにある写真は「保存済み」と表示され、二重転送を防げます。日付ごとの絞り込みにも対応しています。</p></div>
+      <div class="card"><h3>Wi-Fi直接転送</h3><p>カメラのアクセスポイント（DIRECT-〜）へアプリ内から接続し、DLNA/UPnPで写真・動画の一覧を取得。選んだものだけをフルサイズで保存します。バックグラウンドでも転送は継続します。</p></div>
+      <div class="card"><h3>保存済み表示</h3><p>転送したファイルは端末上の履歴で「保存済み」と表示され、二重転送を防げます。日付・種別（写真/動画）の絞り込みや保存フォルダの指定にも対応しています。</p></div>
       <div class="card"><h3>日英・テーマ切替</h3><p>表示言語は日本語/English/システム追従、テーマはライト/ダーク/システム追従をアプリ内設定で即時切替できます。</p></div>
       <div class="card"><h3>機種プロファイル</h3><p>α6000は実機検証済み。α6100以降は予測実装（未検証）として自動探索の対象に含め、将来の機種にも対応できる設計です。</p></div>
     </div>
@@ -156,10 +156,11 @@ footer a{color:var(--accent)}
   <section id="specs" aria-labelledby="specs-title">
     <h2 id="specs-title">仕様</h2>
     <table class="specs">
-      <tr><th>バージョン</th><td>v1.0.2（versionCode 3）</td></tr>
+      <tr><th>バージョン</th><td>v1.1.0（versionCode 4）</td></tr>
       <tr><th>対応OS</th><td>Android 10（API 29）以降</td></tr>
       <tr><th>対応言語</th><td>日本語・English（アプリ内切替）</td></tr>
       <tr><th>対応機種</th><td>α6000（実機検証済み）、α6100以降（予測実装・未検証）</td></tr>
+      <tr><th>対応メディア</th><td>JPEG写真・MP4動画（カメラがDLNAで公開するもの。RAWは非公開のため対象外）</td></tr>
       <tr><th>ソース</th><td><a href="https://github.com/oriyu90/a6k-transfer">oriyu90/a6k-transfer</a>（オープンソース）</td></tr>
       <tr><th>開発者</th><td>折田悠希（おりたゆうき / Yuki_Orita）</td></tr>
     </table>

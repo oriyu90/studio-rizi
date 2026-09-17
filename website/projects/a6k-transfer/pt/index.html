@@ -45,7 +45,7 @@
       "alternateName": ["α6k転送"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android 10 (API 29) or later",
-      "softwareVersion": "1.0.2",
+      "softwareVersion": "1.1.0",
       "inLanguage": "pt",
       "description": "App Android aberto que se conecta ao ponto de acesso Wi-Fi das câmeras Sony α6000 e transfere fotos para o celular via DLNA/UPnP. Alternância japonês/inglês, temas claro/escuro e perfis de câmera.",
       "url": "https://studio-rizi.pages.dev/projects/a6k-transfer/pt/",
@@ -112,7 +112,7 @@ footer a{color:var(--accent)}
     <a href="#specs">Especificações</a>
     <a href="#get-started">Baixar</a>
   </nav>
-  <span class="header-release">v1.0.2</span>
+  <span class="header-release">v1.1.0</span>
   <nav class="language-switcher-bar" aria-label="Idioma">
     <a data-language-link hreflang="ja" lang="ja" href="/projects/a6k-transfer/">日本語</a>
     <a data-language-link hreflang="en" lang="en" href="/projects/a6k-transfer/en/">English</a>
@@ -123,9 +123,9 @@ footer a{color:var(--accent)}
 <main id="main">
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div>
-      <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.0.2</p>
+      <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.1.0</p>
       <h1 id="hero-title">Da sua câmera<br>ao celular, via Wi-Fi</h1>
-      <p class="hero-lead">O α6k Transfer conecta-se diretamente ao Wi-Fi das câmeras Sony α6000 e transfere suas fotos para o celular. Sem cabos, sem nuvem. Ajuste a câmera para “Selecionar no smartphone” → “Exibindo”, escolha as fotos na lista e salve-as na galeria.</p>
+      <p class="hero-lead">O α6k Transfer conecta-se diretamente ao Wi-Fi das câmeras Sony α6000 e transfere suas fotos e vídeos para o celular. Sem cabos, sem nuvem. Ajuste a câmera para “Selecionar no smartphone” → “Exibindo”, escolha os itens na lista e salve-os na galeria. A transferência continua em segundo plano.</p>
       <div class="hero-actions" id="get-started" role="group" aria-label="Baixar o app">
         <a class="button" href="https://github.com/oriyu90/a6k-transfer">Ver o código no GitHub</a>
         <a class="button button-secondary" href="https://github.com/oriyu90/a6k-transfer/releases/latest">Instalar o APK</a>
@@ -133,14 +133,14 @@ footer a{color:var(--accent)}
     </div>
     <aside class="hero-aside" aria-label="α6k Transfer v1.0.0">
       <img src="../assets/icon.png" alt="Ícone do app α6k Transfer" width="120" height="120">
-      <p class="hero-lead" style="margin:12px 0 0">Primeira versão v1.0.0, com interface Material 3 Expressive, alternância japonês/inglês e temas claro/escuro.</p>
+      <p class="hero-lead" style="margin:12px 0 0">A v1.1.0 traz transferência de vídeo (MP4), transferência em segundo plano e pasta de destino personalizada — com interface Material 3 Expressive, japonês/inglês e temas claro/escuro.</p>
     </aside>
   </section>
   <section id="features" aria-labelledby="features-title">
     <h2 id="features-title">Recursos</h2>
     <div class="cards">
-      <div class="card"><h3>Transferência direta via Wi-Fi</h3><p>Entre no ponto de acesso da câmera (DIRECT-…) pelo próprio app, navegue pela lista de fotos via DLNA/UPnP e salve só as escolhidas em tamanho original.</p></div>
-      <div class="card"><h3>Indicador de salvas</h3><p>Fotos que já estão na galeria aparecem como “Salva”, então você nunca transfere o mesmo arquivo duas vezes. Também dá para filtrar por data.</p></div>
+      <div class="card"><h3>Transferência direta via Wi-Fi</h3><p>Entre no ponto de acesso da câmera (DIRECT-…) pelo próprio app, navegue por fotos e vídeos via DLNA/UPnP e salve só os escolhidos em tamanho original. A transferência continua em segundo plano.</p></div>
+      <div class="card"><h3>Indicador de salvas</h3><p>Arquivos transferidos ficam marcados como “Salva” pelo histórico no aparelho, então você nunca transfere o mesmo arquivo duas vezes. Filtre por data e tipo (fotos/vídeos) e escolha a pasta de destino.</p></div>
       <div class="card"><h3>Idioma e tema</h3><p>Alterne o idioma entre japonês, inglês e sistema, e o tema entre claro, escuro e sistema — na hora, nos ajustes do app.</p></div>
       <div class="card"><h3>Perfis de câmera</h3><p>A α6000 foi verificada no aparelho. A α6100 e posteriores entram como implementação preditiva e não verificada, pronta para futuros modelos.</p></div>
     </div>
@@ -156,10 +156,11 @@ footer a{color:var(--accent)}
   <section id="specs" aria-labelledby="specs-title">
     <h2 id="specs-title">Especificações</h2>
     <table class="specs">
-      <tr><th>Versão</th><td>v1.0.2 (versionCode 3)</td></tr>
+      <tr><th>Versão</th><td>v1.1.0 (versionCode 4)</td></tr>
       <tr><th>Requisitos</th><td>Android 10 (API 29) ou posterior</td></tr>
       <tr><th>Idiomas</th><td>Japonês, inglês (troca no app)</td></tr>
       <tr><th>Câmeras</th><td>α6000 (verificada no aparelho), α6100 e posteriores (preditiva, não verificada)</td></tr>
+      <tr><th>Mídia</th><td>Fotos JPEG, vídeos MP4 (conforme exposto pela câmera via DLNA; RAW não é exposto)</td></tr>
       <tr><th>Código</th><td><a href="https://github.com/oriyu90/a6k-transfer">oriyu90/a6k-transfer</a> (aberto)</td></tr>
       <tr><th>Desenvolvedor</th><td>Yuki Orita</td></tr>
     </table>

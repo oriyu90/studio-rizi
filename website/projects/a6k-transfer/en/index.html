@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>α6k Transfer — Transfer photos from your Sony α camera over Wi-Fi (Android app)</title>
-<meta name="description" content="α6k Transfer is an open-source Android app that connects to the Wi-Fi access point of Sony α6000-series cameras and transfers photos to your phone over DLNA/UPnP. Material 3 Expressive UI, Japanese/English switch, light/dark themes, and camera profiles (α6000 verified, α6100 and later predictive). By Yuki Orita. Free and open on GitHub.">
+<meta name="description" content="α6k Transfer is an open-source Android app that connects to the Wi-Fi access point of Sony α6000-series cameras and transfers photos and videos to your phone over DLNA/UPnP. Material 3 Expressive UI, Japanese/English switch, light/dark themes, and camera profiles (α6000 verified, α6100 and later predictive). By Yuki Orita. Free and open on GitHub.">
 <meta name="author" content="Yuki Orita">
 <meta name="theme-color" content="#0c0e1a">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -45,7 +45,7 @@
       "alternateName": ["α6k転送"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android 10 (API 29) or later",
-      "softwareVersion": "1.0.2",
+      "softwareVersion": "1.1.0",
       "inLanguage": "en",
       "description": "An open-source Android app that connects to the Wi-Fi access point of Sony α6000-series cameras and transfers photos to your phone over DLNA/UPnP. Japanese/English switch, light/dark themes, camera profiles.",
       "url": "https://studio-rizi.pages.dev/projects/a6k-transfer/en/",
@@ -112,7 +112,7 @@ footer a{color:var(--accent)}
     <a href="#specs">Specs</a>
     <a href="#get-started">Get it</a>
   </nav>
-  <span class="header-release">v1.0.2</span>
+  <span class="header-release">v1.1.0</span>
   <nav class="language-switcher-bar" aria-label="Language">
     <a data-language-link hreflang="ja" lang="ja" href="/projects/a6k-transfer/">日本語</a>
     <a data-language-link hreflang="en" lang="en" href="/projects/a6k-transfer/en/" aria-current="page">English</a>
@@ -123,9 +123,9 @@ footer a{color:var(--accent)}
 <main id="main">
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div>
-      <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.0.2</p>
+      <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.1.0</p>
       <h1 id="hero-title">Straight from your camera<br>to your phone, over Wi-Fi</h1>
-      <p class="hero-lead">α6k Transfer connects directly to the Wi-Fi of Sony α6000-series cameras and transfers your photos to your phone. No cables, no cloud. Set the camera to “Select on Smartphone” → “Displaying”, pick photos from the list, and save them to your gallery.</p>
+      <p class="hero-lead">α6k Transfer connects directly to the Wi-Fi of Sony α6000-series cameras and transfers your photos and videos to your phone. No cables, no cloud. Set the camera to “Select on Smartphone” → “Displaying”, pick items from the list, and save them to your gallery. Transfers continue in the background.</p>
       <div class="hero-actions" id="get-started" role="group" aria-label="Get the app">
         <a class="button" href="https://github.com/oriyu90/a6k-transfer">View source on GitHub</a>
         <a class="button button-secondary" href="https://github.com/oriyu90/a6k-transfer/releases/latest">Install the APK</a>
@@ -133,14 +133,14 @@ footer a{color:var(--accent)}
     </div>
     <aside class="hero-aside" aria-label="α6k Transfer v1.0.0">
       <img src="../assets/icon.png" alt="α6k Transfer app icon" width="120" height="120">
-      <p class="hero-lead" style="margin:12px 0 0">First release as v1.0.0 with a Material 3 Expressive UI, Japanese/English switch, and light/dark themes.</p>
+      <p class="hero-lead" style="margin:12px 0 0">v1.1.0 adds video (MP4) transfer, background transfer, and a custom save folder — with a Material 3 Expressive UI, Japanese/English switch, and light/dark themes.</p>
     </aside>
   </section>
   <section id="features" aria-labelledby="features-title">
     <h2 id="features-title">Features</h2>
     <div class="cards">
-      <div class="card"><h3>Direct Wi-Fi transfer</h3><p>Join the camera access point (DIRECT-…) from inside the app, browse the photo list over DLNA/UPnP, and save only the photos you pick at full size.</p></div>
-      <div class="card"><h3>Already-saved badges</h3><p>Photos already in your gallery are marked “Saved”, so you never transfer the same file twice. Filter by shooting date too.</p></div>
+      <div class="card"><h3>Direct Wi-Fi transfer</h3><p>Join the camera access point (DIRECT-…) from inside the app, browse photos and videos over DLNA/UPnP, and save only the items you pick at full size. Transfers keep going in the background.</p></div>
+      <div class="card"><h3>Already-saved badges</h3><p>Transferred files stay marked “Saved” via on-device history, so you never transfer the same file twice. Filter by date and media type (photos/videos) and set a custom save folder.</p></div>
       <div class="card"><h3>Language &amp; theme switch</h3><p>Switch the UI between Japanese, English, and system language, and the theme between light, dark, and system — instantly, from in-app settings.</p></div>
       <div class="card"><h3>Camera profiles</h3><p>The α6000 is verified on-device. The α6100 and later are covered by a predictive, unverified profile so future models fit the same design.</p></div>
     </div>
@@ -156,10 +156,11 @@ footer a{color:var(--accent)}
   <section id="specs" aria-labelledby="specs-title">
     <h2 id="specs-title">Specs</h2>
     <table class="specs">
-      <tr><th>Version</th><td>v1.0.2 (versionCode 3)</td></tr>
+      <tr><th>Version</th><td>v1.1.0 (versionCode 4)</td></tr>
       <tr><th>Requirements</th><td>Android 10 (API 29) or later</td></tr>
       <tr><th>Languages</th><td>Japanese, English (in-app switch)</td></tr>
       <tr><th>Cameras</th><td>α6000 (verified on-device), α6100 and later (predictive, unverified)</td></tr>
+      <tr><th>Media</th><td>JPEG photos, MP4 videos (as exposed by the camera via DLNA; RAW is not exposed)</td></tr>
       <tr><th>Source</th><td><a href="https://github.com/oriyu90/a6k-transfer">oriyu90/a6k-transfer</a> (open source)</td></tr>
       <tr><th>Developer</th><td>Yuki Orita</td></tr>
     </table>
