@@ -7,6 +7,7 @@
 <meta name="description" content="α6k転送（α6k Transfer）は、Sony α6000系カメラのWi-Fiアクセスポイントに接続し、DLNA/UPnP経由で写真をスマートフォンへ転送するAndroid向けオープンソースアプリです。Material 3 ExpressiveのUI、日英切替、ライト/ダークテーマ、α6000検証済み・α6100以降予測の機種プロファイルに対応。開発者は折田悠希（おりたゆうき / Yuki_Orita）。無料・GitHubで公開中。">
 <meta name="author" content="折田悠希 (Yuki_Orita)">
 <meta name="theme-color" content="#f1e7d3">
+<meta name="color-scheme" content="light">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://studio-rizi.pages.dev/projects/a6k-transfer/">
 <link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/a6k-transfer/">
@@ -88,11 +89,10 @@
   --font-display: "Newsreader", "Noto Serif JP", "Hiragino Mincho ProN", "YuMincho", Georgia, serif;
   --font-body: "Newsreader", "Noto Serif JP", "Hiragino Mincho ProN", "YuMincho", Georgia, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --text-xs: 0.64rem;
+  --text-xs: 0.6875rem;
   --text-sm: 0.8rem;
   --text-base: 1rem;
   --text-md: 1.25rem;
-  --text-lg: 1.5625rem;
   --text-xl: 1.9531rem;
   --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
   --text-display-s: clamp(2rem, 3vw + 1rem, 2.875rem);
@@ -109,7 +109,7 @@
   --rule-hair: 1px;
   --page-gutter: clamp(1rem, 4vw, 1.5rem);
 }
-html{overflow-x:clip}
+html{overflow-x:clip;scroll-behavior:smooth}
 body{overflow-x:clip}
 #paperbg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 *{box-sizing:border-box}
@@ -117,6 +117,8 @@ body{margin:0;background:var(--color-paper);color:var(--color-ink);font-family:v
 .skip-link{position:absolute;left:-9999px}
 .skip-link:focus{left:8px;top:8px;background:var(--color-ink);color:var(--color-paper);padding:8px}
 :focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
+::selection{background:var(--color-accent);color:var(--color-paper)}
+.hero-fixed h1,.head-hanging h2{text-wrap:balance}
 main{display:block;max-width:70rem;margin:0 auto;padding:0 var(--page-gutter) var(--space-3xl)}
 .nav-mast{display:grid;gap:var(--space-2xs);padding:var(--space-md) var(--page-gutter) 0;text-align:center;max-width:70rem;margin:0 auto}
 .mast-line{font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--color-muted);margin:0}
@@ -166,6 +168,7 @@ section.block{margin:0 0 var(--space-3xl)}
 .cell-figure figure{margin:0;padding:0;border:0}
 .cell-figure img{display:block;width:4.5rem;height:4.5rem;border-radius:1rem}
 .cell-figure figcaption{font-size:var(--text-xs);color:var(--color-muted)}
+.cell-lead figcaption{color:var(--color-paper-3)}
 ol.stages{list-style:none;margin:0;padding:0;display:grid;gap:0}
 ol.stages li{display:grid;grid-template-columns:4.5rem minmax(0, 1fr);gap:var(--space-md);padding:var(--space-lg) 0;border-top:var(--rule-hair) solid var(--color-rule)}
 ol.stages li:last-child{border-bottom:var(--rule-hair) solid var(--color-rule)}
@@ -185,7 +188,6 @@ table.spec-sheet a{color:var(--color-accent-ink)}
   .hero-fixed h1{font-size:var(--text-display)}
   .stat-strip{grid-template-columns:repeat(4, minmax(0, 1fr))}
   .bento{grid-template-columns:repeat(2, minmax(0, 1fr))}
-  .span-2{grid-column:span 2}
 }
 @media (min-width: 60rem){
   main{padding-bottom:var(--space-3xl)}
@@ -205,6 +207,7 @@ table.spec-sheet a{color:var(--color-accent-ink)}
 }
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:150ms !important;animation-iteration-count:1 !important;transition-duration:150ms !important}
+  html{scroll-behavior:auto}
 }
 </style>
 </head>
