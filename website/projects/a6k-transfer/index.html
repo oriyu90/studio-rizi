@@ -86,7 +86,6 @@
   --color-accent: oklch(22% 0.06 40);
   --color-accent-ink: oklch(45% 0.13 60);
   --color-focus: oklch(45% 0.13 60);
-  --color-seal: oklch(42% 0.15 32);
   --font-display: "Playfair Display", "Noto Serif JP", "Hiragino Mincho ProN", "YuMincho", Georgia, serif;
   --font-body: "Noto Serif JP", "Hiragino Mincho ProN", "YuMincho", Georgia, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -143,8 +142,6 @@ main{display:block;max-width:64rem;margin:0 auto;padding:0 var(--page-gutter) va
 .ledger div{display:grid;grid-template-columns:minmax(0, 1fr) auto;gap:var(--space-md);padding:var(--space-sm) 0;border-top:var(--rule-hair) solid var(--color-rule);align-items:baseline}
 .ledger dt{font-size:var(--text-sm);color:var(--color-ink-2)}
 .ledger dd{margin:0;font-family:var(--font-display);font-weight:700;font-size:var(--text-md);font-variant-numeric:tabular-nums;white-space:nowrap}
-.seal-row{display:flex;gap:var(--space-md);align-items:flex-end;margin-top:var(--space-lg)}
-.hanko{display:inline-grid;place-items:center;width:2.75rem;height:2.75rem;background:var(--color-seal);color:var(--color-paper);font-family:var(--font-display);font-weight:900;font-size:var(--text-md);border-radius:0.25rem}
 .row{display:grid;gap:var(--space-xl);padding:var(--space-2xl) 0;align-items:start}
 .row + .row{border-top:var(--rule-hair) solid var(--color-rule)}
 .row-copy h2{font-family:var(--font-display);font-weight:900;font-size:var(--text-xl);line-height:1.2;letter-spacing:-0.02em;margin:0 0 var(--space-sm);overflow-wrap:anywhere;min-width:0;text-wrap:balance}
@@ -238,9 +235,6 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
       <div class="hero-cta" id="get-started" role="group" aria-label="入手方法">
         <a class="cta-outline" href="https://github.com/oriyu90/a6k-transfer/releases/latest">APKを入手 →</a>
         <a class="link-more" href="https://github.com/oriyu90/a6k-transfer">GitHubでソースを読む →</a>
-      </div>
-      <div class="seal-row">
-        <span class="hanko" aria-label="作者の判子">α</span>
       </div>
     </div>
     <aside class="ledger" aria-label="台帳">
