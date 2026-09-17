@@ -123,12 +123,16 @@ body{margin:0;background:var(--color-paper);color:var(--color-ink);font-family:v
 .topbar{display:flex;align-items:center;gap:var(--space-md);padding:var(--space-sm) var(--page-gutter);border-bottom:var(--rule-hair) solid var(--color-rule);max-width:64rem;margin:0 auto}
 .brand{font-family:var(--font-display);font-weight:900;font-size:var(--text-md);letter-spacing:-0.01em;color:var(--color-ink);text-decoration:none;white-space:nowrap}
 .topbar .ver{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-muted);margin:0;white-space:nowrap}
-.topbar .link-more{margin-left:auto;font-size:var(--text-sm)}
+.topbar nav ul{display:flex;gap:var(--space-md);margin:0;padding:0;list-style:none;flex-wrap:wrap}
+.topbar nav{display:flex;margin-left:auto}
+.topbar nav a{color:var(--color-ink-2);text-decoration:none;font-size:var(--text-sm);white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.topbar nav a:hover{color:var(--color-accent-ink);text-decoration:underline;text-underline-offset:4px}
 main{display:block;max-width:64rem;margin:0 auto;padding:0 var(--page-gutter) var(--space-xl)}
 .hero{display:grid;gap:var(--space-xl);padding:var(--space-2xl) 0 var(--space-2xl);align-items:start}
 .hero-copy h1{font-family:var(--font-display);font-weight:900;font-size:var(--text-display-s);line-height:1.05;letter-spacing:-0.018em;margin:0 0 var(--space-md);overflow-wrap:anywhere;min-width:0;text-wrap:balance}
 .hero-copy .lede{margin:0 0 var(--space-lg);max-width:56ch;font-size:var(--text-md);color:var(--color-ink-2)}
 .hero-cta{display:flex;gap:var(--space-md);flex-wrap:wrap;align-items:center}
+.hero-cta.gap-top{margin-top:var(--space-lg)}
 .cta-outline{display:inline-flex;align-items:center;gap:0.5em;padding:0.75rem 1.25rem;border:1px solid var(--color-ink);color:var(--color-ink);text-decoration:none;min-height:44px;font-weight:600;white-space:nowrap;transition:background-color var(--dur-short) var(--ease-out),color var(--dur-short) var(--ease-out)}
 .cta-outline:hover{background:var(--color-ink);color:var(--color-paper)}
 .cta-outline:active{transform:translateY(1px)}
@@ -215,7 +219,13 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
 <header class="topbar">
   <a class="brand" href="#top" aria-label="Voltar ao topo de α6k Transfer">α6k Transfer</a>
   <p class="ver">v1.1.1</p>
-  <a class="link-more" href="https://github.com/oriyu90/a6k-transfer/releases/latest/download/a6k-transfer.apk">Instalar o APK →</a>
+  <nav aria-label="Top nav">
+    <ul>
+    <li><a href="#steps">Como usar</a></li>
+    <li><a href="#specs">Especificações</a></li>
+    <li><a href="#install">Instalação</a></li>
+    </ul>
+  </nav>
 </header>
 <main id="main">
   <section class="hero" id="top" aria-labelledby="hero-title">
@@ -302,6 +312,19 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
       <li><span class="stage">03</span><div><h3>Descobrir e transferir</h3><p>“Descobrir câmera” confirma o LOCATION e, na aba Transferência, carregue a lista, selecione e transfira. Os arquivos caem na galeria.</p></div></li>
     </ol>
   </section>
+  <section class="gap" id="install" aria-labelledby="install-title">
+    <h2 id="install-title">Instalação</h2>
+    <p class="stand">Três gestos até instalar.</p>
+    <ol class="stages">
+      <li><span class="stage">01</span><div><h3>Baixe o APK</h3><p>Pelo botão de instalação (v1.1.1, cerca de 26MB).</p></div></li>
+      <li><span class="stage">02</span><div><h3>Autorize a fonte</h3><p>Só na primeira vez: ative “Instalar apps desconhecidos” para o navegador.</p></div></li>
+      <li><span class="stage">03</span><div><h3>Abra para instalar</h3><p>Abrir o arquivo inicia o instalador. Leia cada confirmação.</p></div></li>
+    </ol>
+    <div class="hero-cta gap-top" role="group" aria-label="Baixar o app" >
+      <a class="cta-outline" href="https://github.com/oriyu90/a6k-transfer/releases/latest/download/a6k-transfer.apk">Instalar o APK →</a>
+      <a class="link-more" href="https://github.com/oriyu90/a6k-transfer">Ver o código no GitHub →</a>
+    </div>
+  </section>
   <section class="gap" id="specs" aria-labelledby="specs-title">
     <h2 id="specs-title">Especificações</h2>
     <p class="stand">A edição e o livro-caixa. Só números medidos ou publicados.</p>
@@ -325,6 +348,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <li><a href="#steps">Como usar</a></li>
     <li><a href="#specs">Especificações</a></li>
     <li><a href="#get-started">Baixar</a></li>
+    <li><a href="#install">Instalação</a></li>
   </ul>
   <ul class="foot-meta" aria-label="Idioma">
     <li><a hreflang="ja" lang="ja" href="/projects/a6k-transfer/" aria-label="日本語">日本語</a></li>

@@ -122,12 +122,16 @@ body{margin:0;background:var(--color-paper);color:var(--color-ink);font-family:v
 .topbar{display:flex;align-items:center;gap:var(--space-md);padding:var(--space-sm) var(--page-gutter);border-bottom:var(--rule-hair) solid var(--color-rule);max-width:64rem;margin:0 auto}
 .brand{font-family:var(--font-display);font-weight:900;font-size:var(--text-md);letter-spacing:-0.01em;color:var(--color-ink);text-decoration:none;white-space:nowrap}
 .topbar .ver{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-muted);margin:0;white-space:nowrap}
-.topbar .link-more{margin-left:auto;font-size:var(--text-sm)}
+.topbar nav ul{display:flex;gap:var(--space-md);margin:0;padding:0;list-style:none;flex-wrap:wrap}
+.topbar nav{display:flex;margin-left:auto}
+.topbar nav a{color:var(--color-ink-2);text-decoration:none;font-size:var(--text-sm);white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.topbar nav a:hover{color:var(--color-accent-ink);text-decoration:underline;text-underline-offset:4px}
 main{display:block;max-width:64rem;margin:0 auto;padding:0 var(--page-gutter) var(--space-xl)}
 .hero{display:grid;gap:var(--space-xl);padding:var(--space-2xl) 0 var(--space-2xl);align-items:start}
 .hero-copy h1{font-family:var(--font-display);font-weight:900;font-size:var(--text-display-s);line-height:1.12;letter-spacing:-0.018em;margin:0 0 var(--space-md);overflow-wrap:anywhere;min-width:0;text-wrap:balance}
 .hero-copy .lede{margin:0 0 var(--space-lg);max-width:56ch;font-size:var(--text-md);color:var(--color-ink-2)}
 .hero-cta{display:flex;gap:var(--space-md);flex-wrap:wrap;align-items:center}
+.hero-cta.gap-top{margin-top:var(--space-lg)}
 .cta-outline{display:inline-flex;align-items:center;gap:0.5em;padding:0.75rem 1.25rem;border:1px solid var(--color-ink);color:var(--color-ink);text-decoration:none;min-height:44px;font-weight:600;white-space:nowrap;transition:background-color var(--dur-short) var(--ease-out),color var(--dur-short) var(--ease-out)}
 .cta-outline:hover{background:var(--color-ink);color:var(--color-paper)}
 .cta-outline:active{transform:translateY(1px)}
@@ -210,7 +214,13 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
 <header class="topbar">
   <a class="brand" href="#top" aria-label="α6k転送 トップへ">α6k転送</a>
   <p class="ver">v1.1.1</p>
-  <a class="link-more" href="https://github.com/oriyu90/a6k-transfer/releases/latest/download/a6k-transfer.apk">インストールする →</a>
+  <nav aria-label="Top nav">
+    <ul>
+    <li><a href="#steps">使い方</a></li>
+    <li><a href="#specs">仕様</a></li>
+    <li><a href="#install">インストール方法</a></li>
+    </ul>
+  </nav>
 </header>
 <main id="main">
   <section class="hero" id="top" aria-labelledby="hero-title">
@@ -293,6 +303,19 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
       <li><span class="stage">03</span><div><h3>探索して転送</h3><p>「カメラ探索」でLOCATION確定後、「転送」タブで一覧読込→選択→転送。ギャラリーへ保存されます。</p></div></li>
     </ol>
   </section>
+  <section class="gap" id="install" aria-labelledby="install-title">
+    <h2 id="install-title">インストール方法</h2>
+    <p class="stand">入れるまでの三手。</p>
+    <ol class="stages">
+      <li><span class="stage">01</span><div><h3>APKを入れる</h3><p>「インストールする」ボタンからAPKを取得します（v1.1.1・約26MB）。</p></div></li>
+      <li><span class="stage">02</span><div><h3>提供元を許可する</h3><p>初回のみ、案内に従ってブラウザの「不明なアプリのインストール」を有効にします。</p></div></li>
+      <li><span class="stage">03</span><div><h3>開いて入れる</h3><p>ダウンロードしたファイルを開くとインストーラが始まります。確認画面は内容を見て進んでください。</p></div></li>
+    </ol>
+    <div class="hero-cta gap-top" role="group" aria-label="入手方法" >
+      <a class="cta-outline" href="https://github.com/oriyu90/a6k-transfer/releases/latest/download/a6k-transfer.apk">インストールする →</a>
+      <a class="link-more" href="https://github.com/oriyu90/a6k-transfer">GitHubでソースを読む →</a>
+    </div>
+  </section>
   <section class="gap" id="specs" aria-labelledby="specs-title">
     <h2 id="specs-title">仕様</h2>
     <p class="stand">版と台帳。数字は実測か公開値のみ。</p>
@@ -316,6 +339,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <li><a href="#steps">使い方</a></li>
     <li><a href="#specs">仕様</a></li>
     <li><a href="#get-started">入手する</a></li>
+    <li><a href="#install">インストール方法</a></li>
   </ul>
   <ul class="foot-meta" aria-label="言語切り替え">
     <li><a hreflang="ja" lang="ja" href="/projects/a6k-transfer/" aria-current="page" aria-label="日本語">日本語</a></li>
