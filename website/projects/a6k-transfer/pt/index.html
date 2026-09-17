@@ -202,6 +202,7 @@ table.spec-sheet a{color:var(--color-accent-ink)}
   .mast-menu ul{list-style:none;padding:var(--space-sm) 0 0;margin:0;display:grid;gap:var(--space-2xs)}
   .mast-menu a{color:var(--color-ink-2);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
 }
+body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:0.05;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="140" height="140" filter="url(%23n)" opacity="0.6"/></svg>');background-size:140px 140px}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:150ms !important;animation-iteration-count:1 !important;transition-duration:150ms !important}
 }
