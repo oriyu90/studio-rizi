@@ -111,8 +111,9 @@
 }
 html{overflow-x:clip}
 body{overflow-x:clip}
+#paperbg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 *{box-sizing:border-box}
-body{margin:0;background-color:var(--color-paper);background-image:radial-gradient(120% 100% at 50% 0%, color-mix(in oklch, var(--color-paper-3) 60%, transparent), color-mix(in oklch, var(--color-rule-2) 8%, transparent));color:var(--color-ink);font-family:var(--font-body);font-size:var(--text-base);line-height:1.65}
+body{margin:0;background:var(--color-paper);color:var(--color-ink);font-family:var(--font-body);font-size:var(--text-base);line-height:1.65}
 .skip-link{position:absolute;left:-9999px}
 .skip-link:focus{left:8px;top:8px;background:var(--color-ink);color:var(--color-paper);padding:8px}
 :focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
@@ -202,7 +203,6 @@ table.spec-sheet a{color:var(--color-accent-ink)}
   .mast-menu ul{list-style:none;padding:var(--space-sm) 0 0;margin:0;display:grid;gap:var(--space-2xs)}
   .mast-menu a{color:var(--color-ink-2);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
 }
-body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:0.09;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");background-size:180px 180px}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:150ms !important;animation-iteration-count:1 !important;transition-duration:150ms !important}
 }
@@ -210,6 +210,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:0.09;m
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+<canvas id="paperbg" aria-hidden="true"></canvas>
 <header class="nav-mast">
   <p class="mast-line">No. 1 · v1.1.1 · Android</p>
   <p class="mast-name"><a href="#top" aria-label="Back to α6k Transfer top">α6k Transfer</a></p>
@@ -330,5 +331,66 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:0.09;m
   <p>α6k Transfer v1.1.1 · Android 10+ · Newsreader, IBM Plex Mono · MIT · Yuki_Orita</p>
   <p><a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · <a href="https://github.com/oriyu90/a6k-transfer">GitHub</a> · <a href="https://discord.gg/x7KXhNTD8M">Discord</a> · <a href="https://x.com/InovateofRIZI">X</a> · © 2026 Yuki_Orita</p>
 </footer>
+<script>
+/* React Paper Background technique port (vanilla canvas, written from scratch):
+ * thousands of pre-baked ink fibers + age spots on an offscreen canvas,
+ * composited each frame with a ~20s breathing alpha. Static when
+ * prefers-reduced-motion is set. No dependencies. */
+(function(){
+  var cv=document.getElementById('paperbg');
+  if(!cv||!cv.getContext)return;
+  var ctx=cv.getContext('2d');
+  var W=0,H=0,DPR=1,off=document.createElement('canvas'),ox=off.getContext('2d');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function rnd(a,b){return a+Math.random()*(b-a);}
+  function inkRGB(){
+    var s=document.createElement('span');
+    s.style.color='var(--color-ink)';s.style.display='none';
+    document.body.appendChild(s);
+    var c=getComputedStyle(s).color||'rgb(38,32,25)';
+    document.body.removeChild(s);
+    var m=c.match(/[\d.]+/g);
+    return m&&m.length>=3?m[0]+','+m[1]+','+m[2]:'38,32,25';
+  }
+  var INK=inkRGB();
+  function bake(){
+    DPR=Math.min(window.devicePixelRatio||1,1.5);
+    W=window.innerWidth;H=window.innerHeight;
+    if(!W||!H)return;
+    cv.width=W*DPR;cv.height=H*DPR;off.width=W*DPR;off.height=H*DPR;
+    ox.setTransform(DPR,0,0,DPR,0,0);ox.clearRect(0,0,W,H);
+    ox.lineCap='round';
+    var area=W*H,n=Math.max(1500,Math.min(6500,Math.floor(area/380))),i,x,y,a,l,al;
+    for(i=0;i<n;i++){
+      x=Math.random()*W;y=Math.random()*H;a=Math.random()*Math.PI;l=rnd(2,9);al=rnd(0.03,0.09);
+      ox.strokeStyle=Math.random()<0.82?('rgba('+INK+','+al.toFixed(3)+')'):('rgba(255,251,242,'+al.toFixed(3)+')');
+      ox.lineWidth=rnd(0.5,1);
+      ox.beginPath();ox.moveTo(x,y);ox.lineTo(x+Math.cos(a)*l,y+Math.sin(a)*l);ox.stroke();
+    }
+    var spots=Math.max(6,Math.min(16,Math.floor(area/140000)));
+    for(i=0;i<spots;i++){
+      x=Math.random()*W;y=Math.random()*H;var r=rnd(24,120);
+      var g=ox.createRadialGradient(x,y,0,x,y,r);
+      g.addColorStop(0,'rgba(122,84,40,'+rnd(0.03,0.06).toFixed(3)+')');
+      g.addColorStop(1,'rgba(122,84,40,0)');
+      ox.fillStyle=g;ox.beginPath();ox.arc(x,y,r,0,7);ox.fill();
+    }
+    draw(1);
+  }
+  function draw(k){
+    ctx.setTransform(DPR,0,0,DPR,0,0);ctx.clearRect(0,0,W,H);
+    ctx.globalAlpha=k;ctx.drawImage(off,0,0,W,H);ctx.globalAlpha=1;
+  }
+  var t0=null,timer=null;
+  function frame(ts){
+    if(t0===null)t0=ts;
+    draw(0.85+0.15*Math.sin((ts-t0)/20000*2*Math.PI));
+    requestAnimationFrame(frame);
+  }
+  window.addEventListener('resize',function(){if(timer)clearTimeout(timer);timer=setTimeout(bake,200);});
+  bake();
+  if(!reduce&&W&&H)requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>
