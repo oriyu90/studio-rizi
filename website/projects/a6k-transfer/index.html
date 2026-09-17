@@ -107,11 +107,12 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-short: 220ms;
   --rule-hair: 1px;
+  --z-canvas: 1;
   --page-gutter: clamp(1rem, 4vw, 1.5rem);
 }
 html{overflow-x:clip;scroll-behavior:smooth}
 body{overflow-x:clip}
-#paperbg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+#paperbg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:var(--z-canvas)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--color-paper);color:var(--color-ink);font-family:var(--font-body);font-size:var(--text-base);line-height:1.65}
 .skip-link{position:absolute;left:-9999px}
