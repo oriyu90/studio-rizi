@@ -6,7 +6,7 @@
 <title>α6k Transfer — 通过 Wi-Fi 从 Sony α 相机传输照片的 Android 应用</title>
 <meta name="description" content="α6k Transfer 是一款开源 Android 应用，可直连 Sony α6000 系列相机的 Wi-Fi 接入点，通过 DLNA/UPnP 把照片传输到手机。Material 3 Expressive 界面，支持日语／英语切换、浅色／深色主题与机型配置文件（α6000 已真机验证，α6100 及后续机型为预测性适配）。开发者：折田悠希（Yuki Orita）。免费并在 GitHub 开源。">
 <meta name="author" content="折田悠希 (Yuki Orita)">
-<meta name="theme-color" content="#f1e7d3">
+<meta name="theme-color" content="#f0ebe0">
 <meta name="color-scheme" content="light">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://studio-rizi.pages.dev/projects/a6k-transfer/zh/">
@@ -19,7 +19,7 @@
 <link rel="icon" href="../assets/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@8..60,400;8..60,700&family=Noto+Serif+SC:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Serif+SC:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="α6k Transfer">
 <meta property="og:locale" content="zh_CN">
@@ -70,24 +70,25 @@
 }
 </script>
 <style>
-/* Hallmark · genre: editorial · macrostructure: Bento Grid · theme: Newsprint · enrichment: Tier-A CSS art · nav: N6 · footer: Ft4
- * F1 Bento knobs: tiles=7, spans=mosaic, border=hairline all · audience = Sony α owners · use = APK install + GitHub · tone = editorial
- * Hallmark · pre-emit critique: P5 H4 E5 S4 R5 V4 */
+/* Hallmark · genre: editorial · macrostructure: Split Studio · theme: Atelier · enrichment: Tier-A CSS art · nav: N3 · footer: Ft6
+ * Split Studio: alternating diptychs, text/proof pairs · audience = Sony α owners · use = APK install + GitHub · tone = editorial
+ * Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V5 */
 :root{
-  --color-paper: oklch(92% 0.045 50);
-  --color-paper-2: oklch(89% 0.05 50);
-  --color-paper-3: oklch(84% 0.054 45);
-  --color-rule: oklch(68% 0.03 40);
-  --color-rule-2: oklch(35% 0.02 35);
-  --color-muted: oklch(46% 0.022 35);
-  --color-neutral: oklch(30% 0.025 30);
-  --color-ink-2: oklch(20% 0.03 28);
-  --color-ink: oklch(15% 0.03 25);
-  --color-accent: oklch(32% 0.1 28);
-  --color-accent-ink: oklch(45% 0.13 30);
-  --color-focus: oklch(48% 0.18 30);
-  --font-display: "Newsreader", "Noto Serif SC", "Songti SC", Georgia, serif;
-  --font-body: "Newsreader", "Noto Serif SC", "Songti SC", Georgia, serif;
+  --color-paper: oklch(94% 0.005 60);
+  --color-paper-2: oklch(91% 0.006 60);
+  --color-paper-3: oklch(87% 0.008 55);
+  --color-rule: oklch(78% 0.006 55);
+  --color-rule-2: oklch(56% 0.008 50);
+  --color-muted: oklch(46% 0.01 50);
+  --color-neutral: oklch(28% 0.014 45);
+  --color-ink-2: oklch(18% 0.02 40);
+  --color-ink: oklch(12% 0.024 40);
+  --color-accent: oklch(22% 0.06 40);
+  --color-accent-ink: oklch(45% 0.13 60);
+  --color-focus: oklch(45% 0.13 60);
+  --color-seal: oklch(42% 0.15 32);
+  --font-display: "Playfair Display", "Noto Serif SC", "Songti SC", Georgia, serif;
+  --font-body: "Noto Serif SC", "Songti SC", Georgia, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --text-xs: 0.6875rem;
   --text-sm: 0.8rem;
@@ -107,74 +108,72 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-short: 220ms;
   --rule-hair: 1px;
-  --z-canvas: 1;
   --page-gutter: clamp(1rem, 4vw, 1.5rem);
+  --z-canvas: 1;
 }
 html{overflow-x:clip;scroll-behavior:smooth}
 body{overflow-x:clip}
-#paperbg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:var(--z-canvas)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--color-paper);color:var(--color-ink);font-family:var(--font-body);font-size:var(--text-base);line-height:1.65}
+body{margin:0;background:var(--color-paper);color:var(--color-ink);font-family:var(--font-body);font-size:var(--text-base);line-height:1.75}
+#paperbg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:var(--z-canvas)}
 .skip-link{position:absolute;left:-9999px}
 .skip-link:focus{left:8px;top:8px;background:var(--color-ink);color:var(--color-paper);padding:8px}
 :focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
 ::selection{background:var(--color-accent);color:var(--color-paper)}
-.hero-fixed h1,.head-hanging h2{text-wrap:balance}
-main{display:block;max-width:70rem;margin:0 auto;padding:0 var(--page-gutter) var(--space-xl)}
-.nav-mast{display:grid;gap:var(--space-2xs);padding:var(--space-md) var(--page-gutter) 0;text-align:center;max-width:70rem;margin:0 auto}
-.mast-line{font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--color-muted);margin:0}
-.mast-name{font-family:var(--font-display);font-weight:700;font-size:clamp(2.25rem, 5vw, 3.75rem);letter-spacing:-0.01em;line-height:0.95;margin:0;overflow-wrap:anywhere;min-width:0}
-.mast-name a{color:inherit;text-decoration:none}
-.mast-nav ul{display:inline-flex;gap:var(--space-md);list-style:none;padding:0;margin:var(--space-2xs) 0 0;flex-wrap:wrap;justify-content:center}
-.mast-nav a{color:var(--color-ink-2);text-decoration:none;font-size:var(--text-sm);white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
-.mast-nav a:hover{color:var(--color-accent-ink);text-decoration:underline;text-underline-offset:4px}
-.mast-lang{display:flex;gap:var(--space-md);justify-content:center;list-style:none;padding:0;margin:var(--space-2xs) 0 0;flex-wrap:wrap;font-size:var(--text-xs)}
-.mast-lang a{color:var(--color-muted);text-decoration:none;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
-.mast-lang a[aria-current]{color:var(--color-accent);font-weight:500}
-.mast-rule{border:0;border-top:var(--rule-hair) solid var(--color-rule);border-bottom:var(--rule-hair) solid var(--color-rule);height:4px;margin:var(--space-sm) 0 0}
-.mast-menu{display:none}
-.hero-fixed{text-align:left;padding:var(--space-xl) 0 var(--space-2xl);max-width:70rem;margin:0 auto}
-.hero-fixed h1{font-family:var(--font-display);font-weight:700;font-size:var(--text-display-s);line-height:1.15;letter-spacing:-0.022em;margin:0 0 var(--space-md);max-width:22ch;overflow-wrap:anywhere;min-width:0}
-.hero-lede{color:var(--color-ink-2);margin:0 0 var(--space-lg);max-width:58ch;font-size:var(--text-md);line-height:1.8}
-.hero-cta{display:flex;gap:var(--space-md);justify-content:flex-start;flex-wrap:wrap;align-items:center}
+.nav-rail{position:fixed;left:0;top:0;bottom:0;width:3.5rem;display:flex;flex-direction:column;align-items:center;gap:var(--space-lg);padding:var(--space-lg) 0;border-right:var(--rule-hair) solid var(--color-rule);background:var(--color-paper);z-index:2}
+.rail-mark{writing-mode:vertical-rl;font-family:var(--font-display);font-weight:900;font-size:var(--text-md);letter-spacing:0.12em;color:var(--color-ink);text-decoration:none;margin:0}
+.rail-dots{list-style:none;margin:auto 0 0;padding:0;display:grid;gap:var(--space-sm)}
+.rail-dots a{display:block;width:0.6rem;height:0.6rem;border:var(--rule-hair) solid var(--color-neutral);border-radius:50%;min-width:0.6rem}
+.rail-dots a:hover{background:var(--color-accent);border-color:var(--color-accent)}
+.rail-ver{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-muted);writing-mode:vertical-rl;letter-spacing:0.1em}
+main{display:block;max-width:64rem;margin:0 auto;padding:0 var(--page-gutter) var(--space-xl)}
+.hero{display:grid;gap:var(--space-xl);padding:var(--space-2xl) 0 var(--space-2xl);align-items:start}
+.hero-copy h1{font-family:var(--font-display);font-weight:900;font-size:var(--text-display-s);line-height:1.25;letter-spacing:0;margin:0 0 var(--space-md);overflow-wrap:anywhere;min-width:0;text-wrap:balance}
+.hero-copy .lede{margin:0 0 var(--space-lg);max-width:56ch;font-size:var(--text-md);color:var(--color-ink-2)}
+.hero-cta{display:flex;gap:var(--space-md);flex-wrap:wrap;align-items:center}
 .cta-outline{display:inline-flex;align-items:center;gap:0.5em;padding:0.75rem 1.25rem;border:1px solid var(--color-ink);color:var(--color-ink);text-decoration:none;min-height:44px;font-weight:600;white-space:nowrap;transition:background-color var(--dur-short) var(--ease-out),color var(--dur-short) var(--ease-out)}
 .cta-outline:hover{background:var(--color-ink);color:var(--color-paper)}
 .cta-outline:active{transform:translateY(1px)}
 .link-more{color:var(--color-accent-ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
 .link-more:hover{text-decoration-thickness:2px}
-.stat-strip{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:var(--space-md);border-top:var(--rule-hair) solid var(--color-rule);border-bottom:var(--rule-hair) solid var(--color-rule);padding:var(--space-lg) 0;margin:0 0 var(--space-3xl)}
-.stat-strip>div{display:grid;gap:var(--space-2xs)}
-.stat-strip b{font-family:var(--font-display);font-weight:700;font-size:var(--text-xl);font-variant-numeric:tabular-nums;line-height:1.1}
-.stat-strip span{font-size:var(--text-sm);color:var(--color-muted)}
-section.block{margin:0 0 var(--space-2xl)}
-section.block:last-child{margin-bottom:0}
-.head-hanging{margin:0 0 var(--space-lg);max-width:40rem}
-.head-hanging h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-xl);line-height:1.2;letter-spacing:-0.02em;margin:0 0 var(--space-xs);overflow-wrap:anywhere;min-width:0}
-.head-hanging p{margin:0;color:var(--color-muted);font-size:var(--text-base)}
-.bento{display:grid;grid-template-columns:minmax(0, 1fr);gap:var(--space-md)}
-.cell{border:var(--rule-hair) solid var(--color-rule);background:var(--color-paper-2);padding:var(--space-lg);display:grid;gap:var(--space-sm);align-content:start;min-width:0}
-.cell h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-md);line-height:1.3;margin:0;overflow-wrap:anywhere;min-width:0}
-.cell p{margin:0;color:var(--color-ink-2);font-size:var(--text-sm);line-height:1.7}
-.cell .tag{font-family:var(--font-body);font-size:var(--text-xs);letter-spacing:0.06em;color:var(--color-accent);text-transform:uppercase}
-.cell-lead{background:var(--color-ink);color:var(--color-paper-2);border-color:var(--color-ink);position:relative;overflow:hidden}
-.cell-lead h3{color:var(--color-paper)}
-.cell-lead p{color:var(--color-paper-3)}
-.cell-lead .tag{color:var(--color-paper-3)}
-.wifi-art{position:relative;height:7rem;margin:0 0 var(--space-xs)}
-.wifi-art i{position:absolute;left:0;bottom:0;border:0 solid var(--color-paper-3);border-radius:50%}
+.ledger{border:var(--rule-hair) solid var(--color-rule);background:var(--color-paper-2);padding:var(--space-lg);display:grid;gap:0;align-content:start;min-width:0}
+.ledger h2{font-family:var(--font-mono);font-weight:500;font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--color-muted);margin:0 0 var(--space-md)}
+.ledger dl{margin:0;display:grid}
+.ledger div{display:grid;grid-template-columns:minmax(0, 1fr) auto;gap:var(--space-md);padding:var(--space-sm) 0;border-top:var(--rule-hair) solid var(--color-rule);align-items:baseline}
+.ledger dt{font-size:var(--text-sm);color:var(--color-ink-2)}
+.ledger dd{margin:0;font-family:var(--font-display);font-weight:700;font-size:var(--text-md);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tategaki{font-size:var(--text-sm);letter-spacing:0.3em;color:var(--color-muted);margin:0}
+.seal-row{display:flex;gap:var(--space-md);align-items:flex-end;margin-top:var(--space-lg)}
+.hanko{display:inline-grid;place-items:center;width:2.75rem;height:2.75rem;background:var(--color-seal);color:var(--color-paper);font-family:var(--font-display);font-weight:900;font-size:var(--text-md);border-radius:0.25rem}
+.row{display:grid;gap:var(--space-xl);padding:var(--space-2xl) 0;align-items:start}
+.row + .row{border-top:var(--rule-hair) solid var(--color-rule)}
+.row-copy h2{font-family:var(--font-display);font-weight:900;font-size:var(--text-xl);line-height:1.3;letter-spacing:0;margin:0 0 var(--space-sm);overflow-wrap:anywhere;min-width:0;text-wrap:balance}
+.row-copy .stand{margin:0 0 var(--space-md);color:var(--color-muted);max-width:52ch}
+.row-copy p.body{margin:0;max-width:56ch;color:var(--color-ink-2)}
+.proof{border:var(--rule-hair) solid var(--color-rule);background:var(--color-paper-2);padding:var(--space-lg);min-width:0}
+.proof h3{font-family:var(--font-mono);font-weight:500;font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--color-muted);margin:0 0 var(--space-md)}
+.proof dl{margin:0;display:grid}
+.proof div{display:grid;grid-template-columns:minmax(0, 1fr) auto;gap:var(--space-md);padding:var(--space-xs) 0;border-top:var(--rule-hair) solid var(--color-rule);align-items:baseline}
+.proof dt{font-size:var(--text-sm)}
+.proof dd{margin:0;font-family:var(--font-mono);font-size:var(--text-sm);white-space:nowrap}
+.proof .path{overflow-wrap:anywhere;white-space:normal}
+.wifi-art{position:relative;height:6rem;margin:0 0 var(--space-md)}
+.wifi-art i{position:absolute;left:0;bottom:0;border:0 solid var(--color-neutral);border-radius:50%}
 .wifi-art i:nth-child(1){width:2.5rem;height:2.5rem;border-top-width:2px;border-right-width:2px}
-.wifi-art i:nth-child(2){width:4.5rem;height:4.5rem;border-top-width:2px;border-right-width:2px;opacity:0.75}
-.wifi-art i:nth-child(3){width:6.5rem;height:6.5rem;border-top-width:2px;border-right-width:2px;opacity:0.5}
-.wifi-art b{position:absolute;left:0;bottom:0;width:0.5rem;height:0.5rem;border-radius:50%;background:var(--color-paper)}
-.cell-figure{display:flex;gap:var(--space-md);align-items:center}
-.cell-figure figure{margin:0;padding:0;border:0}
-.cell-figure img{display:block;width:4.5rem;height:4.5rem;border-radius:1rem}
-.cell-figure figcaption{font-size:var(--text-xs);color:var(--color-muted)}
-.cell-lead figcaption{color:var(--color-paper-3)}
-ol.stages{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.wifi-art i:nth-child(2){width:4.5rem;height:4.5rem;border-top-width:2px;border-right-width:2px;opacity:0.7}
+.wifi-art i:nth-child(3){width:6.5rem;height:6.5rem;border-top-width:2px;border-right-width:2px;opacity:0.45}
+.wifi-art b{position:absolute;left:0;bottom:0;width:0.5rem;height:0.5rem;border-radius:50%;background:var(--color-accent)}
+.meter{display:grid;gap:var(--space-xs);margin:0 0 var(--space-md)}
+.meter div{display:grid;grid-template-columns:4.5rem minmax(0, 1fr) auto;gap:var(--space-sm);align-items:center;font-size:var(--text-sm)}
+.meter .bar{height:0.5rem;background:var(--color-paper-3);position:relative}
+.meter .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--color-accent)}
+.meter .bar i.full{width:100%}
+.meter .bar i.near{width:96%}
+.meter .n{font-family:var(--font-mono);font-size:var(--text-xs);font-variant-numeric:tabular-nums;white-space:nowrap}
+ol.stages{list-style:none;margin:0;padding:0;display:grid}
 ol.stages li{display:grid;grid-template-columns:4.5rem minmax(0, 1fr);gap:var(--space-md);padding:var(--space-lg) 0;border-top:var(--rule-hair) solid var(--color-rule)}
 ol.stages li:last-child{border-bottom:var(--rule-hair) solid var(--color-rule)}
-.stage{font-family:var(--font-display);font-size:var(--text-sm);color:var(--color-accent);font-variant-numeric:tabular-nums;padding-top:0.3rem}
+.stage{font-family:var(--font-display);font-weight:900;font-size:var(--text-md);color:var(--color-accent);font-variant-numeric:tabular-nums}
 ol.stages h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-md);margin:0 0 var(--space-2xs)}
 ol.stages p{margin:0;color:var(--color-ink-2);font-size:var(--text-sm);max-width:58ch}
 table.spec-sheet{width:100%;border-collapse:collapse;font-size:var(--text-sm)}
@@ -182,30 +181,37 @@ table.spec-sheet th,table.spec-sheet td{text-align:left;padding:var(--space-sm) 
 table.spec-sheet th{white-space:nowrap;color:var(--color-accent);width:8em;font-weight:600}
 table.spec-sheet td{font-variant-numeric:tabular-nums}
 table.spec-sheet a{color:var(--color-accent-ink)}
-.foot-dense{border-top:3px double var(--color-rule-2);margin-top:0;padding:var(--space-lg) var(--page-gutter) var(--space-xl);max-width:70rem;margin-left:auto;margin-right:auto}
-.foot-dense p+p{margin-top:var(--space-2xs)}
-.foot-dense p{font-family:var(--font-mono);font-size:var(--text-xs);line-height:1.9;color:var(--color-muted);margin:0;max-width:75ch}
-.foot-dense a{color:var(--color-accent-ink)}
+section.gap{padding:var(--space-2xl) 0 0}
+section.gap h2{font-family:var(--font-display);font-weight:900;font-size:var(--text-xl);margin:0 0 var(--space-sm);text-wrap:balance}
+section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
+.foot-letter{max-width:64rem;margin:0 auto;padding:var(--space-2xl) var(--page-gutter) var(--space-xl)}
+.foot-letter .rule{border:0;border-top:var(--rule-hair) solid var(--color-rule);margin:0 0 var(--space-xl)}
+.foot-letter .close{font-family:var(--font-display);font-weight:700;font-size:var(--text-xl);line-height:1.6;margin:0;max-width:30ch}
+.foot-letter .sign{font-weight:900}
+.foot-letter .ps{font-size:var(--text-sm);color:var(--color-ink-2);margin:var(--space-md) 0 0}
+.foot-letter .ps a{color:var(--color-accent-ink)}
+.foot-meta{list-style:none;display:flex;gap:var(--space-md);flex-wrap:wrap;align-items:center;padding:var(--space-lg) 0 0;margin:var(--space-lg) 0 0;border-top:var(--rule-hair) solid var(--color-rule);font-family:var(--font-mono);font-size:var(--text-xs)}
+.foot-meta a{color:var(--color-muted);text-decoration:none;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.foot-meta a[aria-current]{color:var(--color-accent)}
+.foot-colophon{font-family:var(--font-mono);font-size:var(--text-xs);line-height:1.9;color:var(--color-muted);margin:var(--space-md) 0 0;max-width:75ch}
+.foot-colophon a{color:var(--color-accent-ink)}
 @media (min-width: 40rem){
-  .hero-fixed h1{font-size:var(--text-display)}
-  .stat-strip{grid-template-columns:repeat(4, minmax(0, 1fr))}
-  .bento{grid-template-columns:repeat(2, minmax(0, 1fr))}
+  .hero-copy h1{font-size:var(--text-display)}
+  .row{grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);gap:var(--space-2xl)}
+  .row.flip .row-copy{order:2}
+  .tategaki{writing-mode:vertical-rl}
 }
 @media (min-width: 60rem){
-  main{padding-bottom:var(--space-xl)}
-  .bento{grid-template-columns:repeat(4, minmax(0, 1fr));grid-auto-rows:minmax(12rem, auto)}
-  .span-2x2{grid-column:span 2;grid-row:span 2}
-  .span-2x1{grid-column:span 2}
-  .span-1x2{grid-row:span 2}
-  section.block{margin-bottom:var(--space-3xl)}
+  main{padding-left:calc(3.5rem + var(--page-gutter))}
+  .nav-rail{display:flex}
+  .foot-letter{padding-left:calc(3.5rem + var(--page-gutter))}
+  .ledger{position:sticky;top:var(--space-xl)}
 }
-@media (max-width: 40rem){
-  .mast-nav{display:none}
-  .mast-menu{display:block;margin:var(--space-2xs) 0 0}
-  .mast-menu summary{cursor:pointer;list-style:none;font-size:var(--text-sm);color:var(--color-ink-2);min-height:44px;display:inline-flex;align-items:center;white-space:nowrap}
-  .mast-menu summary::-webkit-details-marker{display:none}
-  .mast-menu ul{list-style:none;padding:var(--space-sm) 0 0;margin:0;display:grid;gap:var(--space-2xs)}
-  .mast-menu a{color:var(--color-ink-2);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+@media (max-width: 60rem){
+  .nav-rail{position:static;width:auto;flex-direction:row;align-items:center;border-right:0;border-bottom:var(--rule-hair) solid var(--color-rule);padding:var(--space-sm) var(--page-gutter);gap:var(--space-md)}
+  .rail-mark{writing-mode:horizontal-tb;font-size:var(--text-base)}
+  .rail-dots{margin:0 0 0 auto;display:flex}
+  .rail-ver{display:none}
 }
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:150ms !important;animation-iteration-count:1 !important;transition-duration:150ms !important}
@@ -215,112 +221,104 @@ table.spec-sheet a{color:var(--color-accent-ink)}
 </head>
 <body>
 <a class="skip-link" href="#main">跳到正文</a>
-<canvas id="paperbg" aria-hidden="true"></canvas>
-<header class="nav-mast">
-  <p class="mast-line">No. 1 · v1.1.1 · Android</p>
-  <p class="mast-name"><a href="#top" aria-label="回到 α6k Transfer 顶部">α6k Transfer</a></p>
-  <nav class="mast-nav" aria-label="主导航">
-    <ul>
-      <li><a href="#features">功能</a></li>
-      <li><a href="#steps">使用方法</a></li>
-      <li><a href="#specs">规格</a></li>
-      <li><a href="#get-started">获取应用</a></li>
-    </ul>
-  </nav>
-  <details class="mast-menu">
-    <summary aria-label="打开菜单">目录 ＋</summary>
-    <ul>
-      <li><a href="#features">功能</a></li>
-      <li><a href="#steps">使用方法</a></li>
-      <li><a href="#specs">规格</a></li>
-      <li><a href="#get-started">获取应用</a></li>
-    </ul>
-  </details>
-  <ul class="mast-lang" aria-label="语言">
-    <li><a hreflang="ja" lang="ja" href="/projects/a6k-transfer/" aria-label="日本語">日本語</a></li>
-    <li><a hreflang="en" lang="en" href="/projects/a6k-transfer/en/" aria-label="English">EN</a></li>
-    <li><a hreflang="zh-Hans" lang="zh-Hans" href="/projects/a6k-transfer/zh/" aria-current="page" aria-label="简体中文">中文</a></li>
-    <li><a hreflang="pt" lang="pt" href="/projects/a6k-transfer/pt/" aria-label="Português">PT</a></li>
+<nav class="nav-rail" aria-label="本页导航">
+  <a class="rail-mark" href="#top" aria-label="回到 α6k Transfer 顶部">α6k Transfer</a>
+  <ul class="rail-dots">
+    <li><a href="#features" aria-label="功能"></a></li>
+    <li><a href="#steps" aria-label="使用方法"></a></li>
+    <li><a href="#specs" aria-label="规格"></a></li>
+    <li><a href="#get-started" aria-label="获取应用"></a></li>
   </ul>
-  <hr class="mast-rule" aria-hidden="true">
-</header>
+  <p class="rail-ver">v1.1.1</p>
+</nav>
 <main id="main">
-  <section class="hero-fixed" id="top" aria-labelledby="hero-title">
-    <h1 id="hero-title">直连相机，把照片带走</h1>
-    <p class="hero-lede">α6k Transfer 可直连 Sony α6000 系列相机的 Wi-Fi，把拍摄的照片和视频传输到手机。无需数据线，也无需云端。只需在相机上设为“从智能手机选择”→“显示中”，即可在列表中选择并保存到相册。传输可在后台继续。</p>
-    <div class="hero-cta" id="get-started" role="group" aria-label="获取应用">
-      <a class="cta-outline" href="https://github.com/oriyu90/a6k-transfer/releases/latest">安装 APK →</a>
-      <a class="link-more" href="https://github.com/oriyu90/a6k-transfer">在 GitHub 查看源码 →</a>
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <h1 id="hero-title">直连相机，把照片带走</h1>
+      <p class="lede">α6k Transfer 可直连 Sony α6000 系列相机的 Wi-Fi，把拍摄的照片和视频传输到手机。无需数据线，也无需云端。只需在相机上设为“从智能手机选择”→“显示中”，即可在列表中选择并保存到相册。传输可在后台继续。</p>
+      <div class="hero-cta" id="get-started" role="group" aria-label="获取应用">
+        <a class="cta-outline" href="https://github.com/oriyu90/a6k-transfer/releases/latest">安装 APK →</a>
+        <a class="link-more" href="https://github.com/oriyu90/a6k-transfer">在 GitHub 查看源码 →</a>
+      </div>
+      <div class="seal-row">
+      <p class="tategaki" aria-label="带着和纸的手感，接收照片。">带着和纸的手感，接收照片。</p>
+        <span class="hanko" aria-label="作者印章">α</span>
+      </div>
+    </div>
+    <aside class="ledger" aria-label="台账">
+      <h2>台账</h2>
+      <dl>
+        <div><dt>最新版本</dt><dd>v1.1.1</dd></div>
+        <div><dt>最低 API</dt><dd>29</dd></div>
+        <div><dt>记录格式</dt><dd>JPEG·MP4</dd></div>
+        <div><dt>验证机型</dt><dd>α6000</dd></div>
+      </dl>
+    </aside>
+  </section>
+  <section class="row" id="features" aria-labelledby="row-a-title">
+    <div class="row-copy">
+      <h2 id="row-a-title">数据线、云端，一概不用</h2>
+      <p class="stand">在应用内直接登上相机的电波。</p>
+      <p class="body">在应用内加入相机接入点（DIRECT-…），通过 DLNA/UPnP 获取照片和视频列表，只保存选中的原图／原视频。探索设计不固定端口与 ID。</p>
+    </div>
+    <div class="proof" aria-label="连接参数">
+      <h3>参数</h3>
+      <div class="wifi-art" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+      <dl>
+        <div><dt>SSID</dt><dd>DIRECT-…</dd></div>
+        <div><dt>中转</dt><dd class="path">10.0.0.1</dd></div>
+        <div><dt>规约</dt><dd>UPnP·DLNA</dd></div>
+        <div><dt>保存</dt><dd>原图原视频</dd></div>
+      </dl>
     </div>
   </section>
-  <section class="stat-strip" aria-label="一览">
-    <div><b>v1.1.1</b><span>最新版本</span></div>
-    <div><b>29</b><span>最低 API</span></div>
-    <div><b>2</b><span>记录格式</span></div>
-    <div><b>4</b><span>介绍语言</span></div>
-  </section>
-  <section class="block" id="features" aria-labelledby="features-title">
-    <div class="head-hanging">
-      <h2 id="features-title">功能</h2>
-      <p>列出、传输、留存。与相机的往返只剩三步。</p>
+  <section class="row flip" aria-labelledby="row-b-title">
+    <div class="row-copy">
+      <h2 id="row-b-title">离开也继续传</h2>
+      <p class="stand">灭屏、切换应用，都不停。</p>
+      <p class="body">前台服务带着通知运送进度。随时可以中止，中断不会留下损坏文件。实测中 69MB 视频完整走完，取消演习在 22/23 处停下。</p>
     </div>
-    <div class="bento">
-      <article class="cell cell-lead span-2x2">
-        <div class="wifi-art" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
-        <p class="tag">Direct Wi-Fi</p>
-        <h3>数据线、云端，一概不用</h3>
-        <p>在应用内加入相机接入点（DIRECT-…），通过 DLNA/UPnP 获取照片和视频列表，只保存选中的原图／原视频。传输可在后台继续。</p>
-        <div class="cell-figure">
-          <figure>
-            <img src="../assets/icon.png" alt="α6k Transfer 应用图标" width="72" height="72">
-            <figcaption>α6k Transfer</figcaption>
-          </figure>
-          <p class="tag">DIRECT-cNE0:a6000 · 10.0.0.1</p>
-        </div>
-      </article>
-      <article class="cell">
-        <p class="tag">History</p>
-        <h3>已保存标记</h3>
-        <p>已传输的文件会依据本机历史显示“已保存”，避免重复传输。支持按拍摄日期与类型筛选，还可自定义保存文件夹。</p>
-      </article>
-      <article class="cell">
-        <p class="tag">Background</p>
-        <h3>离开也继续传</h3>
-        <p>前台服务带着通知运送进度。灭屏、切换应用，传输都不停。随时可以中止。</p>
-      </article>
-      <article class="cell span-2x1">
-        <p class="tag">Media</p>
-        <h3>照片视频，一起带走</h3>
-        <p>JPEG 照片与 MP4 视频可在列表中分开挑选。RAW（.ARW 等）未经相机经 DLNA 公开，不在范围内。</p>
-      </article>
-      <article class="cell">
-        <p class="tag">Language</p>
-        <h3>语言与主题切换</h3>
-        <p>显示语言可在日语／英语／跟随系统之间切换，主题可在浅色／深色／跟随系统之间切换，即时生效。</p>
-      </article>
-      <article class="cell">
-        <p class="tag">Profile</p>
-        <h3>机型配置</h3>
-        <p>α6000 已真机验证。α6100 及后续机型为预测性适配（未经验证），自动搜索会一并尝试。</p>
-      </article>
+    <div class="proof" aria-label="传输实测">
+      <h3>实测</h3>
+      <div class="meter" aria-hidden="false">
+        <div><span>照片23件</span><span class="bar"><i class="full"></i></span><span class="n">23/23</span></div>
+        <div><span>视频69MB</span><span class="bar"><i class="full"></i></span><span class="n">走完</span></div>
+        <div><span>取消演习</span><span class="bar"><i class="near"></i></span><span class="n">22/23</span></div>
+      </div>
+      <dl>
+        <div><dt>引擎</dt><dd>前台服务</dd></div>
+        <div><dt>呈现</dt><dd>通知·可重返</dd></div>
+      </dl>
     </div>
   </section>
-  <section class="block" id="steps" aria-labelledby="steps-title">
-    <div class="head-hanging">
-      <h2 id="steps-title">使用方法</h2>
-      <p>相机一步，应用两步。</p>
+  <section class="row" aria-labelledby="row-c-title">
+    <div class="row-copy">
+      <h2 id="row-c-title">不重传的账本</h2>
+      <p class="stand">传过的，标为传过。</p>
+      <p class="body">已传输的文件会依据本机历史显示“已保存”。支持按拍摄日期与类型（照片／视频）筛选，还可自定义 DCIM 下的保存文件夹。</p>
     </div>
+    <div class="proof" aria-label="留存参数">
+      <h3>参数</h3>
+      <dl>
+        <div><dt>历史</dt><dd>10,000</dd></div>
+        <div><dt>目录</dt><dd class="path">DCIM/…</dd></div>
+        <div><dt>语言</dt><dd>日英切换</dd></div>
+        <div><dt>后续</dt><dd>预测适配</dd></div>
+      </dl>
+    </div>
+  </section>
+  <section class="gap" id="steps" aria-labelledby="steps-title">
+    <h2 id="steps-title">使用方法</h2>
+    <p class="stand">相机一步，应用两步。</p>
     <ol class="stages">
       <li><span class="stage">01</span><div><h3>把相机设为“显示中”</h3><p>MENU → 发送到智能手机 → 从智能手机选择 →“显示中”。相机会打开接入点。</p></div></li>
       <li><span class="stage">02</span><div><h3>连接＋绑定</h3><p>在应用的“连接”标签页点“连接＋绑定”。首次使用会出现系统确认对话框。</p></div></li>
       <li><span class="stage">03</span><div><h3>搜索并传输</h3><p>点“搜索相机”确认 LOCATION，到“传输”标签页读取列表、选择并传输。文件会存入相册。</p></div></li>
     </ol>
   </section>
-  <section class="block" id="specs" aria-labelledby="specs-title">
-    <div class="head-hanging">
-      <h2 id="specs-title">规格</h2>
-      <p>版本与台账。数字只写实测或公开值。</p>
-    </div>
+  <section class="gap" id="specs" aria-labelledby="specs-title">
+    <h2 id="specs-title">规格</h2>
+    <p class="stand">版本与台账。数字只写实测或公开值。</p>
     <table class="spec-sheet">
       <tr><th>版本</th><td>v1.1.1（versionCode 5）</td></tr>
       <tr><th>系统要求</th><td>Android 10（API 29）或更高</td></tr>
@@ -332,10 +330,19 @@ table.spec-sheet a{color:var(--color-accent-ink)}
     </table>
   </section>
 </main>
-<footer class="foot-dense">
-  <p>α6k Transfer v1.1.1 · Android 10+ · Newsreader, Noto Serif SC, IBM Plex Mono · MIT · 折田悠希（Yuki Orita）</p>
-  <p><a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · <a href="https://github.com/oriyu90/a6k-transfer">GitHub</a> · <a href="https://discord.gg/x7KXhNTD8M">Discord</a> · <a href="https://x.com/InovateofRIZI">X</a> · © 2026 Yuki_Orita</p>
+<footer class="foot-letter">
+  <hr class="rule" aria-hidden="true">
+  <p class="close">愿此页长伴你的相机。<br><span class="sign">— 折田悠希</span></p>
+  <p class="ps">附言：故障与建议请至 <a href="https://discord.gg/x7KXhNTD8M">Discord</a> 或 <a href="https://x.com/InovateofRIZI">X</a>。源码在 <a href="https://github.com/oriyu90/a6k-transfer">GitHub</a> 公开。</p>
+  <ul class="foot-meta" aria-label="语言">
+    <li><a hreflang="ja" lang="ja" href="/projects/a6k-transfer/" aria-label="日本語">日本語</a></li>
+    <li><a hreflang="en" lang="en" href="/projects/a6k-transfer/en/" aria-label="English">EN</a></li>
+    <li><a hreflang="zh-Hans" lang="zh-Hans" href="/projects/a6k-transfer/zh/" aria-current="page" aria-label="简体中文">中文</a></li>
+    <li><a hreflang="pt" lang="pt" href="/projects/a6k-transfer/pt/" aria-label="Português">PT</a></li>
+  </ul>
+  <p class="foot-colophon">α6k Transfer v1.1.1 · Android 10+ · Playfair Display, Noto Serif SC, IBM Plex Mono · MIT · 折田悠希（Yuki Orita）· <a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · © 2026</p>
 </footer>
+<canvas id="paperbg" aria-hidden="true"></canvas>
 <script>
 /* React Paper Background technique port (vanilla canvas, written from scratch):
  * thousands of pre-baked ink fibers + age spots on an offscreen canvas,
