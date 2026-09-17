@@ -70,7 +70,7 @@
 }
 </script>
 <style>
-/* Hallmark · genre: editorial · macrostructure: Split Studio · theme: Atelier · enrichment: Tier-A CSS art · nav: N3 · footer: Ft6
+/* Hallmark · genre: editorial · macrostructure: Split Studio · theme: Atelier · enrichment: Tier-A CSS art · nav: N9 · footer: Ft6
  * Split Studio: alternating diptychs, text/proof pairs · audience = Sony α owners · use = APK install + GitHub · tone = editorial
  * Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V5 */
 :root{
@@ -119,13 +119,10 @@ body{margin:0;background:var(--color-paper);color:var(--color-ink);font-family:v
 .skip-link:focus{left:8px;top:8px;background:var(--color-ink);color:var(--color-paper);padding:8px}
 :focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
 ::selection{background:var(--color-accent);color:var(--color-paper)}
-.nav-rail{position:fixed;left:0;top:0;bottom:0;width:3.5rem;display:flex;flex-direction:column;align-items:center;gap:var(--space-lg);padding:var(--space-lg) 0;border-right:var(--rule-hair) solid var(--color-rule);background:var(--color-paper);z-index:2}
-.rail-mark{writing-mode:vertical-rl;font-family:var(--font-display);font-weight:900;font-size:var(--text-md);letter-spacing:0.12em;color:var(--color-ink);text-decoration:none;margin:0}
-.rail-dots{list-style:none;margin:auto 0 0;padding:0;display:grid;gap:var(--space-sm)}
-.rail-dots li{display:grid;place-items:center;min-width:44px;min-height:44px}
-.rail-dots a{display:block;width:0.6rem;height:0.6rem;border:var(--rule-hair) solid var(--color-neutral);border-radius:50%}
-.rail-dots a:hover{background:var(--color-accent);border-color:var(--color-accent)}
-.rail-ver{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-muted);writing-mode:vertical-rl;letter-spacing:0.1em}
+.topbar{display:flex;align-items:center;gap:var(--space-md);padding:var(--space-sm) var(--page-gutter);border-bottom:var(--rule-hair) solid var(--color-rule);max-width:64rem;margin:0 auto}
+.brand{font-family:var(--font-display);font-weight:900;font-size:var(--text-md);letter-spacing:-0.01em;color:var(--color-ink);text-decoration:none;white-space:nowrap}
+.topbar .ver{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-muted);margin:0;white-space:nowrap}
+.topbar .link-more{margin-left:auto;font-size:var(--text-sm)}
 main{display:block;max-width:64rem;margin:0 auto;padding:0 var(--page-gutter) var(--space-xl)}
 .hero{display:grid;gap:var(--space-xl);padding:var(--space-2xl) 0 var(--space-2xl);align-items:start}
 .hero-copy h1{font-family:var(--font-display);font-weight:900;font-size:var(--text-display-s);line-height:1.12;letter-spacing:-0.018em;margin:0 0 var(--space-md);overflow-wrap:anywhere;min-width:0;text-wrap:balance}
@@ -198,16 +195,9 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
   .row.flip .row-copy{order:2}
 }
 @media (min-width: 60rem){
-  main{padding-left:calc(3.5rem + var(--page-gutter))}
-  .nav-rail{display:flex}
-  .foot-letter{padding-left:calc(3.5rem + var(--page-gutter))}
   .ledger{position:sticky;top:var(--space-xl)}
 }
 @media (max-width: 60rem){
-  .nav-rail{position:static;width:auto;flex-direction:row;align-items:center;border-right:0;border-bottom:var(--rule-hair) solid var(--color-rule);padding:var(--space-sm) var(--page-gutter);gap:var(--space-md)}
-  .rail-mark{writing-mode:horizontal-tb;font-size:var(--text-base)}
-  .rail-dots{margin:0 0 0 auto;display:flex}
-  .rail-ver{display:none}
 }
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:150ms !important;animation-iteration-count:1 !important;transition-duration:150ms !important}
@@ -217,16 +207,11 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
 </head>
 <body>
 <a class="skip-link" href="#main">本文へ移動</a>
-<nav class="nav-rail" aria-label="ページ内移動">
-  <a class="rail-mark" href="#top" aria-label="α6k転送 トップへ">α6k転送</a>
-  <ul class="rail-dots">
-    <li><a href="#features" aria-label="できること"></a></li>
-    <li><a href="#steps" aria-label="使い方"></a></li>
-    <li><a href="#specs" aria-label="仕様"></a></li>
-    <li><a href="#get-started" aria-label="入手する"></a></li>
-  </ul>
-  <p class="rail-ver">v1.1.1</p>
-</nav>
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="α6k転送 トップへ">α6k転送</a>
+  <p class="ver">v1.1.1</p>
+  <a class="link-more" href="https://github.com/oriyu90/a6k-transfer/releases/latest">APKを入手 →</a>
+</header>
 <main id="main">
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div class="hero-copy">
@@ -326,6 +311,12 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
   <hr class="rule" aria-hidden="true">
   <p class="close">この頁が、あなたのカメラと末永く付き合えますように。<br><span class="sign">— 折田悠希</span></p>
   <p class="ps">追伸：不具合・要望は <a href="https://discord.gg/x7KXhNTD8M">Discord</a> か <a href="https://x.com/InovateofRIZI">X</a> へ。ソースは <a href="https://github.com/oriyu90/a6k-transfer">GitHub</a> で公開しています。</p>
+  <ul class="foot-meta" aria-label="目次">
+    <li><a href="#features">できること</a></li>
+    <li><a href="#steps">使い方</a></li>
+    <li><a href="#specs">仕様</a></li>
+    <li><a href="#get-started">入手する</a></li>
+  </ul>
   <ul class="foot-meta" aria-label="言語切り替え">
     <li><a hreflang="ja" lang="ja" href="/projects/a6k-transfer/" aria-current="page" aria-label="日本語">日本語</a></li>
     <li><a hreflang="en" lang="en" href="/projects/a6k-transfer/en/" aria-label="English">EN</a></li>
