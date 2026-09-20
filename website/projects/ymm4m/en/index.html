@@ -29,16 +29,16 @@
     <a href="#how">How it works</a>
     <a href="#req" class="hide-sm">Requirements</a>
     <div class="langsw"><a class="" href="../">JA</a><a class="on" href="./">EN</a><a class="" href="../zh/">中文</a><a class="" href="../pt/">PT</a></div>
-    <a class="cta" href="https://github.com/oriyu90/YMM4M/releases/latest">Download (v1.0.2)</a>
+    <a class="cta" href="https://github.com/oriyu90/YMM4M/releases/latest">Download (v1.0.3)</a>
   </div>
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <p class="eyebrow">v1.0.2 · MIT · macOS 26+ · Apple Silicon</p>
+  <p class="eyebrow">v1.0.3 · MIT · macOS 26/27 · Apple Silicon</p>
   <h1>A compatibility environment for opening <em>YukkuriMovieMaker4</em> on a Mac.</h1>
   <p class="lead">YMM4M runs the official YukkuriMovieMaker4 (YMM4) on Apple Silicon Macs. YMM4 itself is never bundled: YMM4M verifies the official ZIP you supply and extracts it inside your environment. Wine/DXMT are fetched from fixed URLs, with your consent, and built on your Mac.</p>
   <div class="actions">
-    <a class="btn btn-primary" href="https://github.com/oriyu90/YMM4M/releases/latest">Download v1.0.2</a>
+    <a class="btn btn-primary" href="https://github.com/oriyu90/YMM4M/releases/latest">Download v1.0.3</a>
     <a class="btn btn-ghost" href="https://github.com/oriyu90/YMM4M">View source on GitHub</a>
   </div>
   <p class="meta">Open source (MIT) · Built by Yuki Orita (Yuki_Orita) · Unofficial, not affiliated with the YMM4 developer</p>
@@ -55,7 +55,7 @@
 </div></section>
 
 <section id="req"><div class="wrap">
-  <div class="req"><h3>Requirements</h3><ul><li>Apple Silicon Mac / macOS 26 or later</li><li>Rosetta 2, Xcode command line tools</li><li>Homebrew: <code>brew bundle --file=Brewfile</code> (meson / ninja / cmake / mingw-w64 / bison / harfbuzz)</li><li>About 10 GB of free space (including the extracted LLVM toolchain)</li><li>The official YukkuriMovieMaker4 ZIP (you supply it)</li></ul></div>
+  <div class="req"><h3>Requirements</h3><ul><li>Apple Silicon Mac / macOS 26 or 27</li><li>Rosetta 2 (a macOS upgrade can remove it. If YMM4 stops opening after setup, reinstall with <code>softwareupdate --install-rosetta --agree-to-license</code>)</li><li>Xcode command line tools plus full Xcode's Metal Toolchain (for the DXMT build; the command line tools alone are not enough)</li><li>Homebrew: <code>brew bundle --file=Brewfile</code> (meson / ninja / cmake / mingw-w64 / bison / harfbuzz)</li><li>About 10 GB of free space (including the extracted LLVM toolchain)</li><li>The official YukkuriMovieMaker4 ZIP (you supply it)</li></ul></div>
   <p class="note" style="margin-top:18px">This build has no Apple Developer ID, so it is ad-hoc signed and not notarized. Use macOS “Open Anyway” on first launch (no need to disable Gatekeeper). Windows-reference comparison and the full Tier A editing/playback matrix are not complete. Work on an isolated copy of any project you care about.</p>
 </div></section>
 

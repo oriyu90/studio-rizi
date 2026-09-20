@@ -29,16 +29,16 @@
     <a href="#how">使い方</a>
     <a href="#req" class="hide-sm">動作環境</a>
     <div class="langsw"><a class="on" href="./">JA</a><a class="" href="en/">EN</a><a class="" href="zh/">中文</a><a class="" href="pt/">PT</a></div>
-    <a class="cta" href="https://github.com/oriyu90/YMM4M/releases/latest">ダウンロード（v1.0.2）</a>
+    <a class="cta" href="https://github.com/oriyu90/YMM4M/releases/latest">ダウンロード（v1.0.3）</a>
   </div>
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <p class="eyebrow">v1.0.2 · MIT · macOS 26+ · Apple Silicon</p>
+  <p class="eyebrow">v1.0.3 · MIT · macOS 26/27 · Apple Silicon</p>
   <h1>YukkuriMovieMaker4を、<em>Macで</em>開くための互換環境。</h1>
   <p class="lead">YMM4Mは、公式YukkuriMovieMaker4（YMM4）をApple Silicon Mac上で動かすための非公式互換環境です。YMM4本体は同梱せず、あなたが用意した公式ZIPを検証してMac内に展開します。Wine/DXMTは同意後に固定URLから取得し、あなたのMacでビルドします。</p>
   <div class="actions">
-    <a class="btn btn-primary" href="https://github.com/oriyu90/YMM4M/releases/latest">v1.0.2をダウンロード</a>
+    <a class="btn btn-primary" href="https://github.com/oriyu90/YMM4M/releases/latest">v1.0.3をダウンロード</a>
     <a class="btn btn-ghost" href="https://github.com/oriyu90/YMM4M">GitHubでソースを見る</a>
   </div>
   <p class="meta">オープンソース（MIT） · 開発者: 折田悠希（Yuki_Orita） · 非公式・YMM4開発元とは無関係</p>
@@ -55,7 +55,7 @@
 </div></section>
 
 <section id="req"><div class="wrap">
-  <div class="req"><h3>動作環境</h3><ul><li>Apple Silicon Mac / macOS 26 以降</li><li>Rosetta 2、Xcode command line tools</li><li>Homebrew: <code>brew bundle --file=Brewfile</code>（meson / ninja / cmake / mingw-w64 / bison / harfbuzz）</li><li>空き容量 約10 GB 以上（LLVM toolchain展開分を含む）</li><li>公式YukkuriMovieMaker4のZIP（ユーザーが用意）</li></ul></div>
+  <div class="req"><h3>動作環境</h3><ul><li>Apple Silicon Mac / macOS 26・27</li><li>Rosetta 2（macOSのアップグレードで削除されることがあります。セットアップ済みでも開けなくなった場合は <code>softwareupdate --install-rosetta --agree-to-license</code> で再導入）</li><li>Xcode command line tools＋フルXcodeのMetal Toolchain（DXMT build用。command line toolsだけでは不可）</li><li>Homebrew: <code>brew bundle --file=Brewfile</code>（meson / ninja / cmake / mingw-w64 / bison / harfbuzz）</li><li>空き容量 約10 GB 以上（LLVM toolchain展開分を含む）</li><li>公式YukkuriMovieMaker4のZIP（ユーザーが用意）</li></ul></div>
   <p class="note" style="margin-top:18px">この版はApple Developer IDを持たないため、ad-hoc署名・未公証です。初回起動はmacOSの「このまま開く」を使ってください（Gatekeeper全体無効化は不要）。Windows参照比較やTier Aの編集・再生の網羅は未完了です。重要なプロジェクトは分離したコピーで試してください。</p>
 </div></section>
 
