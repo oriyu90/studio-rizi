@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save battery（电池管家）— macOS 27 菜单栏电池管理工具</title>
+<meta name="description" content="Save battery 是一款轻量级开源 macOS 应用，适用于 macOS 27 / 26.4+ 的 Apple Silicon Mac。可在菜单栏直接设置 Apple 原生充电上限（80–100%）。单一非特权进程、不显示于程序坞、事件驱动、CPU 占用极低。支持日语和英语界面。开发者：折田悠希（Yuki_Orita / おりたゆうき）。在 GitHub 上以 MIT 许可证免费开源。">
+<meta name="keywords" content="Save battery, 电池管家, 充电上限, macOS 27, macOS 26, Battery Toolkit, 电池健康, 折田悠希, おりたゆうき, Yuki_Orita, github, macOS, 菜单栏, Apple Silicon, 本地大模型充电控制, charge limit">
+<meta name="author" content="折田悠希 (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/save-battery/zh/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/save-battery/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/save-battery/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/save-battery/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/save-battery/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/save-battery/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Save battery">
+<meta property="og:title" content="Save battery（电池管家）— macOS 27 菜单栏电池管理工具">
+<meta property="og:description" content="在 macOS 27 / 26.4+ 的 Apple Silicon Mac 上，从菜单栏直接设置 Apple 原生充电上限（80–100%）。非特权单进程、不显示于程序坞、开源轻量。">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/save-battery/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Save battery — 从 macOS 菜单栏控制原生充电上限">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/save-battery/zh/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Save battery（电池管家）— macOS 27 菜单栏电池管理工具">
+<meta name="twitter:description" content="从菜单栏设置 Apple 原生充电上限。非特权、隐藏于程序坞、轻量。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/save-battery/assets/og-image.png">
+<link rel="icon" href="/projects/save-battery/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/projects/save-battery/assets/icon-192.png">
+<link rel="stylesheet" href="/projects/save-battery/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Save battery",
+      "alternateName": ["电池管家", "Save battery macOS 27"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS 26.4 or later (macOS 27 supported), Apple Silicon",
+      "softwareVersion": "1.0.0",
+      "url": "https://studio-rizi.pages.dev/projects/save-battery/zh/",
+      "downloadUrl": "https://github.com/oriyu90/save-battery/releases",
+      "codeRepository": "https://github.com/oriyu90/save-battery",
+      "license": "https://github.com/oriyu90/save-battery/blob/main/LICENSE",
+      "description": "一款轻量级开源 macOS 应用，在 macOS 27 / 26.4+ 的 Apple Silicon Mac 上通过菜单栏设置 Apple 原生充电上限（80–100%）。以单一非特权进程常驻，不显示于程序坞。",
+      "inLanguage": ["zh", "ja", "en"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "折田悠希",
+      "alternateName": ["Yuki_Orita", "Yuki Orita"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://github.com/oriyu90",
+        "https://x.com/InovateofRIZI"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/save-battery/zh/"><img src="/projects/save-battery/assets/icon-192.png" alt="Save battery"><span>Save battery</span></a>
+    <div class="navlinks">
+      <a href="#setup">使用方法</a>
+      <a href="#features">功能</a>
+      <a href="#requirements">系统要求</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a href="/projects/save-battery/">JA</a><a href="/projects/save-battery/en/">EN</a><a class="on" href="/projects/save-battery/zh/">中文</a><a href="/projects/save-battery/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/save-battery/releases/latest">下载</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v1.0.0 · MIT · macOS 26.4+ / macOS 27 · Apple Silicon</span>
+      <h1>让电池，<span class="u">更耐用</span>。</h1>
+      <p class="lead">Save battery 可在 macOS 27 / 26.4+ 的 Apple Silicon Mac 上，从菜单栏直接设置 Apple 原生充电上限（80–100%）。应用以单一非特权进程常驻，不会出现在程序坞中。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/save-battery/releases/latest">下载最新版本</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/save-battery">在 GitHub 查看源码</a>
+      </div>
+      <p class="hero-meta">免费开源（MIT）· 开发者：折田悠希（Yuki_Orita）</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="menubar">
+        <span>97%</span><span class="sb"><span class="bat"></span>80% R</span>
+      </div>
+      <div class="dropdown">
+        <div class="row dim">电池：80%（已接通电源）</div>
+        <div class="row dim">控制方式：原生充电上限</div>
+        <hr>
+        <div class="row">充电上限</div>
+        <div class="row on"><span>80%</span><span>✓</span></div>
+        <div class="row">85%</div>
+        <div class="row">90%</div>
+        <div class="row">95%</div>
+        <div class="row">100%</div>
+        <hr>
+        <div class="row">诊断…</div>
+      </div>
+      <div class="bolt">⚡</div>
+    </div>
+  </div>
+</header>
+
+<section id="setup">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">使用方法</p>
+      <h2>安装后只需三步</h2>
+      <p>首次使用时在"快捷指令"中创建一条快捷指令，之后即可随时从菜单栏切换充电上限。</p>
+    </div>
+    <ol class="flow">
+      <li>
+        <h3>下载并启动</h3>
+        <p>从 GitHub Releases 下载 DMG，将应用拷贝到"应用程序"文件夹并启动。菜单栏会显示电池电量。</p>
+      </li>
+      <li>
+        <h3>创建一条快捷指令</h3>
+        <p>按照应用内的设置指南，使用系统内置的"设置电池充电上限"操作创建快捷指令（约1分钟）。该操作由 Apple 官方提供，因此应用本身不拥有任何特权。</p>
+      </li>
+      <li>
+        <h3>选择上限</h3>
+        <p>在菜单栏的"充电上限"中选择 80 / 85 / 90 / 95 / 100%。之后的充电管理（到达上限停止、下降 5% 后恢复充电）由 macOS 自身安全完成。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">功能</p>
+      <h2>轻量、安全、常驻</h2>
+      <p>应用自身不执行任何充电开关控制，所有控制均委托给 macOS 原生机制。</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>原生充电上限</dt><dd>通过官方快捷指令操作设置 macOS 26.4 内置的 Apple 原生充电上限（80–100%）。不使用私有 API，也没有特权守护进程。</dd></div>
+      <div class="row"><dt>菜单栏常驻·程序坞隐藏</dt><dd>电池电量与充电状态常驻菜单栏，应用不会出现在程序坞中。</dd></div>
+      <div class="row"><dt>轻量设计</dt><dd>仅一个常驻进程。电源状态通过 IOKit 事件通知驱动，不做高频轮询。</dd></div>
+      <div class="row"><dt>崩溃安全</dt><dd>杜绝强制解包，所有外部调用均有超时限制。即使发生故障，应用也不会崩溃，而是自动降级为只读监控模式。</dd></div>
+      <div class="row"><dt>充电安全兜底</dt><dd>应用退出或崩溃后，上限设置仍由系统保留，Mac 始终处于 Apple 标准充电管理之下。</dd></div>
+      <div class="row"><dt>电池健康</dt><dd>诊断窗口显示循环次数与最大容量（相对设计容量），一键复制即可用于问题报告。</dd></div>
+      <div class="row"><dt>立即充至100%</dt><dd>出发前需要充满电？在菜单中一键将上限临时设置为 100%。</dd></div>
+      <div class="row"><dt>登录时启动</dt><dd>通过 SMAppService 注册，登录后自动常驻（可在菜单中一键切换）。</dd></div>
+      <div class="row"><dt>日本語 / English</dt><dd>界面完整支持日语和英语（跟随系统语言自动切换）。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">系统要求与构建</p>
+      <h2>macOS 26.4 或更高版本（正式支持 macOS 27）</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>系统要求</h3>
+        <ul>
+          <li><span class="d">◆</span> macOS 26.4+（支持 macOS 27 / Golden Gate）· 搭载内置电池的 Apple Silicon Mac</li>
+          <li><span class="d">◆</span> 充电上限控制依赖 macOS 26.4+ 内置的"设置电池充电上限"快捷指令操作</li>
+          <li><span class="d">◆</span> Ad-hoc 签名（未经公证）。首次启动需在"系统设置 › 隐私与安全性"中允许</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>从源码构建（无需 Xcode）</h3>
+        <pre>git clone https://github.com/oriyu90/save-battery
+cd save-battery
+swift build &amp;&amp; swift test
+scripts/build-app.sh</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><img src="/projects/save-battery/assets/icon-192.png" alt=""><span>Save battery © 2026 Yuki_Orita · MIT</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/save-battery">GitHub</a>
+      <a href="https://github.com/oriyu90/save-battery/blob/main/LICENSE">License (MIT)</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+      <a href="https://studio-rizi.pages.dev/">Studio RIZI</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

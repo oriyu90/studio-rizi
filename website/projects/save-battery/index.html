@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save battery（セーブバッテリー）— macOS 27対応のメニューバー型バッテリー管理</title>
+<meta name="description" content="Save battery（セーブバッテリー）は、macOS 27 / 26.4+のApple Silicon Macで、ネイティブ充電上限(80〜100%)をメニューバーから制御できる軽量ユーティリティです。特権を持たない単一プロセス・ドック非表示・イベント駆動で軽量動作。日本語/英語対応。開発者は折田悠喜（おりたゆうき / Yuki_Orita）。無料・オープンソース(MIT)、GitHubで公開中。">
+<meta name="keywords" content="Save battery, セーブバッテリー, バッテリー上限, 充電上限, macOS 27, macOS 26, Battery Toolkit, 折田悠希, おりたゆうき, Yuki_Orita, github, macOS, メニューバー, Apple Silicon, 充電制御, charge limit, menu bar, battery health">
+<meta name="author" content="折田悠希 (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/save-battery/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/save-battery/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/save-battery/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/save-battery/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/save-battery/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/save-battery/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Save battery">
+<meta property="og:title" content="Save battery（セーブバッテリー）— macOS 27対応のメニューバー型バッテリー管理">
+<meta property="og:description" content="macOS 27 / 26.4+のApple Silicon Macで、Apple純正のネイティブ充電上限(80〜100%)をメニューバーから制御。特権なし・ドック非表示・軽量設計のオープンソースアプリです。">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/save-battery/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Save battery — macOS 27のネイティブ充電上限をメニューバーから制御する">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/save-battery/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Save battery（セーブバッテリー）— macOS 27対応のメニューバー型バッテリー管理">
+<meta name="twitter:description" content="Apple純正のネイティブ充電上限をメニューバーから制御。特権なし・ドック非表示・軽量設計。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/save-battery/assets/og-image.png">
+<link rel="icon" href="/projects/save-battery/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/projects/save-battery/assets/icon-192.png">
+<link rel="stylesheet" href="/projects/save-battery/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Save battery",
+      "alternateName": ["セーブバッテリー", "Save battery macOS 27対応版"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS 26.4 or later (macOS 27 supported), Apple Silicon",
+      "softwareVersion": "1.0.0",
+      "url": "https://studio-rizi.pages.dev/projects/save-battery/",
+      "downloadUrl": "https://github.com/oriyu90/save-battery/releases",
+      "codeRepository": "https://github.com/oriyu90/save-battery",
+      "license": "https://github.com/oriyu90/save-battery/blob/main/LICENSE",
+      "description": "macOS 27 / 26.4+のApple Silicon Macで、Apple純正のネイティブ充電上限(80〜100%)をメニューバーから制御する軽量オープンソースアプリ。特権を持たない単一プロセスで動作し、ドックには表示されません。",
+      "inLanguage": ["ja", "en"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "折田悠希",
+      "alternateName": ["おりたゆうき", "Yuki_Orita"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://github.com/oriyu90",
+        "https://x.com/InovateofRIZI"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/save-battery/"><img src="/projects/save-battery/assets/icon-192.png" alt="Save battery"><span>Save battery</span></a>
+    <div class="navlinks">
+      <a href="#setup">使い方</a>
+      <a href="#features">機能</a>
+      <a href="#requirements">動作環境</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a class="on" href="/projects/save-battery/">JA</a><a href="/projects/save-battery/en/">EN</a><a href="/projects/save-battery/zh/">中文</a><a href="/projects/save-battery/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/save-battery/releases/latest">ダウンロード</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v1.0.0 · MIT · macOS 26.4+ / macOS 27 · Apple Silicon</span>
+      <h1>バッテリーを、<span class="u">賢く</span>長持ちさせる。</h1>
+      <p class="lead">Save battery は、macOS 27 / 26.4+ の Apple Silicon Mac で、Apple純正のネイティブ充電上限(80〜100%)をメニューバーから設定できる軽量ユーティリティです。特権を持たない単一プロセスで動作し、ドックには表示されません。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/save-battery/releases/latest">最新版をダウンロード</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/save-battery">GitHub でソースを見る</a>
+      </div>
+      <p class="hero-meta">無料・オープンソース（MIT） · 開発者: 折田悠希（おりたゆうき / Yuki_Orita）</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="menubar">
+        <span>97%</span><span class="sb"><span class="bat"></span>80% R</span>
+      </div>
+      <div class="dropdown">
+        <div class="row dim">バッテリー: 80%（電源接続）</div>
+        <div class="row dim">制御方式: ネイティブ充電上限</div>
+        <hr>
+        <div class="row">充電上限</div>
+        <div class="row on"><span>80%</span><span>✓</span></div>
+        <div class="row">85%</div>
+        <div class="row">90%</div>
+        <div class="row">95%</div>
+        <div class="row">100%</div>
+        <hr>
+        <div class="row">診断…</div>
+      </div>
+      <div class="bolt">⚡</div>
+    </div>
+  </div>
+</header>
+
+<section id="setup">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">使い方</p>
+      <h2>インストールから3ステップ</h2>
+      <p>初回だけショートカットアプリに1つ作成すると、あとはメニューバーからいつでも充電上限を切り替えられます。</p>
+    </div>
+    <ol class="flow">
+      <li>
+        <h3>ダウンロードして起動</h3>
+        <p>GitHub Releases から DMG をダウンロードし、アプリケーションフォルダへコピーして起動します。メニューバーにバッテリー残量が表示されます。</p>
+      </li>
+      <li>
+        <h3>ショートカットを1つ作成</h3>
+        <p>アプリ内のセットアップガイドに従い、ショートカットアプリで「バッテリー充電上限を設定」アクションを使ったショートカットを作成します（約1分）。このアクションはApple純正のため、アプリは特権を一切持ちません。</p>
+      </li>
+      <li>
+        <h3>上限を選ぶだけ</h3>
+        <p>メニューバーの「充電上限」から 80 / 85 / 90 / 95 / 100% を選択。以後の充電管理（上限での停止、5%低下での再充電）はmacOS自身が安全に行います。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">機能</p>
+      <h2>軽量に、安全に、常駐する</h2>
+      <p>充電のON/OFFは一切アプリが持たず、すべてOSのネイティブ機構に委譲する設計です。</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>ネイティブ充電上限</dt><dd>macOS 26.4以降に搭載されたApple純正の充電上限(80〜100%)を、公式のショートカットアクション経由で設定します。private APIや特権daemonは使いません。</dd></div>
+      <div class="row"><dt>メニューバー常駐・ドック非表示</dt><dd>バッテリー残量と充電状態をメニューバーに常時表示。アプリはドックに現れず、邪魔になりません。</dd></div>
+      <div class="row"><dt>軽量設計</dt><dd>常駐は単一プロセスのみ。電源状態の監視はIOKitのイベント駆動で、高頻度のポーリングを行いません。</dd></div>
+      <div class="row"><dt>クラッシュ安全性</dt><dd>force unwrap を排除し、外部処理はすべてタイムアウト付き。何かが失敗してもアプリは壊れず、監視のみのRead-onlyモードへ自動降格します。</dd></div>
+      <div class="row"><dt>充電の安全フェイル</dt><dd>アプリが終了・クラッシュしても、上限設定はOS側に保持されるため、Macは常にApple標準の充電管理下にあります。</dd></div>
+      <div class="row"><dt>バッテリー健全性</dt><dd>サイクル数と最大容量(設計比)を診断ウィンドウで表示。ワンクリックでクリップボードにコピーでき、不具合報告にも使えます。</dd></div>
+      <div class="row"><dt>今すぐ100%まで充電</dt><dd>出発前に満充電したいときは、メニューからワンクリック。上限を一時的に100%へ変更します。</dd></div>
+      <div class="row"><dt>ログイン時起動</dt><dd>SMAppServiceを使い、ログイン時に自動で常駐します（メニューからワンクリックで切替）。</dd></div>
+      <div class="row"><dt>日本語 / English</dt><dd>UIは日本語と英語に完全対応しています（システム言語で自動切替）。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">動作環境とビルド</p>
+      <h2>macOS 26.4 以降（macOS 27 正式対応）</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>動作環境</h3>
+        <ul>
+          <li><span class="d">◆</span> macOS 26.4 以降（macOS 27 / Golden Gate 対応）・Apple Silicon Mac（内蔵バッテリー搭載機）</li>
+          <li><span class="d">◆</span> 充電上限の制御には macOS 26.4+ の「バッテリー充電上限を設定」ショートカットアクションが必要</li>
+          <li><span class="d">◆</span> ad-hoc 署名（未公証）。初回起動は「システム設定 › プライバシーとセキュリティ」から許可</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>ソースからビルド（Xcode 不要）</h3>
+        <pre>git clone https://github.com/oriyu90/save-battery
+cd save-battery
+swift build &amp;&amp; swift test
+scripts/build-app.sh</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><img src="/projects/save-battery/assets/icon-192.png" alt=""><span>Save battery © 2026 Yuki_Orita · MIT</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/save-battery">GitHub</a>
+      <a href="https://github.com/oriyu90/save-battery/blob/main/LICENSE">License (MIT)</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+      <a href="https://studio-rizi.pages.dev/">Studio RIZI</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

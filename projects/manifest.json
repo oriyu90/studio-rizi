@@ -94,6 +94,13 @@
       "hosted": true
     },
     {
+      "slug": "save-battery",
+      "name": "Save battery",
+      "repository": "https://github.com/oriyu90/save-battery",
+      "url": "https://studio-rizi.pages.dev/projects/save-battery/",
+      "hosted": true
+    },
+    {
       "slug": "tango-pro",
       "name": "Tango pro",
       "repository": "https://github.com/oriyu90/Tango-pro",

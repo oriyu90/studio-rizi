@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save battery — Menu bar charge limit manager for macOS 27</title>
+<meta name="description" content="Save battery is a lightweight open-source macOS utility for Apple Silicon Macs on macOS 27 / 26.4+. Set Apple's native charge limit (80–100%) from the menu bar. Single unprivileged process, hidden from the Dock, event-driven and light on CPU. Japanese & English UI. Built by Yuki Orita (Yuki_Orita / おりたゆうき). Free under the MIT license on GitHub.">
+<meta name="keywords" content="Save battery, charge limit, macOS 27, macOS 26, Battery Toolkit, battery health, Yuki Orita, Yuki_Orita, oriyu90, 折田悠希, おりたゆうき, github, macOS, menu bar, Apple Silicon, charging control">
+<meta name="author" content="Yuki Orita (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/save-battery/en/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/save-battery/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/save-battery/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/save-battery/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/save-battery/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/save-battery/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Save battery">
+<meta property="og:title" content="Save battery — Menu bar charge limit manager for macOS 27">
+<meta property="og:description" content="Set Apple's native charge limit (80–100%) from the menu bar on macOS 27 / 26.4+ Apple Silicon Macs. Single unprivileged process, hidden from the Dock, open source.">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/save-battery/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Save battery — native charge limit control from the macOS menu bar">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/save-battery/en/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Save battery — Menu bar charge limit manager for macOS 27">
+<meta name="twitter:description" content="Set Apple's native charge limit from the menu bar. Unprivileged, Dock-hidden, lightweight.">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/save-battery/assets/og-image.png">
+<link rel="icon" href="/projects/save-battery/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/projects/save-battery/assets/icon-192.png">
+<link rel="stylesheet" href="/projects/save-battery/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Save battery",
+      "alternateName": ["Save battery for macOS 27"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS 26.4 or later (macOS 27 supported), Apple Silicon",
+      "softwareVersion": "1.0.0",
+      "url": "https://studio-rizi.pages.dev/projects/save-battery/en/",
+      "downloadUrl": "https://github.com/oriyu90/save-battery/releases",
+      "codeRepository": "https://github.com/oriyu90/save-battery",
+      "license": "https://github.com/oriyu90/save-battery/blob/main/LICENSE",
+      "description": "A lightweight open-source macOS utility that sets Apple's native charge limit (80–100%) from the menu bar on macOS 27 / 26.4+ Apple Silicon Macs. Runs as a single unprivileged process and stays out of the Dock.",
+      "inLanguage": ["en", "ja"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki Orita",
+      "alternateName": ["Yuki_Orita", "折田悠希"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://github.com/oriyu90",
+        "https://x.com/InovateofRIZI"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/save-battery/en/"><img src="/projects/save-battery/assets/icon-192.png" alt="Save battery"><span>Save battery</span></a>
+    <div class="navlinks">
+      <a href="#setup">How to use</a>
+      <a href="#features">Features</a>
+      <a href="#requirements">Requirements</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a href="/projects/save-battery/">JA</a><a class="on" href="/projects/save-battery/en/">EN</a><a href="/projects/save-battery/zh/">中文</a><a href="/projects/save-battery/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/save-battery/releases/latest">Download</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v1.0.0 · MIT · macOS 26.4+ / macOS 27 · Apple Silicon</span>
+      <h1>Make your battery <span class="u">last</span>.</h1>
+      <p class="lead">Save battery sets Apple's native charge limit (80–100%) from the menu bar on macOS 27 / 26.4+ Apple Silicon Macs. It runs as a single unprivileged process and never appears in the Dock.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/save-battery/releases/latest">Download the latest release</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/save-battery">View source on GitHub</a>
+      </div>
+      <p class="hero-meta">Free &amp; open source (MIT) · Developer: Yuki Orita (Yuki_Orita)</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="menubar">
+        <span>97%</span><span class="sb"><span class="bat"></span>80% R</span>
+      </div>
+      <div class="dropdown">
+        <div class="row dim">Battery: 80% (plugged in)</div>
+        <div class="row dim">Control backend: Native charge limit</div>
+        <hr>
+        <div class="row">Charge Limit</div>
+        <div class="row on"><span>80%</span><span>✓</span></div>
+        <div class="row">85%</div>
+        <div class="row">90%</div>
+        <div class="row">95%</div>
+        <div class="row">100%</div>
+        <hr>
+        <div class="row">Diagnostics…</div>
+      </div>
+      <div class="bolt">⚡</div>
+    </div>
+  </div>
+</header>
+
+<section id="setup">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">How to use</p>
+      <h2>Three steps from install</h2>
+      <p>Create one shortcut once, then switch the charge limit any time from the menu bar.</p>
+    </div>
+    <ol class="flow">
+      <li>
+        <h3>Download &amp; launch</h3>
+        <p>Grab the DMG from GitHub Releases, copy the app to your Applications folder and launch it. Your battery level appears in the menu bar.</p>
+      </li>
+      <li>
+        <h3>Create one shortcut</h3>
+        <p>Follow the in-app setup guide to build a shortcut using Apple's built-in "Set Battery Charge Limit" action (about a minute). Because the action is Apple's own, the app holds no privileges at all.</p>
+      </li>
+      <li>
+        <h3>Pick a limit</h3>
+        <p>Choose 80 / 85 / 90 / 95 / 100% from the menu bar. macOS itself then manages charging safely — stopping at the limit and recharging after a 5% drop.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Features</p>
+      <h2>Lightweight, safe, always resident</h2>
+      <p>The app never turns charging on or off itself — every control is delegated to macOS's native mechanism.</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>Native charge limit</dt><dd>Sets Apple's built-in charge limit (80–100%), introduced with macOS 26.4, through the official Shortcuts action. No private APIs, no privileged daemon.</dd></div>
+      <div class="row"><dt>Menu bar resident, Dock-hidden</dt><dd>Battery level and charging state live in the menu bar. The app never shows up in the Dock.</dd></div>
+      <div class="row"><dt>Lightweight by design</dt><dd>One resident process. Power state is watched through event-driven IOKit notifications instead of busy polling.</dd></div>
+      <div class="row"><dt>Crash safety</dt><dd>No force unwraps, every external call is time-bounded. If anything fails, the app degrades to a read-only monitoring mode instead of breaking.</dd></div>
+      <div class="row"><dt>Safe fail behavior</dt><dd>If the app quits or crashes, the limit stays enforced by the OS — your Mac always remains under Apple's standard charging management.</dd></div>
+      <div class="row"><dt>Battery health</dt><dd>Cycle count and maximum capacity (versus design) in the diagnostics window, one click to copy for issue reports.</dd></div>
+      <div class="row"><dt>Charge to 100% now</dt><dd>Need a full charge before leaving? One menu click temporarily sets the limit to 100%.</dd></div>
+      <div class="row"><dt>Launch at login</dt><dd>Registers itself with SMAppService so it is always running after login (toggle from the menu).</dd></div>
+      <div class="row"><dt>日本語 / English</dt><dd>The UI is fully localized in Japanese and English (follows the system language).</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Requirements &amp; build</p>
+      <h2>macOS 26.4 or later (macOS 27 supported)</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>Requirements</h3>
+        <ul>
+          <li><span class="d">◆</span> macOS 26.4+ (macOS 27 / Golden Gate supported) · Apple Silicon Mac with an internal battery</li>
+          <li><span class="d">◆</span> Charge limit control uses the built-in "Set Battery Charge Limit" Shortcuts action (macOS 26.4+)</li>
+          <li><span class="d">◆</span> Ad-hoc signed (not notarized). Allow the first launch under System Settings › Privacy &amp; Security</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Build from source (no Xcode required)</h3>
+        <pre>git clone https://github.com/oriyu90/save-battery
+cd save-battery
+swift build &amp;&amp; swift test
+scripts/build-app.sh</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><img src="/projects/save-battery/assets/icon-192.png" alt=""><span>Save battery © 2026 Yuki_Orita · MIT</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/save-battery">GitHub</a>
+      <a href="https://github.com/oriyu90/save-battery/blob/main/LICENSE">License (MIT)</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+      <a href="https://studio-rizi.pages.dev/">Studio RIZI</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
