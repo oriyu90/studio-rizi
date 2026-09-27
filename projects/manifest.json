@@ -129,6 +129,13 @@
       "hosted": true
     },
     {
+      "slug": "win-plus",
+      "name": "win-plus",
+      "repository": "https://github.com/oriyu90/win-plus",
+      "url": "https://studio-rizi.pages.dev/projects/win-plus/",
+      "hosted": true
+    },
+    {
       "slug": "ymm4m",
       "name": "YMM4M",
       "repository": "https://github.com/oriyu90/YMM4M",
