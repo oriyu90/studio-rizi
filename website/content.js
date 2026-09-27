@@ -33,6 +33,24 @@ const projects = [
 // RELEASEはここへ手入力しません。
 const manualNews = [
   {
+    date: '2026.09.28',
+    tag: 'UPDATE',
+    title: {
+      ja: 'WAKARU v1.3.0 を公開しました。',
+      en: 'WAKARU v1.3.0 is available.',
+      zh: 'WAKARU v1.3.0 已发布。',
+      pt: 'WAKARU v1.3.0 está disponível.'
+    },
+    summary: {
+      ja: '資料のタブ切替え後も閲覧位置を保持し、ライブ解説を閉じると閲覧領域が広がります。Studioは資料読み込み、折りたたみ式のツール履歴、ドラッグ＆ドロップ、PDF・Word生成、SearXNG・Tavily検索を強化。Gemini、OpenRouter、Claude、GLM、Ollama、MLXBar、LM Studioの接続プリセットも追加しました。',
+      en: 'Document tabs now restore their reading position, and closing Live Illustrator gives the space back to the viewer. Studio gains stronger source reading, collapsible tool activity, drag-and-drop imports, PDF and Word creation, and SearXNG/Tavily search. Connection presets now cover Gemini, OpenRouter, Claude, GLM, Ollama, MLXBar, and LM Studio.',
+      zh: '资料标签页现可恢复阅读位置，关闭实时讲解后会将空间还给查看器。Studio 强化了资料读取、可折叠工具活动、拖放导入、PDF 与 Word 生成以及 SearXNG／Tavily 搜索；并新增 Gemini、OpenRouter、Claude、GLM、Ollama、MLXBar 与 LM Studio 连接预设。',
+      pt: 'As abas restauram a posição de leitura, e fechar o Live Illustrator devolve espaço ao visualizador. O Studio melhora a leitura de fontes, atividade de ferramentas recolhível, importação por arrastar, criação de PDF e Word e busca SearXNG/Tavily. Há predefinições para Gemini, OpenRouter, Claude, GLM, Ollama, MLXBar e LM Studio.'
+    },
+    url: 'https://studio-rizi.pages.dev/projects/wakaru/'
+  },
+
+  {
     date: '2026.09.27',
     tag: 'UPDATE',
     title: {
