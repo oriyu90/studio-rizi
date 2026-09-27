@@ -32,6 +32,24 @@ const projects = [
 // PROJECT-CARD-RULES.mdの「お知らせ入力テンプレート」を使って1件追加します。
 // RELEASEはここへ手入力しません。
 const manualNews = [
+  {
+    date: '2026.09.27',
+    tag: 'UPDATE',
+    title: {
+      ja: 'win-plus v1.0.1 を公開しました。',
+      en: 'win-plus v1.0.1 is available.',
+      zh: 'win-plus v1.0.1 已发布。',
+      pt: 'win-plus v1.0.1 está disponível.'
+    },
+    summary: {
+      ja: '設定画面が確実に中央に開くよう修正し、クラッシュ安全性とメモ復旧力を強化した安定版です。',
+      en: 'A stability release: reliable centered window placement, crash-safety hardening, and memo recovery.',
+      zh: '稳定性版本：窗口可靠居中、崩溃安全性增强与备忘恢复。',
+      pt: 'Versão de estabilidade: janela centralizada, mais segurança e recuperação de notas.'
+    },
+    url: 'https://studio-rizi.pages.dev/projects/win-plus/'
+  },
+
   {date:'2026.09.25',tag:'UPDATE',title:{ja:'WAKARU v1.2.0 を公開しました。',en:'WAKARU v1.2.0 is available.',zh:'WAKARU v1.2.0 已发布。',pt:'WAKARU v1.2.0 está disponível.'},summary:{ja:'Webリンクの資料に抜粋表示とライブ表示の切替を追加しました。通常は抽出テキストの抜粋表示のまま引用と一致し、切り替えたときだけ元のページをスクリプト付きで描画します。資料を切り替えると抜粋表示に戻ります。既存プロジェクトと設定はそのまま利用できます。',en:'Web-link sources gain a reader/live switch. The extracted reader view stays the default so citations keep matching, and the original page renders with scripts only after you switch. Changing documents returns to the reader view. Existing projects and settings remain compatible.',zh:'网页链接资料新增摘录视图与实时视图切换。默认保持与引用一致的摘录视图，仅在切换后才以脚本方式描绘原始页面。切换资料会回到摘录视图。现有项目和设置保持兼容。',pt:'Fontes de links da Web ganham alternância entre leitura e ao vivo. A leitura extraída continua padrão para manter as citações, e a página original só renderiza com scripts após a troca. Trocar de documento volta à leitura. Projetos e configurações existentes continuam compatíveis.'},url:'https://studio-rizi.pages.dev/projects/wakaru/'},
   {date:'2026.09.24',tag:'UPDATE',title:{ja:'WAKARU v1.1.0 を公開しました。',en:'WAKARU v1.1.0 is available.',zh:'WAKARU v1.1.0 已发布。',pt:'WAKARU v1.1.0 está disponível.'},summary:{ja:'ライブ解説の回答を選択・コピーできるようになり、過去の会話と今回の会話を分けて表示します。チャットはStudioと同様のメッセージ形式に、パネル幅は24〜44remで自由に変更できます（資料表示は自動で追従）。出典は必要なときだけ表示し、日常の受け答えでは出しません。既存プロジェクトと設定はそのまま利用できます。',en:'Live Illustrator answers are now selectable and copyable, with past and current-session turns shown separately. The chat uses the same message format as Studio, and the panel resizes freely between 24 and 44 rem while document views follow automatically. Citations appear only when needed, not in everyday replies. Existing projects and settings remain compatible.',zh:'实时讲解的回答现可选择与复制，历史对话与本次对话分开展示。聊天采用与 Studio 相同的消息样式，面板可在 24〜44rem 间自由调整宽度，资料显示会自动跟随。仅在需要时显示出处，日常问答不再强制标注。现有项目和设置保持兼容。',pt:'As respostas do Live Illustrator agora podem ser selecionadas e copiadas, com conversas passadas e da sessão atual exibidas separadamente. O chat usa o mesmo formato de mensagens do Studio, e o painel pode ser redimensionado livremente entre 24 e 44 rem, com a visualização dos documentos acompanhando automaticamente. As fontes aparecem somente quando necessárias, não em respostas cotidianas. Projetos e configurações existentes continuam compatíveis.'},url:'https://studio-rizi.pages.dev/projects/wakaru/'},
   {date:'2026.09.23',tag:'UPDATE',title:{ja:'MLXBar v2.4.1 を公開しました。',en:'MLXBar v2.4.1 is available.',zh:'MLXBar v2.4.1 已发布。',pt:'MLXBar v2.4.1 está disponível.'},summary:{ja:'v2.4.0の監査で見つけた4件を修正するパッチリリースです。ログレベル設定をAPIサーバと管理サーバの両方へ配線し、許容値を検証するようにしました。メモリガードと同時接続数・ログレベルの反映タイミング注意文と、要求サイズ表示の注記を追加しています。新規機能の追加や既定値の変更はありません。',en:'A patch release fixing four findings from the v2.4.0 audit. The log level setting is now wired to both the API and management servers with value validation. Added notes about when memory guard, connection limit, and log level changes take effect, plus a request-size display note. No new features or default changes.',zh:'修复 v2.4.0 审计发现的四项问题的补丁版本。日志级别设置现已接入 API 服务器与管理服务器并增加取值校验。补充了内存保护、连接数与日志级别生效时机说明，以及请求大小显示备注。无新增功能，默认值不变。',pt:'Versão de correção para quatro achados da auditoria da v2.4.0. O nível de log agora alimenta os servidores de API e de administração, com validação. Notas sobre quando memória, conexões e log passam a valer, além de nota de exibição do tamanho. Sem recursos novos nem mudanças de padrão.'},url:'https://studio-rizi.pages.dev/projects/mlx-bar/'},
