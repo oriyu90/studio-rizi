@@ -50,7 +50,7 @@
       "alternateName": ["メディアマスター"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android 7.0 (API 24) or later",
-      "softwareVersion": "1.7.1",
+      "softwareVersion": "1.8.0",
       "inLanguage": "en",
       "description": "An open-source Android media and file manager that combines photo/video browsing, audio playback, document scanning, storage tools, app/APK management and SMB/WebDAV network storage. A built-in universal document viewer opens text, CSV, JSON, Markdown, PDF, Word/PowerPoint, and LaTeX files with offline KaTeX math rendering, and other apps can open any feature directly through the mediamaster:// scheme.",
       "url": "https://studio-rizi.pages.dev/projects/media-master/en/",
@@ -95,7 +95,7 @@
         <a href="#languages">Languages</a>
         <a class="nav-download" href="#get-started">Get it</a>
       </nav>
-      <span class="header-release">v1.7.1</span>
+      <span class="header-release">v1.8.0</span>
     </div>
     <nav class="language-switcher-bar" aria-label="Language">
       <a hreflang="ja" lang="ja" href="/projects/media-master/">日本語</a>
@@ -110,7 +110,7 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <div>
-            <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.7.1</p>
+            <p class="release-line">Android · Kotlin / Jetpack Compose · Open source · v1.8.0</p>
             <h1 id="hero-title">Photos, music, documents —<br>in one place</h1>
             <p class="hero-lead">Media Master is an open-source Android media and file manager that keeps photos, video, music, documents, storage, apps and files on network shares in a single app. No account, no sign-up — it works straight away.</p>
           </div>
@@ -119,7 +119,7 @@
             <a class="button button-secondary" href="https://github.com/oriyu90/media-master/releases/latest">Install the APK</a>
           </div>
         </div>
-        <aside class="hero-aside" aria-label="Media Master v1.7.1">
+        <aside class="hero-aside" aria-label="Media Master v1.8.0">
           <div class="hero-icon" aria-hidden="true">
             <svg viewBox="0 0 108 108" width="152" height="152">
               <rect width="108" height="108" rx="26" fill="var(--color-ink)"></rect>
@@ -127,7 +127,7 @@
               <path d="M46 49v18l15-9-15-9z" fill="var(--color-ink)"></path>
             </svg>
           </div>
-          <p class="aside-note">v1.7.0 adds 8-vendor PC-mode support (Samsung DeX / Android Desktop / Motorola Smart Connect & Ready For / Huawei EMUI / HONOR / Xiaomi HyperOS / OPPO ColorOS / Lenovo Tab) with a manual override in Settings.</p>
+          <p class="aside-note">v1.8.0 fixes DeX text colors, adds a desktop/normal mode indicator, Markdown tables and graph rendering, faster image/video previews, a Show-as-is document button, a translucent overlay toolbar, and LAN auto-discovery. v1.7.0 adds 8-vendor PC-mode support (Samsung DeX / Android Desktop / Motorola Smart Connect & Ready For / Huawei EMUI / HONOR / Xiaomi HyperOS / OPPO ColorOS / Lenovo Tab) with a manual override in Settings.</p>
           <ul class="aside-facts" aria-label="At a glance">
             <li><span>OS</span>Android 7.0 or later</li>
             <li><span>Languages</span>Five</li>
@@ -177,7 +177,7 @@
           <div class="feature-row">
             <span class="feature-number">VIEW</span>
             <dt>Open almost any document, right here</dt>
-            <dd>Text, CSV, JSON, Markdown, PDF, Word (.docx), PowerPoint (.pptx), and LaTeX (.tex) files open directly inside the app, with automatic character-encoding detection so text never comes out garbled. Math in Markdown and LaTeX (like $x^2$) is typeset offline with KaTeX. Media Master can be set as the default app for supported formats.</dd>
+            <dd>Text, CSV, JSON, Markdown, PDF, Word (.docx), PowerPoint (.pptx), and LaTeX (.tex) files open directly inside the app, with automatic character-encoding detection so text never comes out garbled. Math in Markdown and LaTeX is typeset offline with KaTeX, with Markdown tables, chart-block graphs, and .tex headings and lists. The top-bar Show as-is button renders tables, graphs, and images with original formatting. Media Master can be set as the default app for supported formats.</dd>
           </div>
           <div class="feature-row">
             <span class="feature-number">MANAGE</span>
@@ -220,7 +220,7 @@
           <h2 id="network-title">SMB / WebDAV files, in the same screen.</h2>
           <p>Add SMB shares and WebDAV servers under Settings → Server connection, then browse the remote folders and hand files to the system "Open with" chooser. Passwords are stored with <code>EncryptedSharedPreferences</code> (AES-256, key in the Android Keystore) — never in plain text.</p>
         </div>
-        <p class="aside-note">Every network call runs off the main thread with connect and read timeouts; a bad host, wrong password or timeout shows an error rather than crashing.</p>
+        <p class="aside-note">Every network call runs off the main thread with connect and read timeouts; a bad host, wrong password or timeout shows an error rather than crashing. Scan LAN in the Network tab auto-detects SMB/WebDAV devices on the same network, and a tap prefills the manual setup (never auto-saves or auto-connects).</p>
       </div>
     </section>
 
@@ -228,7 +228,7 @@
       <div class="page-width mode-spread">
         <div class="mode-copy">
           <h2 id="desktop-title">On big screens, a Finder-style desktop UI.</h2>
-          <p>It auto-detects Samsung DeX (classic + One UI 8 native), Android Desktop Windowing, Motorola Smart Connect / Ready For, Huawei EMUI Desktop, HONOR Desktop, Xiaomi HyperOS Workstation, OPPO ColorOS PC mode, and Lenovo Tab PC Mode — never on ordinary large tablets or landscape. If your device exposes no signal, switch manually under Settings → Desktop mode. The left sidebar covers every feature, and folders pin by drag and drop.</p>
+          <p>It auto-detects Samsung DeX (classic + One UI 8 native), Android Desktop Windowing, Motorola Smart Connect / Ready For, Huawei EMUI Desktop, HONOR Desktop, Xiaomi HyperOS Workstation, OPPO ColorOS PC mode, and Lenovo Tab PC Mode — never on ordinary large tablets or landscape. A footer badge and the Settings status row show whether the desktop or touch UI is active and which vendor shell was detected, with correct DeX text and status-bar colors. If your device exposes no signal, switch manually under Settings → Desktop mode. The left sidebar covers every feature, and folders pin by drag and drop.</p>
           <ul class="desktop-points">
             <li>A devices list with internal, external and network storage</li>
             <li>Pictures / Download / apk pinned by default</li>
@@ -279,7 +279,7 @@
         <article class="install-platform">
           <h3>Get it or build it</h3>
           <ol class="step-list">
-            <li><span class="step-number">1</span><span>Download and install the signed APK from <a href="https://github.com/oriyu90/media-master/releases/tag/v1.7.1">GitHub Releases</a>.</span></li>
+            <li><span class="step-number">1</span><span>Download and install the signed APK from <a href="https://github.com/oriyu90/media-master/releases/tag/v1.8.0">GitHub Releases</a>.</span></li>
             <li><span class="step-number">2</span><span>To build from source, clone the <a href="https://github.com/oriyu90/media-master">GitHub repository</a> and open it in Android Studio.</span></li>
             <li><span class="step-number">3</span><span>Provide Android SDK 36 and JDK 21 (the source compatibility target is Java 17).</span></li>
             <li><span class="step-number">4</span><span>Run <code>./gradlew :app:assembleDebug</code> from a terminal, or run from Android Studio.</span></li>
