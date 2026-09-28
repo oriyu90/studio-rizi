@@ -6,7 +6,7 @@ const projects = [
   {name:'EasyRoo',url:'https://studio-rizi.pages.dev/projects/easyroo/',repository:'https://github.com/oriyu90/EasyRoo',releaseDate:'2026.07.22',releaseVersion:'v1.0',releaseSource:'github-release',code:'ER',description:{ja:'ローカルLLMで日々の作業を自動実行。',en:'Automate daily work with a local LLM.',zh:'使用本地 LLM 自动执行日常任务。',pt:'Automatize tarefas diárias com um LLM local.'},platforms:['macOS'],color:'blue'},
   {name:'Edit Pro',url:'https://studio-rizi.pages.dev/projects/editpro/',repository:'https://github.com/oriyu90/Editpro',announceRelease:true,releaseDate:'2026.09.14',releaseVersion:'v1.1.1',releaseSource:'github-release',code:'EP',description:{ja:'音楽・動画・画像・アニメ制作プラットフォーム。',en:'A multimedia platform for music, video, image, and animation.',zh:'音乐、视频、图像与动画多媒体制作平台。',pt:'Plataforma multimídia para música, vídeo, imagem e animação.'},platforms:['macOS','Windows','Linux'],color:'blue'},{name:'Every routes',url:'https://studio-rizi.pages.dev/projects/every-routes/',repository:'https://github.com/oriyu90/every-routes',announceRelease:true,releaseDate:'2026.09.11',releaseVersion:'android-v1.0.0',releaseSource:'github-release',code:'EV',description:{ja:'1日の過ごし方をプロファイルで管理。',en:'Manage each day as a reusable routine profile.',zh:'把每一天变成可复用的作息档案。',pt:'Gerencie cada dia como um perfil de rotina.'},platforms:['Android'],color:'green'},
   {name:'Fcam pro',url:'https://studio-rizi.pages.dev/projects/fcam-pro/',repository:'https://github.com/oriyu90/fcam-pro',announceRelease:true,releaseDate:'2026.09.04',releaseVersion:'v1.0.0',releaseSource:'github-release',code:'FC',description:{ja:'マニュアル操作と多レンズ対応の本格カメラ。',en:'A pro camera with manual controls and real lenses.',zh:'支持手动控制与多镜头的专业相机。',pt:'Câmera profissional com controles manuais e lentes.'},platforms:['Android'],color:'green'},
-  {name:'win-plus',url:'https://studio-rizi.pages.dev/projects/win-plus/',repository:'https://github.com/oriyu90/win-plus',releaseDate:'2026.09.27',releaseVersion:'v1.0.0',releaseSource:'github-release',code:'WP',description:{ja:'タスクトレイ常駐のWindows拡張ユーティリティ。',en:'A resident Windows utility packing touchpad, hotkeys and memos.',zh:'常驻托盘的 Windows 扩展工具。',pt:'Utilitário Windows residente no tray.'},platforms:['Windows'],color:'blue'},
+  {name:'win-plus',url:'https://studio-rizi.pages.dev/projects/win-plus/',repository:'https://github.com/oriyu90/win-plus',releaseDate:'2026.09.29',releaseVersion:'v1.1.0',releaseSource:'github-release',code:'WP',description:{ja:'タスクトレイ常駐のWindows拡張ユーティリティ。',en:'A resident Windows utility packing touchpad, hotkeys and memos.',zh:'常驻托盘的 Windows 扩展工具。',pt:'Utilitário Windows residente no tray.'},platforms:['Windows'],color:'blue'},
   {name:'Humi',url:'https://studio-rizi.pages.dev/projects/humi/',repository:'https://github.com/oriyu90/humi',releaseDate:'2026.09.25',releaseVersion:'v1.6.0',releaseSource:'github-release',code:'HM',description:{ja:'ターミナルをタイルで並べる macOS アプリ。',en:'Arrange terminal sessions as tiles on macOS.',zh:'把终端会话平铺排列的 macOS 应用。',pt:'Organize sessões de terminal em blocos no macOS.'},platforms:['macOS'],color:'lime'},
   {name:'Kizi',url:'https://kizi.pages.dev/',repository:'https://github.com/oriyu90/kizi',releaseDate:'2026.08.19',releaseVersion:'',releaseSource:'repository-created',code:'KZ',description:{ja:'開発やAIについて発信する記事メディア。',en:'Articles about software development and AI.',zh:'分享软件开发与 AI 的文章媒体。',pt:'Artigos sobre desenvolvimento e inteligência artificial.'},platforms:['Web'],color:'paper'},
   {name:'MCS Manager',url:'https://studio-rizi.pages.dev/projects/mcs-manager/',repository:'https://github.com/oriyu90/MCS-Manager',releaseDate:'2026.08.30',releaseVersion:'v1.1.0',releaseSource:'github-release',code:'MC',description:{ja:'Minecraftサーバーを一か所で管理。',en:'Manage Minecraft servers from one place.',zh:'在一个界面管理 Minecraft 服务器。',pt:'Gerencie servidores Minecraft em um só lugar.'},platforms:['macOS'],color:'green'},
@@ -32,6 +32,23 @@ const projects = [
 // PROJECT-CARD-RULES.mdの「お知らせ入力テンプレート」を使って1件追加します。
 // RELEASEはここへ手入力しません。
 const manualNews = [
+  {
+    date: '2026.09.29',
+    tag: 'UPDATE',
+    title: {
+      ja: 'win-plus v1.1.0 を公開しました。',
+      en: 'win-plus v1.1.0 is available.',
+      zh: 'win-plus v1.1.0 已发布。',
+      pt: 'win-plus v1.1.0 está disponível.'
+    },
+    summary: {
+      ja: 'スクショ内のQRリンクをプレビュー下に一覧表示し、タップで既定ブラウザ起動。狭い設定画面のはみ出し修正と撮影の二重実行修正を含みます。',
+      en: 'Screenshot previews now list QR links for one-tap browser opening, plus a narrow-window layout fix and a duplicate-capture fix.',
+      zh: '截图预览现可列出二维码链接，一点即用默认浏览器打开；并修复窄窗口布局溢出与重复截图问题。',
+      pt: 'Prévias agora listam links de QR para abrir no navegador, com correção de layout estreito e de captura duplicada.'
+    },
+    url: 'https://studio-rizi.pages.dev/projects/win-plus/'
+  },
   {
     date: '2026.09.28',
     tag: 'UPDATE',
