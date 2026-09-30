@@ -148,6 +148,13 @@
       "repository": "https://github.com/oriyu90/a6k-transfer",
       "url": "https://studio-rizi.pages.dev/projects/a6k-transfer/",
       "hosted": true
+    },
+    {
+      "slug": "mterm",
+      "name": "mterm",
+      "repository": "https://github.com/oriyu90/mterm",
+      "url": "https://studio-rizi.pages.dev/projects/mterm/",
+      "hosted": true
     }
   ]
 }

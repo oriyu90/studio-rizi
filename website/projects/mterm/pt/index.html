@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>mterm — terminal Android de código aberto com Debian Linux e Claude Code</title>
+<meta name="description" content="mterm é um terminal-estação de trabalho Linux de código aberto para Android que executa o Debian 13.7 trixie (arm64) via PRoot, com terminal PTY real e Claude Code para desenvolvimento no próprio aparelho, sem root. Criado por Yuki Orita (Yuki_Orita / 折田悠希 / おりたゆうき). Licença MIT, no GitHub.">
+<meta name="keywords" content="mterm, エムターム, 折田悠希, おりたゆうき, Yuki_Orita, github, Android, Debian, terminal, Linux, PRoot, chroot, PTY, Claude Code, trixie, arm64, código aberto">
+<meta name="author" content="Yuki_Orita">
+<meta name="theme-color" content="#0b1110">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/mterm/pt/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/mterm/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/mterm/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/mterm/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/mterm/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/mterm/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230b1110'/%3E%3Ctext x='8' y='23' font-family='monospace' font-size='16' fill='%2334c9b5'%3E$%3C/text%3E%3Crect x='16' y='18' width='8' height='3' fill='%2334c9b5'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="mterm">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:title" content="mterm — Debian Linux e Claude Code no Android">
+<meta property="og:description" content="Execute o Debian 13.7 trixie (arm64) no Android via PRoot, com terminal PTY real e Claude Code. Sem root, três edições, código aberto MIT.">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/mterm/pt/">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/mterm/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ilustração de uma sessão de terminal do mterm com Debian e Claude Code">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="mterm — terminal Debian para Android">
+<meta name="twitter:description" content="Um app de terminal de código aberto que roda Debian Linux e Claude Code no Android. Sem root.">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/mterm/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "mterm",
+      "alternateName": ["mterm Android Linux Workstation Terminal"],
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Android 10 or later",
+      "softwareVersion": "1.0.0",
+      "inLanguage": "pt",
+      "description": "Um terminal-estação de trabalho Linux de código aberto para Android que executa o Debian 13.7 trixie (arm64) via PRoot, com terminal PTY real e Claude Code para desenvolvimento no próprio aparelho, sem root.",
+      "url": "https://studio-rizi.pages.dev/projects/mterm/pt/",
+      "downloadUrl": "https://github.com/oriyu90/mterm/releases/tag/v1.0.0",
+      "codeRepository": "https://github.com/oriyu90/mterm",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki_Orita",
+      "alternateName": ["折田悠希", "おりたゆうき"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://x.com/InovateofRIZI",
+        "https://github.com/oriyu90"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="mterm, voltar ao topo">
+        <span class="prompt" aria-hidden="true">$▊</span>
+        <span>mterm</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#features">Recursos</a>
+        <a href="#editions">Edições</a>
+        <a href="#safety">Segurança</a>
+        <a href="#languages">Idiomas</a>
+        <a class="nav-download" href="#get-started">Obter</a>
+      </nav>
+      <span class="header-release">v1.0.0</span>
+    </div>
+    <nav class="language-switcher-bar" aria-label="Idioma">
+      <a hreflang="ja" lang="ja" href="/projects/mterm/">日本語</a>
+      <a hreflang="en" lang="en" href="/projects/mterm/en/">English</a>
+      <a hreflang="zh-Hans" lang="zh-Hans" href="/projects/mterm/zh/">简体中文</a>
+      <a hreflang="pt" lang="pt" href="/projects/mterm/pt/" aria-current="page">Português</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div>
+            <p class="release-line">Android · Debian 13.7 trixie arm64 · PRoot + PTY · Código aberto · v1.0.0</p>
+            <h1 id="hero-title">Uma estação Debian,<br>no seu bolso.</h1>
+            <p class="hero-lead">mterm é um app de terminal de código aberto que executa o Debian Linux de verdade no seu Android. Sem root: chroot em espaço de utilizador via PRoot, terminal PTY genuíno e desenvolvimento com IA via Claude Code, tudo num só app.</p>
+          </div>
+          <div class="hero-actions" role="group" aria-label="Como obter">
+            <a class="button" href="https://github.com/oriyu90/mterm">Ver o código no GitHub</a>
+            <a class="button button-secondary" href="https://github.com/oriyu90/mterm/releases/tag/v1.0.0">Instalar o APK</a>
+          </div>
+        </div>
+        <aside class="hero-aside" aria-label="mterm v1.0.0">
+          <div class="terminal-mock" role="img" aria-label="Ilustração de uma sessão de terminal do mterm">
+            <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <pre><span class="p">$</span> mterm --debian trixie
+root@localhost:~# cat /etc/os-release
+Debian GNU/Linux 13.7 (trixie)
+root@localhost:~# claude
+Welcome to Claude Code_</pre>
+          </div>
+          <p class="aside-note">A v1.0.0 distribui APKs assinados das três edições (Completa, Moderna experimental e Compatível remota) no GitHub Releases.</p>
+          <ul class="aside-facts" aria-label="Resumo">
+            <li><span>SO</span>Android 10 ou superior</li>
+            <li><span>Linux</span>Debian 13.7 trixie arm64</li>
+            <li><span>Licença</span>MIT / grátis</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <nav class="page-index" aria-label="Nesta página">
+      <div class="page-width page-index-inner">
+        <span class="page-index-label">Nesta página</span>
+        <ol>
+          <li><a href="#features">Recursos</a></li>
+          <li><a href="#editions">Edições</a></li>
+          <li><a href="#safety">Segurança</a></li>
+          <li><a href="#languages">Idiomas</a></li>
+          <li><a href="#get-started">Obter</a></li>
+          <li><a href="#community">Contacto</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="features-title">O seu Android vira uma máquina Linux.</h2>
+          <p>Não um emulador de fachada: um espaço de utilizador Debian real a correr no aparelho. Instale pacotes com <code>apt</code> e use editores, compiladores e o Claude Code como sempre.</p>
+        </div>
+        <dl class="feature-ledger">
+          <div class="feature-row">
+            <span class="feature-number">DEBIAN</span>
+            <dt>Debian 13.7 trixie (arm64) incluído</dt>
+            <dd>Um sistema de ficheiros raiz arm64 oficial do Debian é extraído dentro do app. Um <code>apt update</code> liberta dezenas de milhares de pacotes, e Python, Node.js, git, vim e a sua toolchain diária funcionam como no desktop.</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">PROOT</span>
+            <dt>chroot em espaço de utilizador, sem root</dt>
+            <dd>Um chroot via PRoot isola o ambiente Debian sem fazer root. A garantia e a integridade do sistema ficam intactas; tudo acontece dentro da sandbox do app.</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">PTY</span>
+            <dt>Um terminal PTY genuíno</dt>
+            <dd>A shell liga-se através de um pseudo-terminal (PTY), por isso vim, tmux e prompts interativos comportam-se corretamente. Um emulador de terminal completo, com cores, Unicode e teclas tratados a sério.</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">CLAUDE</span>
+            <dt>Desenvolvimento com IA via Claude Code</dt>
+            <dd>Corra o Claude Code dentro do ambiente Debian e programe em par com a IA inteiramente no aparelho. Um tablet em viagem vira uma máquina de desenvolvimento real.</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">HOME</span>
+            <dt>Diretório home persistente</dt>
+            <dd>O diretório home do lado Debian persiste no armazenamento do app. Fechar o app não perde nada — continue exatamente de onde parou.</dd>
+          </div>
+          <div class="feature-row">
+            <span class="feature-number">OSS</span>
+            <dt>Código aberto sob licença MIT</dt>
+            <dd>O código está publicado no GitHub sob licença MIT, com instruções de compilação no README para qualquer pessoa reproduzir o mesmo APK.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="editions" aria-labelledby="editions-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="editions-title">Três edições para três formas de uso.</h2>
+          <p>Três APKs assinados cobrem políticas de distribuição e SDKs-alvo diferentes. Todos estão no GitHub Releases.</p>
+        </div>
+        <ul class="edition-cards">
+          <li class="edition-card is-main">
+            <span class="edition-tag">FULL · TARGET SDK 28</span>
+            <h3>Completa (sideload)</h3>
+            <p>A compilação completa, com descarga do Debian incluída. Mira o SDK 28 para instalação fácil por sideload numa vasta gama de aparelhos — a escolha padrão.</p>
+            <ul>
+              <li>Descarga e configuração do rootfs Debian incluídas</li>
+              <li>Funciona em muitos aparelhos com Android 10+</li>
+              <li>Instalação direta pelo GitHub Releases</li>
+            </ul>
+          </li>
+          <li class="edition-card">
+            <span class="edition-tag">MODERN · TARGET SDK 36 · EXPERIMENTAL</span>
+            <h3>Moderna (experimental)</h3>
+            <p>Uma compilação experimental alinhada com o comportamento mais recente do Android. Experimente primeiro, mas espere mudanças que podem quebrar.</p>
+            <ul>
+              <li>Mira o SDK 36 com o comportamento mais recente</li>
+              <li>Pode conter mudanças experimentais</li>
+              <li>Para avaliação e feedback, não para uso diário</li>
+            </ul>
+          </li>
+          <li class="edition-card">
+            <span class="edition-tag">REMOTE · TARGET SDK 36 · NO DEBIAN DOWNLOAD</span>
+            <h3>Compatível remota</h3>
+            <p>Uma compilação amigável às políticas, sem descarga do Debian incluída. Traga o seu próprio rootfs ou use-a para alcançar anfitriões remotos.</p>
+            <ul>
+              <li>Sem funcionalidade de descarga do Debian</li>
+              <li>Configurada para adequação às políticas</li>
+              <li>Para rootfs próprio e uso remoto</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="safety" aria-labelledby="safety-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="safety-title">Recursos poderosos, defesa primeiro.</h2>
+          <p>Correr Linux num telemóvel exige um desenho com a segurança primeiro. Sem atalhos arriscados — tudo distribuído de forma verificável.</p>
+        </div>
+        <ul class="desktop-points">
+          <li><strong>Código nativo em conformidade com W^X</strong> — nunca cria memória simultaneamente gravável e executável, eliminando a base da injeção de código.</li>
+          <li><strong>APKs assinados por sideload</strong> — cada APK é assinado pelo desenvolvedor, com hashes SHA-256 publicados para verificar antes de instalar.</li>
+          <li><strong>Espelhos oficiais com verificação de checksum</strong> — o rootfs Debian vem de espelhos oficiais e é verificado por checksum antes da extração.</li>
+          <li><strong>Ponte Android mínima</strong> — a passagem entre o app e o ambiente Debian é reduzida ao mínimo, sem permissões Android desnecessárias.</li>
+          <li><strong>Redação de segredos nos registos</strong> — chaves de API e outros segredos são mascarados (redação) para os diagnósticos nunca os guardarem na íntegra.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="languages" aria-labelledby="languages-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="languages-title">Cobertura total em japonês e inglês.</h2>
+          <p>A interface do app está totalmente localizada em japonês e inglês. Este site é publicado em japonês, inglês, chinês simplificado e português.</p>
+        </div>
+        <ul class="lang-chips" aria-label="Idiomas suportados">
+          <li>日本語</li>
+          <li>English</li>
+          <li>简体中文 (site)</li>
+          <li>Português</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="get-started" aria-labelledby="get-started-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <h2 id="get-started-title">Linux no seu aparelho em cinco minutos.</h2>
+          <p>O mterm v1.0.0 está disponível como APKs assinados no GitHub Releases. É distribuído por sideload, fora das lojas — siga estes passos.</p>
+        </div>
+        <article class="install-platform">
+          <h3>Passos do sideload</h3>
+          <ol class="step-list">
+            <li><span class="step-number">1</span><span>Descarregue o APK da edição adequada no <a href="https://github.com/oriyu90/mterm/releases/tag/v1.0.0">GitHub Releases</a> e confira com o SHA-256 publicado.</span></li>
+            <li><span class="step-number">2</span><span>Permita “instalar apps desconhecidos” no Android e toque no APK para instalar.</span></li>
+            <li><span class="step-number">3</span><span>Abra o app, descarregue e extraia o rootfs Debian e arranque o seu primeiro ambiente Debian.</span></li>
+            <li><span class="step-number">4</span><span>Corra <code>apt update &amp;&amp; apt upgrade</code> no terminal; para o Claude Code, escreva <code>claude</code> para começar.</span></li>
+          </ol>
+          <p class="install-reference"><a href="https://github.com/oriyu90/mterm#readme">Detalhes de compilação e assinatura no README</a></p>
+        </article>
+        <p class="release-warning">Requer Android 10 ou superior em arm64. Sem necessidade de root, mas o sideload exige permitir apps desconhecidos.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="community" aria-labelledby="community-title">
+      <div class="page-width project-note">
+        <div>
+          <h2 id="community-title">Onde falar com o criador.</h2>
+          <p>Criado por Yuki Orita (Yuki_Orita). Relatos de erros e perguntas vão para o Discord. Notas de desenvolvimento e outros projetos estão no X e no site oficial.</p>
+        </div>
+        <nav class="link-columns" aria-label="Desenvolvedor e comunidade">
+          <a href="https://discord.gg/x7KXhNTD8M" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="https://x.com/InovateofRIZI" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://github.com/oriyu90/mterm" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://studio-rizi.pages.dev/" target="_blank" rel="noopener noreferrer">Site oficial</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <p>© 2026 Yuki Orita · MIT License</p>
+      <a href="https://github.com/oriyu90/mterm/blob/main/LICENSE">Ver a licença</a>
+    </div>
+  </footer>
+</body>
+</html>

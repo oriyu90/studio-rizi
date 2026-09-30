@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b1110"/>
+  <rect x="150" y="115" width="900" height="400" rx="18" fill="#060c0b" stroke="#1e332e" stroke-width="3"/>
+  <rect x="150" y="115" width="900" height="64" rx="18" fill="#14201d"/>
+  <rect x="150" y="160" width="900" height="19" fill="#14201d"/>
+  <circle cx="196" cy="147" r="11" fill="#e8b44a"/>
+  <circle cx="228" cy="147" r="11" fill="#26413b"/>
+  <circle cx="260" cy="147" r="11" fill="#34c9b5"/>
+  <text x="200" y="262" font-family="monospace" font-size="44" fill="#34c9b5">$ mterm --debian trixie</text>
+  <text x="200" y="330" font-family="monospace" font-size="40" fill="#b9cdc7">Debian 13.7 (arm64) via PRoot</text>
+  <text x="200" y="396" font-family="monospace" font-size="40" fill="#b9cdc7">PTY terminal + Claude Code</text>
+  <text x="200" y="464" font-family="monospace" font-size="44" fill="#f2f7f5">mterm — Android Linux Workstation</text>
+</svg>
