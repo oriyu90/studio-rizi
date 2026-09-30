@@ -19,7 +19,7 @@ const projects = [
   {name:'Tango pro',url:'https://studio-rizi.pages.dev/projects/tango-pro/',repository:'https://github.com/oriyu90/Tango-pro',releaseDate:'2026.08.22',releaseVersion:'v2.1.0',releaseSource:'github-release',code:'TP',description:{ja:'自分のCSVで続けられる単語帳アプリ。',en:'A vocabulary app built around your own CSV.',zh:'使用自己的 CSV 持续学习单词。',pt:'Um app de vocabulário feito para o seu CSV.'},platforms:['Web','Android','macOS'],color:'lime'},
   {name:'Vocello JP',url:'https://studio-rizi.pages.dev/projects/vocello-jp/',repository:'https://github.com/oriyu90/vocello-jp',releaseDate:'2026.08.18',releaseVersion:'v2.4.0-jp.1',releaseSource:'github-release',code:'VO',description:{ja:'Macで完結する日本語AI音声スタジオ。',en:'A Japanese AI voice studio that stays on Mac.',zh:'完全在 Mac 本地运行的日语 AI 语音工作室。',pt:'Estúdio de voz japonesa com IA, local no Mac.'},platforms:['macOS'],color:'blue'},
   {name:'Volume Routine',url:'https://studio-rizi.pages.dev/projects/volume-routine/',repository:'https://github.com/oriyu90/volume-routine',releaseDate:'2026.06.20',releaseVersion:'v1.1.0',releaseSource:'github-release',code:'VR',description:{ja:'時間とWi-FiでAndroid音量を自動化。',en:'Automate Android volume by time and Wi-Fi.',zh:'按时间和 Wi-Fi 自动调整 Android 音量。',pt:'Automatize o volume do Android por hora e Wi-Fi.'},platforms:['Android'],color:'lime'},
-  {name:'WAKARU',url:'https://studio-rizi.pages.dev/projects/wakaru/',repository:'https://github.com/oriyu90/WAKARU',releaseDate:'2026.09.25',releaseVersion:'v1.2.0',releaseSource:'github-release',code:'WK',description:{ja:'資料を根拠つきで「わかる」に変える。',en:'Turn documents into cited understanding.',zh:'将资料转化为带有依据的理解。',pt:'Transforme documentos em entendimento com fontes.'},platforms:['macOS'],color:'paper'},
+  {name:'WAKARU',url:'https://studio-rizi.pages.dev/projects/wakaru/',repository:'https://github.com/oriyu90/WAKARU',releaseDate:'2026.09.30',releaseVersion:'v1.4.0',releaseSource:'github-release',code:'WK',description:{ja:'資料を根拠つきで「わかる」に変える。',en:'Turn documents into cited understanding.',zh:'将资料转化为带有依据的理解。',pt:'Transforme documentos em entendimento com fontes.'},platforms:['macOS'],color:'paper'},
   {name:'YMM4M',url:'https://studio-rizi.pages.dev/projects/ymm4m/',repository:'https://github.com/oriyu90/YMM4M',announceRelease:true,releaseDate:'2026.09.21',releaseVersion:'v1.0.5',releaseSource:'github-release',code:'YM',description:{ja:'YukkuriMovieMaker4をMacで動かす互換環境。',en:'Run YukkuriMovieMaker4 on a Mac.',zh:'在 Mac 上运行 YukkuriMovieMaker4 的兼容环境。',pt:'Rode o YukkuriMovieMaker4 no Mac.'},platforms:['macOS'],color:'lime'},
   {name:'α6k転送',url:'https://studio-rizi.pages.dev/projects/a6k-transfer/',repository:'https://github.com/oriyu90/a6k-transfer',announceRelease:true,releaseDate:'2026.09.17',releaseVersion:'v1.1.1',releaseSource:'github-release',code:'A6',description:{ja:'Sony αカメラの写真・動画をWi-Fiで取り込む。',en:'Transfer photos and videos from your Sony α camera over Wi-Fi.',zh:'通过 Wi-Fi 从 Sony α 相机传输照片和视频。',pt:'Transfira fotos e vídeos da sua câmera Sony α via Wi-Fi.'},platforms:['Android'],color:'blue'}
 ].map(project => ({
@@ -32,6 +32,23 @@ const projects = [
 // PROJECT-CARD-RULES.mdの「お知らせ入力テンプレート」を使って1件追加します。
 // RELEASEはここへ手入力しません。
 const manualNews = [
+  {
+    date: '2026.09.30',
+    tag: 'UPDATE',
+    title: {
+      ja: 'WAKARU v1.4.0 を公開しました。',
+      en: 'WAKARU v1.4.0 is available.',
+      zh: 'WAKARU v1.4.0 已发布。',
+      pt: 'WAKARU v1.4.0 está disponível.'
+    },
+    summary: {
+      ja: 'MLXBar接続を選択モデルの実生成で確認できるようにし、資料の拡大・倍率調整とライブ解説を閉じた際の表示幅を改善しました。Studioとライブ解説の資料検索・引用も強化し、指定のローカルAIで根拠付き文書作成を検証しました。',
+      en: 'MLXBar checks now generate with the selected model. Documents gain full-width viewing and zoom, while closing Live Illustrator returns its space to reading. Studio and Live source search and citations are stronger, and grounded document creation was verified with a local model.',
+      zh: 'MLXBar 连接检查现在会用所选模型实际生成回答。资料支持全宽查看与倍率调整，关闭实时讲解后空间会还给阅读区。Studio 和实时讲解的资料检索与引用得到强化，并以本地模型验证了有依据的文档生成。',
+      pt: 'O teste de conexão do MLXBar agora gera uma resposta com o modelo escolhido. Os documentos ganham visualização ampliada e zoom; fechar o Live Illustrator devolve espaço à leitura. A busca e as citações do Studio e do Live foram reforçadas, com criação de documento fundamentado verificada em um modelo local.'
+    },
+    url: 'https://studio-rizi.pages.dev/projects/wakaru/'
+  },
   {
     date: '2026.09.29',
     tag: 'UPDATE',
