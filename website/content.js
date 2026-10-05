@@ -19,7 +19,7 @@ const projects = [
   {name:'Tango pro',url:'https://studio-rizi.pages.dev/projects/tango-pro/',repository:'https://github.com/oriyu90/Tango-pro',releaseDate:'2026.08.22',releaseVersion:'v2.1.0',releaseSource:'github-release',code:'TP',description:{ja:'自分のCSVで続けられる単語帳アプリ。',en:'A vocabulary app built around your own CSV.',zh:'使用自己的 CSV 持续学习单词。',pt:'Um app de vocabulário feito para o seu CSV.'},platforms:['Web','Android','macOS'],color:'lime'},
   {name:'Vocello JP',url:'https://studio-rizi.pages.dev/projects/vocello-jp/',repository:'https://github.com/oriyu90/vocello-jp',releaseDate:'2026.08.18',releaseVersion:'v2.4.0-jp.1',releaseSource:'github-release',code:'VO',description:{ja:'Macで完結する日本語AI音声スタジオ。',en:'A Japanese AI voice studio that stays on Mac.',zh:'完全在 Mac 本地运行的日语 AI 语音工作室。',pt:'Estúdio de voz japonesa com IA, local no Mac.'},platforms:['macOS'],color:'blue'},
   {name:'Volume Routine',url:'https://studio-rizi.pages.dev/projects/volume-routine/',repository:'https://github.com/oriyu90/volume-routine',releaseDate:'2026.06.20',releaseVersion:'v1.1.0',releaseSource:'github-release',code:'VR',description:{ja:'時間とWi-FiでAndroid音量を自動化。',en:'Automate Android volume by time and Wi-Fi.',zh:'按时间和 Wi-Fi 自动调整 Android 音量。',pt:'Automatize o volume do Android por hora e Wi-Fi.'},platforms:['Android'],color:'lime'},
-  {name:'WAKARU',url:'https://studio-rizi.pages.dev/projects/wakaru/',repository:'https://github.com/oriyu90/WAKARU',releaseDate:'2026.10.01',releaseVersion:'v1.6.1',releaseSource:'github-release',code:'WK',description:{ja:'資料を根拠つきで「わかる」に変える。',en:'Turn documents into cited understanding.',zh:'将资料转化为带有依据的理解。',pt:'Transforme documentos em entendimento com fontes.'},platforms:['macOS'],color:'paper'},
+  {name:'WAKARU',url:'https://studio-rizi.pages.dev/projects/wakaru/',repository:'https://github.com/oriyu90/WAKARU',releaseDate:'2026.10.05',releaseVersion:'v1.6.9',releaseSource:'github-release',code:'WK',description:{ja:'資料を根拠つきで「わかる」に変える。',en:'Turn documents into cited understanding.',zh:'将资料转化为带有依据的理解。',pt:'Transforme documentos em entendimento com fontes.'},platforms:['macOS'],color:'paper'},
   {name:'YMM4M',url:'https://studio-rizi.pages.dev/projects/ymm4m/',repository:'https://github.com/oriyu90/YMM4M',announceRelease:true,releaseDate:'2026.09.21',releaseVersion:'v1.0.5',releaseSource:'github-release',code:'YM',description:{ja:'YukkuriMovieMaker4をMacで動かす互換環境。',en:'Run YukkuriMovieMaker4 on a Mac.',zh:'在 Mac 上运行 YukkuriMovieMaker4 的兼容环境。',pt:'Rode o YukkuriMovieMaker4 no Mac.'},platforms:['macOS'],color:'lime'},
   {name:'α6k転送',url:'https://studio-rizi.pages.dev/projects/a6k-transfer/',repository:'https://github.com/oriyu90/a6k-transfer',announceRelease:true,releaseDate:'2026.09.17',releaseVersion:'v1.1.1',releaseSource:'github-release',code:'A6',description:{ja:'Sony αカメラの写真・動画をWi-Fiで取り込む。',en:'Transfer photos and videos from your Sony α camera over Wi-Fi.',zh:'通过 Wi-Fi 从 Sony α 相机传输照片和视频。',pt:'Transfira fotos e vídeos da sua câmera Sony α via Wi-Fi.'},platforms:['Android'],color:'blue'},
   {name:'mterm',url:'https://studio-rizi.pages.dev/projects/mterm/',repository:'https://github.com/oriyu90/mterm',announceRelease:true,releaseDate:'2026.09.30',releaseVersion:'v1.0.0',releaseSource:'github-release',code:'MT',description:{ja:'AndroidでDebianターミナルとClaude Codeを使う。',en:'Use a Debian terminal and Claude Code on Android.',zh:'在 Android 上使用 Debian 终端与 Claude Code。',pt:'Use um terminal Debian e o Claude Code no Android.'},platforms:['Android'],color:'green'}
@@ -33,6 +33,23 @@ const projects = [
 // PROJECT-CARD-RULES.mdの「お知らせ入力テンプレート」を使って1件追加します。
 // RELEASEはここへ手入力しません。
 const manualNews = [
+  {
+    date: '2026.10.05',
+    tag: 'UPDATE',
+    title: {
+      ja: 'WAKARU v1.6.9 を公開しました。',
+      en: 'WAKARU v1.6.9 is available.',
+      zh: 'WAKARU v1.6.9 已发布。',
+      pt: 'WAKARU v1.6.9 está disponível.'
+    },
+    summary: {
+      ja: '付箋を資料座標に固定し、スクロールやズーム、遅延表示にも追従します。下部バーで開閉し、丸ぽちのドラッグで移動できます。全体／いっぱいの表示切替と監査修正を含みます。',
+      en: 'Sticky notes now anchor to document coordinates and follow scroll, zoom, and late-mounted previews. The bottom lane opens and closes in one path, dots drag to move, and fit/fill viewing plus audit fixes are included.',
+      zh: '便利贴现已固定到资料坐标，可跟随滚动、缩放与延迟渲染。底部栏统一开闭，圆点可拖动移动，并包含整体／铺满显示切换与审计修复。',
+      pt: 'As notas agora ancoram nas coordenadas do documento e acompanham rolagem, zoom e prévia tardia. A barra inferior abre e fecha em um caminho, os pontos arrastam para mover, com modos fit/fill e correções de auditoria.'
+    },
+    url: 'https://studio-rizi.pages.dev/projects/wakaru/'
+  },
   {
     date: '2026.10.01',
     tag: 'UPDATE',
