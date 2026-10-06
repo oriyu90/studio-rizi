@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3DFM — 在 macOS 菜单栏中将图片转换为 3D 模型</title>
+<meta name="description" content="3DFM 是 Apple Silicon Mac 菜单栏中的 3D 模型生成应用，可将图片转换为 GLB 模型。支持普通模式（TRELLIS.2）与人物模式（Hunyuan3D），模型与数据文件夹可在设置中更改。开发者为折田悠希（おりたゆうき / Yuki_Orita）。免费开源（MIT），已在 GitHub 发布。">
+<meta name="keywords" content="3DFM, 3D模型生成, TRELLIS.2, Hunyuan3D, 折田悠希, おりたゆうき, Yuki_Orita, github, macOS, 菜单栏, Apple Silicon, GLB, 图片转3D">
+<meta name="author" content="折田悠希 (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/3dfm/zh/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/3dfm/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/3dfm/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/3dfm/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/3dfm/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/3dfm/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="3DFM">
+<meta property="og:title" content="3DFM — 在 macOS 菜单栏中将图片转换为 3D 模型">
+<meta property="og:description" content="在 Apple Silicon Mac 上生成 GLB。普通模式（TRELLIS.2）＋人物模式（Hunyuan3D）。存储位置可在设置中更改。开源（MIT）。">
+<meta property="og:image" content="https://studio-rizi.pages.dev/assets/og.png">
+<meta property="og:image:alt" content="3DFM — 图片转 3D 的 macOS 菜单栏应用">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/3dfm/zh/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="3DFM — 图片转 3D 模型">
+<meta name="twitter:description" content="菜单栏图片转 GLB。模型与数据文件夹可在设置中更改。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/assets/og.png">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon-192.png">
+<link rel="stylesheet" href="/projects/3dfm/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "3DFM",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "macOS 14 or later, Apple Silicon",
+      "softwareVersion": "0.3.0",
+      "url": "https://studio-rizi.pages.dev/projects/3dfm/zh/",
+      "downloadUrl": "https://github.com/oriyu90/3DFM/releases",
+      "codeRepository": "https://github.com/oriyu90/3DFM",
+      "license": "https://github.com/oriyu90/3DFM/blob/main/LICENSE",
+      "description": "在 Apple Silicon Mac 菜单栏中将图片转换为 3D GLB 模型的应用。支持普通模式与人物模式，模型与数据文件夹可在设置中更改。",
+      "inLanguage": ["zh", "ja", "en"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "折田悠希",
+      "alternateName": ["おりたゆうき", "Yuki_Orita"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": ["https://github.com/oriyu90", "https://x.com/InovateofRIZI"]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/3dfm/zh/"><span class="cube">3D</span><span>3DFM</span></a>
+    <div class="navlinks">
+      <a href="#setup">使用方法</a>
+      <a href="#features">功能</a>
+      <a href="#requirements">运行环境</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a href="/projects/3dfm/">JA</a><a href="/projects/3dfm/en/">EN</a><a class="on" href="/projects/3dfm/zh/">中文</a><a href="/projects/3dfm/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/3DFM/releases/latest">下载</a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v0.3.0 · MIT · macOS 14+ · Apple Silicon · 日英对应</span>
+      <h1>在这台 Mac 上，把图片变成<span class="u">3D 模型</span>。</h1>
+      <p class="lead">3DFM 是常驻菜单栏的 macOS 应用，可将图片生成 3D GLB 模型。支持普通模式（TRELLIS.2）与人物模式（Hunyuan3D＋MV-Adapter 合成）。沉重的模型文件位置可在设置中更改。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/3DFM/releases/latest">下载最新版</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/3DFM">在 GitHub 查看源码</a>
+      </div>
+      <p class="hero-meta">免费开源（MIT） · 开发者：折田悠希（おりたゆうき / Yuki_Orita） · ad-hoc 签名未公证版本（首次请右键→打开）</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="bar"><span>3DFM — 空闲中</span><span>cube.fill</span></div>
+      <div class="q"><span class="dot" style="background:#31b06b"></span><span>sofa-01 — 完成 100%</span></div>
+      <div class="q"><span class="dot" style="background:#4f7de8"></span><span>figure-02 — 生成中 shape 42%</span></div>
+      <div class="q"><span class="dot" style="background:#e8a04f"></span><span>chair-03 — 等待中</span></div>
+    </div>
+  </div>
+</header>
+<section id="setup">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Setup</p>
+      <h2>3 步开始使用</h2>
+      <p>一键安装会自动引入运行时与 AI 模型。保存位置可在之后于设置中更改。</p>
+    </div>
+    <ol class="flow">
+      <li><h3>启动应用</h3><p>从 DMG 打开 3DFM.app（首次请右键→打开）。应用常驻菜单栏，不显示在 Dock 中。</p></li>
+      <li><h3>运行安装</h3><p>选择输出文件夹与模型档（普通/人物）。首次可能需要几十分钟。</p></li>
+      <li><h3>提交图片</h3><p>在新建生成中选择图片并加入队列。可查看进度、日志与 GLB 成果物，与 CLI <code>3dfm submit</code> 相同。</p></li>
+    </ol>
+  </div>
+</section>
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Features</p>
+      <h2>主要功能</h2>
+      <p>生成队列、取消、GUI=CLI 一致、完全本地。v0.3.0 新增存储位置设置。</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>普通模式</dt><dd>单张图片经 TRELLIS.2 生成形状＋PBR 贴图并输出 GLB（512 预览 / 512→1024 标准 / 512→1536 最高）。</dd></div>
+      <div class="row"><dt>人物模式</dt><dd>6 视角输入，或单张正面照→MV-Adapter 合成其余 5 视角。TRELLIS.2 形状＋Hunyuan MLX 绘制的混合管线。</dd></div>
+      <div class="row"><dt>存储位置设置 (v0.3.0)</dt><dd>在设置＞存储中更改数据文件夹与模型文件夹。模型由服务器移动（需清空队列），数据需停止→移动→重启。支持外置 SSD（<code>3dfm storage status</code>）。</dd></div>
+      <div class="row"><dt>队列与安全</dt><dd>FIFO 队列、协作取消、SQLite(WAL) 保存、OOM/停滞看门狗。崩溃后历史记录仍保留。</dd></div>
+      <div class="row"><dt>离线运行</dt><dd>模型下载后可完全离线生成（无遥测）。许可信息汇总于设置＞模型。</dd></div>
+    </dl>
+  </div>
+</section>
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Requirements</p>
+      <h2>运行环境与分发</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>运行环境</h3>
+        <ul>
+          <li><span>Apple Silicon（M1 及更新）/ macOS 14 及更新（推荐 26+）</span></li>
+          <li><span>内存最低 16GB、推荐 24GB+、人物模式 40GB+ 更流畅</span></li>
+          <li><span>磁盘：普通约 20GB / 人物完整约 60GB</span></li>
+          <li><span>ad-hoc 签名未公证，首次启动需要手动允许</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>CLI 示例</h3>
+        <pre>3dfm status
+3dfm submit --mode normal -i img.png
+3dfm storage status
+3dfm storage move-models /Volumes/SSD/3DFM-models
+3dfm models ensure --tier human</pre>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><span>3DFM — 折田悠希（おりたゆうき / Yuki_Orita）</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/3DFM">GitHub</a>
+      <a href="https://github.com/oriyu90/3DFM/releases/latest">下载</a>
+      <a href="https://studio-rizi.pages.dev/">开发者网站</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

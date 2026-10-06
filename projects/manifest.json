@@ -155,6 +155,13 @@
       "repository": "https://github.com/oriyu90/mterm",
       "url": "https://studio-rizi.pages.dev/projects/mterm/",
       "hosted": true
+    },
+    {
+      "slug": "3dfm",
+      "name": "3DFM",
+      "repository": "https://github.com/oriyu90/3DFM",
+      "url": "https://studio-rizi.pages.dev/projects/3dfm/",
+      "hosted": true
     }
   ]
 }

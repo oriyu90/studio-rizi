@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3DFM（スリーディーエフエム）— 画像から3Dモデルを生成するmacOSメニューバーアプリ</title>
+<meta name="description" content="3DFM（スリーディーエフエム）は、Apple Silicon Macで画像から3Dモデル(GLB)を生成するメニューバー常駐アプリです。TRELLIS.2の普通モードとHunyuan3Dの人物モードに対応し、モデル・データフォルダは設定で変更できます。開発者は折田悠希（おりたゆうき / Yuki_Orita）。無料・オープンソース(MIT)、GitHubで公開中。">
+<meta name="keywords" content="3DFM, スリーディーエフエム, 3Dモデル生成, TRELLIS.2, Hunyuan3D, 折田悠希, おりたゆうき, Yuki_Orita, github, macOS, メニューバー, Apple Silicon, GLB生成, 画像から3D, text to 3D, menu bar 3D generator">
+<meta name="author" content="折田悠希 (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/3dfm/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/3dfm/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/3dfm/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/3dfm/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/3dfm/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/3dfm/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="3DFM">
+<meta property="og:title" content="3DFM（スリーディーエフエム）— 画像から3Dモデルを生成するmacOSメニューバーアプリ">
+<meta property="og:description" content="Apple Silicon Macで画像からGLBを生成。TRELLIS.2普通モード＋Hunyuan3D人物モード。保存場所は設定で変更可。オープンソース(MIT)。">
+<meta property="og:image" content="https://studio-rizi.pages.dev/assets/og.png">
+<meta property="og:image:alt" content="3DFM — 画像から3Dモデルを生成するmacOSメニューバーアプリ">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/3dfm/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="3DFM（スリーディーエフエム）— 画像から3Dモデルを生成">
+<meta name="twitter:description" content="メニューバー常駐で画像→GLB。モデル・データフォルダは設定で変更可。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/assets/og.png">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon-192.png">
+<link rel="stylesheet" href="/projects/3dfm/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "3DFM",
+      "alternateName": ["スリーディーエフエム", "3DFM 3D model generator"],
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "macOS 14 or later, Apple Silicon",
+      "softwareVersion": "0.3.0",
+      "url": "https://studio-rizi.pages.dev/projects/3dfm/",
+      "downloadUrl": "https://github.com/oriyu90/3DFM/releases",
+      "codeRepository": "https://github.com/oriyu90/3DFM",
+      "license": "https://github.com/oriyu90/3DFM/blob/main/LICENSE",
+      "description": "Apple Silicon Macで画像から3Dモデル(GLB)を生成するメニューバー常駐アプリ。TRELLIS.2普通モードとHunyuan3D人物モードに対応し、モデル・データフォルダは設定で変更できます。",
+      "inLanguage": ["ja", "en"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "折田悠希",
+      "alternateName": ["おりたゆうき", "Yuki_Orita"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://github.com/oriyu90",
+        "https://x.com/InovateofRIZI"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/3dfm/"><span class="cube">3D</span><span>3DFM</span></a>
+    <div class="navlinks">
+      <a href="#setup">使い方</a>
+      <a href="#features">機能</a>
+      <a href="#requirements">動作環境</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a class="on" href="/projects/3dfm/">JA</a><a href="/projects/3dfm/en/">EN</a><a href="/projects/3dfm/zh/">中文</a><a href="/projects/3dfm/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/3DFM/releases/latest">ダウンロード</a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v0.3.0 · MIT · macOS 14+ · Apple Silicon · 日英対応</span>
+      <h1>画像から、<span class="u">3Dモデル</span>をこのMacで。</h1>
+      <p class="lead">3DFMは、メニューバーに常駐して画像から3Dモデル(GLB)を生成するmacOSアプリです。普通モード (TRELLIS.2) と人物モード (Hunyuan3D＋MV-Adapter合成) に対応。重いモデルファイルの置き場所は設定で変えられます。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/3DFM/releases/latest">最新版をダウンロード</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/3DFM">GitHub でソースを見る</a>
+      </div>
+      <p class="hero-meta">無料・オープンソース（MIT） · 開発者: 折田悠希（おりたゆうき / Yuki_Orita） · ad-hoc署名の未公証ビルド（初回は右クリック→開く）</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="bar"><span>3DFM — 待機中</span><span>cube.fill</span></div>
+      <div class="q"><span class="dot" style="background:#31b06b"></span><span>sofa-01 — 完了 100%</span></div>
+      <div class="q"><span class="dot" style="background:#4f7de8"></span><span>figure-02 — 生成中 shape 42%</span></div>
+      <div class="q"><span class="dot" style="background:#e8a04f"></span><span>chair-03 — 待機中</span></div>
+    </div>
+  </div>
+</header>
+<section id="setup">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Setup</p>
+      <h2>3ステップで開始</h2>
+      <p>ワンボタンのセットアップがランタイムとAIモデルを自動導入します。保存場所は後から設定で変更できます。</p>
+    </div>
+    <ol class="flow">
+      <li><h3>アプリを起動</h3><p>DMGから3DFM.appを開きます（初回は右クリック→開く）。メニューバーに常駐し、Dockには表示されません。</p></li>
+      <li><h3>セットアップ実行</h3><p>出力フォルダとモデルtier（普通/人物込み）を選びます。初回は数十分かかることがあります。</p></li>
+      <li><h3>画像を投入</h3><p>新規生成から画像を選びキューへ。進捗・ログ・GLB成果物を確認できます。CLI <code>3dfm submit</code> と同一操作です。</p></li>
+    </ol>
+  </div>
+</section>
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Features</p>
+      <h2>主な機能</h2>
+      <p>生成キュー・キャンセル・GUI=CLIパリティ・ローカル完結。v0.3.0で保存場所の設定に対応しました。</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>普通モード</dt><dd>1枚の画像からTRELLIS.2で形状＋PBRテクスチャを生成しGLB出力（512プレビュー / 512→1024標準 / 512→1536最高）。</dd></div>
+      <div class="row"><dt>人物モード</dt><dd>6視点入力または正面1枚→MV-Adapterで5視点合成。TRELLIS.2形状＋Hunyuan MLXペイントのハイブリッドでPBR化。</dd></div>
+      <div class="row"><dt>保存場所の設定 (v0.3.0)</dt><dd>設定＞ストレージでデータフォルダとモデルフォルダを変更可。モデルはサーバーが移動（キュー空き必須）、データは停止→移動→再起動。外付けSSD対応（<code>3dfm storage status</code>）。</dd></div>
+      <div class="row"><dt>キューと安全性</dt><dd>FIFOキュー・協調キャンセル・SQLite(WAL)保持・OOM/停滞ウォッチドッグ。クラッシュしても履歴は残ります。</dd></div>
+      <div class="row"><dt>オフライン</dt><dd>モデル取得後は完全オフライン生成可（テレメトリなし）。ライセンス表示は設定＞モデルに集約。</dd></div>
+    </dl>
+  </div>
+</section>
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Requirements</p>
+      <h2>動作環境・配布</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>動作環境</h3>
+        <ul>
+          <li><span>Apple Silicon (M1以降) / macOS 14以降（26+推奨）</span></li>
+          <li><span>メモリ16GB最低・24GB+推奨・人物は40GB+快適</span></li>
+          <li><span>容量: 普通~20GB / 人物フル~60GB（モデル＋作業領域）</span></li>
+          <li><span>ad-hoc署名・未公証のため初回は許可が必要です</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>CLI例</h3>
+        <pre>3dfm status
+3dfm submit --mode normal -i img.png
+3dfm storage status
+3dfm storage move-models /Volumes/SSD/3DFM-models
+3dfm models ensure --tier human</pre>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><span class="cube" style="width:20px;height:20px;border-radius:5px;background:linear-gradient(135deg,#6d4de0,#4c33b0);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800">3D</span><span>3DFM — 折田悠希（おりたゆうき / Yuki_Orita）</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/3DFM">GitHub</a>
+      <a href="https://github.com/oriyu90/3DFM/releases/latest">ダウンロード</a>
+      <a href="https://studio-rizi.pages.dev/">開発者サイト</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3DFM — Transforme imagens em modelos 3D pela barra de menus do macOS</title>
+<meta name="description" content="3DFM é um app residente na barra de menus que transforma imagens em modelos 3D GLB em Macs Apple Silicon. Com modo normal (TRELLIS.2) e modo humano (Hunyuan3D), e pastas de modelos/dados ajustáveis nas Configurações. Criado por Yuki Orita (Yuki_Orita / oriyu90). Grátis e open source (MIT) no GitHub.">
+<meta name="keywords" content="3DFM, gerador de modelos 3D, TRELLIS.2, Hunyuan3D, Yuki Orita, Yuki_Orita, oriyu90, 折田悠希, おりたゆうき, github, macOS, barra de menus, Apple Silicon, GLB, imagem para 3D">
+<meta name="author" content="Yuki Orita (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/3dfm/pt/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/3dfm/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/3dfm/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/3dfm/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/3dfm/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/3dfm/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="3DFM">
+<meta property="og:title" content="3DFM — Transforme imagens em modelos 3D pela barra de menus do macOS">
+<meta property="og:description" content="Gere GLB em Macs Apple Silicon. Modo normal (TRELLIS.2) + modo humano (Hunyuan3D). Pastas ajustáveis. Open source (MIT).">
+<meta property="og:image" content="https://studio-rizi.pages.dev/assets/og.png">
+<meta property="og:image:alt" content="3DFM — app de imagem para 3D na barra de menus do macOS">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/3dfm/pt/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="3DFM — Imagem para modelo 3D">
+<meta name="twitter:description" content="Imagem para GLB na barra de menus. Pastas de modelos/dados ajustáveis.">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/assets/og.png">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon-192.png">
+<link rel="stylesheet" href="/projects/3dfm/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "3DFM",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "macOS 14 or later, Apple Silicon",
+      "softwareVersion": "0.3.0",
+      "url": "https://studio-rizi.pages.dev/projects/3dfm/pt/",
+      "downloadUrl": "https://github.com/oriyu90/3DFM/releases",
+      "codeRepository": "https://github.com/oriyu90/3DFM",
+      "license": "https://github.com/oriyu90/3DFM/blob/main/LICENSE",
+      "description": "App da barra de menus que transforma imagens em modelos 3D GLB em Macs Apple Silicon. Modo normal e modo humano, com pastas de modelos/dados ajustáveis.",
+      "inLanguage": ["pt", "ja", "en"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki Orita",
+      "alternateName": ["Yuki_Orita", "折田悠希", "おりたゆうき"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": ["https://github.com/oriyu90", "https://x.com/InovateofRIZI"]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/3dfm/pt/"><span class="cube">3D</span><span>3DFM</span></a>
+    <div class="navlinks">
+      <a href="#setup">Como usar</a>
+      <a href="#features">Recursos</a>
+      <a href="#requirements">Requisitos</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a href="/projects/3dfm/">JA</a><a href="/projects/3dfm/en/">EN</a><a href="/projects/3dfm/zh/">中文</a><a class="on" href="/projects/3dfm/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/3DFM/releases/latest">Baixar</a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v0.3.0 · MIT · macOS 14+ · Apple Silicon · JA/EN</span>
+      <h1>Da imagem ao <span class="u">modelo 3D</span>, neste Mac.</h1>
+      <p class="lead">3DFM mora na barra de menus e transforma imagens em modelos 3D GLB. Modo normal (TRELLIS.2) e modo humano (Hunyuan3D com síntese MV-Adapter). Arquivos pesados de modelos podem ser movidos nas Configurações.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/3DFM/releases/latest">Baixar versão atual</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/3DFM">Ver código no GitHub</a>
+      </div>
+      <p class="hero-meta">Grátis e open source (MIT) · Por Yuki Orita (折田悠希 / おりたゆうき) · Build ad-hoc sem notarização (botão direito → Abrir na primeira vez)</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="bar"><span>3DFM — Ocioso</span><span>cube.fill</span></div>
+      <div class="q"><span class="dot" style="background:#31b06b"></span><span>sofa-01 — concluído 100%</span></div>
+      <div class="q"><span class="dot" style="background:#4f7de8"></span><span>figure-02 — shape 42%</span></div>
+      <div class="q"><span class="dot" style="background:#e8a04f"></span><span>chair-03 — na fila</span></div>
+    </div>
+  </div>
+</header>
+<section id="setup">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Setup</p>
+      <h2>Comece em 3 passos</h2>
+      <p>A instalação em um botão baixa runtimes e modelos de IA. Os locais podem mudar depois nas Configurações.</p>
+    </div>
+    <ol class="flow">
+      <li><h3>Abra o app</h3><p>Abra o 3DFM.app pelo DMG (botão direito → Abrir na primeira vez). Ele mora na barra de menus, fora do Dock.</p></li>
+      <li><h3>Rode a instalação</h3><p>Escolha a pasta de saída e o nível de modelos (normal/human). A primeira vez pode levar dezenas de minutos.</p></li>
+      <li><h3>Envie imagens</h3><p>Escolha imagens em Nova geração. Acompanhe progresso, logs e GLBs. Igual ao CLI <code>3dfm submit</code>.</p></li>
+    </ol>
+  </div>
+</section>
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Features</p>
+      <h2>Destaques</h2>
+      <p>Fila, cancelamento, paridade GUI=CLI, tudo local. v0.3.0 traz pastas configuráveis.</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>Modo normal</dt><dd>Uma imagem vira forma + textura PBR em GLB via TRELLIS.2 (512 rápido / 512→1024 padrão / 512→1536 máximo).</dd></div>
+      <div class="row"><dt>Modo humano</dt><dd>6 visões, ou 1 frontal → 5 sintetizadas via MV-Adapter. Híbrido: forma TRELLIS.2 + pintura Hunyuan MLX.</dd></div>
+      <div class="row"><dt>Pastas (v0.3.0)</dt><dd>Troque dados e modelos em Configurações &gt; Storage. O servidor move modelos (fila vazia); dados movem offline com restart. SSD externo OK (<code>3dfm storage status</code>).</dd></div>
+      <div class="row"><dt>Fila e segurança</dt><dd>Fila FIFO, cancelamento cooperativo, histórico SQLite (WAL), watchdogs de OOM/travamento. O histórico sobrevive a falhas.</dd></div>
+      <div class="row"><dt>Offline</dt><dd>Geração 100% offline após baixar modelos (sem telemetria). Licenças em Configurações &gt; Modelos.</dd></div>
+    </dl>
+  </div>
+</section>
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Requirements</p>
+      <h2>Requisitos e distribuição</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>Requisitos</h3>
+        <ul>
+          <li><span>Apple Silicon (M1+) / macOS 14+ (26+ recomendado)</span></li>
+          <li><span>16 GB mínimo, 24 GB+ recomendado, 40 GB+ para humanos</span></li>
+          <li><span>Disco: ~20 GB normal / ~60 GB human completo</span></li>
+          <li><span>Build ad-hoc sem notarização; aprove na primeira abertura</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Exemplo CLI</h3>
+        <pre>3dfm status
+3dfm submit --mode normal -i img.png
+3dfm storage status
+3dfm storage move-models /Volumes/SSD/3DFM-models
+3dfm models ensure --tier human</pre>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><span>3DFM — Yuki Orita (折田悠希 / おりたゆうき)</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/3DFM">GitHub</a>
+      <a href="https://github.com/oriyu90/3DFM/releases/latest">Baixar</a>
+      <a href="https://studio-rizi.pages.dev/">Site do dev</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
