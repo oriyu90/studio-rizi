@@ -22,7 +22,7 @@ const projects = [
   {name:'Volume Routine',url:'https://studio-rizi.pages.dev/projects/volume-routine/',repository:'https://github.com/oriyu90/volume-routine',releaseDate:'2026.06.20',releaseVersion:'v1.1.0',releaseSource:'github-release',code:'VR',description:{ja:'時間とWi-FiでAndroid音量を自動化。',en:'Automate Android volume by time and Wi-Fi.',zh:'按时间和 Wi-Fi 自动调整 Android 音量。',pt:'Automatize o volume do Android por hora e Wi-Fi.'},platforms:['Android'],color:'lime'},
   {name:'WAKARU',url:'https://studio-rizi.pages.dev/projects/wakaru/',repository:'https://github.com/oriyu90/WAKARU',releaseDate:'2026.10.05',releaseVersion:'v1.6.9',releaseSource:'github-release',code:'WK',description:{ja:'資料を根拠つきで「わかる」に変える。',en:'Turn documents into cited understanding.',zh:'将资料转化为带有依据的理解。',pt:'Transforme documentos em entendimento com fontes.'},platforms:['macOS'],color:'paper'},
   {name:'YMM4M',url:'https://studio-rizi.pages.dev/projects/ymm4m/',repository:'https://github.com/oriyu90/YMM4M',announceRelease:true,releaseDate:'2026.09.21',releaseVersion:'v1.0.5',releaseSource:'github-release',code:'YM',description:{ja:'YukkuriMovieMaker4をMacで動かす互換環境。',en:'Run YukkuriMovieMaker4 on a Mac.',zh:'在 Mac 上运行 YukkuriMovieMaker4 的兼容环境。',pt:'Rode o YukkuriMovieMaker4 no Mac.'},platforms:['macOS'],color:'lime'},
-  {name:'α6k転送',url:'https://studio-rizi.pages.dev/projects/a6k-transfer/',repository:'https://github.com/oriyu90/a6k-transfer',announceRelease:true,releaseDate:'2026.10.09',releaseVersion:'v1.2.1',releaseSource:'github-release',code:'A6',description:{ja:'カメラ画面のWi-Fi情報を読み取り、写真・動画を転送。',en:'Scan camera Wi-Fi details and transfer photos and videos.',zh:'扫描相机 Wi-Fi 信息，传输照片和视频。',pt:'Leia o Wi-Fi da câmera e transfira fotos e vídeos.'},platforms:['Android'],color:'blue'},
+  {name:'α6k転送',url:'https://studio-rizi.pages.dev/projects/a6k-transfer/',repository:'https://github.com/oriyu90/a6k-transfer',announceRelease:true,releaseDate:'2026.09.17',releaseVersion:'v1.0.0',releaseSource:'github-release',code:'A6',description:{ja:'Sony αカメラの写真をWi-Fiでスマホへ転送。',en:'Transfer Sony α camera photos to your phone over Wi-Fi.',zh:'通过 Wi-Fi 将 Sony α 相机照片传到手机。',pt:'Transfira fotos da câmera Sony α para o celular via Wi-Fi.'},platforms:['Android'],color:'blue'},
   {name:'mterm',url:'https://studio-rizi.pages.dev/projects/mterm/',repository:'https://github.com/oriyu90/mterm',announceRelease:true,releaseDate:'2026.09.30',releaseVersion:'v1.0.0',releaseSource:'github-release',code:'MT',description:{ja:'AndroidでDebianターミナルとClaude Codeを使う。',en:'Use a Debian terminal and Claude Code on Android.',zh:'在 Android 上使用 Debian 终端与 Claude Code。',pt:'Use um terminal Debian e o Claude Code no Android.'},platforms:['Android'],color:'green'},
   {name:'淫夢変換',url:'https://studio-rizi.pages.dev/projects/inmu-translator/',repository:'https://github.com/oriyu90/inmu-translator',announceRelease:false,releaseDate:'',releaseVersion:'',releaseSource:'',code:'IG',description:{ja:'自宅LLMで日本語を淫夢語録風に変換。',en:'Convert Japanese into Inmu-goroku style with a home LLM.',zh:'用家中 LLM 把日语转成淫梦语录风。',pt:'Converta japonês para o estilo Inmu-goroku com um LLM caseiro.'},platforms:['Web'],color:'lime'}
 ].map(project => ({
@@ -35,6 +35,23 @@ const projects = [
 // PROJECT-CARD-RULES.mdの「お知らせ入力テンプレート」を使って1件追加します。
 // RELEASEはここへ手入力しません。
 const manualNews = [
+  {
+    date: '2026.10.10',
+    tag: 'UPDATE',
+    title: {
+      ja: 'α6k転送 v1.2.2 を公開しました。',
+      en: 'α6k Transfer v1.2.2 is available.',
+      zh: 'α6k Transfer v1.2.2 已发布。',
+      pt: 'α6k Transfer v1.2.2 está disponível.'
+    },
+    summary: {
+      ja: 'カメラ画面のSSIDとパスワードの読み取りを改善。日本語・英数字の認識結果を照合し、必要なら再撮影します。曖昧な文字はカメラ画面との照合後に接続できます。',
+      en: 'Camera-screen credential scanning now compares Japanese and Latin recognition and captures again when needed. Uncertain characters require checking against the camera before connecting.',
+      zh: '改进相机屏幕上的 Wi-Fi 信息识别：对照日文与拉丁文字识别结果，必要时再次拍摄。不确定的字符需与相机屏幕核对后才能连接。',
+      pt: 'A leitura das credenciais na tela da câmera agora compara o reconhecimento japonês e latino e repete a captura quando necessário. Caracteres incertos exigem conferência antes da conexão.'
+    },
+    url: 'https://studio-rizi.pages.dev/projects/a6k-transfer/'
+  },
   {
     date: '2026.10.05',
     tag: 'UPDATE',

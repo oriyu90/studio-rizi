@@ -6,7 +6,9 @@ import vm from 'node:vm';
 const root = process.cwd();
 const publicRoot = path.join(root, 'website');
 const origin = 'https://studio-rizi.pages.dev';
-const today = new Date().toISOString().slice(0, 10);
+const today = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit'
+}).format(new Date());
 const locales = ['ja', 'en', 'zh', 'pt'];
 const languageTags = { ja: 'ja', en: 'en', zh: 'zh-Hans', pt: 'pt' };
 const htmlLanguages = { ja: 'ja', en: 'en', zh: 'zh-CN', pt: 'pt' };
