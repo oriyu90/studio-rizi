@@ -47,32 +47,78 @@ $("saveSettings").onclick = () => {
   $("testResult").textContent = "保存しました（この端末のみ）";
 };
 function setLamp(ok) { const l = $("lamp"); l.classList.remove("ok", "ng"); if (ok === true) l.classList.add("ok"); if (ok === false) l.classList.add("ng"); }
-
-// ---------- ルール変換 (AIなし・オフライン可) ----------
-function ruleConvert(input, mode, level) {
-  let t = input.slice(0, 300); const used = [];
-  const rep = [["ありがとう", "ありがとナス！"], ["美味しい", "あ＾～うめぇなぁ！"], ["おいしい", "あ＾～うめぇなぁ！"],
-    ["疲れた", "ぬわあああああん疲れたもおおおおおん"], ["すごい", "イキスギィくらいすごい"], ["とても", "めちゃ"], ["非常に", "イキスギィくらい"],
-    ["本当", "ホント"], ["了解", "おかのした"], ["ですね", "ですねぇ！"], ["です", "ですねぇ！"], ["ます", "ますゾ〜"]];
-  for (const [a, b] of rep) { if (t.includes(a)) { t = t.replaceAll(a, b); used.push(b); break; } }
-  if (/良い|上手|最高|感動|素晴らしい/.test(input)) { t += " やりますねぇ！"; used.push("やりますねぇ！"); }
-  else if (level >= 2 && !used.length) {
-    if (mode === "kbtit") { t += " ウッソだろお前ｗｗｗ"; used.push("ウッソだろお前ｗｗｗ"); }
-    else { t += " いいゾ～これ"; used.push("いいゾ～これ"); }
+function isMixedBlocked(s) { return location.protocol === "https:" && /^http:\/\//i.test(s.baseUrl || ""); }
+// 起動時の接続確認＋https/Mixed Contentの注意表示
+window.addEventListener("load", async () => {
+  if (!$("useAI").checked) return;
+  const s = { baseUrl: $("baseUrl").value.trim().replace(/\/+$/, ""), apiKey: $("apiKey").value, noKey: $("noKey").checked };
+  if (isMixedBlocked(s)) {
+    $("status").textContent = "注意: https公開版からは自宅httpに接続できません。httpで開くかtunnelのhttps URLを設定してください";
+    setLamp(false); return;
   }
-  if (level >= 3 && !/[？?]$/.test(t)) { t += ["（確信）", "（困惑）", "（提案）"][Math.floor(Math.random() * 3)]; used.push("括弧注釈"); }
-  if (level >= 4) { const g = Math.random() < .5 ? "オッスお願いしまーす！" : "おっ大丈夫か大丈夫か？"; t = g + " " + t; used.push(g); }
+  try {
+    const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 8000);
+    const r = await fetch(s.baseUrl + "/models", { signal: ctrl.signal, headers: (!s.noKey && s.apiKey) ? { Authorization: "Bearer " + s.apiKey } : {} });
+    clearTimeout(t); setLamp(r.ok);
+    if (r.ok) $("status").textContent = "AI接続OK（" + $("model").value.trim() + "）";
+  } catch { setLamp(false); }
+});
+
+// ---------- ルール変換 v2: 原義→実語録の対応を最優先。機械的語尾変換はしない ----------
+const ALIAS = [
+  { re: /はっきり.*わか|はっきり.*分か/, surface: "はっきりわかんだね" },
+  { re: /ありがとう/, surface: "ありがとナス！" },
+  { re: /疲れた|つかれた/, surface: "ぬわあああああん疲れたもおおおおおん" },
+  { re: /美味|おいし/, surface: "あ＾～うめぇなぁ！" },
+  { re: /了解|承知/, surface: "おかのした" },
+  { re: /わかる|分かる|理解/, surface: "わかるわかる（タメ口）" },
+];
+function findAlias(input) { return ALIAS.find(a => a.re.test(input)) || null; }
+function ruleConvert(input, mode, level) {
+  const src = input.slice(0, 300); const used = [];
+  let t = src;
+  const hit = findAlias(src);
+  if (hit) { t = hit.surface; used.push(hit.surface); }
+  const praise = /良い|いい|上手|最高|感動|素晴らしい/.test(src) && !/[？?]/.test(src);
+  if (praise && level >= 2 && !used.includes("やりますねぇ！")) { t += " やりますねぇ！"; used.push("やりますねぇ！"); }
+  else if (!hit && !praise && level >= 3) {
+    const g = mode === "kbtit" ? "ウッソだろお前ｗｗｗ" : "いいゾ～これ";
+    t += " " + g; used.push(g);
+  }
+  if (/すごい|凄い|とても|非常に/.test(src) && level >= 3) { t += " イキスギィ！"; used.push("イキスギィ！"); }
+  // 注釈は文脈で選択。ランダム付与はしない
+  if (level >= 2) {
+    if (/[？?]|どう|なに|なぜ|かな/.test(src)) { t += "（困惑）"; used.push("注釈（困惑）"); }
+    else if (praise || /確か|絶対|間違いない/.test(src)) { t += "（確信）"; used.push("注釈（確信）"); }
+    else if (/てください|ください|ましょう|しよう/.test(src)) { t += "（提案）"; used.push("注釈（提案）"); }
+  }
+  if (level >= 4 && !hit) {
+    const g = mode === "kbtit" ? "つべこべ言わずに来いホイ" : "オッスお願いしまーす！";
+    t = g + " " + t; used.push(g);
+  }
   if (level >= 5) { t += " 114514(意味深)"; used.push("114514"); }
   return { text: t.slice(0, 300), used };
 }
 
 // ---------- AI変換 (OpenAI互換) ----------
 function retrieve(input) {
-  const pick = (kw) => CORPUS.filter(e => kw.some(k => (e.usage + e.meaning + e.surface).includes(k))).slice(0, 7);
-  if (/良い|上手|最高|感動|素晴らしい|美味/.test(input)) return pick(["称賛", "肯定"]);
-  if (/[？?]|どう|なに|なぜ/.test(input)) return pick(["確認", "ツッコミ", "驚き"]);
-  if (/疲|大丈夫|心配/.test(input)) return pick(["心配", "疲労"]);
-  return CORPUS.slice(0, 6);
+  // 原義ヒットを最優先し、残りは文脈タグで補完
+  const out = [];
+  const hit = findAlias(input);
+  if (hit) { const e = CORPUS.find(c => c.surface === hit.surface); if (e) out.push(e); }
+  const push = (kw) => {
+    for (const e of CORPUS) {
+      if (out.length >= 6) break;
+      if (out.includes(e)) continue;
+      if (kw.some(k => (e.usage + e.meaning + e.surface).includes(k))) out.push(e);
+    }
+  };
+  if (/良い|上手|最高|感動|素晴らしい|美味/.test(input)) push(["称賛", "肯定"]);
+  else if (/[？?]|どう|なに|なぜ/.test(input)) push(["確認", "ツッコミ", "驚き", "注釈"]);
+  else if (/疲|大丈夫|心配/.test(input)) push(["心配", "疲労"]);
+  else if (/わか|理解|はっきり/.test(input)) push(["理解", "確認", "相槌"]);
+  else for (const e of CORPUS) { if (out.length >= 6) break; if (!out.includes(e)) out.push(e); }
+  return out;
 }
 const MODE_TX = {
   yajuu: "丁寧だが唐突に大声。〜ですねぇ！/おかのした", kbtit: "荒いタメ口。ウッソだろお前w/悲しいなぁ",
@@ -81,7 +127,9 @@ const MODE_TX = {
 function buildMessages(input, mode, level, cands) {
   const n = level <= 1 ? 1 : level >= 5 ? 4 : "2〜3";
   const candTx = cands.map(c => `・${c.surface}（${c.usage}）`).join("\n");
-  const sys = `あなたは意味を保ったまま淫夢語録風口調に言い換える変換器。制約: 意味を変えない。情報の追加・削除禁止。使える語録は下記のみ、${n}個まで。差別・実在個人名・性的直接描写は禁止。括弧注釈は最大1個。挨拶挿入は${level >= 4 ? "最大1個" : "禁止"}。数字ネタは${level === 5 ? "1回まで" : "禁止"}。出力のみ、最大300字。\n[話者]: ${MODE_TX[mode] || MODE_TX.mix}\n[語録候補]:\n${candTx}`;
+  const hit = findAlias(input);
+  const force = hit ? `\n[必須] 入力は「${hit.surface}」の原義に一致する。出力には必ず「${hit.surface}」を使い、語尾の機械的変換（例：～ますゾ〜）は絶対にしない。` : "";
+  const sys = `あなたは意味を保ったまま淫夢語録風口調に言い換える変換器。制約: 意味を変えない。情報の追加・削除禁止。使える語録は下記のみ、${n}個まで。差別・実在個人名・性的直接描写は禁止。括弧注釈は最大1個（疑問文→困惑、称賛・断定→確信、依頼・提案→提案。それ以外は付けない）。挨拶挿入は${level >= 4 ? "最大1個" : "禁止"}。数字ネタは${level === 5 ? "1回まで" : "禁止"}。出力のみ、最大300字。${force}\n[話者]: ${MODE_TX[mode] || MODE_TX.mix}\n[語録候補]:\n${candTx}\n[良い例] 入: はっきりわかります → 出: はっきりわかんだね\n[悪い例] 入: はっきりわかります → 出: ×はっきりわかりますゾ〜（提案）。機械的語尾変換と不適切な注釈は禁止。`;
   return [{ role: "system", content: sys }, { role: "user", content: `[入力文]: ${input}\n[淫夢度]: ${level}/5\n変換してください。出力のみ。` }];
 }
 async function chatCompletions(s, messages, onToken) {
@@ -90,7 +138,7 @@ async function chatCompletions(s, messages, onToken) {
   const ctrl = new AbortController(); const timer = setTimeout(() => ctrl.abort(), 60000);
   try {
     const res = await fetch(s.baseUrl + "/chat/completions", { method: "POST", headers, signal: ctrl.signal,
-      body: JSON.stringify({ model: s.model, stream: !!onToken, temperature: 0.7, max_tokens: 400, messages }) });
+      body: JSON.stringify({ model: s.model, stream: !!onToken, temperature: 0.3, max_tokens: 400, messages }) });
     if (!res.ok) throw new Error("HTTP " + res.status);
     if (!onToken) { const j = await res.json(); return (j.choices?.[0]?.message?.content || "").trim(); }
     const reader = res.body.getReader(); const dec = new TextDecoder(); let full = "";
@@ -190,7 +238,7 @@ async function doConvert(forceRule) {
         }
       } catch (e) {
         const r = ruleConvert(input, mode, level);
-        out = r.text + "\n（AI接続失敗のためルール変換）"; via = "rule-fallback"; setLamp(false);
+        out = r.text + "\n" + ((location.protocol === "https:" && /^http:\/\//i.test(s.baseUrl)) ? "（https公開版からは自宅httpに接続できません。httpで開くかtunnel設定を）" : "（AI接続失敗のためルール変換）"); via = "rule-fallback"; setLamp(false);
       }
     } else { const r = ruleConvert(input, mode, level); out = r.text; via = "rule"; }
     $("output").value = out; $("status").textContent = "完了（" + via + "）";

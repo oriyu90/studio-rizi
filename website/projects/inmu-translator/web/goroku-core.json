@@ -22,6 +22,7 @@
   {"id":"atari","surface":"当たり前だよなぁ？","speaker":"MUR","source":"誘惑のラビリンス第三章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"当然の確認","usage":"同意を求める文末","tags":["確認"],"nsfw":1},
   {"id":"umai","surface":"あ＾～うめぇなぁ！","speaker":"軍畑先輩","source":"暴虐中毒","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"美味い","usage":"美味しいの置換","tags":["食"],"nsfw":1},
   {"id":"wakaru","surface":"わかるわかる（タメ口）","speaker":"野獣先輩","source":"Discovery 6","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"共感（ここだけタメ口）","usage":"共感の相槌","tags":["相槌"],"nsfw":1},
+  {"id":"hakkiri","surface":"はっきりわかんだね","speaker":"野獣先輩","source":"真夏の夜の淫夢第四章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%81%AF%E3%81%A3%E3%81%8D%E3%82%8A%E3%82%8F%E3%81%8B%E3%82%93%E3%81%A0%E3%81%AD","meaning":"はっきりわかること（「はっきりわかるんだね」の表記は誤り）","usage":"何かがはっきりわかる時に","tags":["理解","確認"],"nsfw":1},
   {"id":"sudeni","surface":"王道を征く","speaker":"野獣先輩","source":"Discovery 6（「行く」「往く」の表記は誤り）","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"正統派（王道を征くのはソープ）","usage":"立派な行動に","tags":["称賛"],"nsfw":1},
   {"id":"kubi","surface":"†悔い改めて†","speaker":"野獣先輩","source":"真夏の夜の淫夢第四章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"反省","usage":"謝罪・反省に","tags":["反省"],"nsfw":1}
 ]
