@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>α6k転送 — Sony αカメラの写真をWi-Fiで取り込むAndroidアプリ</title>
-<meta name="description" content="α6k転送はSony α6000系カメラのWi-Fiに直接つなぎ、写真・動画をスマホへ転送する無料のAndroidアプリ。バックグラウンド転送・保存済み表示・フォルダ指定対応。">
+<meta name="description" content="α6k転送はSony α6000系カメラの画面からSSIDとパスワードをスマホで読み取り、Wi-Fi接続して写真・動画を転送するAndroidアプリ。バックグラウンド転送にも対応。">
 <meta name="author" content="折田悠希 (Yuki_Orita)">
 <meta name="theme-color" content="#f0ebe0">
 <meta name="color-scheme" content="light">
@@ -53,9 +53,9 @@
       "alternateName": ["α6k Transfer"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android 10 (API 29) or later",
-      "softwareVersion": "1.1.1",
+      "softwareVersion": "1.2.0",
       "inLanguage": "ja",
-      "description": "Sony α6000系カメラのWi-Fiアクセスポイントに接続し、DLNA/UPnP経由で写真をスマートフォンへ転送するAndroid向けオープンソースアプリ。日英切替、ライト/ダークテーマ、機種プロファイル対応。",
+      "description": "Sony α6000系カメラの画面からSSIDとパスワードをスマートフォンで読み取り、Wi-Fi接続してDLNA/UPnP経由で写真と動画を転送するAndroid向けオープンソースアプリ。",
       "url": "https://studio-rizi.pages.dev/projects/a6k-transfer/",
       "downloadUrl": "https://github.com/oriyu90/a6k-transfer/releases/latest",
       "codeRepository": "https://github.com/oriyu90/a6k-transfer",
@@ -207,6 +207,14 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
 }
 @media (max-width: 60rem){
 }
+@media (max-width: 39.999rem){
+  .topbar{flex-wrap:wrap}
+  .topbar nav{width:100%;margin-left:0}
+  .topbar nav ul{gap:var(--space-sm) var(--space-md)}
+  .hero,.row{grid-template-columns:minmax(0,1fr)}
+  .hero-copy,.row-copy{min-width:0}
+  .hero-copy .lede,.row-copy p{overflow-wrap:anywhere}
+}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:150ms !important;animation-iteration-count:1 !important;transition-duration:150ms !important}
   html{scroll-behavior:auto}
@@ -217,7 +225,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
 <a class="skip-link" href="#main">本文へ移動</a>
 <header class="topbar">
   <a class="brand" href="#top" aria-label="α6k転送 トップへ">α6k転送</a>
-  <p class="ver">v1.1.1</p>
+  <p class="ver">v1.2.0</p>
   <nav aria-label="Top nav">
     <ul>
     <li><a href="#steps">使い方</a></li>
@@ -230,7 +238,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div class="hero-copy">
       <h1 id="hero-title">カメラの写真を、<br>簡単に取り込む</h1>
-      <p class="lede">α6k転送は、Sony α6000系カメラのWi-Fiに直接つないで、撮った写真・動画をスマートフォンへ転送するオープンソースアプリです。ケーブルもクラウドも不要。カメラ側の「スマートフォンから選ぶ」→「表示中」にするだけで、一覧から選んでギャラリーへ保存できます。転送はバックグラウンドでも継続します。</p>
+      <p class="lede">α6k転送は、Sony α6000系カメラのWi-Fiに直接つないで、写真・動画をスマートフォンへ転送するオープンソースアプリです。カメラ画面のSSIDとパスワードをスマホで撮影して読み取れます。カメラを「表示中」にし、接続後に一覧から選んでギャラリーへ保存。転送はバックグラウンドでも継続します。</p>
       <div class="hero-cta" id="get-started" role="group" aria-label="入手方法">
         <a class="cta-outline" href="https://github.com/oriyu90/a6k-transfer/releases/latest/download/a6k-transfer.apk">インストールする →</a>
         <a class="link-more" href="https://github.com/oriyu90/a6k-transfer">GitHubでソースを読む →</a>
@@ -239,7 +247,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <aside class="ledger" aria-label="台帳">
       <h2>台帳</h2>
       <dl>
-        <div><dt>最新版</dt><dd>v1.1.1</dd></div>
+        <div><dt>最新版</dt><dd>v1.2.0</dd></div>
         <div><dt>最低API</dt><dd>29</dd></div>
         <div><dt>記録形式</dt><dd>JPEG・MP4</dd></div>
         <div><dt>対応機種</dt><dd>α6000実測</dd></div>
@@ -250,7 +258,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <div class="row-copy">
       <h2 id="row-a-title">ケーブルもクラウドもいらない</h2>
       <p class="stand">カメラの電波に、アプリから直接乗る。</p>
-      <p class="body">カメラのアクセスポイント（DIRECT-〜）へアプリ内から接続し、DLNA/UPnPで写真・動画の一覧を取得。選んだものだけをフルサイズで保存します。固定ポートも固定IDも持たない探索設計です。</p>
+      <p class="body">スマホのカメラでSonyの接続画面を撮影すると、SSIDとパスワードを端末内で読み取り、確認後に接続できます。ライト・ピント合わせ・ズームに対応し、手入力も可能です。接続後はDLNA/UPnPで写真・動画の一覧を取得し、選んだものだけをフルサイズで保存します。</p>
     </div>
     <div class="proof" aria-label="接続の諸元">
       <h3>諸元</h3>
@@ -303,15 +311,15 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <p class="stand">直感的でシンプルな使い方</p>
     <ol class="stages">
       <li><span class="stage">01</span><div><h3>カメラを「表示中」にする</h3><p>MENU → スマートフォン転送 → スマートフォンから選ぶ →「表示中」。カメラがアクセスポイントを開きます。</p></div></li>
-      <li><span class="stage">02</span><div><h3>接続＋バインド</h3><p>アプリの「接続」タブで「接続＋バインド」。初回のみシステムの承認ダイアログが出ます。</p></div></li>
-      <li><span class="stage">03</span><div><h3>探索して転送</h3><p>「カメラ探索」でLOCATION確定後、「転送」タブで一覧読込→選択→転送。ギャラリーへ保存されます。</p></div></li>
+      <li><span class="stage">02</span><div><h3>画面を読み取って接続</h3><p>「カメラ画面を読み取る」で撮影し、SSIDとパスワードを確認して「接続＋バインド」。初回はシステムの承認が必要です。手入力もできます。</p></div></li>
+      <li><span class="stage">03</span><div><h3>探索して転送</h3><p>読み取り後は探索が自動で始まります。手入力時は「カメラ探索」を実行。続いて「転送」タブで一覧を読み込み、選んだ写真・動画を保存します。</p></div></li>
     </ol>
   </section>
   <section class="gap" id="install" aria-labelledby="install-title">
     <h2 id="install-title">インストール方法</h2>
     <p class="stand">インストール手順</p>
     <ol class="stages">
-      <li><span class="stage">01</span><div><h3>APKを入れる</h3><p>「インストールする」ボタンからAPKを取得します（v1.1.1・約26MB）。</p></div></li>
+      <li><span class="stage">01</span><div><h3>APKを入れる</h3><p>「インストールする」ボタンからAPKを取得します（v1.2.0・約74MB）。</p></div></li>
       <li><span class="stage">02</span><div><h3>提供元を許可する</h3><p>初回のみ、案内に従ってブラウザの「不明なアプリのインストール」を有効にします。</p></div></li>
       <li><span class="stage">03</span><div><h3>開いて入れる</h3><p>ダウンロードしたファイルを開くとインストーラが始まります。確認画面は内容を見て進んでください。</p></div></li>
     </ol>
@@ -324,7 +332,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <h2 id="specs-title">仕様</h2>
     <p class="stand">最新版の仕様と概要</p>
     <table class="spec-sheet">
-      <tr><th>バージョン</th><td>v1.1.1（versionCode 5）</td></tr>
+      <tr><th>バージョン</th><td>v1.2.0（versionCode 6）</td></tr>
       <tr><th>対応OS</th><td>Android 10（API 29）以降</td></tr>
       <tr><th>対応言語</th><td>日本語・English（アプリ内切替）</td></tr>
       <tr><th>対応機種</th><td>α6000（実機検証済み）、α6100以降（予測実装・未検証）</td></tr>
@@ -344,7 +352,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <li><a hreflang="zh-Hans" lang="zh-Hans" href="/projects/a6k-transfer/zh/" aria-label="简体中文">中文</a></li>
     <li><a hreflang="pt" lang="pt" href="/projects/a6k-transfer/pt/" aria-label="Português">PT</a></li>
   </ul>
-  <p class="foot-colophon">α6k転送 v1.1.1 · Android 10+ · Playfair Display, Noto Serif JP, IBM Plex Mono · MIT · 折田悠希（おりたゆうき / Yuki_Orita）· <a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · © 2026</p>
+  <p class="foot-colophon">α6k転送 v1.2.0 · Android 10+ · Playfair Display, Noto Serif JP, IBM Plex Mono · MIT · 折田悠希（おりたゆうき / Yuki_Orita）· <a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · © 2026</p>
 </footer>
 <canvas id="paperbg" aria-hidden="true"></canvas>
 <script>

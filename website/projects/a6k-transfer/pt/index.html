@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>α6k Transfer — Transfira fotos da sua câmera Sony α via Wi-Fi (app Android)</title>
-<meta name="description" content="α6k Transfer conecta-se ao Wi-Fi das câmeras Sony α6000 e transfere fotos e vídeos para o celular. Segundo plano, selo Salva, pasta personalizada. Grátis e aberto.">
+<meta name="description" content="α6k Transfer lê o SSID e a senha na tela da Sony α6000 com a câmera do celular, conecta ao Wi-Fi e transfere fotos JPEG e vídeos MP4 em segundo plano.">
 <meta name="author" content="Yuki Orita">
 <meta name="theme-color" content="#f0ebe0">
 <meta name="color-scheme" content="light">
@@ -53,9 +53,9 @@
       "alternateName": ["α6k転送"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android 10 (API 29) ou posterior",
-      "softwareVersion": "1.1.1",
+      "softwareVersion": "1.2.0",
       "inLanguage": "pt",
-      "description": "App Android aberto que se conecta ao ponto de acesso Wi-Fi das câmeras Sony α6000 e transfere fotos para o celular via DLNA/UPnP. Alternância japonês/inglês, temas claro/escuro e perfis de câmera.",
+      "description": "App Android aberto que lê o SSID e a senha na tela das câmeras Sony α6000 com o celular, conecta ao Wi-Fi e transfere fotos e vídeos via DLNA/UPnP.",
       "url": "https://studio-rizi.pages.dev/projects/a6k-transfer/pt/",
       "downloadUrl": "https://github.com/oriyu90/a6k-transfer/releases/latest",
       "codeRepository": "https://github.com/oriyu90/a6k-transfer",
@@ -212,6 +212,14 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
 }
 @media (max-width: 60rem){
 }
+@media (max-width: 39.999rem){
+  .topbar{flex-wrap:wrap}
+  .topbar nav{width:100%;margin-left:0}
+  .topbar nav ul{gap:var(--space-sm) var(--space-md)}
+  .hero,.row{grid-template-columns:minmax(0,1fr)}
+  .hero-copy,.row-copy{min-width:0}
+  .hero-copy .lede,.row-copy p{overflow-wrap:anywhere}
+}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:150ms !important;animation-iteration-count:1 !important;transition-duration:150ms !important}
   html{scroll-behavior:auto}
@@ -222,7 +230,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
 <header class="topbar">
   <a class="brand" href="#top" aria-label="Voltar ao topo de α6k Transfer">α6k Transfer</a>
-  <p class="ver">v1.1.1</p>
+  <p class="ver">v1.2.0</p>
   <nav aria-label="Top nav">
     <ul>
     <li><a href="#steps">Como usar</a></li>
@@ -235,7 +243,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div class="hero-copy">
       <h1 id="hero-title">Da câmera ao bolso, via Wi-Fi</h1>
-      <p class="lede">O α6k Transfer conecta-se diretamente ao Wi-Fi das câmeras Sony α6000 e transfere suas fotos e vídeos para o celular. Sem cabos, sem nuvem. Ajuste a câmera para “Selecionar no smartphone” → “Exibindo”, escolha os itens na lista e salve-os na galeria. A transferência continua em segundo plano.</p>
+      <p class="lede">O α6k Transfer conecta-se ao Wi-Fi das câmeras Sony α6000 e transfere fotos e vídeos para o celular. Leia o SSID e a senha na tela da câmera usando a câmera do celular. Deixe a Sony em “Exibindo”, conecte e escolha o que salvar na galeria. A transferência continua em segundo plano.</p>
       <div class="hero-cta" id="get-started" role="group" aria-label="Baixar o app">
         <a class="cta-outline" href="https://github.com/oriyu90/a6k-transfer/releases/latest/download/a6k-transfer.apk">Instalar o APK →</a>
         <a class="link-more" href="https://github.com/oriyu90/a6k-transfer">Ver o código no GitHub →</a>
@@ -248,7 +256,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <aside class="ledger" aria-label="Livro-caixa">
       <h2>Livro-caixa</h2>
       <dl>
-        <div><dt>Atual</dt><dd>v1.1.1</dd></div>
+        <div><dt>Atual</dt><dd>v1.2.0</dd></div>
         <div><dt>API mínima</dt><dd>29</dd></div>
         <div><dt>Mídia</dt><dd>JPEG·MP4</dd></div>
         <div><dt>Provada em</dt><dd>α6000</dd></div>
@@ -259,7 +267,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <div class="row-copy">
       <h2 id="row-a-title">Sem cabo, sem nuvem</h2>
       <p class="stand">Suba no sinal da câmera, de dentro do app.</p>
-      <p class="body">Entre no ponto de acesso da câmera (DIRECT-…) pelo próprio app, navegue por fotos e vídeos via DLNA/UPnP e salve só os escolhidos em tamanho original. A descoberta não prende porta nem ID.</p>
+      <p class="body">Fotografe a tela de conexão da Sony para ler o SSID e a senha no próprio aparelho, confira o resultado e conecte. O leitor oferece luz, toque para focar e zoom; a entrada manual permanece disponível. Depois, navegue via DLNA/UPnP e salve só as fotos e os vídeos escolhidos em tamanho original.</p>
     </div>
     <div class="proof" aria-label="Números da conexão">
       <h3>Números</h3>
@@ -312,15 +320,15 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <p class="stand">Um gesto na câmera, dois no app.</p>
     <ol class="stages">
       <li><span class="stage">01</span><div><h3>Deixe a câmera em “Exibindo”</h3><p>Na câmera: MENU → Enviar p/ smartphone → Selec. no smartphone → “Exibindo”. A câmera abre o ponto de acesso.</p></div></li>
-      <li><span class="stage">02</span><div><h3>Conectar e vincular</h3><p>Na aba Conexão do app: “Conectar + vincular”. Na primeira vez aparece um diálogo de aprovação do sistema.</p></div></li>
-      <li><span class="stage">03</span><div><h3>Descobrir e transferir</h3><p>“Descobrir câmera” confirma o LOCATION e, na aba Transferência, carregue a lista, selecione e transfira. Os arquivos caem na galeria.</p></div></li>
+      <li><span class="stage">02</span><div><h3>Ler e conectar</h3><p>Na aba Conexão, fotografe a tela da câmera, confira o SSID e a senha e toque em “Conectar + vincular”. A primeira conexão pede aprovação do sistema. A entrada manual continua disponível.</p></div></li>
+      <li><span class="stage">03</span><div><h3>Descobrir e transferir</h3><p>Após a leitura, a busca começa automaticamente. Se digitou os dados, toque em “Descobrir câmera”. Na aba Transferência, carregue a lista e salve as fotos e vídeos escolhidos.</p></div></li>
     </ol>
   </section>
   <section class="gap" id="install" aria-labelledby="install-title">
     <h2 id="install-title">Instalação</h2>
     <p class="stand">Três gestos até instalar.</p>
     <ol class="stages">
-      <li><span class="stage">01</span><div><h3>Baixe o APK</h3><p>Pelo botão de instalação (v1.1.1, cerca de 26MB).</p></div></li>
+      <li><span class="stage">01</span><div><h3>Baixe o APK</h3><p>Pelo botão de instalação (v1.2.0, cerca de 74MB).</p></div></li>
       <li><span class="stage">02</span><div><h3>Autorize a fonte</h3><p>Só na primeira vez: ative “Instalar apps desconhecidos” para o navegador.</p></div></li>
       <li><span class="stage">03</span><div><h3>Abra para instalar</h3><p>Abrir o arquivo inicia o instalador. Leia cada confirmação.</p></div></li>
     </ol>
@@ -333,7 +341,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <h2 id="specs-title">Especificações</h2>
     <p class="stand">A edição e o livro-caixa. Só números medidos ou publicados.</p>
     <table class="spec-sheet">
-      <tr><th>Versão</th><td>v1.1.1 (versionCode 5)</td></tr>
+      <tr><th>Versão</th><td>v1.2.0 (versionCode 6)</td></tr>
       <tr><th>Requisitos</th><td>Android 10 (API 29) ou posterior</td></tr>
       <tr><th>Idiomas</th><td>Japonês, inglês (troca no app)</td></tr>
       <tr><th>Câmeras</th><td>α6000 (verificada no aparelho), α6100 e posteriores (preditiva, não verificada)</td></tr>
@@ -360,7 +368,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <li><a hreflang="zh-Hans" lang="zh-Hans" href="/projects/a6k-transfer/zh/" aria-label="简体中文">中文</a></li>
     <li><a hreflang="pt" lang="pt" href="/projects/a6k-transfer/pt/" aria-current="page" aria-label="Português">PT</a></li>
   </ul>
-  <p class="foot-colophon">α6k Transfer v1.1.1 · Android 10+ · Playfair Display, Hanken Grotesk, IBM Plex Mono · MIT · Yuki Orita · <a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · © 2026</p>
+  <p class="foot-colophon">α6k Transfer v1.2.0 · Android 10+ · Playfair Display, Hanken Grotesk, IBM Plex Mono · MIT · Yuki Orita · <a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · © 2026</p>
 </footer>
 <canvas id="paperbg" aria-hidden="true"></canvas>
 <script>

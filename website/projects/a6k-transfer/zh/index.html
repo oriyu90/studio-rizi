@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>α6k Transfer — 通过 Wi-Fi 从 Sony α 相机传输照片的 Android 应用</title>
-<meta name="description" content="α6k Transfer 直连 Sony α6000 系列相机 Wi-Fi，把照片和视频传到手机。支持后台传输、已保存标记与自定义文件夹。免费开源。">
+<meta name="description" content="α6k Transfer 用手机相机读取 Sony α6000 屏幕上的 Wi-Fi 名称和密码，连接后传输 JPEG 照片与 MP4 视频，并支持后台传输。">
 <meta name="author" content="折田悠希 (Yuki Orita)">
 <meta name="theme-color" content="#f0ebe0">
 <meta name="color-scheme" content="light">
@@ -53,9 +53,9 @@
       "alternateName": ["α6k転送"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android 10 (API 29) 或更高",
-      "softwareVersion": "1.1.1",
+      "softwareVersion": "1.2.0",
       "inLanguage": "zh-Hans",
-      "description": "直连 Sony α6000 系列相机 Wi-Fi 接入点、通过 DLNA/UPnP 把照片传输到手机的开源 Android 应用。支持日语／英语切换、浅色／深色主题与机型配置文件。",
+      "description": "用手机相机读取 Sony α6000 系列相机屏幕上的 Wi-Fi 名称和密码，连接后通过 DLNA/UPnP 传输照片和视频的开源 Android 应用。",
       "url": "https://studio-rizi.pages.dev/projects/a6k-transfer/zh/",
       "downloadUrl": "https://github.com/oriyu90/a6k-transfer/releases/latest",
       "codeRepository": "https://github.com/oriyu90/a6k-transfer",
@@ -212,6 +212,14 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
 }
 @media (max-width: 60rem){
 }
+@media (max-width: 39.999rem){
+  .topbar{flex-wrap:wrap}
+  .topbar nav{width:100%;margin-left:0}
+  .topbar nav ul{gap:var(--space-sm) var(--space-md)}
+  .hero,.row{grid-template-columns:minmax(0,1fr)}
+  .hero-copy,.row-copy{min-width:0}
+  .hero-copy .lede,.row-copy p{overflow-wrap:anywhere}
+}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:150ms !important;animation-iteration-count:1 !important;transition-duration:150ms !important}
   html{scroll-behavior:auto}
@@ -222,7 +230,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
 <a class="skip-link" href="#main">跳到正文</a>
 <header class="topbar">
   <a class="brand" href="#top" aria-label="回到 α6k Transfer 顶部">α6k Transfer</a>
-  <p class="ver">v1.1.1</p>
+  <p class="ver">v1.2.0</p>
   <nav aria-label="Top nav">
     <ul>
     <li><a href="#steps">使用方法</a></li>
@@ -235,7 +243,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div class="hero-copy">
       <h1 id="hero-title">直连相机，把照片带走</h1>
-      <p class="lede">α6k Transfer 可直连 Sony α6000 系列相机的 Wi-Fi，把拍摄的照片和视频传输到手机。无需数据线，也无需云端。只需在相机上设为“从智能手机选择”→“显示中”，即可在列表中选择并保存到相册。传输可在后台继续。</p>
+      <p class="lede">α6k Transfer 可直连 Sony α6000 系列相机的 Wi-Fi，把照片和视频传到手机。用手机相机读取相机屏幕上的 SSID 和密码，确认后连接。把 Sony 相机设为“显示中”，即可从列表选择并保存到相册；传输可在后台继续。</p>
       <div class="hero-cta" id="get-started" role="group" aria-label="获取应用">
         <a class="cta-outline" href="https://github.com/oriyu90/a6k-transfer/releases/latest/download/a6k-transfer.apk">安装 APK →</a>
         <a class="link-more" href="https://github.com/oriyu90/a6k-transfer">在 GitHub 查看源码 →</a>
@@ -248,7 +256,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <aside class="ledger" aria-label="台账">
       <h2>台账</h2>
       <dl>
-        <div><dt>最新版本</dt><dd>v1.1.1</dd></div>
+        <div><dt>最新版本</dt><dd>v1.2.0</dd></div>
         <div><dt>最低 API</dt><dd>29</dd></div>
         <div><dt>记录格式</dt><dd>JPEG·MP4</dd></div>
         <div><dt>验证机型</dt><dd>α6000</dd></div>
@@ -259,7 +267,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <div class="row-copy">
       <h2 id="row-a-title">数据线、云端，一概不用</h2>
       <p class="stand">在应用内直接登上相机的电波。</p>
-      <p class="body">在应用内加入相机接入点（DIRECT-…），通过 DLNA/UPnP 获取照片和视频列表，只保存选中的原图／原视频。探索设计不固定端口与 ID。</p>
+      <p class="body">拍摄 Sony 相机的连接画面，在本机识别 SSID 和密码，确认后连接。扫描界面支持补光灯、点按对焦和缩放，也保留手动输入。随后经 DLNA/UPnP 浏览并保存选中的原图与视频。</p>
     </div>
     <div class="proof" aria-label="连接参数">
       <h3>参数</h3>
@@ -312,15 +320,15 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <p class="stand">相机一步，应用两步。</p>
     <ol class="stages">
       <li><span class="stage">01</span><div><h3>把相机设为“显示中”</h3><p>MENU → 发送到智能手机 → 从智能手机选择 →“显示中”。相机会打开接入点。</p></div></li>
-      <li><span class="stage">02</span><div><h3>连接＋绑定</h3><p>在应用的“连接”标签页点“连接＋绑定”。首次使用会出现系统确认对话框。</p></div></li>
-      <li><span class="stage">03</span><div><h3>搜索并传输</h3><p>点“搜索相机”确认 LOCATION，到“传输”标签页读取列表、选择并传输。文件会存入相册。</p></div></li>
+      <li><span class="stage">02</span><div><h3>扫描并连接</h3><p>在“连接”标签页拍摄相机画面，核对 SSID 和密码，再点“连接＋绑定”。首次连接需经系统确认；也可手动输入。</p></div></li>
+      <li><span class="stage">03</span><div><h3>搜索并传输</h3><p>扫描后会自动搜索相机；手动输入时请点“搜索相机”。随后在“传输”标签页读取列表并保存选中的照片和视频。</p></div></li>
     </ol>
   </section>
   <section class="gap" id="install" aria-labelledby="install-title">
     <h2 id="install-title">安装</h2>
     <p class="stand">三步装好。</p>
     <ol class="stages">
-      <li><span class="stage">01</span><div><h3>下载 APK</h3><p>点安装按钮获取（v1.1.1，约 26MB）。</p></div></li>
+      <li><span class="stage">01</span><div><h3>下载 APK</h3><p>点安装按钮获取（v1.2.0，约 74MB）。</p></div></li>
       <li><span class="stage">02</span><div><h3>允许该来源</h3><p>首次按提示开启浏览器的“安装未知应用”。</p></div></li>
       <li><span class="stage">03</span><div><h3>打开安装</h3><p>打开文件即开始安装，请看清确认页再继续。</p></div></li>
     </ol>
@@ -333,7 +341,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <h2 id="specs-title">规格</h2>
     <p class="stand">版本与台账。数字只写实测或公开值。</p>
     <table class="spec-sheet">
-      <tr><th>版本</th><td>v1.1.1（versionCode 5）</td></tr>
+      <tr><th>版本</th><td>v1.2.0（versionCode 6）</td></tr>
       <tr><th>系统要求</th><td>Android 10（API 29）或更高</td></tr>
       <tr><th>语言</th><td>日语、英语（应用内切换）</td></tr>
       <tr><th>支持机型</th><td>α6000（已真机验证）、α6100 及后续机型（预测性适配、未经验证）</td></tr>
@@ -360,7 +368,7 @@ section.gap .stand{margin:0 0 var(--space-lg);color:var(--color-muted)}
     <li><a hreflang="zh-Hans" lang="zh-Hans" href="/projects/a6k-transfer/zh/" aria-current="page" aria-label="简体中文">中文</a></li>
     <li><a hreflang="pt" lang="pt" href="/projects/a6k-transfer/pt/" aria-label="Português">PT</a></li>
   </ul>
-  <p class="foot-colophon">α6k Transfer v1.1.1 · Android 10+ · Playfair Display, Noto Serif SC, IBM Plex Mono · MIT · 折田悠希（Yuki Orita）· <a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · © 2026</p>
+  <p class="foot-colophon">α6k Transfer v1.2.0 · Android 10+ · Playfair Display, Noto Serif SC, IBM Plex Mono · MIT · 折田悠希（Yuki Orita）· <a href="https://studio-rizi.pages.dev/">Studio RIZI</a> · © 2026</p>
 </footer>
 <canvas id="paperbg" aria-hidden="true"></canvas>
 <script>
