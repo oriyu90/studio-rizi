@@ -1,5 +1,5 @@
 [
-  {"id":"yarimasune","surface":"やりますねぇ！","speaker":"野獣先輩","source":"Discovery 6","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%82%84%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AD%E3%81%87%EF%BC%81","meaning":"肯定・称賛","usage":"相手を褒める文末に付ける","tags":["称賛","肯定"],"nsfw":1},
+  {"id":"yarimasune","surface":"やりますねぇ！","speaker":"野獣先輩","source":"Discovery 6","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%82%84%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AD%E3%81%87%EF%BC%81","meaning":"肯定・称賛（「ありますねぇ！」「できますねぇ！」等の動詞入替改変可）","usage":"相手を褒める文末に付ける。原義トリガー：やりますね/やってますね/しますね/していますね/困りますね。強調形は「やりますねぇスギィ！」（やりますねぇ＋○○スギィの正規改変、すごいですね/やばいですね用）","tags":["称賛","肯定"],"nsfw":1},
   {"id":"iizokore","surface":"いいゾ～これ","speaker":"MUR","source":"誘惑のラビリンス第三章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%81%84%E3%81%84%E3%82%BE%EF%BD%9E%E3%81%93%E3%82%8C","meaning":"良いものへの賛同（恍惚符で「いいゾ＾～これ」とも）","usage":"良いと感じた文末に付ける","tags":["称賛"],"nsfw":1},
   {"id":"ikisugi","surface":"イキスギィ！","speaker":"野獣先輩","source":"真夏の夜の淫夢第四章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%82%A4%E3%82%AD%E3%82%B9%E3%82%AE%E3%82%A3%EF%BC%81","meaning":"強調接尾辞 ○○スギィ","usage":"形容詞にスギィを付けて強調","tags":["強調"],"nsfw":1},
   {"id":"nattu","surface":"ンアッー！","speaker":"野獣先輩","source":"真夏の夜の淫夢第四章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%83%B3%E3%82%A2%E3%83%83%E3%83%BC%EF%BC%81","meaning":"驚き・咆哮（野獣の咆哮）","usage":"文末に1回まで(濃口のみ)","tags":["間投詞"],"nsfw":2},

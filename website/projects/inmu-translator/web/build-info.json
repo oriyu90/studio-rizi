@@ -1,7 +1,7 @@
 {
   "format": "inmu-translator-web-build",
   "version": 1,
-  "appVersion": "0.2.0-web",
+  "appVersion": "0.3.0-web",
   "builtAt": "2026-10-09",
   "basePath": "/projects/inmu-translator/web/",
   "llmDefault": { "baseUrl": "http://192.168.0.114:1234/v1", "model": "openai/gpt-oss-20b", "noKey": true },
