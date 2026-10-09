@@ -47,11 +47,11 @@
       "alternateName": ["エムターム", "mterm Android Linux Workstation Terminal"],
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Android 10 or later",
-      "softwareVersion": "1.1.0",
+      "softwareVersion": "1.1.1",
       "inLanguage": "ja",
       "description": "Android端末上でDebian 13.7 trixie（arm64）をPRootで動かし、本物のPTYターミナルとClaude Codeによる開発を可能にするオープンソースのLinuxワークステーション・ターミナルアプリ。root不要。",
       "url": "https://studio-rizi.pages.dev/projects/mterm/",
-      "downloadUrl": "https://github.com/oriyu90/mterm/releases/tag/v1.1.0",
+      "downloadUrl": "https://github.com/oriyu90/mterm/releases/tag/v1.1.1",
       "codeRepository": "https://github.com/oriyu90/mterm",
       "license": "https://opensource.org/licenses/MIT",
       "author": { "@id": "https://studio-rizi.pages.dev/#person" },
@@ -88,7 +88,7 @@
         <a href="#languages">対応言語</a>
         <a class="nav-download" href="#get-started">入手する</a>
       </nav>
-      <span class="header-release">v1.1.0</span>
+      <span class="header-release">v1.1.1</span>
     </div>
     <nav class="language-switcher-bar" aria-label="言語切り替え">
       <a hreflang="ja" lang="ja" href="/projects/mterm/" aria-current="page">日本語</a>
@@ -103,16 +103,16 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <div>
-            <p class="release-line">Android · Debian 13.7 trixie arm64 · PRoot + PTY · Open source · v1.1.0</p>
+            <p class="release-line">Android · Debian 13.7 trixie arm64 · PRoot + PTY · Open source · v1.1.1</p>
             <h1 id="hero-title">ポケットの中に、<br>Debianワークステーションを。</h1>
             <p class="hero-lead">mterm（エムターム）は、Android端末上でDebian Linuxをそのまま動かせるオープンソースのターミナルアプリです。root取得は不要で、PRootによるユーザー空間chrootと本物のPTYターミナル、Claude CodeによるAI開発を1つのアプリにまとめました。</p>
           </div>
           <div class="hero-actions" role="group" aria-label="入手方法">
             <a class="button" href="https://github.com/oriyu90/mterm">GitHubでソースを見る</a>
-            <a class="button button-secondary" href="https://github.com/oriyu90/mterm/releases/tag/v1.1.0">APKをインストール</a>
+            <a class="button button-secondary" href="https://github.com/oriyu90/mterm/releases/tag/v1.1.1">APKをインストール</a>
           </div>
         </div>
-        <aside class="hero-aside" aria-label="mterm v1.1.0">
+        <aside class="hero-aside" aria-label="mterm v1.1.1">
           <div class="terminal-mock" role="img" aria-label="mtermのターミナル画面イメージ">
             <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
             <pre><span class="p">$</span> mterm --debian trixie
@@ -121,7 +121,7 @@ Debian GNU/Linux 13.7 (trixie)
 root@localhost:~# claude
 Welcome to Claude Code_</pre>
           </div>
-          <p class="aside-note">v1.1.0では3エディション（完全版・モダン実験版・リモート対応版）の署名済みAPKをGitHub Releasesで配布しています。</p>
+          <p class="aside-note">v1.1.1では3エディション（完全版・モダン実験版・リモート対応版）の署名済みAPKをGitHub Releasesで配布しています。</p>
           <ul class="aside-facts" aria-label="概要">
             <li><span>対応OS</span>Android 10 以降</li>
             <li><span>Linux</span>Debian 13.7 trixie arm64</li>
@@ -262,12 +262,12 @@ Welcome to Claude Code_</pre>
       <div class="page-width">
         <div class="section-heading">
           <h2 id="get-started-title">5分で、端末がLinuxになる。</h2>
-          <p>mterm v1.1.0はGitHub Releasesから署名済みAPKを入手できます。ストアを経由しないサイドロード配布のため、次の手順で導入します。</p>
+          <p>mterm v1.1.1はGitHub Releasesから署名済みAPKを入手できます。ストアを経由しないサイドロード配布のため、次の手順で導入します。</p>
         </div>
         <article class="install-platform">
           <h3>サイドロード導入手順</h3>
           <ol class="step-list">
-            <li><span class="step-number">1</span><span><a href="https://github.com/oriyu90/mterm/releases/tag/v1.1.0">GitHub Releases</a>から用途に合うエディションのAPKをダウンロードし、公開SHA-256と照合します。</span></li>
+            <li><span class="step-number">1</span><span><a href="https://github.com/oriyu90/mterm/releases/tag/v1.1.1">GitHub Releases</a>から用途に合うエディションのAPKをダウンロードし、公開SHA-256と照合します。</span></li>
             <li><span class="step-number">2</span><span>Androidの「提供元不明のアプリのインストール」を許可し、APKをタップしてインストールします。</span></li>
             <li><span class="step-number">3</span><span>アプリを開き、Debian rootfsをダウンロード・展開して初回のDebian環境を起動します。</span></li>
             <li><span class="step-number">4</span><span>ターミナルで <code>apt update &amp;&amp; apt upgrade</code> を実行し、Claude Codeを使う場合は <code>claude</code> と入力して開始します。</span></li>
