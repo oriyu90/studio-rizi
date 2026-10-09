@@ -3,6 +3,7 @@
 const $ = (id) => document.getElementById(id);
 const SET_KEY = "inmu.settings.v1", THEME_KEY = "inmu.theme.v1";
 const HOME_URL = "http://192.168.0.114:1234/v1", HOME_MODEL = "openai/gpt-oss-20b";
+const ANTHROPIC_URL = "https://api.anthropic.com/v1", ANTHROPIC_VERSION = "2023-06-01";
 let CORPUS = [];
 fetch("./goroku-core.json").then(r => r.json()).then(j => { CORPUS = j; rebuildAlias(); }).catch(() => CORPUS = []);
 
@@ -20,18 +21,19 @@ $("themeBtn").onclick = () => {
 
 // ---------- 設定 ----------
 const PRESETS = {
+  "lmstudio": { baseUrl: "http://localhost:1234/v1", model: "openai/gpt-oss-20b", noKey: true },
   "home-lmstudio": { baseUrl: HOME_URL, model: HOME_MODEL, noKey: true },
   "ollama": { baseUrl: "http://localhost:11434/v1", model: "llama3.1:8b", noKey: true },
-  "lmstudio": { baseUrl: "http://localhost:1234/v1", model: "local-model", noKey: true },
   "openai": { baseUrl: "https://api.openai.com/v1", model: "gpt-4o-mini", noKey: false },
+  "anthropic": { baseUrl: ANTHROPIC_URL, model: "claude-sonnet-4-5", noKey: false },
   "openrouter": { baseUrl: "https://openrouter.ai/api/v1", model: "openai/gpt-4o-mini", noKey: false },
   "custom": null
 };
+const LOCAL_DEFAULT = { provider: "lmstudio", baseUrl: "http://localhost:1234/v1", model: "openai/gpt-oss-20b", apiKey: "", noKey: true, useAI: true };
 function loadSettings() {
   try {
-    return Object.assign({ provider: "home-lmstudio", baseUrl: HOME_URL, model: HOME_MODEL, apiKey: "", noKey: true, useAI: true },
-      JSON.parse(localStorage.getItem(SET_KEY) || "{}"));
-  } catch { return { provider: "home-lmstudio", baseUrl: HOME_URL, model: HOME_MODEL, apiKey: "", noKey: true, useAI: true }; }
+    return Object.assign({}, LOCAL_DEFAULT, JSON.parse(localStorage.getItem(SET_KEY) || "{}"));
+  } catch { return { ...LOCAL_DEFAULT }; }
 }
 function applySettings(s) {
   $("provider").value = s.provider in PRESETS ? s.provider : "custom";
@@ -51,16 +53,20 @@ function isMixedBlocked(s) { return location.protocol === "https:" && /^http:\/\
 // 起動時の接続確認＋https/Mixed Contentの注意表示
 window.addEventListener("load", async () => {
   if (!$("useAI").checked) return;
-  const s = { baseUrl: $("baseUrl").value.trim().replace(/\/+$/, ""), apiKey: $("apiKey").value, noKey: $("noKey").checked };
+  const s = currentFormSettings();
   if (isMixedBlocked(s)) {
     $("status").textContent = "注意: https公開版からは自宅httpに接続できません。httpで開くかtunnelのhttps URLを設定してください";
     setLamp(false); return;
   }
   try {
     const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 8000);
-    const r = await fetch(s.baseUrl + "/models", { signal: ctrl.signal, headers: (!s.noKey && s.apiKey) ? { Authorization: "Bearer " + s.apiKey } : {} });
-    clearTimeout(t); setLamp(r.ok);
-    if (r.ok) $("status").textContent = "AI接続OK（" + $("model").value.trim() + "）";
+    const ids = await fetchModels(s, ctrl.signal).finally(() => clearTimeout(t));
+    setLamp(true);
+    const chat = ids.filter(id => !/embed/i.test(id));
+    const dl = $("modelList"); dl.innerHTML = "";
+    for (const id of chat) { const o = document.createElement("option"); o.value = id; dl.append(o); }
+    if (!s.model && chat.length) { $("model").value = chat[0]; SETTINGS.model = chat[0]; }
+    if (s.model) $("status").textContent = "AI接続OK（" + s.model + "）";
   } catch { setLamp(false); }
 });
 
@@ -166,9 +172,44 @@ function buildMessages(input, mode, level, cands) {
   const sys = `あなたは意味を保ったまま淫夢語録風口調に言い換える変換器。制約: 意味を変えない。情報の追加・削除禁止。使える語録は下記のみ、${n}個まで。差別・実在個人名・性的直接描写は禁止。括弧注釈は最大1個（疑問文→困惑、称賛・断定→確信、依頼・提案→提案。それ以外は付けない）。挨拶挿入は${level >= 4 ? "最大1個" : "禁止"}。数字ネタは${level === 5 ? "1回まで" : "禁止"}。出力のみ、最大300字。${force}\n[話者]: ${MODE_TX[mode] || MODE_TX.mix}\n[語録候補]:\n${candTx}\n[良い例] 入: はっきりわかります → 出: はっきりわかんだね / 入: あなたがバカだとはっきりわかります → 出: あなたがバカだとはっきりわかんだね（文脈を残し該当部のみ置換） / 入: すごいですね → 出: やりますねぇスギィ！ / 入: 困りますね → 出: やりますねぇ！\n[対応表] やりますね/しますね/していますね/困りますね→やりますねぇ！、すごいですね/やばいですね→やりますねぇスギィ！（「やりますねぇ＋○○スギィ」の正規改変）。よくわかります→はっきりわかんだね。\n[悪い例] 入: はっきりわかります → 出: ×はっきりわかりますゾ〜（提案）。機械的語尾変換と不適切な注釈は禁止。 / 入: いい感じにしてやろう → 出: ×いい感じにしてやろう やりますねぇ！（意志・勧誘・依頼の文に称賛語録を付けない。いい感じ等の修飾用法の「いい」にも反応しない）。`;
   return [{ role: "system", content: sys }, { role: "user", content: `[入力文]: ${input}\n[淫夢度]: ${level}/5\n変換してください。出力のみ。` }];
 }
+function currentFormSettings() {
+  return { provider: $("provider").value, baseUrl: $("baseUrl").value.trim().replace(/\/+$/, ""), model: $("model").value.trim(), apiKey: $("apiKey").value, noKey: $("noKey").checked, useAI: $("useAI").checked };
+}
+function authHeaders(s) {
+  if (s.provider === "anthropic") {
+    return s.apiKey ? { "x-api-key": s.apiKey, "anthropic-version": ANTHROPIC_VERSION, "anthropic-dangerous-direct-browser-access": "true" } : {};
+  }
+  return (!s.noKey && s.apiKey) ? { Authorization: "Bearer " + s.apiKey } : {};
+}
+async function fetchModels(s, signal) {
+  const r = await fetch(s.baseUrl + "/models", { headers: authHeaders(s), signal });
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  const j = await r.json();
+  return (j.data || []).map(m => m.id || m.name).filter(Boolean);
+}
+async function refreshModelList(silent) {
+  const s = currentFormSettings();
+  try {
+    const ids = (await fetchModels(s)).filter(id => !/embed/i.test(id));
+    const dl = $("modelList"); dl.innerHTML = "";
+    for (const id of ids) { const o = document.createElement("option"); o.value = id; dl.append(o); }
+    if (!silent) $("testResult").textContent = `モデル${ids.length}件取得`;
+    if (!s.model && ids.length) $("model").value = ids[0];
+    return ids;
+  } catch { if (!silent) $("testResult").textContent = "モデル取得失敗（URL・キー・CORSを確認）"; return []; }
+}
+async function anthropicChat(s, messages) {
+  const sys = messages.filter(m => m.role === "system").map(m => m.content).join("\n");
+  const turns = messages.filter(m => m.role !== "system");
+  const res = await fetch(s.baseUrl + "/messages", { method: "POST", headers: { "Content-Type": "application/json", ...authHeaders(s) },
+    body: JSON.stringify({ model: s.model, max_tokens: 400, temperature: 0.3, system: sys, messages: turns }) });
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  const j = await res.json();
+  return (j.content || []).filter(b => b.type === "text").map(b => b.text).join("").trim();
+}
 async function chatCompletions(s, messages, onToken) {
-  const headers = { "Content-Type": "application/json" };
-  if (!s.noKey && s.apiKey) headers["Authorization"] = "Bearer " + s.apiKey;
+  if (s.provider === "anthropic") return anthropicChat(s, messages);
+  const headers = { "Content-Type": "application/json", ...authHeaders(s) };
   const ctrl = new AbortController(); const timer = setTimeout(() => ctrl.abort(), 60000);
   try {
     const res = await fetch(s.baseUrl + "/chat/completions", { method: "POST", headers, signal: ctrl.signal,
@@ -242,14 +283,19 @@ $("copyBtn").onclick = async () => { if (!$("output").value) return; await navig
 $("ruleBtn").onclick = () => doConvert(true);
 $("convertBtn").onclick = () => doConvert(false);
 $("testBtn").onclick = async () => {
-  const s = { baseUrl: $("baseUrl").value.trim().replace(/\/+$/, ""), model: $("model").value.trim(), apiKey: $("apiKey").value, noKey: $("noKey").checked };
+  const s = currentFormSettings();
   $("testResult").textContent = "確認中…"; setLamp(null);
+  if (isMixedBlocked(s)) { $("testResult").textContent = "NG: https公開版からhttpには接続できません。httpで開くかtunnel使用"; setLamp(false); return; }
   try {
-    const r = await fetch(s.baseUrl + "/models", { headers: (!s.noKey && s.apiKey) ? { Authorization: "Bearer " + s.apiKey } : {} });
-    if (r.ok) { $("testResult").textContent = "OK: 接続成功"; setLamp(true); }
-    else { $("testResult").textContent = "NG: HTTP " + r.status; setLamp(false); }
-  } catch { $("testResult").textContent = "NG: CORS/Mixed-Contentの可能性。httpで開くかtunnel使用"; setLamp(false); }
+    const ids = await fetchModels(s);
+    const chat = ids.filter(id => !/embed/i.test(id));
+    $("testResult").textContent = `OK: モデル${ids.length}件` + (chat.length ? `（例: ${chat[0]}）` : "");
+    const dl = $("modelList"); dl.innerHTML = "";
+    for (const id of chat) { const o = document.createElement("option"); o.value = id; dl.append(o); }
+    setLamp(true);
+  } catch { $("testResult").textContent = "NG: URL・キー・CORSを確認"; setLamp(false); }
 };
+$("modelsBtn").onclick = () => refreshModelList(false);
 async function doConvert(forceRule) {
   const input = $("input").value.trim();
   if (!input) { $("status").textContent = "入力してください"; return; }

@@ -1,5 +1,5 @@
 // Service Worker: app shellと辞書のみcache。API(POST)とIndexedDBには触れない。
-const CACHE = "inmu-translator-web-v0.4.0";
+const CACHE = "inmu-translator-web-v0.4.1";
 const SHELL = ["./", "./index.html", "./style.css", "./app.js", "./goroku-core.json", "./manifest.webmanifest", "./icon.svg"];
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));

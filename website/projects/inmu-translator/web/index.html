@@ -64,17 +64,19 @@
       <div class="grid">
         <label>プリセット
           <select id="provider">
-            <option value="home-lmstudio" selected>自宅LM Studio (192.168.0.114)</option>
+            <option value="lmstudio" selected>このPC LM Studio (:1234)</option>
+            <option value="home-lmstudio">自宅LM Studio (192.168.0.114)</option>
             <option value="ollama">このPC Ollama (:11434)</option>
-            <option value="lmstudio">このPC LM Studio (:1234)</option>
             <option value="openai">OpenAI</option>
+            <option value="anthropic">Anthropic</option>
             <option value="openrouter">OpenRouter</option>
             <option value="custom">カスタム / Tunnel</option>
           </select>
         </label>
-        <label>BaseURL <input id="baseUrl" value="http://192.168.0.114:1234/v1"></label>
-        <label>Model <input id="model" value="openai/gpt-oss-20b"></label>
-        <label>API Key <input id="apiKey" type="password" placeholder="自宅LLMは空で可"></label>
+        <label>BaseURL <input id="baseUrl" value="http://localhost:1234/v1"></label>
+        <label>Model <input id="model" list="modelList" value="openai/gpt-oss-20b"> <button id="modelsBtn" type="button" title="モデル一覧を取得">取得</button></label>
+        <datalist id="modelList"></datalist>
+        <label>API Key <input id="apiKey" type="password" placeholder="自宅LLMは空で可・Anthropicは必須"></label>
       </div>
       <div class="row">
         <label class="inline"><input type="checkbox" id="noKey" checked> キーなし</label>
