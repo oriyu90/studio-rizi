@@ -51,14 +51,14 @@ function setLamp(ok) { const l = $("lamp"); l.classList.remove("ok", "ng"); if (
 // ---------- ルール変換 (AIなし・オフライン可) ----------
 function ruleConvert(input, mode, level) {
   let t = input.slice(0, 300); const used = [];
-  const rep = [["ありがとう", "ありがとナス！"], ["美味しい", "あ＾〜うめぇなぁ！"], ["おいしい", "あ＾〜うめぇなぁ！"],
-    ["疲れた", "ぬわあああん疲れたもぉ〜ん"], ["すごい", "イキスギィくらいすごい"], ["とても", "めちゃ"], ["非常に", "イキスギィくらい"],
+  const rep = [["ありがとう", "ありがとナス！"], ["美味しい", "あ＾～うめぇなぁ！"], ["おいしい", "あ＾～うめぇなぁ！"],
+    ["疲れた", "ぬわあああああん疲れたもおおおおおん"], ["すごい", "イキスギィくらいすごい"], ["とても", "めちゃ"], ["非常に", "イキスギィくらい"],
     ["本当", "ホント"], ["了解", "おかのした"], ["ですね", "ですねぇ！"], ["です", "ですねぇ！"], ["ます", "ますゾ〜"]];
   for (const [a, b] of rep) { if (t.includes(a)) { t = t.replaceAll(a, b); used.push(b); break; } }
   if (/良い|上手|最高|感動|素晴らしい/.test(input)) { t += " やりますねぇ！"; used.push("やりますねぇ！"); }
   else if (level >= 2 && !used.length) {
     if (mode === "kbtit") { t += " ウッソだろお前ｗｗｗ"; used.push("ウッソだろお前ｗｗｗ"); }
-    else { t += " いいゾ〜これ"; used.push("いいゾ〜これ"); }
+    else { t += " いいゾ～これ"; used.push("いいゾ～これ"); }
   }
   if (level >= 3 && !/[？?]$/.test(t)) { t += ["（確信）", "（困惑）", "（提案）"][Math.floor(Math.random() * 3)]; used.push("括弧注釈"); }
   if (level >= 4) { const g = Math.random() < .5 ? "オッスお願いしまーす！" : "おっ大丈夫か大丈夫か？"; t = g + " " + t; used.push(g); }
@@ -76,7 +76,7 @@ function retrieve(input) {
 }
 const MODE_TX = {
   yajuu: "丁寧だが唐突に大声。〜ですねぇ！/おかのした", kbtit: "荒いタメ口。ウッソだろお前w/悲しいなぁ",
-  inmuchu: "2ch調。いいゾ〜これ/微レ存＋括弧注釈", mix: "上記を自然に混ぜる", auto: "入力に合う話者を自動選択"
+  inmuchu: "2ch調。いいゾ～これ/微レ存＋括弧注釈", mix: "上記を自然に混ぜる", auto: "入力に合う話者を自動選択"
 };
 function buildMessages(input, mode, level, cands) {
   const n = level <= 1 ? 1 : level >= 5 ? 4 : "2〜3";
