@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0e0d10">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="日本語を淫夢語録風の口調に変換するローカルファーストなWebアプリ。自宅LLM直結・履歴は端末内IndexedDB。">
+  <title>淫夢語録風変換器 Web</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="app">
+  <header class="bar">
+    <div>
+      <h1>淫夢語録風変換器</h1>
+      <p class="sub">上に入力 → 変換 → 下に出力。短文引用＋出典付きパロディ。履歴はこの端末のみ。</p>
+    </div>
+    <div class="bar-btns">
+      <span id="lamp" class="lamp" title="AI接続状態">●</span>
+      <button id="themeBtn" title="テーマ切替">◐</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <label for="input">入力（最大300字）</label>
+      <textarea id="input" rows="5" maxlength="300" placeholder="例：すごく良いですね、感動しました"></textarea>
+      <div class="row">
+        <label class="inline">話者
+          <select id="mode">
+            <option value="mix" selected>ミックス</option>
+            <option value="yajuu">野獣先輩</option>
+            <option value="kbtit">KBTIT</option>
+            <option value="inmuchu">淫夢厨</option>
+            <option value="auto">おまかせ</option>
+          </select>
+        </label>
+        <label class="inline">淫夢度
+          <input type="range" id="level" min="1" max="5" value="3">
+          <span id="levelVal">3</span>
+        </label>
+      </div>
+      <div class="row">
+        <button id="convertBtn" class="primary">変換する</button>
+        <button id="ruleBtn" title="AIなしで変換">AIなし変換</button>
+        <span id="status" class="status" role="status"></span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <label for="output">出力</label>
+      <textarea id="output" rows="5" readonly placeholder="ここに結果が出ます"></textarea>
+      <div class="row">
+        <button id="copyBtn">コピー</button>
+        <span id="sources" class="sources"></span>
+      </div>
+    </section>
+
+    <details class="panel">
+      <summary>AI接続設定（自宅LLM / BYOK）</summary>
+      <div class="grid">
+        <label>プリセット
+          <select id="provider">
+            <option value="home-lmstudio" selected>自宅LM Studio (192.168.0.114)</option>
+            <option value="ollama">このPC Ollama (:11434)</option>
+            <option value="lmstudio">このPC LM Studio (:1234)</option>
+            <option value="openai">OpenAI</option>
+            <option value="openrouter">OpenRouter</option>
+            <option value="custom">カスタム / Tunnel</option>
+          </select>
+        </label>
+        <label>BaseURL <input id="baseUrl" value="http://192.168.0.114:1234/v1"></label>
+        <label>Model <input id="model" value="openai/gpt-oss-20b"></label>
+        <label>API Key <input id="apiKey" type="password" placeholder="自宅LLMは空で可"></label>
+      </div>
+      <div class="row">
+        <label class="inline"><input type="checkbox" id="noKey" checked> キーなし</label>
+        <label class="inline"><input type="checkbox" id="useAI" checked> AIを使う</label>
+      </div>
+      <div class="row">
+        <button id="saveSettings">設定保存</button>
+        <button id="testBtn">接続テスト</button>
+        <span id="testResult" class="status"></span>
+      </div>
+      <p class="hint">キーはlocalStorageのみ・送信先は設定URL直行。https公開版から http://192.168.x は叩けません（Mixed Content）。自宅では本ページを http で開くか、外出先では cloudflared tunnel の https URLを設定（作業書 §4）。</p>
+    </details>
+
+    <section class="panel">
+      <div class="row space">
+        <h2>履歴（IndexedDB・<span id="histCount">0</span>件）</h2>
+        <button id="clearHistory" class="danger">全削除</button>
+      </div>
+      <ul id="history"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>非公式パロディ。短文引用のみ・全文転載なし。差別・本名晒し・R18直接描写は生成しません。出典: <a href="https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2" target="_blank" rel="noopener">真夏の夜の淫夢Wiki・淫夢語録</a></small>
+  </footer>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>

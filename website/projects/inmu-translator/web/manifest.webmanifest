@@ -1,0 +1,15 @@
+{
+  "id": "/projects/inmu-translator/web/",
+  "name": "淫夢語録風変換器",
+  "short_name": "淫夢変換",
+  "description": "日本語を淫夢語録風の口調に変換。自宅LLM直結・履歴は端末内。",
+  "lang": "ja",
+  "start_url": "/projects/inmu-translator/web/",
+  "scope": "/projects/inmu-translator/web/",
+  "display": "standalone",
+  "theme_color": "#0e0d10",
+  "background_color": "#0e0d10",
+  "icons": [
+    {"src": "icon.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}

@@ -162,6 +162,13 @@
       "repository": "https://github.com/oriyu90/3DFM",
       "url": "https://studio-rizi.pages.dev/projects/3dfm/",
       "hosted": true
+    },
+    {
+      "slug": "inmu-translator",
+      "name": "淫夢変換",
+      "repository": "https://github.com/oriyu90/inmu-translator",
+      "url": "https://studio-rizi.pages.dev/projects/inmu-translator/",
+      "hosted": true
     }
   ]
 }

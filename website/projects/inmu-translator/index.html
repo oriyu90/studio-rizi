@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>淫夢変換 — 自宅LLMで淫夢語録風に変換</title>
+  <meta name="description" content="日本語を淫夢語録風の口調に変換するWebアプリ。自宅LM Studioに直結し、履歴は端末内のIndexedDBにだけ残すローカルファースト設計。AIなしのオフライン変換も可能。">
+  <meta name="theme-color" content="#0e0d10">
+  <meta name="author" content="Yuki_Orita">
+  <link rel="canonical" href="https://studio-rizi.pages.dev/projects/inmu-translator/">
+  <link rel="icon" href="https://studio-rizi.pages.dev/projects/inmu-translator/web/icon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="淫夢変換">
+  <meta property="og:title" content="淫夢変換 — 自宅LLMで淫夢語録風に変換">
+  <meta property="og:description" content="上の欄に入力→変換→下の欄に出力。自宅LLM直結・履歴は端末内のみ。">
+  <meta property="og:url" content="https://studio-rizi.pages.dev/projects/inmu-translator/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="淫夢変換 — 自宅LLMで淫夢語録風に変換">
+  <meta name="twitter:description" content="上の欄に入力→変換→下の欄に出力。自宅LLM直結・履歴は端末内のみ。">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "淫夢変換",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "description": "日本語を淫夢語録風の口調に変換するWebアプリ。自宅LLM直結・履歴は端末内。",
+    "url": "https://studio-rizi.pages.dev/projects/inmu-translator/",
+    "license": "https://github.com/oriyu90/inmu-translator",
+    "author": { "@type": "Person", "name": "Yuki_Orita", "url": "https://studio-rizi.pages.dev/" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+  <style>
+    :root{--bg:#f8f7fa;--fg:#17151a;--mut:#66606e;--card:#fff;--line:#e2dee6;--acc:#2f6fed}
+    @media(prefers-color-scheme:dark){:root{--bg:#111014;--fg:#f5f1f7;--mut:#a9a3b3;--card:#1c1b20;--line:#35323c}}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif}
+    main{max-width:720px;margin:0 auto;padding:24px 16px 48px}
+    a{color:var(--acc)}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
+    .btn{display:inline-block;background:var(--acc);color:#fff!important;font-weight:700;border-radius:10px;padding:12px 24px;text-decoration:none}
+    small{color:var(--mut)}
+  </style>
+</head>
+<body>
+<main>
+  <p><a href="https://studio-rizi.pages.dev/">← Studio Rizi</a></p>
+  <h1>淫夢変換</h1>
+  <p>日本語を淫夢語録風の口調に変換するWebアプリ。上に入力→変換→下に出力、コピー1タップ。履歴は端末内のIndexedDBにだけ残ります。</p>
+  <p><a class="btn" href="https://studio-rizi.pages.dev/projects/inmu-translator/web/">Web版を開く →</a></p>
+  <div class="card">
+    <h2>つかいかた</h2>
+    <ol>
+      <li>自宅では <code>http://192.168.0.114:1234</code> のLM Studioにそのまま直結（既定・キー不要）。</li>
+      <li>外出先では cloudflared tunnel の https URLを設定。</li>
+      <li>AIが使えない時は「AIなし変換」でオフライン変換。</li>
+    </ol>
+  </div>
+  <div class="card">
+    <h2>仕組み</h2>
+    <p>ブラウザからLLMへ直行（サーバにキーも会話も残さない）。変換は意味保持＋語録2〜4個までの言い換え。出典：<a href="https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2" target="_blank" rel="noopener">真夏の夜の淫夢Wiki・淫夢語録</a>（短文引用のみ）。</p>
+  </div>
+  <p><small>非公式パロディ。差別・本名晒し・R18直接描写は生成しません。ソース：<a href="https://github.com/oriyu90/inmu-translator">oriyu90/inmu-translator</a></small></p>
+</main>
+</body>
+</html>
