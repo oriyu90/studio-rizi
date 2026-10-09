@@ -1,28 +1,553 @@
 [
-  {"id":"yarimasune","surface":"やりますねぇ！","speaker":"野獣先輩","source":"Discovery 6","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%82%84%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AD%E3%81%87%EF%BC%81","meaning":"肯定・称賛（「ありますねぇ！」「できますねぇ！」等の動詞入替改変可）","usage":"相手を褒める文末に付ける。原義トリガー：やりますね/やってますね/しますね/していますね/困りますね。強調形は「やりますねぇスギィ！」（やりますねぇ＋○○スギィの正規改変、すごいですね/やばいですね用）","tags":["称賛","肯定"],"nsfw":1},
-  {"id":"iizokore","surface":"いいゾ～これ","speaker":"MUR","source":"誘惑のラビリンス第三章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%81%84%E3%81%84%E3%82%BE%EF%BD%9E%E3%81%93%E3%82%8C","meaning":"良いものへの賛同（恍惚符で「いいゾ＾～これ」とも）","usage":"良いと感じた文末に付ける","tags":["称賛"],"nsfw":1},
-  {"id":"ikisugi","surface":"イキスギィ！","speaker":"野獣先輩","source":"真夏の夜の淫夢第四章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%82%A4%E3%82%AD%E3%82%B9%E3%82%AE%E3%82%A3%EF%BC%81","meaning":"強調接尾辞 ○○スギィ","usage":"形容詞にスギィを付けて強調","tags":["強調"],"nsfw":1},
-  {"id":"nattu","surface":"ンアッー！","speaker":"野獣先輩","source":"真夏の夜の淫夢第四章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%83%B3%E3%82%A2%E3%83%83%E3%83%BC%EF%BC%81","meaning":"驚き・咆哮（野獣の咆哮）","usage":"文末に1回まで(濃口のみ)","tags":["間投詞"],"nsfw":2},
-  {"id":"ossu","surface":"オッスお願いしまーす！","speaker":"野獣先輩","source":"誘惑のラビリンス第三章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"挨拶・応答","usage":"文頭に1回まで","tags":["挨拶"],"nsfw":1},
-  {"id":"okanoshita","surface":"おかのした","speaker":"野獣先輩","source":"誘惑のラビリンス第三章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"「わかりました」の聞き違い・了解","usage":"了承の返事","tags":["返事"],"nsfw":1},
-  {"id":"arimasu","surface":"ありますあります","speaker":"野獣先輩","source":"変態面接官17","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"あるある肯定（対義語「ないです」）","usage":"共感の相槌","tags":["相槌"],"nsfw":1},
-  {"id":"daijobuka","surface":"おっ大丈夫か大丈夫か？","speaker":"野獣先輩","source":"真夏の夜の淫夢第四章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"心配・気遣い","usage":"疲れた・弱った相手への声掛け","tags":["心配"],"nsfw":1},
-  {"id":"nuwatukare","surface":"ぬわあああああん疲れたもおおおおおん","speaker":"野獣先輩","source":"誘惑のラビリンス第三章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"疲労表明（略して「ぬわ疲」）","usage":"疲れたの置換","tags":["疲労"],"nsfw":1},
-  {"id":"arigatonasu","surface":"ありがとナス！","speaker":"KBTIT","source":"悶絶少年 其の伍","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"感謝（「ありがとうございます！」の聞き違い）","usage":"ありがとうの置換","tags":["感謝"],"nsfw":1},
-  {"id":"ussodarou","surface":"ウッソだろお前ｗｗｗ","speaker":"KBTIT","source":"アナル地獄","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"疑い・ツッコミ","usage":"信じられない話への反応","tags":["ツッコミ"],"nsfw":1},
-  {"id":"kanashii","surface":"悲しいなぁ","speaker":"KBTIT","source":"悶絶少年 其の漆（空耳）","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"落胆（空耳語録）","usage":"残念な文末に","tags":["落胆"],"nsfw":1},
-  {"id":"tubekobe","surface":"つべこべ言わずに来いホイ","speaker":"KBTIT","source":"悶絶少年 其の漆『援交の代償』編","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"誘い（正確には「つべこべ言わないで来いホイ／ほら」）","usage":"誘う文末に","tags":["誘い"],"nsfw":1},
-  {"id":"birezon","surface":"微レ存","speaker":"淫夢厨","source":"2ちゃんねる（2008年頃）","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E5%BE%AE%E3%83%AC%E5%AD%98","meaning":"「○○である可能性が微粒子レベルで存在している…？」の略","usage":"断定を避ける文末","tags":["推量"],"nsfw":1},
-  {"id":"kusai","surface":"くさい（確信）","speaker":"淫夢厨","source":"淫夢厨コメント（「きたない」の類語）","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%81%8F%E3%81%95%E3%81%84%EF%BC%88%E7%A2%BA%E4%BF%A1%EF%BC%89","meaning":"括弧注釈（確信）","usage":"文末に1個まで","tags":["注釈"],"nsfw":1},
-  {"id":"konwaku","surface":"えぇ…（困惑）","speaker":"虐待おじさん","source":"悶絶少年 其の伍","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"括弧注釈（困惑・ドン引き）","usage":"文末に1個まで","tags":["注釈"],"nsfw":1},
-  {"id":"gorokumushi","surface":"語録無視","speaker":"淫夢厨","source":"淫夢厨","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"語録を使わない・通じないこと","usage":"語録ネタ全般の話題に","tags":["あるある"],"nsfw":1},
-  {"id":"oyanokao","surface":"親の顔より見た光景","speaker":"淫夢厨","source":"ニコニコ動画コメント（「実家のような安心感」の類語）","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E8%A6%AA%E3%81%AE%E9%A1%94%E3%82%88%E3%82%8A%E8%A6%8B%E3%81%9F%E5%85%89%E6%99%AF","meaning":"見慣れたもの","usage":"何度も見たものに","tags":["あるある"],"nsfw":1},
-  {"id":"jikka","surface":"実家のような安心感","speaker":"淫夢厨","source":"ニコニコ動画コメント","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E5%AE%9F%E5%AE%B6%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E5%AE%89%E5%BF%83%E6%84%9F","meaning":"安心（「ぬわ疲」の場面へのコメント）","usage":"落ち着くものに","tags":["安心"],"nsfw":1},
-  {"id":"fa","surface":"ファッ⁉","speaker":"野獣先輩","source":"真夏の夜の淫夢第四章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%83%95%E3%82%A1%E3%83%83%E2%81%89","meaning":"驚き・魂の叫び","usage":"意外な文に","tags":["驚き"],"nsfw":1},
-  {"id":"atari","surface":"当たり前だよなぁ？","speaker":"MUR","source":"誘惑のラビリンス第三章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"当然の確認","usage":"同意を求める文末","tags":["確認"],"nsfw":1},
-  {"id":"umai","surface":"あ＾～うめぇなぁ！","speaker":"軍畑先輩","source":"暴虐中毒","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"美味い","usage":"美味しいの置換","tags":["食"],"nsfw":1},
-  {"id":"wakaru","surface":"わかるわかる（タメ口）","speaker":"野獣先輩","source":"Discovery 6","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"共感（ここだけタメ口）","usage":"共感の相槌","tags":["相槌"],"nsfw":1},
-  {"id":"hakkiri","surface":"はっきりわかんだね","speaker":"野獣先輩","source":"真夏の夜の淫夢第四章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E3%81%AF%E3%81%A3%E3%81%8D%E3%82%8A%E3%82%8F%E3%81%8B%E3%82%93%E3%81%A0%E3%81%AD","meaning":"はっきりわかること（「はっきりわかるんだね」の表記は誤り）","usage":"何かがはっきりわかる時に","tags":["理解","確認"],"nsfw":1},
-  {"id":"sudeni","surface":"王道を征く","speaker":"野獣先輩","source":"Discovery 6（「行く」「往く」の表記は誤り）","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"正統派（王道を征くのはソープ）","usage":"立派な行動に","tags":["称賛"],"nsfw":1},
-  {"id":"kubi","surface":"†悔い改めて†","speaker":"野獣先輩","source":"真夏の夜の淫夢第四章","sourceUrl":"https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2","meaning":"反省","usage":"謝罪・反省に","tags":["反省"],"nsfw":1}
+ {
+  "id": "yarimasune",
+  "surface": "やりますねぇ！",
+  "speaker": "野獣先輩",
+  "source": "Discovery 6",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E3%82%84%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AD%E3%81%87%EF%BC%81",
+  "meaning": "肯定・称賛（「ありますねぇ！」「できますねぇ！」等の動詞入替改変可）",
+  "usage": "相手を褒める文末に付ける。原義トリガー：やりますね/やってますね/しますね/していますね/困りますね。強調形は「やりますねぇスギィ！」（やりますねぇ＋○○スギィの正規改変、すごいですね/やばいですね用）",
+  "tags": [
+   "称賛",
+   "肯定"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "やりますね",
+   "やってますね",
+   "やるね",
+   "していますね",
+   "してますね",
+   "しますね",
+   "するね",
+   "困りますね",
+   "困った",
+   "できますね",
+   "できます",
+   "やります",
+   "します",
+   "しています",
+   "してます",
+   "やってます",
+   "やります"
+  ],
+  "triggersSugi": [
+   "すごいですね",
+   "凄いですね",
+   "やばいですね",
+   "ヤバいですね",
+   "やべぇですね",
+   "すご[いく]",
+   "凄[いく]",
+   "やばい",
+   "ヤバい",
+   "やべぇ"
+  ],
+  "notIfSugi": [
+   "すごくない",
+   "凄くない",
+   "やばくない",
+   "ヤバくない"
+  ]
+ },
+ {
+  "id": "iizokore",
+  "surface": "いいゾ～これ",
+  "speaker": "MUR",
+  "source": "誘惑のラビリンス第三章",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E3%81%84%E3%81%84%E3%82%BE%EF%BD%9E%E3%81%93%E3%82%8C",
+  "meaning": "良いものへの賛同（恍惚符で「いいゾ＾～これ」とも）",
+  "usage": "良いと感じた文末に付ける",
+  "tags": [
+   "称賛"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "いいね",
+   "いい感じだ",
+   "気に入った"
+  ]
+ },
+ {
+  "id": "ikisugi",
+  "surface": "イキスギィ！",
+  "speaker": "野獣先輩",
+  "source": "真夏の夜の淫夢第四章",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E3%82%A4%E3%82%AD%E3%82%B9%E3%82%AE%E3%82%A3%EF%BC%81",
+  "meaning": "強調接尾辞 ○○スギィ",
+  "usage": "形容詞にスギィを付けて強調",
+  "tags": [
+   "強調"
+  ],
+  "nsfw": 1,
+  "triggers": []
+ },
+ {
+  "id": "nattu",
+  "surface": "ンアッー！",
+  "speaker": "野獣先輩",
+  "source": "真夏の夜の淫夢第四章",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E3%83%B3%E3%82%A2%E3%83%83%E3%83%BC%EF%BC%81",
+  "meaning": "驚き・咆哮（野獣の咆哮）",
+  "usage": "文末に1回まで(濃口のみ)",
+  "tags": [
+   "間投詞"
+  ],
+  "nsfw": 2,
+  "triggers": [
+   "うわっ",
+   "うおっ"
+  ]
+ },
+ {
+  "id": "ossu",
+  "surface": "オッスお願いしまーす！",
+  "speaker": "野獣先輩",
+  "source": "誘惑のラビリンス第三章",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "挨拶・応答",
+  "usage": "文頭に1回まで",
+  "tags": [
+   "挨拶"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "よろしくお願いします",
+   "よろしく"
+  ]
+ },
+ {
+  "id": "okanoshita",
+  "surface": "おかのした",
+  "speaker": "野獣先輩",
+  "source": "誘惑のラビリンス第三章",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "「わかりました」の聞き違い・了解",
+  "usage": "了承の返事",
+  "tags": [
+   "返事"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "了解(しました|です)?",
+   "承知しました",
+   "承知",
+   "わかりました",
+   "分かりました"
+  ]
+ },
+ {
+  "id": "arimasu",
+  "surface": "ありますあります",
+  "speaker": "野獣先輩",
+  "source": "変態面接官17",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "あるある肯定（対義語「ないです」）",
+  "usage": "共感の相槌",
+  "tags": [
+   "相槌"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "あります",
+   "あるね",
+   "あるよ",
+   "あるある"
+  ]
+ },
+ {
+  "id": "daijobuka",
+  "surface": "おっ大丈夫か大丈夫か？",
+  "speaker": "野獣先輩",
+  "source": "真夏の夜の淫夢第四章",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "心配・気遣い",
+  "usage": "疲れた・弱った相手への声掛け",
+  "tags": [
+   "心配"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "大丈夫.?",
+   "無理しないで"
+  ]
+ },
+ {
+  "id": "nuwatukare",
+  "surface": "ぬわあああああん疲れたもおおおおおん",
+  "speaker": "野獣先輩",
+  "source": "誘惑のラビリンス第三章",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "疲労表明（略して「ぬわ疲」）",
+  "usage": "疲れたの置換",
+  "tags": [
+   "疲労"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "疲れた(んです|です|でした)?",
+   "つかれた(んです|です|でした)?",
+   "疲れます",
+   "くたびれた",
+   "疲労"
+  ]
+ },
+ {
+  "id": "arigatonasu",
+  "surface": "ありがとナス！",
+  "speaker": "KBTIT",
+  "source": "悶絶少年 其の伍",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "感謝（「ありがとうございます！」の聞き違い）",
+  "usage": "ありがとうの置換",
+  "tags": [
+   "感謝"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "ありがとう",
+   "感謝",
+   "お礼",
+   "どうも"
+  ]
+ },
+ {
+  "id": "ussodarou",
+  "surface": "ウッソだろお前ｗｗｗ",
+  "speaker": "KBTIT",
+  "source": "アナル地獄",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "疑い・ツッコミ",
+  "usage": "信じられない話への反応",
+  "tags": [
+   "ツッコミ"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "うそだろ",
+   "ウソだろ",
+   "まじか",
+   "マジか"
+  ]
+ },
+ {
+  "id": "kanashii",
+  "surface": "悲しいなぁ",
+  "speaker": "KBTIT",
+  "source": "悶絶少年 其の漆（空耳）",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "落胆（空耳語録）",
+  "usage": "残念な文末に",
+  "tags": [
+   "落胆"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "悲しい",
+   "かなしい",
+   "残念"
+  ],
+  "notIf": [
+   "悲しくない"
+  ]
+ },
+ {
+  "id": "tubekobe",
+  "surface": "つべこべ言わずに来いホイ",
+  "speaker": "KBTIT",
+  "source": "悶絶少年 其の漆『援交の代償』編",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "誘い（正確には「つべこべ言わないで来いホイ／ほら」）",
+  "usage": "誘う文末に",
+  "tags": [
+   "誘い"
+  ],
+  "nsfw": 1,
+  "triggers": []
+ },
+ {
+  "id": "birezon",
+  "surface": "微レ存",
+  "speaker": "淫夢厨",
+  "source": "2ちゃんねる（2008年頃）",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E5%BE%AE%E3%83%AC%E5%AD%98",
+  "meaning": "「○○である可能性が微粒子レベルで存在している…？」の略",
+  "usage": "断定を避ける文末",
+  "tags": [
+   "推量"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "かもしれない",
+   "かもね",
+   "多分",
+   "たぶん"
+  ]
+ },
+ {
+  "id": "kusai",
+  "surface": "くさい（確信）",
+  "speaker": "淫夢厨",
+  "source": "淫夢厨コメント（「きたない」の類語）",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E3%81%8F%E3%81%95%E3%81%84%EF%BC%88%E7%A2%BA%E4%BF%A1%EF%BC%89",
+  "meaning": "括弧注釈（確信）",
+  "usage": "文末に1個まで",
+  "tags": [
+   "注釈"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "きたない",
+   "汚い",
+   "くさい"
+  ],
+  "notIf": [
+   "くさくない"
+  ]
+ },
+ {
+  "id": "konwaku",
+  "surface": "えぇ…（困惑）",
+  "speaker": "虐待おじさん",
+  "source": "悶絶少年 其の伍",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "括弧注釈（困惑・ドン引き）",
+  "usage": "文末に1個まで",
+  "tags": [
+   "注釈"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "えぇ",
+   "[？?]",
+   "ドン引き"
+  ]
+ },
+ {
+  "id": "gorokumushi",
+  "surface": "語録無視",
+  "speaker": "淫夢厨",
+  "source": "淫夢厨",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "語録を使わない・通じないこと",
+  "usage": "語録ネタ全般の話題に",
+  "tags": [
+   "あるある"
+  ],
+  "nsfw": 1,
+  "triggers": []
+ },
+ {
+  "id": "oyanokao",
+  "surface": "親の顔より見た光景",
+  "speaker": "淫夢厨",
+  "source": "ニコニコ動画コメント（「実家のような安心感」の類語）",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E8%A6%AA%E3%81%AE%E9%A1%94%E3%82%88%E3%82%8A%E8%A6%8B%E3%81%9F%E5%85%89%E6%99%AF",
+  "meaning": "見慣れたもの",
+  "usage": "何度も見たものに",
+  "tags": [
+   "あるある"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "見慣れた",
+   "おなじみ",
+   "いつも見てる"
+  ]
+ },
+ {
+  "id": "jikka",
+  "surface": "実家のような安心感",
+  "speaker": "淫夢厨",
+  "source": "ニコニコ動画コメント",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E5%AE%9F%E5%AE%B6%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E5%AE%89%E5%BF%83%E6%84%9F",
+  "meaning": "安心（「ぬわ疲」の場面へのコメント）",
+  "usage": "落ち着くものに",
+  "tags": [
+   "安心"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "安心",
+   "落ち着く",
+   "癒し"
+  ]
+ },
+ {
+  "id": "fa",
+  "surface": "ファッ⁉",
+  "speaker": "野獣先輩",
+  "source": "真夏の夜の淫夢第四章",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E3%83%95%E3%82%A1%E3%83%83%E2%81%89",
+  "meaning": "驚き・魂の叫び",
+  "usage": "意外な文に",
+  "tags": [
+   "驚き"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "びっくり",
+   "まじで.?[？?]",
+   "信じられない"
+  ]
+ },
+ {
+  "id": "atari",
+  "surface": "当たり前だよなぁ？",
+  "speaker": "MUR",
+  "source": "誘惑のラビリンス第三章",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "当然の確認",
+  "usage": "同意を求める文末",
+  "tags": [
+   "確認"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "当たり前",
+   "当然"
+  ]
+ },
+ {
+  "id": "umai",
+  "surface": "あ＾～うめぇなぁ！",
+  "speaker": "軍畑先輩",
+  "source": "暴虐中毒",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "美味い",
+  "usage": "美味しいの置換",
+  "tags": [
+   "食"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "美味しかった(です|でした)?",
+   "おいしかった(です|でした)?",
+   "美味しい",
+   "おいしい",
+   "美味い",
+   "うまい",
+   "ごちそう"
+  ],
+  "notIf": [
+   "美味しくない",
+   "おいしくない",
+   "まずい",
+   "不味い"
+  ]
+ },
+ {
+  "id": "wakaru",
+  "surface": "わかるわかる（タメ口）",
+  "speaker": "野獣先輩",
+  "source": "Discovery 6",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "共感（ここだけタメ口）",
+  "usage": "共感の相槌",
+  "tags": [
+   "相槌"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "わかります",
+   "分かります",
+   "わかる",
+   "分かる",
+   "わかった",
+   "分かった",
+   "なるほど"
+  ],
+  "notIf": [
+   "わからない",
+   "分からない"
+  ]
+ },
+ {
+  "id": "hakkiri",
+  "surface": "はっきりわかんだね",
+  "speaker": "野獣先輩",
+  "source": "真夏の夜の淫夢第四章",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E3%81%AF%E3%81%A3%E3%81%8D%E3%82%8A%E3%82%8F%E3%81%8B%E3%82%93%E3%81%A0%E3%81%AD",
+  "meaning": "はっきりわかること（「はっきりわかるんだね」の表記は誤り）",
+  "usage": "何かがはっきりわかる時に",
+  "tags": [
+   "理解",
+   "確認"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "はっきり[^、。！？\\s]{0,6}?(わか|分か)ります",
+   "よく(わか|分か)ります",
+   "はっきりわかる",
+   "明確"
+  ],
+  "notIf": [
+   "わからない",
+   "分からない"
+  ]
+ },
+ {
+  "id": "sudeni",
+  "surface": "王道を征く",
+  "speaker": "野獣先輩",
+  "source": "Discovery 6（「行く」「往く」の表記は誤り）",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "正統派（王道を征くのはソープ）",
+  "usage": "立派な行動に",
+  "tags": [
+   "称賛"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "正統派",
+   "定番",
+   "王道"
+  ]
+ },
+ {
+  "id": "kubi",
+  "surface": "†悔い改めて†",
+  "speaker": "野獣先輩",
+  "source": "真夏の夜の淫夢第四章",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E6%B7%AB%E5%A4%A2%E8%AA%9E%E9%8C%B2",
+  "meaning": "反省",
+  "usage": "謝罪・反省に",
+  "tags": [
+   "反省"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "反省",
+   "後悔",
+   "ごめんなさい",
+   "申し訳"
+  ]
+ },
+ {
+  "id": "naidesu",
+  "surface": "ないです",
+  "speaker": "野獣先輩",
+  "source": "ザ・フェチ",
+  "sourceUrl": "https://wiki.yjsnpi.nu/wiki/%E3%81%AA%E3%81%84%E3%81%A7%E3%81%99",
+  "meaning": "否定・未経験の返答（「ありますあります」の対義語）",
+  "usage": "ないことを伝える時に",
+  "tags": [
+   "否定"
+  ],
+  "nsfw": 1,
+  "triggers": [
+   "ないです",
+   "ありません",
+   "ないよ",
+   "ないね"
+  ],
+  "notIf": [
+   "危ない",
+   "あぶない",
+   "いけない",
+   "しかたがない",
+   "仕方がない",
+   "もったいない"
+  ]
+ }
 ]

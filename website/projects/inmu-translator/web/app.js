@@ -4,7 +4,7 @@ const $ = (id) => document.getElementById(id);
 const SET_KEY = "inmu.settings.v1", THEME_KEY = "inmu.theme.v1";
 const HOME_URL = "http://192.168.0.114:1234/v1", HOME_MODEL = "openai/gpt-oss-20b";
 let CORPUS = [];
-fetch("./goroku-core.json").then(r => r.json()).then(j => CORPUS = j).catch(() => CORPUS = []);
+fetch("./goroku-core.json").then(r => r.json()).then(j => { CORPUS = j; rebuildAlias(); }).catch(() => CORPUS = []);
 
 // ---------- テーマ (light/dark/auto) ----------
 function applyTheme(t) {
@@ -65,41 +65,56 @@ window.addEventListener("load", async () => {
 });
 
 // ---------- ルール変換 v2: 原義→実語録の対応を最優先。機械的語尾変換はしない ----------
-const ALIAS = [
-  // span置換：文脈は残し、一致部分だけ実語録に置き換える（語尾の余計な飲み込みなし）
-  // 優先順：理解系 → やる・する系 → 強調丁寧形 → 感謝・味・疲労・了解 → 強調裸形 → 裸わかります
+// ---------- 対応表は goroku-core.json が単一ソース。ALIASは起動直後のみ使う予備 ----------
+//order: [id, kind] kind 0= surfaceそのまま / kind 1(yarimasuneのみ)= やりますねぇスギィ！
+const ALIAS_ORDER = [
+  ["hakkiri",0],["yarimasune",0],["yarimasune",1],["arigatonasu",0],["umai",0],
+  ["nuwatukare",0],["okanoshita",0],["naidesu",0],["arimasu",0],["daijobuka",0],
+  ["ussodarou",0],["kanashii",0],["tubekobe",0],["birezon",0],["kusai",0],["konwaku",0],
+  ["jikka",0],["fa",0],["atari",0],["wakaru",0],["sudeni",0],["kubi",0],
+  ["nattu",0],["ossu",0],["ikisugi",0],["gorokumushi",0],["oyanokao",0],["iizokore",0],
+];
+let ALIAS = [
   { re: /はっきり[^、。！？\s]{0,6}?(わか|分か)ります/, surface: "はっきりわかんだね" },
   { re: /よく(わか|分か)ります/, surface: "はっきりわかんだね" },
   { re: /やりますね|やってますね|やるね/, surface: "やりますねぇ！" },
-  { re: /していますね|してますね|しますね|するね/, surface: "やりますねぇ！" },
-  { re: /困りますね|困った/, surface: "やりますねぇ！" },
-  { re: /すごいですね|凄いですね|やばいですね|ヤバいですね|やべぇですね/, surface: "やりますねぇスギィ！" },
-  { re: /ありがとうございます/, surface: "ありがとナス！" },
-  { re: /ありがとう/, surface: "ありがとナス！" },
-  { re: /美味しかった(です|でした)?|おいしかった(です|でした)?/, surface: "あ＾～うめぇなぁ！" },
-  { re: /美味しい(です)?|おいしい(です)?|美味い|うまい/, surface: "あ＾～うめぇなぁ！" },
-  { re: /疲れた(んです|です|でした)?|つかれた(んです|です|でした)?/, surface: "ぬわあああああん疲れたもおおおおおん" },
-  { re: /了解(しました|です)?|承知しました|承知/, surface: "おかのした" },
-  { re: /すご[いく]|凄[いく]|やばい|ヤバい|やべぇ/, surface: "やりますねぇスギィ！" },
-  { re: /(わか|分か)ります/, surface: "わかるわかる（タメ口）" },
 ];
+function rebuildAlias() {
+  if (!CORPUS.length) return;
+  const byId = Object.fromEntries(CORPUS.map(e => [e.id, e]));
+  const out = [];
+  for (const [id, kind] of ALIAS_ORDER) {
+    const e = byId[id]; if (!e) continue;
+    const pats = kind === 1 ? (e.triggersSugi || []) : (e.triggers || []);
+    const nots = kind === 1 ? (e.notIfSugi || []) : (e.notIf || []);
+    const surface = kind === 1 ? "やりますねぇスギィ！" : e.surface;
+    for (const pat of pats) {
+      try { out.push({ re: new RegExp(pat), surface, not: nots.map(n => new RegExp(n)) }); }
+      catch {}
+    }
+  }
+  if (out.length) ALIAS = out;
+}
 const YARU_SURFACES = ["やりますねぇ！", "やりますねぇスギィ！"];
-function findAlias(input) { return ALIAS.find(a => a.re.test(input)) || null; }
+function findAlias(input) {
+  return ALIAS.find(a => a.re.test(input) && !(a.not || []).some(n => n.test(input))) || null;
+}
 function ruleConvert(input, mode, level) {
   const src = input.slice(0, 300); const used = [];
   let t = src;
-  const hit = findAlias(src);
-  if (hit) { t = src.replace(hit.re, hit.surface); used.push(hit.surface); }
   const isQ = /[？?]|どう|なに|なぜ|かな|でしょうか/.test(src);
+  const hit = isQ ? null : findAlias(src); // 疑問文は対応付けせず困惑注釈に任せる
+  if (hit) { t = src.replace(hit.re, hit.surface); used.push(hit.surface); }
   const offerSrc = src.replace(/ありがとう|おはよう|おめでとう|ごちそうさま|ごちそう/g, "");
   const isOffer = /(やろう|しよう|したい|してください|ください|ましょう|してやる|してやろう|てあげる|てやる)/.test(offerSrc)
     || /(よう|おう|こう|そう|とう|のう|ごう|ぞう|どう|ぼう|ぽう)([、。！？\s]|$)/.test(offerSrc);
   // いい感じ/いいから等の修飾用法は称賛にしない
   const praiseWord = /上手|最高|感動|素晴らしい/.test(src)
     || ((/良い|いい/.test(src)) && !/(良い|いい)(感じ|から|ので|ですか|でしょうか|具合|だろう|よ)/.test(src));
-  const praise = praiseWord && !isQ && !isOffer;
+  const isNeg = /(くない|くないです|ありません|ません|じゃない|ではない|わからない|分からない|危ない|あぶない|いけない|しかたがない|仕方がない|もったいない)/.test(src);
+  const praise = praiseWord && !isQ && !isOffer && !isNeg;
   if (praise && level >= 2 && !used.some(u => YARU_SURFACES.includes(u))) { t += " やりますねぇ！"; used.push("やりますねぇ！"); }
-  else if (!hit && !praise && !isQ && !isOffer && level >= 3) {
+  else if (!hit && !praise && !isQ && !isOffer && !isNeg && level >= 3) {
     const g = mode === "kbtit" ? "ウッソだろお前ｗｗｗ" : "いいゾ～これ";
     t += " " + g; used.push(g);
   }
