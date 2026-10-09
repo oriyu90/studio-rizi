@@ -66,19 +66,23 @@ window.addEventListener("load", async () => {
 
 // ---------- ルール変換 v2: 原義→実語録の対応を最優先。機械的語尾変換はしない ----------
 const ALIAS = [
-  { re: /はっきり.*わか|はっきり.*分か/, surface: "はっきりわかんだね" },
+  // span置換：文脈は残し、一致部分だけ実語録に置き換える（語尾の余計な飲み込みなし）
+  { re: /はっきり[^、。！？\s]{0,6}?(わか|分か)ります/, surface: "はっきりわかんだね" },
+  { re: /よく(わか|分か)ります/, surface: "はっきりわかんだね" },
+  { re: /ありがとうございます/, surface: "ありがとナス！" },
   { re: /ありがとう/, surface: "ありがとナス！" },
-  { re: /疲れた|つかれた/, surface: "ぬわあああああん疲れたもおおおおおん" },
-  { re: /美味|おいし/, surface: "あ＾～うめぇなぁ！" },
-  { re: /了解|承知/, surface: "おかのした" },
-  { re: /わかる|分かる|理解/, surface: "わかるわかる（タメ口）" },
+  { re: /美味しかった(です|でした)?|おいしかった(です|でした)?/, surface: "あ＾～うめぇなぁ！" },
+  { re: /美味しい(です)?|おいしい(です)?|美味い|うまい/, surface: "あ＾～うめぇなぁ！" },
+  { re: /疲れた(んです|です|でした)?|つかれた(んです|です|でした)?/, surface: "ぬわあああああん疲れたもおおおおおん" },
+  { re: /了解(しました|です)?|承知しました|承知/, surface: "おかのした" },
+  { re: /(わか|分か)ります/, surface: "わかるわかる（タメ口）" },
 ];
 function findAlias(input) { return ALIAS.find(a => a.re.test(input)) || null; }
 function ruleConvert(input, mode, level) {
   const src = input.slice(0, 300); const used = [];
   let t = src;
   const hit = findAlias(src);
-  if (hit) { t = hit.surface; used.push(hit.surface); }
+  if (hit) { t = src.replace(hit.re, hit.surface); used.push(hit.surface); }
   const praise = /良い|いい|上手|最高|感動|素晴らしい/.test(src) && !/[？?]/.test(src);
   if (praise && level >= 2 && !used.includes("やりますねぇ！")) { t += " やりますねぇ！"; used.push("やりますねぇ！"); }
   else if (!hit && !praise && level >= 3) {
@@ -128,8 +132,8 @@ function buildMessages(input, mode, level, cands) {
   const n = level <= 1 ? 1 : level >= 5 ? 4 : "2〜3";
   const candTx = cands.map(c => `・${c.surface}（${c.usage}）`).join("\n");
   const hit = findAlias(input);
-  const force = hit ? `\n[必須] 入力は「${hit.surface}」の原義に一致する。出力には必ず「${hit.surface}」を使い、語尾の機械的変換（例：～ますゾ〜）は絶対にしない。` : "";
-  const sys = `あなたは意味を保ったまま淫夢語録風口調に言い換える変換器。制約: 意味を変えない。情報の追加・削除禁止。使える語録は下記のみ、${n}個まで。差別・実在個人名・性的直接描写は禁止。括弧注釈は最大1個（疑問文→困惑、称賛・断定→確信、依頼・提案→提案。それ以外は付けない）。挨拶挿入は${level >= 4 ? "最大1個" : "禁止"}。数字ネタは${level === 5 ? "1回まで" : "禁止"}。出力のみ、最大300字。${force}\n[話者]: ${MODE_TX[mode] || MODE_TX.mix}\n[語録候補]:\n${candTx}\n[良い例] 入: はっきりわかります → 出: はっきりわかんだね\n[悪い例] 入: はっきりわかります → 出: ×はっきりわかりますゾ〜（提案）。機械的語尾変換と不適切な注釈は禁止。`;
+  const force = hit ? `\n[必須] 入力中の原義部分（例：はっきり/よく＋わかります）は「${hit.surface}」に置換し、それ以外の文脈は残す。語尾の機械的変換（例：～ますゾ〜）は絶対にしない。` : "";
+  const sys = `あなたは意味を保ったまま淫夢語録風口調に言い換える変換器。制約: 意味を変えない。情報の追加・削除禁止。使える語録は下記のみ、${n}個まで。差別・実在個人名・性的直接描写は禁止。括弧注釈は最大1個（疑問文→困惑、称賛・断定→確信、依頼・提案→提案。それ以外は付けない）。挨拶挿入は${level >= 4 ? "最大1個" : "禁止"}。数字ネタは${level === 5 ? "1回まで" : "禁止"}。出力のみ、最大300字。${force}\n[話者]: ${MODE_TX[mode] || MODE_TX.mix}\n[語録候補]:\n${candTx}\n[良い例] 入: はっきりわかります → 出: はっきりわかんだね / 入: あなたがバカだとはっきりわかります → 出: あなたがバカだとはっきりわかんだね（文脈を残し該当部のみ置換）\n[悪い例] 入: はっきりわかります → 出: ×はっきりわかりますゾ〜（提案）。機械的語尾変換と不適切な注釈は禁止。`;
   return [{ role: "system", content: sys }, { role: "user", content: `[入力文]: ${input}\n[淫夢度]: ${level}/5\n変換してください。出力のみ。` }];
 }
 async function chatCompletions(s, messages, onToken) {
