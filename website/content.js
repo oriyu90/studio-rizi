@@ -37,6 +37,23 @@ const projects = [
 const manualNews = [
   {
     date: '2026.10.10',
+    tag: 'OTHER',
+    title: {
+      ja: 'Qwen3.8-27B-Uncensored-OptiQ-4bit を公開しました。',
+      en: 'Qwen3.8-27B-Uncensored-OptiQ-4bit is now available.',
+      zh: 'Qwen3.8-27B-Uncensored-OptiQ-4bit 已发布。',
+      pt: 'Qwen3.8-27B-Uncensored-OptiQ-4bit está disponível.'
+    },
+    summary: {
+      ja: 'uncensored（ablation済み）の Qwen3.8-27B を、Apple Silicon 向け MLX の OptiQ 混成4/8bitへ量子化しました。Orca のBF16重みから層ごとの感度を測り直し、視覚（Vision）と MTP を保持。約19GBで、6種ベンチマークの Capability Score は 88.86 です。',
+      en: 'An uncensored (abliterated) Qwen3.8-27B quantized to mixed 4/8-bit MLX OptiQ for Apple Silicon, with per-layer sensitivity re-measured from the Orca BF16 weights. Vision and the MTP head are preserved; about 19 GB with a Capability Score of 88.86 across six benchmarks.',
+      zh: '将去除拒答的 Qwen3.8-27B 量化为面向 Apple Silicon 的 MLX OptiQ 混合 4/8 位模型，并基于 Orca 的 BF16 权重重新测量逐层敏感度。保留视觉（Vision）与 MTP，约 19 GB，六项基准的 Capability Score 为 88.86。',
+      pt: 'Um Qwen3.8-27B sem censura (abliterated) quantizado em MLX OptiQ misto de 4/8 bits para Apple Silicon, com sensibilidade por camada medida novamente a partir dos pesos BF16 do Orca. Visão e o cabeçote MTP preservados; cerca de 19 GB e Capability Score de 88,86 em seis benchmarks.'
+    },
+    url: 'https://huggingface.co/j-llm/Qwen3.8-27B-Uncensored-OptiQ-4bit'
+  },
+  {
+    date: '2026.10.10',
     tag: 'UPDATE',
     title: {
       ja: 'α6k転送 v1.2.2 を公開しました。',
