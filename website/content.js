@@ -37,6 +37,23 @@ const projects = [
 const manualNews = [
   {
     date: '2026.10.10',
+    tag: 'UPDATE',
+    title: {
+      ja: 'α6k転送 v1.2.3 を公開しました。',
+      en: 'α6k Transfer v1.2.3 is available.',
+      zh: 'α6k Transfer v1.2.3 已发布。',
+      pt: 'α6k Transfer v1.2.3 está disponível.'
+    },
+    summary: {
+      ja: 'JPEG転送時の撮影日時を改善しました。EXIFの撮影日時を優先し、タイムゾーンがない場合は補完します。EXIFに日時がない写真には、カメラが公開する日時または日付フォルダを利用します。',
+      en: 'JPEG transfers now preserve capture dates for photo apps. The app prioritizes EXIF dates, completes missing time zones, and uses camera date metadata when EXIF dates are absent.',
+      zh: '改进 JPEG 传输时的拍摄日期：优先使用 EXIF 日期并补全缺失的时区；若 EXIF 没有日期，则使用相机提供的日期信息。',
+      pt: 'A transferência de JPEG agora preserva a data de captura. O app prioriza a data EXIF, completa fusos ausentes e usa os dados de data da câmera quando o EXIF não traz a data.'
+    },
+    url: 'https://studio-rizi.pages.dev/projects/a6k-transfer/'
+  },
+  {
+    date: '2026.10.10',
     tag: 'OTHER',
     title: {
       ja: 'Qwen3.8-27B-Uncensored-OptiQ-4bit を公開しました。',
