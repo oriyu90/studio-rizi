@@ -44,7 +44,7 @@
       "name": "3DFM",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "macOS 14 or later, Apple Silicon",
-      "softwareVersion": "0.3.0",
+      "softwareVersion": "0.3.1",
       "url": "https://studio-rizi.pages.dev/projects/3dfm/pt/",
       "downloadUrl": "https://github.com/oriyu90/3DFM/releases",
       "codeRepository": "https://github.com/oriyu90/3DFM",
@@ -84,7 +84,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">v0.3.0 · MIT · macOS 14+ · Apple Silicon · JA/EN</span>
+      <span class="eyebrow">v0.3.1 · MIT · macOS 14+ · Apple Silicon · JA/EN</span>
       <h1>Da imagem ao <span class="u">modelo 3D</span>, neste Mac.</h1>
       <p class="lead">3DFM mora na barra de menus e transforma imagens em modelos 3D GLB. Modo normal (TRELLIS.2) e modo humano (Hunyuan3D com síntese MV-Adapter). Arquivos pesados de modelos podem ser movidos nas Configurações.</p>
       <div class="hero-actions">
@@ -120,12 +120,13 @@
     <div class="section-head">
       <p class="kicker">Features</p>
       <h2>Destaques</h2>
-      <p>Fila, cancelamento, paridade GUI=CLI, tudo local. v0.3.0 traz pastas configuráveis.</p>
+      <p>Fila, cancelamento, paridade GUI=CLI, tudo local. v0.3.1 traz pastas configuráveis.</p>
     </div>
     <dl class="spec">
       <div class="row"><dt>Modo normal</dt><dd>Uma imagem vira forma + textura PBR em GLB via TRELLIS.2 (512 rápido / 512→1024 padrão / 512→1536 máximo).</dd></div>
       <div class="row"><dt>Modo humano</dt><dd>6 visões, ou 1 frontal → 5 sintetizadas via MV-Adapter. Híbrido: forma TRELLIS.2 + pintura Hunyuan MLX.</dd></div>
-      <div class="row"><dt>Pastas (v0.3.0)</dt><dd>Troque dados e modelos em Configurações &gt; Storage. O servidor move modelos (fila vazia); dados movem offline com restart. SSD externo OK (<code>3dfm storage status</code>).</dd></div>
+            <div class="row"><dt>Garantia 32GB+ (v0.3.1)</dt><dd>Setup + geração padrão verificados em todos os Macs Apple Silicon com 32GB+. 512 / 512-&gt;1024 + 2048 + MV512 funcionam em qualquer RAM. 512-&gt;1536 / 4096 exigem 32GB+; combo + MV768 exigem 48GB+ (422 bilíngue).</dd></div>
+<div class="row"><dt>Pastas (v0.3.0/v0.3.1)</dt><dd>Troque dados e modelos em Configurações &gt; Storage. O servidor move modelos (fila vazia); dados movem offline com restart. SSD externo OK (<code>3dfm storage status</code>).</dd></div>
       <div class="row"><dt>Fila e segurança</dt><dd>Fila FIFO, cancelamento cooperativo, histórico SQLite (WAL), watchdogs de OOM/travamento. O histórico sobrevive a falhas.</dd></div>
       <div class="row"><dt>Offline</dt><dd>Geração 100% offline após baixar modelos (sem telemetria). Licenças em Configurações &gt; Modelos.</dd></div>
     </dl>
@@ -142,7 +143,7 @@
         <h3>Requisitos</h3>
         <ul>
           <li><span>Apple Silicon (M1+) / macOS 14+ (26+ recomendado)</span></li>
-          <li><span>16 GB mínimo, 24 GB+ recomendado, 40 GB+ para humanos</span></li>
+          <li><span>16 GB mínimo, 24 GB+ recomendado, 32GB+ verificado (v0.3.1), 40 GB+ para humanos</span></li>
           <li><span>Disco: ~20 GB normal / ~60 GB human completo</span></li>
           <li><span>Build ad-hoc sem notarização; aprove na primeira abertura</span></li>
         </ul>

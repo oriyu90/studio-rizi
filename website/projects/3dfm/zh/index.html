@@ -44,7 +44,7 @@
       "name": "3DFM",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "macOS 14 or later, Apple Silicon",
-      "softwareVersion": "0.3.0",
+      "softwareVersion": "0.3.1",
       "url": "https://studio-rizi.pages.dev/projects/3dfm/zh/",
       "downloadUrl": "https://github.com/oriyu90/3DFM/releases",
       "codeRepository": "https://github.com/oriyu90/3DFM",
@@ -84,7 +84,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">v0.3.0 · MIT · macOS 14+ · Apple Silicon · 日英对应</span>
+      <span class="eyebrow">v0.3.1 · MIT · macOS 14+ · Apple Silicon · 日英对应</span>
       <h1>在这台 Mac 上，把图片变成<span class="u">3D 模型</span>。</h1>
       <p class="lead">3DFM 是常驻菜单栏的 macOS 应用，可将图片生成 3D GLB 模型。支持普通模式（TRELLIS.2）与人物模式（Hunyuan3D＋MV-Adapter 合成）。沉重的模型文件位置可在设置中更改。</p>
       <div class="hero-actions">
@@ -120,12 +120,13 @@
     <div class="section-head">
       <p class="kicker">Features</p>
       <h2>主要功能</h2>
-      <p>生成队列、取消、GUI=CLI 一致、完全本地。v0.3.0 新增存储位置设置。</p>
+      <p>生成队列、取消、GUI=CLI 一致、完全本地。v0.3.1 新增存储位置设置。</p>
     </div>
     <dl class="spec">
       <div class="row"><dt>普通模式</dt><dd>单张图片经 TRELLIS.2 生成形状＋PBR 贴图并输出 GLB（512 预览 / 512→1024 标准 / 512→1536 最高）。</dd></div>
       <div class="row"><dt>人物模式</dt><dd>6 视角输入，或单张正面照→MV-Adapter 合成其余 5 视角。TRELLIS.2 形状＋Hunyuan MLX 绘制的混合管线。</dd></div>
-      <div class="row"><dt>存储位置设置 (v0.3.0)</dt><dd>在设置＞存储中更改数据文件夹与模型文件夹。模型由服务器移动（需清空队列），数据需停止→移动→重启。支持外置 SSD（<code>3dfm storage status</code>）。</dd></div>
+            <div class="row"><dt>32GB+ 保障 (v0.3.1)</dt><dd>已验证所有 32GB+ Apple Silicon Mac 可完成设置与常规生成。512 / 512-&gt;1024 + 2048 + MV512 全内存可用。512-&gt;1536 / 4096 需 32GB+，组合与 MV768 需 48GB+（中英 422 提示）。</dd></div>
+<div class="row"><dt>存储位置设置 (v0.3.0/v0.3.1)</dt><dd>在设置＞存储中更改数据文件夹与模型文件夹。模型由服务器移动（需清空队列），数据需停止→移动→重启。支持外置 SSD（<code>3dfm storage status</code>）。</dd></div>
       <div class="row"><dt>队列与安全</dt><dd>FIFO 队列、协作取消、SQLite(WAL) 保存、OOM/停滞看门狗。崩溃后历史记录仍保留。</dd></div>
       <div class="row"><dt>离线运行</dt><dd>模型下载后可完全离线生成（无遥测）。许可信息汇总于设置＞模型。</dd></div>
     </dl>
@@ -142,7 +143,7 @@
         <h3>运行环境</h3>
         <ul>
           <li><span>Apple Silicon（M1 及更新）/ macOS 14 及更新（推荐 26+）</span></li>
-          <li><span>内存最低 16GB、推荐 24GB+、人物模式 40GB+ 更流畅</span></li>
+          <li><span>内存最低 16GB、推荐 24GB+、32GB+ 已验证（v0.3.1）、人物模式 40GB+ 更流畅</span></li>
           <li><span>磁盘：普通约 20GB / 人物完整约 60GB</span></li>
           <li><span>ad-hoc 签名未公证，首次启动需要手动允许</span></li>
         </ul>

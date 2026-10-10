@@ -45,7 +45,7 @@
       "alternateName": ["スリーディーエフエム", "3DFM 3D model generator"],
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "macOS 14 or later, Apple Silicon",
-      "softwareVersion": "0.3.0",
+      "softwareVersion": "0.3.1",
       "url": "https://studio-rizi.pages.dev/projects/3dfm/",
       "downloadUrl": "https://github.com/oriyu90/3DFM/releases",
       "codeRepository": "https://github.com/oriyu90/3DFM",
@@ -88,7 +88,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">v0.3.0 · MIT · macOS 14+ · Apple Silicon · 日英対応</span>
+      <span class="eyebrow">v0.3.1 · MIT · macOS 14+ · Apple Silicon · 日英対応</span>
       <h1>画像から、<span class="u">3Dモデル</span>をこのMacで。</h1>
       <p class="lead">3DFMは、メニューバーに常駐して画像から3Dモデル(GLB)を生成するmacOSアプリです。普通モード (TRELLIS.2) と人物モード (Hunyuan3D＋MV-Adapter合成) に対応。重いモデルファイルの置き場所は設定で変えられます。</p>
       <div class="hero-actions">
@@ -124,12 +124,13 @@
     <div class="section-head">
       <p class="kicker">Features</p>
       <h2>主な機能</h2>
-      <p>生成キュー・キャンセル・GUI=CLIパリティ・ローカル完結。v0.3.0で保存場所の設定に対応しました。</p>
+      <p>生成キュー・キャンセル・GUI=CLIパリティ・ローカル完結。v0.3.1で保存場所の設定に対応しました。</p>
     </div>
     <dl class="spec">
       <div class="row"><dt>普通モード</dt><dd>1枚の画像からTRELLIS.2で形状＋PBRテクスチャを生成しGLB出力（512プレビュー / 512→1024標準 / 512→1536最高）。</dd></div>
       <div class="row"><dt>人物モード</dt><dd>6視点入力または正面1枚→MV-Adapterで5視点合成。TRELLIS.2形状＋Hunyuan MLXペイントのハイブリッドでPBR化。</dd></div>
-      <div class="row"><dt>保存場所の設定 (v0.3.0)</dt><dd>設定＞ストレージでデータフォルダとモデルフォルダを変更可。モデルはサーバーが移動（キュー空き必須）、データは停止→移動→再起動。外付けSSD対応（<code>3dfm storage status</code>）。</dd></div>
+            <div class="row"><dt>32GB+保証 (v0.3.1)</dt><dd>32GB以上の全Apple Silicon Macでセットアップ完走・通常生成を検証。512 / 512→1024 + 2048 + MV512は全RAMで動作。512→1536 / 4096は32GB+必須、1536+4096併用とMV768は48GB+必須（不足時は日英422で案内）。</dd></div>
+<div class="row"><dt>保存場所の設定 (v0.3.0/v0.3.1)</dt><dd>設定＞ストレージでデータフォルダとモデルフォルダを変更可。モデルはサーバーが移動（キュー空き必須）、データは停止→移動→再起動。外付けSSD対応（<code>3dfm storage status</code>）。</dd></div>
       <div class="row"><dt>キューと安全性</dt><dd>FIFOキュー・協調キャンセル・SQLite(WAL)保持・OOM/停滞ウォッチドッグ。クラッシュしても履歴は残ります。</dd></div>
       <div class="row"><dt>オフライン</dt><dd>モデル取得後は完全オフライン生成可（テレメトリなし）。ライセンス表示は設定＞モデルに集約。</dd></div>
     </dl>
@@ -146,7 +147,7 @@
         <h3>動作環境</h3>
         <ul>
           <li><span>Apple Silicon (M1以降) / macOS 14以降（26+推奨）</span></li>
-          <li><span>メモリ16GB最低・24GB+推奨・人物は40GB+快適</span></li>
+          <li><span>メモリ16GB最低・24GB+推奨・32GB+保証（v0.3.1検証済み）・人物は40GB+快適</span></li>
           <li><span>容量: 普通~20GB / 人物フル~60GB（モデル＋作業領域）</span></li>
           <li><span>ad-hoc署名・未公証のため初回は許可が必要です</span></li>
         </ul>

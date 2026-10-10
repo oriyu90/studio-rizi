@@ -45,7 +45,7 @@
       "alternateName": ["3DFM 3D model generator"],
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "macOS 14 or later, Apple Silicon",
-      "softwareVersion": "0.3.0",
+      "softwareVersion": "0.3.1",
       "url": "https://studio-rizi.pages.dev/projects/3dfm/en/",
       "downloadUrl": "https://github.com/oriyu90/3DFM/releases",
       "codeRepository": "https://github.com/oriyu90/3DFM",
@@ -85,7 +85,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">v0.3.0 · MIT · macOS 14+ · Apple Silicon · JP/EN</span>
+      <span class="eyebrow">v0.3.1 · MIT · macOS 14+ · Apple Silicon · JP/EN</span>
       <h1>Image to <span class="u">3D model</span>, on this Mac.</h1>
       <p class="lead">3DFM lives in the menu bar and turns images into 3D GLB models. Normal mode (TRELLIS.2) plus human mode (Hunyuan3D with MV-Adapter synthesis). Heavy model files can be moved in Settings.</p>
       <div class="hero-actions">
@@ -121,12 +121,13 @@
     <div class="section-head">
       <p class="kicker">Features</p>
       <h2>Highlights</h2>
-      <p>Job queue, cancel, GUI=CLI parity, fully local. v0.3.0 adds configurable storage locations.</p>
+      <p>Job queue, cancel, GUI=CLI parity, fully local. v0.3.1 adds configurable storage locations.</p>
     </div>
     <dl class="spec">
       <div class="row"><dt>Normal mode</dt><dd>Single image to shape + PBR texture GLB via TRELLIS.2 (512 preview / 512→1024 default / 512→1536 max).</dd></div>
       <div class="row"><dt>Human mode</dt><dd>6 views, or 1 front photo → 5 synthesized views via MV-Adapter. Hybrid TRELLIS.2 shape + Hunyuan MLX paint.</dd></div>
-      <div class="row"><dt>Storage locations (v0.3.0)</dt><dd>Change data and models folders in Settings &gt; Storage. Server moves models (idle queue required); data moves offline with restart. External SSD supported (<code>3dfm storage status</code>).</dd></div>
+            <div class="row"><dt>32GB+ guarantee (v0.3.1)</dt><dd>Verified setup + standard generation on all 32GB+ Apple Silicon Macs. 512 / 512-&gt;1024 + 2048 + MV512 work on all RAM sizes. 512-&gt;1536 / 4096 need 32GB+; combo + MV768 need 48GB+ (bilingual 422).</dd></div>
+<div class="row"><dt>Storage locations (v0.3.0/v0.3.1)</dt><dd>Change data and models folders in Settings &gt; Storage. Server moves models (idle queue required); data moves offline with restart. External SSD supported (<code>3dfm storage status</code>).</dd></div>
       <div class="row"><dt>Queue &amp; safety</dt><dd>FIFO queue, cooperative cancel, SQLite (WAL) history, OOM/stall watchdogs. History survives crashes.</dd></div>
       <div class="row"><dt>Offline</dt><dd>Fully offline generation after models are fetched (no telemetry). Licenses live in Settings &gt; Models.</dd></div>
     </dl>
@@ -143,7 +144,7 @@
         <h3>Requirements</h3>
         <ul>
           <li><span>Apple Silicon (M1+) / macOS 14+ (26+ recommended)</span></li>
-          <li><span>16 GB minimum, 24 GB+ recommended, 40 GB+ for human mode</span></li>
+          <li><span>16 GB minimum, 24 GB+ recommended, 32GB+ verified (v0.3.1), 40 GB+ for human</span></li>
           <li><span>Disk: ~20 GB normal / ~60 GB human-full</span></li>
           <li><span>Ad-hoc-signed and unnotarized; approval needed on first launch</span></li>
         </ul>
