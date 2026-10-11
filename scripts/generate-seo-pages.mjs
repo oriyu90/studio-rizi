@@ -411,20 +411,24 @@ async function findProjectIndexes(directory, prefix = '') {
 
 const projectIndexes = await findProjectIndexes(path.join(publicRoot, 'projects'));
 const projectGroups = new Map();
+const projectGroupKeys = new Map();
 for (const relativeProject of projectIndexes) {
   const relative = `projects/${relativeProject.replaceAll(path.sep, '/')}`;
   const urlPath = canonicalPathForFile(relative);
   const parts = urlPath.split('/').filter(Boolean);
   const slug = parts[1];
-  const localeSegment = parts[2];
-  const group = projectGroups.get(slug) || [];
-  if (!localeSegment || locales.includes(localeSegment)) group.push({ urlPath, locale: localeSegment || 'ja' });
-  projectGroups.set(slug, group);
+  const hasLocale = locales.includes(parts[2]);
+  const locale = hasLocale ? parts[2] : 'ja';
+  const articlePath = parts.slice(hasLocale ? 3 : 2).join('/');
+  const groupKey = `${slug}/${articlePath}`;
+  const group = projectGroups.get(groupKey) || [];
+  group.push({ urlPath, locale });
+  projectGroups.set(groupKey, group);
+  projectGroupKeys.set(urlPath, groupKey);
   sitemapEntries.push({ urlPath, relative, alternates: [] });
 }
 for (const entry of sitemapEntries.filter(entry => entry.urlPath.startsWith('/projects/'))) {
-  const slug = entry.urlPath.split('/').filter(Boolean)[1];
-  const group = projectGroups.get(slug) || [];
+  const group = projectGroups.get(projectGroupKeys.get(entry.urlPath)) || [];
   if (group.length > 1 && group.some(item => item.urlPath === entry.urlPath)) {
     const defaultItem = group.find(item => item.locale === 'ja') || group[0];
     entry.alternates = [

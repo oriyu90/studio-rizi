@@ -45,3 +45,7 @@ PROJECTカードとお知らせの追加方法は `PROJECT-CARD-RULES.md` を参
 - `npm test` は公開ファイルの検査と31件のUI・テーマ・SNSテストを実行します。今回の監査結果・検証範囲と制限は `UI-AUDIT-2026-08-27.md` に記録しています。
 
 Author: Yuki_Orita
+
+## 料理wiki（2026-10-12）
+
+「折田悠希の料理サイト」を `/projects/orita-kitchen/` に追加。日本語・英語・中文・ポルトガル語でトップと「冷やうどんの部屋」を提供します。本文は `projects/orita-kitchen/content.json`、生成器は `scripts/generate-orita-kitchen.mjs`。`npm run build` が記事を生成してからサイト全体を検証します。詳細は `projects/orita-kitchen/README.md` とルートの `orita-kitchen.md` を参照してください。

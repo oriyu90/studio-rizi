@@ -169,6 +169,13 @@
       "repository": "https://github.com/oriyu90/inmu-translator",
       "url": "https://studio-rizi.pages.dev/projects/inmu-translator/",
       "hosted": true
+    },
+    {
+      "slug": "orita-kitchen",
+      "name": "折田悠希の料理サイト",
+      "repository": "https://github.com/oriyu90/studio-rizi",
+      "url": "https://studio-rizi.pages.dev/projects/orita-kitchen/",
+      "hosted": true
     }
   ]
 }
