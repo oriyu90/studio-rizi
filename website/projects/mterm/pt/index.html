@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>mterm — terminal Android de código aberto com Debian Linux e Claude Code</title>
-<meta name="description" content="mterm é um terminal-estação de trabalho Linux de código aberto para Android que executa o Debian 13.7 trixie (arm64) via PRoot, com terminal PTY real e Claude Code para desenvolvimento no próprio aparelho, sem root. Criado por Yuki Orita (Yuki_Orita / 折田悠希 / おりたゆうき). Licença MIT, no GitHub.">
-<meta name="keywords" content="mterm, エムターム, 折田悠希, おりたゆうき, Yuki_Orita, github, Android, Debian, terminal, Linux, PRoot, chroot, PTY, Claude Code, trixie, arm64, código aberto">
+<title>aTerm — terminal Android de código aberto com Debian Linux e Claude Code</title>
+<meta name="description" content="aTerm é um terminal-estação de trabalho Linux de código aberto para Android que executa o Debian 13.7 trixie (arm64) via PRoot, com terminal PTY real e Claude Code para desenvolvimento no próprio aparelho, sem root. Criado por Yuki Orita (Yuki_Orita / 折田悠希 / おりたゆうき). Licença MIT, no GitHub.">
+<meta name="keywords" content="aTerm, エムターム, 折田悠希, おりたゆうき, Yuki_Orita, github, Android, Debian, terminal, Linux, PRoot, chroot, PTY, Claude Code, trixie, arm64, código aberto">
 <meta name="author" content="Yuki_Orita">
 <meta name="theme-color" content="#0b1110">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -19,22 +19,22 @@
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230b1110'/%3E%3Ctext x='8' y='23' font-family='monospace' font-size='16' fill='%2334c9b5'%3E$%3C/text%3E%3Crect x='16' y='18' width='8' height='3' fill='%2334c9b5'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="mterm">
+<meta property="og:site_name" content="aTerm">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:locale:alternate" content="ja_JP">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="zh_CN">
-<meta property="og:title" content="mterm — Debian Linux e Claude Code no Android">
+<meta property="og:title" content="aTerm — Debian Linux e Claude Code no Android">
 <meta property="og:description" content="Execute o Debian 13.7 trixie (arm64) no Android via PRoot, com terminal PTY real e Claude Code. Sem root, três edições, código aberto MIT.">
 <meta property="og:url" content="https://studio-rizi.pages.dev/projects/mterm/pt/">
 <meta property="og:image" content="https://studio-rizi.pages.dev/projects/mterm/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ilustração de uma sessão de terminal do mterm com Debian e Claude Code">
+<meta property="og:image:alt" content="Ilustração de uma sessão de terminal do aTerm com Debian e Claude Code">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@InovateofRIZI">
 <meta name="twitter:creator" content="@InovateofRIZI">
-<meta name="twitter:title" content="mterm — terminal Debian para Android">
+<meta name="twitter:title" content="aTerm — terminal Debian para Android">
 <meta name="twitter:description" content="Um app de terminal de código aberto que roda Debian Linux e Claude Code no Android. Sem root.">
 <meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/mterm/assets/og.png">
 <script type="application/ld+json">
@@ -43,8 +43,8 @@
   "@graph": [
     {
       "@type": "SoftwareApplication",
-      "name": "mterm",
-      "alternateName": ["mterm Android Linux Workstation Terminal"],
+      "name": "aTerm",
+      "alternateName": ["aTerm Android Linux Workstation Terminal"],
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Android 10 or later",
       "softwareVersion": "1.3.0",
@@ -77,9 +77,9 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="#top" aria-label="mterm, voltar ao topo">
+      <a class="brand" href="#top" aria-label="aTerm, voltar ao topo">
         <span class="prompt" aria-hidden="true">$▊</span>
-        <span>mterm</span>
+        <span>aTerm</span>
       </a>
       <nav class="main-nav" aria-label="Navegação principal">
         <a href="#features">Recursos</a>
@@ -105,17 +105,17 @@
           <div>
             <p class="release-line">Android · Debian 13.7 trixie arm64 · PRoot + PTY · Código aberto · v1.3.0</p>
             <h1 id="hero-title">Uma estação Debian,<br>no seu bolso.</h1>
-            <p class="hero-lead">mterm é um app de terminal de código aberto que executa o Debian Linux de verdade no seu Android. Sem root: chroot em espaço de utilizador via PRoot, terminal PTY genuíno e desenvolvimento com IA via Claude Code, tudo num só app.</p>
+            <p class="hero-lead">aTerm é um app de terminal de código aberto que executa o Debian Linux de verdade no seu Android. Sem root: chroot em espaço de utilizador via PRoot, terminal PTY genuíno e desenvolvimento com IA via Claude Code, tudo num só app.</p>
           </div>
           <div class="hero-actions" role="group" aria-label="Como obter">
             <a class="button" href="https://github.com/oriyu90/mterm">Ver o código no GitHub</a>
             <a class="button button-secondary" href="https://github.com/oriyu90/mterm/releases/tag/v1.3.0">Instalar o APK</a>
           </div>
         </div>
-        <aside class="hero-aside" aria-label="mterm v1.3.0">
-          <div class="terminal-mock" role="img" aria-label="Ilustração de uma sessão de terminal do mterm">
+        <aside class="hero-aside" aria-label="aTerm v1.3.0">
+          <div class="terminal-mock" role="img" aria-label="Ilustração de uma sessão de terminal do aTerm">
             <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-            <pre><span class="p">$</span> mterm --debian trixie
+            <pre><span class="p">$</span> aTerm --debian trixie
 root@localhost:~# cat /etc/os-release
 Debian GNU/Linux 13.7 (trixie)
 root@localhost:~# claude
@@ -262,7 +262,7 @@ Welcome to Claude Code_</pre>
       <div class="page-width">
         <div class="section-heading">
           <h2 id="get-started-title">Linux no seu aparelho em cinco minutos.</h2>
-          <p>O mterm v1.3.0 está disponível como APKs assinados no GitHub Releases. É distribuído por sideload, fora das lojas — siga estes passos.</p>
+          <p>O aTerm v1.3.0 está disponível como APKs assinados no GitHub Releases. É distribuído por sideload, fora das lojas — siga estes passos.</p>
         </div>
         <article class="install-platform">
           <h3>Passos do sideload</h3>
