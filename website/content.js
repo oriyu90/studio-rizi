@@ -20,7 +20,7 @@ const projects = [
   {name:'Tango pro',url:'https://studio-rizi.pages.dev/projects/tango-pro/',repository:'https://github.com/oriyu90/Tango-pro',releaseDate:'2026.08.22',releaseVersion:'v2.1.0',releaseSource:'github-release',code:'TP',description:{ja:'自分のCSVで続けられる単語帳アプリ。',en:'A vocabulary app built around your own CSV.',zh:'使用自己的 CSV 持续学习单词。',pt:'Um app de vocabulário feito para o seu CSV.'},platforms:['Web','Android','macOS'],color:'lime'},
   {name:'Vocello JP',url:'https://studio-rizi.pages.dev/projects/vocello-jp/',repository:'https://github.com/oriyu90/vocello-jp',releaseDate:'2026.08.18',releaseVersion:'v2.4.0-jp.1',releaseSource:'github-release',code:'VO',description:{ja:'Macで完結する日本語AI音声スタジオ。',en:'A Japanese AI voice studio that stays on Mac.',zh:'完全在 Mac 本地运行的日语 AI 语音工作室。',pt:'Estúdio de voz japonesa com IA, local no Mac.'},platforms:['macOS'],color:'blue'},
   {name:'Volume Routine',url:'https://studio-rizi.pages.dev/projects/volume-routine/',repository:'https://github.com/oriyu90/volume-routine',releaseDate:'2026.06.20',releaseVersion:'v1.1.0',releaseSource:'github-release',code:'VR',description:{ja:'時間とWi-FiでAndroid音量を自動化。',en:'Automate Android volume by time and Wi-Fi.',zh:'按时间和 Wi-Fi 自动调整 Android 音量。',pt:'Automatize o volume do Android por hora e Wi-Fi.'},platforms:['Android'],color:'lime'},
-  {name:'WAKARU',url:'https://studio-rizi.pages.dev/projects/wakaru/',repository:'https://github.com/oriyu90/WAKARU',releaseDate:'2026.10.05',releaseVersion:'v1.6.9',releaseSource:'github-release',code:'WK',description:{ja:'資料を根拠つきで「わかる」に変える。',en:'Turn documents into cited understanding.',zh:'将资料转化为带有依据的理解。',pt:'Transforme documentos em entendimento com fontes.'},platforms:['macOS'],color:'paper'},
+  {name:'WAKARU',url:'https://studio-rizi.pages.dev/projects/wakaru/',repository:'https://github.com/oriyu90/WAKARU',releaseDate:'2026.10.12',releaseVersion:'v1.7.0',releaseSource:'github-release',code:'WK',description:{ja:'資料を根拠つきで「わかる」に変える。',en:'Turn documents into cited understanding.',zh:'将资料转化为带有依据的理解。',pt:'Transforme documentos em entendimento com fontes.'},platforms:['macOS','Windows'],color:'paper'},
   {name:'折田悠希の料理サイト',url:'https://studio-rizi.pages.dev/projects/orita-kitchen/',repository:'https://github.com/oriyu90/orita-kitchen',announceRelease:true,releaseDate:'2026.10.12',releaseVersion:'orita-kitchen-v1.0.0',releaseSource:'github-release',code:'YK',description:{ja:'気ままに作る料理wiki。冷やうどんと5つのたれ。',en:'A personal cooking wiki: cold udon and five sauces.',zh:'随心料理wiki：冷乌冬面与五种酱汁。',pt:'Um wiki de cozinha: udon frio e cinco molhos.'},platforms:['Web'],color:'green'},
   {name:'YMM4M',url:'https://studio-rizi.pages.dev/projects/ymm4m/',repository:'https://github.com/oriyu90/YMM4M',announceRelease:true,releaseDate:'2026.09.21',releaseVersion:'v1.0.5',releaseSource:'github-release',code:'YM',description:{ja:'YukkuriMovieMaker4をMacで動かす互換環境。',en:'Run YukkuriMovieMaker4 on a Mac.',zh:'在 Mac 上运行 YukkuriMovieMaker4 的兼容环境。',pt:'Rode o YukkuriMovieMaker4 no Mac.'},platforms:['macOS'],color:'lime'},
   {name:'α6k転送',url:'https://studio-rizi.pages.dev/projects/a6k-transfer/',repository:'https://github.com/oriyu90/a6k-transfer',announceRelease:true,releaseDate:'2026.09.17',releaseVersion:'v1.0.0',releaseSource:'github-release',code:'A6',description:{ja:'Sony αカメラの写真をWi-Fiでスマホへ転送。',en:'Transfer Sony α camera photos to your phone over Wi-Fi.',zh:'通过 Wi-Fi 将 Sony α 相机照片传到手机。',pt:'Transfira fotos da câmera Sony α para o celular via Wi-Fi.'},platforms:['Android'],color:'blue'},
@@ -89,6 +89,23 @@ const manualNews = [
       pt: 'A leitura das credenciais na tela da câmera agora compara o reconhecimento japonês e latino e repete a captura quando necessário. Caracteres incertos exigem conferência antes da conexão.'
     },
     url: 'https://studio-rizi.pages.dev/projects/a6k-transfer/'
+  },
+  {
+    date: '2026.10.12',
+    tag: 'UPDATE',
+    title: {
+      ja: 'WAKARU v1.7.0 を公開しました。',
+      en: 'WAKARU v1.7.0 is available.',
+      zh: 'WAKARU v1.7.0 已发布。',
+      pt: 'WAKARU v1.7.0 está disponível.'
+    },
+    summary: {
+      ja: 'Windows 10/11 (x64) に対応しました。独自インストーラとポータブル版で提供し、macOS版の全機能をそのまま使えます。',
+      en: 'Now on Windows 10/11 (x64), with its own installer and a portable build carrying every macOS feature.',
+      zh: '现已支持 Windows 10/11（x64），提供专用安装程序与便携版，完整沿用 macOS 版全部功能。',
+      pt: 'Agora no Windows 10/11 (x64), com instalador próprio e versão portátil com todos os recursos do macOS.'
+    },
+    url: 'https://studio-rizi.pages.dev/projects/wakaru/'
   },
   {
     date: '2026.10.05',
