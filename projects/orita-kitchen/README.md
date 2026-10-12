@@ -1,35 +1,12 @@
-# 折田悠希の料理サイト / Yuki Orita’s Kitchen
-
-写真を中心にした個人の料理wiki。最初の記事は「冷やうどんの部屋」。材料、5つの調理手順、3つの具材準備、5種類のたれ、卵と合わせるコツを収録しています。
-
-公開URL: https://studio-rizi.pages.dev/projects/orita-kitchen/
+# 折田悠希の料理サイト — 公開用同期先
 
 Author: Yuki_Orita
 
-## 編集と公開
+編集元: https://github.com/oriyu90/orita-kitchen （プライベート）
+公開URL: https://studio-rizi.pages.dev/projects/orita-kitchen/
 
-- 本文の一次情報: `projects/orita-kitchen/content.json`。日本語・英語・中文・ポルトガル語を同じ構造で管理します。
-- ページ生成: `scripts/generate-orita-kitchen.mjs`。トップと記事の計8ページを生成します。
-- 配信元: `website/projects/orita-kitchen/`。生成HTMLを直接編集せず、本文と生成スクリプトを変更してください。
-- UI: 同ディレクトリの `style.css`。
-- 画像: `assets/hero.webp`、`ingredients.webp`、`rinse.webp`、`sauces.webp`。すべて内蔵画像生成ツールで作成したイメージで、実写の調理記録ではありません。
-- ルートで `npm run build`、`npm run validate`、`npm run count-files`、`npm test` を実行。
-- `oriyu90/studio-rizi` の `main` へpushすると既存Cloudflare Pagesが自動公開。新しいPagesプロジェクトは作成しません。
+このディレクトリは統合サイトの案件記録です。公開ファイルは `website/projects/orita-kitchen/`、生成元commitは `source.json`。編集用JSONと生成器は専用リポジトリにあります。
 
-## 表示構成
+専用リポジトリで `npm test` とcommitを済ませた後、`npm run sync:studio -- /absolute/path/to/studio-rizi` で生成物を同期してください。中央側で `npm test` と差分確認を実施してから公開します。公開HTMLの手編集や編集元の重複を避けます。
 
-トップは料理記事の一覧のみ。記事は写真と本文を順に読む静的ページです。具材・作り方・具材の準備・たれ5種・ひと工夫を「冷やうどんの部屋」の一記事に掲載します。検索、材料チェック、味別フィルター、印刷ボタン、独立したたれ一覧はありません。
-
-日・英・中・葡の独立URL、自己canonical、相互hreflang、Recipe構造化データ、全体サイトマップを提供します。
-
-## デザイン
-
-生成り `#f7f6f0`、深緑 `#193a2e`、墨色 `#232c27`。和文はシステム明朝の太字見出しと太字ゴシック本文。写真の寸法を確保し、先頭画像以外は遅延読み込み。共通の余白・色トークン、キーボードフォーカス、44pxの操作面、動きを減らす設定を採用。
-
-UI/UX Pro Maxを導入し、デザインシステム検索を実施。料理wikiには合わない販促用の口コミ構成は採用せず、提供された参考サイトの余白・写真・レシピ構成を優先。Hallmarkの視認性基準も適用しました。
-
-参照: https://watahan-oncri.com/facility/ 、https://www.thermos.jp/recipe/mizuki/
-
-## ライセンス
-
-この料理サイト用に追加した本文・スクリプト・スタイル・画像にMITライセンスを適用します。既存Studio Riziや他プロジェクトのライセンスは変更しません。`LICENSE`参照。
+UIはトップの記事一覧と記事本文だけ。たれは冷やうどんと同じ記事内の項目。UI・公開・スキルの保守方針はルートの `orita-kitchen.md` を参照してください。公開済みファイルのライセンスは `LICENSE` 参照。

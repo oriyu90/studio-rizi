@@ -48,6 +48,4 @@ Author: Yuki_Orita
 
 ## 料理wiki（2026-10-12）
 
-「折田悠希の料理サイト」を `/projects/orita-kitchen/` に追加。日本語・英語・中文・ポルトガル語でトップと「冷やうどんの部屋」を提供します。本文は `projects/orita-kitchen/content.json`、生成器は `scripts/generate-orita-kitchen.mjs`。`npm run build` が記事を生成してからサイト全体を検証します。詳細は `projects/orita-kitchen/README.md` とルートの `orita-kitchen.md` を参照してください。
-
-料理wikiのトップは記事一覧、記事は写真と本文のみの構成です。たれは冷やうどんと同じ記事内の項目として掲載しています。
+「折田悠希の料理サイト」は `/projects/orita-kitchen/` で公開。トップの記事一覧と冷やうどん記事を4言語で提供します。編集元は専用プライベート `oriyu90/orita-kitchen`。専用ソースから生成物を同期し、中央には編集用JSON・生成器を重複して置きません。詳細は `projects/orita-kitchen/README.md` とルートの `orita-kitchen.md` を参照してください。

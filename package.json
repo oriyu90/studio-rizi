@@ -5,11 +5,10 @@
   "type": "module",
   "scripts": {
     "generate:seo": "node scripts/generate-seo-pages.mjs",
-    "build": "npm run generate:kitchen && npm run generate:seo && npm run validate && npm run count-files",
+    "build": "npm run generate:seo && npm run validate && npm run count-files",
     "validate": "node scripts/validate-site.mjs",
     "count-files": "node scripts/count-files.mjs",
     "test": "npm run build && node --test scripts/*.test.mjs",
-    "indexnow": "node scripts/submit-indexnow.mjs --all",
-    "generate:kitchen": "node scripts/generate-orita-kitchen.mjs"
+    "indexnow": "node scripts/submit-indexnow.mjs --all"
   }
 }
