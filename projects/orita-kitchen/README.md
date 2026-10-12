@@ -11,16 +11,16 @@ Author: Yuki_Orita
 - 本文の一次情報: `projects/orita-kitchen/content.json`。日本語・英語・中文・ポルトガル語を同じ構造で管理します。
 - ページ生成: `scripts/generate-orita-kitchen.mjs`。トップと記事の計8ページを生成します。
 - 配信元: `website/projects/orita-kitchen/`。生成HTMLを直接編集せず、本文と生成スクリプトを変更してください。
-- UI: 同ディレクトリの `style.css` と `app.js`。
+- UI: 同ディレクトリの `style.css`。
 - 画像: `assets/hero.webp`、`ingredients.webp`、`rinse.webp`、`sauces.webp`。すべて内蔵画像生成ツールで作成したイメージで、実写の調理記録ではありません。
 - ルートで `npm run build`、`npm run validate`、`npm run count-files`、`npm test` を実行。
 - `oriyu90/studio-rizi` の `main` へpushすると既存Cloudflare Pagesが自動公開。新しいPagesプロジェクトは作成しません。
 
-## 機能
+## 表示構成
 
-記事・たれの名前の検索、検索結果なし表示、記事内の目次、具材チェック（同じブラウザ内に保存）、チェックのリセット、たれの味別絞り込み、印刷用表示。おかず風に辛いたれも含みます。チェック保存はブラウザに保存するだけで、サーバーへの送信はありません。
+トップは料理記事の一覧のみ。記事は写真と本文を順に読む静的ページです。具材・作り方・具材の準備・たれ5種・ひと工夫を「冷やうどんの部屋」の一記事に掲載します。検索、材料チェック、味別フィルター、印刷ボタン、独立したたれ一覧はありません。
 
-日・英・中・葡の独立URL、自己canonical、相互hreflang、Recipe構造化データ、全体サイトマップを提供します。アカウント登録やオンライン編集機能はありません。
+日・英・中・葡の独立URL、自己canonical、相互hreflang、Recipe構造化データ、全体サイトマップを提供します。
 
 ## デザイン
 

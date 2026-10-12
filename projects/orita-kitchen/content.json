@@ -1,14 +1,550 @@
 {
   "ja": {
-    "brand": "折田悠希の料理サイト", "title": "冷やうどんの部屋", "tagline": "気ままに作る。<br>おいしく残す。", "intro": "冷蔵庫にあるものと、今日の気分で。<br>折田悠希の、自由な料理の覚え書き。", "home": "ホーム", "recipes": "料理の部屋", "sauces": "たれの図鑑", "about": "このサイトについて", "search": "記事を検索", "searchPlaceholder": "うどん、ゆず、たれ…", "close": "閉じる", "empty": "見つかりませんでした。別の言葉で探してみてください。", "searchHint": "料理名や、たれの名前で探せます。", "read": "レシピを読む", "latest": "最初のひと皿", "count": "料理の記事 01", "quick": "冷凍うどんで", "optional": "具材は自由", "five": "たれは5種類", "lead": "つるっと冷たく、<br>たれで気分を変えて。", "summary": "冷凍うどんをゆでて、冷水で締める。それだけで、今日のひと皿に。さっぱりからガチのおかず風まで、たれは気分で選びましょう。", "roomIntro": "ひとつの料理から、いろんなおいしさ。", "sauceIntro": "同じうどんも、たれで別のひと皿に。", "sauceLead": "今日は、どの味にする？", "ingredients": "具材", "method": "作り方", "prep": "具材の用意方法", "tips": "ひと工夫", "toc": "この記事の目次", "print": "レシピを印刷", "article": "記事", "all": "すべて", "fresh": "さっぱり", "rich": "おかず風", "spicy": "ピリ辛", "ratio": "材料と容積比", "ratioNote": "数字は容積の比率です。同じスプーンで量って、味を見ながら調整しましょう。", "rangeNote": "柚子胡椒・ラー油の「0.3〜1」はお好みで。まずは少なめから。", "checkHint": "用意した具材にチェック。なくても大丈夫、うどん1玉から。", "ingredientList": [["冷凍うどん", "1玉〜"], ["乾燥わかめ", "あれば"], ["冷凍した切ったネギ", "あれば"], ["切った油揚げ", "あれば"], ["卵", "あれば"]], "steps": [["お湯を沸かす", "片手鍋の8割まで水を入れ、強火で沸かす。"], ["うどんを入れる", "冷凍うどん1玉を投入。そのまま沸騰直前まで放置する。"], ["ほぐして、ザルへ", "沸騰直前に箸で軽くかき回し、沸騰したらすぐにザルでこす。"], ["冷水で締める", "ザルに冷水を当てて流し、軽く手でうどんのぬめりと熱を取る。目安は20秒。"], ["盛りつけて完成", "たれや用意した具材と一緒に器に入れて完成。"]], "timeNote": "冷凍うどんの加熱時間は、商品のパッケージ表示も確認してください。", "preparations": [["わかめ", "計量カップにわかめと、わかめのかさの4倍の水を入れ、電子レンジで10秒。戻り具合を見て、足りなければ水に浸して調整。"], ["ねぎ", "冷凍はそのまま。切っていないものは、洗って切る。それだけ。"], ["油揚げ", "切ったものをそのまま。"]], "tipTitle": "味を想像しながら、<br>適当に作っていきましょう！！", "tipText": "卵と合わせる場合は、豆板醤や甜麺醤を多めにするとより美味しいですよ。", "aboutText": "きっちり計る日も、目分量の日も。ここは折田悠希（おりたゆうき）の料理の覚え書きを集める、小さな料理wikiです。気に入った味を、また作れるように。", "photoNote": "写真はAIで生成した調理・盛りつけのイメージです。", "footerLine": "おいしいは、気ままにつくれる。", "required": "必須", "oneServing": "1玉から", "reset": "チェックをリセット", "resultCount": "件の候補", "selectedCount": "種類のたれ", "sauceNames": ["ただのたれ", "ゆずたれ", "やみつきだれ", "中華だれ1", "中華だれ2"], "sauceMoods": ["冷涼風", "冷涼", "ガチのおかず風", "ガチおかず", "ガチおかず"], "sauceDescriptions": ["醤油と出汁の、シンプルな味。", "ゆずの香りで、すっきり爽やか。", "ごまと旨みで、食べごたえ。", "豆板醤と甜麺醤の、深いコク。", "酢とコチュジャンで、甘辛く。"], "sauceNotes": ["お好みで山椒や柚子胡椒を。", "ポン酢はゆずぽん、和風ドレッシングは玉葱風味が好ましい。", "焼肉のたれはダイショーのゴマ入りがおすすめ。和風ドレッシングは玉葱風味があるとなおよし。", "ポン酢は醤油＋酢でもOK。焼肉のたれはダイショーのものが最高。", "味を見ながら、酸味と甘辛さをお好みで。"], "sauceIngredients": [["醤油", "みりん", "ほんだしなどの出汁粉末"], ["ポン酢", "和風ドレッシング", "みりん", "めんつゆ", "柚子胡椒"], ["焼肉のたれ", "めんつゆ", "ゴマ油", "和風ドレッシング"], ["ポン酢", "焼肉のたれ", "みりん", "ラー油", "豆板醤", "甜麺醤"], ["酢", "醤油", "甜麺醤", "コチュジャン", "ごま油"]]
+    "brand": "折田悠希の料理サイト",
+    "title": "冷やうどんの部屋",
+    "home": "ホーム",
+    "recipes": "料理の部屋",
+    "sauces": "たれ",
+    "read": "レシピを読む",
+    "summary": "冷凍うどんをゆでて、冷水で締める。それだけで、今日のひと皿に。さっぱりからガチのおかず風まで、たれは気分で選びましょう。",
+    "sauceIntro": "同じうどんも、たれで別のひと皿に。",
+    "ingredients": "具材",
+    "method": "作り方",
+    "prep": "具材の用意方法",
+    "ratio": "材料と容積比",
+    "ratioNote": "数字は容積の比率です。同じスプーンで量って、味を見ながら調整しましょう。",
+    "rangeNote": "柚子胡椒・ラー油の「0.3〜1」はお好みで。まずは少なめから。",
+    "ingredientList": [
+      [
+        "冷凍うどん",
+        "1玉〜"
+      ],
+      [
+        "乾燥わかめ",
+        "あれば"
+      ],
+      [
+        "冷凍した切ったネギ",
+        "あれば"
+      ],
+      [
+        "切った油揚げ",
+        "あれば"
+      ],
+      [
+        "卵",
+        "あれば"
+      ]
+    ],
+    "steps": [
+      [
+        "お湯を沸かす",
+        "片手鍋の8割まで水を入れ、強火で沸かす。"
+      ],
+      [
+        "うどんを入れる",
+        "冷凍うどん1玉を投入。そのまま沸騰直前まで放置する。"
+      ],
+      [
+        "ほぐして、ザルへ",
+        "沸騰直前に箸で軽くかき回し、沸騰したらすぐにザルでこす。"
+      ],
+      [
+        "冷水で締める",
+        "ザルに冷水を当てて流し、軽く手でうどんのぬめりと熱を取る。目安は20秒。"
+      ],
+      [
+        "盛りつけて完成",
+        "たれや用意した具材と一緒に器に入れて完成。"
+      ]
+    ],
+    "timeNote": "冷凍うどんの加熱時間は、商品のパッケージ表示も確認してください。",
+    "preparations": [
+      [
+        "わかめ",
+        "計量カップにわかめと、わかめのかさの4倍の水を入れ、電子レンジで10秒。戻り具合を見て、足りなければ水に浸して調整。"
+      ],
+      [
+        "ねぎ",
+        "冷凍はそのまま。切っていないものは、洗って切る。それだけ。"
+      ],
+      [
+        "油揚げ",
+        "切ったものをそのまま。"
+      ]
+    ],
+    "tipTitle": "味を想像しながら、<br>適当に作っていきましょう！！",
+    "tipText": "卵と合わせる場合は、豆板醤や甜麺醤を多めにするとより美味しいですよ。",
+    "aboutText": "きっちり計る日も、目分量の日も。ここは折田悠希（おりたゆうき）の料理の覚え書きを集める、小さな料理wikiです。気に入った味を、また作れるように。",
+    "photoNote": "写真はAIで生成した調理・盛りつけのイメージです。",
+    "footerLine": "おいしいは、気ままにつくれる。",
+    "oneServing": "1玉から",
+    "sauceNames": [
+      "ただのたれ",
+      "ゆずたれ",
+      "やみつきだれ",
+      "中華だれ1",
+      "中華だれ2"
+    ],
+    "sauceMoods": [
+      "冷涼風",
+      "冷涼",
+      "ガチのおかず風",
+      "ガチおかず",
+      "ガチおかず"
+    ],
+    "sauceNotes": [
+      "お好みで山椒や柚子胡椒を。",
+      "ポン酢はゆずぽん、和風ドレッシングは玉葱風味が好ましい。",
+      "焼肉のたれはダイショーのゴマ入りがおすすめ。和風ドレッシングは玉葱風味があるとなおよし。",
+      "ポン酢は醤油＋酢でもOK。焼肉のたれはダイショーのものが最高。",
+      "味を見ながら、酸味と甘辛さをお好みで。"
+    ],
+    "sauceIngredients": [
+      [
+        "醤油",
+        "みりん",
+        "ほんだしなどの出汁粉末"
+      ],
+      [
+        "ポン酢",
+        "和風ドレッシング",
+        "みりん",
+        "めんつゆ",
+        "柚子胡椒"
+      ],
+      [
+        "焼肉のたれ",
+        "めんつゆ",
+        "ゴマ油",
+        "和風ドレッシング"
+      ],
+      [
+        "ポン酢",
+        "焼肉のたれ",
+        "みりん",
+        "ラー油",
+        "豆板醤",
+        "甜麺醤"
+      ],
+      [
+        "酢",
+        "醤油",
+        "甜麺醤",
+        "コチュジャン",
+        "ごま油"
+      ]
+    ]
   },
   "en": {
-    "brand": "Yuki Orita’s Kitchen", "title": "The Cold Udon Room", "tagline": "Cook freely.<br>Keep the good bits.", "intro": "What’s in the fridge, and what feels right today.<br>A little collection of Yuki Orita’s cooking notes.", "home": "Home", "recipes": "Recipe rooms", "sauces": "Sauce guide", "about": "About this kitchen", "search": "Search recipes", "searchPlaceholder": "Udon, yuzu, sauce…", "close": "Close", "empty": "No matches. Try another word.", "searchHint": "Search by recipe or sauce name.", "read": "Read the recipe", "latest": "The first bowl", "count": "Recipe 01", "quick": "Frozen udon", "optional": "Flexible toppings", "five": "Five sauces", "lead": "Cool, slippery noodles.<br>A sauce for every mood.", "summary": "Boil frozen udon, then rinse it under cold water. That’s the foundation of today’s bowl. Choose a sauce, from refreshing and light to rich and full of flavor.", "roomIntro": "One recipe, plenty of possibilities.", "sauceIntro": "The same noodles. A completely different bowl.", "sauceLead": "What are you in the mood for?", "ingredients": "Ingredients", "method": "Method", "prep": "Preparing the toppings", "tips": "A little extra", "toc": "In this recipe", "print": "Print recipe", "article": "Recipe", "all": "All", "fresh": "Refreshing", "rich": "Rich", "spicy": "Spicy", "ratio": "Ingredients & volume ratio", "ratioNote": "The numbers are ratios by volume. Use the same spoon for each ingredient, then adjust to taste.", "rangeNote": "For yuzu kosho and chili oil, use 0.3–1 part to taste. Start with less.", "checkHint": "Check off what you have ready. Only the udon is essential.", "ingredientList": [["Frozen udon", "1 portion or more"], ["Dried wakame", "Optional"], ["Frozen chopped scallions", "Optional"], ["Sliced aburaage (fried tofu)", "Optional"], ["Egg", "Optional"]], "steps": [["Bring water to a boil", "Fill a small saucepan about 80% full with water. Bring to a boil over high heat."], ["Add the udon", "Add one portion of frozen udon. Leave it until the water is about to return to a boil."], ["Loosen and drain", "Just before boiling, stir gently with chopsticks. As soon as it boils, drain through a colander."], ["Cool under running water", "Run cold water through the colander. Gently rub the noodles to remove surface starch and heat, for about 20 seconds."], ["Serve", "Put the noodles in a bowl with your chosen sauce and prepared toppings."]], "timeNote": "Also check the heating instructions on your frozen udon package.", "preparations": [["Wakame", "Place the wakame in a measuring cup with four times its volume of water. Microwave for 10 seconds. Check hydration and leave in water longer if needed."], ["Scallions", "Use frozen chopped scallions as they are. If uncut, simply wash and chop."], ["Aburaage", "Use the sliced fried tofu as it is."]], "tipTitle": "Imagine the flavors.<br>Make it your own!", "tipText": "When adding egg, a little more doubanjiang or tianmianjiang makes it even tastier.", "aboutText": "Some days we measure. Some days we go by feel. This small cooking wiki collects the kitchen notes of Yuki Orita (折田悠希 / おりたゆうき), so a favorite flavor is easy to make again.", "photoNote": "Photos are AI-generated illustrations of cooking and serving ideas.", "footerLine": "Good food, made your way.", "required": "Essential", "oneServing": "From 1 portion", "reset": "Reset checklist", "resultCount": "matches", "selectedCount": "sauces", "sauceNames": ["Simple sauce", "Yuzu sauce", "Moreish sauce", "Chinese-style sauce 1", "Chinese-style sauce 2"], "sauceMoods": ["Light & cool", "Refreshing", "Rich & hearty", "Full-flavored", "Full-flavored"], "sauceDescriptions": ["A simple blend of soy and dashi.", "A fresh, bright touch of yuzu.", "Sesame aroma and savory depth.", "Deep flavor from two bean pastes.", "Tangy, sweet and spicy."], "sauceNotes": ["Add sansho or yuzu kosho to taste.", "Yuzu ponzu and onion-flavored Japanese dressing work especially well.", "Daisho barbecue sauce with sesame is a good choice. Onion-flavored Japanese dressing is even better.", "Soy sauce plus vinegar can replace ponzu. Daisho barbecue sauce is the author’s favorite.", "Adjust the acidity, sweetness and heat to taste."], "sauceIngredients": [["Soy sauce", "Mirin", "Dashi powder, such as Hondashi"], ["Ponzu", "Japanese-style dressing", "Mirin", "Mentsuyu", "Yuzu kosho"], ["Japanese barbecue sauce", "Mentsuyu", "Sesame oil", "Japanese-style dressing"], ["Ponzu", "Japanese barbecue sauce", "Mirin", "Chili oil", "Doubanjiang", "Tianmianjiang"], ["Vinegar", "Soy sauce", "Tianmianjiang", "Gochujang", "Sesame oil"]]
+    "brand": "Yuki Orita’s Kitchen",
+    "title": "The Cold Udon Room",
+    "home": "Home",
+    "recipes": "Recipe rooms",
+    "sauces": "Sauces",
+    "read": "Read the recipe",
+    "summary": "Boil frozen udon, then rinse it under cold water. That’s the foundation of today’s bowl. Choose a sauce, from refreshing and light to rich and full of flavor.",
+    "sauceIntro": "The same noodles. A completely different bowl.",
+    "ingredients": "Ingredients",
+    "method": "Method",
+    "prep": "Preparing the toppings",
+    "ratio": "Ingredients & volume ratio",
+    "ratioNote": "The numbers are ratios by volume. Use the same spoon for each ingredient, then adjust to taste.",
+    "rangeNote": "For yuzu kosho and chili oil, use 0.3–1 part to taste. Start with less.",
+    "ingredientList": [
+      [
+        "Frozen udon",
+        "1 portion or more"
+      ],
+      [
+        "Dried wakame",
+        "Optional"
+      ],
+      [
+        "Frozen chopped scallions",
+        "Optional"
+      ],
+      [
+        "Sliced aburaage (fried tofu)",
+        "Optional"
+      ],
+      [
+        "Egg",
+        "Optional"
+      ]
+    ],
+    "steps": [
+      [
+        "Bring water to a boil",
+        "Fill a small saucepan about 80% full with water. Bring to a boil over high heat."
+      ],
+      [
+        "Add the udon",
+        "Add one portion of frozen udon. Leave it until the water is about to return to a boil."
+      ],
+      [
+        "Loosen and drain",
+        "Just before boiling, stir gently with chopsticks. As soon as it boils, drain through a colander."
+      ],
+      [
+        "Cool under running water",
+        "Run cold water through the colander. Gently rub the noodles to remove surface starch and heat, for about 20 seconds."
+      ],
+      [
+        "Serve",
+        "Put the noodles in a bowl with your chosen sauce and prepared toppings."
+      ]
+    ],
+    "timeNote": "Also check the heating instructions on your frozen udon package.",
+    "preparations": [
+      [
+        "Wakame",
+        "Place the wakame in a measuring cup with four times its volume of water. Microwave for 10 seconds. Check hydration and leave in water longer if needed."
+      ],
+      [
+        "Scallions",
+        "Use frozen chopped scallions as they are. If uncut, simply wash and chop."
+      ],
+      [
+        "Aburaage",
+        "Use the sliced fried tofu as it is."
+      ]
+    ],
+    "tipTitle": "Imagine the flavors.<br>Make it your own!",
+    "tipText": "When adding egg, a little more doubanjiang or tianmianjiang makes it even tastier.",
+    "aboutText": "Some days we measure. Some days we go by feel. This small cooking wiki collects the kitchen notes of Yuki Orita (折田悠希 / おりたゆうき), so a favorite flavor is easy to make again.",
+    "photoNote": "Photos are AI-generated illustrations of cooking and serving ideas.",
+    "footerLine": "Good food, made your way.",
+    "oneServing": "From 1 portion",
+    "sauceNames": [
+      "Simple sauce",
+      "Yuzu sauce",
+      "Moreish sauce",
+      "Chinese-style sauce 1",
+      "Chinese-style sauce 2"
+    ],
+    "sauceMoods": [
+      "Light & cool",
+      "Refreshing",
+      "Rich & hearty",
+      "Full-flavored",
+      "Full-flavored"
+    ],
+    "sauceNotes": [
+      "Add sansho or yuzu kosho to taste.",
+      "Yuzu ponzu and onion-flavored Japanese dressing work especially well.",
+      "Daisho barbecue sauce with sesame is a good choice. Onion-flavored Japanese dressing is even better.",
+      "Soy sauce plus vinegar can replace ponzu. Daisho barbecue sauce is the author’s favorite.",
+      "Adjust the acidity, sweetness and heat to taste."
+    ],
+    "sauceIngredients": [
+      [
+        "Soy sauce",
+        "Mirin",
+        "Dashi powder, such as Hondashi"
+      ],
+      [
+        "Ponzu",
+        "Japanese-style dressing",
+        "Mirin",
+        "Mentsuyu",
+        "Yuzu kosho"
+      ],
+      [
+        "Japanese barbecue sauce",
+        "Mentsuyu",
+        "Sesame oil",
+        "Japanese-style dressing"
+      ],
+      [
+        "Ponzu",
+        "Japanese barbecue sauce",
+        "Mirin",
+        "Chili oil",
+        "Doubanjiang",
+        "Tianmianjiang"
+      ],
+      [
+        "Vinegar",
+        "Soy sauce",
+        "Tianmianjiang",
+        "Gochujang",
+        "Sesame oil"
+      ]
+    ]
   },
   "zh": {
-    "brand": "折田悠希的料理网站", "title": "冷乌冬面之屋", "tagline": "随心做饭。<br>记下好滋味。", "intro": "用冰箱里的食材，配合今天的心情。<br>折田悠希的自由料理笔记。", "home": "首页", "recipes": "料理之屋", "sauces": "酱汁图鉴", "about": "关于本站", "search": "搜索食谱", "searchPlaceholder": "乌冬面、柚子、酱汁…", "close": "关闭", "empty": "没有找到结果，请换个关键词。", "searchHint": "可以搜索料理名或酱汁名。", "read": "查看食谱", "latest": "第一道料理", "count": "料理笔记 01", "quick": "冷冻乌冬面", "optional": "配料随心", "five": "5种酱汁", "lead": "爽滑清凉，<br>用酱汁换个心情。", "summary": "煮好冷冻乌冬面，用冷水冲凉，就有了今天的一碗。清爽或浓郁，按心情选择酱汁。", "roomIntro": "一道料理，多种美味。", "sauceIntro": "同样的乌冬面，换种酱汁就是另一道料理。", "sauceLead": "今天想吃哪种味道？", "ingredients": "食材", "method": "做法", "prep": "配料准备", "tips": "小诀窍", "toc": "本文目录", "print": "打印食谱", "article": "食谱", "all": "全部", "fresh": "清爽", "rich": "浓郁", "spicy": "香辣", "ratio": "食材与体积比例", "ratioNote": "数字代表体积比例。用同一把勺子量取，再边尝边调整。", "rangeNote": "柚子胡椒和辣油用0.3～1份，按喜好调整，先从少量开始。", "checkHint": "勾选准备好的食材。只有乌冬面是必需的。", "ingredientList": [["冷冻乌冬面", "1份起"], ["干裙带菜", "有就放"], ["冷冻葱花", "有就放"], ["切好的油豆腐", "有就放"], ["鸡蛋", "有就放"]], "steps": [["烧开水", "小锅装八成水，大火烧开。"], ["放入乌冬面", "加入一份冷冻乌冬面，等到水再次接近沸腾。"], ["轻轻搅散，沥水", "接近沸腾时用筷子轻轻搅动，沸腾后立即倒入滤网。"], ["用冷水冲凉", "向滤网中的面条冲冷水，用手轻轻搓去表面的黏滑和热量，约20秒。"], ["盛盘", "将面条、选好的酱汁和配料一起装入碗中，即可完成。"]], "timeNote": "同时请查看冷冻乌冬面包装上的加热说明。", "preparations": [["裙带菜", "量杯中放裙带菜和其体积4倍的水，微波加热10秒。检查是否泡开，必要时继续浸泡。"], ["葱", "冷冻葱花直接用。没切的葱洗净后切好即可。"], ["油豆腐", "切好后直接使用。"]], "tipTitle": "想象味道，<br>随心调配吧！！", "tipText": "搭配鸡蛋时，多加一点豆瓣酱或甜面酱会更美味。", "aboutText": "有时认真量取，有时凭感觉。这里是折田悠希（おりたゆうき / Yuki Orita）的料理笔记小wiki，让喜欢的味道可以再次做出来。", "photoNote": "照片由AI生成，用于展示制作及摆盘效果。", "footerLine": "美味，可以随心创造。", "required": "必需", "oneServing": "1份起", "reset": "重置勾选", "resultCount": "个结果", "selectedCount": "种酱汁", "sauceNames": ["简单酱汁", "柚子酱汁", "上瘾酱汁", "中式酱汁1", "中式酱汁2"], "sauceMoods": ["清凉风", "清爽", "浓郁下饭风", "浓郁下饭", "浓郁下饭"], "sauceDescriptions": ["酱油与出汁的简单组合。", "柚子香气，清新爽口。", "芝麻香与浓郁鲜味。", "豆瓣酱与甜面酱的醇厚。", "醋与韩式辣酱，酸甜香辣。"], "sauceNotes": ["按喜好加入山椒或柚子胡椒。", "推荐柚子味柚子醋，日式沙拉汁带洋葱风味更好。", "推荐Daisho含芝麻的烤肉酱。日式沙拉汁带洋葱风味更好。", "柚子醋可用酱油＋醋替代。作者最喜欢Daisho烤肉酱。", "边尝边调整酸味和甜辣味。"], "sauceIngredients": [["酱油", "味醂", "Hondashi等出汁粉"], ["柚子醋（Ponzu）", "日式沙拉汁", "味醂", "面露", "柚子胡椒"], ["日式烤肉酱", "面露", "芝麻油", "日式沙拉汁"], ["柚子醋（Ponzu）", "日式烤肉酱", "味醂", "辣油", "豆瓣酱", "甜面酱"], ["醋", "酱油", "甜面酱", "韩式辣酱", "芝麻油"]]
+    "brand": "折田悠希的料理网站",
+    "title": "冷乌冬面之屋",
+    "home": "首页",
+    "recipes": "料理之屋",
+    "sauces": "酱汁",
+    "read": "查看食谱",
+    "summary": "煮好冷冻乌冬面，用冷水冲凉，就有了今天的一碗。清爽或浓郁，按心情选择酱汁。",
+    "sauceIntro": "同样的乌冬面，换种酱汁就是另一道料理。",
+    "ingredients": "食材",
+    "method": "做法",
+    "prep": "配料准备",
+    "ratio": "食材与体积比例",
+    "ratioNote": "数字代表体积比例。用同一把勺子量取，再边尝边调整。",
+    "rangeNote": "柚子胡椒和辣油用0.3～1份，按喜好调整，先从少量开始。",
+    "ingredientList": [
+      [
+        "冷冻乌冬面",
+        "1份起"
+      ],
+      [
+        "干裙带菜",
+        "有就放"
+      ],
+      [
+        "冷冻葱花",
+        "有就放"
+      ],
+      [
+        "切好的油豆腐",
+        "有就放"
+      ],
+      [
+        "鸡蛋",
+        "有就放"
+      ]
+    ],
+    "steps": [
+      [
+        "烧开水",
+        "小锅装八成水，大火烧开。"
+      ],
+      [
+        "放入乌冬面",
+        "加入一份冷冻乌冬面，等到水再次接近沸腾。"
+      ],
+      [
+        "轻轻搅散，沥水",
+        "接近沸腾时用筷子轻轻搅动，沸腾后立即倒入滤网。"
+      ],
+      [
+        "用冷水冲凉",
+        "向滤网中的面条冲冷水，用手轻轻搓去表面的黏滑和热量，约20秒。"
+      ],
+      [
+        "盛盘",
+        "将面条、选好的酱汁和配料一起装入碗中，即可完成。"
+      ]
+    ],
+    "timeNote": "同时请查看冷冻乌冬面包装上的加热说明。",
+    "preparations": [
+      [
+        "裙带菜",
+        "量杯中放裙带菜和其体积4倍的水，微波加热10秒。检查是否泡开，必要时继续浸泡。"
+      ],
+      [
+        "葱",
+        "冷冻葱花直接用。没切的葱洗净后切好即可。"
+      ],
+      [
+        "油豆腐",
+        "切好后直接使用。"
+      ]
+    ],
+    "tipTitle": "想象味道，<br>随心调配吧！！",
+    "tipText": "搭配鸡蛋时，多加一点豆瓣酱或甜面酱会更美味。",
+    "aboutText": "有时认真量取，有时凭感觉。这里是折田悠希（おりたゆうき / Yuki Orita）的料理笔记小wiki，让喜欢的味道可以再次做出来。",
+    "photoNote": "照片由AI生成，用于展示制作及摆盘效果。",
+    "footerLine": "美味，可以随心创造。",
+    "oneServing": "1份起",
+    "sauceNames": [
+      "简单酱汁",
+      "柚子酱汁",
+      "上瘾酱汁",
+      "中式酱汁1",
+      "中式酱汁2"
+    ],
+    "sauceMoods": [
+      "清凉风",
+      "清爽",
+      "浓郁下饭风",
+      "浓郁下饭",
+      "浓郁下饭"
+    ],
+    "sauceNotes": [
+      "按喜好加入山椒或柚子胡椒。",
+      "推荐柚子味柚子醋，日式沙拉汁带洋葱风味更好。",
+      "推荐Daisho含芝麻的烤肉酱。日式沙拉汁带洋葱风味更好。",
+      "柚子醋可用酱油＋醋替代。作者最喜欢Daisho烤肉酱。",
+      "边尝边调整酸味和甜辣味。"
+    ],
+    "sauceIngredients": [
+      [
+        "酱油",
+        "味醂",
+        "Hondashi等出汁粉"
+      ],
+      [
+        "柚子醋（Ponzu）",
+        "日式沙拉汁",
+        "味醂",
+        "面露",
+        "柚子胡椒"
+      ],
+      [
+        "日式烤肉酱",
+        "面露",
+        "芝麻油",
+        "日式沙拉汁"
+      ],
+      [
+        "柚子醋（Ponzu）",
+        "日式烤肉酱",
+        "味醂",
+        "辣油",
+        "豆瓣酱",
+        "甜面酱"
+      ],
+      [
+        "醋",
+        "酱油",
+        "甜面酱",
+        "韩式辣酱",
+        "芝麻油"
+      ]
+    ]
   },
   "pt": {
-    "brand": "A Cozinha de Yuki Orita", "title": "O Cantinho do Udon Frio", "tagline": "Cozinhe à vontade.<br>Guarde o sabor.", "intro": "Com o que há na geladeira e a vontade de hoje.<br>Um caderno de receitas de Yuki Orita.", "home": "Início", "recipes": "Receitas", "sauces": "Guia de molhos", "about": "Sobre a cozinha", "search": "Buscar receitas", "searchPlaceholder": "Udon, yuzu, molho…", "close": "Fechar", "empty": "Nenhum resultado. Tente outra palavra.", "searchHint": "Busque pelo nome da receita ou do molho.", "read": "Ler a receita", "latest": "A primeira tigela", "count": "Receita 01", "quick": "Udon congelado", "optional": "Coberturas livres", "five": "Cinco molhos", "lead": "Fresco e macio.<br>Um molho para cada dia.", "summary": "Cozinhe o udon congelado e enxágue com água fria. Essa é a base da tigela de hoje. Escolha um molho, do leve e refrescante ao intenso e encorpado.", "roomIntro": "Uma receita, muitas possibilidades.", "sauceIntro": "O mesmo udon, uma tigela totalmente diferente.", "sauceLead": "Qual sabor combina com hoje?", "ingredients": "Ingredientes", "method": "Modo de preparo", "prep": "Preparando as coberturas", "tips": "Um toque a mais", "toc": "Nesta receita", "print": "Imprimir receita", "article": "Receita", "all": "Todos", "fresh": "Refrescante", "rich": "Encorpado", "spicy": "Picante", "ratio": "Ingredientes e proporções por volume", "ratioNote": "Os números são proporções por volume. Use a mesma colher para todos os ingredientes e ajuste ao seu gosto.", "rangeNote": "Use de 0,3 a 1 parte de yuzu kosho e óleo de pimenta. Comece com pouco.", "checkHint": "Marque o que já preparou. Só o udon é essencial.", "ingredientList": [["Udon congelado", "1 porção ou mais"], ["Wakame seco", "Opcional"], ["Cebolinha picada congelada", "Opcional"], ["Aburaage fatiado (tofu frito)", "Opcional"], ["Ovo", "Opcional"]], "steps": [["Ferva a água", "Encha uma panela pequena até cerca de 80% com água. Leve à fervura em fogo alto."], ["Adicione o udon", "Coloque uma porção de udon congelado. Aguarde até a água quase voltar a ferver."], ["Solte e escorra", "Pouco antes da fervura, mexa delicadamente com hashis. Assim que ferver, escorra em uma peneira."], ["Resfrie com água", "Passe água fria pela peneira e esfregue os fios delicadamente para retirar o amido superficial e o calor, por cerca de 20 segundos."], ["Sirva", "Coloque o udon na tigela com o molho escolhido e as coberturas preparadas."]], "timeNote": "Confira também as instruções de aquecimento na embalagem do udon congelado.", "preparations": [["Wakame", "Coloque o wakame em um copo medidor com quatro vezes seu volume de água. Aqueça no micro-ondas por 10 segundos. Confira a hidratação e deixe mais tempo na água se necessário."], ["Cebolinha", "Use a cebolinha picada congelada diretamente. Se estiver inteira, basta lavar e cortar."], ["Aburaage", "Use o tofu frito fatiado diretamente."]], "tipTitle": "Imagine os sabores.<br>Faça do seu jeito!", "tipText": "Ao combinar com ovo, um pouco mais de doubanjiang ou tianmianjiang deixa tudo ainda mais gostoso.", "aboutText": "Há dias de medir e dias de seguir a intuição. Este pequeno wiki reúne as notas de cozinha de Yuki Orita (折田悠希 / おりたゆうき), para repetir os sabores favoritos.", "photoNote": "As fotos foram geradas por IA para ilustrar o preparo e a apresentação.", "footerLine": "Comida boa, feita à sua maneira.", "required": "Essencial", "oneServing": "A partir de 1 porção", "reset": "Limpar marcações", "resultCount": "resultados", "selectedCount": "molhos", "sauceNames": ["Molho simples", "Molho de yuzu", "Molho irresistível", "Molho chinês 1", "Molho chinês 2"], "sauceMoods": ["Leve e fresco", "Refrescante", "Encorpado", "Sabor intenso", "Sabor intenso"], "sauceDescriptions": ["A combinação simples de shoyu e dashi.", "Um toque cítrico e fresco de yuzu.", "Gergelim e muito sabor.", "O sabor profundo de duas pastas.", "Ácido, adocicado e picante."], "sauceNotes": ["Adicione sansho ou yuzu kosho a gosto.", "Prefira ponzu de yuzu e molho japonês para salada com sabor de cebola.", "O molho de churrasco japonês Daisho com gergelim é uma boa escolha. Melhor ainda com molho de salada de cebola.", "Shoyu com vinagre pode substituir o ponzu. O molho de churrasco Daisho é o favorito do autor.", "Ajuste a acidez, a doçura e a pimenta ao seu gosto."], "sauceIngredients": [["Shoyu", "Mirin", "Dashi em pó, como Hondashi"], ["Ponzu", "Molho japonês para salada", "Mirin", "Mentsuyu", "Yuzu kosho"], ["Molho japonês de churrasco", "Mentsuyu", "Óleo de gergelim", "Molho japonês para salada"], ["Ponzu", "Molho japonês de churrasco", "Mirin", "Óleo de pimenta", "Doubanjiang", "Tianmianjiang"], ["Vinagre", "Shoyu", "Tianmianjiang", "Gochujang", "Óleo de gergelim"]]
+    "brand": "A Cozinha de Yuki Orita",
+    "title": "O Cantinho do Udon Frio",
+    "home": "Início",
+    "recipes": "Receitas",
+    "sauces": "Molhos",
+    "read": "Ler a receita",
+    "summary": "Cozinhe o udon congelado e enxágue com água fria. Essa é a base da tigela de hoje. Escolha um molho, do leve e refrescante ao intenso e encorpado.",
+    "sauceIntro": "O mesmo udon, uma tigela totalmente diferente.",
+    "ingredients": "Ingredientes",
+    "method": "Modo de preparo",
+    "prep": "Preparando as coberturas",
+    "ratio": "Ingredientes e proporções por volume",
+    "ratioNote": "Os números são proporções por volume. Use a mesma colher para todos os ingredientes e ajuste ao seu gosto.",
+    "rangeNote": "Use de 0,3 a 1 parte de yuzu kosho e óleo de pimenta. Comece com pouco.",
+    "ingredientList": [
+      [
+        "Udon congelado",
+        "1 porção ou mais"
+      ],
+      [
+        "Wakame seco",
+        "Opcional"
+      ],
+      [
+        "Cebolinha picada congelada",
+        "Opcional"
+      ],
+      [
+        "Aburaage fatiado (tofu frito)",
+        "Opcional"
+      ],
+      [
+        "Ovo",
+        "Opcional"
+      ]
+    ],
+    "steps": [
+      [
+        "Ferva a água",
+        "Encha uma panela pequena até cerca de 80% com água. Leve à fervura em fogo alto."
+      ],
+      [
+        "Adicione o udon",
+        "Coloque uma porção de udon congelado. Aguarde até a água quase voltar a ferver."
+      ],
+      [
+        "Solte e escorra",
+        "Pouco antes da fervura, mexa delicadamente com hashis. Assim que ferver, escorra em uma peneira."
+      ],
+      [
+        "Resfrie com água",
+        "Passe água fria pela peneira e esfregue os fios delicadamente para retirar o amido superficial e o calor, por cerca de 20 segundos."
+      ],
+      [
+        "Sirva",
+        "Coloque o udon na tigela com o molho escolhido e as coberturas preparadas."
+      ]
+    ],
+    "timeNote": "Confira também as instruções de aquecimento na embalagem do udon congelado.",
+    "preparations": [
+      [
+        "Wakame",
+        "Coloque o wakame em um copo medidor com quatro vezes seu volume de água. Aqueça no micro-ondas por 10 segundos. Confira a hidratação e deixe mais tempo na água se necessário."
+      ],
+      [
+        "Cebolinha",
+        "Use a cebolinha picada congelada diretamente. Se estiver inteira, basta lavar e cortar."
+      ],
+      [
+        "Aburaage",
+        "Use o tofu frito fatiado diretamente."
+      ]
+    ],
+    "tipTitle": "Imagine os sabores.<br>Faça do seu jeito!",
+    "tipText": "Ao combinar com ovo, um pouco mais de doubanjiang ou tianmianjiang deixa tudo ainda mais gostoso.",
+    "aboutText": "Há dias de medir e dias de seguir a intuição. Este pequeno wiki reúne as notas de cozinha de Yuki Orita (折田悠希 / おりたゆうき), para repetir os sabores favoritos.",
+    "photoNote": "As fotos foram geradas por IA para ilustrar o preparo e a apresentação.",
+    "footerLine": "Comida boa, feita à sua maneira.",
+    "oneServing": "A partir de 1 porção",
+    "sauceNames": [
+      "Molho simples",
+      "Molho de yuzu",
+      "Molho irresistível",
+      "Molho chinês 1",
+      "Molho chinês 2"
+    ],
+    "sauceMoods": [
+      "Leve e fresco",
+      "Refrescante",
+      "Encorpado",
+      "Sabor intenso",
+      "Sabor intenso"
+    ],
+    "sauceNotes": [
+      "Adicione sansho ou yuzu kosho a gosto.",
+      "Prefira ponzu de yuzu e molho japonês para salada com sabor de cebola.",
+      "O molho de churrasco japonês Daisho com gergelim é uma boa escolha. Melhor ainda com molho de salada de cebola.",
+      "Shoyu com vinagre pode substituir o ponzu. O molho de churrasco Daisho é o favorito do autor.",
+      "Ajuste a acidez, a doçura e a pimenta ao seu gosto."
+    ],
+    "sauceIngredients": [
+      [
+        "Shoyu",
+        "Mirin",
+        "Dashi em pó, como Hondashi"
+      ],
+      [
+        "Ponzu",
+        "Molho japonês para salada",
+        "Mirin",
+        "Mentsuyu",
+        "Yuzu kosho"
+      ],
+      [
+        "Molho japonês de churrasco",
+        "Mentsuyu",
+        "Óleo de gergelim",
+        "Molho japonês para salada"
+      ],
+      [
+        "Ponzu",
+        "Molho japonês de churrasco",
+        "Mirin",
+        "Óleo de pimenta",
+        "Doubanjiang",
+        "Tianmianjiang"
+      ],
+      [
+        "Vinagre",
+        "Shoyu",
+        "Tianmianjiang",
+        "Gochujang",
+        "Óleo de gergelim"
+      ]
+    ]
   }
 }
