@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EveryTMP — 在菜单栏显示 Apple Silicon Mac 的 CPU/GPU 温度</title>
+<meta name="description" content="EveryTMP 是一款轻量开源应用，在菜单栏以 xx°C 常驻显示 Apple Silicon 的 CPU/GPU 温度。只读 SMC 访问，无需管理员权限、无常驻守护进程、无网络通信。支持 CPU/GPU/取高值三种模式、可调刷新间隔、日语/英语界面。开发者：折田悠希（おりたゆうき / Yuki_Orita）。免费开源（MIT），已在 GitHub 发布。">
+<meta name="keywords" content="EveryTMP, CPU温度, GPU温度, 温度监控, macOS, 菜单栏, Apple Silicon, 折田悠希, おりたゆうき, Yuki_Orita, github, temperature monitor, menu bar, SMC">
+<meta name="author" content="折田悠希 (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/everytmp/zh/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/everytmp/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/everytmp/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/everytmp/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/everytmp/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/everytmp/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EveryTMP">
+<meta property="og:title" content="EveryTMP — 在菜单栏显示 Apple Silicon Mac 的 CPU/GPU 温度">
+<meta property="og:description" content="在菜单栏以 xx°C 常驻显示 Apple Silicon 的 CPU/GPU 温度。只读、轻量、开源。">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/everytmp/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EveryTMP — CPU/GPU temperature in your Mac menu bar">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/everytmp/zh/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="EveryTMP — 在菜单栏显示 Apple Silicon Mac 的 CPU/GPU 温度">
+<meta name="twitter:description" content="在菜单栏以 xx°C 常驻显示 CPU/GPU 温度。轻量、只读、开源。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/everytmp/assets/og-image.png">
+<link rel="icon" href="/projects/everytmp/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/projects/everytmp/assets/icon-192.png">
+<link rel="stylesheet" href="/projects/everytmp/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "EveryTMP",
+      "alternateName": ["EveryTMP CPU GPU temperature monitor"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS 13 or later, Apple Silicon",
+      "softwareVersion": "1.0.0",
+      "url": "https://studio-rizi.pages.dev/projects/everytmp/zh/",
+      "downloadUrl": "https://github.com/oriyu90/EveryTMP/releases",
+      "codeRepository": "https://github.com/oriyu90/EveryTMP",
+      "license": "https://github.com/oriyu90/EveryTMP/blob/main/LICENSE",
+      "description": "在菜单栏以 xx°C 常驻显示 Apple Silicon CPU/GPU 温度的轻量开源应用。只读 SMC 访问，无需管理员权限、常驻守护进程与网络通信。",
+      "inLanguage": ["zh", "ja", "en"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "折田悠希",
+      "alternateName": ["おりたゆうき", "Yuki_Orita"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://github.com/oriyu90",
+        "https://x.com/InovateofRIZI"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/everytmp/zh/"><img src="/projects/everytmp/assets/icon-192.png" alt="EveryTMP"><span>EveryTMP</span></a>
+    <div class="navlinks">
+      <a href="#setup">使用方法</a>
+      <a href="#features">功能</a>
+      <a href="#requirements">运行环境</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a href="/projects/everytmp/">JA</a><a href="/projects/everytmp/en/">EN</a><a class="on" href="/projects/everytmp/zh/">中文</a><a href="/projects/everytmp/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/EveryTMP/releases/latest">下载</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v1.0.0 · MIT · macOS 13+ · Apple Silicon</span>
+      <h1>Mac 的温度，一眼可见：<span class="temp">xx°C</span>。</h1>
+      <p class="lead">EveryTMP 是一款轻量工具，在菜单栏常驻显示 Apple Silicon 的 CPU/GPU 温度。它以只读方式访问 SMC，无需管理员权限与常驻守护进程，也不会出现在程序坞中。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/EveryTMP/releases/latest">下载最新版本</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/EveryTMP">在 GitHub 查看源码</a>
+      </div>
+      <p class="hero-meta">免费开源（MIT） · 开发者：折田悠希（おりたゆうき / Yuki_Orita）</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="menubar">
+        <span class="tempnow">43°C</span>
+      </div>
+      <div class="dropdown">
+        <div class="row dim">CPU 43°C · GPU 39°C</div>
+        <hr>
+        <div class="row dim">显示温度</div>
+        <div class="row">CPU</div>
+        <div class="row">GPU</div>
+        <div class="row on"><span>取高值（CPU/GPU 最大值）</span><span>✓</span></div>
+        <hr>
+        <div class="row">刷新间隔</div>
+        <div class="row">显示诊断信息…</div>
+      </div>
+      <div class="thermo">°C</div>
+    </div>
+  </div>
+</header>
+
+<section id="setup">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">使用方法</p>
+      <h2>安装、打开，完成</h2>
+      <p>无需任何设置，启动瞬间温度即出现在菜单栏中。</p>
+    </div>
+    <ol class="flow">
+      <li>
+        <h3>下载并启动</h3>
+        <p>从 GitHub Releases 下载 DMG，复制到应用程序文件夹并启动，当前温度即显示在菜单栏中。</p>
+      </li>
+      <li>
+        <h3>选择显示内容</h3>
+        <p>可在菜单中切换 CPU / GPU / 取高值（两者最大值），刷新间隔也可选择 1 / 2 / 5 / 10 秒。</p>
+      </li>
+      <li>
+        <h3>保持常驻</h3>
+        <p>打开“登录时启动”，使用 Mac 的全程都有温度守望。按可连续运行一年设计，具备自恢复能力。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">功能</p>
+      <h2>轻量、安全、准确</h2>
+      <p>只专注于读取温度，不携带任何多余的东西。</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>菜单栏 xx°C 显示</dt><dd>以等宽字体常驻显示当前温度，悬浮提示与菜单中同时显示 CPU/GPU 两路数值。</dd></div>
+      <div class="row"><dt>CPU / GPU / 取高值</dt><dd>可在 CPU 芯片热点、GPU 芯片热点或两者最大值之间选择显示对象。</dd></div>
+      <div class="row"><dt>只读 SMC 访问</dt><dd>不需要 powermetrics 那样的管理员权限，也没有特权守护进程。设计上不存在写入路径，风扇控制等危险操作在原理上不可能发生。</dd></div>
+      <div class="row"><dt>排除停放传感器</dt><dd>空闲核心返回的哨兵值与超范围读数一律不显示，自动回退到下一个候选键；不支持的机型显示 --°C。</dd></div>
+      <div class="row"><dt>为一年运行自恢复</dt><dd>全键连续失败时重连 SMC，睡眠唤醒后立即重读，每次打开菜单都重建，零日志堆积，可放心长期放置。</dd></div>
+      <div class="row"><dt>轻量设计</dt><dd>单进程、不占程序坞。轮询最短 1 秒、单次读取仅数毫秒，定时器经过合并以节省电量。</dd></div>
+      <div class="row"><dt>诊断窗口</dt><dd>显示数据来源 SMC 键、连接状态与系统信息，反馈问题时直接发送 --probe 命令输出即可。</dd></div>
+      <div class="row"><dt>登录时启动</dt><dd>使用 SMAppService 注册，登录后自动常驻（菜单中一键开关）。</dd></div>
+      <div class="row"><dt>日本語 / English</dt><dd>界面完整支持日语与英语（跟随系统语言，切换无需重启）。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">运行环境与构建</p>
+      <h2>macOS 13 及更高版本 · Apple Silicon</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>运行环境</h3>
+        <ul>
+          <li><span class="d">◆</span> macOS 13 Ventura 及更高版本 · Apple Silicon Mac（M1–M5，已在 macOS 26.4 / M3 Ultra 真机验证）</li>
+          <li><span class="d">◆</span> Intel Mac 无法读取时显示 --°C（不会崩溃）</li>
+          <li><span class="d">◆</span> 即兴签名（未公证）。首次启动请前往“系统设置 › 隐私与安全性”放行</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>从源码构建（无需 Xcode）</h3>
+        <pre>git clone https://github.com/oriyu90/EveryTMP
+cd EveryTMP
+swift build &amp;&amp; swift test
+scripts/build-app.sh</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><img src="/projects/everytmp/assets/icon-192.png" alt=""><span>EveryTMP © 2026 Yuki_Orita · MIT</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/EveryTMP">GitHub</a>
+      <a href="https://github.com/oriyu90/EveryTMP/blob/main/LICENSE">License (MIT)</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+      <a href="https://studio-rizi.pages.dev/">Studio RIZI</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

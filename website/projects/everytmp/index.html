@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EveryTMP（エブリーTMP）— Apple Silicon MacのCPU/GPU温度をメニューバーに表示</title>
+<meta name="description" content="EveryTMP（エブリーTMP）は、Apple Silicon MacのCPU/GPU温度をメニューバーにxx°Cと表示する軽量オープンソースアプリです。SMCから直接・読み取り専用で取得し、管理者権限・常駐デーモン・ネットワーク通信は不要。CPU/GPU/高い方の3モード・更新間隔切替・日本語/英語対応。開発者は折田悠希（おりたゆうき / Yuki_Orita）。無料・オープンソース(MIT)、GitHubで公開中。">
+<meta name="keywords" content="EveryTMP, エブリーTMP, CPU温度, GPU温度, 温度モニター, macOS, メニューバー, Apple Silicon, 折田悠希, おりたゆうき, Yuki_Orita, github, temperature monitor, menu bar, SMC, TCMz, TRDX">
+<meta name="author" content="折田悠希 (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/everytmp/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/everytmp/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/everytmp/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/everytmp/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/everytmp/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/everytmp/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EveryTMP">
+<meta property="og:title" content="EveryTMP（エブリーTMP）— Apple Silicon MacのCPU/GPU温度をメニューバーに表示">
+<meta property="og:description" content="Apple Silicon MacのCPU/GPU温度をメニューバーにxx°Cと常時表示。読み取り専用SMCアクセスで軽量・安全なオープンソースアプリです。">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/everytmp/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EveryTMP — CPU/GPU temperature in your Mac menu bar">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/everytmp/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="EveryTMP（エブリーTMP）— Apple Silicon MacのCPU/GPU温度をメニューバーに表示">
+<meta name="twitter:description" content="CPU/GPU温度をメニューバーにxx°Cと常時表示。軽量・読み取り専用・オープンソース。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/everytmp/assets/og-image.png">
+<link rel="icon" href="/projects/everytmp/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/projects/everytmp/assets/icon-192.png">
+<link rel="stylesheet" href="/projects/everytmp/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "EveryTMP",
+      "alternateName": ["エブリーTMP", "EveryTMP CPU GPU temperature monitor"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS 13 or later, Apple Silicon",
+      "softwareVersion": "1.0.0",
+      "url": "https://studio-rizi.pages.dev/projects/everytmp/",
+      "downloadUrl": "https://github.com/oriyu90/EveryTMP/releases",
+      "codeRepository": "https://github.com/oriyu90/EveryTMP",
+      "license": "https://github.com/oriyu90/EveryTMP/blob/main/LICENSE",
+      "description": "Apple Silicon MacのCPU/GPU温度をメニューバーにxx°Cと常時表示する軽量オープンソースアプリ。SMCから読み取り専用で取得し、管理者権限・常駐デーモン・ネットワーク通信は不要です。",
+      "inLanguage": ["ja", "en"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "折田悠希",
+      "alternateName": ["おりたゆうき", "Yuki_Orita"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://github.com/oriyu90",
+        "https://x.com/InovateofRIZI"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/everytmp/"><img src="/projects/everytmp/assets/icon-192.png" alt="EveryTMP"><span>EveryTMP</span></a>
+    <div class="navlinks">
+      <a href="#setup">使い方</a>
+      <a href="#features">機能</a>
+      <a href="#requirements">動作環境</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a class="on" href="/projects/everytmp/">JA</a><a href="/projects/everytmp/en/">EN</a><a href="/projects/everytmp/zh/">中文</a><a href="/projects/everytmp/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/EveryTMP/releases/latest">ダウンロード</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v1.0.0 · MIT · macOS 13+ · Apple Silicon</span>
+      <h1>Macの熱を、<span class="temp">xx°C</span>で<span class="u">ひと目</span>に。</h1>
+      <p class="lead">EveryTMP は、Apple Silicon MacのCPU/GPU温度をメニューバーに常時表示する軽量ユーティリティです。SMCから読み取り専用で取得するため、管理者権限も常駐デーモンも不要。ドックには表示されません。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/EveryTMP/releases/latest">最新版をダウンロード</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/EveryTMP">GitHub でソースを見る</a>
+      </div>
+      <p class="hero-meta">無料・オープンソース（MIT） · 開発者: 折田悠希（おりたゆうき / Yuki_Orita）</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="menubar">
+        <span class="tempnow">43°C</span>
+      </div>
+      <div class="dropdown">
+        <div class="row dim">CPU 43°C · GPU 39°C</div>
+        <hr>
+        <div class="row dim">表示する温度</div>
+        <div class="row">CPU</div>
+        <div class="row">GPU</div>
+        <div class="row on"><span>高い方（CPU/GPUの最大値）</span><span>✓</span></div>
+        <hr>
+        <div class="row">更新間隔</div>
+        <div class="row">診断情報を表示…</div>
+      </div>
+      <div class="thermo">°C</div>
+    </div>
+  </div>
+</header>
+
+<section id="setup">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">使い方</p>
+      <h2>入れて、開いて、終わり</h2>
+      <p>設定は不要です。起動した瞬間からメニューバーに温度が表示されます。</p>
+    </div>
+    <ol class="flow">
+      <li>
+        <h3>ダウンロードして起動</h3>
+        <p>GitHub Releases から DMG をダウンロードし、アプリケーションフォルダへコピーして起動します。メニューバーに現在の温度が表示されます。</p>
+      </li>
+      <li>
+        <h3>表示を選ぶ</h3>
+        <p>メニューから CPU / GPU / 高い方（両者の最大値）を切り替えられます。更新間隔も 1 / 2 / 5 / 10秒から選べます。</p>
+      </li>
+      <li>
+        <h3>あとは常駐</h3>
+        <p>「ログイン時に開く」をONにすれば、Macを使うあいだずっと温度を見守ります。1年間の連続稼働を想定した自己回復設計です。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">機能</p>
+      <h2>軽量に、安全に、正確に</h2>
+      <p>温度の読み取りだけに特化し、余計なものは一切持ちません。</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>メニューバーにxx°C表示</dt><dd>現在の温度を等幅フォントで常時表示。ツールチップとメニューにはCPU/GPUの両方を表示します。</dd></div>
+      <div class="row"><dt>CPU / GPU / 高い方</dt><dd>表示対象はCPUダイ・ホットスポット、GPUダイ・ホットスポット、または両者の最大値から選択できます。</dd></div>
+      <div class="row"><dt>読み取り専用SMCアクセス</dt><dd>powermetricsのような管理者権限も、特権デーモンも不要。書き込み経路を持たない設計のため、ファン制御のような危険な操作は原理的にできません。</dd></div>
+      <div class="row"><dt>駐車センサーの除外</dt><dd>アイドル中のコアが返す番兵値や範囲外の値は表示せず、次の候補キーへ自動フォールバックします。読めない機種では--°Cと表示します。</dd></div>
+      <div class="row"><dt>1年稼働の自己回復</dt><dd>全キー連続失敗時のSMC再接続、スリープ復帰後の即時再読、メニューの都度再構築、ログ無蓄積。置きっぱなしで壊れません。</dd></div>
+      <div class="row"><dt>軽量設計</dt><dd>単一プロセス・ドック非表示。ポーリングは最短1秒・1回数ミリ秒、タイマーは省電力のためコアレッシングします。</dd></div>
+      <div class="row"><dt>診断ウィンドウ</dt><dd>取得元SMCキー・接続状態・システム情報を表示。不具合報告は--probeコマンドの出力そのまま送れます。</dd></div>
+      <div class="row"><dt>ログイン時起動</dt><dd>SMAppServiceを使い、ログイン時に自動で常駐します（メニューからワンクリックで切替）。</dd></div>
+      <div class="row"><dt>日本語 / English</dt><dd>UIは日本語と英語に完全対応しています（システム言語で自動切替、切替も再起動不要）。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">動作環境とビルド</p>
+      <h2>macOS 13 以降・Apple Silicon</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>動作環境</h3>
+        <ul>
+          <li><span class="d">◆</span> macOS 13 Ventura以降・Apple Silicon搭載Mac（M1〜M5。macOS 26.4・M3 Ultraで実機検証済み）</li>
+          <li><span class="d">◆</span> Intel Macでは取得できない場合--°Cと表示します（クラッシュしません）</li>
+          <li><span class="d">◆</span> ad-hoc 署名（未公証）。初回起動は「システム設定 › プライバシーとセキュリティ」から許可</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>ソースからビルド（Xcode 不要）</h3>
+        <pre>git clone https://github.com/oriyu90/EveryTMP
+cd EveryTMP
+swift build &amp;&amp; swift test
+scripts/build-app.sh</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><img src="/projects/everytmp/assets/icon-192.png" alt=""><span>EveryTMP © 2026 Yuki_Orita · MIT</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/EveryTMP">GitHub</a>
+      <a href="https://github.com/oriyu90/EveryTMP/blob/main/LICENSE">License (MIT)</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+      <a href="https://studio-rizi.pages.dev/">Studio RIZI</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

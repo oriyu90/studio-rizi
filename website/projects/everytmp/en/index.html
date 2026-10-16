@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EveryTMP — CPU/GPU temperature in the menu bar for Apple Silicon Macs</title>
+<meta name="description" content="EveryTMP is a lightweight open-source app that shows Apple Silicon CPU/GPU temperature as xx°C in the menu bar. Read-only SMC access — no admin rights, no daemon, no network. CPU/GPU/Higher modes, adjustable refresh, Japanese & English UI. Built by Yuki Orita (Yuki_Orita). Free under the MIT license on GitHub.">
+<meta name="keywords" content="EveryTMP, CPU temperature, GPU temperature, temperature monitor, macOS, menu bar, Apple Silicon, Yuki Orita, Yuki_Orita, oriyu90, 折田悠希, おりたゆうき, github, SMC, TCMz, TRDX">
+<meta name="author" content="Yuki Orita (Yuki_Orita)">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/everytmp/en/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/everytmp/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/everytmp/en/">
+<link rel="alternate" hreflang="zh" href="https://studio-rizi.pages.dev/projects/everytmp/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/everytmp/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/everytmp/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EveryTMP">
+<meta property="og:title" content="EveryTMP — CPU/GPU temperature in the menu bar for Apple Silicon Macs">
+<meta property="og:description" content="Show Apple Silicon CPU/GPU temperature as xx°C in the menu bar at all times. A lightweight, read-only, open-source app.">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/everytmp/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EveryTMP — CPU/GPU temperature in your Mac menu bar">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/everytmp/en/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="EveryTMP — CPU/GPU temperature in the menu bar for Apple Silicon Macs">
+<meta name="twitter:description" content="CPU/GPU temperature as xx°C in the menu bar. Lightweight, read-only, open source.">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/everytmp/assets/og-image.png">
+<link rel="icon" href="/projects/everytmp/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/projects/everytmp/assets/icon-192.png">
+<link rel="stylesheet" href="/projects/everytmp/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "EveryTMP",
+      "alternateName": ["EveryTMP CPU GPU temperature monitor"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS 13 or later, Apple Silicon",
+      "softwareVersion": "1.0.0",
+      "url": "https://studio-rizi.pages.dev/projects/everytmp/en/",
+      "downloadUrl": "https://github.com/oriyu90/EveryTMP/releases",
+      "codeRepository": "https://github.com/oriyu90/EveryTMP",
+      "license": "https://github.com/oriyu90/EveryTMP/blob/main/LICENSE",
+      "description": "A lightweight open-source app that shows Apple Silicon CPU/GPU temperature as xx°C in the menu bar at all times. Read-only SMC access — no admin rights, daemon, or network needed.",
+      "inLanguage": ["en", "ja"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki Orita",
+      "alternateName": ["Yuki_Orita", "折田悠希"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://github.com/oriyu90",
+        "https://x.com/InovateofRIZI"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/projects/everytmp/en/"><img src="/projects/everytmp/assets/icon-192.png" alt="EveryTMP"><span>EveryTMP</span></a>
+    <div class="navlinks">
+      <a href="#setup">How to use</a>
+      <a href="#features">Features</a>
+      <a href="#requirements">Requirements</a>
+      <div class="langsw" role="group" aria-label="Language / 言語 / 语言 / Idioma">
+        <a href="/projects/everytmp/">JA</a><a class="on" href="/projects/everytmp/en/">EN</a><a href="/projects/everytmp/zh/">中文</a><a href="/projects/everytmp/pt/">PT</a>
+      </div>
+      <a class="cta" href="https://github.com/oriyu90/EveryTMP/releases/latest">Download</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">v1.0.0 · MIT · macOS 13+ · Apple Silicon</span>
+      <h1>Your Mac's heat, <span class="u">at a glance</span>: <span class="temp">xx°C</span>.</h1>
+      <p class="lead">EveryTMP is a lightweight utility that shows Apple Silicon CPU/GPU temperature in the menu bar at all times. It reads the SMC read-only, so it needs no admin rights and no resident daemon — and never appears in the Dock.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/oriyu90/EveryTMP/releases/latest">Download the latest release</a>
+        <a class="btn btn-ghost" href="https://github.com/oriyu90/EveryTMP">View source on GitHub</a>
+      </div>
+      <p class="hero-meta">Free &amp; open source (MIT) · Developer: Yuki Orita (Yuki_Orita)</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="menubar">
+        <span class="tempnow">43°C</span>
+      </div>
+      <div class="dropdown">
+        <div class="row dim">CPU 43°C · GPU 39°C</div>
+        <hr>
+        <div class="row dim">Temperature to show</div>
+        <div class="row">CPU</div>
+        <div class="row">GPU</div>
+        <div class="row on"><span>Higher (max of CPU/GPU)</span><span>✓</span></div>
+        <hr>
+        <div class="row">Refresh interval</div>
+        <div class="row">Show Diagnostics…</div>
+      </div>
+      <div class="thermo">°C</div>
+    </div>
+  </div>
+</header>
+
+<section id="setup">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">How to use</p>
+      <h2>Install, launch, done</h2>
+      <p>No configuration needed. The temperature appears in the menu bar the moment it launches.</p>
+    </div>
+    <ol class="flow">
+      <li>
+        <h3>Download &amp; launch</h3>
+        <p>Grab the DMG from GitHub Releases, copy it to Applications and launch. The current temperature appears in the menu bar.</p>
+      </li>
+      <li>
+        <h3>Pick a display</h3>
+        <p>Switch between CPU, GPU, and Higher (the max of both) from the menu. The refresh interval is adjustable too: 1 / 2 / 5 / 10 seconds.</p>
+      </li>
+      <li>
+        <h3>Leave it resident</h3>
+        <p>Turn on "Open at Login" and it watches your temperature whenever you use your Mac — a self-healing design built for year-long runs.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Features</p>
+      <h2>Lightweight, safe, accurate</h2>
+      <p>It does one thing — read temperatures — and carries nothing extra.</p>
+    </div>
+    <dl class="spec">
+      <div class="row"><dt>xx°C in the menu bar</dt><dd>The current temperature always visible in monospaced digits. The tooltip and menu show both CPU and GPU.</dd></div>
+      <div class="row"><dt>CPU / GPU / Higher</dt><dd>Choose the CPU die hotspot, the GPU die hotspot, or the higher of the two.</dd></div>
+      <div class="row"><dt>Read-only SMC access</dt><dd>No admin rights like powermetrics, no privileged daemon. With no write path by design, dangerous operations such as fan control are impossible in principle.</dd></div>
+      <div class="row"><dt>Parked sensors excluded</dt><dd>Sentinel values from idle cores and out-of-range readings are never shown — the app falls back to the next candidate key automatically, or shows --°C on unsupported models.</dd></div>
+      <div class="row"><dt>Self-healing for year-long runs</dt><dd>SMC reconnect after repeated total failures, instant re-read after wake, menu rebuilt on every open, zero log accumulation. Safe to leave running.</dd></div>
+      <div class="row"><dt>Lightweight by design</dt><dd>Single process, Dock-hidden. Polling is 1 second at most with millisecond reads, and the timer is coalesced to save power.</dd></div>
+      <div class="row"><dt>Diagnostics window</dt><dd>Shows source SMC keys, connection state, and system info. Issue reports are just the --probe command output.</dd></div>
+      <div class="row"><dt>Open at Login</dt><dd>Registers with SMAppService so it is always resident after login (one-click toggle in the menu).</dd></div>
+      <div class="row"><dt>日本語 / English</dt><dd>The UI is fully localized in Japanese and English (follows the system language, switches without restart).</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Requirements &amp; build</p>
+      <h2>macOS 13 or later · Apple Silicon</h2>
+    </div>
+    <div class="strip">
+      <div class="panel">
+        <h3>Requirements</h3>
+        <ul>
+          <li><span class="d">◆</span> macOS 13 Ventura or later · Apple Silicon Mac (M1–M5; verified live on macOS 26.4 / M3 Ultra)</li>
+          <li><span class="d">◆</span> On Intel Macs it shows --°C when unreadable (never crashes)</li>
+          <li><span class="d">◆</span> Ad-hoc signed (not notarized). Allow the first launch under System Settings › Privacy &amp; Security</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Build from source (no Xcode required)</h3>
+        <pre>git clone https://github.com/oriyu90/EveryTMP
+cd EveryTMP
+swift build &amp;&amp; swift test
+scripts/build-app.sh</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><img src="/projects/everytmp/assets/icon-192.png" alt=""><span>EveryTMP © 2026 Yuki_Orita · MIT</span></div>
+    <div class="foot-links">
+      <a href="https://github.com/oriyu90/EveryTMP">GitHub</a>
+      <a href="https://github.com/oriyu90/EveryTMP/blob/main/LICENSE">License (MIT)</a>
+      <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+      <a href="https://x.com/InovateofRIZI">X</a>
+      <a href="https://studio-rizi.pages.dev/">Studio RIZI</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

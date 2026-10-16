@@ -176,6 +176,13 @@
       "repository": "https://github.com/oriyu90/orita-kitchen",
       "url": "https://studio-rizi.pages.dev/projects/orita-kitchen/",
       "hosted": true
+    },
+    {
+      "slug": "everytmp",
+      "name": "EveryTMP",
+      "repository": "https://github.com/oriyu90/EveryTMP",
+      "url": "https://studio-rizi.pages.dev/projects/everytmp/",
+      "hosted": true
     }
   ]
 }
