@@ -157,6 +157,13 @@
       "hosted": true
     },
     {
+      "slug": "nami-viewer",
+      "name": "NamiVision",
+      "repository": "https://github.com/oriyu90/Nami-viewer",
+      "url": "https://studio-rizi.pages.dev/projects/nami-viewer/",
+      "hosted": true
+    },
+    {
       "slug": "3dfm",
       "name": "3DFM",
       "repository": "https://github.com/oriyu90/3DFM",
