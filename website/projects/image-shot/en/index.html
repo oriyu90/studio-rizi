@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Image Shot (Prism Photo) — Non-destructive photo editor for Android 16+ | Yuki Orita</title>
+<meta name="description" content="Image Shot (Prism Photo) is a non-destructive, offline-first photo editor for Android 16 and later by Yuki Orita (折田悠希 / おりたゆき). Tone, curves, HSL, free angle and local masks are kept as instructions, so the original is never overwritten. JPEG / PNG export; source on GitHub.">
+<meta name="keywords" content="Image Shot, Prism Photo, イメージショット, プリズムフォト, 折田悠希, おりたゆき, Yuki Orita, github, Android, photo editor, non-destructive editing, tone curve, HSL, local masks, offline, Kotlin, Jetpack Compose">
+<meta name="author" content="Yuki Orita (折田悠希)">
+<meta name="theme-color" content="#0a0d09">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/image-shot/en/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/image-shot/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/image-shot/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/image-shot/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/image-shot/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/image-shot/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../assets/icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-512.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Image Shot">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:title" content="Image Shot (Prism Photo) — Non-destructive photo editor for Android 16+">
+<meta property="og:description" content="Tone, white balance, curves, HSL, free-angle rotation and local masks, all saved as instructions — the original photo is never overwritten. An offline photo editor for Android 16.">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/image-shot/en/">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/image-shot/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Image Shot app icon with the words Prism Photo — non-destructive photo editor">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Image Shot (Prism Photo) — Non-destructive photo editor for Android 16+">
+<meta name="twitter:description" content="Exposure, white balance, curves, HSL, free angle and local masks. Every edit is an instruction, so the original stays untouched.">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/image-shot/assets/og.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Image Shot",
+      "alternateName": ["Prism Photo", "イメージショット", "プリズムフォト"],
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Android 16 (API 36) or later",
+      "softwareVersion": "0.1.0",
+      "inLanguage": "en",
+      "description": "A non-destructive photo editor for Android 16 with exposure, white balance, tone curves, HSL, free-angle rotation, detail enhancement and local masks. Adjustments are stored as instructions, so the original photo is never overwritten. JPEG / PNG export, no INTERNET permission.",
+      "url": "https://studio-rizi.pages.dev/projects/image-shot/en/",
+      "downloadUrl": "https://github.com/oriyu90/image-shot/releases",
+      "codeRepository": "https://github.com/oriyu90/image-shot",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki_Orita",
+      "alternateName": ["折田悠希", "おりたゆき", "Yuki Orita"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://x.com/InovateofRIZI",
+        "https://github.com/oriyu90"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Image Shot — back to top">
+        <img src="../assets/icon-512.png" width="30" height="30" alt="" style="border-radius:8px">
+        <span>Image Shot</span>
+      </a>
+      <nav class="main-nav" aria-label="On this page">
+        <a href="#features">Capabilities</a>
+        <a href="#panels">Panels</a>
+        <a href="#flow">Workflow</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#install">Get it</a>
+      </nav>
+      <span class="release-tag">v0.1.0</span>
+    </div>
+    <div class="lang-bar">
+      <nav aria-label="Language">
+        <a hreflang="ja" lang="ja" href="/projects/image-shot/">日本語</a>
+        <a hreflang="en" lang="en" href="/projects/image-shot/en/" aria-current="page">English</a>
+        <a hreflang="zh-Hans" lang="zh-Hans" href="/projects/image-shot/zh/">简体中文</a>
+        <a hreflang="pt" lang="pt" href="/projects/image-shot/pt/">Português</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="page-width hero-grid">
+        <div class="hero-copy">
+          <p class="release-line">Android 16+ · Kotlin / Jetpack Compose · v0.1.0 · MIT</p>
+          <h1 id="hero-title"><span class="hero-app">Image Shot / Prism Photo</span>Edit the photo.<br><em>Never the file.</em></h1>
+          <p class="hero-lead">Image Shot is a non-destructive, offline-first photo editor for Android 16 and later. Exposure, white balance, tone curves, HSL, free-angle rotation, detail and local masks are all kept as instructions — the original file is never rewritten, so every change can be undone. Working name: Prism Photo.</p>
+          <div class="hero-actions" role="group" aria-label="Links">
+            <a class="button" href="https://github.com/oriyu90/image-shot">View on GitHub</a>
+            <a class="button button-secondary" href="https://github.com/oriyu90/image-shot/releases">Open Releases</a>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>Platform</dt><dd>Android 16 (API 36) or later</dd></div>
+            <div><dt>UI languages</dt><dd>日本語 / English</dd></div>
+            <div><dt>License</dt><dd>MIT, free</dd></div>
+            <div><dt>Package</dt><dd>com.imageshot.app</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual">
+          <figure class="shot-frame">
+            <img src="../assets/app-editor.webp" width="760" height="1516" alt="The Image Shot editor: a photo preview above tabs for Tone, Curves, HSL, Geometry, Detail and Local, with sliders for exposure, contrast and highlights, plus undo, redo, Before/After and the export button." loading="eager" decoding="async">
+            <figcaption>An actual app screen (Japanese UI, phone portrait): a photo opened in the editor.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-index" aria-label="Section index">
+      <div class="page-index-inner">
+        <span class="page-index-label">On this page</span>
+        <ol>
+          <li><a href="#features">Capabilities</a></li>
+          <li><a href="#panels">Six panels</a></li>
+          <li><a href="#flow">Workflow</a></li>
+          <li><a href="#layout">Layout</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#install">Get it</a></li>
+          <li><a href="#community">Developer</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">What it does</p>
+            <h2 id="features-title">Adjustments are instructions.</h2>
+          </div>
+          <p>What Image Shot stores is not a baked image but the steps that produced it. That means you can step back at any point, and rebuild the same look later — from the original or from an export.</p>
+        </div>
+        <dl class="feature-list">
+          <div class="feature-row">
+            <span class="feature-num"><i>01</i>NON-DESTRUCTIVE</span>
+            <h3>The original stays exactly as shot.</h3>
+            <p>Edits are recorded as instructions, not burned into the pixels. History is append-only and keeps the state at each step, so going back never costs quality. If the app is killed, reopen it and carry on.</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>02</i>TONE</span>
+            <h3>Push brightness and colour by the numbers.</h3>
+            <p>Exposure, contrast, highlights, shadows, whites, blacks, vibrance, saturation, temperature and tint. Every slider also accepts a typed value, so one look can be reproduced on another frame.</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>03</i>CURVES &amp; HSL</span>
+            <h3>Curves, plus HSL across eight hues.</h3>
+            <p>Shape tonality with master and R / G / B curves, then set hue, saturation and luminance for each of eight hue ranges — the sky's blue alone, or the reds in skin alone, without touching the rest.</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>04</i>GEOMETRY</span>
+            <h3>Straighten, without cropping it all away.</h3>
+            <p>Free-angle rotation up to ±45° with numeric entry, horizontal and vertical flips, and free crop. Rotation and cropping are separate, so the framing stays while the horizon gets fixed.</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>05</i>DETAIL &amp; LOCAL</span>
+            <h3>Global detail, local masks.</h3>
+            <p>Sharpen and luminance noise reduction for the whole frame; linear, radial and brush masks with feather to move exposure or saturation only inside them. Stop before it starts to look overdone.</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>06</i>EXPORT</span>
+            <h3>Write out JPEG or PNG.</h3>
+            <p>Choose the quality and the destination, and the export runs in the background. EXIF carries capture time and camera data across; location is stripped.</p>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="panels" aria-labelledby="panels-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Six panels</p>
+            <h2 id="panels-title">Six panels, one preview.</h2>
+          </div>
+          <p>Open only the panel you need while the preview stays in view. Every panel shows both how far you moved it and the number you moved it to.</p>
+        </div>
+        <div class="panel-grid">
+          <article class="panel-cell">
+            <h3>Tone<span>BASIC</span></h3>
+            <p>Exposure, contrast, highlights, shadows, whites, blacks, vibrance, saturation, temperature and tint.</p>
+          </article>
+          <article class="panel-cell">
+            <h3>Curves<span>MASTER / RGB</span></h3>
+            <p>Master and R / G / B tone curves. Place a point and move the lift and the roll-off directly.</p>
+          </article>
+          <article class="panel-cell">
+            <h3>HSL<span>HUE / SAT / LUM</span></h3>
+            <p>Hue, saturation and luminance for each of eight hue ranges.</p>
+          </article>
+          <article class="panel-cell">
+            <h3>Geometry<span>ROTATE / CROP</span></h3>
+            <p>Free-angle rotation up to ±45°, horizontal and vertical flips, and free crop.</p>
+          </article>
+          <article class="panel-cell">
+            <h3>Detail<span>SHARPEN / NR</span></h3>
+            <p>Sharpening and luminance noise reduction, handled as separate controls.</p>
+          </article>
+          <article class="panel-cell">
+            <h3>Local<span>MASKS</span></h3>
+            <p>Linear, radial and brush masks. Feather the edge, then adjust only what is inside.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section flow-band" id="flow" aria-labelledby="flow-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Flow</p>
+            <h2 id="flow-title">Preview first, then refine.</h2>
+          </div>
+          <p>Pick a photo and the editor opens. Check the result in the preview, move the values in the panels — undo, redo and the history count stay at the bottom of the screen.</p>
+        </div>
+        <ol class="flow-grid">
+          <li class="flow-step">
+            <span class="flow-num">01</span>
+            <b>Import</b>
+            <p>Bring in several photos from the photo picker, or choose a file or folder through SAF.</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">02</span>
+            <b>Adjust</b>
+            <p>Work through the six panels in order — tone, colour, tonality, geometry, local — with values you can also type.</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">03</span>
+            <b>Compare</b>
+            <p>Check before and after, then step back through the history as far as you need.</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">04</span>
+            <b>Export</b>
+            <p>Pick JPEG or PNG, set the quality and the destination. The original is left alone.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="layout" aria-labelledby="layout-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Layout</p>
+            <h2 id="layout-title">Sized for the screen you hold.</h2>
+          </div>
+          <p>On a phone held upright the panels sit under the preview; in landscape they move beside it. From 840dp up, tablets switch to two panes and keep the photo large while you adjust.</p>
+        </div>
+        <ul class="layout-grid">
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--phone" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>Phone, portrait</b>
+              <p>Panels below the preview, within reach of one hand.</p>
+            </div>
+          </li>
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--land" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>Phone, landscape</b>
+              <p>Preview and panels side by side, photo kept large.</p>
+            </div>
+          </li>
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--tablet" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>Tablet, two panes</b>
+              <p>Two panes from 840dp, with the preview kept on screen.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="privacy" aria-labelledby="privacy-title">
+      <div class="page-width">
+        <div class="privacy-panel">
+          <p class="eyebrow">Privacy</p>
+          <h2 id="privacy-title">Your photos never leave the device.</h2>
+          <p>Image Shot does not declare the INTERNET permission. There is no upload feature and no path that sends a photo out for analysis — every edit happens on the device.</p>
+          <p>It does not ask for broad storage access either: reading and saving go through Android's photo picker and SAF (Storage Access Framework). Originals are never rewritten, and an exported JPEG or PNG carries no location data.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="install" aria-labelledby="install-title">
+      <div class="page-width install-grid">
+        <div class="install-side">
+          <p class="eyebrow">Get started</p>
+          <h2 id="install-title">Version 0.1.0, from GitHub.</h2>
+          <p>The source for Image Shot is public on GitHub. Version 0.1.0 is distributed as a signed APK on GitHub Releases.</p>
+          <a class="button" href="https://github.com/oriyu90/image-shot/releases">Open GitHub Releases</a>
+        </div>
+        <div>
+          <ol class="step-list">
+            <li><span>Open the repository at <a href="https://github.com/oriyu90/image-shot">github.com/oriyu90/image-shot</a>.</span></li>
+            <li><span>Get the signed APK from Releases and install it on the device.</span></li>
+            <li><span>To run from source, clone the repository and open it in Android Studio.</span></li>
+            <li><span>Use Android SDK 36 and a JDK, then run <code>./gradlew :app:assembleDebug</code>.</span></li>
+          </ol>
+          <p class="install-note">Requires Android 16 (API 36) or later. Photos are read through the Android photo picker and SAF.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="community" aria-labelledby="community-title">
+      <div class="page-width dev-section">
+        <div>
+          <p class="eyebrow">Developer</p>
+          <h2 id="community-title">The person behind it.</h2>
+          <p>Built by Yuki Orita (折田悠希 / おりたゆき). Bug reports and requests go to Discord; day-to-day notes live on X and the official site. Source and releases are on GitHub.</p>
+        </div>
+        <nav class="link-list" aria-label="Developer links">
+          <a href="https://github.com/oriyu90/image-shot">GitHub</a>
+          <a href="https://github.com/oriyu90/image-shot/releases">Releases</a>
+          <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+          <a href="https://x.com/InovateofRIZI">X</a>
+          <a href="https://studio-rizi.pages.dev/">Official site</a>
+          <a href="https://kizi.pages.dev/">KIZI</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <p>© 2026 Yuki Orita · Image Shot / Prism Photo · MIT License</p>
+      <nav aria-label="Footer">
+        <a href="https://studio-rizi.pages.dev/">Studio RIZI</a>
+        <a href="https://github.com/oriyu90/image-shot">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Image Shot（图像编辑器）— Android 16+ 非破坏性照片编辑应用 | 折田悠希</title>
+<meta name="description" content="Image Shot（Prism Photo）是折田悠希（Yuki Orita / おりたゆき）开发的 Android 16+ 非破坏性、离线优先照片编辑应用。曝光、白平衡、曲线、HSL、自由角度与局部蒙版都以调整指令保存，不覆盖原图，可导出 JPEG / PNG，源码在 GitHub 公开。">
+<meta name="keywords" content="Image Shot, Prism Photo, イメージショット, プリズムフォト, 折田悠希, おりたゆき, Yuki Orita, github, Android, 照片编辑, 非破坏性编辑, 曲线, HSL, 局部蒙版, 离线, Kotlin, Jetpack Compose">
+<meta name="author" content="折田悠希 (Yuki Orita)">
+<meta name="theme-color" content="#0a0d09">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/image-shot/zh/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/image-shot/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/image-shot/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/image-shot/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/image-shot/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/image-shot/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../assets/icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-512.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Image Shot">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:title" content="Image Shot（图像编辑器）— Android 16+ 非破坏性照片编辑应用">
+<meta property="og:description" content="曝光、白平衡、曲线、HSL、自由角度与局部蒙版都以调整指令保存，原图不会被覆盖。一款在本地完成全部处理的 Android 16 照片编辑应用。">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/image-shot/zh/">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/image-shot/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Image Shot 的应用图标，以及 Prism Photo — non-destructive photo editor 字样">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Image Shot（图像编辑器）— Android 16+ 非破坏性照片编辑应用">
+<meta name="twitter:description" content="曝光、白平衡、曲线、HSL、自由角度与局部蒙版。每次调整都是指令，原片始终保留。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/image-shot/assets/og.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Image Shot",
+      "alternateName": ["Prism Photo", "イメージショット", "プリズムフォト"],
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Android 16 (API 36) or later",
+      "softwareVersion": "0.1.0",
+      "inLanguage": "zh-Hans",
+      "description": "面向 Android 16 的非破坏性照片编辑应用。曝光、白平衡、曲线、HSL、自由角度旋转、细节与局部蒙版都以指令形式保存，不覆盖原图。支持 JPEG / PNG 导出，未声明 INTERNET 权限。",
+      "url": "https://studio-rizi.pages.dev/projects/image-shot/zh/",
+      "downloadUrl": "https://github.com/oriyu90/image-shot/releases",
+      "codeRepository": "https://github.com/oriyu90/image-shot",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki_Orita",
+      "alternateName": ["折田悠希", "おりたゆき", "Yuki Orita"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://x.com/InovateofRIZI",
+        "https://github.com/oriyu90"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Image Shot — 回到页面顶部">
+        <img src="../assets/icon-512.png" width="30" height="30" alt="" style="border-radius:8px">
+        <span>Image Shot</span>
+      </a>
+      <nav class="main-nav" aria-label="页面导航">
+        <a href="#features">功能</a>
+        <a href="#panels">六个面板</a>
+        <a href="#flow">流程</a>
+        <a href="#privacy">隐私</a>
+        <a href="#install">获取</a>
+      </nav>
+      <span class="release-tag">v0.1.0</span>
+    </div>
+    <div class="lang-bar">
+      <nav aria-label="语言切换">
+        <a hreflang="ja" lang="ja" href="/projects/image-shot/">日本語</a>
+        <a hreflang="en" lang="en" href="/projects/image-shot/en/">English</a>
+        <a hreflang="zh-Hans" lang="zh-Hans" href="/projects/image-shot/zh/" aria-current="page">简体中文</a>
+        <a hreflang="pt" lang="pt" href="/projects/image-shot/pt/">Português</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="page-width hero-grid">
+        <div class="hero-copy">
+          <p class="release-line">Android 16+ · Kotlin / Jetpack Compose · v0.1.0 · MIT</p>
+          <h1 id="hero-title"><span class="hero-app">Image Shot / Prism Photo</span>修图，<br><em>不动原片。</em></h1>
+          <p class="hero-lead">Image Shot 是一款面向 Android 16 及更高版本的非破坏性、离线优先照片编辑应用。曝光、白平衡、曲线、HSL、自由角度旋转、细节与局部蒙版都以「调整指令」的形式保存，原图不会被覆盖，随时都能退回任意一步。开发期间的名称是 Prism Photo。</p>
+          <div class="hero-actions" role="group" aria-label="链接">
+            <a class="button" href="https://github.com/oriyu90/image-shot">在 GitHub 查看</a>
+            <a class="button button-secondary" href="https://github.com/oriyu90/image-shot/releases">打开 Releases</a>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>系统要求</dt><dd>Android 16（API 36）及以上</dd></div>
+            <div><dt>界面语言</dt><dd>日本語 / English</dd></div>
+            <div><dt>许可协议</dt><dd>MIT・免费</dd></div>
+            <div><dt>包名</dt><dd>com.imageshot.app</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual">
+          <figure class="shot-frame">
+            <img src="../assets/app-editor.webp" width="760" height="1516" alt="Image Shot 的编辑画面：照片预览下方是基本调整、曲线、HSL、几何、细节、局部六个标签，以及曝光、对比度、高光滑块和撤销、重做、Before/After、导出按钮。" loading="eager" decoding="async">
+            <figcaption>实际的应用画面（日语界面・手机竖屏）：在编辑器中打开一张照片。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-index" aria-label="页面目录">
+      <div class="page-index-inner">
+        <span class="page-index-label">页面导航</span>
+        <ol>
+          <li><a href="#features">功能</a></li>
+          <li><a href="#panels">六个面板</a></li>
+          <li><a href="#flow">流程</a></li>
+          <li><a href="#layout">布局</a></li>
+          <li><a href="#privacy">隐私</a></li>
+          <li><a href="#install">获取</a></li>
+          <li><a href="#community">开发者</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">What it does</p>
+            <h2 id="features-title">所有调整，都是指令。</h2>
+          </div>
+          <p>Image Shot 保存的不是加工后的图像，而是产生这个结果的操作步骤。所以任何时候都能退回上一步，也能凭原图和记录重新做出同样的效果。</p>
+        </div>
+        <dl class="feature-list">
+          <div class="feature-row">
+            <span class="feature-num"><i>01</i>非破坏</span>
+            <h3>原片保持原样。</h3>
+            <p>编辑以指令的形式记录，不会写进像素。历史只追加不覆盖，并保留每一步的状态，因此退多少步都不会损失画质。应用被系统结束后重新打开，可以从上次的位置继续。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>02</i>影调</span>
+            <h3>亮度与色彩，用数值推到位。</h3>
+            <p>曝光、对比度、高光、阴影、白色色阶、黑色色阶、自然饱和度、饱和度、色温、色调。滑块之外也能直接输入数值，同一套参数可以复用到另一张照片。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>03</i>曲线与 HSL</span>
+            <h3>曲线，加上八种色相的 HSL。</h3>
+            <p>用 master 与 R / G / B 曲线塑造层次，再按八种色相分别调整色相、饱和度与明度——只动天空的蓝，或只动皮肤的红，其余颜色不受影响。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>04</i>几何</span>
+            <h3>校正水平，不必裁掉太多。</h3>
+            <p>±45° 自由角度旋转（可输入数值）、水平与垂直翻转、自由裁剪。旋转与裁剪分开处理，构图可以保留，只把地平线摆正。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>05</i>细节与局部</span>
+            <h3>整体看细节，局部用蒙版。</h3>
+            <p>锐化与亮度降噪处理整张画面；直线、圆形与画笔蒙版带 feather，只在蒙版内部改变曝光或饱和度。适可而止，别调过头。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>06</i>导出</span>
+            <h3>导出 JPEG 或 PNG。</h3>
+            <p>选择质量与保存位置，导出在后台进行。EXIF 保留拍摄时间与相机信息，位置信息会被移除。</p>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="panels" aria-labelledby="panels-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Six panels</p>
+            <h2 id="panels-title">六个面板，一张预览。</h2>
+          </div>
+          <p>只看需要的面板，预览始终留在视野里。每个面板都能看到调整的幅度和当前的数值。</p>
+        </div>
+        <div class="panel-grid">
+          <article class="panel-cell">
+            <h3>基本调整<span>TONE</span></h3>
+            <p>曝光、对比度、高光、阴影、白色色阶、黑色色阶、自然饱和度、饱和度、色温、色调。</p>
+          </article>
+          <article class="panel-cell">
+            <h3>曲线<span>CURVES</span></h3>
+            <p>master 与 R / G / B 曲线。放点即调，直接改变暗部的提升与高光的收敛。</p>
+          </article>
+          <article class="panel-cell">
+            <h3>HSL<span>HUE / SAT / LUM</span></h3>
+            <p>按八种色相分别调整色相、饱和度与明度。</p>
+          </article>
+          <article class="panel-cell">
+            <h3>几何<span>GEOMETRY</span></h3>
+            <p>±45° 自由角度旋转、水平与垂直翻转、自由裁剪。</p>
+          </article>
+          <article class="panel-cell">
+            <h3>细节<span>DETAIL</span></h3>
+            <p>锐化与亮度降噪，两项独立控制。</p>
+          </article>
+          <article class="panel-cell">
+            <h3>局部<span>LOCAL</span></h3>
+            <p>直线、圆形与画笔蒙版。先用 feather 柔化边缘，再只调整蒙版内部。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section flow-band" id="flow" aria-labelledby="flow-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Flow</p>
+            <h2 id="flow-title">先看预览，<br>再慢慢调。</h2>
+          </div>
+          <p>选好照片就进入编辑画面。在预览里确认结果，在面板里调整数值；撤销、重做与历史条数始终显示在画面下方。</p>
+        </div>
+        <ol class="flow-grid">
+          <li class="flow-step">
+            <span class="flow-num">01</span>
+            <b>导入</b>
+            <p>从系统照片选择器一次导入多张，也可以用 SAF 选择文件或文件夹。</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">02</span>
+            <b>调整</b>
+            <p>按六个面板依次处理影调、色彩、层次、几何与局部，数值可以直接输入。</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">03</span>
+            <b>对比</b>
+            <p>用 Before/After 对照调整前后，再从历史里退回任意一步。</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">04</span>
+            <b>导出</b>
+            <p>选择 JPEG 或 PNG，设定质量与保存位置。原片不会被动过。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="layout" aria-labelledby="layout-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Layout</p>
+            <h2 id="layout-title">适配你手上的屏幕。</h2>
+          </div>
+          <p>手机竖屏时面板在预览下方，横屏时移到右侧。平板在 840dp 以上切换为双栏，预览保持足够大。</p>
+        </div>
+        <ul class="layout-grid">
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--phone" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>手机・竖屏</b>
+              <p>面板在预览下方，单手也能操作。</p>
+            </div>
+          </li>
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--land" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>手机・横屏</b>
+              <p>预览与面板左右并排，照片看得更大。</p>
+            </div>
+          </li>
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--tablet" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>平板・双栏</b>
+              <p>840dp 以上为双栏，预览保持在画面上。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="privacy" aria-labelledby="privacy-title">
+      <div class="page-width">
+        <div class="privacy-panel">
+          <p class="eyebrow">Privacy</p>
+          <h2 id="privacy-title">照片，不出设备。</h2>
+          <p>Image Shot 没有声明 INTERNET 权限。既没有上传功能，也没有为了分析而向外发送照片的路径，所有编辑都在本机完成。</p>
+          <p>也不申请宽泛的存储权限：读取与保存都通过 Android 的照片选择器与 SAF（Storage Access Framework）。原片不会被覆盖，导出的 JPEG / PNG 不含位置信息。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="install" aria-labelledby="install-title">
+      <div class="page-width install-grid">
+        <div class="install-side">
+          <p class="eyebrow">Get started</p>
+          <h2 id="install-title">v0.1.0，从 GitHub 获取。</h2>
+          <p>Image Shot 的源码在 GitHub 公开，v0.1.0 以签名 APK 的形式在 GitHub Releases 发布。</p>
+          <a class="button" href="https://github.com/oriyu90/image-shot/releases">打开 GitHub Releases</a>
+        </div>
+        <div>
+          <ol class="step-list">
+            <li><span>打开仓库 <a href="https://github.com/oriyu90/image-shot">github.com/oriyu90/image-shot</a>。</span></li>
+            <li><span>在 Releases 下载签名 APK，并安装到设备。</span></li>
+            <li><span>想从源码运行，克隆仓库后用 Android Studio 打开。</span></li>
+            <li><span>准备 Android SDK 36 与 JDK，执行 <code>./gradlew :app:assembleDebug</code>。</span></li>
+          </ol>
+          <p class="install-note">系统要求为 Android 16（API 36）及以上。读取照片使用 Android 的照片选择器与 SAF。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="community" aria-labelledby="community-title">
+      <div class="page-width dev-section">
+        <div>
+          <p class="eyebrow">Developer</p>
+          <h2 id="community-title">开发者与联系入口。</h2>
+          <p>开发者是折田悠希（Yuki Orita / おりたゆき）。问题反馈与需求请到 Discord，日常记录在 X 与官方网站。源码与发布在 GitHub。</p>
+        </div>
+        <nav class="link-list" aria-label="开发者链接">
+          <a href="https://github.com/oriyu90/image-shot">GitHub</a>
+          <a href="https://github.com/oriyu90/image-shot/releases">Releases</a>
+          <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+          <a href="https://x.com/InovateofRIZI">X</a>
+          <a href="https://studio-rizi.pages.dev/">官方网站</a>
+          <a href="https://kizi.pages.dev/">KIZI</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <p>© 2026 Yuki Orita · Image Shot / Prism Photo · MIT 许可</p>
+      <nav aria-label="页脚链接">
+        <a href="https://studio-rizi.pages.dev/">Studio RIZI</a>
+        <a href="https://github.com/oriyu90/image-shot">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

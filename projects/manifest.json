@@ -45,6 +45,13 @@
       "hosted": true
     },
     {
+      "slug": "image-shot",
+      "name": "Image Shot",
+      "repository": "https://github.com/oriyu90/image-shot",
+      "url": "https://studio-rizi.pages.dev/projects/image-shot/",
+      "hosted": true
+    },
+    {
       "slug": "kizi",
       "name": "Kizi",
       "repository": "https://github.com/oriyu90/kizi",

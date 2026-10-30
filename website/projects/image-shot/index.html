@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Image Shot（イメージショット）— Android 16+の非破壊写真編集アプリ | 折田悠希</title>
+<meta name="description" content="Image Shot（イメージショット / Prism Photo・プリズムフォト）は、Android 16 以降のための非破壊・オフライン優先の写真編集アプリです。露出・色温度・カーブ・HSL・自由角度・局所マスクを、元の写真を書き換えずに何度でも。JPEG / PNG 書き出し、開発者は折田悠希（おりたゆき）、ソースは GitHub で公開しています。">
+<meta name="keywords" content="Image Shot, イメージショット, Prism Photo, プリズムフォト, 折田悠希, おりたゆき, おりたゆうき, Yuki_Orita, github, Android, 写真編集, 非破壊編集, 写真アプリ, カラーグレーディング, トーンカーブ, HSL, マスク, オフライン">
+<meta name="author" content="折田悠希 (Yuki_Orita)">
+<meta name="theme-color" content="#0a0d09">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/image-shot/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/image-shot/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/image-shot/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/image-shot/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/image-shot/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/image-shot/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="stylesheet" href="site.css">
+<link rel="icon" href="assets/icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="assets/icon-512.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Image Shot">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:title" content="Image Shot（イメージショット）— Android 16+の非破壊写真編集アプリ">
+<meta property="og:description" content="露出・色温度・トーンカーブ・HSL・自由角度・局所マスクを、元の写真を書き換えずに何度でも。オフラインで完結する Android 16 向け写真編集アプリです。">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/image-shot/">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/image-shot/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Image Shotのアイコンと、Prism Photo — non-destructive photo editor の文字">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Image Shot（イメージショット）— Android 16+の非破壊写真編集アプリ">
+<meta name="twitter:description" content="露出・色温度・カーブ・HSL・自由角度・局所マスク。調整は指示として保存され、元の写真は変わりません。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/image-shot/assets/og.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Image Shot",
+      "alternateName": ["イメージショット", "Prism Photo", "プリズムフォト"],
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Android 16 (API 36) or later",
+      "softwareVersion": "0.1.0",
+      "inLanguage": "ja",
+      "description": "露出、ホワイトバランス、トーンカーブ、HSL、自由角度の傾き補正、ディテール、局所マスクを非破壊で扱う Android 16 向けの写真編集アプリ。調整は指示として保存され、元の写真は書き換えません。JPEG / PNG 書き出し、INTERNET 権限なし。",
+      "url": "https://studio-rizi.pages.dev/projects/image-shot/",
+      "downloadUrl": "https://github.com/oriyu90/image-shot/releases",
+      "codeRepository": "https://github.com/oriyu90/image-shot",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki_Orita",
+      "alternateName": ["折田悠希", "おりたゆき", "おりたゆうき"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://x.com/InovateofRIZI",
+        "https://github.com/oriyu90"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Image Shot ページの先頭へ">
+        <img src="assets/icon-512.png" width="30" height="30" alt="" style="border-radius:8px">
+        <span>Image Shot</span>
+      </a>
+      <nav class="main-nav" aria-label="ページ内メニュー">
+        <a href="#features">できること</a>
+        <a href="#panels">6つのパネル</a>
+        <a href="#flow">流れ</a>
+        <a href="#privacy">プライバシー</a>
+        <a href="#install">入手する</a>
+      </nav>
+      <span class="release-tag">v0.1.0</span>
+    </div>
+    <div class="lang-bar">
+      <nav aria-label="言語切り替え">
+        <a hreflang="ja" lang="ja" href="/projects/image-shot/" aria-current="page">日本語</a>
+        <a hreflang="en" lang="en" href="/projects/image-shot/en/">English</a>
+        <a hreflang="zh-Hans" lang="zh-Hans" href="/projects/image-shot/zh/">简体中文</a>
+        <a hreflang="pt" lang="pt" href="/projects/image-shot/pt/">Português</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="page-width hero-grid">
+        <div class="hero-copy">
+          <p class="release-line">Android 16+ · Kotlin / Jetpack Compose · v0.1.0 · MIT</p>
+          <h1 id="hero-title"><span class="hero-app">Image Shot / イメージショット</span>撮った写真を、<br><em>消さずに</em>仕上げる。</h1>
+          <p class="hero-lead">Image Shot は、Android 16 以降のための非破壊・オフライン優先の写真編集アプリです。露出や色温度、トーンカーブ、HSL、自由角度の傾き補正、局所マスクまで、調整はすべて「指示」として記録され、元の写真は書き換えません。気が変わったら、何度でも戻せます。企画名は Prism Photo（プリズムフォト）。</p>
+          <div class="hero-actions" role="group" aria-label="リンク">
+            <a class="button" href="https://github.com/oriyu90/image-shot">GitHub で見る</a>
+            <a class="button button-secondary" href="https://github.com/oriyu90/image-shot/releases">Releases を開く</a>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>対応OS</dt><dd>Android 16（API 36）以降</dd></div>
+            <div><dt>UI 言語</dt><dd>日本語 / English</dd></div>
+            <div><dt>ライセンス</dt><dd>MIT・無料</dd></div>
+            <div><dt>パッケージ</dt><dd>com.imageshot.app</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual">
+          <figure class="shot-frame">
+            <img src="assets/app-editor.webp" width="760" height="1516" alt="Image Shot の編集画面。写真のプレビューの下に、基本調整・カーブ・HSL・ジオメトリ・ディテール・局部補正のタブと、露出・コントラスト・ハイライトのスライダー、取り消し・やり直し、Before/After、書き出しボタンが並んでいる。" loading="eager" decoding="async">
+            <figcaption>実際のアプリ画面（日本語 UI・スマートフォン縦）。取り込んだ写真を編集画面で開いた状態です。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-index" aria-label="ページ内目次">
+      <div class="page-index-inner">
+        <span class="page-index-label">このページの案内</span>
+        <ol>
+          <li><a href="#features">できること</a></li>
+          <li><a href="#panels">6つのパネル</a></li>
+          <li><a href="#flow">流れ</a></li>
+          <li><a href="#layout">画面サイズ</a></li>
+          <li><a href="#privacy">プライバシー</a></li>
+          <li><a href="#install">入手する</a></li>
+          <li><a href="#community">開発者</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">What it does</p>
+            <h2 id="features-title">編集しても、<br>写真は減らない。</h2>
+          </div>
+          <p>Image Shot が保存するのは、加工済みの画像ではなく調整の手順です。だから何度でもやり直せて、元の写真も、書き出した写真も、あとから同じように作り直せます。</p>
+        </div>
+        <dl class="feature-list">
+          <div class="feature-row">
+            <span class="feature-num"><i>01</i>NON-DESTRUCTIVE</span>
+            <h3>元の写真は、そのまま残る。</h3>
+            <p>調整は写真そのものではなく「指示」として保存されます。履歴は追記のみで、通過した各段階の状態も保持するため、何手戻っても画質は変わりません。アプリが強制終了しても、開き直せば続きから再開できます。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>02</i>TONE</span>
+            <h3>明るさと色を、数字で追い込む。</h3>
+            <p>露出、コントラスト、ハイライト、シャドウ、白レベル、黒レベル、自然な彩度、彩度、色温度、色合い。スライダーに加えて数値を直接入力できるので、同じ仕上がりを別のカットにも同じ値で再現できます。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>03</i>CURVES &amp; HSL</span>
+            <h3>カーブと、8系統の HSL。</h3>
+            <p>master と R / G / B のトーンカーブで階調を設計し、8系統の色相ごとに色相・彩度・明度を調整します。空の青だけ、肌の赤だけを、他の色を動かさずに補正できます。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>04</i>GEOMETRY</span>
+            <h3>水平を出すために、削りすぎない。</h3>
+            <p>±45°の自由角度回転と数値入力、左右・上下の反転、自由クロップ。傾き補正とトリミングを別々に扱えるので、構図を保ったまま水平だけを直せます。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>05</i>DETAIL &amp; LOCAL</span>
+            <h3>全体はディテール、一部分はマスクで。</h3>
+            <p>シャープと輝度ノイズ低減で細部を整え、直線・円形・ブラシのマスクに feather をかけて、内側だけ露出や彩度を動かせます。効かせすぎないところで止められます。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>06</i>EXPORT</span>
+            <h3>JPEG / PNG で、書き出し。</h3>
+            <p>品質を指定して書き出し。処理はバックグラウンドで進み、保存先は端末のフォルダから選べます。EXIF は撮影日時やカメラ情報を引き継ぎ、位置情報は外して書き出します。</p>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="panels" aria-labelledby="panels-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Six panels</p>
+            <h2 id="panels-title">調整は、6つのパネルに。</h2>
+          </div>
+          <p>プレビューを見ながら、必要なパネルだけを開いて詰められます。どのパネルも、触った量と数値がその場で分かります。</p>
+        </div>
+        <div class="panel-grid">
+          <article class="panel-cell">
+            <h3>基本調整<span>TONE</span></h3>
+            <p>露出、コントラスト、ハイライト、シャドウ、白レベル、黒レベル、自然な彩度、彩度、色温度、色合い。</p>
+          </article>
+          <article class="panel-cell">
+            <h3>カーブ<span>CURVES</span></h3>
+            <p>master と R / G / B のトーンカーブ。ポイントを置いて、階調の持ち上げと沈みを直接動かします。</p>
+          </article>
+          <article class="panel-cell">
+            <h3>HSL<span>HUE / SAT / LUM</span></h3>
+            <p>8系統の色相ごとに、色相・彩度・明度を調整します。</p>
+          </article>
+          <article class="panel-cell">
+            <h3>ジオメトリ<span>GEOMETRY</span></h3>
+            <p>±45°の自由角度回転、左右・上下の反転、自由クロップ。</p>
+          </article>
+          <article class="panel-cell">
+            <h3>ディテール<span>DETAIL</span></h3>
+            <p>シャープと輝度ノイズ低減。細部の立て方と、ざらつきの落とし方を別々に。</p>
+          </article>
+          <article class="panel-cell">
+            <h3>局部補正<span>LOCAL</span></h3>
+            <p>直線・円形・ブラシのマスク。feather で境目をなじませ、マスクの内側だけを補正します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section flow-band" id="flow" aria-labelledby="flow-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Flow</p>
+            <h2 id="flow-title">プレビューを見ながら、<br>詰めていく。</h2>
+          </div>
+          <p>写真を選ぶと、すぐに編集画面へ。プレビューで仕上がりを確かめ、パネルで数値を動かす。取り消しとやり直し、履歴の件数は常に画面の下にあります。</p>
+        </div>
+        <ol class="flow-grid">
+          <li class="flow-step">
+            <span class="flow-num">01</span>
+            <b>取り込む</b>
+            <p>フォトピッカーから複数枚をまとめて。ファイルやフォルダーを SAF で選ぶこともできます。</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">02</span>
+            <b>調整する</b>
+            <p>6つのパネルを切り替えながら、露出・色・階調・形・局部を順に。値は数値でも入力できます。</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">03</span>
+            <b>見比べる</b>
+            <p>Before/After で調整前と比較。気に入らなければ、履歴から何手でも戻せます。</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">04</span>
+            <b>書き出す</b>
+            <p>JPEG か PNG を選び、品質と保存先を決めて書き出し。元の写真はそのまま残ります。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="layout" aria-labelledby="layout-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Layout</p>
+            <h2 id="layout-title">画面の広さに、合わせる。</h2>
+          </div>
+          <p>スマートフォンの縦画面ではプレビューの下にパネル、横画面では左右に分割。タブレットは 840dp 以上で2ペインに切り替わり、写真を大きく保ったまま調整できます。</p>
+        </div>
+        <ul class="layout-grid">
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--phone" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>スマートフォン・縦</b>
+              <p>プレビューの下にパネル。片手でも操作できます。</p>
+            </div>
+          </li>
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--land" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>スマートフォン・横</b>
+              <p>プレビューとパネルを左右に。写真を大きく見ながら。</p>
+            </div>
+          </li>
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--tablet" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>タブレット・2ペイン</b>
+              <p>840dp 以上で2ペイン。プレビューを保ったまま調整。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="privacy" aria-labelledby="privacy-title">
+      <div class="page-width">
+        <div class="privacy-panel">
+          <p class="eyebrow">Privacy</p>
+          <h2 id="privacy-title">写真は、端末から出ない。</h2>
+          <p>Image Shot は INTERNET 権限を宣言していません。写真をアップロードする機能も、解析のために外部へ送る処理もありません。編集はすべて端末内で完結します。</p>
+          <p>広域ストレージ権限も要求せず、読み込みと保存は Android のフォトピッカーと SAF（Storage Access Framework）を通します。元の写真は書き換えず、書き出した JPEG / PNG からは位置情報を外します。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="install" aria-labelledby="install-title">
+      <div class="page-width install-grid">
+        <div class="install-side">
+          <p class="eyebrow">Get started</p>
+          <h2 id="install-title">v0.1.0 を、GitHub から。</h2>
+          <p>Image Shot のソースは GitHub で公開しています。v0.1.0 は署名済み APK として GitHub Releases で配布します。</p>
+          <a class="button" href="https://github.com/oriyu90/image-shot/releases">GitHub Releases を開く</a>
+        </div>
+        <div>
+          <ol class="step-list">
+            <li><span>GitHub のリポジトリ <a href="https://github.com/oriyu90/image-shot">github.com/oriyu90/image-shot</a> を開きます。</span></li>
+            <li><span>Releases から署名済み APK を取得し、端末にインストールします。</span></li>
+            <li><span>ソースから動かす場合はリポジトリをクローンし、Android Studio で開きます。</span></li>
+            <li><span>Android SDK 36 と JDK を用意して <code>./gradlew :app:assembleDebug</code> を実行します。</span></li>
+          </ol>
+          <p class="install-note">対応OSは Android 16（API 36）以降です。写真の読み込みには Android のフォトピッカーと SAF を使用します。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="community" aria-labelledby="community-title">
+      <div class="page-width dev-section">
+        <div>
+          <p class="eyebrow">Developer</p>
+          <h2 id="community-title">つくった人と、つながる場所。</h2>
+          <p>開発者は折田悠希（おりたゆき / Yuki_Orita）。バグ報告や要望は Discord へ、日々の記録は X と公式サイトで。ソースとリリースは GitHub にあります。</p>
+        </div>
+        <nav class="link-list" aria-label="開発者とリンク">
+          <a href="https://github.com/oriyu90/image-shot">GitHub</a>
+          <a href="https://github.com/oriyu90/image-shot/releases">Releases</a>
+          <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+          <a href="https://x.com/InovateofRIZI">X</a>
+          <a href="https://studio-rizi.pages.dev/">公式サイト</a>
+          <a href="https://kizi.pages.dev/">KIZI</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <p>© 2026 Yuki Orita · Image Shot / Prism Photo · MIT License</p>
+      <nav aria-label="フッターリンク">
+        <a href="https://studio-rizi.pages.dev/">Studio RIZI</a>
+        <a href="https://github.com/oriyu90/image-shot">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
