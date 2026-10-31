@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Half-Browser (ハーフブラウザ) — Navegador leve para Android | Yuki Orita</title>
+<meta name="description" content="Half-Browser (ハーフブラウザ) é um navegador leve para Android baseado no Android WebView (Chromium). Analise e confie em páginas HTTPS com certificado autoassinado e salve logins HTTP de forma criptografada para preenchimento automático. Desenvolvido por Yuki Orita (折田悠希 / おりたゆうき), código no GitHub.">
+<meta name="keywords" content="Half-Browser, ハーフブラウザ, 折田悠希, おりたゆき, おりたゆうき, Yuki Orita, Yuki_Orita, github, Android, navegador, Android WebView, certificado autoassinado, HTTPS, autenticação HTTP, favoritos, tema escuro, MIT">
+<meta name="author" content="Yuki Orita (折田悠希)">
+<meta name="theme-color" content="#0a0f1a">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/half-browser/pt/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/half-browser/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/half-browser/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/half-browser/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/half-browser/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/half-browser/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../assets/icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-512.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Half-Browser">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:title" content="Half-Browser (ハーフブラウザ) — Navegador leve para Android">
+<meta property="og:description" content="Navegador leve com Android WebView (Chromium). Confie em páginas HTTPS autoassinadas após revisar o certificado e preencha logins HTTP salvos com criptografia. Por Yuki Orita.">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/half-browser/pt/">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/half-browser/assets/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ícone do Half-Browser, uma marca de meio círculo, com os textos Half-Browser e ハーフブラウザ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Half-Browser (ハーフブラウザ) — Navegador leve para Android">
+<meta name="twitter:description" content="Navegador leve para Android: confie em páginas HTTPS autoassinadas e preencha logins HTTP. Por Yuki Orita.">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/half-browser/assets/og.png">
+<meta name="twitter:image:alt" content="Ícone do Half-Browser com os textos Half-Browser e ハーフブラウザ">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://studio-rizi.pages.dev/projects/half-browser/pt/#software",
+      "name": "Half-Browser",
+      "alternateName": ["ハーフブラウザ", "Half Browser"],
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Android 8.0 (API 26) or later",
+      "softwareVersion": "1.0.0",
+      "inLanguage": "pt",
+      "description": "Navegador leve baseado no Android WebView (Chromium). Certificados HTTPS autoassinados podem ser revisados e confiados por host e certificado; credenciais de autenticação HTTP são criptografadas com o Android Keystore e podem ser preenchidas automaticamente. Oferece blocos de favoritos na tela inicial e pode ser o navegador padrão para links externos. Interface em japonês e inglês. Sem anúncios, análises ou contas.",
+      "url": "https://studio-rizi.pages.dev/projects/half-browser/pt/",
+      "downloadUrl": "https://github.com/oriyu90/half-browser/releases/latest",
+      "codeRepository": "https://github.com/oriyu90/half-browser",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "折田悠希",
+      "alternateName": ["Yuki_Orita", "Yuki Orita", "おりたゆき", "おりたゆうき", "oriyu90"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://x.com/InovateofRIZI",
+        "https://github.com/oriyu90",
+        "https://discord.gg/x7KXhNTD8M"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Voltar ao topo da página do Half-Browser">
+        <img src="../assets/icon-512.png" width="30" height="30" alt="" style="border-radius:8px">
+        <span>Half-Browser</span>
+      </a>
+      <nav class="main-nav" aria-label="Menu da página">
+        <a href="#features">Recursos</a>
+        <a href="#https">HTTPS</a>
+        <a href="#login">Login</a>
+        <a href="#home">Início</a>
+        <a href="#install">Obter</a>
+      </nav>
+      <span class="release-tag">v1.0.0</span>
+    </div>
+    <div class="lang-bar">
+      <nav aria-label="Idioma">
+        <a hreflang="ja" lang="ja" href="/projects/half-browser/">日本語</a>
+        <a hreflang="en" lang="en" href="/projects/half-browser/en/">English</a>
+        <a hreflang="zh-Hans" lang="zh-Hans" href="/projects/half-browser/zh/">简体中文</a>
+        <a hreflang="pt" lang="pt" href="/projects/half-browser/pt/" aria-current="page">Português</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="page-width hero-grid">
+        <div class="hero-copy">
+          <p class="release-line">Android 8.0+ · Android WebView (Chromium) · v1.0.0 · MIT</p>
+          <h1 id="hero-title"><span class="hero-app">Half-Browser / ハーフブラウザ</span>As páginas em que você confia<br><em>sempre por perto.</em></h1>
+          <p class="hero-lead">O Half-Browser é um navegador leve baseado no Android WebView (Chromium). Para páginas HTTPS com certificado autoassinado, você revisa os detalhes do certificado antes de decidir confiar nele. As credenciais de autenticação HTTP são guardadas criptografadas com o Android Keystore e podem ser preenchidas na próxima vez. Sem anúncios, sem análises e sem contas.</p>
+          <div class="hero-actions" role="group" aria-label="Links">
+            <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest">Baixar a versão mais recente</a>
+            <a class="button button-secondary" href="https://github.com/oriyu90/half-browser">Ver no GitHub</a>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>Requisito</dt><dd>Android 8.0 (API 26) ou superior</dd></div>
+            <div><dt>Idioma da interface</dt><dd>Japonês / Inglês</dd></div>
+            <div><dt>Licença</dt><dd>MIT · Gratuito</dd></div>
+            <div><dt>Desenvolvedor</dt><dd>Yuki Orita (Yuki_Orita)</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual">
+          <figure class="shot-frame">
+            <img src="../assets/shot-home-light.png" width="540" height="1200" alt="Tela inicial do Half-Browser no tema claro. Há um campo de busca no topo, um aviso para definir o Half-Browser como navegador padrão e um botão Adicionar favorito." loading="eager" decoding="async">
+            <figcaption>O aplicativo em uso (interface em japonês, tema claro).</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-index" aria-label="Nesta página">
+      <div class="page-index-inner">
+        <span class="page-index-label">Nesta página</span>
+        <ol>
+          <li><a href="#features">Recursos</a></li>
+          <li><a href="#https">HTTPS autoassinado</a></li>
+          <li><a href="#login">Autenticação HTTP</a></li>
+          <li><a href="#home">Início e favoritos</a></li>
+          <li><a href="#default">Navegador padrão</a></li>
+          <li><a href="#display">Tela e idioma</a></li>
+          <li><a href="#install">Obter</a></li>
+          <li><a href="#developer">Desenvolvedor</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">What it does</p>
+            <h2 id="features-title">Só o necessário,<br>em um navegador.</h2>
+          </div>
+          <p>O Half-Browser usa o Android WebView como motor de páginas e mantém as tarefas do dia a dia simples: abrir páginas, guardar favoritos e conferir certificados. Não há anúncios nem análises, e a aparência pode ser ajustada conforme sua preferência.</p>
+        </div>
+        <dl class="feature-list">
+          <div class="feature-row">
+            <span class="feature-num"><i>01</i>HTTPS</span>
+            <h3>Abra páginas HTTPS autoassinadas depois de conferi-las.</h3>
+            <p>Em páginas como um servidor na sua rede local, cujo certificado não foi emitido por uma autoridade pública, você pode conferir o host, o emissor, a impressão digital SHA-256 e a validade, e então escolher "Confiar uma vez" ou "Sempre confiar neste site".</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>02</i>LOGIN</span>
+            <h3>Autenticação HTTP, guardada criptografada e preenchida.</h3>
+            <p>As credenciais Basic e Digest que você digita podem ser salvas e preenchidas automaticamente na próxima vez. Elas são criptografadas com o Android Keystore e o EncryptedSharedPreferences e ficam fora do backup do Android.</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>03</i>HOME</span>
+            <h3>Favoritos como blocos com ícone.</h3>
+            <p>Os favoritos aparecem em grade na tela inicial. Cada bloco tem um ícone de monograma gerado offline. Pressione longamente um bloco para editar, excluir, compartilhar ou adicionar um atalho na tela inicial do aparelho.</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>04</i>DEFAULT</span>
+            <h3>Receba links externos como navegador padrão.</h3>
+            <p>Ao escolher o Half-Browser como navegador padrão nas configurações do Android, ele recebe os links abertos por outros aplicativos. Se a URL já estiver nos favoritos, ela abre com uma barra que mostra o nome do favorito.</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>05</i>THEME</span>
+            <h3>Escuro, claro ou seguindo o sistema.</h3>
+            <p>Escolha o tema escuro, o claro ou o do sistema. Em aparelhos compatíveis, também é possível usar cores dinâmicas.</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>06</i>SIZE</span>
+            <h3>Confortável em celulares e tablets.</h3>
+            <p>Ajuste a escala da interface de 80% a 140% e a escala do texto de 80% a 150%. Escolha o número de colunas da grade: automático, 3, 4, 5, 6 ou 8. O modo paisagem é compatível.</p>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section flow-band" id="https" aria-labelledby="https-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Self-signed HTTPS</p>
+            <h2 id="https-title">Confira o certificado,<br>e então decida confiar.</h2>
+          </div>
+          <p>Quando um certificado não é confiável, o Half-Browser explica o motivo e oferece os detalhes para você examinar. A decisão é sua.</p>
+        </div>
+        <ol class="flow-grid">
+          <li class="flow-step">
+            <span class="flow-num">01</span>
+            <b>Leia o aviso</b>
+            <p>São mostrados o nome do host e o motivo de o certificado não ser confiável, como não ter sido emitido por uma autoridade pública.</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">02</span>
+            <b>Confira os detalhes</b>
+            <p>Abra "Mostrar detalhes do certificado" para ver o emissor, a impressão digital SHA-256 e a data de validade.</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">03</span>
+            <b>Escolha o alcance</b>
+            <p>Selecione "Confiar uma vez" ou "Sempre confiar neste site". A confiança é guardada para a combinação exata de host e certificado.</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">04</span>
+            <b>Perguntado de novo se mudar</b>
+            <p>Se o certificado mudar, você será consultado novamente. Você pode revogar a confiança em um site a qualquer momento nas configurações.</p>
+          </li>
+        </ol>
+        <div class="shot-row" style="margin-top:clamp(28px,4vw,48px)">
+          <figure>
+            <img src="../assets/shot-ssl-trust.png" width="540" height="1200" alt="Caixa de aviso de certificado do Half-Browser com o título Certificado não confiável. Mostra o host 192.168.0.165 e que o certificado não foi emitido por uma autoridade confiável, com os botões Mostrar detalhes do certificado, Sempre confiar neste site, Confiar uma vez e Voltar." loading="lazy" decoding="async">
+            <figcaption>O aviso de um certificado autoassinado. Confira o host e os detalhes antes de escolher o alcance.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="login" aria-labelledby="login-title">
+      <div class="page-width">
+        <div class="privacy-panel">
+          <p class="eyebrow">HTTP authentication</p>
+          <h2 id="login-title">As credenciais ficam protegidas no seu aparelho.</h2>
+          <p>Os nomes de usuário e senhas de autenticação HTTP (Basic e Digest) são guardados no EncryptedSharedPreferences, criptografados com uma chave mantida pelo Android Keystore. Credenciais não são salvas em conexões HTTP sem criptografia.</p>
+          <p>Você pode excluir as credenciais salvas a qualquer momento nas configurações. Elas também ficam fora do backup do Android.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="home" aria-labelledby="home-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Home and bookmarks</p>
+            <h2 id="home-title">Organize as páginas que você usa<br>em blocos.</h2>
+          </div>
+          <p>A tela inicial tem um campo de busca e uma grade de favoritos. Toque em um bloco para abrir a página e pressione longamente para organizar.</p>
+        </div>
+        <div class="shot-row">
+          <figure>
+            <img src="../assets/shot-home-light.png" width="540" height="1200" alt="Tela inicial do Half-Browser no tema claro, sem favoritos ainda. Uma breve explicação e um botão Adicionar favorito aparecem no centro." loading="lazy" decoding="async">
+            <figcaption>Início sem favoritos ainda.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/shot-settings-dark.png" width="540" height="1200" alt="Tela de configurações do Half-Browser no tema escuro, com opções de tema, escala da interface, escala do texto e número de colunas." loading="lazy" decoding="async">
+            <figcaption>Configurações no tema escuro: tema, escalas e colunas.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/og.png" width="1200" height="630" alt="Ícone do Half-Browser, uma marca de meio círculo, com os textos Half-Browser e ハーフブラウザ." loading="lazy" decoding="async" style="aspect-ratio:1200/630;object-fit:cover">
+            <figcaption>O ícone do aplicativo: um meio círculo branco e um contorno azul-céu, representando a "metade".</figcaption>
+          </figure>
+        </div>
+        <ul class="fact-grid" style="margin-top:clamp(28px,4vw,48px)">
+          <li><b>Blocos com ícone</b><span>Ícones de monograma gerados offline. Edite para mudar o nome e o ícone.</span></li>
+          <li><b>Ações com pressão longa</b><span>Editar, excluir, adicionar atalho na tela inicial e compartilhar em um só menu.</span></li>
+          <li><b>Confirmação de atalho</b><span>Uma etapa de confirmação aparece antes de o atalho ser adicionado ao lançador.</span></li>
+          <li><b>Colunas da grade</b><span>Escolha automático, 3, 4, 5, 6 ou 8 colunas conforme a largura da tela.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="default" aria-labelledby="default-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Default browser</p>
+            <h2 id="default-title">Defina como padrão<br>para receber links.</h2>
+          </div>
+          <p>No Android, o navegador padrão é escolhido pelo usuário nas configurações do sistema. Depois de selecionar o Half-Browser, ele recebe os links externos abertos por outros aplicativos. Se a URL já estiver nos favoritos, ela abre com uma barra que mostra o nome do favorito.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="display" aria-labelledby="display-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Display and language</p>
+            <h2 id="display-title">Se adapta à sua tela,<br>e é fácil de ler.</h2>
+          </div>
+          <p>Funciona em celulares, tablets e no modo paisagem. As telas inicial e de configurações mantêm o layout organizado ao alterar o tamanho do texto e da interface.</p>
+        </div>
+        <ul class="layout-grid">
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--phone" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>Celular, retrato</b>
+              <p>Campo de busca e favoritos em ordem, do topo para baixo, fáceis de usar com uma mão.</p>
+            </div>
+          </li>
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--land" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>Celular, paisagem</b>
+              <p>A grade de favoritos e a tela de navegação funcionam também no modo paisagem.</p>
+            </div>
+          </li>
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--tablet" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>Tablet</b>
+              <p>Os blocos de favoritos continuam legíveis na tela mais larga.</p>
+            </div>
+          </li>
+        </ul>
+        <p class="install-note">A interface está disponível em japonês e inglês e segue a configuração de idioma do aparelho.</p>
+      </div>
+    </section>
+
+    <section class="section" id="install" aria-labelledby="install-title">
+      <div class="page-width install-grid">
+        <div class="install-side">
+          <p class="eyebrow">Get started</p>
+          <h2 id="install-title">v1.0.0, a partir do GitHub.</h2>
+          <p>O código-fonte do Half-Browser está publicado no GitHub. A versão mais recente está disponível em GitHub Releases.</p>
+          <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest">Abrir Releases</a>
+        </div>
+        <div>
+          <ol class="step-list">
+            <li><span>Abra o repositório em <a href="https://github.com/oriyu90/half-browser">github.com/oriyu90/half-browser</a>.</span></li>
+            <li><span>Baixe o APK mais recente em Releases e instale-o no seu aparelho Android.</span></li>
+            <li><span>Para receber links externos, escolha o Half-Browser como navegador padrão nas configurações do Android.</span></li>
+            <li><span>Para compilar a partir do código-fonte, clone o repositório e abra-o no Android Studio.</span></li>
+          </ol>
+          <p class="install-note">Requer Android 8.0 (API 26) ou superior. Instalar um APK fora da Play Store pode exigir permitir a instalação de fontes desconhecidas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="developer" aria-labelledby="developer-title">
+      <div class="page-width dev-section">
+        <div>
+          <p class="eyebrow">Developer</p>
+          <h2 id="developer-title">Conheça quem está por trás.</h2>
+          <p>O Half-Browser é desenvolvido por Yuki Orita (折田悠希 / おりたゆき / Yuki_Orita). Envie relatórios de bugs e pedidos no Discord, acompanhe as novidades no X e no site oficial, e encontre o código-fonte e as versões no GitHub.</p>
+        </div>
+        <nav class="link-list" aria-label="Desenvolvedor e links">
+          <a href="https://github.com/oriyu90/half-browser">GitHub</a>
+          <a href="https://github.com/oriyu90/half-browser/releases/latest">Releases</a>
+          <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+          <a href="https://x.com/InovateofRIZI">X</a>
+          <a href="https://studio-rizi.pages.dev/">Site oficial</a>
+          <a href="https://kizi.pages.dev/">KIZI</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <p>© 2026 Yuki Orita · Half-Browser · MIT License</p>
+      <nav aria-label="Links do rodapé">
+        <a href="https://studio-rizi.pages.dev/">Studio RIZI</a>
+        <a href="https://github.com/oriyu90/half-browser">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Half-Browser（ハーフブラウザ）— Android 轻量浏览器 | 折田悠希</title>
+<meta name="description" content="Half-Browser（ハーフブラウザ）是基于 Android WebView（Chromium）的轻量浏览器。可在查看证书信息后信任自签名 HTTPS 页面，并以加密方式保存 HTTP 认证凭据用于自动填充。开发者为折田悠希（おりたゆうき / Yuki_Orita），源代码在 GitHub 公开。">
+<meta name="keywords" content="Half-Browser, ハーフブラウザ, 折田悠希, おりたゆき, おりたゆうき, Yuki Orita, Yuki_Orita, github, Android, 浏览器, Android WebView, 自签名证书, HTTPS, HTTP 认证, 书签, 深色主题, MIT">
+<meta name="author" content="折田悠希 (Yuki_Orita)">
+<meta name="theme-color" content="#0a0f1a">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/half-browser/zh/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/half-browser/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/half-browser/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/half-browser/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/half-browser/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/half-browser/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="../assets/icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-512.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Half-Browser">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:title" content="Half-Browser（ハーフブラウザ）— Android 轻量浏览器">
+<meta property="og:description" content="基于 Android WebView（Chromium）的轻量浏览器。查看证书后信任自签名 HTTPS 页面，加密保存 HTTP 认证凭据并自动填充。开发者折田悠希。">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/half-browser/zh/">
+<meta property="og:image" content="https://studio-rizi.pages.dev/projects/half-browser/assets/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Half-Browser 图标（半圆形标记）与 Half-Browser、ハーフブラウザ 文字">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="Half-Browser（ハーフブラウザ）— Android 轻量浏览器">
+<meta name="twitter:description" content="用于信任自签名 HTTPS 页面、自动填充 HTTP 登录的 Android 轻量浏览器，作者折田悠希。">
+<meta name="twitter:image" content="https://studio-rizi.pages.dev/projects/half-browser/assets/og.png">
+<meta name="twitter:image:alt" content="Half-Browser 图标与 Half-Browser、ハーフブラウザ 文字">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://studio-rizi.pages.dev/projects/half-browser/zh/#software",
+      "name": "Half-Browser",
+      "alternateName": ["ハーフブラウザ", "Half Browser"],
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Android 8.0 (API 26) or later",
+      "softwareVersion": "1.0.0",
+      "inLanguage": "zh-Hans",
+      "description": "基于 Android WebView（Chromium）的轻量浏览器。可按主机和证书查看并信任自签名 HTTPS 证书；HTTP 认证凭据以 Android Keystore 加密保存并可自动填充。支持书签主屏幕磁贴，并可作为外部链接的默认浏览器。界面支持日语和英语。无广告、无分析、无账户。",
+      "url": "https://studio-rizi.pages.dev/projects/half-browser/zh/",
+      "downloadUrl": "https://github.com/oriyu90/half-browser/releases/latest",
+      "codeRepository": "https://github.com/oriyu90/half-browser",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "折田悠希",
+      "alternateName": ["Yuki_Orita", "Yuki Orita", "おりたゆき", "おりたゆうき", "oriyu90"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://x.com/InovateofRIZI",
+        "https://github.com/oriyu90",
+        "https://discord.gg/x7KXhNTD8M"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="返回 Half-Browser 页面顶部">
+        <img src="../assets/icon-512.png" width="30" height="30" alt="" style="border-radius:8px">
+        <span>Half-Browser</span>
+      </a>
+      <nav class="main-nav" aria-label="页面内菜单">
+        <a href="#features">功能</a>
+        <a href="#https">HTTPS</a>
+        <a href="#login">登录</a>
+        <a href="#home">主页</a>
+        <a href="#install">获取</a>
+      </nav>
+      <span class="release-tag">v1.0.0</span>
+    </div>
+    <div class="lang-bar">
+      <nav aria-label="语言切换">
+        <a hreflang="ja" lang="ja" href="/projects/half-browser/">日本語</a>
+        <a hreflang="en" lang="en" href="/projects/half-browser/en/">English</a>
+        <a hreflang="zh-Hans" lang="zh-Hans" href="/projects/half-browser/zh/" aria-current="page">简体中文</a>
+        <a hreflang="pt" lang="pt" href="/projects/half-browser/pt/">Português</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="page-width hero-grid">
+        <div class="hero-copy">
+          <p class="release-line">Android 8.0+ · Android WebView（Chromium）· v1.0.0 · MIT</p>
+          <h1 id="hero-title"><span class="hero-app">Half-Browser / ハーフブラウザ</span>把信任的页面，<br><em>放在手边。</em></h1>
+          <p class="hero-lead">Half-Browser 是基于 Android WebView（Chromium）的轻量浏览器。对于使用自签名证书的 HTTPS 页面，您可以先查看证书详情，再决定是否信任。HTTP 认证凭据以 Android Keystore 加密保存，下次可自动填充。无广告、无分析、无需账户。</p>
+          <div class="hero-actions" role="group" aria-label="链接">
+            <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest">获取最新版本</a>
+            <a class="button button-secondary" href="https://github.com/oriyu90/half-browser">在 GitHub 查看</a>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>系统要求</dt><dd>Android 8.0（API 26）及以上</dd></div>
+            <div><dt>界面语言</dt><dd>日语 / 英语</dd></div>
+            <div><dt>许可证</dt><dd>MIT · 免费</dd></div>
+            <div><dt>开发者</dt><dd>折田悠希（Yuki_Orita）</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual">
+          <figure class="shot-frame">
+            <img src="../assets/shot-home-light.png" width="540" height="1200" alt="Half-Browser 浅色主题主页。顶部是搜索框，下方提示可将 Half-Browser 设为默认浏览器，并显示“添加书签”按钮。" loading="eager" decoding="async">
+            <figcaption>实际应用画面（日语界面，浅色主题）。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-index" aria-label="本页导览">
+      <div class="page-index-inner">
+        <span class="page-index-label">本页导览</span>
+        <ol>
+          <li><a href="#features">功能</a></li>
+          <li><a href="#https">自签名 HTTPS</a></li>
+          <li><a href="#login">HTTP 认证</a></li>
+          <li><a href="#home">主页与书签</a></li>
+          <li><a href="#default">默认浏览器</a></li>
+          <li><a href="#display">显示与语言</a></li>
+          <li><a href="#install">获取</a></li>
+          <li><a href="#developer">开发者</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">What it does</p>
+            <h2 id="features-title">只保留需要的，<br>一个浏览器。</h2>
+          </div>
+          <p>Half-Browser 以 Android WebView 作为页面引擎，让打开网页、保存书签、确认证书这些日常操作保持简单。没有广告和分析，外观也可以按您的喜好调整。</p>
+        </div>
+        <dl class="feature-list">
+          <div class="feature-row">
+            <span class="feature-num"><i>01</i>HTTPS</span>
+            <h3>自签名 HTTPS 页面，确认后再打开。</h3>
+            <p>对于家庭局域网服务器等证书并非由公共机构签发的页面，您可以查看主机、签发者、SHA-256 指纹与有效期，然后选择“仅此一次信任”或“始终信任此站点”。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>02</i>LOGIN</span>
+            <h3>HTTP 认证，加密保存并自动填充。</h3>
+            <p>输入的 Basic 与 Digest 认证用户名和密码可以保存，下次自动填充。凭据使用 Android Keystore 和 EncryptedSharedPreferences 加密，并排除在 Android 备份之外。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>03</i>HOME</span>
+            <h3>书签以带图标的磁贴显示。</h3>
+            <p>书签在主页以网格排列。图标为离线生成的文字单色图标。长按磁贴即可编辑、删除、分享，或添加到桌面快捷方式。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>04</i>DEFAULT</span>
+            <h3>作为默认浏览器接收外部链接。</h3>
+            <p>在 Android 设置中选择 Half-Browser 为默认浏览器后，它会接收其他应用打开的链接。若该网址已加入书签，会在顶部显示书签名称的专用栏后再打开。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>05</i>THEME</span>
+            <h3>深色、浅色，或跟随系统。</h3>
+            <p>可选择深色、浅色或跟随系统主题。在支持的设备上还可以使用动态取色。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>06</i>SIZE</span>
+            <h3>手机与平板都易读。</h3>
+            <p>界面缩放可调为 80%–140%，文字缩放为 80%–150%。网格列数可选自动、3、4、5、6 或 8。支持横屏。</p>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section flow-band" id="https" aria-labelledby="https-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Self-signed HTTPS</p>
+            <h2 id="https-title">先查看证书，<br>再决定是否信任。</h2>
+          </div>
+          <p>证书不受信任时，Half-Browser 会说明原因并提供可查看的详情。判断权在您手中。</p>
+        </div>
+        <ol class="flow-grid">
+          <li class="flow-step">
+            <span class="flow-num">01</span>
+            <b>阅读警告</b>
+            <p>显示主机名以及证书不受信任的原因，例如并非由公共机构签发。</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">02</span>
+            <b>查看详情</b>
+            <p>打开“证书详情”，可确认签发者、SHA-256 指纹和有效期。</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">03</span>
+            <b>选择范围</b>
+            <p>选择“仅此一次信任”或“始终信任此站点”。信任按主机与证书的组合分别保存。</p>
+          </li>
+          <li class="flow-step">
+            <span class="flow-num">04</span>
+            <b>变更后重新确认</b>
+            <p>证书变化时会再次询问。您可以随时在设置中撤销对某站点的信任。</p>
+          </li>
+        </ol>
+        <div class="shot-row" style="margin-top:clamp(28px,4vw,48px)">
+          <figure>
+            <img src="../assets/shot-ssl-trust.png" width="540" height="1200" alt="Half-Browser 证书警告对话框，标题为“证书不受信任”。显示主机 192.168.0.165，以及该证书并非由受信任机构签发，按钮包括“显示证书详情”“始终信任此站点”“仅此一次信任”和“返回”。" loading="lazy" decoding="async">
+            <figcaption>自签名证书的警告。请先查看主机与详情，再选择信任范围。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="login" aria-labelledby="login-title">
+      <div class="page-width">
+        <div class="privacy-panel">
+          <p class="eyebrow">HTTP authentication</p>
+          <h2 id="login-title">凭据在设备内受到保护。</h2>
+          <p>HTTP 认证（Basic 与 Digest）的用户名和密码保存在 EncryptedSharedPreferences 中，使用由 Android Keystore 持有的密钥加密。未加密的 HTTP 连接不会保存凭据。</p>
+          <p>可随时在设置中删除已保存的凭据。这些数据也已排除在 Android 备份之外。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="home" aria-labelledby="home-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Home and bookmarks</p>
+            <h2 id="home-title">把常用页面，<br>排成磁贴。</h2>
+          </div>
+          <p>主页由搜索框和书签网格组成。轻点磁贴即可打开页面，长按则可整理。</p>
+        </div>
+        <div class="shot-row">
+          <figure>
+            <img src="../assets/shot-home-light.png" width="540" height="1200" alt="Half-Browser 浅色主题主页，尚无书签。中央显示说明文字和“添加书签”按钮。" loading="lazy" decoding="async">
+            <figcaption>尚无书签时的主页。</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/shot-settings-dark.png" width="540" height="1200" alt="Half-Browser 深色主题设置页面，列出主题、界面缩放、文字缩放和网格列数等选项。" loading="lazy" decoding="async">
+            <figcaption>深色主题的设置页面：主题、缩放与列数。</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/og.png" width="1200" height="630" alt="Half-Browser 图标（半圆形标记）与 Half-Browser、ハーフブラウザ 文字。" loading="lazy" decoding="async" style="aspect-ratio:1200/630;object-fit:cover">
+            <figcaption>应用图标：白色实心半圆与天蓝色轮廓，表示“一半”。</figcaption>
+          </figure>
+        </div>
+        <ul class="fact-grid" style="margin-top:clamp(28px,4vw,48px)">
+          <li><b>图标磁贴</b><span>离线生成的文字单色图标，可编辑为喜欢的名称与图标。</span></li>
+          <li><b>长按操作</b><span>编辑、删除、添加主屏幕快捷方式与分享，都在一个菜单中完成。</span></li>
+          <li><b>快捷方式确认</b><span>添加到桌面前会先弹出确认步骤。</span></li>
+          <li><b>网格列数</b><span>可在自动、3、4、5、6、8 列之间选择，适合屏幕宽度。</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="default" aria-labelledby="default-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Default browser</p>
+            <h2 id="default-title">设为默认，<br>即可接收链接。</h2>
+          </div>
+          <p>在 Android 中，默认浏览器由用户在系统设置里选择。选择 Half-Browser 后，它会接收其他应用打开的外部链接。若网址已加入书签，会在顶部显示书签名称的专用栏后再打开。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="display" aria-labelledby="display-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Display and language</p>
+            <h2 id="display-title">适配屏幕，<br>便于阅读。</h2>
+          </div>
+          <p>支持手机、平板与横屏。调整文字和界面大小时，主页与设置页面仍保持清晰的布局。</p>
+        </div>
+        <ul class="layout-grid">
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--phone" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>手机・竖屏</b>
+              <p>搜索框与书签自上而下排列，单手也便于操作。</p>
+            </div>
+          </li>
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--land" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>手机・横屏</b>
+              <p>横屏下书签网格与浏览界面同样可以使用。</p>
+            </div>
+          </li>
+          <li class="device-card">
+            <div class="device-stage"><div class="device device--tablet" aria-hidden="true"><span></span><span></span></div></div>
+            <div>
+              <b>平板</b>
+              <p>在更宽的屏幕上，书签磁贴依然易于阅读。</p>
+            </div>
+          </li>
+        </ul>
+        <p class="install-note">界面支持日语与英语，并跟随设备的语言设置显示。</p>
+      </div>
+    </section>
+
+    <section class="section" id="install" aria-labelledby="install-title">
+      <div class="page-width install-grid">
+        <div class="install-side">
+          <p class="eyebrow">Get started</p>
+          <h2 id="install-title">从 GitHub 获取 v1.0.0。</h2>
+          <p>Half-Browser 的源代码在 GitHub 公开，最新版本可从 GitHub Releases 获取。</p>
+          <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest">打开 Releases</a>
+        </div>
+        <div>
+          <ol class="step-list">
+            <li><span>打开仓库 <a href="https://github.com/oriyu90/half-browser">github.com/oriyu90/half-browser</a>。</span></li>
+            <li><span>从 Releases 下载最新 APK，并安装到 Android 设备上。</span></li>
+            <li><span>若要接收外部链接，请在 Android 设置中将 Half-Browser 设为默认浏览器。</span></li>
+            <li><span>若要从源代码构建，请克隆仓库并用 Android Studio 打开。</span></li>
+          </ol>
+          <p class="install-note">需要 Android 8.0（API 26）及以上。从 Play 商店以外安装 APK 时，可能需要允许安装未知来源的应用。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="developer" aria-labelledby="developer-title">
+      <div class="page-width dev-section">
+        <div>
+          <p class="eyebrow">Developer</p>
+          <h2 id="developer-title">认识作品背后的人。</h2>
+          <p>Half-Browser 由折田悠希（おりたゆき / Yuki_Orita）开发。错误报告与需求请发至 Discord，更新动态可在 X 与官方网站查看，源代码与发布版本在 GitHub。</p>
+        </div>
+        <nav class="link-list" aria-label="开发者与链接">
+          <a href="https://github.com/oriyu90/half-browser">GitHub</a>
+          <a href="https://github.com/oriyu90/half-browser/releases/latest">Releases</a>
+          <a href="https://discord.gg/x7KXhNTD8M">Discord</a>
+          <a href="https://x.com/InovateofRIZI">X</a>
+          <a href="https://studio-rizi.pages.dev/">官方网站</a>
+          <a href="https://kizi.pages.dev/">KIZI</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <p>© 2026 Yuki Orita · Half-Browser · MIT License</p>
+      <nav aria-label="页脚链接">
+        <a href="https://studio-rizi.pages.dev/">Studio RIZI</a>
+        <a href="https://github.com/oriyu90/half-browser">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

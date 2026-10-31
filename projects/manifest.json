@@ -38,6 +38,13 @@
       "hosted": true
     },
     {
+      "slug": "half-browser",
+      "name": "Half-Browser",
+      "repository": "https://github.com/oriyu90/half-browser",
+      "url": "https://studio-rizi.pages.dev/projects/half-browser/",
+      "hosted": true
+    },
+    {
       "slug": "humi",
       "name": "Humi",
       "repository": "https://github.com/oriyu90/humi",
