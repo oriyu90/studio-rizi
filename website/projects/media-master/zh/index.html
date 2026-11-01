@@ -50,7 +50,7 @@
       "alternateName": ["メディアマスター"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android 7.0 (API 24) or later",
-      "softwareVersion": "2.0.0",
+      "softwareVersion": "2.0.1",
       "inLanguage": "zh-Hans",
       "description": "一款开源 Android 媒体与文件管理应用，集照片/视频浏览、音频播放、文档扫描、存储工具、应用/APK 管理以及 SMB/WebDAV 网络存储于一体。内置通用文档查看器可直接打开文本、CSV、JSON、Markdown、PDF、Word/PowerPoint 及 LaTeX 文件（KaTeX 离线公式渲染），其他应用可通过 mediamaster:// 方案直接打开任一功能。",
       "url": "https://studio-rizi.pages.dev/projects/media-master/zh/",
@@ -95,7 +95,7 @@
         <a href="#languages">语言</a>
         <a class="nav-download" href="#get-started">获取</a>
       </nav>
-      <span class="header-release">v2.0.0</span>
+      <span class="header-release">v2.0.1</span>
     </div>
     <nav class="language-switcher-bar" aria-label="语言">
       <a hreflang="ja" lang="ja" href="/projects/media-master/">日本語</a>
@@ -110,7 +110,7 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <div>
-            <p class="release-line">Android · Kotlin / Jetpack Compose · 开源 · v2.0.0</p>
+            <p class="release-line">Android · Kotlin / Jetpack Compose · 开源 · v2.0.1</p>
             <h1 id="hero-title">照片、音乐、文档，<br>都在一处</h1>
             <p class="hero-lead">Media Master 是一款开源的 Android 媒体与文件管理应用，把照片、视频、音乐、文档、存储、应用以及网络共享上的文件放进同一个应用。无需账号、无需注册，打开即用。</p>
           </div>
@@ -119,7 +119,7 @@
             <a class="button button-secondary" href="https://github.com/oriyu90/media-master/releases/latest">安装 APK</a>
           </div>
         </div>
-        <aside class="hero-aside" aria-label="Media Master v2.0.0">
+        <aside class="hero-aside" aria-label="Media Master v2.0.1">
           <div class="hero-icon" aria-hidden="true">
             <svg viewBox="0 0 108 108" width="152" height="152">
               <rect width="108" height="108" rx="26" fill="var(--color-ink)"></rect>
@@ -127,7 +127,7 @@
               <path d="M46 49v18l15-9-15-9z" fill="var(--color-ink)"></path>
             </svg>
           </div>
-          <p class="aside-note">v2.0.0 现在会在他应用发送图片/视频时直接在应用内查看器全屏打开，而不是图库列表。若文件在图库中可见，可左右滑动浏览图库顺序；若不在，则仅显示单页，返回/下滑/关闭会回到图库画面。仅外部文件会隐藏删除与重命名，保留分享、编辑与文字识别。</p>
+          <p class="aside-note">v2.0.1 为品质修正版。修复了分享其他应用传入照片时的崩溃，整理了查看器工具栏（删除、重命名与文件信息移入 ⋮ 菜单），使文件名更易读；对于不提供大小/日期的来源显示“未知”，加载失败时显示工具栏以便关闭。外部图片全屏显示与图库联动翻页与 v2.0.0 相同。</p>
           <ul class="aside-facts" aria-label="概览">
             <li><span>系统</span>Android 7.0 及以上</li>
             <li><span>语言</span>五种</li>
@@ -274,12 +274,12 @@
       <div class="page-width">
         <div class="section-heading">
           <h2 id="get-started-title">立即试用已签名的 APK。</h2>
-          <p>Media Master v2.0.0 以已签名 APK 的形式发布于 GitHub Releases。其他应用的图片/视频现在会直接在图库查看器中打开：在图库内可左右滑动浏览，否则单页显示，关闭后回到图库。</p>
+          <p>Media Master v2.0.1 以已签名 APK 的形式发布于 GitHub Releases。在 v2.0.0 外部媒体显示的基础上，修复了分享崩溃、工具栏拥挤与文件信息不准确的问题。</p>
         </div>
         <article class="install-platform">
           <h3>获取或自行构建</h3>
           <ol class="step-list">
-            <li><span class="step-number">1</span><span>从 <a href="https://github.com/oriyu90/media-master/releases/tag/v2.0.0">GitHub Releases</a> 下载并安装已签名的 APK。</span></li>
+            <li><span class="step-number">1</span><span>从 <a href="https://github.com/oriyu90/media-master/releases/tag/v2.0.1">GitHub Releases</a> 下载并安装已签名的 APK。</span></li>
             <li><span class="step-number">2</span><span>如需从源码构建，克隆 <a href="https://github.com/oriyu90/media-master">GitHub 仓库</a>并用 Android Studio 打开。</span></li>
             <li><span class="step-number">3</span><span>准备 Android SDK 36 与 JDK 21（源码兼容级别为 Java 17）。</span></li>
             <li><span class="step-number">4</span><span>在终端运行 <code>./gradlew :app:assembleDebug</code>，或从 Android Studio 运行。</span></li>
