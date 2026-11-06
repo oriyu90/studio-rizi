@@ -52,7 +52,7 @@
       "name": "Half-Browser",
       "alternateName": ["ハーフブラウザ", "Half Browser"],
       "applicationCategory": "BrowserApplication",
-      "operatingSystem": "Android 8.0 (API 26) or later",
+      "operatingSystem": "Android 8.0 (API 26) or later, macOS 14 or later (Apple Silicon)",
       "softwareVersion": "1.5.1",
       "inLanguage": "ja",
       "description": "Android WebView（Chromium）で動く軽量ブラウザ。自己署名証明書のHTTPSページを証明書情報を確認して信頼でき、HTTP認証の資格情報をAndroid Keystoreで暗号化して保存・自動入力できます。ブックマークのホーム画面タイル、既定ブラウザとしての外部リンク受け取りに対応。日本語・English。広告・解析・アカウントなし。",
@@ -113,7 +113,7 @@
         <div class="hero-copy">
           <p class="release-line">Android 8.0+ · Android WebView（Chromium） · v1.5.1 · MIT</p>
           <h1 id="hero-title"><span class="hero-app">Half-Browser / ハーフブラウザ</span>信頼したページを、<br><em>手元に近く。</em></h1>
-          <p class="hero-lead">Half-Browser は、Android WebView（Chromium）で動く軽量ブラウザです。自己署名証明書の HTTPS ページは、証明書の内容を確認してから信頼するかを選べます。HTTP 認証の資格情報は、Android Keystore で暗号化して保存し、次回から自動入力できます。広告・解析・アカウントはありません。</p>
+          <p class="hero-lead">Half-Browser は、Android（WebView）と macOS（Chromium / CEF）で動く軽量ブラウザです。自己署名証明書の HTTPS ページは、証明書の内容を確認してから信頼するかを選べます。HTTP 認証の資格情報は、Android Keystore で暗号化して保存し、次回から自動入力できます。広告・解析・アカウントはありません。</p>
           <p class="release-line">v1.5.1: ダークモードでページ読み込み中に表示される白い画面を抑え、黒い画面で待てるようにしました。ライトモードは従来どおりです。</p>
           <div class="hero-actions" role="group" aria-label="リンク">
             <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest/download/half-browser.apk">最新版を入手する</a>
@@ -356,17 +356,18 @@
         <div class="install-side">
           <p class="eyebrow">Get started</p>
           <h2 id="install-title">v1.5.1 を、GitHub から。</h2>
-          <p>Half-Browser のソースは GitHub で公開しています。最新版は GitHub Releases から入手できます。</p>
+          <p>Half-Browser のソースは GitHub で公開しています。Android 版は APK、macOS 版は DMG を GitHub Releases から入手できます。</p>
           <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest">Releases を開く</a>
         </div>
         <div>
           <ol class="step-list">
             <li><span>GitHub のリポジトリ <a href="https://github.com/oriyu90/half-browser">github.com/oriyu90/half-browser</a> を開きます。</span></li>
-            <li><span>Releases から最新版の APK を取得し、Android 端末にインストールします。</span></li>
+            <li><span><strong>Android</strong>: Releases から最新版の APK を取得し、端末にインストールします。</span></li>
+            <li><span><strong>macOS</strong>: Releases から <code>Half-Browser-1.5.1-macOS-arm64.dmg</code> を取得し、アプリケーションフォルダへ移動します。</span></li>
             <li><span>Android の設定で既定ブラウザに選ぶと、外部リンクを Half-Browser で開けます。</span></li>
-            <li><span>ソースから動かす場合はリポジトリをクローンし、Android Studio で開きます。</span></li>
+            <li><span>ソースから動かす場合はリポジトリをクローンし、Android Studio（Android）または <code>scripts/build.sh</code>（macOS）でビルドします。</span></li>
           </ol>
-          <p class="install-note">対応OSは Android 8.0（API 26）以降です。インストールには、提供元不明のアプリに関する設定の許可が必要になる場合があります。</p>
+          <p class="install-note">対応OSは Android 8.0（API 26）以降、および macOS 14 以降（Apple Silicon）です。Android は提供元不明のアプリの許可が、macOS は初回起動時の確認（右クリック →「開く」）が必要になる場合があります。</p>
         </div>
       </div>
     </section>

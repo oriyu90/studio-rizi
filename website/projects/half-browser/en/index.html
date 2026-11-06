@@ -52,7 +52,7 @@
       "name": "Half-Browser",
       "alternateName": ["ハーフブラウザ", "Half Browser"],
       "applicationCategory": "BrowserApplication",
-      "operatingSystem": "Android 8.0 (API 26) or later",
+      "operatingSystem": "Android 8.0 (API 26) or later, macOS 14 or later (Apple Silicon)",
       "softwareVersion": "1.5.1",
       "inLanguage": "en",
       "description": "A lightweight browser built on Android WebView (Chromium). Self-signed HTTPS certificates can be reviewed and trusted per host and certificate; HTTP authentication credentials are encrypted with Android Keystore and can be autofilled. Supports bookmark home tiles and acts as the default browser for external links. Japanese and English UI. No ads, analytics, or accounts.",
@@ -356,17 +356,18 @@
         <div class="install-side">
           <p class="eyebrow">Get started</p>
           <h2 id="install-title">v1.5.1, from GitHub.</h2>
-          <p>The Half-Browser source is published on GitHub. The latest release is available on GitHub Releases.</p>
+          <p>The Half-Browser source is published on GitHub. Android ships as an APK and macOS as a DMG, both from GitHub Releases.</p>
           <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest">Open Releases</a>
         </div>
         <div>
           <ol class="step-list">
             <li><span>Open the repository at <a href="https://github.com/oriyu90/half-browser">github.com/oriyu90/half-browser</a>.</span></li>
-            <li><span>Download the latest APK from Releases and install it on your Android device.</span></li>
+            <li><span><strong>Android</strong>: download the latest APK from Releases and install it on your device.</span></li>
+            <li><span><strong>macOS</strong>: download <code>Half-Browser-1.5.1-macOS-arm64.dmg</code> from Releases and move the app to Applications.</span></li>
             <li><span>To receive external links, choose Half-Browser as the default browser in Android settings.</span></li>
-            <li><span>To build from source, clone the repository and open it in Android Studio.</span></li>
+            <li><span>To build from source, clone the repository and use Android Studio (Android) or <code>scripts/build.sh</code> (macOS).</span></li>
           </ol>
-          <p class="install-note">Requires Android 8.0 (API 26) or later. Installing an APK outside the Play Store may require allowing installs from unknown sources.</p>
+          <p class="install-note">Requires Android 8.0 (API 26) or later, or macOS 14 or later on Apple Silicon. Android may ask you to allow installs from unknown sources; on macOS, right-click the app and choose Open the first time.</p>
         </div>
       </div>
     </section>
