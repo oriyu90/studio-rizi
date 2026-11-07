@@ -115,6 +115,13 @@
       "hosted": true
     },
     {
+      "slug": "super-dictation-jp",
+      "name": "super-dictation-jp",
+      "repository": "https://github.com/oriyu90/super-dictation-jp",
+      "url": "https://studio-rizi.pages.dev/projects/super-dictation-jp/",
+      "hosted": true
+    },
+    {
       "slug": "tango-pro",
       "name": "Tango pro",
       "repository": "https://github.com/oriyu90/Tango-pro",
