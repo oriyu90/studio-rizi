@@ -10,3 +10,13 @@
 .download-section .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
 .download-section .hero-actions .button{flex:1 1 220px;text-align:center}
 @media(max-width:640px){.hero-os .button,.download-section .hero-actions .button{flex-basis:100%}}
+
+/* β4.0 Rust 版（プレリリース）セクション */
+.beta-section{border-top:1px solid #ffffff2e;margin-top:0}
+.beta-section .download-content{max-width:100%}
+.beta-section .beta-points{display:grid;gap:14px;margin:34px 0 0;padding:0;list-style:none}
+.beta-section .beta-points li{position:relative;padding-left:22px;color:#c8cbc6;font-size:15px;line-height:1.8}
+.beta-section .beta-points li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:8px;background:var(--gold);border-radius:50%}
+.beta-section .beta-points strong{color:#f7f4ea}
+.beta-section .hero-actions{margin-top:34px}
+@media(max-width:650px){.beta-section .beta-points li{font-size:14px;line-height:1.75}}
