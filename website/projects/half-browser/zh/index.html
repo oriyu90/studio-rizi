@@ -53,7 +53,7 @@
       "alternateName": ["ハーフブラウザ", "Half Browser"],
       "applicationCategory": "BrowserApplication",
       "operatingSystem": "Android 8.0 (API 26) or later",
-      "softwareVersion": "1.5.1",
+      "softwareVersion": "1.6.0",
       "inLanguage": "zh-Hans",
       "description": "基于 Android WebView（Chromium）的轻量浏览器。可按主机和证书查看并信任自签名 HTTPS 证书；HTTP 认证凭据以 Android Keystore 加密保存并可自动填充。支持书签主屏幕磁贴，并可作为外部链接的默认浏览器。界面支持日语和英语。无广告、无分析、无账户。",
       "url": "https://studio-rizi.pages.dev/projects/half-browser/zh/",
@@ -95,7 +95,7 @@
         <a href="#home">主页</a>
         <a href="#install">获取</a>
       </nav>
-      <span class="release-tag">v1.5.1</span>
+      <span class="release-tag">v1.6.0</span>
     </div>
     <div class="lang-bar">
       <nav aria-label="语言切换">
@@ -111,7 +111,7 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="page-width hero-grid">
         <div class="hero-copy">
-          <p class="release-line">Android 8.0+ · Android WebView（Chromium）· v1.5.1 · MIT</p>
+          <p class="release-line">Android 8.0+ · Android WebView（Chromium）· v1.6.0 · MIT</p>
           <h1 id="hero-title"><span class="hero-app">Half-Browser / ハーフブラウザ</span>把信任的页面，<br><em>放在手边。</em></h1>
           <p class="hero-lead">Half-Browser 是基于 Android WebView（Chromium）的轻量浏览器。对于使用自签名证书的 HTTPS 页面，您可以先查看证书详情，再决定是否信任。HTTP 认证凭据以 Android Keystore 加密保存，下次可自动填充。无广告、无分析、无需账户。</p>
           <p class="release-line">v1.5.1 减少深色模式下网页加载时的白屏，浅色模式保持不变。</p>
@@ -148,6 +148,16 @@
             <span class="feature-num"><i>11</i>TYPE</span>
             <h3>输入框不会被键盘挡住。</h3>
             <p>聚焦输入框时页面会缩到键盘上方，聊天输入栏始终可见。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>07</i>VPN</span>
+            <h3>应用内 VPN，只保护本浏览器的流量。</h3>
+            <p>注册 WireGuard 配置后，只有 Half-Browser 自身的流量经由 VPN 服务器，其他应用继续使用普通连接。可从主屏幕底部连接、断开与重连，配置使用 Android Keystore 加密保存。</p>
+          </div>
+          <div class="feature-row">
+            <span class="feature-num"><i>08</i>GUARD</span>
+            <h3>拦截恶意脚本的连环攻击。</h3>
+            <p>限制 alert 连续弹窗、弹窗风暴、阻止离开页面的陷阱以及 javascript: 跳转。确认对话框由应用显示并标注来源页面，页面无法冒充浏览器。可在设置中随时开关。</p>
           </div>
         </dl>
         </div>
