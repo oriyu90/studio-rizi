@@ -49,7 +49,7 @@
       "alternateName": ["エムエルエックスバー", "MLXバー"],
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "macOS 14.0 or later, Apple Silicon",
-      "softwareVersion": "5.0.1",
+      "softwareVersion": "5.0.2",
       "url": "https://studio-rizi.pages.dev/projects/mlx-bar/",
       "downloadUrl": "https://github.com/oriyu90/mlx-bar/releases",
       "codeRepository": "https://github.com/oriyu90/mlx-bar",
@@ -103,7 +103,7 @@
   <div class="hero">
     <div class="wrap">
       <div>
-        <p class="kicker">macOS 14+ / Apple Silicon / v5.0.1</p>
+        <p class="kicker">macOS 14+ / Apple Silicon / v5.0.2</p>
         <h1 data-i18n="hero.h1" data-i18n-html="true"><span>MacのローカルAIを、</span><span>メニューバーから。</span></h1>
         <p data-i18n="hero.p">
           MLXBar（エムエルエックスバー）は、Apple Silicon Mac上のMLX LM・MLX VLM・LM Studioモデルを
@@ -195,26 +195,26 @@
       <h2 data-i18n="start.h2">使いはじめる</h2>
       <p class="lede" data-i18n="start.lede">アカウント登録も、APIキーの取得も要りません。</p>
       <ol class="steps">
-        <li><span data-i18n="start.s1" data-i18n-html="true"><b>ダウンロードして開く。</b> GitHub Releasesから <code>MLXBar-5.0.1.dmg</code> を取得し、<code>MLXBar.app</code> を「アプリケーション」へコピーします。</span></li>
+        <li><span data-i18n="start.s1" data-i18n-html="true"><b>ダウンロードして開く。</b> GitHub Releasesから <code>MLXBar-5.0.2.dmg</code> を取得し、<code>MLXBar.app</code> を「アプリケーション」へコピーします。</span></li>
         <li><span data-i18n="start.s2" data-i18n-html="true"><b>起動する。</b> メニューバーにアイコンが並びます。<code>mlx-lm</code> と <code>mlx-vlm</code> が未導入の場合は、バックグラウンドで自動的に用意されます。</span></li>
         <li><span data-i18n="start.s3" data-i18n-html="true"><b>モデルを選ぶ。</b> 「モデルを選択…」から、Mac上にあるモデルを検索して読み込みます。</span></li>
         <li><span data-i18n="start.s4" data-i18n-html="true"><b>使う。</b> 「クイックチャット…」で対話するか、<code>http://127.0.0.1:11435</code> のOpenAI互換APIへ接続します。</span></li>
       </ol>
       <p class="note" data-i18n="start.note">
-        このビルドは ad-hoc 署名で、Apple の公証は受けていません。初回起動時に「システム設定」→「プライバシーとセキュリティ」からの許可が必要になることがあります。MLXBar-5.0.1.dmg の SHA-256: 10471484fbfe7b08784aa2401c1a8c6237afe8279b3d771ad082649166754a84
+        このビルドは ad-hoc 署名で、Apple の公証は受けていません。初回起動時に「システム設定」→「プライバシーとセキュリティ」からの許可が必要になることがあります。MLXBar-5.0.2.dmg の SHA-256: aa397d0f9b37ed4671a9ead48f7248054e7ccaac8eb0174bae4efac83a68e71b
       </p>
     </div>
   </section>
 
   <section id="whatsnew">
     <div class="wrap">
-      <h2 data-i18n="whatsnew.h2">v5.0.1での変更点</h2>
-      <p class="lede" data-i18n="whatsnew.lede">v5.0.0から更新するだけで、JANGH2とNiwakiの案内が改善されます。通常モデルの使い方はそのままです。</p>
+      <h2 data-i18n="whatsnew.h2">v5.0.2での変更点</h2>
+      <p class="lede" data-i18n="whatsnew.lede">v5.0.1から更新するだけで、Niwakiの応答が正常化します。通常モデルの使い方はそのままです。</p>
       <ol class="steps">
-        <li><span data-i18n="whatsnew.jang" data-i18n-html="true"><b>JANGH2は数秒で即失敗します。</b> JANGH2（jangtq2）形式は MLXBar / MLX LM / MLX VLM / LM Studio / oMLX では実行できないため、Osaurus 0.25.24+ での実行を案内します。</span></li>
-        <li><span data-i18n="whatsnew.niwaki" data-i18n-html="true"><b>Niwakiは同梱ローダーを許可すれば読めます。</b> 既存の同梱ローダーを使います（既定は無効）。「設定 → モデル → バンドル済みローダーを許可」を有効にしてください。エラー文言とカタログバナーで案内します。</span></li>
-        <li><span data-i18n="whatsnew.error" data-i18n-html="true"><b>新しいエラーコードがあります。</b> JANGには <code>MODEL_JANG_OSAURUS_REQUIRED</code> を返します（日英表記）。Niwakiは従来の <code>MODEL_NEEDS_BUNDLED_LOADER</code> を使います。</span></li>
-        <li><span data-i18n="whatsnew.catalog" data-i18n-html="true"><b>カタログ分類版4になりました。</b> 既存インストールでも起動時に再走査し、JANGH2の行が更新されます。</span></li>
+        <li><span data-i18n="whatsnew.regression" data-i18n-html="true"><b>Niwakiの退化生成を修正しました。</b> mlx-vlm 0.7.12のbatch-invariantがcompact MoEのremapを迂回していたため、bundledモデルにだけbatch-invariantを無効化し通常forwardへ切り替えます。</span></li>
+        <li><span data-i18n="whatsnew.api" data-i18n-html="true"><b>外部APIの応答が正常化します。</b> chat/completions・Anthropic・streamで、2+2→4、Parisなどの正しい応答が返ります。</span></li>
+        <li><span data-i18n="whatsnew.modalities" data-i18n-html="true"><b>workerのmodalitiesをテンソル証拠準拠にしました。</b> Niwakiはtextのみ表示で、画像ボタンは無効です。</span></li>
+        <li><span data-i18n="whatsnew.safety" data-i18n-html="true"><b>ロードの安全マージンが向上します。</b> ロード失敗時の部分ロード解放、キャッシュfingerprintへのloaderId混ぜ込み、bundledへのadmission strict強制（37GB級）です。</span></li>
       </ol>
     </div>
   </section>
@@ -241,7 +241,7 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       <table class="spec">
         <tr><th scope="row" data-i18n="spec.mac">対応Mac</th><td>Apple Silicon（M1以降）</td></tr>
         <tr><th scope="row" data-i18n="spec.macos">macOS</th><td data-i18n="spec.macosValue">14以降（15以降を推奨）</td></tr>
-        <tr><th scope="row" data-i18n="spec.latest">最新版</th><td>v5.0.1</td></tr>
+        <tr><th scope="row" data-i18n="spec.latest">最新版</th><td>v5.0.2</td></tr>
         <tr><th scope="row" data-i18n="spec.price">価格</th><td data-i18n="spec.priceValue">無料（MITライセンスのオープンソース）</td></tr>
         <tr><th scope="row" data-i18n="spec.lang">表示言語</th><td>English / 日本語</td></tr>
         <tr><th scope="row" data-i18n="spec.optional">任意</th><td data-i18n="spec.optionalValue" data-i18n-html="true">GGUFモデルを使う場合はLM Studioと <code>lms</code> CLI</td></tr>
@@ -344,17 +344,17 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       "features.f7d": "キューが一杯のときや、ローカルで応答できないときに、登録した外部AIプロバイダー（OpenAI Chat Completions / OpenAI Responses / Anthropic Messages）へリクエストを転送できます。モデルごとの優先順位・フォールバック元モデル・レート上限・画像対応を設定でき、<b>既定では無効</b>です。",
       "start.h2": "使いはじめる",
       "start.lede": "アカウント登録も、APIキーの取得も要りません。",
-      "start.s1": "<b>ダウンロードして開く。</b> GitHub Releasesから <code>MLXBar-5.0.1.dmg</code> を取得し、<code>MLXBar.app</code> を「アプリケーション」へコピーします。",
+      "start.s1": "<b>ダウンロードして開く。</b> GitHub Releasesから <code>MLXBar-5.0.2.dmg</code> を取得し、<code>MLXBar.app</code> を「アプリケーション」へコピーします。",
       "start.s2": "<b>起動する。</b> メニューバーにアイコンが並びます。<code>mlx-lm</code> と <code>mlx-vlm</code> が未導入の場合は、バックグラウンドで自動的に用意されます。",
       "start.s3": "<b>モデルを選ぶ。</b> 「モデルを選択…」から、Mac上にあるモデルを検索して読み込みます。",
       "start.s4": "<b>使う。</b> 「クイックチャット…」で対話するか、<code>http://127.0.0.1:11435</code> のOpenAI互換APIへ接続します。",
-      "start.note": "このビルドは ad-hoc 署名で、Apple の公証は受けていません。初回起動時に「システム設定」→「プライバシーとセキュリティ」からの許可が必要になることがあります。MLXBar-5.0.1.dmg の SHA-256: 10471484fbfe7b08784aa2401c1a8c6237afe8279b3d771ad082649166754a84",
-      "whatsnew.h2": "v5.0.1での変更点",
-      "whatsnew.lede": "v5.0.0から更新するだけで、JANGH2とNiwakiの案内が改善されます。通常モデルの使い方はそのままです。",
-      "whatsnew.jang": "<b>JANGH2は数秒で即失敗します。</b> JANGH2（jangtq2）形式は MLXBar / MLX LM / MLX VLM / LM Studio / oMLX では実行できないため、Osaurus 0.25.24+ での実行を案内します。",
-      "whatsnew.niwaki": "<b>Niwakiは同梱ローダーを許可すれば読めます。</b> 既存の同梱ローダーを使います（既定は無効）。「設定 → モデル → バンドル済みローダーを許可」を有効にしてください。エラー文言とカタログバナーで案内します。",
-      "whatsnew.error": "<b>新しいエラーコードがあります。</b> JANGには <code>MODEL_JANG_OSAURUS_REQUIRED</code> を返します（日英表記）。Niwakiは従来の <code>MODEL_NEEDS_BUNDLED_LOADER</code> を使います。",
-      "whatsnew.catalog": "<b>カタログ分類版4になりました。</b> 既存インストールでも起動時に再走査し、JANGH2の行が更新されます。",
+      "start.note": "このビルドは ad-hoc 署名で、Apple の公証は受けていません。初回起動時に「システム設定」→「プライバシーとセキュリティ」からの許可が必要になることがあります。MLXBar-5.0.2.dmg の SHA-256: aa397d0f9b37ed4671a9ead48f7248054e7ccaac8eb0174bae4efac83a68e71b",
+      "whatsnew.h2": "v5.0.2での変更点",
+      "whatsnew.lede": "v5.0.1から更新するだけで、Niwakiの応答が正常化します。通常モデルの使い方はそのままです。",
+      "whatsnew.regression": "<b>Niwakiの退化生成を修正しました。</b> mlx-vlm 0.7.12のbatch-invariantがcompact MoEのremapを迂回していたため、bundledモデルにだけbatch-invariantを無効化し通常forwardへ切り替えます。",
+      "whatsnew.api": "<b>外部APIの応答が正常化します。</b> chat/completions・Anthropic・streamで、2+2→4、Parisなどの正しい応答が返ります。",
+      "whatsnew.modalities": "<b>workerのmodalitiesをテンソル証拠準拠にしました。</b> Niwakiはtextのみ表示で、画像ボタンは無効です。",
+      "whatsnew.safety": "<b>ロードの安全マージンが向上します。</b> ロード失敗時の部分ロード解放、キャッシュfingerprintへのloaderId混ぜ込み、bundledへのadmission strict強制（37GB級）です。",
       "api.h2": "既存のツールから、そのまま",
       "api.lede": "OpenAI互換のクライアントであれば、ベースURLとAPIキーを差し替えるだけで接続できます。",
       "api.comment": "# APIキーは設定画面の「APIサーバー」からコピーできます",
@@ -435,17 +435,17 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       "features.f7d": "When the queue is full or the local model cannot answer, forward the request to an external AI provider you register (OpenAI Chat Completions, OpenAI Responses or Anthropic Messages). Set a priority, the MLXBar models it answers for, a request rate limit and image support per model. <b>Off by default.</b>",
       "start.h2": "Get started",
       "start.lede": "No account, no API key to obtain.",
-      "start.s1": "<b>Download and open it.</b> Get <code>MLXBar-5.0.1.dmg</code> from GitHub Releases and copy <code>MLXBar.app</code> to Applications.",
+      "start.s1": "<b>Download and open it.</b> Get <code>MLXBar-5.0.2.dmg</code> from GitHub Releases and copy <code>MLXBar.app</code> to Applications.",
       "start.s2": "<b>Launch it.</b> An icon appears in the menu bar. If <code>mlx-lm</code> and <code>mlx-vlm</code> aren't installed yet, they're set up automatically in the background.",
       "start.s3": "<b>Choose a model.</b> Use “Select Model…” to search for and load a model already on your Mac.",
       "start.s4": "<b>Use it.</b> Chat via “Quick Chat…”, or connect to the OpenAI-compatible API at <code>http://127.0.0.1:11435</code>.",
-      "start.note": "This build is ad-hoc signed and not notarised by Apple. On first launch you may need to allow it in System Settings → Privacy & Security. SHA-256 of MLXBar-5.0.1.dmg: 10471484fbfe7b08784aa2401c1a8c6237afe8279b3d771ad082649166754a84",
-      "whatsnew.h2": "What changed in v5.0.1",
-      "whatsnew.lede": "Just upgrade from v5.0.0 to v5.0.1 to get the improved JANGH2 and Niwaki guidance. Normal-model usage is unchanged.",
-      "whatsnew.jang": "<b>JANGH2 now fails fast.</b> JANGH2 (jangtq2) cannot be run by MLXBar / MLX LM / MLX VLM / LM Studio / oMLX, so it fails within seconds with guidance to use Osaurus 0.25.24+.",
-      "whatsnew.niwaki": "<b>Niwaki loads with the bundled loader.</b> The existing bundled loader is unchanged and off by default. Enable Settings → Models → Bundled loaders. The error text and catalog banner show how.",
-      "whatsnew.error": "<b>New error code.</b> JANG returns <code>MODEL_JANG_OSAURUS_REQUIRED</code> (in English and Japanese). Niwaki reuses <code>MODEL_NEEDS_BUNDLED_LOADER</code>.",
-      "whatsnew.catalog": "<b>Catalog classifier v4.</b> Existing installs rescan at startup, so JANGH2 rows are updated automatically.",
+      "start.note": "This build is ad-hoc signed and not notarised by Apple. On first launch you may need to allow it in System Settings → Privacy & Security. SHA-256 of MLXBar-5.0.2.dmg: aa397d0f9b37ed4671a9ead48f7248054e7ccaac8eb0174bae4efac83a68e71b",
+      "whatsnew.h2": "What changed in v5.0.2",
+      "whatsnew.lede": "Just upgrade from v5.0.1 to v5.0.2 to fix the Niwaki regression. Normal-model usage is unchanged.",
+      "whatsnew.regression": "<b>Niwaki regression fixed.</b> mlx-vlm 0.7.12 batch-invariant bypassed the compact MoE remap, so bundled models alone now disable batch-invariant and use the normal forward path.",
+      "whatsnew.api": "<b>External APIs return correct answers.</b> chat/completions, Anthropic and streaming responses are normalised (e.g. 2+2→4, Paris).",
+      "whatsnew.modalities": "<b>Worker modalities now follow tensor evidence.</b> Niwaki is shown as text-only with the image button disabled.",
+      "whatsnew.safety": "<b>Safer loading.</b> Failed loads release partial state, loaderId is mixed into the cache fingerprint, and bundled models force strict admission for a larger 37 GB-class safety margin.",
       "api.h2": "Works with the tools you already use",
       "api.lede": "Any OpenAI-compatible client can connect just by swapping in the base URL and API key.",
       "api.comment": "# Copy your API key from Settings → API Server",
@@ -521,17 +521,17 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       "features.f7d": "当队列已满或本地模型无法响应时，可将请求转发到已注册的外部 AI 提供商（OpenAI Chat Completions / OpenAI Responses / Anthropic Messages）。可为每个模型设置优先级、作为回退来源的 MLXBar 模型、请求速率上限以及对图像的支持。<b>默认关闭。</b>",
       "start.h2": "开始使用",
       "start.lede": "无需注册账号，也无需获取 API 密钥。",
-      "start.s1": "<b>下载并打开。</b> 从 GitHub Releases 获取 <code>MLXBar-5.0.1.dmg</code>，将 <code>MLXBar.app</code> 复制到「应用程序」中。",
+      "start.s1": "<b>下载并打开。</b> 从 GitHub Releases 获取 <code>MLXBar-5.0.2.dmg</code>，将 <code>MLXBar.app</code> 复制到「应用程序」中。",
       "start.s2": "<b>启动应用。</b> 菜单栏中会出现图标。如果尚未安装 <code>mlx-lm</code> 与 <code>mlx-vlm</code>，会在后台自动安装。",
       "start.s3": "<b>选择模型。</b> 通过「选择模型…」搜索并加载 Mac 上已有的模型。",
       "start.s4": "<b>开始使用。</b> 通过「快速对话…」进行对话，或连接到 <code>http://127.0.0.1:11435</code> 的 OpenAI 兼容 API。",
-      "start.note": "此构建为 ad-hoc 签名，未经 Apple 公证。首次启动时可能需要在「系统设置」→「隐私与安全性」中允许运行。MLXBar-5.0.1.dmg 的 SHA-256: 10471484fbfe7b08784aa2401c1a8c6237afe8279b3d771ad082649166754a84",
-      "whatsnew.h2": "v5.0.1 的变更",
-      "whatsnew.lede": "只需从 v5.0.0 升级到 v5.0.1，即可获得改善后的 JANGH2 与 Niwaki 引导。普通模型的用法保持不变。",
-      "whatsnew.jang": "<b>JANGH2 会在数秒内即时失败。</b> JANGH2（jangtq2）格式无法由 MLXBar / MLX LM / MLX VLM / LM Studio / oMLX 运行，因此会引导你使用 Osaurus 0.25.24+。",
-      "whatsnew.niwaki": "<b>Niwaki 需要允许同捆加载器。</b> 使用既有同捆加载器（默认关闭）。请启用「设置 → 模型 → 允许同捆加载器」。错误文字和目录横幅会给出引导。",
-      "whatsnew.error": "<b>新增错误代码。</b> JANG 返回 <code>MODEL_JANG_OSAURUS_REQUIRED</code>（日英双语）。Niwaki 沿用 <code>MODEL_NEEDS_BUNDLED_LOADER</code>。",
-      "whatsnew.catalog": "<b>目录分类版本 4。</b> 既有安装也会在启动时重新扫描，JANGH2 条目会自动更新。",
+      "start.note": "此构建为 ad-hoc 签名，未经 Apple 公证。首次启动时可能需要在「系统设置」→「隐私与安全性」中允许运行。MLXBar-5.0.2.dmg 的 SHA-256: aa397d0f9b37ed4671a9ead48f7248054e7ccaac8eb0174bae4efac83a68e71b",
+      "whatsnew.h2": "v5.0.2 的变更",
+      "whatsnew.lede": "只需从 v5.0.1 升级到 v5.0.2 即可修复 Niwaki 的退化问题。普通模型的用法保持不变。",
+      "whatsnew.regression": "<b>修复 Niwaki 退化生成。</b> mlx-vlm 0.7.12 的 batch-invariant 会绕过 compact MoE 的 remap，因此仅对同捆（bundled）模型关闭 batch-invariant 并走通常 forward。",
+      "whatsnew.api": "<b>外部 API 响应恢复正常。</b> chat/completions、Anthropic 与流式响应恢复正确（例如 2+2→4、Paris）。",
+      "whatsnew.modalities": "<b>Worker 的 modalities 依张量证据。</b> Niwaki 仅显示为 text，图片按钮不可用。",
+      "whatsnew.safety": "<b>更安全的加载。</b> 加载失败会释放部分加载状态，loaderId 计入缓存 fingerprint，并对同捆模型强制 admission strict，扩大 37GB 级的安全余量。",
       "api.h2": "无缝对接你现有的工具",
       "api.lede": "任何 OpenAI 兼容客户端，只需替换 Base URL 与 API 密钥即可连接。",
       "api.comment": "# 可在设置页面的「API 服务器」中复制 API 密钥",
@@ -607,17 +607,17 @@ curl http://127.0.0.1:11435/v1/chat/completions \
       "features.f7d": "Quando a fila estiver cheia ou o modelo local não puder responder, encaminhe a requisição para um provedor de IA externo que você registrar (OpenAI Chat Completions, OpenAI Responses ou Anthropic Messages). Defina prioridade, quais modelos do MLXBar ele atende, um limite de requisições e suporte a imagens por modelo. <b>Desativado por padrão.</b>",
       "start.h2": "Como começar",
       "start.lede": "Sem conta, sem precisar obter uma chave de API.",
-      "start.s1": "<b>Baixe e abra.</b> Obtenha <code>MLXBar-5.0.1.dmg</code> nos GitHub Releases e copie <code>MLXBar.app</code> para Aplicativos.",
+      "start.s1": "<b>Baixe e abra.</b> Obtenha <code>MLXBar-5.0.2.dmg</code> nos GitHub Releases e copie <code>MLXBar.app</code> para Aplicativos.",
       "start.s2": "<b>Inicie o app.</b> Um ícone aparece na barra de menus. Se <code>mlx-lm</code> e <code>mlx-vlm</code> ainda não estiverem instalados, eles são preparados automaticamente em segundo plano.",
       "start.s3": "<b>Escolha um modelo.</b> Use “Selecionar modelo…” para buscar e carregar um modelo já presente no seu Mac.",
       "start.s4": "<b>Use.</b> Converse pelo “Chat rápido…” ou conecte-se à API compatível com OpenAI em <code>http://127.0.0.1:11435</code>.",
-      "start.note": "Esta build tem assinatura ad-hoc e não possui notarização da Apple. Na primeira execução, pode ser necessário permiti-la em Ajustes do Sistema → Privacidade e Segurança. SHA-256 do MLXBar-5.0.1.dmg: 10471484fbfe7b08784aa2401c1a8c6237afe8279b3d771ad082649166754a84",
-      "whatsnew.h2": "Novidades da v5.0.1",
-      "whatsnew.lede": "Basta atualizar da v5.0.0 para a v5.0.1 para melhorar a orientação sobre JANGH2 e Niwaki. O uso de modelos comuns não muda.",
-      "whatsnew.jang": "<b>JANGH2 falha rapidamente.</b> O formato JANGH2 (jangtq2) não roda em MLXBar / MLX LM / MLX VLM / LM Studio / oMLX, então falha em segundos com orientação para usar o Osaurus 0.25.24+.",
-      "whatsnew.niwaki": "<b>Niwaki carrega com o loader incluído.</b> O loader incluído existente não mudou e vem desligado. Ative Ajustes → Modelos → Permitir loaders incluídos. O texto do erro e o banner do catálogo mostram como.",
-      "whatsnew.error": "<b>Novo código de erro.</b> O JANG retorna <code>MODEL_JANG_OSAURUS_REQUIRED</code> (em inglês e japonês). O Niwaki reutiliza <code>MODEL_NEEDS_BUNDLED_LOADER</code>.",
-      "whatsnew.catalog": "<b>Classificador de catálogo v4.</b> Instalações existentes são reescaneadas na inicialização, então as linhas JANGH2 são atualizadas automaticamente.",
+      "start.note": "Esta build tem assinatura ad-hoc e não possui notarização da Apple. Na primeira execução, pode ser necessário permiti-la em Ajustes do Sistema → Privacidade e Segurança. SHA-256 do MLXBar-5.0.2.dmg: aa397d0f9b37ed4671a9ead48f7248054e7ccaac8eb0174bae4efac83a68e71b",
+      "whatsnew.h2": "Novidades da v5.0.2",
+      "whatsnew.lede": "Basta atualizar da v5.0.1 para a v5.0.2 para corrigir a regressão do Niwaki. O uso de modelos comuns não muda.",
+      "whatsnew.regression": "<b>Correção da regressão do Niwaki.</b> O batch-invariant do mlx-vlm 0.7.12 contornava o remap do MoE compacto; os modelos incluídos (bundled) agora desativam o batch-invariant e usam o caminho normal.",
+      "whatsnew.api": "<b>APIs externas voltam ao normal.</b> Respostas de chat/completions, Anthropic e streaming normalizadas (por exemplo, 2+2→4, Paris).",
+      "whatsnew.modalities": "<b>Modalidades do worker pela evidência dos tensores.</b> O Niwaki aparece apenas como texto, com o botão de imagem desativado.",
+      "whatsnew.safety": "<b>Carregamento mais seguro.</b> Falhas de carga liberam o estado parcial, o loaderId entra no fingerprint do cache e modelos incluídos forçam admissão estrita, ampliando a margem de segurança na faixa de 37 GB.",
       "api.h2": "Funciona com as ferramentas que você já usa",
       "api.lede": "Qualquer cliente compatível com OpenAI pode se conectar apenas trocando a URL base e a chave de API.",
       "api.comment": "# Copie sua chave de API em Ajustes → Servidor de API",
