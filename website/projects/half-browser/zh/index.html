@@ -53,7 +53,7 @@
       "alternateName": ["ハーフブラウザ", "Half Browser"],
       "applicationCategory": "BrowserApplication",
       "operatingSystem": "Android 8.0 (API 26) or later",
-      "softwareVersion": "1.8.0",
+      "softwareVersion": "1.9.0",
       "inLanguage": "zh-Hans",
       "description": "基于 Android WebView（Chromium）的轻量浏览器。可按主机和证书查看并信任自签名 HTTPS 证书；HTTP 认证凭据以 Android Keystore 加密保存并可自动填充。支持书签主屏幕磁贴，并可作为外部链接的默认浏览器。界面支持日语和英语。无广告、无分析、无账户。",
       "url": "https://studio-rizi.pages.dev/projects/half-browser/zh/",
@@ -95,7 +95,7 @@
         <a href="#home">主页</a>
         <a href="#install">获取</a>
       </nav>
-      <span class="release-tag">v1.8.0</span>
+      <span class="release-tag">v1.9.0</span>
     </div>
     <div class="lang-bar">
       <nav aria-label="语言切换">
@@ -111,10 +111,10 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="page-width hero-grid">
         <div class="hero-copy">
-          <p class="release-line">Android 8.0+ · Android WebView（Chromium）· v1.8.0 · MIT</p>
+          <p class="release-line">Android 8.0+ · Android WebView（Chromium）· v1.9.0 · MIT</p>
           <h1 id="hero-title"><span class="hero-app">Half-Browser / ハーフブラウザ</span>把信任的页面，<br><em>放在手边。</em></h1>
           <p class="hero-lead">Half-Browser 是基于 Android WebView（Chromium）的轻量浏览器。对于使用自签名证书的 HTTPS 页面，您可以先查看证书详情，再决定是否信任。HTTP 认证凭据以 Android Keystore 加密保存，下次可自动填充。无广告、无分析、无需账户。</p>
-          <p class="release-line">v1.8.0 解决了 VPN「显示已连接却打不开网页」的问题：状态现在按是否真正能够通信来显示，并在停止响应时自动重连。</p>
+          <p class="release-line">v1.9.0 降低了 VPN 连接时的耗电（息屏期间检查次数减少 92%），并在 Wi-Fi 与移动网络切换时自动重连。</p>
           <div class="hero-actions" role="group" aria-label="链接">
             <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest/download/half-browser.apk">获取最新版本</a>
             <a class="button button-secondary" href="https://github.com/oriyu90/half-browser">在 GitHub 查看</a>
@@ -221,6 +221,7 @@
             <h3>应用内 VPN，只保护本浏览器的流量。</h3>
             <p>注册 WireGuard 配置后，只有 Half-Browser 自身的流量经由 VPN 服务器，其他应用继续使用普通连接。可从主屏幕底部连接、断开与重连，配置使用 Android Keystore 加密保存。设置 → VPN 中的“扫描二维码”可以读取官方 WireGuard 应用显示的二维码来导入配置；解码后的配置会经过严格校验，并在编辑界面中确认后再保存，仅扫描不会保存或连接。</p>
             <p>状态显示依据的是<strong>是否真正能够通信</strong>，而不仅仅是隧道是否已建立（正在确认 / 通信正常 / 最近无响应 / 从未响应）。设备休眠后停止响应时，打开应用即可自动重连。</p>
+            <p>息屏期间应用会自动拉长检查间隔（60 秒，最长 5 分钟），未使用时停止定期检查，因此不会浪费电量。Wi-Fi 与移动网络之间的切换也会被检测并自动重连。</p>
           </div>
           <div class="feature-row">
             <span class="feature-num"><i>13</i>GUARD</span>
@@ -366,7 +367,7 @@
       <div class="page-width install-grid">
         <div class="install-side">
           <p class="eyebrow">Get started</p>
-          <h2 id="install-title">从 GitHub 获取 v1.8.0。</h2>
+          <h2 id="install-title">从 GitHub 获取 v1.9.0。</h2>
           <p>Half-Browser 的源代码在 GitHub 公开，最新版本可从 GitHub Releases 获取。</p>
           <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest">打开 Releases</a>
         </div>

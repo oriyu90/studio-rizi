@@ -53,7 +53,7 @@
       "alternateName": ["ハーフブラウザ", "Half Browser"],
       "applicationCategory": "BrowserApplication",
       "operatingSystem": "Android 8.0 (API 26) or later, macOS 14 or later (Apple Silicon)",
-      "softwareVersion": "1.8.0",
+      "softwareVersion": "1.9.0",
       "inLanguage": "ja",
       "description": "Android WebView（Chromium）で動く軽量ブラウザ。自己署名証明書のHTTPSページを証明書情報を確認して信頼でき、HTTP認証の資格情報をAndroid Keystoreで暗号化して保存・自動入力できます。ブックマークのホーム画面タイル、既定ブラウザとしての外部リンク受け取りに対応。日本語・English。広告・解析・アカウントなし。",
       "url": "https://studio-rizi.pages.dev/projects/half-browser/",
@@ -95,7 +95,7 @@
         <a href="#home">ホーム</a>
         <a href="#install">入手する</a>
       </nav>
-      <span class="release-tag">v1.8.0</span>
+      <span class="release-tag">v1.9.0</span>
     </div>
     <div class="lang-bar">
       <nav aria-label="言語切り替え">
@@ -111,10 +111,10 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="page-width hero-grid">
         <div class="hero-copy">
-          <p class="release-line">Android 8.0+ · Android WebView（Chromium） · v1.8.0 · MIT</p>
+          <p class="release-line">Android 8.0+ · Android WebView（Chromium） · v1.9.0 · MIT</p>
           <h1 id="hero-title"><span class="hero-app">Half-Browser / ハーフブラウザ</span>信頼したページを、<br><em>手元に近く。</em></h1>
           <p class="hero-lead">Half-Browser は、Android（WebView）と macOS（Chromium / CEF）で動く軽量ブラウザです。自己署名証明書の HTTPS ページは、証明書の内容を確認してから信頼するかを選べます。HTTP 認証の資格情報は、Android Keystore で暗号化して保存し、次回から自動入力できます。広告・解析・アカウントはありません。</p>
-          <p class="release-line">v1.8.0: VPN の「接続中なのに繋がらない」を解消。疎通をトンネル状態と分けて表示し、応答が無ければ自動で再接続します。</p>
+          <p class="release-line">v1.9.0: 画面を消している間の電池消費を削減（疎通確認 92% 減）し、Wi-Fi とモバイルの切替を検知して自動で再接続します。</p>
           <div class="hero-actions" role="group" aria-label="リンク">
             <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest/download/half-browser.apk">最新版を入手する</a>
             <a class="button button-secondary" href="https://github.com/oriyu90/half-browser">GitHub で見る</a>
@@ -221,6 +221,7 @@
             <h3>アプリ内 VPN で、このブラウザの通信だけを守る。</h3>
             <p>WireGuard のプロファイルを登録すると、Half-Browser 自身の通信だけが VPN サーバー経由になります。他のアプリは通常の接続のままです。ホーム画面下部から接続・切断・再接続ができ、プロファイルは Android Keystore で暗号化して保存します。設定 → VPN の「QR コードをスキャン」では、公式 WireGuard アプリが表示する QR コードからプロファイルを取り込めます。読み取った設定は検証したうえで編集画面に表示し、確認してから保存します（スキャンだけでは保存も接続もしません）。</p>
             <p>接続状態はトンネルが上がったかではなく<strong>実際に通信できているか</strong>で表示します（確認中 / 通信できています / 最近応答なし / 一度も応答なし）。スリープ後に応答が止まっていても、アプリを開けば自動で再接続します。</p>
+            <p>画面を消している間は確認の間隔を自動で広げ（60 秒〜最大 5 分）、使っていないときは定期確認を止めるので、電池を無駄に消費しません。Wi-Fi とモバイルの切替も検知して再接続します。</p>
           </div>
           <div class="feature-row">
             <span class="feature-num"><i>13</i>GUARD</span>
@@ -366,7 +367,7 @@
       <div class="page-width install-grid">
         <div class="install-side">
           <p class="eyebrow">Get started</p>
-          <h2 id="install-title">v1.8.0 を、GitHub から。</h2>
+          <h2 id="install-title">v1.9.0 を、GitHub から。</h2>
           <p>Half-Browser のソースは GitHub で公開しています。Android 版は APK、macOS 版は DMG を GitHub Releases から入手できます。</p>
           <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest">Releases を開く</a>
         </div>
