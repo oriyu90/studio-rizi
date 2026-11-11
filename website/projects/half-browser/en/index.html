@@ -53,7 +53,7 @@
       "alternateName": ["ハーフブラウザ", "Half Browser"],
       "applicationCategory": "BrowserApplication",
       "operatingSystem": "Android 8.0 (API 26) or later, macOS 14 or later (Apple Silicon)",
-      "softwareVersion": "1.7.1",
+      "softwareVersion": "1.8.0",
       "inLanguage": "en",
       "description": "A lightweight browser built on Android WebView (Chromium). Self-signed HTTPS certificates can be reviewed and trusted per host and certificate; HTTP authentication credentials are encrypted with Android Keystore and can be autofilled. Supports bookmark home tiles and acts as the default browser for external links. Japanese and English UI. No ads, analytics, or accounts.",
       "url": "https://studio-rizi.pages.dev/projects/half-browser/en/",
@@ -95,7 +95,7 @@
         <a href="#home">Home</a>
         <a href="#install">Get it</a>
       </nav>
-      <span class="release-tag">v1.7.1</span>
+      <span class="release-tag">v1.8.0</span>
     </div>
     <div class="lang-bar">
       <nav aria-label="Language">
@@ -111,10 +111,10 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="page-width hero-grid">
         <div class="hero-copy">
-          <p class="release-line">Android 8.0+ · Android WebView (Chromium) · v1.7.1 · MIT</p>
+          <p class="release-line">Android 8.0+ · Android WebView (Chromium) · v1.8.0 · MIT</p>
           <h1 id="hero-title"><span class="hero-app">Half-Browser / ハーフブラウザ</span>Keep the pages you trust<br><em>close at hand.</em></h1>
           <p class="hero-lead">Half-Browser is a lightweight browser built on Android WebView (Chromium). For HTTPS pages signed with a self-signed certificate, you review the certificate details before choosing whether to trust it. HTTP authentication credentials are stored encrypted with Android Keystore and can be autofilled next time. No ads, no analytics, no accounts.</p>
-          <p class="release-line">v1.7.1 fixes Always-on VPN so the tunnel actually comes up; a real WireGuard handshake was also verified on the emulator.</p>
+          <p class="release-line">v1.8.0 fixes the VPN that said "connected" while nothing loaded: the status now reflects whether traffic is actually flowing, and the app reconnects automatically when it stops answering.</p>
           <div class="hero-actions" role="group" aria-label="Links">
             <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest/download/half-browser.apk">Get the latest release</a>
             <a class="button button-secondary" href="https://github.com/oriyu90/half-browser">View on GitHub</a>
@@ -220,6 +220,7 @@
             <span class="feature-num"><i>12</i>VPN</span>
             <h3>An in-app VPN for this browser’s traffic only.</h3>
             <p>Register a WireGuard profile and only Half-Browser’s own traffic goes through the VPN server; other apps keep the normal connection. Connect, disconnect and reconnect from the home screen panel, with profiles encrypted in the Android Keystore. Profiles can also be imported from a QR code (Settings → VPN → "Scan QR code") shown by the official WireGuard app; the decoded configuration is validated and shown in the editor for review before saving — scanning alone never saves or connects.</p>
+            <p>The status reflects whether traffic is <strong>actually flowing</strong>, not merely whether the tunnel is up (checking / traffic is flowing / no recent answer / never answered). If it stopped answering while the device slept, opening the app reconnects it automatically.</p>
           </div>
           <div class="feature-row">
             <span class="feature-num"><i>13</i>GUARD</span>
@@ -365,7 +366,7 @@
       <div class="page-width install-grid">
         <div class="install-side">
           <p class="eyebrow">Get started</p>
-          <h2 id="install-title">v1.7.1, from GitHub.</h2>
+          <h2 id="install-title">v1.8.0, from GitHub.</h2>
           <p>The Half-Browser source is published on GitHub. Android ships as an APK and macOS as a DMG, both from GitHub Releases.</p>
           <a class="button" href="https://github.com/oriyu90/half-browser/releases/latest">Open Releases</a>
         </div>
