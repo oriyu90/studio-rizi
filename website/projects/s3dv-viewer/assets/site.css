@@ -1,6 +1,52 @@
 /* S3DV viewer · macrostructure: project page · tone: functional-editorial · theme: dark · anchor hue: blue */
-/* Media Master · macrostructure: Long Document · tone: functional-editorial · theme: custom · anchor hue: teal */
-@import url("../tokens.css");
+
+/* Design tokens (inlined so the page is self-contained) */
+:root {
+  --color-ink: #0b1119;
+  --color-paper: #0b1119;
+  --color-white: #ffffff;
+  --color-fg: #dbe6f3;
+  --color-fg-secondary: #9fb4cc;
+  --color-accent: #4f8ef7;
+  --color-accent-ink: #ffffff;
+  --color-surface: rgba(11, 17, 25, 0.6);
+  --color-border: rgba(255, 255, 255, 0.09);
+  --color-line: rgba(255, 255, 255, 0.09);
+  --color-line-dark: rgba(255, 255, 255, 0.09);
+  --color-ink-soft: #9fb4cc;
+  --color-paper-deep: #9fb4cc;
+  --color-sheet: rgba(11, 17, 25, 0.6);
+  --color-focus: #4f8ef7;
+  --color-focus-dark: #4f8ef7;
+  --color-teal: #4f8ef7;
+  --color-teal-deep: #4f8ef7;
+  --font-body: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --text-base: 15px;
+  --text-sm: 13px;
+  --text-xs: 11px;
+  --text-lg: 16px;
+  --text-2xl: 20px;
+  --text-display: 28px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 28px;
+  --space-3xl: 40px;
+  --space-4xl: 56px;
+  --rule-hairline: 1px;
+  --rule-strong: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-round: 20px;
+  --radius-icon: 8px;
+  --dur-fast: 0.15s;
+  --ease-standard: ease;
+}
 
 *,
 *::before,
@@ -21,7 +67,7 @@ html {
 body {
   margin: 0;
   background: var(--color-paper);
-  color: var(--color-ink);
+  color: var(--color-fg);
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: 1.75;
