@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>S3DV viewer — 時系列3Dストリームの再生・検証用ビューア</title>
+<meta name="description" content="S3DV viewer は、記録された .s3dv 時系列3Dストリームを再生・検証する macOS ネイティブビューアです。フレーム完全提示により負荷時でも途切れた帧を出さず、日英バイリンガルUIを備えます。開発者は折田悠希(おりたゆうき / Yuki_Orita)。GitHubでオープンソース公開中。">
+<meta name="keywords" content="S3DV viewer, S3DV, 時系列3Dストリーム, 3Dストリーム, ビューア, フレーム完全提示, 折田悠希, おりたゆうき, Yuki_Orita, github, macOS, .s3dv, S3DP, 三次元, ストリーミング, 再生, 検証">
+<meta name="author" content="折田悠希 (Yuki_Orita)">
+<meta name="theme-color" content="#0b1119">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/s3dv-viewer/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/s3dv-viewer/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/s3dv-viewer/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/s3dv-viewer/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/s3dv-viewer/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/s3dv-viewer/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="stylesheet" href="assets/site.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S3DV viewer">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:title" content="S3DV viewer — 時系列3Dストリームの再生・検証用ビューア">
+<meta property="og:description" content="記録された .s3dv 時系列3Dストリームを再生・検証する macOS ネイティブビューア。フレーム完全提示で負荷時も途切れた帧を出さず、日英バイリンガルUI。">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/s3dv-viewer/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="S3DV viewer — 時系列3Dストリームビューア">
+<meta name="twitter:description" content=".s3dv 時系列3Dストリームを再生・検証する macOS ネイティブビューア。フレーム完全提示、日英バイリンガルUI。">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "S3DV viewer",
+      "alternateName": ["S3DV ビューア"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS 13 or later",
+      "softwareVersion": "1.2.0",
+      "inLanguage": "ja",
+      "description": "記録された .s3dv 時系列3Dストリームを再生・検証する macOS ネイティブビューア。フレーム完全提示により負荷時でも途切れた帧を出さず、受信パケットは描画tick内で完全適用されてから1フレームとして提示されます。日英バイリンガルUI。",
+      "url": "https://studio-rizi.pages.dev/projects/s3dv-viewer/",
+      "downloadUrl": "https://github.com/oriyu90/s3dv-viewer/releases",
+      "codeRepository": "https://github.com/oriyu90/s3dv-viewer",
+      "license": "https://opensource.org/licenses/MIT",
+      "applicationSuite": ["S3DV research kit"],
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki_Orita",
+      "alternateName": ["折田悠希", "おりたゆうき"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://x.com/InovateofRIZI",
+        "https://github.com/oriyu90"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="https://studio-rizi.pages.dev/">Studio Rizi</a>
+      <nav class="lang">
+        <a href="https://studio-rizi.pages.dev/projects/s3dv-viewer/">日本語</a>
+        <a href="https://studio-rizi.pages.dev/projects/s3dv-viewer/en/">English</a>
+        <a href="https://studio-rizi.pages.dev/projects/s3dv-viewer/zh/">中文</a>
+        <a href="https://studio-rizi.pages.dev/projects/s3dv-viewer/pt/">Português</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="project-page">
+      <header class="project-head">
+        <h1>S3DV viewer</h1>
+        <p class="subtitle">時系列3Dストリームの再生・検証用ビューア</p>
+        <div class="badges">
+          <span class="badge">macOS</span>
+          <span class="badge">Swift</span>
+          <span class="badge">v1.2.0</span>
+          <span class="badge">日英UI</span>
+        </div>
+      </header>
+
+      <section class="project-lead">
+        <p><strong>S3DV viewer</strong>は、記録された <code>.s3dv</code> 時系列3Dストリームを再生・検証する macOS ネイティブビューアです。WKWebView + three.js (r180) によるバッチ描画で、1ドローコール/アリーナのレンダリングを実現しています。</p>
+      </section>
+
+      <section>
+        <h2>フレーム完全提示 (Frame-complete presentation)</h2>
+        <p>負荷が高い場合でも、<strong>1つ1つのフレームを確実に描画してから次のフレームに移る</strong>設計です。受信パケットは即座に適用せず受信箱にバッファし、描画tick内で順序どおりに完全適用してから1フレームとして提示します。途中で予算を使い切った場合は中間フレームを落とし、後続の完全な状態だけを提示するため、途切れた帧（スナップショット半分適用など）が表示されることはありません。</p>
+        <ul>
+          <li><strong>提示フレームは常にパケット境界の完全なシーン状態</strong> — 適用途中の状態は表示されません</li>
+          <li><strong>負荷時はロード時間をとり、フレームを落とす</strong> — 1描画tickの適用予算(既定6 ms)内で適用し、超過分は次の完全状態へ折り畳み</li>
+          <li><strong>テクスチャはデコード完了後に組み込み</strong> — 白飛びの未完成フレームを出さない</li>
+          <li><strong>非表示ウィンドウでは到着時に即適用</strong> — rAFが~1 Hzに抑制される隠蔽時はペース制御を無効化し、パケットの滞留を防ぐ</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>主な特徴</h2>
+        <ul>
+          <li><strong>パケット完全性:</strong> エンジン送信数とページ適用数が一致 (page packets == framesSent)</li>
+          <li><strong>バッチ描画:</strong> 1アリーナ = 1ドローコール。8,236チャンク → 10ドローコール程度に削減</li>
+          <li><strong>メモリ予算ガバナ:</strong> 常駐ジオメトリ予算超過時は古い/外側チャンクを退避</li>
+          <li><strong>クラッシュ安全性:</strong> WebContentプロセス終了を検知して自動復帰(最大2回)</li>
+          <li><strong>CLI制御:</strong> UNIXソケット経由で <code>s3dvctl</code> から全操作 (open/pause/step/seek/speed/presentation/applybudgetms/bench/screenshot/wait/quit)</li>
+          <li><strong>設定:</strong> 提示モード(frameComplete/immediate)・適用予算(1–50 ms)をライブ切替</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>ダウンロード</h2>
+        <p>GitHub Releasesからアプリバンドルをダウンロードできます。ad-hoc署名（Apple公証なし）のため、初回起動時に「システム設定 &gt; プライバシーとセキュリティ」からの許可が必要です。</p>
+        <p><a class="cta" href="https://github.com/oriyu90/s3dv-viewer/releases/tag/v1.2.0">S3DV viewer v1.2.0 をダウンロード</a></p>
+      </section>
+
+      <section>
+        <h2>ドキュメント</h2>
+        <ul>
+          <li><a href="https://github.com/oriyu90/s3dv-viewer/blob/main/README.md">README (操作・設定・CLI)</a></li>
+          <li><a href="https://github.com/oriyu90/s3dv-viewer/blob/main/docs/24_S3DV_viewer_設計と検証.md">設計と検証</a> (研究リポジトリ)</a></li>
+          <li><a href="https://github.com/oriyu90/s3dv-viewer/blob/main/docs/25_S3DV_viewer_CLI.md">CLI リファレンス</a> (研究リポジトリ)</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>検証結果 (v1.2.0)</h2>
+        <table>
+          <thead><tr><th>項目</th><th>結果</th></tr></thead>
+          <tbody>
+            <tr><td>swift test (回帰テスト)</td><td>45 / 45 パス</td></tr>
+            <tr><td>verify_app.sh (フルマトリクス)</td><td>7 / 7 PASS</td></tr>
+            <tr><td>verify_cli.sh (CLI全コマンド)</td><td>21 / 21 PASS</td></tr>
+            <tr><td>パケット一致 (1.27 GB GT ストリーム)</td><td>24,494 / 24,494 (100%)</td></tr>
+            <tr><td>コンソール ERROR</td><td>0 件</td></tr>
+            <tr><td>リーク (10周)</td><td>-0.46 MB/周 (5 MB/周未満)</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>開発者</h2>
+        <p>折田悠希 (おりたゆうき / Yuki_Orita) · <a href="https://github.com/oriyu90">GitHub</a> · <a href="https://x.com/InovateofRIZI">X (旧Twitter)</a> · <a href="https://studio-rizi.pages.dev/">Studio Rizi</a></p>
+        <p>オープンソース (MIT License)。バグ報告・告知用: <a href="https://discord.gg/x7KXhNTD8M">Discord</a></p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Yuki_Orita · Studio Rizi · <a href="https://studio-rizi.pages.dev/projects/s3dv-viewer/">https://studio-rizi.pages.dev/projects/s3dv-viewer/</a></p>
+  </footer>
+
+  <style>
+    .site-header{background:#0b1119;border-bottom:1px solid rgba(255,255,255,.09)}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;max-width:1000px;margin:0 auto}
+    .logo{color:#dbe6f3;text-decoration:none;font-weight:700;font-size:15px}
+    .lang a{color:#9fb4cc;text-decoration:none;margin-left:16px;font-size:13px}
+    .lang a:hover{color:#fff}
+    main{max-width:1000px;margin:0 auto;padding:28px 24px}
+    .project-head h1{font-size:28px;margin:0 0 6px;color:#dbe6f3}
+    .subtitle{color:#9fb4cc;font-size:15px;margin:0 0 12px}
+    .badges{display:flex;gap:8px;margin:12px 0}
+    .badge{display:inline-block;padding:2px 10px;border:1px solid rgba(255,255,255,.18);border-radius:10px;font-size:11px;color:#dbe6f3;background:rgba(255,255,255,.06)}
+    .project-lead{background:rgba(11,17,25,.6);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:16px 20px;margin:24px 0;color:#dbe6f3}
+    .project-lead p{margin:0 0 10px;line-height:1.6}
+    .project-lead p:last-child{margin-bottom:0}
+    code{background:rgba(255,255,255,.08);padding:0 4px;border-radius:4px;font-size:12.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    section{margin:30px 0}
+    h2{font-size:18px;color:#dbe6f3;border-bottom:1px solid rgba(255,255,255,.09);padding-bottom:6px;margin-top:32px}
+    ul{line-height:1.7;margin:10px 0 0 20px;color:#dbe6f3}
+    ul li{margin-bottom:6px}
+    table{width:100%;border-collapse:collapse;margin:12px 0;color:#dbe6f3}
+    th{text-align:left;border-bottom:1px solid rgba(255,255,255,.18);padding:8px;color:#9fb4cc}
+    td{padding:8px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .cta{display:inline-block;background:#4f8ef7;color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600;margin-top:8px}
+    .cta:hover{background:#3a7bd6}
+    .site-footer{background:#0b1119;border-top:1px solid rgba(255,255,255,.09);padding:20px 24px;color:#9fb4cc;font-size:12px;margin-top:40px}
+    .site-footer a{color:#9fb4cc;text-decoration:underline}
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    @media (max-width:640px){main{padding:16px 12px}.header-inner{flex-direction:column;gap:10px}.lang a{margin-left:0;margin-top:6px}}
+  </style>
+</body>
+</html>

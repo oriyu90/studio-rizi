@@ -211,6 +211,13 @@
       "repository": "https://github.com/oriyu90/EveryTMP",
       "url": "https://studio-rizi.pages.dev/projects/everytmp/",
       "hosted": true
+    },
+    {
+      "slug": "s3dv-viewer",
+      "name": "S3DV viewer",
+      "repository": "https://github.com/oriyu90/s3dv-viewer",
+      "url": "https://studio-rizi.pages.dev/projects/s3dv-viewer/",
+      "hosted": true
     }
   ]
 }

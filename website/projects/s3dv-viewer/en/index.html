@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>S3DV viewer — 3D stream playback / verification viewer</title>
+<meta name="description" content="S3DV viewer is a native macOS viewer for playing back and verifying recorded .s3dv time-series 3D streams. Frame-complete presentation ensures no torn frames under load. Bilingual Japanese/English UI. Developed by Yuki_Orita. Open source on GitHub.">
+<meta name="keywords" content="S3DV viewer, S3DV, time-series 3D stream, 3D stream, viewer, frame-complete presentation, Yuki_Orita, 折田悠希, おりたゆうき, github, macOS, .s3dv, S3DP, 3D, streaming, playback, verification">
+<meta name="author" content="Yuki_Orita (折田悠希)">
+<meta name="theme-color" content="#0b1119">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/s3dv-viewer/en/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/s3dv-viewer/en/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/s3dv-viewer/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/s3dv-viewer/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/s3dv-viewer/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/s3dv-viewer/en/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="stylesheet" href="../assets/site.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S3DV viewer">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:title" content="S3DV viewer — 3D stream playback / verification viewer">
+<meta property="og:description" content="Native macOS viewer for playing back and verifying recorded .s3dv time-series 3D streams. Frame-complete presentation. Bilingual JA/EN UI.">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/s3dv-viewer/en/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="S3DV viewer — 3D stream viewer">
+<meta name="twitter:description" content="Native macOS viewer for .s3dv time-series 3D stream playback/verification. Frame-complete presentation, JA/EN UI.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "S3DV viewer",
+      "alternateName": ["S3DV ビューア"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS 13 or later",
+      "softwareVersion": "1.2.0",
+      "inLanguage": "en",
+      "description": "Native macOS viewer for playing back and verifying recorded .s3dv time-series 3D streams. Frame-complete presentation ensures every presented frame is the complete scene state at a packet boundary; under load, intermediate frames are dropped instead of showing torn/partial states. Bilingual Japanese/English UI.",
+      "url": "https://studio-rizi.pages.dev/projects/s3dv-viewer/en/",
+      "downloadUrl": "https://github.com/oriyu90/s3dv-viewer/releases",
+      "codeRepository": "https://github.com/oriyu90/s3dv-viewer",
+      "license": "https://opensource.org/licenses/MIT",
+      "applicationSuite": ["S3DV research kit"],
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki_Orita",
+      "alternateName": ["折田悠希", "おりたゆうき"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": [
+        "https://x.com/InovateofRIZI",
+        "https://github.com/oriyu90"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="https://studio-rizi.pages.dev/en/">Studio Rizi</a>
+      <nav class="lang">
+        <a href="https://studio-rizi.pages.dev/projects/s3dv-viewer/">日本語</a>
+        <a href="https://studio-rizi.pages.dev/projects/s3dv-viewer/en/">English</a>
+        <a href="https://studio-rizi.pages.dev/projects/s3dv-viewer/zh/">中文</a>
+        <a href="https://studio-rizi.pages.dev/projects/s3dv-viewer/pt/">Português</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="project-page">
+      <header class="project-head">
+        <h1>S3DV viewer</h1>
+        <p class="subtitle">3D stream playback / verification viewer</p>
+        <div class="badges">
+          <span class="badge">macOS</span>
+          <span class="badge">Swift</span>
+          <span class="badge">v1.2.0</span>
+          <span class="badge">JA/EN UI</span>
+        </div>
+      </header>
+
+      <section class="project-lead">
+        <p><strong>S3DV viewer</strong> is a native macOS viewer for playing back and verifying recorded <code>.s3dv</code> time-series 3D streams. WKWebView + three.js (r180) batched rendering delivers one draw call per arena.</p>
+      </section>
+
+      <section>
+        <h2>Frame-complete presentation</h2>
+        <p>Designed so that <strong>each frame is rendered completely before moving to the next</strong>, even under heavy load. Received packets are buffered in an inbox and applied in order within the render tick before a single frame is presented. If the budget is exhausted, intermediate frames are dropped and only the later complete state is presented — so a torn frame (e.g. half-applied snapshot) is never shown.</p>
+        <ul>
+          <li><strong>Presented frames are always complete scene states at packet boundaries</strong> — partially applied states are never shown</li>
+          <li><strong>Under load, load time is taken and frames are dropped</strong> — per-tick apply budget (default 6 ms); overflow is folded into the next complete state</li>
+          <li><strong>Textures are incorporated after decode completes</strong> — no white unrendered frames</li>
+          <li><strong>Hidden windows apply on arrival</strong> — pacing is disabled when rAF is throttled to ~1 Hz, preventing packet backlog</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Key features</h2>
+        <ul>
+          <li><strong>Packet integrity:</strong> engine sent count == page applied count (page packets == framesSent)</li>
+          <li><strong>Batched rendering:</strong> one arena = one draw call; 8,236 chunks reduced to ~10 draw calls</li>
+          <li><strong>Memory budget governor:</strong> oldest/outer chunks evicted when resident geometry budget is exceeded</li>
+          <li><strong>Crash safety:</strong> WebContent process termination detected and auto-recovered (max 2 times)</li>
+          <li><strong>CLI control:</strong> full operation via <code>s3dvctl</code> over UNIX socket (open/pause/step/seek/speed/presentation/applybudgetms/bench/screenshot/wait/quit)</li>
+          <li><strong>Settings:</strong> presentation mode (frameComplete/immediate) and apply budget (1–50 ms) switchable live</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Download</h2>
+        <p>Download the app bundle from GitHub Releases. Ad-hoc signed (not Apple-notarized), so on first launch allow it in System Settings &gt; Privacy &amp; Security.</p>
+        <p><a class="cta" href="https://github.com/oriyu90/s3dv-viewer/releases/tag/v1.2.0">Download S3DV viewer v1.2.0</a></p>
+      </section>
+
+      <section>
+        <h2>Documentation</h2>
+        <ul>
+          <li><a href="https://github.com/oriyu90/s3dv-viewer/blob/main/README.md">README (usage, settings, CLI)</a></li>
+          <li><a href="https://github.com/oriyu90/s3dv-viewer/blob/main/docs/24_S3DV_viewer_設計と検証.md">Design and verification</a> (research repo)</a></li>
+          <li><a href="https://github.com/oriyu90/s3dv-viewer/blob/main/docs/25_S3DV_viewer_CLI.md">CLI reference</a> (research repo)</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Verification results (v1.2.0)</h2>
+        <table>
+          <thead><tr><th>Item</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>swift test (regression tests)</td><td>45 / 45 pass</td></tr>
+            <tr><td>verify_app.sh (full matrix)</td><td>7 / 7 PASS</td></tr>
+            <tr><td>verify_cli.sh (all CLI commands)</td><td>21 / 21 PASS</td></tr>
+            <tr><td>Packet match (1.27 GB GT stream)</td><td>24,494 / 24,494 (100%)</td></tr>
+            <tr><td>Console ERROR</td><td>0</td></tr>
+            <tr><td>Leak (10 cycles)</td><td>-0.46 MB/cycle (&lt; 5 MB/cycle)</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Developer</h2>
+        <p>Yuki_Orita (折田悠希 / おりたゆうき) · <a href="https://github.com/oriyu90">GitHub</a> · <a href="https://x.com/InovateofRIZI">X (formerly Twitter)</a> · <a href="https://studio-rizi.pages.dev/en/">Studio Rizi</a></p>
+        <p>Open source (MIT License). Bug reports / announcements: <a href="https://discord.gg/x7KXhNTD8M">Discord</a></p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Yuki_Orita · Studio Rizi · <a href="https://studio-rizi.pages.dev/projects/s3dv-viewer/en/">https://studio-rizi.pages.dev/projects/s3dv-viewer/en/</a></p>
+  </footer>
+
+  <style>
+    .site-header{background:#0b1119;border-bottom:1px solid rgba(255,255,255,.09)}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;max-width:1000px;margin:0 auto}
+    .logo{color:#dbe6f3;text-decoration:none;font-weight:700;font-size:15px}
+    .lang a{color:#9fb4cc;text-decoration:none;margin-left:16px;font-size:13px}
+    .lang a:hover{color:#fff}
+    main{max-width:1000px;margin:0 auto;padding:28px 24px}
+    .project-head h1{font-size:28px;margin:0 0 6px;color:#dbe6f3}
+    .subtitle{color:#9fb4cc;font-size:15px;margin:0 0 12px}
+    .badges{display:flex;gap:8px;margin:12px 0}
+    .badge{display:inline-block;padding:2px 10px;border:1px solid rgba(255,255,255,.18);border-radius:10px;font-size:11px;color:#dbe6f3;background:rgba(255,255,255,.06)}
+    .project-lead{background:rgba(11,17,25,.6);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:16px 20px;margin:24px 0;color:#dbe6f3}
+    .project-lead p{margin:0 0 10px;line-height:1.6}
+    .project-lead p:last-child{margin-bottom:0}
+    code{background:rgba(255,255,255,.08);padding:0 4px;border-radius:4px;font-size:12.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    section{margin:30px 0}
+    h2{font-size:18px;color:#dbe6f3;border-bottom:1px solid rgba(255,255,255,.09);padding-bottom:6px;margin-top:32px}
+    ul{line-height:1.7;margin:10px 0 0 20px;color:#dbe6f3}
+    ul li{margin-bottom:6px}
+    table{width:100%;border-collapse:collapse;margin:12px 0;color:#dbe6f3}
+    th{text-align:left;border-bottom:1px solid rgba(255,255,255,.18);padding:8px;color:#9fb4cc}
+    td{padding:8px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .cta{display:inline-block;background:#4f8ef7;color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600;margin-top:8px}
+    .cta:hover{background:#3a7bd6}
+    .site-footer{background:#0b1119;border-top:1px solid rgba(255,255,255,.09);padding:20px 24px;color:#9fb4cc;font-size:12px;margin-top:40px}
+    .site-footer a{color:#9fb4cc;text-decoration:underline}
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    @media (max-width:640px){main{padding:16px 12px}.header-inner{flex-direction:column;gap:10px}.lang a{margin-left:0;margin-top:6px}}
+  </style>
+</body>
+</html>
