@@ -38,6 +38,13 @@
       "hosted": true
     },
     {
+      "slug": "gkintvnc",
+      "name": "GlintVNC",
+      "repository": "https://github.com/oriyu90/gkintvnc",
+      "url": "https://studio-rizi.pages.dev/projects/gkintvnc/",
+      "hosted": true
+    },
+    {
       "slug": "half-browser",
       "name": "Half-Browser",
       "repository": "https://github.com/oriyu90/half-browser",

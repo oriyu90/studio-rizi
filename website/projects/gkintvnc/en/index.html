@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GlintVNC — Native VNC viewer for Intel Mac</title>
+<meta name="description" content="GlintVNC is a native Rust VNC viewer for Intel x86_64 Macs. It supports RFB 3.3/3.7/3.8, VNCAuth, Raw/CopyRect/ZRLE and decodes untrusted input with strict bounds and memory budgets. Complete Japanese/English UI. Developed by Yuki_Orita. Open source on GitHub.">
+<meta name="keywords" content="GlintVNC, グリントVNC, VNC viewer, RFB, ZRLE, CopyRect, Rust, macOS, Intel Mac, Japanese UI, English UI, Yuki_Orita, 折田悠希, おりたゆうき, github">
+<meta name="author" content="Yuki_Orita (折田悠希)">
+<meta name="theme-color" content="#0b1119">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studio-rizi.pages.dev/projects/gkintvnc/en/">
+<link rel="alternate" hreflang="ja" href="https://studio-rizi.pages.dev/projects/gkintvnc/">
+<link rel="alternate" hreflang="en" href="https://studio-rizi.pages.dev/projects/gkintvnc/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://studio-rizi.pages.dev/projects/gkintvnc/zh/">
+<link rel="alternate" hreflang="pt" href="https://studio-rizi.pages.dev/projects/gkintvnc/pt/">
+<link rel="alternate" hreflang="x-default" href="https://studio-rizi.pages.dev/projects/gkintvnc/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="stylesheet" href="../style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GlintVNC">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:title" content="GlintVNC — Native VNC viewer for Intel Mac">
+<meta property="og:description" content="A lightweight VNC viewer for Intel Mac with a safety-first RFB decoder and complete JA/EN UI.">
+<meta property="og:url" content="https://studio-rizi.pages.dev/projects/gkintvnc/en/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@InovateofRIZI">
+<meta name="twitter:creator" content="@InovateofRIZI">
+<meta name="twitter:title" content="GlintVNC — VNC viewer for Intel Mac">
+<meta name="twitter:description" content="RFB 3.3/3.7/3.8, Raw/CopyRect/ZRLE, complete Japanese/English UI.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "GlintVNC",
+      "alternateName": ["グリントVNC"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS 13.0 or later (Intel x86_64)",
+      "softwareVersion": "0.1.0",
+      "inLanguage": "en",
+      "description": "GlintVNC is a native Rust VNC viewer for Intel x86_64 Macs. It supports RFB 3.3/3.7/3.8, VNCAuth, Raw/CopyRect/ZRLE and decodes untrusted input with strict bounds and memory budgets. Complete Japanese/English UI. Developed by Yuki_Orita. Open source on GitHub.",
+      "url": "https://studio-rizi.pages.dev/projects/gkintvnc/en/",
+      "downloadUrl": "https://github.com/oriyu90/gkintvnc/releases/tag/v0.1.0",
+      "codeRepository": "https://github.com/oriyu90/gkintvnc",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": { "@id": "https://studio-rizi.pages.dev/#person" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://studio-rizi.pages.dev/#person",
+      "name": "Yuki_Orita",
+      "alternateName": ["折田悠希", "おりたゆうき"],
+      "url": "https://studio-rizi.pages.dev/",
+      "sameAs": ["https://x.com/InovateofRIZI", "https://github.com/oriyu90"]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="header-inner">
+<a class="logo" href="https://studio-rizi.pages.dev/en/">Studio Rizi</a>
+<nav class="lang">
+<a href="https://studio-rizi.pages.dev/projects/gkintvnc/">日本語</a><a href="https://studio-rizi.pages.dev/projects/gkintvnc/en/">English</a><a href="https://studio-rizi.pages.dev/projects/gkintvnc/zh/">中文</a><a href="https://studio-rizi.pages.dev/projects/gkintvnc/pt/">Português</a>
+</nav></div></header>
+<main id="main"><article class="project-page">
+<header class="project-head">
+<h1>GlintVNC</h1>
+<p class="subtitle">Safety-first Rust VNC viewer for Intel Mac</p>
+<div class="badges"><span class="badge">macOS 13+</span><span class="badge">Rust</span><span class="badge">v0.1.0</span><span class="badge">JA/EN UI</span></div>
+</header>
+<section class="project-lead"><p><strong>GlintVNC</strong> is a native Rust VNC viewer built for the 2017 Intel MacBook Pro running macOS Ventura 13.7.8. It supports RFB 3.3 / 3.7 / 3.8 and VNCAuth, and safely decodes Raw, CopyRect and ZRLE encodings.</p></section>
+<section><h2>Safety-first design</h2><p>Every byte from the remote server is treated as untrusted. The decoder checks dimensions, rectangles and decompressed sizes, caps per-update RGBA accumulation at 128 MiB and the framebuffer at 16 Mpx, and applies a 15-second read timeout so a stalled server cannot pin a worker or memory.</p><ul><li>#![forbid(unsafe_code)] in the core; all safe Rust</li><li>Bounds-checked Raw / CopyRect / ZRLE decoding</li><li>Per-update memory budget and network read timeouts</li><li>Keys and buttons released on disconnect and focus loss</li><li>Passwords stored only in Keychain — never in JSON, logs or CLI args</li><li>Unencrypted transport allowed only by explicit profile opt-in</li></ul></section>
+<section><h2>Compatibility and existing features</h2><p>The RFB 3.3 / 3.7 / 3.8 handshake, VNCAuth, Raw / CopyRect / ZRLE encodings and the Cursor, DesktopSize and LED State pseudo-encodings are implemented, with x11vnc (LibVNCServer) and TigerVNC in mind. Dirty-rectangle streaming and partial GPU uploads keep drag updates small.</p><ul><li>Dirty-rect streaming + TextureHandle::set_partial</li><li>16 ms latest-wins pointer motion throttling</li><li>Spec-correct non-incremental request after DesktopSize</li><li>x11vnc LED State (0xFFFE0000) support</li><li>Refresh button / Cmd+R clears stale ghost pixels immediately</li><li>Not implemented: TLS/VeNCrypt, Tight/Hextile, Continuous Updates</li></ul></section>
+<section><h2>Complete Japanese and English UI</h2><p>The app UI is fully localized in Japanese and English. The connection list, profile editor, settings and in-session control bar all offer the same features in both languages. Display scale (Fit / 1:1 / Stretch) and keymap are configured per connection.</p></section>
+<section><h2>Download</h2><p>Download the DMG from GitHub Releases. <strong>It is ad-hoc signed and not Apple-notarized.</strong> On first launch use right-click → Open, or allow it in System Settings → Privacy &amp; Security. The signature changes on every rebuild, so Keychain may ask for approval again.</p>
+<p><a class="cta" href="https://github.com/oriyu90/gkintvnc/releases/tag/v0.1.0">Download GlintVNC v0.1.0</a></p>
+<p class="note">SHA256: <code>52f4fee438c5f7b02a87f573574a2ce9962f3ec26235508313d17a1719e74b21</code></p></section>
+<section><h2>Verification status</h2><table><thead><tr><th>Item</th><th>Result</th></tr></thead><tbody><tr><td>cargo fmt / check / test / clippy</td><td>55 tests pass</td></tr><tr><td>Release build and DMG mount</td><td>PASS (glintvnc 0.1.0)</td></tr><tr><td>Live LAN handshake</td><td>PASS (1920x1080)</td></tr><tr><td>Hands-on GUI interaction</td><td>Ongoing manual confirmation by the developer</td></tr></tbody></table></section>
+<section><h2>Documentation</h2><ul><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/README.md">README (usage and settings)</a></li><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/docs/DESIGN_ROUND8_AUDIT.md">Design and Round 8 audit</a></li><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/docs/VERIFICATION_LOG.md">Verification log</a></li></ul></section>
+<section><h2>Developer</h2><p>Yuki_Orita (折田悠希 / おりたゆうき) · <a href="https://github.com/oriyu90">GitHub</a> · <a href="https://x.com/InovateofRIZI">X (formerly Twitter)</a> · <a href="https://studio-rizi.pages.dev/en/">Studio Rizi</a></p><p>Open source (MIT License). Bug reports / announcements: <a href="https://discord.gg/x7KXhNTD8M">Discord</a></p></section>
+</article></main>
+<footer class="site-footer"><p>© 2026 Yuki_Orita · Studio Rizi · <a href="https://studio-rizi.pages.dev/projects/gkintvnc/en/">https://studio-rizi.pages.dev/projects/gkintvnc/en/</a></p></footer>
+</body>
+</html>
