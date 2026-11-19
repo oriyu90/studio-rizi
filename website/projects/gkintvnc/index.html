@@ -41,11 +41,11 @@
       "alternateName": ["グリントVNC"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "macOS 13.0 or later (Intel x86_64)",
-      "softwareVersion": "0.1.0",
+      "softwareVersion": "1.0.0",
       "inLanguage": "ja",
       "description": "GlintVNC（グリントVNC）は Intel x86_64 Mac 向けの Rust 製 VNC ビューアです。RFB 3.3/3.7/3.8、VNCAuth、Raw/CopyRect/ZRLE に対応し、境界チェックとメモリ上限で安全に描画します。日英 UI 搭載。開発者は折田悠希（おりたゆうき / Yuki_Orita）。GitHub でオープンソース公開中。",
       "url": "https://studio-rizi.pages.dev/projects/gkintvnc/",
-      "downloadUrl": "https://github.com/oriyu90/gkintvnc/releases/tag/v0.1.0",
+      "downloadUrl": "https://github.com/oriyu90/gkintvnc/releases/tag/v1.0.0",
       "codeRepository": "https://github.com/oriyu90/gkintvnc",
       "license": "https://opensource.org/licenses/MIT",
       "author": { "@id": "https://studio-rizi.pages.dev/#person" },
@@ -74,17 +74,17 @@
 <header class="project-head">
 <h1>GlintVNC</h1>
 <p class="subtitle">Intel Mac 向け・安全設計の Rust 製 VNC ビューア</p>
-<div class="badges"><span class="badge">macOS 13+</span><span class="badge">Rust</span><span class="badge">v0.1.0</span><span class="badge">日英 UI</span></div>
+<div class="badges"><span class="badge">macOS 13+</span><span class="badge">Rust</span><span class="badge">v1.0.0</span><span class="badge">日英 UI</span></div>
 </header>
 <section class="project-lead"><p><strong>GlintVNC</strong>（グリントVNC）は、2017 Intel MacBook Pro / macOS Ventura 13.7.8 を対象に開発した Rust 製のネイティブ VNC ビューアです。RFB 3.3 / 3.7 / 3.8 と VNCAuth に対応し、Raw・CopyRect・ZRLE の各エンコーディングを安全にデコードします。</p></section>
 <section><h2>安全を優先した設計</h2><p>リモートから届くデータはすべて信頼できない入力として扱います。デコーダは寸法・矩形・展開サイズを厳しく検査し、1 更新あたりの RGBA 蓄積を 128 MiB、フレームバッファを 16 Mpx に制限しています。ネットワーク読み取りには 15 秒のタイムアウトを設け、停止したサーバーがワーカーやメモリを占有しません。</p><ul><li>#![forbid(unsafe_code)]] をコアに適用、すべて safe Rust</li><li>境界チェック付きの Raw / CopyRect / ZRLE デコーダ</li><li>更新ごとのメモリ予算と読み取りタイムアウト</li><li>切断・フォーカス喪失時にキーとボタンを確実に解放</li><li>パスワードは Keychain のみ、JSON・ログ・引数には保存しない</li><li>暗号化なし接続は明示的なプロファイル設定でのみ許可</li></ul></section>
 <section><h2>互換性と既存機能</h2><p>RFB 3.3 / 3.7 / 3.8 のハンドシェイク、VNCAuth、Raw / CopyRect / ZRLE を実装済みです。Cursor、DesktopSize、LED State の擬似エンコーディングにも対応し、x11vnc（LibVNCServer）と TigerVNC の双方を意識した動作をします。差分矩形ストリーミングと部分 GPU 転送で、ドラッグ中の更新を小さく抑えます。</p><ul><li>Dirty-rect ストリーミング + TextureHandle::set_partial</li><li>16 ms のポインタ移動スロットル（最新値優先）</li><li>DesktopSize 後の仕様どおりの非増分再描画</li><li>x11vnc の LED State（0xFFFE0000）にも対応</li><li>浮動バーの「再描画」/⌘R で残像を即消去</li><li>未実装: TLS/VeNCrypt、Tight/Hextile、Continuous Updates</li></ul></section>
 <section><h2>日本語 / 英語の完全な UI</h2><p>アプリ本体の UI は日本語と英語に完全対応しています。接続一覧、プロファイル編集、設定、セッション操作バーまで、両言語で同じ機能を利用できます。表示スケール（Fit / 1:1 / Stretch）とキーマップは接続ごとに設定できます。</p></section>
 <section><h2>ダウンロード</h2><p>GitHub Releases から DMG をダウンロードできます。<strong>ad-hoc 署名であり、Apple 公証は行っていません。</strong>初回起動は右クリック→「開く」、または「システム設定 → プライバシーとセキュリティ」での許可が必要です。再ビルドごとに署名が変わるため、Keychain の許可を再度求められる場合があります。</p>
-<p><a class="cta" href="https://github.com/oriyu90/gkintvnc/releases/tag/v0.1.0">GlintVNC v0.1.0 をダウンロード</a></p>
-<p class="note">SHA256: <code>52f4fee438c5f7b02a87f573574a2ce9962f3ec26235508313d17a1719e74b21</code></p></section>
-<section><h2>検証状況</h2><table><thead><tr><th>項目</th><th>結果</th></tr></thead><tbody><tr><td>cargo fmt / check / test / clippy</td><td>55 テスト PASS</td></tr><tr><td>リリースビルドと DMG マウント</td><td>PASS（glintvnc 0.1.0）</td></tr><tr><td>実機 LAN ハンドシェイク</td><td>PASS（1920x1080)</td></tr><tr><td>GUI の実操作確認</td><td>PASS（2026-11-19: オーナー実機確認、本番環境完了）</td></tr></tbody></table></section>
-<section><h2>ドキュメント</h2><ul><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/README.md">README（使い方・設定）</a></li><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/docs/DESIGN_ROUND8_AUDIT.md">設計と監査（Round 8）</a></li><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/docs/VERIFICATION_LOG.md">検証ログ</a></li></ul></section>
+<p><a class="cta" href="https://github.com/oriyu90/gkintvnc/releases/tag/v1.0.0">GlintVNC v1.0.0 をダウンロード</a></p>
+<p class="note">SHA256: <code>c13759fa2ee7b0fd612399719d19eac24ffa9bdec7dfe1c4f16caf744ed8b58c</code></p></section>
+<section><h2>検証状況</h2><table><thead><tr><th>項目</th><th>結果</th></tr></thead><tbody><tr><td>cargo fmt / check / test / clippy</td><td>55 テスト PASS</td></tr><tr><td>リリースビルドと DMG マウント</td><td>PASS（glintvnc 1.0.0）</td></tr><tr><td>実機 LAN ハンドシェイク</td><td>PASS（1920x1080)</td></tr><tr><td>GUI の実操作確認</td><td>PASS（2026-11-19: オーナー実機確認、本番環境完了）</td></tr></tbody></table></section>
+<section><h2>ドキュメント</h2><ul><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/README.md">README（使い方・設定）</a></li><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/docs/DESIGN_ROUND8_AUDIT.md">設計と監査</a></li><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/docs/VERIFICATION_LOG.md">検証ログ</a></li></ul></section>
 <section><h2>開発者</h2><p>折田悠希（おりたゆうき / Yuki_Orita） · <a href="https://github.com/oriyu90">GitHub</a> · <a href="https://x.com/InovateofRIZI">X（旧Twitter）</a> · <a href="https://studio-rizi.pages.dev/">Studio Rizi</a></p><p>オープンソース（MIT License）。バグ報告・告知用: <a href="https://discord.gg/x7KXhNTD8M">Discord</a></p></section>
 </article></main>
 <footer class="site-footer"><p>© 2026 Yuki_Orita · Studio Rizi · <a href="https://studio-rizi.pages.dev/projects/gkintvnc/">https://studio-rizi.pages.dev/projects/gkintvnc/</a></p></footer>

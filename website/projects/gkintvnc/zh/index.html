@@ -41,11 +41,11 @@
       "alternateName": ["グリントVNC"],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "macOS 13.0 or later (Intel x86_64)",
-      "softwareVersion": "0.1.0",
+      "softwareVersion": "1.0.0",
       "inLanguage": "zh",
       "description": "GlintVNC（グリントVNC）是面向 Intel x86_64 Mac 的 Rust 原生 VNC 查看器，支持 RFB 3.3/3.7/3.8、VNCAuth、Raw/CopyRect/ZRLE，并通过严格边界与内存上限安全解码不可信数据。日英双语界面。开发者折田悠希（おりたゆうき / Yuki_Orita），GitHub 开源。",
       "url": "https://studio-rizi.pages.dev/projects/gkintvnc/zh/",
-      "downloadUrl": "https://github.com/oriyu90/gkintvnc/releases/tag/v0.1.0",
+      "downloadUrl": "https://github.com/oriyu90/gkintvnc/releases/tag/v1.0.0",
       "codeRepository": "https://github.com/oriyu90/gkintvnc",
       "license": "https://opensource.org/licenses/MIT",
       "author": { "@id": "https://studio-rizi.pages.dev/#person" },
@@ -74,17 +74,17 @@
 <header class="project-head">
 <h1>GlintVNC</h1>
 <p class="subtitle">面向 Intel Mac 的安全设计 Rust VNC 查看器</p>
-<div class="badges"><span class="badge">macOS 13+</span><span class="badge">Rust</span><span class="badge">v0.1.0</span><span class="badge">日英 UI</span></div>
+<div class="badges"><span class="badge">macOS 13+</span><span class="badge">Rust</span><span class="badge">v1.0.0</span><span class="badge">日英 UI</span></div>
 </header>
 <section class="project-lead"><p><strong>GlintVNC</strong>（グリントVNC）是为 2017 Intel MacBook Pro / macOS Ventura 13.7.8 开发的 Rust 原生 VNC 查看器。支持 RFB 3.3 / 3.7 / 3.8 与 VNCAuth，并可安全解码 Raw、CopyRect 和 ZRLE 编码。</p></section>
 <section><h2>以安全为先的设计</h2><p>来自远程服务器的每个字节都视为不可信输入。解码器检查尺寸、矩形与解压后大小，将每次更新的 RGBA 累积量限制为 128 MiB、帧缓冲限制为 16 Mpx，并设置 15 秒读取超时，避免停摆的服务器长期占用线程与内存。</p><ul><li>核心启用 #![forbid(unsafe_code)]，全部为 safe Rust</li><li>带边界检查的 Raw / CopyRect / ZRLE 解码</li><li>每次更新的内存预算与网络读取超时</li><li>断开连接或失去焦点时释放按键与鼠标状态</li><li>密码仅存于 Keychain，不写入 JSON、日志或命令行参数</li><li>仅通过显式配置才允许未加密连接</li></ul></section>
 <section><h2>兼容性与现有功能</h2><p>已实现 RFB 3.3 / 3.7 / 3.8 握手、VNCAuth、Raw / CopyRect / ZRLE 编码，以及 Cursor、DesktopSize、LED State 伪编码，并考虑 x11vnc（LibVNCServer）与 TigerVNC 的行为。差分矩形串流和局部 GPU 上传让拖动更新保持轻量。</p><ul><li>差分矩形串流 + TextureHandle::set_partial</li><li>16 ms 最新值优先的指针移动节流</li><li>DesktopSize 之后按规范发送非增量请求</li><li>支持 x11vnc 的 LED State（0xFFFE0000）</li><li>浮动栏「重绘」/ Cmd+R 可立即清除残影</li><li>尚未实现：TLS/VeNCrypt、Tight/Hextile、Continuous Updates</li></ul></section>
 <section><h2>完整的日语 / 英语界面</h2><p>应用界面完整支持日语和英语。连接列表、配置文件编辑、设置和会话控制栏在两种语言下功能一致。显示缩放（Fit / 1:1 / Stretch）与键位映射按连接分别设置。</p></section>
 <section><h2>下载</h2><p>可从 GitHub Releases 下载 DMG。<strong>该文件为 ad-hoc 签名，未经过 Apple 公证。</strong>首次启动需右键 → 打开，或在「系统设置 → 隐私与安全性」中允许。每次重新构建签名都会变化，Keychain 可能再次请求授权。</p>
-<p><a class="cta" href="https://github.com/oriyu90/gkintvnc/releases/tag/v0.1.0">下载 GlintVNC v0.1.0</a></p>
-<p class="note">SHA256: <code>52f4fee438c5f7b02a87f573574a2ce9962f3ec26235508313d17a1719e74b21</code></p></section>
-<section><h2>验证状态</h2><table><thead><tr><th>项目</th><th>结果</th></tr></thead><tbody><tr><td>cargo fmt / check / test / clippy</td><td>55 项测试通过</td></tr><tr><td>发布构建与 DMG 挂载</td><td>PASS（glintvnc 0.1.0）</td></tr><tr><td>实机 LAN 握手</td><td>PASS（1920x1080）</td></tr><tr><td>GUI 实机操作</td><td>PASS（2026-11-19：开发者实机确认，生产环境完成）</td></tr></tbody></table></section>
-<section><h2>文档</h2><ul><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/README.md">README（用法与设置）</a></li><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/docs/DESIGN_ROUND8_AUDIT.md">设计与 Round 8 审计</a></li><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/docs/VERIFICATION_LOG.md">验证日志</a></li></ul></section>
+<p><a class="cta" href="https://github.com/oriyu90/gkintvnc/releases/tag/v1.0.0">下载 GlintVNC v1.0.0</a></p>
+<p class="note">SHA256: <code>c13759fa2ee7b0fd612399719d19eac24ffa9bdec7dfe1c4f16caf744ed8b58c</code></p></section>
+<section><h2>验证状态</h2><table><thead><tr><th>项目</th><th>结果</th></tr></thead><tbody><tr><td>cargo fmt / check / test / clippy</td><td>55 项测试通过</td></tr><tr><td>发布构建与 DMG 挂载</td><td>PASS（glintvnc 1.0.0）</td></tr><tr><td>实机 LAN 握手</td><td>PASS（1920x1080）</td></tr><tr><td>GUI 实机操作</td><td>PASS（2026-11-19：开发者实机确认，生产环境完成）</td></tr></tbody></table></section>
+<section><h2>文档</h2><ul><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/README.md">README（用法与设置）</a></li><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/docs/DESIGN_ROUND8_AUDIT.md">设计与审计</a></li><li><a href="https://github.com/oriyu90/gkintvnc/blob/main/docs/VERIFICATION_LOG.md">验证日志</a></li></ul></section>
 <section><h2>开发者</h2><p>折田悠希（おりたゆうき / Yuki_Orita） · <a href="https://github.com/oriyu90">GitHub</a> · <a href="https://x.com/InovateofRIZI">X（原 Twitter）</a> · <a href="https://studio-rizi.pages.dev/zh/">Studio Rizi</a></p><p>开源（MIT License）。错误报告与公告: <a href="https://discord.gg/x7KXhNTD8M">Discord</a></p></section>
 </article></main>
 <footer class="site-footer"><p>© 2026 Yuki_Orita · Studio Rizi · <a href="https://studio-rizi.pages.dev/projects/gkintvnc/zh/">https://studio-rizi.pages.dev/projects/gkintvnc/zh/</a></p></footer>
